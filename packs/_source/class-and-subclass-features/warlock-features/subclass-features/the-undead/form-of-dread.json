@@ -1,0 +1,158 @@
+{
+  "folder": "gZcm0ZOv6izFlG6R",
+  "name": "Form of Dread",
+  "type": "feat",
+  "_id": "tLs07vrIF5xD9oC8",
+  "img": "icons/magic/death/skeleton-worn-skull-tan.webp",
+  "system": {
+    "description": {
+      "value": "<p>Beginning at 1st level, you manifest an aspect of your patron's dreadful power. As a bonus action, you transform for 1 minute. You gain the following benefits while transformed:</p><ul><li>You gain temporary hit points equal to 1d10 + your warlock level.</li><li>Once during each of your turns, when you hit a creature with an attack roll, you can force it to make a Wisdom saving throw, and if the saving throw fails, the target is frightened of you until the end of your next turn.</li><li>You are immune to the frightened condition.</li></ul><p>You can transform a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p><p>The appearance of your Form of Dread reflects some aspect of your patron. For example, your form could be a shroud of shadows forming the crown and robes of your lich patron, or your body might glow with glyphs from ancient funerary rites and be surrounded by desert winds, suggesting your mummy patron.</p>",
+      "chat": ""
+    },
+    "source": {},
+    "activation": {
+      "type": "bonus",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": "1",
+      "units": "minute"
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": "",
+      "prompt": true
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": "self"
+    },
+    "uses": {
+      "value": null,
+      "max": "@prof",
+      "per": "lr",
+      "recovery": "",
+      "prompt": true
+    },
+    "consume": {
+      "type": "",
+      "target": null,
+      "amount": null,
+      "scale": false
+    },
+    "ability": "",
+    "actionType": "save",
+    "attack": {
+      "bonus": "",
+      "flat": false
+    },
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "wis",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "summons": null,
+    "type": {
+      "value": "class",
+      "subtype": ""
+    },
+    "properties": [],
+    "requirements": "The Undead 1",
+    "recharge": {
+      "value": null,
+      "charged": false
+    }
+  },
+  "effects": [
+    {
+      "name": "Form of Dread - Temp HP",
+      "icon": "icons/magic/death/skeleton-worn-skull-tan.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.tLs07vrIF5xD9oC8",
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": true,
+      "_id": "T9Eey5vSjMxO92so",
+      "changes": [
+        {
+          "key": "system.attributes.hp.temp",
+          "mode": 2,
+          "value": "1d10 + @classes.warlock.levels",
+          "priority": null
+        }
+      ],
+      "description": "",
+      "transfer": true,
+      "statuses": [],
+      "flags": {},
+      "tint": null,
+      "_key": "!items.effects!tLs07vrIF5xD9oC8.T9Eey5vSjMxO92so"
+    },
+    {
+      "name": "Form of Dread - Frightened Immunity",
+      "icon": "icons/magic/death/skeleton-worn-skull-tan.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.tLs07vrIF5xD9oC8",
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": true,
+      "_id": "6Peg3sAnKeE0Hb4k",
+      "changes": [
+        {
+          "key": "system.traits.ci.value",
+          "mode": 2,
+          "value": "frightened",
+          "priority": null
+        }
+      ],
+      "description": "",
+      "transfer": true,
+      "statuses": [],
+      "flags": {},
+      "tint": null,
+      "_key": "!items.effects!tLs07vrIF5xD9oC8.6Peg3sAnKeE0Hb4k"
+    }
+  ],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "3.1.1",
+    "coreVersion": "11.315",
+    "createdTime": 1712498301622,
+    "modifiedTime": 1712498575540,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_key": "!items!tLs07vrIF5xD9oC8"
+}

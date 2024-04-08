@@ -1,0 +1,31 @@
+<form>
+    <div class="form-group">
+        <label>Name: </label>
+        <input type="text" name="name" id="name"></input>
+        <br/>
+        <label>Type: </label>
+        <select name="familiar-type" id="familiar-type">
+            <option>Celestial</option>
+            <option>Fey</option>
+            <option>Fiend</option>
+        </select>
+        <br/>
+        <label>Environment: </label>
+        <select name="environment-type" id="environment-type">
+            <option>Air</option>
+            <option>Land</option>
+            <option>Water</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Spell Level: </label>
+        <input type="text" name="spell-level" id="spell-level"></input>
+        <br/>
+        <label>Caster: </label>
+        <select name="actor" id="actor">
+            {{#each actorTokens}}
+            <option value="{{this.id}}">{{this.name}}</option>
+            {{/each}}
+        </select>
+    </div>
+</form>

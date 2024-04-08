@@ -1,0 +1,226 @@
+{
+  "folder": "em1XLkHpafBssoCW",
+  "name": "Dark Augmentation",
+  "type": "feat",
+  "_id": "C2nFw9WHcc6fQ7Lf",
+  "img": "icons/skills/wounds/injury-eyes-blood-red-pink.webp",
+  "system": {
+    "description": {
+      "value": "<p>Starting at 10th level, the magic of hemocraft suffuses your body to permanently reinforce your resilience. You have darkvision with a range of 60 feet, or if you have darkvision, extend it out an additional 30 feet. Your speed increases by 5 feet, and you have a bonus to Strength, Dexterity, and Constitution saving throws equal to your Intelligence modifier (minimum of +1).</p>",
+      "chat": ""
+    },
+    "source": {},
+    "activation": {
+      "type": "",
+      "cost": null,
+      "condition": ""
+    },
+    "duration": {
+      "value": "",
+      "units": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": "",
+      "prompt": true
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": ""
+    },
+    "uses": {
+      "value": null,
+      "max": "",
+      "per": null,
+      "recovery": "",
+      "prompt": true
+    },
+    "consume": {
+      "type": "",
+      "target": null,
+      "amount": null,
+      "scale": false
+    },
+    "ability": null,
+    "actionType": "",
+    "attackBonus": "",
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "type": {
+      "value": "class",
+      "subtype": ""
+    },
+    "properties": [],
+    "requirements": "Blood Hunter 10",
+    "recharge": {
+      "value": null,
+      "charged": false
+    }
+  },
+  "effects": [
+    {
+      "name": "Dark Augmentation - Darkvision",
+      "icon": "icons/skills/wounds/injury-eyes-blood-red-pink.webp",
+      "origin": "Item.C2nFw9WHcc6fQ7Lf",
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": true,
+      "_id": "FV9KJIKcsFILOGjp",
+      "changes": [
+        {
+          "key": "system.attributes.senses.darkvision",
+          "mode": 5,
+          "value": "60",
+          "priority": null
+        }
+      ],
+      "description": "",
+      "transfer": true,
+      "statuses": [],
+      "flags": {},
+      "tint": null,
+      "_key": "!items.effects!C2nFw9WHcc6fQ7Lf.FV9KJIKcsFILOGjp"
+    },
+    {
+      "name": "Dark Augmentation - Enhanced Darkvision",
+      "icon": "icons/skills/wounds/injury-eyes-blood-red-pink.webp",
+      "origin": "Item.C2nFw9WHcc6fQ7Lf",
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": true,
+      "_id": "ldGucDkdLLi2LXIe",
+      "changes": [
+        {
+          "key": "[2].value.system.attributes.senses.darkvision",
+          "mode": 2,
+          "value": "30",
+          "priority": null
+        }
+      ],
+      "description": "",
+      "transfer": true,
+      "statuses": [],
+      "flags": {},
+      "tint": null,
+      "_key": "!items.effects!C2nFw9WHcc6fQ7Lf.ldGucDkdLLi2LXIe"
+    },
+    {
+      "name": "Dark Augmentation - Movement Speed",
+      "icon": "icons/skills/wounds/injury-eyes-blood-red-pink.webp",
+      "origin": "Item.C2nFw9WHcc6fQ7Lf",
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "_id": "8CnjwYClZwFzwxfZ",
+      "changes": [
+        {
+          "key": "system.attributes.movement.walk",
+          "mode": 2,
+          "value": "30",
+          "priority": null
+        }
+      ],
+      "description": "",
+      "transfer": true,
+      "statuses": [],
+      "flags": {},
+      "tint": null,
+      "_key": "!items.effects!C2nFw9WHcc6fQ7Lf.8CnjwYClZwFzwxfZ"
+    },
+    {
+      "name": "Dark Augmentation - Save Bonuses",
+      "icon": "icons/skills/wounds/injury-eyes-blood-red-pink.webp",
+      "origin": "Item.C2nFw9WHcc6fQ7Lf",
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "_id": "6Ee7mpt2VztMJ9K2",
+      "changes": [
+        {
+          "key": "system.abilities.str.bonuses.save",
+          "mode": 2,
+          "value": "system.abilities.int.mod",
+          "priority": null
+        },
+        {
+          "key": "system.abilities.dex.bonuses.save",
+          "mode": 2,
+          "value": "system.abilities.int.mod",
+          "priority": null
+        },
+        {
+          "key": "system.abilities.con.bonuses.save",
+          "mode": 2,
+          "value": "system.abilities.int.mod",
+          "priority": null
+        }
+      ],
+      "description": "",
+      "transfer": true,
+      "statuses": [],
+      "flags": {},
+      "tint": null,
+      "_key": "!items.effects!C2nFw9WHcc6fQ7Lf.6Ee7mpt2VztMJ9K2"
+    }
+  ],
+  "flags": {},
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "3.0.2",
+    "coreVersion": "11.315",
+    "createdTime": 1707887019748,
+    "modifiedTime": 1708360077624,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!C2nFw9WHcc6fQ7Lf"
+}

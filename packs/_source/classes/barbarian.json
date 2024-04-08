@@ -1,0 +1,535 @@
+{
+  "folder": null,
+  "name": "Barbarian",
+  "type": "class",
+  "_id": "1CZknH7dQtZ5azTo",
+  "img": "icons/skills/melee/shield-damaged-broken-orange.webp",
+  "system": {
+    "description": {
+      "value": "<h5>The Barbarian</h5><table><thead><tr><th>Level</th><th>Proficiency Bonus</th><th>Features</th><th>Rages</th><th>Rage Damage</th></tr></thead><tbody><tr><td>1st</td><td>+2</td><td>Rage, Unarmored Defense</td><td>2</td><td>+2</td></tr><tr><td>2nd</td><td>+2</td><td>Danger Sense, Reckless Attack</td><td>2</td><td>+2</td></tr><tr><td>3rd</td><td>+2</td><td>Primal Knowledge (1), Primal Path</td><td>3</td><td>+2</td></tr><tr><td>4th</td><td>+2</td><td>Ability Score Improvement</td><td>3</td><td>+2</td></tr><tr><td>5th</td><td>+3</td><td>Extra Attack, Fast Movement (1)</td><td>3</td><td>+2</td></tr><tr><td>6th</td><td>+3</td><td>Path Feature</td><td>4</td><td>+2</td></tr><tr><td>7th</td><td>+3</td><td>Feral Instinct, Instinctive Pounce</td><td>4</td><td>+2</td></tr><tr><td>8th</td><td>+3</td><td>Ability Score Improvement</td><td>4</td><td>+2</td></tr><tr><td>9th</td><td>+4</td><td>Brutal Critical (+1 die)</td><td>4</td><td>+3</td></tr><tr><td>10th</td><td>+4</td><td>Primal Knowledge (2), Path Feature</td><td>4</td><td>+3</td></tr><tr><td>11th</td><td>+4</td><td>Primal Destroyer, Relentless Rage</td><td>4</td><td>+3</td></tr><tr><td>12th</td><td>+4</td><td>Ability Score Improvement, Fast Movement (2)</td><td>5</td><td>+3</td></tr><tr><td>13th</td><td>+5</td><td>Brutal Critical (+2 dice)</td><td>5</td><td>+3</td></tr><tr><td>14th</td><td>+5</td><td>Headtaker, Path Feature</td><td>5</td><td>+3</td></tr><tr><td>15th</td><td>+5</td><td>Persistent Rage</td><td>5</td><td>+3</td></tr><tr><td>16th</td><td>+5</td><td>Ability Score Improvement</td><td>5</td><td>+4</td></tr><tr><td>17th</td><td>+6</td><td>Brutal Critical (+3 dice)</td><td>6</td><td>+4</td></tr><tr><td>18th</td><td>+6</td><td>Indomitable Might</td><td>6</td><td>+4</td></tr><tr><td>19th</td><td>+6</td><td>Ability Score Improvement</td><td>6</td><td>+4</td></tr><tr><td>20th</td><td>+6</td><td>Primal Champion</td><td>Unlimited</td><td>+4</td></tr></tbody></table>",
+      "chat": ""
+    },
+    "source": {},
+    "identifier": "barbarian",
+    "levels": 1,
+    "hitDice": "d12",
+    "hitDiceUsed": 0,
+    "advancement": [
+      {
+        "_id": "IPhenkYKqOGMPXug",
+        "type": "HitPoints",
+        "configuration": {},
+        "value": {}
+      },
+      {
+        "_id": "DVEt5fClHqKXyV75",
+        "type": "ScaleValue",
+        "configuration": {
+          "identifier": "",
+          "type": "number",
+          "distance": {
+            "units": ""
+          },
+          "scale": {
+            "1": {
+              "value": 2
+            },
+            "3": {
+              "value": 3
+            },
+            "6": {
+              "value": 4
+            },
+            "12": {
+              "value": 5
+            },
+            "17": {
+              "value": 6
+            },
+            "20": {
+              "value": 99
+            }
+          }
+        },
+        "value": {},
+        "title": "Rages",
+        "icon": null
+      },
+      {
+        "_id": "sJV2Z56BNge6Tos8",
+        "type": "ScaleValue",
+        "configuration": {
+          "identifier": "",
+          "type": "number",
+          "distance": {
+            "units": ""
+          },
+          "scale": {
+            "1": {
+              "value": 2
+            },
+            "9": {
+              "value": 3
+            },
+            "16": {
+              "value": 4
+            }
+          }
+        },
+        "value": {},
+        "title": "Rage Damage",
+        "icon": null
+      },
+      {
+        "_id": "JZE4V4ejlLiJxFaH",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [],
+          "choices": [
+            {
+              "count": 2,
+              "pool": [
+                "skills:ani",
+                "skills:ath",
+                "skills:itm",
+                "skills:nat",
+                "skills:prc",
+                "skills:sur"
+              ]
+            }
+          ],
+          "hint": ""
+        },
+        "level": 1,
+        "title": "",
+        "icon": null,
+        "classRestriction": "primary",
+        "value": {}
+      },
+      {
+        "_id": "4e7RGfmXqrBWtGKG",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [
+            "armor:lgt",
+            "armor:med",
+            "armor:shl"
+          ],
+          "choices": [],
+          "hint": ""
+        },
+        "level": 1,
+        "title": "",
+        "icon": null,
+        "classRestriction": "primary",
+        "value": {}
+      },
+      {
+        "_id": "00C2P41qQK1CElEa",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [
+            "saves:str",
+            "saves:con"
+          ],
+          "choices": [],
+          "hint": ""
+        },
+        "level": 1,
+        "title": "",
+        "icon": null,
+        "classRestriction": "primary",
+        "value": {}
+      },
+      {
+        "_id": "vBVyBTyo17h2prpI",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": false,
+          "grants": [
+            "weapon:sim",
+            "weapon:mar"
+          ],
+          "choices": [],
+          "hint": ""
+        },
+        "level": 1,
+        "title": "",
+        "icon": null,
+        "classRestriction": "primary",
+        "value": {}
+      },
+      {
+        "_id": "2y06hugGUm84q7hF",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2
+        },
+        "value": {
+          "type": "asi"
+        },
+        "level": 4,
+        "title": "",
+        "icon": null
+      },
+      {
+        "_id": "yogygQ6hZTrI34kW",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2
+        },
+        "value": {
+          "type": "asi"
+        },
+        "level": 8,
+        "title": "",
+        "icon": null
+      },
+      {
+        "_id": "IbMJIEq9SjhUNevN",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2
+        },
+        "value": {
+          "type": "asi"
+        },
+        "level": 12,
+        "title": "",
+        "icon": null
+      },
+      {
+        "_id": "SMKB0lOAbAqK7tzr",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2
+        },
+        "value": {
+          "type": "asi"
+        },
+        "level": 16,
+        "title": "",
+        "icon": null
+      },
+      {
+        "_id": "9xGRPksKIUaQoAMy",
+        "type": "AbilityScoreImprovement",
+        "configuration": {
+          "points": 2,
+          "fixed": {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0
+          },
+          "cap": 2
+        },
+        "value": {
+          "type": "asi"
+        },
+        "level": 19,
+        "title": "",
+        "icon": null
+      },
+      {
+        "_id": "tAiNS7TFQUpNjjin",
+        "type": "ItemGrant",
+        "configuration": {
+          "items": [
+            "Compendium.materia-dnd.class-and-subclass-features.Item.kZlNY34EDkyGpoju",
+            "Compendium.materia-dnd.class-and-subclass-features.Item.0NIGL5s9MEz4O899"
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "value": {},
+        "level": 1
+      },
+      {
+        "_id": "pKUmg0v3STufEY2e",
+        "type": "ItemGrant",
+        "configuration": {
+          "items": [
+            "Compendium.materia-dnd.class-and-subclass-features.Item.g5TlqXfTzm1moS4P",
+            "Compendium.materia-dnd.class-and-subclass-features.Item.kyuU6QsSFXCZlcQO"
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "value": {},
+        "level": 2,
+        "title": "Features",
+        "icon": null
+      },
+      {
+        "_id": "8S7nsU6irMtcM1rh",
+        "type": "ItemGrant",
+        "configuration": {
+          "items": [
+            "Compendium.materia-dnd.class-and-subclass-features.Item.KIZEBKwCrPnUaOkh"
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "value": {},
+        "level": 3,
+        "title": "Features",
+        "icon": null
+      },
+      {
+        "_id": "cPvPknmvwqGoANig",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": true,
+          "grants": [],
+          "choices": [
+            {
+              "count": 1,
+              "pool": [
+                "skills:ani",
+                "skills:ath",
+                "skills:itm",
+                "skills:nat",
+                "skills:prc",
+                "skills:sur"
+              ]
+            }
+          ],
+          "hint": "When you reach 3rd level and again at 10th level, you gain proficiency in one skill of your choice from the list of skills available to barbarians at 1st level."
+        },
+        "level": 3,
+        "title": "Primal Knowledge",
+        "icon": "icons/magic/nature/wolf-paw-glow-small-orange.webp",
+        "value": {}
+      },
+      {
+        "_id": "jg1zu1Ro1Afhm60W",
+        "type": "ItemGrant",
+        "configuration": {
+          "items": [
+            "Compendium.materia-dnd.class-and-subclass-features.Item.0fHlKWYlOCaUuQhw",
+            "Compendium.materia-dnd.class-and-subclass-features.Item.BPti7E0u0iuClFhV"
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "value": {},
+        "level": 5,
+        "title": "Features",
+        "icon": null
+      },
+      {
+        "_id": "6kj2rupzFcf5Moo5",
+        "type": "ItemGrant",
+        "configuration": {
+          "items": [
+            "Compendium.materia-dnd.class-and-subclass-features.Item.6PSL5z8AH0YR6hPb",
+            "Compendium.materia-dnd.class-and-subclass-features.Item.WGHVwiobcZNl2Jsc"
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "value": {},
+        "level": 7,
+        "title": "Features",
+        "icon": null
+      },
+      {
+        "_id": "GdJbjIivFU82Ga54",
+        "type": "ItemGrant",
+        "configuration": {
+          "items": [
+            "Compendium.materia-dnd.class-and-subclass-features.Item.92hgETE4NjkPk261"
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "value": {},
+        "level": 9,
+        "title": "Features",
+        "icon": null
+      },
+      {
+        "_id": "NvqGiweBPT5QmWJJ",
+        "type": "ItemGrant",
+        "configuration": {
+          "items": [
+            "Compendium.materia-dnd.class-and-subclass-features.Item.QOT825wCa3XhuKue",
+            "Compendium.materia-dnd.class-and-subclass-features.Item.PCiIr2yivJGd3y0O"
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "value": {},
+        "level": 11,
+        "title": "Features",
+        "icon": null
+      },
+      {
+        "_id": "8560NJ9erVp1wTFo",
+        "type": "ItemGrant",
+        "configuration": {
+          "items": [
+            "Compendium.materia-dnd.class-and-subclass-features.Item.VBOIM0VgttjsqhSQ"
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "value": {},
+        "level": 14,
+        "title": "Features",
+        "icon": null
+      },
+      {
+        "_id": "gnHxl1a1LrZIumg0",
+        "type": "ItemGrant",
+        "configuration": {
+          "items": [
+            "Compendium.materia-dnd.class-and-subclass-features.Item.JhuLVaWV22QTkREc"
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "value": {},
+        "level": 15,
+        "title": "Features",
+        "icon": null
+      },
+      {
+        "_id": "ijlIesZLNJeW14qI",
+        "type": "ItemGrant",
+        "configuration": {
+          "items": [
+            "Compendium.materia-dnd.class-and-subclass-features.Item.0slLAsJavAzc60jA"
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "value": {},
+        "level": 18,
+        "title": "Features",
+        "icon": null
+      },
+      {
+        "_id": "7W9Y5m6ixlplr205",
+        "type": "ItemGrant",
+        "configuration": {
+          "items": [
+            "Compendium.materia-dnd.class-and-subclass-features.Item.tsIMsJo8RTyvD8HX"
+          ],
+          "optional": false,
+          "spell": null
+        },
+        "value": {},
+        "level": 20,
+        "title": "Features",
+        "icon": null
+      },
+      {
+        "_id": "5uBGAMlNSxyaeBoD",
+        "type": "ItemChoice",
+        "configuration": {
+          "choices": {},
+          "allowDrops": true,
+          "type": null,
+          "pool": [],
+          "spell": null,
+          "restriction": {}
+        },
+        "value": {}
+      },
+      {
+        "_id": "uu2hAJvyE6lDPqTO",
+        "type": "Trait",
+        "configuration": {
+          "mode": "default",
+          "allowReplacements": true,
+          "grants": [],
+          "choices": [
+            {
+              "count": 1,
+              "pool": [
+                "skills:ani",
+                "skills:ath",
+                "skills:itm",
+                "skills:nat",
+                "skills:prc",
+                "skills:sur"
+              ]
+            }
+          ],
+          "hint": "When you reach 3rd level and again at 10th level, you gain proficiency in one skill of your choice from the list of skills available to barbarians at 1st level."
+        },
+        "level": 10,
+        "title": "Primal Knowledge",
+        "icon": "icons/magic/nature/wolf-paw-glow-small-orange.webp",
+        "value": {}
+      }
+    ],
+    "spellcasting": {
+      "progression": "none",
+      "ability": ""
+    }
+  },
+  "effects": [],
+  "flags": {},
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "3.0.4",
+    "coreVersion": "11.315",
+    "createdTime": 1708294409434,
+    "modifiedTime": 1710895879228,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!1CZknH7dQtZ5azTo"
+}

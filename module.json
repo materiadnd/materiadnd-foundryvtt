@@ -13,10 +13,32 @@
   ],
   "compatibility": {
     "minimum": 10,
-    "verified": 10,
-    "maximum": 11
+    "verified": "11.315"
   },
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system"
+      }
+    ]
+  },
+  "scripts": [
+    "src/index.js"
+  ],
   "packs": [
+    {
+      "name": "actors",
+      "label": "Actors (Materia)",
+      "path": "packs/actors",
+      "type": "Actor",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
     {
       "name": "backgrounds",
       "label": "Backgrounds (Materia)",
@@ -66,10 +88,45 @@
       "flags": {}
     },
     {
+      "name": "items",
+      "label": "Items (Materia)",
+      "path": "packs/items",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
       "name": "macros",
       "label": "Macros (Materia)",
       "path": "packs/macros",
       "type": "Macro",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "monster-features",
+      "label": "Monster Features (Materia)",
+      "path": "packs/monster-features",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
+      "name": "rules",
+      "label": "Rules (Materia)",
+      "path": "packs/rules",
+      "type": "JournalEntry",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
@@ -117,7 +174,20 @@
       {
           "name": "Materia Content",
           "sorting": "a",
-          "packs": ["backgrounds", "class-and-subclass-features", "classes", "feats", "macros", "species", "spells", "subclasses"]
+          "packs": [
+            "actors",
+            "backgrounds",
+            "class-and-subclass-features",
+            "classes",
+            "feats",
+            "items",
+            "macros",
+            "monster-features",
+            "rules",
+            "species",
+            "spells",
+            "subclasses"
+          ]
       }
   ],
   "url": "#{URL}#",
