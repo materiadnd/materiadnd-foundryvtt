@@ -1,18 +1,18 @@
 {
   "id": "materia-dnd",
   "title": "Materia D&D",
-  "description": "Module with the customizations of D&amp;D5E for the Materia homebrew setting.",
-  "version": "#{VERSION}#",
+  "description": "Module with the customizations of Dungeons and Dragons 5th Edition for the Materia homebrew setting.",
+  "version": "0.8.0",
   "authors": [
     {
-      "name": "Danny DiPaolo",
+      "name": "Daniel DiPaolo",
       "discord": "diddlypow",
       "url": "https://twitch.tv/materiadnd",
       "flags": {}
     }
   ],
   "compatibility": {
-    "minimum": 10,
+    "minimum": "0.8.6",
     "verified": "11.315"
   },
   "relationships": {
@@ -24,7 +24,13 @@
     ]
   },
   "scripts": [
-    "src/index.js"
+    "src/armor.js",
+    "src/conditions.js",
+    "src/spellcasting-utils.js",
+    "src/weapons.js",
+    "src/wild-shape.js"
+  ],
+  "esmodules": [
   ],
   "packs": [
     {
@@ -111,6 +117,18 @@
       "flags": {}
     },
     {
+      "name": "magic-items",
+      "label": "Magic Items (Materia)",
+      "path": "packs/magic-items",
+      "type": "Item",
+      "system": "dnd5e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "flags": {}
+    },
+    {
       "name": "monster-features",
       "label": "Monster Features (Materia)",
       "path": "packs/monster-features",
@@ -120,6 +138,18 @@
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
+      "flags": {}
+    },
+    {
+      "name": "rollable-tables",
+      "label": "Rollable Tables",
+      "path": "packs/rollable-tables",
+      "type": "RollTable",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "dnd5e",
       "flags": {}
     },
     {
@@ -171,28 +201,28 @@
     }
   ],
   "packFolders": [
-      {
-          "name": "Materia Content",
-          "sorting": "a",
-          "packs": [
-            "actors",
-            "backgrounds",
-            "class-and-subclass-features",
-            "classes",
-            "feats",
-            "items",
-            "macros",
-            "monster-features",
-            "rules",
-            "species",
-            "spells",
-            "subclasses"
-          ]
-      }
+    {
+      "name": "Materia Content",
+      "sorting": "a",
+      "packs": [
+        "actors",
+        "backgrounds",
+        "class-and-subclass-features",
+        "classes",
+        "feats",
+        "items",
+        "macros",
+        "magic-items",
+        "monster-features",
+        "rules",
+        "rollable-tables",
+        "species",
+        "spells",
+        "subclasses"
+      ],
+      "folders": []
+    }
   ],
-  "url": "#{URL}#",
-  "manifest": "#{MANIFEST}#",
-  "download": "#{DOWNLOAD}#",
-  "license": "LICENSE",
-  "readme": "README.md"
+  "manifest": "https://github.com/materiadnd/materiadnd-foundryvtt/releases/download/latest/module.json",
+  "download": "https://github.com/materiadnd/materiadnd-foundryvtt/releases/download/latest/materia-dnd.zip"
 }
