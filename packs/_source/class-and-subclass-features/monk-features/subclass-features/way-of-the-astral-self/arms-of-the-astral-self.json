@@ -1,0 +1,139 @@
+{
+  "folder": "2J5VPRhGxytAnq7J",
+  "name": "Arms of the Astral Self",
+  "type": "feat",
+  "_id": "qYiyovIW5h4MjmYf",
+  "img": "icons/skills/melee/unarmed-punch-fist-yellow-red.webp",
+  "system": {
+    "description": {
+      "value": "<p>Starting when you choose this tradition at 3rd level, your mastery of your ki allows you to summon a portion of your astral self. As a bonus action, you can spend 1 ki point to summon the arms of your astral self. When you do so, each creature of your choice that you can see within 10 feet of you must succeed on a Dexterity saving throw or take force damage equal to a number of of your Martial Arts die equal to half your monk level.</p><p>For 10 minutes, these spectral arms hover near your shoulders or surround your arms (your choice). You determine the arms' appearance, and they vanish early if you are incapacitated or die. While the spectral arms are present, you gain the following benefits:<br /><br /><strong>Astral Reach</strong>. When you make an unarmed strike with the arms on your turn, your reach for it is 5 feet greater than normal. The arms deal your choice of bludgeoning or force (you choose for each attack you make with them). When you attack with the arms, you can use your Wisdom modifier instead of your Strength or Dexterity modifier for the attack and damage rolls.<br /><br /><strong>Astral Strength</strong>. You can use your Wisdom modifier in place of your Strength modifier when making Strength checks or Strength saving throws.<br /><br /><strong>Astral Vortex</strong>. Immediately after you miss with an attack when you take the Attack action or use your Flurry of Blows you can make an additional attack with one of your astral arms as part of the same action. You can make a number of these attacks with your astral arms equal to your proficiency modifier in a turn.</p>",
+      "chat": ""
+    },
+    "source": {},
+    "activation": {
+      "type": "bonus",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": "10",
+      "units": "minute"
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": "self",
+      "prompt": true
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": "self"
+    },
+    "uses": {
+      "value": null,
+      "max": "",
+      "per": null,
+      "recovery": "",
+      "prompt": true
+    },
+    "consume": {
+      "type": "charges",
+      "target": "",
+      "amount": 1,
+      "scale": false
+    },
+    "ability": "",
+    "actionType": "save",
+    "attack": {
+      "bonus": "",
+      "flat": false
+    },
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [
+        [
+          "floor(@classes.monk.levels / 2)@scale.monk.martial-arts-die.dice",
+          "force"
+        ]
+      ],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "dex",
+      "dc": null,
+      "scaling": "wis"
+    },
+    "summons": null,
+    "type": {
+      "value": "class",
+      "subtype": "ki"
+    },
+    "properties": [],
+    "requirements": "Way of the Astral Self 3",
+    "recharge": {
+      "value": null,
+      "charged": false
+    }
+  },
+  "effects": [
+    {
+      "name": "Astral Strength",
+      "icon": "icons/skills/melee/unarmed-punch-fist-yellow-red.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.qYiyovIW5h4MjmYf",
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": true,
+      "_id": "hp1Qpu7AunqA9npx",
+      "changes": [
+        {
+          "key": "system.skills.ath.ability",
+          "mode": 5,
+          "value": "wis",
+          "priority": null
+        },
+        {
+          "key": "system.abilities.str.save",
+          "mode": 5,
+          "value": "@abilities.wis.mod",
+          "priority": null
+        }
+      ],
+      "description": "",
+      "transfer": true,
+      "statuses": [],
+      "flags": {},
+      "tint": null,
+      "_key": "!items.effects!qYiyovIW5h4MjmYf.hp1Qpu7AunqA9npx"
+    }
+  ],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "3.1.1",
+    "coreVersion": "11.315",
+    "createdTime": 1712365949434,
+    "modifiedTime": 1712366284709,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_key": "!items!qYiyovIW5h4MjmYf"
+}
