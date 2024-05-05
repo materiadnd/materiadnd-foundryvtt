@@ -10,5 +10,10 @@ Hooks.once("ready", () => {
     CONFIG.statusEffects.push({'id': 'possessed', 'name': 'Possessed', 'icon': 'modules/materia-dnd/icons/statuses/noun-ghost.svg', 'label': 'Possessed', 'reference': 'Compendium.materia-dnd.rules.JournalEntry.MpEv2KTNEY6lLelV.JournalEntryPage.zJHQBtD33KkJJunM', 'statuses': ['incapacitated']});
     CONFIG.statusEffects.push({'id': 'weakened', 'name': 'Weakened', 'icon': 'modules/materia-dnd/icons/statuses/noun-weakness.svg', 'label': 'Weakened', 'reference': 'Compendium.materia-dnd.rules.JournalEntry.MpEv2KTNEY6lLelV.JournalEntryPage.AEqHmIZbN8B1DxAJ'});
     console.log("materia-dnd | Conditions: Added three status effects.")
+    // Overwriting exhaustion
+    CONFIG.DND5E.conditionTypes.exhaustion.reference = "Compendium.materia-dnd.rules.JournalEntry.MpEv2KTNEY6lLelV.JournalEntryPage.9XAWvL8gnCtdez6U";
+    const exh = CONFIG.statusEffects.find(e => e.id === "exhaustion");
+    foundry.utils.mergeObject(exh, CONFIG.DND5E.conditionTypes.exhaustion, { insertKeys: false });
+
     console.log("materia-dnd | Conditions: Completed setup.")
 });
