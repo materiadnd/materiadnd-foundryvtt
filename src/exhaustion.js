@@ -5,4 +5,4 @@ Hooks.on("dnd5e.healActor", async (actor, heal, diff, id) => {
         console.log("materia-dnd | Exhaustion: " + actor.name + " has healed from 0 HP, upping exhaustion by 1");
         actor.update({ "system.attributes.exhaustion": actor.system.attributes.exhaustion + 1 });
     }
-});
+}
