@@ -1,5 +1,4 @@
-console.log("materia-dnd | Wild Shape: registering transformActor hook");
-Hooks.on("dnd5e.transformActor", (actor, target, d, txOptions, options) => {
+export function WildShapeTransformActorHandler(actor, target, d, txOptions, options) {
     // custom Materia wildshape
     // we only want this to fire on a wild shape, best we can do is know when it's a polymorph by
     // the preset options that differ from wild shape
@@ -37,5 +36,4 @@ Hooks.on("dnd5e.transformActor", (actor, target, d, txOptions, options) => {
         // }));
         // d.effects = actor.effects;
     }
-});
-console.log("materia-dnd | Wild Shape: Setup complete.");
+}

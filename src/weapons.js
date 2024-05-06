@@ -1,4 +1,4 @@
-Hooks.once("ready", () => {
+export function AddMateriaWeapons() {
     console.log("materia-dnd | Weapons: Setting up weapon properties and custom weapon types.");
     // Weapon Types
     dnd5e.config.itemProperties.deft = {
@@ -32,4 +32,4 @@ Hooks.once("ready", () => {
     dnd5e.config.weaponIds.warbow = 'Compendium.materia-dnd.items.Item.5A1dzl2rhuXQnRGV';
     console.log("materia-dnd | Weapons: Added seven weapon types");
     console.log("materia-dnd | Weapons: Completed setup.");
-});
+}

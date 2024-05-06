@@ -1,4 +1,4 @@
-Hooks.on("dnd5e.damageActor", async (actor, heal, diff, id) => {
+export async function ExhaustionDamageHandler(actor, heal, diff, id) { 
     // if current HP equals the heal value, we were at zero, so we
     // up the exhaustion by one
     if (diff.system.attributes.hp.value == 0) {
@@ -10,9 +10,9 @@ Hooks.on("dnd5e.damageActor", async (actor, heal, diff, id) => {
             makeVulnerableToAllDamageTypes(actor);
         }
     }
-});
+}
 
-Hooks.on("updateActiveEffect", (activeEffect, flags, diff, id) => {
+export function ExhastionActiveEffectHandler(activeEffect, flags, diff, id) {
     let actor = activeEffect.parent;
     if (flags.flags.dnd5e.exhaustionLevel == 3) {
         // special case, dropping from 4 to 3 removes the vulnerability we imposed
@@ -22,7 +22,7 @@ Hooks.on("updateActiveEffect", (activeEffect, flags, diff, id) => {
         actor.system.traits.dv.value.clear();
         makeVulnerableToAllDamageTypes(actor);
     }
-});
+}
 
 function makeVulnerableToAllDamageTypes(actor) {
     for (const [dmgType, _] of Object.entries(CONFIG.DND5E.damageTypes)) {
