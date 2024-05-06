@@ -3,5 +3,4 @@ export class Constants {
     static TEMPLATES = {
         LOCUS_MANAGER: `modules/${this.MODULE_ID}/templates/locus-manager.hbs`
     }
-
 }
