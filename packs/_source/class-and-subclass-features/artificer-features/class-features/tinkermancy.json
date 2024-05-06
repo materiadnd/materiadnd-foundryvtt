@@ -6,7 +6,7 @@
   "img": "icons/magic/light/beam-layered-teal.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 8th level you may add your intelligence modifier to the damage you deal with any artificer cantrip. Additionally you may add your intelligence modifier to any damaging effect from your artificer infusions. This does not include infusions that provide static damage bonuses to spells or attacks, nor does it apply to magic items created by the Replicate Magic Item infusion.</p>",
+      "value": "<p>Starting at 8th level you may add your intelligence modifier to the damage you deal with any artificer cantrip. Additionally you can give yourself a bonus to your initiative rolls equal to the number of magic items you are attuned to.</p>",
       "chat": ""
     },
     "source": {},
@@ -75,7 +75,37 @@
       "charged": false
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Tinkermancy - Init Bonus",
+      "icon": "icons/magic/light/beam-layered-teal.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.Yb9nPfnemK1l357O",
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "_id": "rjRAQxQpB9CwhgFe",
+      "changes": [
+        {
+          "key": "system.attributes.init.bonus",
+          "mode": 2,
+          "value": "@attributes.attunement.value"
+        }
+      ],
+      "description": "",
+      "transfer": true,
+      "statuses": [],
+      "flags": {},
+      "tint": null,
+      "_key": "!items.effects!Yb9nPfnemK1l357O.rjRAQxQpB9CwhgFe"
+    }
+  ],
   "sort": 950000,
   "ownership": {
     "default": 0
@@ -83,10 +113,10 @@
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
+    "systemVersion": "3.1.2",
     "coreVersion": "11.315",
     "createdTime": 1708887529065,
-    "modifiedTime": 1709695498818,
+    "modifiedTime": 1714970645760,
     "lastModifiedBy": "dnd5mbuilder0000"
   },
   "_key": "!items!Yb9nPfnemK1l357O"
