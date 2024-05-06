@@ -26,6 +26,9 @@ export class LocusManagerApp extends FormApplication {
     }
 
     activateListeners(html) {
+        // need listeners for:
+        // 1. dragging item onto window
+        // 2. clicking remove button on existing item
 
     }
 
