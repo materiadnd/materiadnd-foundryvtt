@@ -45,6 +45,14 @@ function getProgressionDivisor(spellcastingClass) {
     }
 }
 
+function getPreparedSpellCounts(actor) {
+    let spells = actor.items.filter( x => x.type == 'spell'  && x.system?.level > 0);
+    return spells.reduce(
+        (acc, spell) => {
+            if (spell.system.preparation.prepared) { return acc + 1; } else { return acc; }
+        }, 0);
+}
+
 function getSpellPreparationCounts(actor) {
     // get classes with any spellcasting progression other than "None"
     let casterClasses = actor.items
@@ -153,10 +161,11 @@ function isPactCaster(actor) {
 }
 
 export function SpellcastingRenderActorSheetHandler(html, actor) {
+    let preparedSpells = getPreparedSpellCounts(actor);
     let spellPreps = getSpellPreparationCounts(actor);
     for ( let spellPrep of spellPreps) {
         let prepElement = document.createElement("div");
-        prepElement.innerHTML = `<span class="label">Preps</span>\n<span class="value">${spellPrep.preps}</span>`;
+        prepElement.innerHTML = `<span class="label">Preps</span>\n<span class="value">${preparedSpells} / ${spellPrep.preps}</span>`;
         html.find(`div.spellcasting > div.header > h3:contains("${spellPrep.name}")`).parent().parent().find("div.info")[0].insertAdjacentElement("beforeend", prepElement);
     }
 }
