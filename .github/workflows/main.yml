@@ -42,7 +42,7 @@ jobs:
         npm run build:db
     
     # Create a zip file with all files required
-    - run: zip ${{ env.ZIP_NAME }} -r icons images packs src templates tokens utils module.json --exclude "packs/_source/*"
+    - run: zip ${{ env.ZIP_NAME }} -r css icons images languages packs src templates tokens utils module.json --exclude "packs/_source/*"
 
     # Fetch the body from the release
     - name: Fetch Release Body
