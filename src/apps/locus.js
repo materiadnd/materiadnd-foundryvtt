@@ -1,4 +1,4 @@
-import { Constants } from "../constants";
+import { Constants } from "../constants.js";
 
 export class LocusManagerApp extends FormApplication {
     constructor() {
