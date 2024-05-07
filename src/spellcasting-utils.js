@@ -1,5 +1,5 @@
-const THIRD_PACT_ABBR = "thirdpact";
-const THIRD_PACT_LABEL = "Third Pact";
+export const THIRD_PACT_ABBR = "thirdpact";
+export const THIRD_PACT_LABEL = "Third Pact";
 
 const PACT_CASTER_TYPES = ['pact', THIRD_PACT_ABBR];
 
@@ -93,7 +93,7 @@ function getPactLevels(actor) {
     return { fullCasterLevels: fullCasterLevels, thirdCasterLevels: thirdCasterLevels };
 }
 
-function derivePactSlots(actor) {
+export function derivePactSlots(actor) {
     if ( actor.type !== 'character' ) return;
     if ( !isPactCaster(actor) ) return;
     let pactLevels = getPactLevels(actor);
@@ -120,7 +120,7 @@ function derivePactSlots(actor) {
     }
 }
 
-function refreshPactSlots() {
+export function refreshPactSlots() {
     game.actors.forEach( x => refreshActorPactSlots(x) );
 }
 
@@ -152,24 +152,24 @@ function isPactCaster(actor) {
     return pactClasses.length > 0;
 }
 
-Hooks.on("renderActorSheet5eCharacter2", (app, html, actor) => {
+export function SpellcastingRenderActorSheetHandler(html, actor) {
     let spellPreps = getSpellPreparationCounts(actor);
     for ( let spellPrep of spellPreps) {
         let prepElement = document.createElement("div");
         prepElement.innerHTML = `<span class="label">Preps</span>\n<span class="value">${spellPrep.preps}</span>`;
         html.find(`div.spellcasting > div.header > h3:contains("${spellPrep.name}")`).parent().parent().find("div.info")[0].insertAdjacentElement("beforeend", prepElement);
     }
-});
+}
 
 // Add custom "third pact" spell progression
-Hooks.once('init', () => {
+export function SpellcastingAddThirdPactProgression() {
     console.log('materia-dnd | Third-Pact: Registering third-pact spell progression type.');
     dnd5e.config.spellProgression[THIRD_PACT_ABBR] = THIRD_PACT_LABEL;
     console.log('materia-dnd | Third-Pact: Configuration setup complete.');
-});
+}
 
 // monkey-patch the prepareDerivedData function of the Actor5e type
-Hooks.once('ready', () => {
+export function AddThirdPactCaster() {
     console.log('materia-dnd | Third-Pact: Patching prepareDerivedData function of Actor5e datatype.');
     const origFunc = dnd5e.documents.Actor5e.prototype.prepareDerivedData;
     dnd5e.documents.Actor5e.prototype.prepareDerivedData = function() {
@@ -179,4 +179,4 @@ Hooks.once('ready', () => {
     console.log('materia-dnd | Third-Pact: Performing once-on-launch update of pact slots of all game actors.');
     refreshPactSlots();
     console.log('materia-dnd | Third-Pact: Patch setup complete.');
-});
+}

@@ -1,4 +1,4 @@
-Hooks.once("ready", () => {
+export function AddMateriaArmor() {
     console.log("materia-dnd | Armor: Adding custom armor and shield types.");
     dnd5e.config.armorIds.gambeson = 'Compendium.materia-dnd.items.Item.3mC7XVd9nDuogp91';
     dnd5e.config.armorIds.jerkin = 'Compendium.materia-dnd.items.Item.bKmiINDMl8LjgPfm';
@@ -10,4 +10,4 @@ Hooks.once("ready", () => {
     dnd5e.config.shieldIds.tower = 'Compendium.materia-dnd.items.Item.4SwPNdzTGgKSspED';
     console.log("materia-dnd | Armor: Added six armor types and two shield types.");
     console.log("materia-dnd | Armor: Completed setup.");
-});
+}

@@ -1,4 +1,4 @@
-Hooks.once("ready", () => {
+export function AddMateriaConditions() {
     console.log("materia-dnd | Conditions: Adding custom conditions and status effects.")
     // Conditions
     dnd5e.config.conditionTypes.dazed = { 'icon': 'modules/materia-dnd/icons/statuses/noun-dazed.svg', 'label': 'Dazed', reference: 'Compendium.materia-dnd.rules.JournalEntry.MpEv2KTNEY6lLelV.JournalEntryPage.Sc9jlItT38o8N70h'};
@@ -17,4 +17,4 @@ Hooks.once("ready", () => {
     foundry.utils.mergeObject(exh, CONFIG.DND5E.conditionTypes.exhaustion, { insertKeys: false });
 
     console.log("materia-dnd | Conditions: Completed setup.")
-});
+}
