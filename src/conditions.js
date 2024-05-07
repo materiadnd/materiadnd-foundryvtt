@@ -15,6 +15,12 @@ export function AddMateriaConditions() {
     CONFIG.DND5E.conditionTypes.exhaustion.reference = "Compendium.materia-dnd.rules.JournalEntry.MpEv2KTNEY6lLelV.JournalEntryPage.9XAWvL8gnCtdez6U";
     const exh = CONFIG.statusEffects.find(e => e.id === "exhaustion");
     foundry.utils.mergeObject(exh, CONFIG.DND5E.conditionTypes.exhaustion, { insertKeys: false });
+    console.log("materia-dnd | Conditions: Overwrote existing exhaustion with Materia version.");
+    // Overwriting prone
+    CONFIG.DND5E.conditionTypes.prone.reference = "Compendium.materia-dnd.rules.JournalEntry.MpEv2KTNEY6lLelV.JournalEntryPage.LaLO0fpw458OrsI6";
+    const prone = CONFIG.statusEffects.find( e => e.id === "prone" );
+    foundry.utils.mergeObject(prone, CONFIG.DND5E.conditionTypes.prone, { insertKeys: false });
+    console.log("materia-dnd | Conditions: Overwrote existing prone with Materia version.");
 
     console.log("materia-dnd | Conditions: Completed setup.")
-}
+});

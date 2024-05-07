@@ -28,4 +28,4 @@ function makeVulnerableToAllDamageTypes(actor) {
     for (const [dmgType, _] of Object.entries(CONFIG.DND5E.damageTypes)) {
         actor.system.traits.dv.value.add(dmgType)
     }
-}
+});
