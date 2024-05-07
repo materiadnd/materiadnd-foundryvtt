@@ -22,5 +22,5 @@ export function AddMateriaConditions() {
     foundry.utils.mergeObject(prone, CONFIG.DND5E.conditionTypes.prone, { insertKeys: false });
     console.log("materia-dnd | Conditions: Overwrote existing prone with Materia version.");
 
-    console.log("materia-dnd | Conditions: Completed setup.")
-});
+    console.log("materia-dnd | Conditions: Completed setup.");
+}
