@@ -18,22 +18,22 @@ function getItemSource(actor, itemSourceType) {
 }
 
 // When a user connects, we see if they have a PC and update theirs
-Hooks.on("userConnected", (user, b) => {
+export function ItemUseUserConnectedHandler(user, b) {
     if (user._source?.character !== null) {
         updateActorItemUses(game.actors.get(user._source.character));
     }
-});
+}
 
 // When a user gets updated (which can include updating your PC), update their PC
-Hooks.on("updateUser", (user, updates, diff, uid) => {
+export function ItemUseUpdateUserHandler(user, updates, diff, uid) { 
     if (user._source?.character !== null) {
         updateActorItemUses(game.actors.get(user._source.character));
     }
-});
+}
 
 // When an item gets created (leveling, manually dropping things, etc.)
-Hooks.on("createItem", (item, flags, itemId) => {
+export function ItemUseCreateIemHandler(item, flags, itemId) {
     if (flags.isAdvancement && item.parent !== null ) {
         updateActorItemUses(item.parent);
     }
-});
+}
