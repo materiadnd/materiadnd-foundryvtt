@@ -1,19 +1,19 @@
 {
-  "folder": "aBHHBY9AeS5fhtcn",
-  "name": "Battlecaster",
+  "folder": "79akmpD5nWDdYM6C",
+  "name": "Unarmed Strike*",
   "type": "feat",
-  "_id": "XlDS5IvS3xz4Y3uP",
-  "img": "icons/magic/light/torch-fire-orange.webp",
+  "_id": "kenCgQtPgV7G4HGH",
+  "img": "icons/skills/melee/unarmed-punch-fist-white.webp",
   "system": {
     "description": {
-      "value": "<p>When a hostile creature's movement provokes an opportunity attack from you, you can use your reaction to cast a spell at the creature, rather than making an opportunity attack. The spell must have a casting time of 1 action and must target only that creature.</p>",
+      "value": "<blockquote><p><strong>Upon receiving this feature, you can choose to change the \"Ability Modifier\" in the \"Feature Attack\" section of the Details tab to Dexterity if you wish to use that in place of Strength.</strong></p></blockquote>",
       "chat": ""
     },
     "source": {},
     "activation": {
-      "type": "reaction",
+      "type": "action",
       "cost": 1,
-      "condition": "a hostile creature's movement provokes an opportunity attack from you"
+      "condition": ""
     },
     "duration": {
       "value": "",
@@ -22,16 +22,16 @@
     "cover": null,
     "crewed": false,
     "target": {
-      "value": null,
+      "value": 1,
       "width": null,
       "units": "",
       "type": "creature",
       "prompt": true
     },
     "range": {
-      "value": null,
+      "value": 5,
       "long": null,
-      "units": "spec"
+      "units": "ft"
     },
     "uses": {
       "value": null,
@@ -46,16 +46,24 @@
       "amount": null,
       "scale": false
     },
-    "ability": null,
-    "actionType": "",
-    "attackBonus": "",
+    "ability": "str",
+    "actionType": "mwak",
+    "attack": {
+      "bonus": "",
+      "flat": false
+    },
     "chatFlavor": "",
     "critical": {
       "threshold": null,
       "damage": ""
     },
     "damage": {
-      "parts": [],
+      "parts": [
+        [
+          "@scale.monk.martial-arts-die",
+          "bludgeoning"
+        ]
+      ],
       "versatile": ""
     },
     "formula": "",
@@ -64,30 +72,31 @@
       "dc": null,
       "scaling": "spell"
     },
+    "summons": null,
     "type": {
-      "value": "feat",
+      "value": "class",
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Ability to cast at least one spell",
+    "requirements": "Monk 1",
     "recharge": {
       "value": null,
       "charged": false
     }
   },
   "effects": [],
-  "flags": {},
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "11.315",
-    "createdTime": 1707166925445,
-    "modifiedTime": 1708360207071,
-    "lastModifiedBy": "dnd5mbuilder0000"
-  },
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!XlDS5IvS3xz4Y3uP"
+  "flags": {},
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "3.1.2",
+    "coreVersion": "11.315",
+    "createdTime": 1715130002541,
+    "modifiedTime": 1715130088011,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_key": "!items!kenCgQtPgV7G4HGH"
 }
