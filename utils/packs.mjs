@@ -120,7 +120,7 @@ function cleanPackEntry(data, { clearSourceId=true, ownership=0 }={}) {
  * @returns {string}    The cleaned string.
  */
 function cleanString(str) {
-  return str.replace(/\u2060/gu, "").replace(/[‘']/gu, "'").replace(/[“”]/gu, '"');
+  return str.replace(/\u2060/gu, "").replace(/[‘’]/gu, "'").replace(/[“”]/gu, '"');
 }
 
 
