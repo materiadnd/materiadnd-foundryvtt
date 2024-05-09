@@ -5,6 +5,7 @@ import { ExhastionActiveEffectHandler, ExhaustionDamageHandler } from "./exhaust
 import { ItemUseCreateIemHandler, ItemUseUpdateUserHandler, ItemUseUserConnectedHandler } from "./item-use.js";
 import { Settings } from "./settings.js";
 import { SpellcastingRenderActorSheetHandler, AddThirdPactCaster, SpellcastingAddThirdPactProgression } from "./spellcasting-utils.js";
+import { UpdateTeleBonusFlag } from "./tele.js";
 import { AddMateriaWeapons } from "./weapons.js";
 import { WildShapeTransformActorHandler } from "./wild-shape.js";
 
@@ -61,5 +62,11 @@ Hooks.on("renderActorSheet5eCharacter2", (app, html, actor) => {
 Hooks.on("dnd5e.transformActor", (actor, target, d, txOptions, options) => {
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.WILD_SHAPE_TRANSFORM_HANDLER_ENABLED)) {
         WildShapeTransformActorHandler(actor, target, d, txOptions, options);
+    }
+});
+
+Hooks.on("updateItem", (item, flags, diff, id) => {
+    if (item.type == 'spell' && item.parent != null ) {
+        UpdateTeleBonusFlag(item.parent);
     }
 });
