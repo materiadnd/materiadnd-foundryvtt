@@ -1,3 +1,4 @@
+import { ItemRestoreApp } from "./apps/item-restore.js";
 import { AddMateriaArmor } from "./armor.js"
 import { AddMateriaConditions } from "./conditions.js";
 import { Constants } from "./constants.js";
@@ -68,5 +69,24 @@ Hooks.on("dnd5e.transformActor", (actor, target, d, txOptions, options) => {
 Hooks.on("updateItem", (item, flags, diff, id) => {
     if (item.type == 'spell' && item.parent != null ) {
         UpdateTeleBonusFlag(item.parent);
+    }
+});
+
+Hooks.on("renderItemSheet5e", async (app, html, item) => {
+    if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ENABLE_ITEM_RESTORE)) {
+        if(item.item?.actor != null && item.item?.actor?.type == "character" && item.item?.isOwner) {
+            var origItemId = await item.item?.getFlag('materia-dnd', 'original-item-id');
+            if (origItemId == null) { return; }
+            const buttonText = game.i18n.localize('MATERIA-DND.ui.item-restore.itemsheet-titlebar-button');
+            let openButton = $(`<a class="open-item-restore"><i class="fas fa-layer-group"></i> ${buttonText}</a>`);
+            openButton.click(async (event) => {
+                var itemRestoreApp = new ItemRestoreApp();
+                itemRestoreApp.setOriginalItemId(origItemId);
+                itemRestoreApp.render(true);
+            });
+            html.closest('.app').find('.open-item-restore').remove();
+            let titleElement = html.closest('.app').find('.window-title');
+            openButton.insertAfter(titleElement);
+        }
     }
 });
