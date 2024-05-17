@@ -35,10 +35,22 @@ export class ItemRestoreApp extends FormApplication {
     }
 
     activateListeners(html) {
-        // hook in stuff
+        html.find('.restore-item-button').click( async ev => await this._resetItem());
     }
 
-    setOriginalItemId(origItemId) {
+    setResetData(origItemId, actorId, itemId) {
         this.originalItemId = origItemId;
+        this.actorId = actorId;
+        this.itemId = itemId;
+    }
+
+    async _resetItem() {
+        // delete the item on the character sheet
+        let actor = game.actors.get(this.actorId);
+        let actorItem = actor.items.find( x => x._id == this.itemId );
+        actorItem.delete();
+        let origItem = await fromUuid(this.originalItemId);
+        await actor.createEmbeddedDocuments("Item", [origItem]);
+        await this.close();
     }
 }

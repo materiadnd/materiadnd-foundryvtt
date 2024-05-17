@@ -81,7 +81,7 @@ Hooks.on("renderItemSheet5e", async (app, html, item) => {
             let openButton = $(`<a class="open-item-restore"><i class="fas fa-layer-group"></i> ${buttonText}</a>`);
             openButton.click(async (event) => {
                 var itemRestoreApp = new ItemRestoreApp();
-                itemRestoreApp.setOriginalItemId(origItemId);
+                itemRestoreApp.setResetData(origItemId, item.item.actor._id, item.item._id);
                 itemRestoreApp.render(true);
             });
             html.closest('.app').find('.open-item-restore').remove();
