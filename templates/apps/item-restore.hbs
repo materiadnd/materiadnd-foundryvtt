@@ -7,6 +7,153 @@
         <p class="instruction-messages">If you wish to restore this item click the "Restore Item" button.</p>
     </div>-->
     <div class="buttons">
-        <p class="restore-item-button">Restore Item</p>
+        <p class="restore-item-button">Replace Entire Item</p>
+    </div>
+    <div class="item-diff">
+        <table>
+            <thead>
+                <td>Keep?</td>
+                <td>Field Name</td>
+                <td>{{existingItem.name}} on {{actor.name}}</td>
+                <td>Reference Item</td>
+            </thead>
+            <tbody>
+                <tr>
+                    <th></th>
+                    <th colspan="3">General Properties</th>
+                </tr>
+                {{#unless diff.name}}
+                <tr>
+                    <td><input type="checkbox" id="name" /></td>
+                    <td>Name</td>
+                    <td>{{ existingItem.name }}</td>
+                    <td>{{ originalItem.name }}</td>
+                </tr>
+                {{/unless}}
+                {{#unless diff.system.equipped }}
+                <tr>
+                    <td><input type="checkbox" id="system.equipped" /></td>
+                    <td>Equipped?</td>
+                    <td>{{ existingItem.system.equipped }}</td>
+                    <td>{{ originalItem.system.equipped }}</td>
+                </tr>
+                {{/unless}}
+                {{#unless diff.system.identified}}
+                <tr>
+                    <td><input type="checkbox" id="system.identified" /></td>
+                    <td>Identified?</td>
+                    <td>{{ existingItem.system.identified }}</td>
+                    <td>{{ originalItem.system.identified }}</td>
+                </tr>
+                {{/unless}}
+                {{#unless diff.system.rarity}}
+                <tr>
+                    <td><input type="checkbox" id="system.rarity" /></td>
+                    <td>Rarity</td>
+                    <td>{{ existingItem.system.rarity }}</td>
+                    <td>{{ originalItem.system.rarity }}</td>
+                </tr>
+                {{/unless}}
+                <tr>
+                    <th></th>
+                    <th colspan="3">Description</th>
+                </tr>
+                {{#unless diff.system.quantity}}
+                <tr>
+                    <td><input type="checkbox" id="system.quantity" /></td>
+                    <td>Quantity</td>
+                    <td>{{ existingItem.system.quantity }}</td>
+                    <td>{{ originalItem.system.quantity }}</td>
+                </tr>
+                {{/unless}}
+                {{#unless diff.system.weight}}
+                <tr>
+                    <td><input type="checkbox" id="system.weight" /></td>
+                    <td>Quantity</td>
+                    <td>{{ existingItem.system.weight }}</td>
+                    <td>{{ originalItem.system.weight }}</td>
+                </tr>
+                {{/unless}}
+                {{#unless diff.system.price.value}}
+                <tr>
+                    <td><input type="checkbox" id="system.price.value" /></td>
+                    <td>Price (value)</td>
+                    <td>{{ existingItem.system.price.value }}</td>
+                    <td>{{ originalItem.system.price.value }}</td>
+                </tr>
+                {{/unless}}
+                {{#unless diff.system.price.denomination}}
+                <tr>
+                    <td><input type="checkbox" id="system.price.denomination" /></td>
+                    <td>Price (denomination)</td>
+                    <td>{{ existingItem.system.price.denomination }}</td>
+                    <td>{{ originalItem.system.price.denomination }}</td>
+                </tr>
+                {{/unless}}
+                {{#unless diff.system.description.value}}
+                <tr>
+                    <td><input type="checkbox" id="system.description.value" /></td>
+                    <td>Description</td>
+                    <td>{{ existingItem.system.description.value }}</td>
+                    <td>{{ originalItem.system.description.value }}</td>
+                </tr>
+                {{/unless}}
+                {{#unless diff.system.unidentified.name}}
+                <tr>
+                    <td><input type="checkbox" id="system.unidentified.name" /></td>
+                    <td>Unidentified Name</td>
+                    <td>{{ existingItem.system.unidentified.name }}</td>
+                    <td>{{ originalItem.system.unidentified.name }}</td>
+                </tr>
+                {{/unless}}
+                {{#unless diff.system.unidentified.description}}
+                <tr>
+                    <td><input type="checkbox" id="system.unidentified.description" /></td>
+                    <td>Unidentified Description</td>
+                    <td>{{ existingItem.system.unidentified.description }}</td>
+                    <td>{{ originalItem.system.unidentified.description }}</td>
+                </tr>
+                {{/unless}}
+                {{#unless diff.system.description.chat}}
+                <tr>
+                    <td><input type="checkbox" id="system.description.chat" /></td>
+                    <td>Chat Description</td>
+                    <td>{{ existingItem.system.description.chat }}</td>
+                    <td>{{ originalItem.system.description.chat }}</td>
+                </tr>
+                {{/unless}}
+                <tr>
+                    <th></th>
+                    <th colspan="3">Details</th>
+                </tr>
+                {{#unless diff.system.type.value}}
+                <tr>
+                    <td><input type="checkbox" id="system.type.value" /></td>
+                    <td>Type</td>
+                    <td>{{renderType existingItem.system.type.value}}</td>
+                    <td>{{renderType originalItem.system.type.value}}</td>
+                </tr>
+                {{/unless}}
+                {{#unless diff.system.type.baseItem}}
+                <tr>
+                    <td><input type="checkbox" id="system.type.baseItem" /></td>
+                    <td>Base Item</td>
+                    <td>{{ existingItem.system.type.baseItem }}</td>
+                    <td>{{ originalItem.system.type.baseItem }}</td>
+                </tr>
+                {{/unless}}
+                {{#unless diff.system.attunement}}
+                <tr>
+                    <td><input type="checkbox" id="system.attunement" /></td>
+                    <td>Attunement</td>
+                    <td>{{renderAttunement existingItem.system.attunement}}</td>
+                    <td>{{renderAttunement originalItem.system.attunement}}</td>
+                </tr>
+                {{/unless}}
+            </tbody>
+        </table>
+    </div>
+    <div class="buttons">
+        <p class="restore-item-button">Keep Selected Fields and Update</p>
     </div>
 </div>
