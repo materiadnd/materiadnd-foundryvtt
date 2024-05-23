@@ -18,138 +18,74 @@
                 <td>Reference Item</td>
             </thead>
             <tbody>
-                <tr>
+                <tr class="diff-table-row">
                     <th></th>
                     <th colspan="3">General Properties</th>
                 </tr>
-                {{#unless diff.name}}
-                <tr>
-                    <td><input type="checkbox" id="name" /></td>
-                    <td>Name</td>
-                    <td>{{ existingItem.name }}</td>
-                    <td>{{ originalItem.name }}</td>
-                </tr>
-                {{/unless}}
-                {{#unless diff.system.equipped }}
-                <tr>
-                    <td><input type="checkbox" id="system.equipped" /></td>
-                    <td>Equipped?</td>
-                    <td>{{ existingItem.system.equipped }}</td>
-                    <td>{{ originalItem.system.equipped }}</td>
-                </tr>
-                {{/unless}}
-                {{#unless diff.system.identified}}
-                <tr>
-                    <td><input type="checkbox" id="system.identified" /></td>
-                    <td>Identified?</td>
-                    <td>{{ existingItem.system.identified }}</td>
-                    <td>{{ originalItem.system.identified }}</td>
-                </tr>
-                {{/unless}}
-                {{#unless diff.system.rarity}}
-                <tr>
-                    <td><input type="checkbox" id="system.rarity" /></td>
-                    <td>Rarity</td>
-                    <td>{{ existingItem.system.rarity }}</td>
-                    <td>{{ originalItem.system.rarity }}</td>
-                </tr>
-                {{/unless}}
-                <tr>
+                {{ diffrow diff "name" "Name" existingItem originalItem }}
+                {{ diffrow diff "system.equipped" "Equipped?" existingItem originalItem }}
+                {{ diffrow diff "system.identified" "Identified?" existingItem originalItem }}
+                {{ diffrow diff "system.rarity" "Rarity" existingItem originalItem }}
+                <tr class="diff-table-row">
                     <th></th>
                     <th colspan="3">Description</th>
                 </tr>
-                {{#unless diff.system.quantity}}
-                <tr>
-                    <td><input type="checkbox" id="system.quantity" /></td>
-                    <td>Quantity</td>
-                    <td>{{ existingItem.system.quantity }}</td>
-                    <td>{{ originalItem.system.quantity }}</td>
-                </tr>
-                {{/unless}}
-                {{#unless diff.system.weight}}
-                <tr>
-                    <td><input type="checkbox" id="system.weight" /></td>
-                    <td>Quantity</td>
-                    <td>{{ existingItem.system.weight }}</td>
-                    <td>{{ originalItem.system.weight }}</td>
-                </tr>
-                {{/unless}}
-                {{#unless diff.system.price.value}}
-                <tr>
-                    <td><input type="checkbox" id="system.price.value" /></td>
-                    <td>Price (value)</td>
-                    <td>{{ existingItem.system.price.value }}</td>
-                    <td>{{ originalItem.system.price.value }}</td>
-                </tr>
-                {{/unless}}
-                {{#unless diff.system.price.denomination}}
-                <tr>
-                    <td><input type="checkbox" id="system.price.denomination" /></td>
-                    <td>Price (denomination)</td>
-                    <td>{{ existingItem.system.price.denomination }}</td>
-                    <td>{{ originalItem.system.price.denomination }}</td>
-                </tr>
-                {{/unless}}
-                {{#unless diff.system.description.value}}
-                <tr>
-                    <td><input type="checkbox" id="system.description.value" /></td>
-                    <td>Description</td>
-                    <td>{{ existingItem.system.description.value }}</td>
-                    <td>{{ originalItem.system.description.value }}</td>
-                </tr>
-                {{/unless}}
-                {{#unless diff.system.unidentified.name}}
-                <tr>
-                    <td><input type="checkbox" id="system.unidentified.name" /></td>
-                    <td>Unidentified Name</td>
-                    <td>{{ existingItem.system.unidentified.name }}</td>
-                    <td>{{ originalItem.system.unidentified.name }}</td>
-                </tr>
-                {{/unless}}
-                {{#unless diff.system.unidentified.description}}
-                <tr>
-                    <td><input type="checkbox" id="system.unidentified.description" /></td>
-                    <td>Unidentified Description</td>
-                    <td>{{ existingItem.system.unidentified.description }}</td>
-                    <td>{{ originalItem.system.unidentified.description }}</td>
-                </tr>
-                {{/unless}}
-                {{#unless diff.system.description.chat}}
-                <tr>
-                    <td><input type="checkbox" id="system.description.chat" /></td>
-                    <td>Chat Description</td>
-                    <td>{{ existingItem.system.description.chat }}</td>
-                    <td>{{ originalItem.system.description.chat }}</td>
-                </tr>
-                {{/unless}}
-                <tr>
+                {{ diffrow diff "system.quantity" "Quantity" existingItem originalItem }}
+                {{ diffrow diff "system.weight" "Weight" existingItem originalItem }}
+                {{ diffrow diff "system.price.value" "Price (value)" existingItem originalItem }}
+                {{ diffrow diff "system.price.denomination" "Price (denomination)" existingItem originalItem }}
+                {{ diffrow diff "system.description.value" "Description" existingItem originalItem }}
+                <!-- {{ diffrow diff "system.unidentified.name" "Unidentified Name" existingItem originalItem }}
+                {{ diffrow diff "system.unidentified.description" "Unidentified Description" existingItem originalItem }} -->
+                {{ diffrow diff "system.description.chat" "Chat Description" existingItem originalItem }}
+                <tr class="diff-table-row">
                     <th></th>
                     <th colspan="3">Details</th>
                 </tr>
-                {{#unless diff.system.type.value}}
-                <tr>
-                    <td><input type="checkbox" id="system.type.value" /></td>
-                    <td>Type</td>
-                    <td>{{renderType existingItem.system.type.value}}</td>
-                    <td>{{renderType originalItem.system.type.value}}</td>
+                {{ diffrow diff "system.type.value" "Type" existingItem originalItem }}
+                {{ diffrow diff "system.type.baseItem" "Base Item" existingItem originalItem }}
+                {{ diffrow diff "system.attunement" "Attunement" existingItem originalItem }}
+                <!-- properties -->
+                <tr class="diff-table-row">
+                    <th></th>
+                    <th colspan="3">Details (Usage)</th>
                 </tr>
-                {{/unless}}
-                {{#unless diff.system.type.baseItem}}
-                <tr>
-                    <td><input type="checkbox" id="system.type.baseItem" /></td>
-                    <td>Base Item</td>
-                    <td>{{ existingItem.system.type.baseItem }}</td>
-                    <td>{{ originalItem.system.type.baseItem }}</td>
+                {{ diffrow diff "system.activation.cost" "Activation Cost" existingItem originalItem }}
+                {{ diffrow diff "system.activation.type" "Activation Type" existingItem originalItem }}
+                {{ diffrow diff "system.activation.condition" "Activation Condition" existingItem originalItem }}
+                {{ diffrow diff "system.target.value" "Target (Qty)" existingItem originalItem }}
+                {{ diffrow diff "system.target.units" "Target (Units)" existingItem originalItem }}
+                {{ diffrow diff "system.target.type" "Target (Type)" existingItem originalItem }}
+                {{ diffrow diff "system.range.value" "Range (Normal)" existingItem originalItem }}
+                {{ diffrow diff "system.range.long" "Range (Long)" existingItem originalItem }}
+                {{ diffrow diff "system.range.units" "Range (Units)" existingItem originalItem }}
+                {{ diffrow diff "system.duration.value" "Duration (#)" existingItem originalItem }}
+                {{ diffrow diff "system.duration.units" "Duration (Units)" existingItem originalItem }}
+                {{ diffrow diff "system.uses.value" "Uses (#)" existingItem originalItem }}
+                {{ diffrow diff "system.uses.max" "Uses (Max)" existingItem originalItem }}
+                {{ diffrow diff "system.uses.per" "Uses (Per)" existingItem originalItem }}
+                {{ diffrow diff "system.uses.recovery" "Recovery Formula" existingItem originalItem }}
+                {{ diffrow diff "system.uses.autoDestroy" "Destroy When Empty?" existingItem originalItem }}
+                {{ diffrow diff "system.consume.amount" "Resource Consumption (Amount)" existingItem originalItem }}
+                {{ diffrow diff "system.consume.type" "Resource Consumption (Type)" existingItem originalItem }}
+                {{ diffrow diff "system.consume.target" "Resource Consumption (Target)" existingItem originalItem }}
+                <tr class="diff-table-row">
+                    <th></th>
+                    <th colspan="3">Details (Attack)</th>
                 </tr>
-                {{/unless}}
-                {{#unless diff.system.attunement}}
-                <tr>
-                    <td><input type="checkbox" id="system.attunement" /></td>
-                    <td>Attunement</td>
-                    <td>{{renderAttunement existingItem.system.attunement}}</td>
-                    <td>{{renderAttunement originalItem.system.attunement}}</td>
-                </tr>
-                {{/unless}}
+                {{ diffrow diff "system.actionType" "Action Type" existingItem originalItem }}
+                {{ diffrow diff "system.ability" "Ability Modifier" existingItem originalItem }}
+                {{ diffrow diff "system.attack.bonus" "Attack Roll Bonus" existingItem originalItem }}
+                {{ diffrow diff "system.attack.flat" "Flat Bonus" existingItem originalItem }}
+                {{ diffrow diff "system.critical.threshold" "Critical Hit Threshold" existingItem originalItem }}
+                {{ diffrow diff "system.critical.damage" "Extra Critical Hit Damage" existingItem originalItem }}
+                <!-- damage parts -->
+                {{ diffrow diff "system.damagae.versatile" "Versatile Damage" existingItem originalItem }}
+                {{ diffrow diff "system.formula" "Other Formula" existingItem originalItem }}
+                {{ diffrow diff "system.save.ability" "Saving Throw (Ability)" existingItem originalItem }}
+                {{ diffrow diff "system.save.dc" "Saving Throw (DC)" existingItem originalItem }}
+                {{ diffrow diff "system.save.scaling" "Saving Throw (Scaling)" existingItem originalItem }}
+                {{ diffrow diff "system.chatFlavor" "Chat Message Flavor" existingItem originalItem }}
             </tbody>
         </table>
     </div>

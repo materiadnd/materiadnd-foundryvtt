@@ -1,5 +1,18 @@
 import { Constants } from "../constants.js";
 
+function fetchFromObject(obj, prop) {
+    if(typeof obj === 'undefined') {
+        return false;
+    }
+
+    var _index = prop.indexOf('.')
+    if(_index > -1) {
+        return fetchFromObject(obj[prop.substring(0, _index)], prop.substr(_index + 1));
+    }
+
+    return obj[prop];
+}
+
 /**
  * Compares two Item5e's for a specific set of different fields and produces an
  * object with similar field structure to an Item5e that notes which fields are
@@ -126,6 +139,30 @@ function Item5eCompare(itemBeingReplaced, itemReplacing) {
     return diffObject;
 }
 
+function renderBaseType(itemType) {
+    switch (itemType) {
+        case 'improv':
+            return "Improvised";
+        case 'martialM':
+            return "Martial Melee";
+        case 'martialR':
+            return "Martial Ranged";
+        case 'natural':
+            return "Natural";
+        case 'siege':
+            return "Siege";
+        case 'simpleM':
+            return "Simple Melee";
+        case 'simpleR':
+            return "Simple Ranged";
+        default:
+            return itemType;
+    }
+}
+function renderAttunement(attunement) {
+    return CONFIG.DND5E.attunements[attunement];
+};
+
 export class ItemRestoreApp extends FormApplication {
     constructor() {
         super();
@@ -135,10 +172,11 @@ export class ItemRestoreApp extends FormApplication {
     static get defaultOptions() {
         const defaults = super.defaultOptions;
         const overrides = {
-            height: 'auto',
+            height: '1080px',
             width: 'auto',
             template: Constants.TEMPLATES.ITEM_RESTORE,
             title: 'Item Restore',
+            resizable: true,
             userId: game.userId,
         };
         const mergedOptions = foundry.utils.mergeObject(defaults, overrides);
@@ -146,33 +184,27 @@ export class ItemRestoreApp extends FormApplication {
     }
 
     async _initialize() {
-        // loadTemplates()
+        loadTemplates({
+            diffrow: Constants.TEMPLATES.DIFF_ROW_PARTIAL
+        });
 
         // set properties
 
         // register Handlebars helpers
-        // Handlebars.registerHelper(name, (arg) => {} 
-        Handlebars.registerHelper("renderType", (itemType) => {
-            switch (itemType) {
-                case 'improv':
-                    return "Improvised";
-                case 'martialM':
-                    return "Martial Melee";
-                case 'martialR':
-                    return "Martial Ranged";
-                case 'natural':
-                    return "Natural";
-                case 'siege':
-                    return "Siege";
-                case 'simpleM':
-                    return "Simple Melee";
-                case 'simpleR':
-                    return "Simple Ranged";
-                default:
-                    return itemType;
+        Handlebars.registerHelper('diffrow', function(diff, key, desc, originalItem, existingItem) {
+            if (!diff[key]) {
+                let originalItemProp = fetchFromObject(originalItem, key);
+                let existingItemProp = fetchFromObject(existingItem, key);
+                if (key == "system.type.value") {
+                    originalItemProp = renderBaseType(originalItemProp);
+                    existingItemProp = renderBaseType(existingItemProp);
+                } else if (key == "system.attunement") {
+                    originalItemProp = renderAttunement(originalItemProp);
+                    existingItemProp = renderAttunement(existingItemProp);
+                }
+                return new Handlebars.SafeString(`<tr class="diff-table-row">\n<td><input type="checkbox" id="${key}" /></td>\n<td>${desc}</td>\n<td>${existingItemProp}</td>\n<td>${originalItemProp}</td>\n</tr>\n`);
             }
         });
-        Handlebars.registerHelper("renderAttunement", (attunement) => CONFIG.DND5E.attunements[attunement]);
     }
 
     getData() {
