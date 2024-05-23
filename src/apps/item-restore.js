@@ -202,7 +202,7 @@ export class ItemRestoreApp extends FormApplication {
                     originalItemProp = renderAttunement(originalItemProp);
                     existingItemProp = renderAttunement(existingItemProp);
                 }
-                return new Handlebars.SafeString(`<tr class="diff-table-row">\n<td><input type="checkbox" id="${key}" /></td>\n<td>${desc}</td>\n<td>${existingItemProp}</td>\n<td>${originalItemProp}</td>\n</tr>\n`);
+                return new Handlebars.SafeString(`<tr class="diff-table-row" id="${key}-row">\n<td><input type="checkbox" class="diff-ckbox" id="${key}" /></td>\n<td>${desc}</td>\n<td id="${key}-existing">${existingItemProp}</td>\n<td id="${key}-orig">${originalItemProp}</td>\n</tr>\n`);
             }
         });
     }
@@ -219,6 +219,7 @@ export class ItemRestoreApp extends FormApplication {
 
     activateListeners(html) {
         html.find('.restore-item-button').click(async ev => await this._resetItem());
+        html.find('.diff-ckbox').change(ev => this._handleDiffCheckboxChange(ev));
     }
 
     async setResetData(origItemId, actorId, itemId) {
@@ -239,5 +240,18 @@ export class ItemRestoreApp extends FormApplication {
         let origItem = await fromUuid(this.originalItemId);
         await actor.createEmbeddedDocuments("Item", [origItem]);
         await this.close();
+    }
+
+    _handleDiffCheckboxChange(ev) {
+        if (ev.target.checked) {
+            // set orig to exclude
+            document.getElementById(`${ev.target.id}-orig`).classList.add('diff-exclude');
+            // set existing to keep
+            document.getElementById(`${ev.target.id}-existing`).classList.add('diff-keep');
+        } else {
+            // clear all diff classes
+            document.getElementById(`${ev.target.id}-orig`).classList.remove('diff-exclude');
+            document.getElementById(`${ev.target.id}-existing`).classList.remove('diff-keep');
+        }
     }
 }
