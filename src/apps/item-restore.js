@@ -1,13 +1,15 @@
 import { Constants } from "../constants.js";
 
 function fetchFromObject(obj, prop) {
-    if(typeof obj === 'undefined') {
+    if (typeof obj === 'undefined') {
         return false;
     }
 
     var _index = prop.indexOf('.')
-    if(_index > -1) {
-        return fetchFromObject(obj[prop.substring(0, _index)], prop.substr(_index + 1));
+    if (_index > -1) {
+        let first = prop.substring(0, _index);
+        let rest = prop.substr(_index + 1);
+        return fetchFromObject(obj[first], rest);
     }
 
     return obj[prop];
@@ -82,8 +84,8 @@ function Item5eCompare(itemBeingReplaced, itemReplacing) {
         if (itemBeingReplaced.system?.range?.units != null || itemReplacing.system?.range?.units != null) {
             diffObject.system.range = {};
             diffObject.system.range.units = itemBeingReplaced.system?.range?.units == itemReplacing.system?.range?.units;
-            diffObject.system.range.value = itemBeingReplaced.system?.range?.value == itemReplacing.system?.range?.units;
-            diffObject.system.range.long = itemBeingReplaced.system?.range?.long == itemReplacing.system?.range?.units;
+            diffObject.system.range.value = itemBeingReplaced.system?.range?.value == itemReplacing.system?.range?.value;
+            diffObject.system.range.long = itemBeingReplaced.system?.range?.long == itemReplacing.system?.range?.long;
         }
         if (itemBeingReplaced.system?.duration?.units != null || itemReplacing.system?.duration?.units != null) {
             diffObject.system.duration = {};
@@ -184,15 +186,13 @@ export class ItemRestoreApp extends FormApplication {
     }
 
     async _initialize() {
-        loadTemplates({
-            diffrow: Constants.TEMPLATES.DIFF_ROW_PARTIAL
-        });
+        // loadTemplates();
 
         // set properties
 
         // register Handlebars helpers
-        Handlebars.registerHelper('diffrow', function(key, desc) {
-            if (!this.diff[key]) {
+        Handlebars.registerHelper('diffrow', function (key, desc) {
+            if (!fetchFromObject(this.diff, key)) {
                 let originalItemProp = fetchFromObject(this.originalItem, key);
                 let existingItemProp = fetchFromObject(this.existingItem, key);
                 if (key == "system.type.value") {
@@ -202,7 +202,7 @@ export class ItemRestoreApp extends FormApplication {
                     originalItemProp = renderAttunement(originalItemProp);
                     existingItemProp = renderAttunement(existingItemProp);
                 }
-                return new Handlebars.SafeString(`<tr class="diff-table-row" id="${key}-row">\n<td><input type="checkbox" class="diff-ckbox" id="${key}" /></td>\n<td>${desc}</td>\n<td id="${key}-existing">${existingItemProp}</td>\n<td id="${key}-orig">${originalItemProp}</td>\n</tr>\n`);
+                return new Handlebars.SafeString(`<tr class="diff-table-row" id="${key}-row">\n<td><input type="checkbox" class="diff-ckbox" id="${key}" /></td>\n<td>${desc}</td>\n<td class="diff-exclude" id="${key}-existing">${existingItemProp}</td>\n<td class="diff-keep" id="${key}-orig">${originalItemProp}</td>\n</tr>\n`);
             }
         });
     }
@@ -219,6 +219,7 @@ export class ItemRestoreApp extends FormApplication {
 
     activateListeners(html) {
         html.find('.restore-item-button').click(async ev => await this._resetItem());
+        html.find('.update-item-button').click(async ev => this._updateItem(html));
         html.find('.diff-ckbox').change(ev => this._handleDiffCheckboxChange(ev));
     }
 
@@ -242,16 +243,37 @@ export class ItemRestoreApp extends FormApplication {
         await this.close();
     }
 
+    async _updateItem(html) {
+        // get the fields that are to be kept and their values
+        let diffCheckboxes = html.find('.diff-cbox');
+        debugger;
+        // build an "update" document that will be applied to the reference item
+        // delete the existing item on the char sheet
+        let actor = game.actors.get(this.actorId);
+        let actorItem = actor.items.find(x => x._id == this.itemId);
+        actorItem.delete();
+        // add the reference item
+        let origItem = await fromUuid(this.originalItemId);
+        await actor.createEmbeddedDocuments("Item", [origItem]);
+        // update it
+        await this.close();
+    }
+
     _handleDiffCheckboxChange(ev) {
         if (ev.target.checked) {
             // set orig to exclude
             document.getElementById(`${ev.target.id}-orig`).classList.add('diff-exclude');
+            document.getElementById(`${ev.target.id}-orig`).classList.remove('diff-keep');
             // set existing to keep
             document.getElementById(`${ev.target.id}-existing`).classList.add('diff-keep');
+            document.getElementById(`${ev.target.id}-existing`).classList.remove('diff-exclude');
         } else {
-            // clear all diff classes
+            // set orig to keep
             document.getElementById(`${ev.target.id}-orig`).classList.remove('diff-exclude');
+            document.getElementById(`${ev.target.id}-orig`).classList.add('diff-keep');
+            // set existing to exclude
             document.getElementById(`${ev.target.id}-existing`).classList.remove('diff-keep');
+            document.getElementById(`${ev.target.id}-existing`).classList.add('diff-exclude');
         }
     }
 }
