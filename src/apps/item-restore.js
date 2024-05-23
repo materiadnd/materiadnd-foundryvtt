@@ -191,10 +191,10 @@ export class ItemRestoreApp extends FormApplication {
         // set properties
 
         // register Handlebars helpers
-        Handlebars.registerHelper('diffrow', function(diff, key, desc, originalItem, existingItem) {
-            if (!diff[key]) {
-                let originalItemProp = fetchFromObject(originalItem, key);
-                let existingItemProp = fetchFromObject(existingItem, key);
+        Handlebars.registerHelper('diffrow', function(key, desc) {
+            if (!this.diff[key]) {
+                let originalItemProp = fetchFromObject(this.originalItem, key);
+                let existingItemProp = fetchFromObject(this.existingItem, key);
                 if (key == "system.type.value") {
                     originalItemProp = renderBaseType(originalItemProp);
                     existingItemProp = renderBaseType(existingItemProp);
