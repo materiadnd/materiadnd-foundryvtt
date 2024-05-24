@@ -26,7 +26,7 @@ function fetchFromObject(obj, prop) {
  * 
  * @param {Item5e} itemBeingReplaced 
  * @param {Item5e} itemReplacing 
- * @returns {object}
+ * @returns {object} // a diff object that is true if the two objects are the same at the same property
  */
 function Item5eCompare(itemBeingReplaced, itemReplacing) {
     // we only are specifically looking for some attributes
