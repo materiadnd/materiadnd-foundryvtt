@@ -74,7 +74,7 @@ const sectionFields = [
             { "field": "system.attack.flat", "label": "Flat Bonus" },
             { "field": "system.critical.threshold", "label": "Critical Hit Threshold" },
             { "field": "system.critical.damage", "label": "Extra Critical Hit Damage" },
-            //"system.damage.parts" // need to do?
+            { "field": "system.damage.parts", "label": "Damage Formulas", "renderFunc": renderDamageParts },
             { "field": "system.damage.versatile", "label": "Versatile Damage" },
             { "field": "system.formula", "label": "Other Formula" },
             { "field": "system.save.ability", "label": "Saving Throw" },
@@ -157,6 +157,9 @@ function renderActionType(actionType) {
 }
 function renderImage(imgUrl) {
     return `<img style="max-width: 100px; height: 100px;" src="${imgUrl}"/>`;
+}
+function renderDamageParts(dmgParts) {
+    return dmgParts;
 }
 
 
