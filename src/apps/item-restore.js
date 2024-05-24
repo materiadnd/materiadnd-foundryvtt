@@ -281,7 +281,6 @@ export class ItemRestoreApp extends FormApplication {
         let newItems = await actor.createEmbeddedDocuments("Item", [origItem]);
         let newItem = newItems[0];
         // update it
-        debugger;
         await newItem.update(update);
         await this.close();
     }
