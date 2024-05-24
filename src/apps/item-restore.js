@@ -234,7 +234,7 @@ export class ItemRestoreApp extends FormApplication {
 
     activateListeners(html) {
         html.find('.restore-item-button').click(async ev => await this._resetItem());
-        html.find('.update-item-button').click(async ev => this._updateItem(html));
+        html.find('.update-item-button').click(async ev => await this._updateItem(html));
         html.find('.diff-ckbox').change(ev => this._handleDiffCheckboxChange(ev));
     }
 
@@ -260,17 +260,29 @@ export class ItemRestoreApp extends FormApplication {
 
     async _updateItem(html) {
         // get the fields that are to be kept and their values
-        let diffCheckboxes = html.find('.diff-cbox');
-        debugger;
+        let propsToKeep = [];
+        let diffCheckboxes = document.querySelectorAll('.diff-ckbox');
+        diffCheckboxes.forEach((curVal, curIdx, listObj) => {
+            if (curVal.checked) {
+                propsToKeep.push(curVal.id);
+            }
+        });
         // build an "update" document that will be applied to the reference item
+        let update = {};
+        for (const prop of propsToKeep) {
+            update[prop] = fetchFromObject(this.existingItem, prop);
+        }
         // delete the existing item on the char sheet
         let actor = game.actors.get(this.actorId);
         let actorItem = actor.items.find(x => x._id == this.itemId);
         actorItem.delete();
         // add the reference item
         let origItem = await fromUuid(this.originalItemId);
-        await actor.createEmbeddedDocuments("Item", [origItem]);
+        let newItems = await actor.createEmbeddedDocuments("Item", [origItem]);
+        let newItem = newItems[0];
         // update it
+        debugger;
+        await newItem.update(update);
         await this.close();
     }
 
