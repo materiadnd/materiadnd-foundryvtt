@@ -5,7 +5,7 @@ const sectionFields = [
         "section": "General",
         "fields": [
             { "field": "name", "label": "Name" },
-            { "field": "img", "label": "Image" }, //"renderFunc": renderImage },
+            { "field": "img", "label": "Image", "renderFunc": renderImage },
             { "field": "system.equipped", "label": "Equipped?" },
             { "field": "system.identified", "label": "Identified?" },
             { "field": "system.rarity", "label": "Rarity" },
@@ -128,8 +128,7 @@ function getDiffFields(existingItem, referenceItem, sectionFields) {
                     existingItemValue != undefined && referenceItemValue != undefined &&
                     existingItemValue != referenceItemValue) {
                         if ('renderFunc' in fieldEntry) {
-                            let renderFunc = fieldEntry['renderFunc'];
-                            fieldDiffs.push({ "field": fieldEntry['field'], "label": fieldEntry['label'], "existing": renderFunc(existingItemValue), "reference": renderFunc(referenceItemValue) });
+                            fieldDiffs.push({ "field": fieldEntry['field'], "label": fieldEntry['label'], "existing": existingItemValue, "reference": referenceItemValue, "renderFunc": fieldEntry['renderFunc'] });
                         } else {
                             fieldDiffs.push({ "field": fieldEntry['field'], "label": fieldEntry['label'], "existing": existingItemValue, "reference": referenceItemValue });
                         }
@@ -156,10 +155,10 @@ function renderActivationType(activationType) {
 function renderActionType(actionType) {
     return CONFIG.DND5E.itemActionTypes[actionType];
 }
+function renderImage(imgUrl) {
+    return `<img style="max-width: 100px; height: 100px;" src="${imgUrl}"/>`;
+}
 
-// function renderImage(imgUrl) {
-//     return Handlebars.SafeString(`<img src="${imgUrl}"/>`);
-// }
 
 export class ItemRestoreApp extends FormApplication {
     constructor() {
@@ -187,6 +186,9 @@ export class ItemRestoreApp extends FormApplication {
         // set properties
 
         // register Handlebars helpers
+        Handlebars.registerHelper("render", (item, renderFunc) => {
+            return renderFunc(item);
+        });
     }
 
     getData() {
@@ -202,7 +204,7 @@ export class ItemRestoreApp extends FormApplication {
     activateListeners(html) {
         html.find('.restore-item-button').click(async ev => await this._resetItem());
         html.find('.update-item-button').click(async ev => await this._updateItem(html));
-        html.find('.diff-ckbox').change(ev => this._handleDiffCheckboxChange(ev));
+        html.find('.diff-ckbox').change(ev => this._handleDiffCheckboxChange(html, ev));
     }
 
     async setResetData(origItemId, actorId, itemId) {
@@ -229,11 +231,14 @@ export class ItemRestoreApp extends FormApplication {
         // get the fields that are to be kept and their values
         let propsToKeep = [];
         let diffCheckboxes = document.querySelectorAll('.diff-ckbox');
+        let anyChecked = false;
         diffCheckboxes.forEach((curVal, curIdx, listObj) => {
             if (curVal.checked) {
+                anyChecked = true;
                 propsToKeep.push(curVal.id);
             }
         });
+        if (!anyChecked) { return; }  // the button should be disabled
         // build an "update" document that will be applied to the reference item
         let update = {};
         for (const prop of propsToKeep) {
@@ -252,7 +257,7 @@ export class ItemRestoreApp extends FormApplication {
         await this.close();
     }
 
-    _handleDiffCheckboxChange(ev) {
+    _handleDiffCheckboxChange(html, ev) {
         if (ev.target.checked) {
             // set orig to exclude
             document.getElementById(`${ev.target.id}-orig`).classList.add('diff-exclude');
@@ -267,6 +272,21 @@ export class ItemRestoreApp extends FormApplication {
             // set existing to exclude
             document.getElementById(`${ev.target.id}-existing`).classList.remove('diff-keep');
             document.getElementById(`${ev.target.id}-existing`).classList.add('diff-exclude');
+        }
+        // enable update item button if any checkboxes are checked
+        let diffCheckboxes = document.querySelectorAll('.diff-ckbox');
+        let anyChecked = false;
+        diffCheckboxes.forEach((curVal, curIdx, listObj) => {
+            if (curVal.checked) {
+                anyChecked = true;
+            }
+        });
+        if (anyChecked) {
+            document.getElementById("update-item-button").classList.remove("disabled");
+            document.getElementById("update-item-button").classList.add("enabled");
+        } else {
+            document.getElementById("update-item-button").classList.remove("enabled");
+            document.getElementById("update-item-button").classList.add("disabled");
         }
     }
 }

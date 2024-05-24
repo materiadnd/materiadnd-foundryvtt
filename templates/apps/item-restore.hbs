@@ -3,29 +3,34 @@
         <span class="application-title">Item Restore</span>
     </div>
     <div class="buttons">
-        <p class="restore-item-button">Replace Entire Item</p>
+        <p class="restore-item-button enabled">Replace Entire Item</p>
     </div>
     {{#if diff}}
     <div class="item-diff">
         <table>
-            <thead>
+            <thead class="diff-header">
                 <td>Keep?</td>
                 <td>Field Name</td>
-                <td>{{existingItem.name}} on {{actor.name}}</td>
-                <td>Reference Item</td>
+                <td class="item-header">{{existingItem.name}} on {{actor.name}}</td>
+                <td class="item-header">Reference Item</td>
             </thead>
             <tbody>
                 {{#each diff}}
-                    <tr class="diff-table-row">
+                    <tr class="diff-table-row diff-table-section-row">
                         <th></th>
-                        <th colspan="3">{{section}}</th>
+                        <th colspan="3">{{section}} Properties</th>
                     </tr>
                     {{#each fields}}
                     <tr class="diff-table-row" id="{{field}}-row">
                         <td><input type="checkbox" class="diff-ckbox" id="{{field}}" /></td>
                         <td>{{label}}</td>
+                        {{#if renderFunc }}
+                        <td class="diff-exclude" id="{{field}}-existing">{{{render existing renderFunc}}}</td>
+                        <td class="diff-keep" id="{{field}}-orig">{{{render reference renderFunc}}}</td>
+                        {{else}}
                         <td class="diff-exclude" id="{{field}}-existing">{{existing}}</td>
                         <td class="diff-keep" id="{{field}}-orig">{{reference}}</td>
+                        {{/if}}
                     </tr>
                     {{/each}}
                 {{/each}}
@@ -33,7 +38,7 @@
         </table>
     </div>
     <div class="buttons">
-        <p class="update-item-button">Keep Selected Fields and Update</p>
+        <p class="update-item-button disabled" id="update-item-button">Keep Selected Fields and Update</p>
     </div>
     {{else}}
     <div class="messages">
