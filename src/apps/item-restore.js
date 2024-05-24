@@ -5,13 +5,13 @@ const sectionFields = [
         "section": "General",
         "fields": [
             { "field": "name", "label": "Name" },
-            { "field": "img", "label": "Image" },
+            { "field": "img", "label": "Image" }, //"renderFunc": renderImage },
             { "field": "system.equipped", "label": "Equipped?" },
             { "field": "system.identified", "label": "Identified?" },
             { "field": "system.rarity", "label": "Rarity" },
             { "field": "system.quantity", "label": "Quantity" },
             { "field": "system.weight", "label": "Weight" },
-            { "field": "system.price.value", "label": "Price (value" },
+            { "field": "system.price.value", "label": "Price (value)" },
             { "field": "system.price.denomination", "label": "Price (denomination)" },
         ]
     },
@@ -25,69 +25,64 @@ const sectionFields = [
         ]
     },
     {
-        "section": "Details",
-        "sections": [
-            {
-                "section": "General",
-                "fields": [
-                    { "field": "system.type.value", "label": "Type" },
-                    { "field": "system.type.baseItem", "label": "Base Item" },
-                    // { "field": "system.type.label", "label": "Item Label" },
-                    { "field": "system.attunement", "label": "Attunement", "renderFunc": renderAttunement },
-                    //"system.proficient",
-                    //"system.properties",   // need to figure this out perhaps
-                    { "field": "system.magicalBonus", "label": "Magical Bonus" },
-                    { "field": "system.armor.value", "label": "Armor Class" },
-                    { "field": "system.armor.magicalBonus", "label": "Armor Magic Bonus" },
-                    { "field": "system.armor.dex", "label": "Max Dexterity Modifier" },
-                    { "field": "system.strength", "label": "Required Strength" },
-                ]
-            },
-            {
-                "section": "Usage",
-                "fields": [
-                    { "field": "system.activation.type", "label": "Activation Cost (units)" },
-                    { "field": "system.activation.cost", "label": "Activation Cost (#)" },
-                    { "field": "system.activation.condition", "label": "Activation Condition" },
-                    { "field": "system.target.type", "label": "Target (type)" },
-                    { "field": "system.target.value", "label": "Target (#)" },
-                    { "field": "system.target.units", "label": "Target (units)" },
-                    { "field": "system.range.units", "label": "Range (units)" },
-                    { "field": "system.range.value", "label": "Range (normal)" },
-                    { "field": "system.range.long", "label": "Range (long)" },
-                    { "field": "system.duration.units", "label": "Duration (units)" },
-                    { "field": "system.duration.value", "label": "Duration (#)" },
-                    { "field": "system.uses.per", "label": "Limited Uses (units)" },
-                    { "field": "system.uses.value", "label": "Limited Uses (#)" },
-                    { "field": "system.uses.max", "label": "Limited Uses (Max)" },
-                    { "field": "system.uses.recovery", "label": "Recovery Formula" },
-                    { "field": "system.uses.autoDestroy", "label": "Destroy on Empty" },
-                    { "field": "system.consume.type", "label": "Resource Consumption (units)" },
-                    { "field": "system.consume.target", "label": "Resource Consumption (target)" },
-                    { "field": "system.consume.amount", "label": "Resource Consumption (#)" },
-                    { "field": "system.consume.scales", "label": "Scales" },  //??
-                ]
-            },
-            {
-                "section": "Action",
-                "fields": [
-                    { "field": "system.actionType", "label": "Action Type" },
-                    { "field": "system.ability", "label": "Ability Modifier" },
-                    { "field": "system.attack.bonus", "label": "Attack Roll Bonus" },
-                    { "field": "system.attack.flat", "label": "Flat Bonus" },
-                    { "field": "system.critical.threshold", "label": "Critical Hit Threshold" },
-                    { "field": "system.critical.damage", "label": "Extra Critical Hit Damage" },
-                    //"system.damage.parts" // need to do?
-                    { "field": "system.damage.versatile", "label": "Versatile Damage" },
-                    { "field": "system.formula", "label": "Other Formula" },
-                    { "field": "system.save.ability", "label": "Saving Throw" },
-                    { "field": "system.save.dc", "label": "Saving Throw DC" },
-                    { "field": "system.save.scaling", "label": "Saving Throw Target" },
-                    { "field": "system.chatFlavor", "label": "Chat Message Flavor" },
-                ]
-            }
+        "section": "Details (General)",
+        "fields": [
+            { "field": "system.type.value", "label": "Type", "renderFunc": renderBaseType },
+            { "field": "system.type.baseItem", "label": "Base Item" },
+            // { "field": "system.type.label", "label": "Item Label" },
+            { "field": "system.attunement", "label": "Attunement", "renderFunc": renderAttunement },
+            //"system.proficient",
+            //"system.properties",   // need to figure this out perhaps
+            { "field": "system.magicalBonus", "label": "Magical Bonus" },
+            { "field": "system.armor.value", "label": "Armor Class" },
+            { "field": "system.armor.magicalBonus", "label": "Armor Magic Bonus" },
+            { "field": "system.armor.dex", "label": "Max Dexterity Modifier" },
+            { "field": "system.strength", "label": "Required Strength" },
         ]
-    }
+    },
+    {
+        "section": "Details (Usage)",
+        "fields": [
+            { "field": "system.activation.type", "label": "Activation Cost (units)", "renderFunc": renderActivationType },
+            { "field": "system.activation.cost", "label": "Activation Cost (#)" },
+            { "field": "system.activation.condition", "label": "Activation Condition" },
+            { "field": "system.target.type", "label": "Target (type)" },
+            { "field": "system.target.value", "label": "Target (#)" },
+            { "field": "system.target.units", "label": "Target (units)" },
+            { "field": "system.range.units", "label": "Range (units)" },
+            { "field": "system.range.value", "label": "Range (normal)" },
+            { "field": "system.range.long", "label": "Range (long)" },
+            { "field": "system.duration.units", "label": "Duration (units)" },
+            { "field": "system.duration.value", "label": "Duration (#)" },
+            { "field": "system.uses.per", "label": "Limited Uses (units)" },
+            { "field": "system.uses.value", "label": "Limited Uses (#)" },
+            { "field": "system.uses.max", "label": "Limited Uses (Max)" },
+            { "field": "system.uses.recovery", "label": "Recovery Formula" },
+            { "field": "system.uses.autoDestroy", "label": "Destroy on Empty" },
+            { "field": "system.consume.type", "label": "Resource Consumption (units)" },
+            { "field": "system.consume.target", "label": "Resource Consumption (target)" },
+            { "field": "system.consume.amount", "label": "Resource Consumption (#)" },
+            { "field": "system.consume.scales", "label": "Scales" },  //??
+        ]
+    },
+    {
+        "section": "Details (Action)",
+        "fields": [
+            { "field": "system.actionType", "label": "Action Type", "renderFunc": renderActionType },
+            { "field": "system.ability", "label": "Ability Modifier" },
+            { "field": "system.attack.bonus", "label": "Attack Roll Bonus" },
+            { "field": "system.attack.flat", "label": "Flat Bonus" },
+            { "field": "system.critical.threshold", "label": "Critical Hit Threshold" },
+            { "field": "system.critical.damage", "label": "Extra Critical Hit Damage" },
+            //"system.damage.parts" // need to do?
+            { "field": "system.damage.versatile", "label": "Versatile Damage" },
+            { "field": "system.formula", "label": "Other Formula" },
+            { "field": "system.save.ability", "label": "Saving Throw" },
+            { "field": "system.save.dc", "label": "Saving Throw DC" },
+            { "field": "system.save.scaling", "label": "Saving Throw Target" },
+            { "field": "system.chatFlavor", "label": "Chat Message Flavor" },
+        ]
+    },
 ];
 
 function fetchFromObject(obj, prop) {
@@ -140,36 +135,31 @@ function getDiffFields(existingItem, referenceItem, sectionFields) {
                         }
                 }
             }
-            let sectionDiff = { "section": sectionDefinition["section"], "fields": fieldDiffs };
-            diffList.push(sectionDiff);
+            if (fieldDiffs.length > 0) {
+                let sectionDiff = { "section": sectionDefinition["section"], "fields": fieldDiffs };
+                diffList.push(sectionDiff);
+            }
         }
     }
     return diffList;
 }
 
 function renderBaseType(itemType) {
-    switch (itemType) {
-        case 'improv':
-            return "Improvised";
-        case 'martialM':
-            return "Martial Melee";
-        case 'martialR':
-            return "Martial Ranged";
-        case 'natural':
-            return "Natural";
-        case 'siege':
-            return "Siege";
-        case 'simpleM':
-            return "Simple Melee";
-        case 'simpleR':
-            return "Simple Ranged";
-        default:
-            return itemType;
-    }
+    return CONFIG.DND5E.weaponTypes[itemType];
 }
 function renderAttunement(attunement) {
     return CONFIG.DND5E.attunements[attunement];
-};
+}
+function renderActivationType(activationType) {
+    return CONFIG.DND5E.abilityActivationTypes[activationType];
+}
+function renderActionType(actionType) {
+    return CONFIG.DND5E.itemActionTypes[actionType];
+}
+
+// function renderImage(imgUrl) {
+//     return Handlebars.SafeString(`<img src="${imgUrl}"/>`);
+// }
 
 export class ItemRestoreApp extends FormApplication {
     constructor() {
@@ -197,21 +187,6 @@ export class ItemRestoreApp extends FormApplication {
         // set properties
 
         // register Handlebars helpers
-        Handlebars.registerHelper('diffrow', function (key, desc) {
-            let diffResult = fetchFromObject(this.diff, key);
-            if (diffResult != undefined && !diffResult) {
-                let originalItemProp = fetchFromObject(this.originalItem, key);
-                let existingItemProp = fetchFromObject(this.existingItem, key);
-                if (key == "system.type.value") {
-                    originalItemProp = renderBaseType(originalItemProp);
-                    existingItemProp = renderBaseType(existingItemProp);
-                } else if (key == "system.attunement") {
-                    originalItemProp = renderAttunement(originalItemProp);
-                    existingItemProp = renderAttunement(existingItemProp);
-                }
-                return new Handlebars.SafeString(`<tr class="diff-table-row" id="${key}-row">\n<td><input type="checkbox" class="diff-ckbox" id="${key}" /></td>\n<td>${desc}</td>\n<td class="diff-exclude" id="${key}-existing">${existingItemProp}</td>\n<td class="diff-keep" id="${key}-orig">${originalItemProp}</td>\n</tr>\n`);
-            }
-        });
     }
 
     getData() {
@@ -238,7 +213,6 @@ export class ItemRestoreApp extends FormApplication {
         this.existingItem = this.actor.items.find(x => x._id == this.itemId);
         this.originalItem = await fromUuid(origItemId);
         this.diff = getDiffFields(this.existingItem, this.originalItem, sectionFields);
-        debugger;
     }
 
     async _resetItem() {
