@@ -9,7 +9,11 @@ function fetchFromObject(obj, prop) {
     if (_index > -1) {
         let first = prop.substring(0, _index);
         let rest = prop.substr(_index + 1);
-        return fetchFromObject(obj[first], rest);
+        if (!obj.hasOwnProperty(first)) {
+            return undefined;
+        } else {
+            return fetchFromObject(obj[first], rest);
+        }
     }
 
     return obj[prop];
@@ -27,16 +31,11 @@ function fetchFromObject(obj, prop) {
 function Item5eCompare(itemBeingReplaced, itemReplacing) {
     // we only are specifically looking for some attributes
     diffObject = {
-        "system": {
-            "description": {},
-            "price": {},
-            "unidentified": {},
-            "type": {},
-            "armor": {},
-        }
-    };
-
+        "system": {}
+    }
+    
     diffObject.name = itemBeingReplaced.name == itemReplacing.name;
+    diffObject.img = itemBeingReplaced.img == itemReplacing.img;
     diffObject.system.equipped = itemBeingReplaced.system?.equipped == itemReplacing.system.equipped;
     diffObject.system.identified = itemBeingReplaced.system?.identified == itemReplacing.system?.identified;
     diffObject.system.rarity = itemBeingReplaced.system?.rarity == itemReplacing.system?.rarity;
@@ -44,27 +43,42 @@ function Item5eCompare(itemBeingReplaced, itemReplacing) {
     // Description Tab
     diffObject.system.quantity = itemBeingReplaced.system?.quantity == itemReplacing.system?.quantity;
     diffObject.system.weight = itemBeingReplaced.system?.weight == itemReplacing.system?.weight;
-    diffObject.system.price.value = itemBeingReplaced.system?.price?.value == itemReplacing.system?.price?.value;
-    diffObject.system.price.denomination = itemBeingReplaced.system?.price?.denomination == itemReplacing.system?.price?.denomination;
+    if (itemBeingReplaced.system?.price?.value != null || itemReplacing.system?.price?.value != null) {
+        diffObject.system.price = {};
+        diffObject.system.price.value = itemBeingReplaced.system?.price?.value == itemReplacing.system?.price?.value;
+        diffObject.system.price.denomination = itemBeingReplaced.system?.price?.denomination == itemReplacing.system?.price?.denomination;
+    }
 
-    diffObject.system.description.value = itemBeingReplaced.system?.description?.value == itemReplacing.system?.description?.value;
-    diffObject.system.unidentified.name = itemBeingReplaced.system?.unidentified?.name == itemReplacing.system?.unidentified?.name;
-    diffObject.system.unidentified.description = itemBeingReplaced.system?.unidentified?.description == itemReplacing.system?.unidentified?.description;
-    diffObject.system.description.chat = itemBeingReplaced.system?.description?.chat == itemReplacing?.system?.description?.chat;
+    if (itemBeingReplaced.system?.unidentified?.name != null || itemReplacing.system?.unidentified?.name != null) {
+        diffObject.system.unidentified = {};
+        diffObject.system.unidentified.name = itemBeingReplaced.system?.unidentified?.name == itemReplacing.system?.unidentified?.name;
+        diffObject.system.unidentified.description = itemBeingReplaced.system?.unidentified?.description == itemReplacing.system?.unidentified?.description;
+    }
+    if (itemBeingReplaced.system?.description?.value != null || itemReplacing.system?.description?.value != null) {
+        diffObject.system.description = {};
+        diffObject.system.description.value = itemBeingReplaced.system?.description?.value == itemReplacing.system?.description?.value;
+        diffObject.system.description.chat = itemBeingReplaced.system?.description?.chat == itemReplacing?.system?.description?.chat;
+    }
 
     // Details Tab
-    diffObject.system.type.value = itemBeingReplaced.system?.type?.value == itemReplacing.system?.type?.value;
-    diffObject.system.type.baseItem = itemBeingReplaced.system?.type?.baseItem == itemReplacing.system?.type?.baseItem;
-    diffObject.system.type.label = itemBeingReplaced.system?.type?.label == itemReplacing.system?.type?.label; // may be auto-populated, may want to remove
+    if (itemBeingReplaced.system?.type?.value != null || itemReplacing.system?.type?.value != null) {
+        diffObject.system.type = {};
+        diffObject.system.type.value = itemBeingReplaced.system?.type?.value == itemReplacing.system?.type?.value;
+        diffObject.system.type.baseItem = itemBeingReplaced.system?.type?.baseItem == itemReplacing.system?.type?.baseItem;
+        diffObject.system.type.label = itemBeingReplaced.system?.type?.label == itemReplacing.system?.type?.label; // may be auto-populated, may want to remove
+    }
 
     diffObject.system.attunement = itemBeingReplaced.system?.attunement == itemReplacing.system?.attunement;
     diffObject.system.proficient = itemBeingReplaced.system?.proficient == itemReplacing.system?.proficient;
     diffObject.system.properties = itemBeingReplaced.system?.properties == itemReplacing.system?.properties;
 
     diffObject.system.magicalBonus = itemBeingReplaced.system?.magicalBonus == itemReplacing.system?.magicalBonus;
-    diffObject.system.armor.value = itemBeingReplaced.system?.armor?.value == itemReplacing.system?.armor?.value;
-    diffObject.system.armor.magicalBonus = itemBeingReplaced.system?.armor?.magicalBonus == itemReplacing.system?.armor?.magicalBonus;
-    diffObject.system.armor.dex = itemBeingReplaced.system?.armor?.dex == itemReplacing.system?.armor?.dex;
+    if (itemBeingReplaced.system?.armor?.value != null || itemReplacing.system?.armor?.value != null) {
+        diffObject.system.armor = {};
+        diffObject.system.armor.value = itemBeingReplaced.system?.armor?.value == itemReplacing.system?.armor?.value;
+        diffObject.system.armor.magicalBonus = itemBeingReplaced.system?.armor?.magicalBonus == itemReplacing.system?.armor?.magicalBonus;
+        diffObject.system.armor.dex = itemBeingReplaced.system?.armor?.dex == itemReplacing.system?.armor?.dex;
+    }
     diffObject.system.strength = itemBeingReplaced.system?.strength == itemReplacing.system?.strength;
 
     // can skip Usage section entirely if neither have it
@@ -192,7 +206,8 @@ export class ItemRestoreApp extends FormApplication {
 
         // register Handlebars helpers
         Handlebars.registerHelper('diffrow', function (key, desc) {
-            if (!fetchFromObject(this.diff, key)) {
+            let diffResult = fetchFromObject(this.diff, key);
+            if (diffResult != undefined && !diffResult) {
                 let originalItemProp = fetchFromObject(this.originalItem, key);
                 let existingItemProp = fetchFromObject(this.existingItem, key);
                 if (key == "system.type.value") {
