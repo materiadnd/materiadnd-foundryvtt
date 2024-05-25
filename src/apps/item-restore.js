@@ -32,12 +32,20 @@ const sectionFields = [
             // { "field": "system.type.label", "label": "Item Label" },
             { "field": "system.attunement", "label": "Attunement", "renderFunc": renderAttunement },
             //"system.proficient",
-            //"system.properties",   // need to figure this out perhaps
+            { "field": "system.properties", "label": "Properties", "renderFunc": renderProperties },
             { "field": "system.magicalBonus", "label": "Magical Bonus" },
             { "field": "system.armor.value", "label": "Armor Class" },
             { "field": "system.armor.magicalBonus", "label": "Armor Magic Bonus" },
             { "field": "system.armor.dex", "label": "Max Dexterity Modifier" },
             { "field": "system.strength", "label": "Required Strength" },
+            { "field": "system.level", "label": "Spell Level"},
+            { "field": "system.materials.value", "label": "Spellcasting Materials" },
+            { "field": "system.materials.consumed", "label": "Materials Consumed?" },
+            { "field": "system.materials.cost", "label": "Materials Cost" },
+            { "field": "system.materials.supply" , "label": "Materials (#)" },
+            { "field": "system.preparation.mode", "label": "Spell Preparation Mode" },
+            { "field": "system.preparation.prepared", "label": "Prepared?" },
+            { "field": "system.school", "label": "Spell School", "renderFunc": renderSpellSchool },
         ]
     },
     {
@@ -83,11 +91,29 @@ const sectionFields = [
             { "field": "system.chatFlavor", "label": "Chat Message Flavor" },
         ]
     },
+    {
+        "section": "Summons",
+        "fields": [
+            { "field": "system.summons.profiles", "label": "Profiles", "renderFunc": renderSummonProfiles },
+            { "field": "system.summons.match.proficiency", "label": "Match Proficiency" },
+            { "field": "system.summons.bonuses.ac", "label": "Bonus Armor Class" },
+            { "field": "system.summons.bonuses.hp", "label": "Bonus Hit Points" },
+            { "field": "system.summons.match.attacks", "label": "Match Attacks" },
+            { "field": "system.summons.match.saves", "label": "Match Saves" },
+            { "field": "system.summons.bonuses.attackDamage", "label": "Bonus Attack Damage" },
+            { "field": "system.summons.bonuses.saveDamage", "label": "Bonus Save Damage" },
+            { "field": "system.summons.bonuses.healing", "label": "Bonus Healing" },
+        ]
+    }
 ];
+
 
 function fetchFromObject(obj, prop) {
     if (typeof obj === 'undefined') {
         return false;
+    }
+    if (obj == null) {
+        return null;
     }
 
     var _index = prop.indexOf('.')
@@ -101,20 +127,23 @@ function fetchFromObject(obj, prop) {
         }
     }
 
-    return obj[prop];
+    let retVal = obj[prop];
+    if (retVal instanceof Set) {
+        // Sets do weird stuff but Array coercion works fine
+        return Array.from(retVal);
+    } else {
+        return retVal;
+    }
 }
 
 function getDiffFields(existingItem, referenceItem, sectionFields) {
     // pseudocode:
     // iterate over sections in field list:
-    //   if section has its own sections:
-    //     recurse, and assign results to this section
-    //   else:
-    //     for each field in section fields:
-    //       get existing
-    //       get reference
-    //       if either is non-null:
-    //         create object with both values with key of field name
+    //   for each field in section fields:
+    //     get existing value
+    //     get reference value
+    //     if either is non-null:
+    //       create object with both values with key of field name
     let diffList = []
     for (const sectionDefinition of sectionFields) {
         if (sectionDefinition.hasOwnProperty('sections')) {
@@ -124,9 +153,14 @@ function getDiffFields(existingItem, referenceItem, sectionFields) {
             for (const fieldEntry of sectionDefinition['fields']) {
                 let existingItemValue = fetchFromObject(existingItem, fieldEntry['field']);
                 let referenceItemValue = fetchFromObject(referenceItem, fieldEntry['field']);
-                if (existingItemValue != null && referenceItemValue != null &&
-                    existingItemValue != undefined && referenceItemValue != undefined &&
+                if ((existingItemValue != null || referenceItemValue != null) &&
+                    (existingItemValue != undefined || referenceItemValue != undefined) &&
                     existingItemValue != referenceItemValue) {
+                        if (existingItemValue instanceof Array && referenceItemValue instanceof Array) {
+                            if (JSON.stringify(existingItemValue) == JSON.stringify(referenceItemValue)) {
+                                break;
+                            }
+                        }
                         if ('renderFunc' in fieldEntry) {
                             fieldDiffs.push({ "field": fieldEntry['field'], "label": fieldEntry['label'], "existing": existingItemValue, "reference": referenceItemValue, "renderFunc": fieldEntry['renderFunc'] });
                         } else {
@@ -144,20 +178,58 @@ function getDiffFields(existingItem, referenceItem, sectionFields) {
 }
 
 function renderBaseType(itemType) {
-    return CONFIG.DND5E.weaponTypes[itemType];
+    let allItemTypes =  {
+        ...CONFIG.DND5E.armorTypes,
+        ...CONFIG.DND5E.equipmentTypes,
+        ...CONFIG.DND5E.miscEquipmentTypes,
+        ...CONFIG.DND5E.toolTypes,
+        ...CONFIG.DND5E.weaponTypes
+    };
+    return `${allItemTypes[itemType]}`;
 }
+
 function renderAttunement(attunement) {
-    return CONFIG.DND5E.attunements[attunement];
+    return `${CONFIG.DND5E.attunements[attunement]}`;
 }
 function renderActivationType(activationType) {
-    return CONFIG.DND5E.abilityActivationTypes[activationType];
+    return `${CONFIG.DND5E.abilityActivationTypes[activationType]}`;
 }
 function renderActionType(actionType) {
-    return CONFIG.DND5E.itemActionTypes[actionType];
+    return `${CONFIG.DND5E.itemActionTypes[actionType]}`;
 }
+function renderSpellSchool(school) {
+    return `${CONFIG.DND5E.spellSchools[school]}`;
+}
+function renderProperties(properties) {
+    if (properties instanceof Array) {
+        let itemStr = "";
+        properties.forEach((elt) => {
+            itemStr += `<li>${CONFIG.DND5E.itemProperties[elt].label}</li>`
+        });
+        return `<ol style="list-style: none">\n${itemStr}</ol>`;
+    } else {
+        return `${properties}`;
+    }
+}
+
 function renderImage(imgUrl) {
     return `<img style="max-width: 100px; height: 100px;" src="${imgUrl}"/>`;
 }
+
+function renderSummonProfiles(profiles) {
+    if (profiles instanceof Array) {
+        let itemStr = "";
+        profiles.forEach((elt) => {
+            let summonActor = fromUuidSync(elt.uuid);
+            itemStr += `<li><a class="content-link" draggable="true" data-uuid="${elt.uuid}" data-id="${summonActor._id}" data-type="Actor" data-pack="${summonActor.pack}" data-tooltip="Non-Player Character Actor"><i class="fas fa-user"></i>${summonActor.name}</a></li>\n`;
+        });
+        return `<ol style="list-style: none">\n${itemStr}</ol>`;
+    } else {
+        return `${profiles}`;
+    }
+}
+
+
 function renderDamageParts(dmgParts) {
     if (dmgParts instanceof Array) {
         let itemStr = "";
@@ -166,9 +238,9 @@ function renderDamageParts(dmgParts) {
             let dmgType = elt[1];
             itemStr += `<li>${formula} (${dmgType})</li>\n`;
         });
-        return `<ol>\n${itemStr}</ol>`;
+        return `<ol style="list-style: none">\n${itemStr}</ol>`;
     } else {
-        return dmgParts;
+        return `${dmgParts}`;
     }
 }
 
