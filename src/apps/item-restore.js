@@ -159,7 +159,17 @@ function renderImage(imgUrl) {
     return `<img style="max-width: 100px; height: 100px;" src="${imgUrl}"/>`;
 }
 function renderDamageParts(dmgParts) {
-    return dmgParts;
+    if (dmgParts instanceof Array) {
+        let itemStr = "";
+        dmgParts.forEach((elt) => {
+            let formula = elt[0];
+            let dmgType = elt[1];
+            itemStr += `<li>${formula} (${dmgType})</li>\n`;
+        });
+        return `<ol>\n${itemStr}</ol>`;
+    } else {
+        return dmgParts;
+    }
 }
 
 
@@ -190,6 +200,7 @@ export class ItemRestoreApp extends FormApplication {
 
         // register Handlebars helpers
         Handlebars.registerHelper("render", (item, renderFunc) => {
+            // console.log(`materia-dnd | Item Restore: In render HB helper for item: ${item}, with renderFunc: ${renderFunc.name}`);
             return renderFunc(item);
         });
     }
