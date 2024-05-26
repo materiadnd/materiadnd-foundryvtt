@@ -75,7 +75,7 @@ Hooks.on("updateItem", (item, flags, diff, id) => {
 Hooks.on("renderItemSheet5e", async (app, html, item) => {
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ENABLE_ITEM_RESTORE)) {
         if(item.item?.actor != null && item.item?.actor?.type == "character" && item.item?.isOwner) {
-            var origItemId = await item.item?.getFlag('materia-dnd', 'original-item-id');
+            var origItemId = await item.item?.getFlag('materia-dnd', 'sourceId');
             if (origItemId == null) { return; }
             const buttonText = game.i18n.localize('MATERIA-DND.ui.item-restore.itemsheet-titlebar-button');
             let openButton = $(`<a class="open-item-restore"><i class="fas fa-layer-group"></i> ${buttonText}</a>`);

@@ -8,7 +8,7 @@ const sectionFields = [
             { "field": "img", "label": "Image", "renderFunc": renderImage },
             { "field": "system.equipped", "label": "Equipped?" },
             { "field": "system.identified", "label": "Identified?" },
-            { "field": "system.rarity", "label": "Rarity" },
+            { "field": "system.rarity", "label": "Rarity", "renderFunc": renderItemRarity },
             { "field": "system.quantity", "label": "Quantity" },
             { "field": "system.weight", "label": "Weight" },
             { "field": "system.price.value", "label": "Price (value)" },
@@ -38,7 +38,7 @@ const sectionFields = [
             { "field": "system.armor.magicalBonus", "label": "Armor Magic Bonus" },
             { "field": "system.armor.dex", "label": "Max Dexterity Modifier" },
             { "field": "system.strength", "label": "Required Strength" },
-            { "field": "system.level", "label": "Spell Level"},
+            { "field": "system.level", "label": "Spell Level", "renderFunc": renderSpellLevel },
             { "field": "system.materials.value", "label": "Spellcasting Materials" },
             { "field": "system.materials.consumed", "label": "Materials Consumed?" },
             { "field": "system.materials.cost", "label": "Materials Cost" },
@@ -46,6 +46,10 @@ const sectionFields = [
             { "field": "system.preparation.mode", "label": "Spell Preparation Mode" },
             { "field": "system.preparation.prepared", "label": "Prepared?" },
             { "field": "system.school", "label": "Spell School", "renderFunc": renderSpellSchool },
+            { "field": "system.hp.value", "label": "HP (current)" },
+            { "field": "system.hp.max", "label": "HP (max)" },
+            { "field": "system.hp.dt", "label": "Damage Threshold" },
+            { "field": "system.hp.conditions", "label": "Health Conditions" }
         ]
     },
     {
@@ -54,21 +58,24 @@ const sectionFields = [
             { "field": "system.activation.type", "label": "Activation Cost (units)", "renderFunc": renderActivationType },
             { "field": "system.activation.cost", "label": "Activation Cost (#)" },
             { "field": "system.activation.condition", "label": "Activation Condition" },
-            { "field": "system.target.type", "label": "Target (type)" },
+            { "field": "system.target.type", "label": "Target (type)", "renderFunc": renderTargetType },
             { "field": "system.target.value", "label": "Target (#)" },
             { "field": "system.target.units", "label": "Target (units)" },
-            { "field": "system.range.units", "label": "Range (units)" },
+            { "field": "system.target.width", "label": "Line Width" },
+            { "field": "system.target.prompt", "label": "Template Prompt" },
+            { "field": "system.range.units", "label": "Range (units)", "renderFunc": renderRangeType },
             { "field": "system.range.value", "label": "Range (normal)" },
             { "field": "system.range.long", "label": "Range (long)" },
-            { "field": "system.duration.units", "label": "Duration (units)" },
+            { "field": "system.duration.units", "label": "Duration (units)", "renderFunc": renderTimePeriod },
             { "field": "system.duration.value", "label": "Duration (#)" },
-            { "field": "system.uses.per", "label": "Limited Uses (units)" },
+            { "field": "system.uses.per", "label": "Limited Uses (units)", "renderFunc": renderLimitedUsePeriod },
             { "field": "system.uses.value", "label": "Limited Uses (#)" },
             { "field": "system.uses.max", "label": "Limited Uses (Max)" },
             { "field": "system.uses.recovery", "label": "Recovery Formula" },
             { "field": "system.uses.autoDestroy", "label": "Destroy on Empty" },
-            { "field": "system.consume.type", "label": "Resource Consumption (units)" },
-            { "field": "system.consume.target", "label": "Resource Consumption (target)" },
+            { "field": "system.uses.prompt", "label": "Uses Prompt" },
+            { "field": "system.consume.type", "label": "Resource Consumption (units)", "renderFunc": renderConsumptionType },
+            { "field": "system.consume.target", "label": "Resource Consumption (target)", "renderFunc": renderConsumptionTarget },
             { "field": "system.consume.amount", "label": "Resource Consumption (#)" },
             { "field": "system.consume.scales", "label": "Scales" },  //??
         ]
@@ -77,7 +84,7 @@ const sectionFields = [
         "section": "Details (Action)",
         "fields": [
             { "field": "system.actionType", "label": "Action Type", "renderFunc": renderActionType },
-            { "field": "system.ability", "label": "Ability Modifier" },
+            { "field": "system.ability", "label": "Ability Modifier", "renderFunc": renderAbility },
             { "field": "system.attack.bonus", "label": "Attack Roll Bonus" },
             { "field": "system.attack.flat", "label": "Flat Bonus" },
             { "field": "system.critical.threshold", "label": "Critical Hit Threshold" },
@@ -85,7 +92,7 @@ const sectionFields = [
             { "field": "system.damage.parts", "label": "Damage Formulas", "renderFunc": renderDamageParts },
             { "field": "system.damage.versatile", "label": "Versatile Damage" },
             { "field": "system.formula", "label": "Other Formula" },
-            { "field": "system.save.ability", "label": "Saving Throw" },
+            { "field": "system.save.ability", "label": "Saving Throw", "renderFunc": renderAbility },
             { "field": "system.save.dc", "label": "Saving Throw DC" },
             { "field": "system.save.scaling", "label": "Saving Throw Target" },
             { "field": "system.chatFlavor", "label": "Chat Message Flavor" },
@@ -177,7 +184,23 @@ function getDiffFields(existingItem, referenceItem, sectionFields) {
     return diffList;
 }
 
-function renderBaseType(itemType) {
+function renderAbility(ability, _) {
+    if (ability == undefined) {
+        return `${ability}`;
+    } else {
+        return `${CONFIG.DND5E.abilities[ability].label}`;
+    }
+}
+function renderActionType(actionType, _) {
+    return `${CONFIG.DND5E.itemActionTypes[actionType]}`;
+}
+function renderActivationType(activationType, _) {
+    return `${CONFIG.DND5E.abilityActivationTypes[activationType]}`;
+}
+function renderAttunement(attunement, _) {
+    return `${CONFIG.DND5E.attunements[attunement]}`;
+}
+function renderBaseType(itemType, _) {
     let allItemTypes =  {
         ...CONFIG.DND5E.armorTypes,
         ...CONFIG.DND5E.equipmentTypes,
@@ -187,50 +210,23 @@ function renderBaseType(itemType) {
     };
     return `${allItemTypes[itemType]}`;
 }
-
-function renderAttunement(attunement) {
-    return `${CONFIG.DND5E.attunements[attunement]}`;
-}
-function renderActivationType(activationType) {
-    return `${CONFIG.DND5E.abilityActivationTypes[activationType]}`;
-}
-function renderActionType(actionType) {
-    return `${CONFIG.DND5E.itemActionTypes[actionType]}`;
-}
-function renderSpellSchool(school) {
-    return `${CONFIG.DND5E.spellSchools[school]}`;
-}
-function renderProperties(properties) {
-    if (properties instanceof Array) {
-        let itemStr = "";
-        properties.forEach((elt) => {
-            itemStr += `<li>${CONFIG.DND5E.itemProperties[elt].label}</li>`
-        });
-        return `<ol style="list-style: none">\n${itemStr}</ol>`;
+function renderConsumptionTarget(itemId, actor) {
+    // I think the hb template INVOKES the function when testing #if on it, but with no args
+    if (itemId == undefined || actor == undefined) {
+        return `${itemId}`;
     } else {
-        return `${properties}`;
+        let targetItem = actor.items.find( x => x._id == itemId )
+        if (targetItem != null) {
+            return `<a class="content-link" draggable="true" data-uuid="${targetItem.uuid}" data-id="${targetItem._id}" data-type="Item" data-tooltip="Feature Item"><i class="fas fa-suitcase"></i>${targetItem.name}</a>`;
+        } else {
+            return `${itemId}`;
+        }
     }
 }
-
-function renderImage(imgUrl) {
-    return `<img style="max-width: 100px; height: 100px;" src="${imgUrl}"/>`;
+function renderConsumptionType(consumptionType, _) {
+    return `${CONFIG.DND5E.abilityConsumptionTypes[consumptionType]}`;
 }
-
-function renderSummonProfiles(profiles) {
-    if (profiles instanceof Array) {
-        let itemStr = "";
-        profiles.forEach((elt) => {
-            let summonActor = fromUuidSync(elt.uuid);
-            itemStr += `<li><a class="content-link" draggable="true" data-uuid="${elt.uuid}" data-id="${summonActor._id}" data-type="Actor" data-pack="${summonActor.pack}" data-tooltip="Non-Player Character Actor"><i class="fas fa-user"></i>${summonActor.name}</a></li>\n`;
-        });
-        return `<ol style="list-style: none">\n${itemStr}</ol>`;
-    } else {
-        return `${profiles}`;
-    }
-}
-
-
-function renderDamageParts(dmgParts) {
+function renderDamageParts(dmgParts, _) {
     if (dmgParts instanceof Array) {
         let itemStr = "";
         dmgParts.forEach((elt) => {
@@ -243,7 +239,57 @@ function renderDamageParts(dmgParts) {
         return `${dmgParts}`;
     }
 }
-
+function renderImage(imgUrl, _) {
+    return `<img style="max-width: 100px; height: 100px;" src="${imgUrl}"/>`;
+}
+function renderItemRarity(itemRarity, _) {
+    return `<p style="text-transform: capitalize">${CONFIG.DND5E.itemRarity[itemRarity]}</p>`;
+}
+function renderLimitedUsePeriod(limitedUsePeriod, _) {
+    if (limitedUsePeriod == undefined) {
+        return `${limitedUsePeriod}`;
+    } else {
+        return `${CONFIG.DND5E.limitedUsePeriods[limitedUsePeriod].label}`;
+    }
+}
+function renderProperties(properties, _) {
+    if (properties instanceof Array) {
+        let itemStr = "";
+        properties.forEach((elt) => {
+            itemStr += `<li>${CONFIG.DND5E.itemProperties[elt].label}</li>`
+        });
+        return `<ol style="list-style: none">\n${itemStr}</ol>`;
+    } else {
+        return `${properties}`;
+    }
+}
+function renderRangeType(rangeType, _) {
+    return `${CONFIG.DND5E.rangeTypes[rangeType]}`;
+}
+function renderSpellSchool(school, _) {
+    return `${CONFIG.DND5E.spellSchools[school]}`;
+}
+function renderSpellLevel(level, _) {
+    return `${CONFIG.DND5E.spellLevels[level]}`;
+}
+function renderSummonProfiles(profiles, _) {
+    if (profiles instanceof Array) {
+        let itemStr = "";
+        profiles.forEach((elt) => {
+            let summonActor = fromUuidSync(elt.uuid);
+            itemStr += `<li><a class="content-link" draggable="true" data-uuid="${elt.uuid}" data-id="${summonActor._id}" data-type="Actor" data-pack="${summonActor.pack}" data-tooltip="Non-Player Character Actor"><i class="fas fa-user"></i>${summonActor.name}</a></li>\n`;
+        });
+        return `<ol style="list-style: none">\n${itemStr}</ol>`;
+    } else {
+        return `${profiles}`;
+    }
+}
+function renderTargetType(targetType, _) {
+    return `${CONFIG.DND5E.targetTypes[targetType]}`;
+}
+function renderTimePeriod(timePeriod, _) {
+    return `${CONFIG.DND5E.timePeriods[timePeriod]}`;
+}
 
 export class ItemRestoreApp extends FormApplication {
     constructor() {
@@ -272,8 +318,10 @@ export class ItemRestoreApp extends FormApplication {
 
         // register Handlebars helpers
         Handlebars.registerHelper("render", (item, renderFunc) => {
-            // console.log(`materia-dnd | Item Restore: In render HB helper for item: ${item}, with renderFunc: ${renderFunc.name}`);
-            return renderFunc(item);
+            if (item != null && item != undefined && item != "") {
+                console.log(`materia-dnd | Item Restore: In render HB helper for item: ${item}, with renderFunc: ${renderFunc.name}`);
+                return renderFunc(item, this.actor);
+            }
         });
     }
 
