@@ -4,8 +4,9 @@ import copy
 import json
 import itertools
 
-
 DIR_ROOT = 'packs\\_source'
+FILES_TO_IGNORE = [ '_folder.json' ]
+
 FLAGS_TO_ADD = [
     {
         "materia-dnd": {
@@ -13,7 +14,6 @@ FLAGS_TO_ADD = [
         }
     }
 ]
-FILES_TO_IGNORE = [ '_folder.json' ]
 TYPES_TO_UPDATE = [ 'equipment', 'weapon', 'spell' ]
 
 def updateJsonFiles(rootDir, func):
@@ -92,4 +92,4 @@ def removeRootDirectory(rootDir, fullPath):
     return os.sep.join(normalizedPathParts)
 
 if __name__ == '__main__':
-    updateJsonFiles('packs\\_source', addFlags)
+    updateJsonFiles(DIR_ROOT, addFlags)
