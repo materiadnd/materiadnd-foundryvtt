@@ -6,18 +6,18 @@
   "img": "icons/creatures/birds/corvid-call-sound-blue.webp",
   "system": {
     "description": {
-      "value": "<p>At 2nd level, you gain the ability to summon a spirit that assumes an animal form: as an action, you can expend a use of your Wild Shape feature to cast the find familiar spell, without material components.</p><p>When you cast the spell in this way, the familiar is a fey instead of a beast, and the familiar disappears after a number of hours equal to half your druid level.</p>",
+      "value": "<p>At 2nd level, you gain the ability to summon a spirit that assumes an animal form: as an action, you can expend a use of your Wild Shape feature to cast the @UUID[Compendium.materia-dnd.spells.Item.12YEV452CmR73qwJ]{Find Familiar} spell, without material components.</p><p>When you cast the spell in this way, the familiar is a fey instead of a beast, and the familiar disappears after a number of hours equal to half your druid level.</p>",
       "chat": ""
     },
     "source": {},
     "activation": {
-      "type": "",
-      "cost": null,
+      "type": "action",
+      "cost": 1,
       "condition": ""
     },
     "duration": {
       "value": "",
-      "units": ""
+      "units": "inst"
     },
     "cover": null,
     "crewed": false,
@@ -29,9 +29,9 @@
       "prompt": true
     },
     "range": {
-      "value": null,
+      "value": 10,
       "long": null,
-      "units": ""
+      "units": "ft"
     },
     "uses": {
       "value": null,
@@ -41,13 +41,13 @@
       "prompt": true
     },
     "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
+      "type": "charges",
+      "target": "",
+      "amount": 1,
       "scale": false
     },
-    "ability": null,
-    "actionType": "",
+    "ability": "",
+    "actionType": "summ",
     "attackBonus": "",
     "chatFlavor": "",
     "critical": {
@@ -68,11 +68,44 @@
       "value": "class",
       "subtype": ""
     },
-    "properties": [],
+    "properties": [
+      "mgc"
+    ],
     "requirements": "Druid 2",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "summons": {
+      "match": {
+        "proficiency": false,
+        "attacks": false,
+        "saves": false
+      },
+      "bonuses": {
+        "ac": "@item.level",
+        "hp": "2 * (@item.level - 1)",
+        "attackDamage": "@item.level",
+        "saveDamage": "",
+        "healing": ""
+      },
+      "profiles": [
+        {
+          "name": "",
+          "_id": "jCGhNPgBco73R4dU",
+          "uuid": "Compendium.materia-dnd.actors.Actor.uCXWwZlKvKo4mN6s"
+        },
+        {
+          "name": "",
+          "_id": "i2vyW1xezGKsMFki",
+          "uuid": "Compendium.materia-dnd.actors.Actor.ihy606spPuhUdI8e"
+        },
+        {
+          "name": "",
+          "_id": "jIZTfSTua20o5ZqR",
+          "uuid": "Compendium.materia-dnd.actors.Actor.kL9KBRAQLmB5TN1W"
+        }
+      ]
     }
   },
   "effects": [],
@@ -80,13 +113,17 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "materia-dnd": {
+      "item-use-source": "wild-shape"
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
+    "systemVersion": "3.1.2",
     "coreVersion": "11.315",
     "createdTime": 1708892497961,
-    "modifiedTime": 1708892675036,
+    "modifiedTime": 1717226340992,
     "lastModifiedBy": "dnd5mbuilder0000"
   },
   "_key": "!items!wM1NpTP2sIu8EfFf"
