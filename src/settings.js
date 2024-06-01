@@ -10,6 +10,7 @@ export class Settings {
         ADD_EXHAUSTION_HANDLING: 'add-exhaustion-handling',
         AUTO_ITEM_USE_TRACKER_ENABLED: 'auto-item-use-tracker-enabled',
         WILD_SHAPE_TRANSFORM_HANDLER_ENABLED: 'wild-shape-transform-handler-enabled',
+        ENABLE_ITEM_RESTORE: 'enable-item-restore',
     }
 
     static initialize() {
@@ -93,5 +94,15 @@ export class Settings {
             onChange: () => {},
             requiresReload: true,
         });
+        game.settings.register(Constants.MODULE_ID, this.SETTINGS.ENABLE_ITEM_RESTORE, {
+            name: `MATERIA-DND.settings.${this.SETTINGS.ENABLE_ITEM_RESTORE}.Name`,
+            hint: `MATERIA-DND.settings.${this.SETTINGS.ENABLE_ITEM_RESTORE}.Hint`,
+            config: true,
+            scope: 'world',
+            default: true,
+            type: Boolean,
+            onChange: () => {},
+            requiresReload: true,
+        })
     }
 }
