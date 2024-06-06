@@ -11,6 +11,7 @@ export class Settings {
         AUTO_ITEM_USE_TRACKER_ENABLED: 'auto-item-use-tracker-enabled',
         WILD_SHAPE_TRANSFORM_HANDLER_ENABLED: 'wild-shape-transform-handler-enabled',
         ENABLE_ITEM_RESTORE: 'enable-item-restore',
+        REPLACE_SOURCE_PACKS: 'replace-source-packs'
     }
 
     static initialize() {
@@ -97,6 +98,16 @@ export class Settings {
         game.settings.register(Constants.MODULE_ID, this.SETTINGS.ENABLE_ITEM_RESTORE, {
             name: `MATERIA-DND.settings.${this.SETTINGS.ENABLE_ITEM_RESTORE}.Name`,
             hint: `MATERIA-DND.settings.${this.SETTINGS.ENABLE_ITEM_RESTORE}.Hint`,
+            config: true,
+            scope: 'world',
+            default: true,
+            type: Boolean,
+            onChange: () => {},
+            requiresReload: true,
+        })
+        game.settings.register(Constants.MODULE_ID, this.SETTINGS.REPLACE_SOURCE_PACKS, {
+            name: `MATERIA-DND.settings.${this.SETTINGS.REPLACE_SOURCE_PACKS}.Name`,
+            hint: `MATERIA-DND.settings.${this.SETTINGS.REPLACE_SOURCE_PACKS}.Hint`,
             config: true,
             scope: 'world',
             default: true,

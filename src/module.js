@@ -9,6 +9,7 @@ import { SpellcastingRenderActorSheetHandler, AddThirdPactCaster, SpellcastingAd
 import { UpdateTeleBonusFlag } from "./tele.js";
 import { AddMateriaWeapons } from "./weapons.js";
 import { WildShapeTransformActorHandler } from "./wild-shape.js";
+import { Replace5eSourcePacks } from "./source-packs.js";
 
 Hooks.once('init', () => {
     Settings.initialize();
@@ -22,6 +23,7 @@ Hooks.once("ready", () => {
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_MATERIA_CONDITIONS)) { AddMateriaConditions(); }
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_THIRD_PACT_CASTER)) { AddThirdPactCaster(); }
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_WEAPONS_AND_WEAPON_PROPS)) { AddMateriaWeapons(); }
+    if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.REPLACE_SOURCE_PACKS)) { Replace5eSourcePacks(); }
 })
 
 Hooks.on("dnd5e.damageActor", async (actor, heal, diff, id) => {
