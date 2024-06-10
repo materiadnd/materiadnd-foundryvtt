@@ -20,8 +20,8 @@ const sectionFields = [
         "fields": [
             // { "field": "system.unidentified.name", "label": "Unidentified Name" },
             // { "field": "system.unidentified.description", "label": "Unidentified Description" },
-            { "field": "system.description.value", "label": "Description" },
-            { "field": "system.description.chat", "label": "Chat Description" },
+            { "field": "system.description.value", "label": "Description", renderFunc: renderDescription },
+            { "field": "system.description.chat", "label": "Chat Description", renderFunc: renderDescription },
         ]
     },
     {
@@ -113,7 +113,6 @@ const sectionFields = [
         ]
     }
 ];
-
 
 function fetchFromObject(obj, prop) {
     if (typeof obj === 'undefined') {
@@ -238,6 +237,10 @@ function renderDamageParts(dmgParts, _) {
     } else {
         return `${dmgParts}`;
     }
+}
+
+function renderDescription(description, _) {
+    return `<div>${description}</div>`;
 }
 function renderImage(imgUrl, _) {
     return `<img style="max-width: 100px; height: 100px;" src="${imgUrl}"/>`;
