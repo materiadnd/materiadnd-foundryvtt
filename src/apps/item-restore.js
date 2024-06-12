@@ -10,7 +10,8 @@ const sectionFields = [
             { "field": "system.identified", "label": "Identified?" },
             { "field": "system.rarity", "label": "Rarity", "renderFunc": renderItemRarity },
             { "field": "system.quantity", "label": "Quantity" },
-            { "field": "system.weight", "label": "Weight" },
+            { "field": "system.weight.value", "label": "Weight (#)" },
+            { "field": "system.weight.units", "label": "Weight (units)" },
             { "field": "system.price.value", "label": "Price (value)" },
             { "field": "system.price.denomination", "label": "Price (denomination)" },
         ]
