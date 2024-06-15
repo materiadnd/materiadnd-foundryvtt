@@ -91,7 +91,13 @@
       "somatic",
       "concentration"
     ],
-    "crewed": false
+    "crewed": false,
+    "enchantment": {
+      "restrictions": {
+        "allowMagical": true,
+        "type": "weapon"
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
@@ -99,14 +105,78 @@
     }
   },
   "img": "icons/magic/fire/dagger-rune-enchant-flame-blue-yellow.webp",
-  "effects": [],
+  "effects": [
+    {
+      "name": "Divine Favor",
+      "flags": {
+        "dnd5e": {
+          "type": "enchantment",
+          "enchantment": {
+            "level": {
+              "min": 1,
+              "max": null
+            },
+            "riders": {
+              "effect": [],
+              "item": []
+            }
+          }
+        }
+      },
+      "img": "icons/magic/fire/dagger-rune-enchant-flame-blue-yellow.webp",
+      "_id": "MHOpKhcVsMl09OUC",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "value": "{} [Divine Favor]",
+          "priority": null
+        },
+        {
+          "key": "system.damage.parts",
+          "mode": 2,
+          "value": "[[\"1d6\", \"radiant\"]]",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.327",
+        "systemId": "dnd5e",
+        "systemVersion": "3.2.1",
+        "createdTime": 1718324935574,
+        "modifiedTime": 1718337318884,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!ilDRYimpCbm6ECOw.MHOpKhcVsMl09OUC"
+    }
+  ],
   "folder": "JMRA2elEdmr5pgX7",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "3.2.1",
+    "coreVersion": "12.327",
     "createdTime": 1661787234079,
-    "modifiedTime": 1708928830321,
+    "modifiedTime": 1718338046506,
     "lastModifiedBy": "dnd5mbuilder0000",
     "compendiumSource": null,
     "duplicateSource": null

@@ -9,10 +9,10 @@
       "license": ""
     },
     "description": {
-      "value": "<div class=\"rd__b  rd__b--3\"><p>You imbue a weapon you touch with holy power. Until the spell ends, the weapon emits bright light in a 30-foot radius and dim light for an additional 30 feet. In addition, weapon attacks made with it deal an extra [[/r 2d8]] radiant damage on a hit. If the weapon isn't already a magic weapon, it becomes one for the duration.</p><p>As a bonus action on your turn, you can dismiss this spell and cause the weapon to emit a burst of radiance. Each creature of your choice that you can see within 30 feet of the weapon must make a Constitution saving throw. On a failed save, a creature takes [[/r 4d8]] radiant damage, and it is @condition[blinded] for 1 minute. On a successful save, a creature takes half as much damage and isn't @condition[blinded]. At the end of each of its turns, a @condition[blinded] creature can make a Constitution saving throw, ending the effect on itself on a success.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 9th level or higher, grants a duration that does not require concentration.</p></div>",
+      "value": "<div class=\"rd__b  rd__b--3\"><p>You imbue a weapon you touch with holy power. Until the spell ends, the weapon emits bright light in a 30-foot radius and dim light for an additional 30 feet. In addition, weapon attacks made with it deal an extra [[/r 2d8]] radiant damage on a hit. If the weapon isn't already a magic weapon, it becomes one for the duration.</p><p>As a bonus action on your turn, you can dismiss this spell and cause the weapon to emit a burst of radiance. Each creature of your choice that you can see within 30 feet of the weapon must make a Constitution saving throw. On a failed save, a creature takes [[/r 4d8]] radiant damage, and it is blinded for 1 minute. On a successful save, a creature takes half as much damage and isn't blinded. At the end of each of its turns, a blinded creature can make a Constitution saving throw, ending the effect on itself on a success.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 9th level or higher, grants a duration that does not require concentration.</p></div>",
       "chat": ""
     },
-    "actionType": "save",
+    "actionType": "ench",
     "level": 5,
     "school": "evo",
     "properties": [
@@ -48,16 +48,7 @@
       "units": "hour"
     },
     "damage": {
-      "parts": [
-        [
-          "2d8",
-          "radiant"
-        ],
-        [
-          "4d8",
-          "radiant"
-        ]
-      ],
+      "parts": [],
       "versatile": ""
     },
     "scaling": {
@@ -95,7 +86,13 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "enchantment": {
+      "restrictions": {
+        "allowMagical": true,
+        "type": "weapon"
+      }
+    }
   },
   "img": "icons/weapons/swords/sword-gold-holy.webp",
   "ownership": {
@@ -112,14 +109,84 @@
       "sourceId": "Compendium.materia-dnd.spells.Item.8fPsGnq2xFeTc41b"
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Holy Weapon",
+      "flags": {
+        "dnd5e": {
+          "type": "enchantment",
+          "enchantment": {
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "riders": {
+              "effect": [],
+              "item": []
+            }
+          }
+        }
+      },
+      "img": "icons/weapons/swords/sword-gold-holy.webp",
+      "_id": "k3ASaGXDy2Bew5tV",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "value": "{} [Holy Weapon]",
+          "priority": null
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "value": "mgc",
+          "priority": null
+        },
+        {
+          "key": "system.damage.parts",
+          "mode": 2,
+          "value": "[[\"2d8\", \"radiant\"]]",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.327",
+        "systemId": "dnd5e",
+        "systemVersion": "3.2.1",
+        "createdTime": 1718344354533,
+        "modifiedTime": 1718344465469,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!8fPsGnq2xFeTc41b.k3ASaGXDy2Bew5tV"
+    }
+  ],
   "folder": "slWnSXtwvwnA9EXJ",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "3.2.1",
+    "coreVersion": "12.327",
     "createdTime": 1709184559726,
-    "modifiedTime": 1709186114418,
+    "modifiedTime": 1718344466440,
     "lastModifiedBy": "dnd5mbuilder0000",
     "compendiumSource": null,
     "duplicateSource": null
