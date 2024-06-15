@@ -107,3 +107,9 @@ Hooks.on("renderItemSheet5e", async (app, html, item) => {
         }
     }
 });
+
+Hooks.on("renderApplication", async (flow, html, app) => {
+    if (app?.title == "Level 1 Feat") {
+        html.find('.ability-scores').css("display", "none");
+    }
+});

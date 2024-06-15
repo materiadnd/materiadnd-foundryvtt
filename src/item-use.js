@@ -33,7 +33,7 @@ export function ItemUseUpdateUserHandler(user, updates, diff, uid) {
 
 // When an item gets created (leveling, manually dropping things, etc.)
 export function ItemUseCreateIemHandler(item, flags, itemId) {
-    if (flags.isAdvancement && item.parent !== null ) {
+    if (item.parent !== null ) {
         updateActorItemUses(item.parent);
     }
 }
