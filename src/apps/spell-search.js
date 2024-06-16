@@ -25,6 +25,28 @@ function hasExcludeFromSearchResultsFlag(spell) {
         }
 }
 
+function renderComponents(spell) {
+    let componentList = [];
+    if (spell.system.properties.has('vocal')) {
+        componentList.push('V');
+    }
+    if (spell.system.properties.has('somatic')) {
+        componentList.push('S');
+    }
+    if (spell.system.properties.has('material')) {
+        componentList.push('M');
+    }
+    return componentList.join('/');
+}
+
+function renderConcentration(spell) {
+    if (spell.system.properties.has('concentration')) {
+        return 'X';
+    } else {
+        return '';
+    }
+}
+
 class SearchFilter {
     includeLevels = new Set();
     excludeLevels = new Set();
@@ -285,7 +307,7 @@ export class SpellSearchApp extends FormApplication {
         let tableBodyString = "";
 
         for (let result of this.searchResults) {
-            tableBodyString += `<tr>\n<td>${result.name}</td>\n<td>${result.system.level}</td>\n<td>${result.system.school}</td>\n<td>[components]</td>\n<td>[conc]</td>\n</tr>\n`
+            tableBodyString += `<tr>\n<td>${result.name}</td>\n<td>${result.system.level}</td>\n<td>${result.system.school}</td>\n<td>${renderComponents(result)}</td>\n<td>${renderConcentration(result)}</td>\n</tr>\n`
         }
         
         document.getElementById("spell-search-results-body").innerHTML = tableBodyString;
