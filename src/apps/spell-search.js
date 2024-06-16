@@ -28,13 +28,13 @@ function hasExcludeFromSearchResultsFlag(spell) {
 function renderComponents(spell) {
     let componentList = [];
     if (spell.system.properties.has('vocal')) {
-        componentList.push('V');
+        componentList.push(CONFIG.DND5E.spellComponents['vocal'].abbr);
     }
     if (spell.system.properties.has('somatic')) {
-        componentList.push('S');
+        componentList.push(CONFIG.DND5E.spellComponents['somatic'].abbr);
     }
     if (spell.system.properties.has('material')) {
-        componentList.push('M');
+        componentList.push(CONFIG.DND5E.spellComponents['material'].abbr);
     }
     return componentList.join('/');
 }
@@ -300,14 +300,19 @@ export class SpellSearchApp extends FormApplication {
         results = results.filter( x => !hasExcludeFromSearchResultsFlag(x));
         console.log(`materia-dnd | After: ${results.length}`);
         this.searchResults = results;
-        this._updateTableResults(html);
+        await this._updateTableResults(html);
     }
 
-    _updateTableResults(html) {
+    async _updateTableResults(html) {
         let tableBodyString = "";
 
         for (let result of this.searchResults) {
-            tableBodyString += `<tr>\n<td>${result.name}</td>\n<td>${result.system.level}</td>\n<td>${result.system.school}</td>\n<td>${renderComponents(result)}</td>\n<td>${renderConcentration(result)}</td>\n</tr>\n`
+            let richName = await TextEditor.enrichHTML(`@UUID[${result.uuid}]`);
+            tableBodyString += `<tr>\n<td>${richName}</td>\n`;
+            tableBodyString += `<td>${CONFIG.DND5E.spellLevels[result.system.level]}</td>\n`;
+            tableBodyString += `<td>${CONFIG.DND5E.spellSchools[result.system.school].label}</td>\n`;
+            tableBodyString += `<td>${renderComponents(result)}</td>\n`
+            tableBodyString += `<td>${renderConcentration(result)}</td>\n</tr>\n`
         }
         
         document.getElementById("spell-search-results-body").innerHTML = tableBodyString;
