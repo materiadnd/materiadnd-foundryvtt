@@ -256,6 +256,14 @@ export class SpellSearchApp extends FormApplication {
         let packSpells = await pack.getDocuments();
 
         let results = packSpells.filter( x => x.type == 'spell' );
+        if (this._searchFilter.textFilter != "") {
+            console.log(`materia-dnd | Filtering by text ${printSet(this._searchFilter.textFilter)} | Before: ${results.length}`);
+            results = results.filter(x => {
+                let regexp = new RegExp(this._searchFilter.textFilter, "i");
+                return x.name.match(regexp);
+            });
+            console.log(`materia-dnd | After: ${results.length}`);
+        }
         if (this._searchFilter.includeLevels.size > 0) {
             console.log(`materia-dnd | Including spell levels ${printSet(this._searchFilter.includeLevels)} | Before: ${results.length}`);
             results = results.filter(x => this._searchFilter.includeLevels.has(x?.system?.level));
@@ -299,6 +307,8 @@ export class SpellSearchApp extends FormApplication {
         console.log(`materia-dnd | Excluding spells with flag to exclude from search results | Before ${results.length}`);
         results = results.filter( x => !hasExcludeFromSearchResultsFlag(x));
         console.log(`materia-dnd | After: ${results.length}`);
+
+        results.sort((a, b) => a.name.localeCompare(b.name));
         this.searchResults = results;
         await this._updateTableResults(html);
     }
