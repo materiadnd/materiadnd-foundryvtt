@@ -3,16 +3,16 @@
     <div class="spell-search-filter level-filter">
         <p class="spell-search-category-header">Spell Level</p>
         <div class="filter-toggles">
-            <span class="toggle-text" id="spell-level-filter-cantrip" state="ignore">Cantrip</span>
-            <span class="toggle-text" id="spell-level-filter-1st" state="ignore">1st Level</span>
-            <span class="toggle-text" id="spell-level-filter-2nd" state="ignore">2nd Level</span>
-            <span class="toggle-text" id="spell-level-filter-3rd" state="ignore">3rd Level</span>
-            <span class="toggle-text" id="spell-level-filter-4th" state="ignore">4th Level</span>
-            <span class="toggle-text" id="spell-level-filter-5th" state="ignore">5th Level</span>
-            <span class="toggle-text" id="spell-level-filter-6th" state="ignore">6th Level</span>
-            <span class="toggle-text" id="spell-level-filter-7th" state="ignore">7th Level</span>
-            <span class="toggle-text" id="spell-level-filter-8th" state="ignore">8th Level</span>
-            <span class="toggle-text" id="spell-level-filter-9th" state="ignore">9th Level</span>
+            <span class="toggle-text" id="spell-level-filter-0" state="ignore">Cantrip</span>
+            <span class="toggle-text" id="spell-level-filter-1" state="ignore">1st Level</span>
+            <span class="toggle-text" id="spell-level-filter-2" state="ignore">2nd Level</span>
+            <span class="toggle-text" id="spell-level-filter-3" state="ignore">3rd Level</span>
+            <span class="toggle-text" id="spell-level-filter-4" state="ignore">4th Level</span>
+            <span class="toggle-text" id="spell-level-filter-5" state="ignore">5th Level</span>
+            <span class="toggle-text" id="spell-level-filter-6" state="ignore">6th Level</span>
+            <span class="toggle-text" id="spell-level-filter-7" state="ignore">7th Level</span>
+            <span class="toggle-text" id="spell-level-filter-8" state="ignore">8th Level</span>
+            <span class="toggle-text" id="spell-level-filter-9" state="ignore">9th Level</span>
         </div>
     </div>
     <div class="spell-search-filter class-filter">
@@ -39,34 +39,42 @@
             <span class="toggle-text" id="spell-school-filter-evo" state="ignore">Evocation</span>
             <span class="toggle-text" id="spell-school-filter-ill" state="ignore">Illusion</span>
             <span class="toggle-text" id="spell-school-filter-nec" state="ignore">Necromancy</span>
-            <span class="toggle-text" id="spell-school-filter-tra" state="ignore">Transmutation</span>
+            <span class="toggle-text" id="spell-school-filter-trs" state="ignore">Transmutation</span>
         </div>
     </div>
     <div class="spell-search-filter components-filter">
         <p class="spell-search-category-header">Spell Components</p>
         <div class="filter-toggles">
-            <span class="toggle-text" id="spell-component-filter-v" state="ignore">Verbal</span>
-            <span class="toggle-text" id="spell-component-filter-s" state="ignore">Somatic</span>
-            <span class="toggle-text" id="spell-component-filter-m" state="ignore">Material</span>
+            <span class="toggle-text" id="spell-component-filter-vocal" state="ignore">Verbal</span>
+            <span class="toggle-text" id="spell-component-filter-somatic" state="ignore">Somatic</span>
+            <span class="toggle-text" id="spell-component-filter-material" state="ignore">Material</span>
         </div>
     </div>
     <div class="spell-search-filter text-filter">
         <label for="spell-text-search" class="spell-search-category-header">Search:</label>
         <input type="textbox" id="spell-text-search" />
-        <button class="search-button"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+        <!--<button class="search-button"><i class="fa-solid fa-magnifying-glass"></i> Search</button>-->
     </div>
 </div>
 <hr/>
 <div class="spell-search-results-container">
     <table id="spell-search-results-table">
         <thead>
-            <th>Name</th>
-            <th>Level</th>
-            <th>School</th>
-            <th>Components</th>
-            <th>C</th>
+            <tr>
+                <th>Name</th>
+                <th>Level</th>
+                <th>School</th>
+                <th>Components</th>
+                <th>C</th>
+            </tr>
         </thead>
-        <tbody>
+        <tbody id="spell-search-results-body">
         </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Results:</td>
+                <td colspan="2" id="spell-search-results-count"></td>
+            </tr>
+        </tfoot>
     </table>
 </div>

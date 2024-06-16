@@ -25,7 +25,7 @@ Hooks.once("ready", () => {
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_THIRD_PACT_CASTER)) { AddThirdPactCaster(); }
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_WEAPONS_AND_WEAPON_PROPS)) { AddMateriaWeapons(); }
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.REPLACE_SOURCE_PACKS)) { Replace5eSourcePacks(); }
-    if (true) {
+    if (true) { // TODO: make a setting
         let searchButtonHtml = $(`<div class="header-actions action-buttons flexrow">
             <button class="spell-search">
             <i class="fa-solid fa-magnifying-glass"></i> Open Spell Search
@@ -35,7 +35,7 @@ Hooks.once("ready", () => {
         searchButtonHtml.insertAfter(compendiumSearchElement);
         let spellSearchButton = $('.spell-search').first();
         spellSearchButton.click(async (event) => {
-            var spellSearchApp = new SpellSearchApp();
+            var spellSearchApp = new SpellSearchApp("materia-dnd.spells");   // TODO: make a setting
             spellSearchApp.render(true);
         });
     }
