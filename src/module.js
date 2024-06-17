@@ -7,7 +7,7 @@ import { ItemRestoreApp } from "./apps/item-restore.js";
 import { ItemUseCreateIemHandler, ItemUseUpdateUserHandler, ItemUseUserConnectedHandler } from "./item-use.js";
 import { Replace5eSourcePacks } from "./source-packs.js";
 import { Settings } from "./settings.js";
-import { SpellSearchApp, SpellSearchIndex } from "./apps/spell-search.js";
+import { SpellSearchApp, SpellSearchIndex, SpellSearchRenderActorSheetHandler } from "./apps/spell-search.js";
 import { SpellcastingRenderActorSheetHandler, AddThirdPactCaster, SpellcastingAddThirdPactProgression } from "./spellcasting-utils.js";
 import { UpdateTeleBonusFlag } from "./tele.js";
 import { WildShapeTransformActorHandler } from "./wild-shape.js";
@@ -25,7 +25,7 @@ Hooks.once("ready", () => {
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_THIRD_PACT_CASTER)) { AddThirdPactCaster(); }
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_WEAPONS_AND_WEAPON_PROPS)) { AddMateriaWeapons(); }
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.REPLACE_SOURCE_PACKS)) { Replace5eSourcePacks(); }
-    if (true) { // TODO: make a setting
+    if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ENABLE_SPELL_SEARCH)) { 
         let searchButtonHtml = $(`<div class="header-actions action-buttons flexrow">
             <button class="spell-search">
             <i class="fa-solid fa-magnifying-glass"></i> Open Spell Search
@@ -35,7 +35,7 @@ Hooks.once("ready", () => {
         searchButtonHtml.insertAfter(compendiumSearchElement);
         let spellSearchButton = $('.spell-search').first();
         spellSearchButton.click(async (event) => {
-            var spellSearchApp = new SpellSearchApp("materia-dnd.spells");   // TODO: make a setting
+            var spellSearchApp = new SpellSearchApp();   
             spellSearchApp.render(true);
         });
         let index = new SpellSearchIndex();
@@ -78,6 +78,9 @@ Hooks.on("createItem", (item, flags, itemId) => {
 Hooks.on("renderActorSheet5eCharacter2", (app, html, actor) => {
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_SPELL_PREP_COUNTER)) {
         SpellcastingRenderActorSheetHandler(html, actor);
+    }
+    if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ENABLE_SPELL_SEARCH)) {
+        SpellSearchRenderActorSheetHandler(html, actor);
     }
 });
 

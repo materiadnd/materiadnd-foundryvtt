@@ -13,7 +13,9 @@ export class Settings {
         WILD_SHAPE_TRANSFORM_HANDLER_ENABLED: 'wild-shape-transform-handler-enabled',
         ENABLE_ITEM_RESTORE: 'enable-item-restore',
         REPLACE_SOURCE_PACKS: 'replace-source-packs',
-        SPELL_SEARCH_INDEX: 'spell-search-index'
+        SPELL_SEARCH_INDEX: 'spell-search-index',
+        ENABLE_SPELL_SEARCH: 'enable-spell-search',
+        SPELL_SEARCH_PACK_NAME: 'spell-search-pack-name'
     }
 
     static initialize() {
@@ -122,7 +124,26 @@ export class Settings {
             config: false,
             scope: 'client',
             type: String,
-        })
-
+        });
+        game.settings.register(Constants.MODULE_ID, this.SETTINGS.ENABLE_SPELL_SEARCH, {
+            name: `MATERIA-DND.settings.${this.SETTINGS.ENABLE_SPELL_SEARCH}.Name`,
+            hint: `MATERIA-DND.settings.${this.SETTINGS.ENABLE_SPELL_SEARCH}.Hint`,
+            config: true,
+            scope: 'world',
+            default: true,
+            type: Boolean,
+            onChange: () => {},
+            requiresReload: true,
+        });
+        game.settings.register(Constants.MODULE_ID, this.SETTINGS.SPELL_SEARCH_PACK_NAME, {
+            name: `MATERIA-DND.settings.${this.SETTINGS.SPELL_SEARCH_PACK_NAME}.Name`,
+            hint: `MATERIA-DND.settings.${this.SETTINGS.SPELL_SEARCH_PACK_NAME}.Hint`,
+            config: true,
+            scope: 'world',
+            default: 'materia-dnd',
+            type: String,
+            onChange: () => {},
+            requiresReload: true,
+        });
     }
 }

@@ -624,3 +624,8 @@ export class SpellSearchApp extends FormApplication {
     }
 
 }
+
+export function SpellSearchRenderActorSheetHandler(html, actor) {
+    // TODO: do something
+    console.log('materia-dnd | Spell Search: TODO IMPLEMENT');
+}
