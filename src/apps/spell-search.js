@@ -21,6 +21,14 @@ function renderComponents(spell) {
     return componentList.join('/');
 }
 
+function renderCastTime(spell) {
+    if (['action', 'bonus', 'reaction'].includes(spell.system.activation?.type)) {
+        return `${spell.system.activation?.type}`;
+    } else {
+        return `${spell.system.activation?.cost} ${spell.system.activation?.type}`;
+    }
+}
+
 function renderConcentration(spell) {
     if (spell.system.properties.has('concentration')) {
         return `<img src="${CONFIG.DND5E.spellTags['concentration'].icon}"/>`
@@ -33,6 +41,14 @@ function renderRitual(spell) {
         return `<img src="${CONFIG.DND5E.spellTags['ritual'].icon}"/>`
     } else {
         return '';
+    }
+}
+
+function renderRange(spell) {
+    if (spell.system.range?.value) {
+        return `${spell.system.range?.value} ${CONFIG.DND5E.movementUnits[spell.system.range?.units]}`;
+    } else {
+        return `${CONFIG.DND5E.rangeTypes[spell.system.range?.units]}`;
     }
 }
 function getSpellsForLevel(searchIndex, level) {
@@ -593,13 +609,13 @@ export class SpellSearchApp extends FormApplication {
             let richName = await TextEditor.enrichHTML(`@UUID[${result.uuid}]`);
             tableBodyString += `<tr class="spell-search-result-row">\n`;
             tableBodyString += `<td style="text-align: left">${richName}</td>\n`;
-            tableBodyString += `<td>${CONFIG.DND5E.spellLevels[result.system.level]}</td>\n`;
-            tableBodyString += `<td>${result.system.activation?.cost} ${result.system.activation?.type}</td>\n`;
+            tableBodyString += `<td>${(CONFIG.DND5E.spellLevels[result.system.level]).replace(' Level', '')}</td>\n`;
+            tableBodyString += `<td class="spell-search-result-cast-time">${renderCastTime(result)}</td>\n`;
             tableBodyString += `<td><img src="${CONFIG.DND5E.spellSchools[result.system.school].icon}"/>${CONFIG.DND5E.spellSchools[result.system.school].label}</td>\n`;
             tableBodyString += `<td>${renderComponents(result)}</td>\n`
             tableBodyString += `<td>${renderConcentration(result)}</td>\n`
             tableBodyString += `<td>${renderRitual(result)}</td>\n`
-            tableBodyString += `<td>${result.system.range?.value ?? ''} ${result.system.range?.units}</td>\n`;
+            tableBodyString += `<td class="spell-search-result-range">${renderRange(result)}</td>\n`;
             tableBodyString += `<tr>`
         }
         
