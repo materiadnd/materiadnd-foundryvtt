@@ -9,36 +9,36 @@ function printSet(set) {
 
 function renderComponents(spell) {
     let componentList = [];
-    if (spell.system.properties.has('vocal')) {
-        componentList.push(CONFIG.DND5E.spellComponents['vocal'].abbr);
-    }
-    if (spell.system.properties.has('somatic')) {
-        componentList.push(CONFIG.DND5E.spellComponents['somatic'].abbr);
-    }
-    if (spell.system.properties.has('material')) {
-        componentList.push(CONFIG.DND5E.spellComponents['material'].abbr);
-    }
+    if (spell.system.properties.has('vocal')) { componentList.push(CONFIG.DND5E.spellComponents['vocal'].abbr); }
+    if (spell.system.properties.has('somatic')) { componentList.push(CONFIG.DND5E.spellComponents['somatic'].abbr); }
+    if (spell.system.properties.has('material')) { componentList.push(CONFIG.DND5E.spellComponents['material'].abbr); }
     return componentList.join('/');
 }
 
 function renderCastTime(spell) {
-    if (['action', 'bonus', 'reaction'].includes(spell.system.activation?.type)) {
+    if (['action', 'reaction'].includes(spell.system.activation?.type)) {
         return `${spell.system.activation?.type}`;
+    } else if (spell.system.activation?.type == 'bonus') {
+        return `${spell.system.activation?.type} action`;
     } else {
-        return `${spell.system.activation?.cost} ${spell.system.activation?.type}`;
+        if (spell.system.activation?.cost > 1) {
+            return `${spell.system.activation?.cost} ${spell.system.activation?.type}s`;
+        } else {
+            return `${spell.system.activation?.cost} ${spell.system.activation?.type}`;
+        }
     }
 }
 
 function renderConcentration(spell) {
     if (spell.system.properties.has('concentration')) {
-        return `<img src="${CONFIG.DND5E.spellTags['concentration'].icon}"/>`
+        return `<dnd5e-icon class="search-results-body-icon" src="${CONFIG.DND5E.spellTags['concentration'].icon}"></dnd5e-icon>`
     } else {
         return '';
     }
 }
 function renderRitual(spell) {
     if (spell.system.properties.has('ritual')) {
-        return `<img src="${CONFIG.DND5E.spellTags['ritual'].icon}"/>`
+        return `<dnd5e-icon class="search-results-body-icon" src="${CONFIG.DND5E.spellTags['ritual'].icon}"></dnd5e-icon>`
     } else {
         return '';
     }
@@ -53,85 +53,53 @@ function renderRange(spell) {
 }
 function getSpellsForLevel(searchIndex, level) {
     switch(level) {
-        case 0:
-            return searchIndex.level0SpellIds;
-        case 1:
-            return searchIndex.level1SpellIds;
-        case 2:
-            return searchIndex.level2SpellIds;
-        case 3:
-            return searchIndex.level3SpellIds;
-        case 4:
-            return searchIndex.level4SpellIds;
-        case 5:
-            return searchIndex.level5SpellIds;
-        case 6:
-            return searchIndex.level6SpellIds;
-        case 7:
-            return searchIndex.level7SpellIds;
-        case 8:
-            return searchIndex.level8SpellIds;
-        case 9:
-            return searchIndex.level9SpellIds;
+        case 0: return searchIndex.level0SpellIds;
+        case 1: return searchIndex.level1SpellIds;
+        case 2: return searchIndex.level2SpellIds;
+        case 3: return searchIndex.level3SpellIds;
+        case 4: return searchIndex.level4SpellIds;
+        case 5: return searchIndex.level5SpellIds;
+        case 6: return searchIndex.level6SpellIds;
+        case 7: return searchIndex.level7SpellIds;
+        case 8: return searchIndex.level8SpellIds;
+        case 9: return searchIndex.level9SpellIds;
     }
 }
 
 function getSpellsForSchool(searchIndex, school) {
     switch(school) {
-        case 'abj':
-            return searchIndex.abjSpellIds;
-        case 'con':
-            return searchIndex.conSpellIds;
-        case 'div':
-            return searchIndex.divSpellIds;
-        case 'enc':
-            return searchIndex.encSpellIds;
-        case 'evo':
-            return searchIndex.evoSpellIds;
-        case 'ill':
-            return searchIndex.illSpellIds;
-        case 'nec':
-            return searchIndex.necSpellIds;
-        case 'trs':
-            return searchIndex.trsSpellIds;
+        case 'abj': return searchIndex.abjSpellIds;
+        case 'con': return searchIndex.conSpellIds;
+        case 'div': return searchIndex.divSpellIds;
+        case 'enc': return searchIndex.encSpellIds;
+        case 'evo': return searchIndex.evoSpellIds;
+        case 'ill': return searchIndex.illSpellIds;
+        case 'nec': return searchIndex.necSpellIds;
+        case 'trs': return searchIndex.trsSpellIds;
     }
 }
 
 function getSpellsForClass(searchIndex, className) {
     switch (className) {
-        case 'artificer':
-            return searchIndex.artificerSpellIds;
-        case 'bard':
-            return searchIndex.bardSpellIds;
-        case 'cleric':
-            return searchIndex.clericSpellIds;
-        case 'druid':
-            return searchIndex.druidSpellIds;
-        case 'paladin':
-            return searchIndex.paladinSpellIds;
-        case 'ranger':
-            return searchIndex.rangerSpellIds;
-        case 'sorcerer':
-            return searchIndex.sorcererSpellIds;
-        case 'warlock':
-            return searchIndex.warlockSpellIds;
-        case 'wizard':
-            return searchIndex.wizardSpellIds;
+        case 'artificer': return searchIndex.artificerSpellIds;
+        case 'bard': return searchIndex.bardSpellIds;
+        case 'cleric': return searchIndex.clericSpellIds;
+        case 'druid': return searchIndex.druidSpellIds;
+        case 'paladin': return searchIndex.paladinSpellIds;
+        case 'ranger': return searchIndex.rangerSpellIds;
+        case 'sorcerer': return searchIndex.sorcererSpellIds;
+        case 'warlock': return searchIndex.warlockSpellIds;
+        case 'wizard': return searchIndex.wizardSpellIds;
     }
 }
 
 function getSpellsForComponent(searchIndex, component) {
     switch (component) {
-        case 'vocal':
-            return searchIndex.vocalSpellIds;
-        case 'somatic':
-            return searchIndex.somaticSpellIds;
-        case 'material':
-            return searchIndex.materialSpellIds;
-        case 'ritual':
-            return searchIndex.ritualSpellIds;
-        case 'concentration':
-            return searchIndex.concentrationSpellIds;
+        case 'vocal': return searchIndex.vocalSpellIds;
+        case 'somatic': return searchIndex.somaticSpellIds;
+        case 'material': return searchIndex.materialSpellIds;
+        case 'ritual': return searchIndex.ritualSpellIds;
+        case 'concentration': return searchIndex.concentrationSpellIds;
     }
 }
 
@@ -226,6 +194,8 @@ class SearchFilter {
 }
 
 export class SpellSearchIndex {
+    // this is a terrible way to do it but it makes it the easiest way
+    // to stringify them for deserialization
     artificerSpellIds = new Array();
     bardSpellIds = new Array();
     clericSpellIds = new Array();
@@ -287,111 +257,47 @@ export class SpellSearchIndex {
             };
             this.allSpellIds.push(spell.uuid);
             switch (spellObject.level) {
-                case 0:
-                    this.level0SpellIds.push(spell.uuid);
-                    break;
-                case 1:
-                    this.level1SpellIds.push(spell.uuid);
-                    break;
-                case 2:
-                    this.level2SpellIds.push(spell.uuid);
-                    break;
-                case 3:
-                    this.level3SpellIds.push(spell.uuid);
-                    break;
-                case 4:
-                    this.level4SpellIds.push(spell.uuid);
-                    break;
-                case 5:
-                    this.level5SpellIds.push(spell.uuid);
-                    break;
-                case 6:
-                    this.level6SpellIds.push(spell.uuid);
-                    break;
-                case 7:
-                    this.level7SpellIds.push(spell.uuid);
-                    break;
-                case 8:
-                    this.level8SpellIds.push(spell.uuid);
-                    break;
-                case 9:
-                    this.level9SpellIds.push(spell.uuid);
-                    break;
+                case 0: this.level0SpellIds.push(spell.uuid); break;
+                case 1: this.level1SpellIds.push(spell.uuid); break;
+                case 2: this.level2SpellIds.push(spell.uuid); break;
+                case 3: this.level3SpellIds.push(spell.uuid); break;
+                case 4: this.level4SpellIds.push(spell.uuid); break;
+                case 5: this.level5SpellIds.push(spell.uuid); break;
+                case 6: this.level6SpellIds.push(spell.uuid); break;
+                case 7: this.level7SpellIds.push(spell.uuid); break;
+                case 8: this.level8SpellIds.push(spell.uuid); break;
+                case 9: this.level9SpellIds.push(spell.uuid); break;
             }
             switch (spellObject.school) {
-                case 'abj':
-                    this.abjSpellIds.push(spell.uuid);
-                    break;
-                case 'con':
-                    this.conSpellIds.push(spell.uuid);
-                    break;
-                case 'div':
-                    this.divSpellIds.push(spell.uuid);
-                    break;
-                case 'enc':
-                    this.encSpellIds.push(spell.uuid);
-                    break;
-                case 'evo':
-                    this.evoSpellIds.push(spell.uuid);
-                    break;
-                case 'ill':
-                    this.illSpellIds.push(spell.uuid);
-                    break;
-                case 'nec':
-                    this.necSpellIds.push(spell.uuid);
-                    break;
-                case 'trs':
-                    this.trsSpellIds.push(spell.uuid);
-                    break;
+                case 'abj': this.abjSpellIds.push(spell.uuid); break;
+                case 'con': this.conSpellIds.push(spell.uuid); break;
+                case 'div': this.divSpellIds.push(spell.uuid); break;
+                case 'enc': this.encSpellIds.push(spell.uuid); break;
+                case 'evo': this.evoSpellIds.push(spell.uuid); break;
+                case 'ill': this.illSpellIds.push(spell.uuid); break;
+                case 'nec': this.necSpellIds.push(spell.uuid); break;
+                case 'trs': this.trsSpellIds.push(spell.uuid); break;
             }
             for (const className of spellObject.classLists.split(',')) {
                 switch (className) {
-                    case 'artificer':
-                        this.artificerSpellIds.push(spell.uuid);
-                        break;
-                    case 'bard':
-                        this.bardSpellIds.push(spell.uuid);
-                        break;
-                    case 'cleric':
-                        this.clericSpellIds.push(spell.uuid);
-                        break;
-                    case 'druid':
-                        this.druidSpellIds.push(spell.uuid);
-                        break;
-                    case 'paladin':
-                        this.paladinSpellIds.push(spell.uuid);
-                        break;
-                    case 'ranger':
-                        this.rangerSpellIds.push(spell.uuid);
-                        break;
-                    case 'sorcerer':
-                        this.sorcererSpellIds.push(spell.uuid);
-                        break;
-                    case 'warlock':
-                        this.warlockSpellIds.push(spell.uuid);
-                        break;
-                    case 'wizard':
-                        this.wizardSpellIds.push(spell.uuid);
-                        break;
+                    case 'artificer': this.artificerSpellIds.push(spell.uuid); break;
+                    case 'bard': this.bardSpellIds.push(spell.uuid); break;
+                    case 'cleric': this.clericSpellIds.push(spell.uuid); break;
+                    case 'druid': this.druidSpellIds.push(spell.uuid); break;
+                    case 'paladin': this.paladinSpellIds.push(spell.uuid); break;
+                    case 'ranger': this.rangerSpellIds.push(spell.uuid); break;
+                    case 'sorcerer': this.sorcererSpellIds.push(spell.uuid); break;
+                    case 'warlock': this.warlockSpellIds.push(spell.uuid); break;
+                    case 'wizard': this.wizardSpellIds.push(spell.uuid); break;
                 }
             }
             for (const component of spellObject.components) {
                 switch (component) {
-                    case 'vocal':
-                        this.vocalSpellIds.push(spell.uuid);
-                        break;
-                    case 'somatic':
-                        this.somaticSpellIds.push(spell.uuid);
-                        break;
-                    case 'material':
-                        this.materialSpellIds.push(spell.uuid);
-                        break;
-                    case 'ritual':
-                        this.ritualSpellIds.push(spell.uuid);
-                        break;
-                    case 'concentration':
-                        this.concentrationSpellIds.push(spell.uuid);
-                        break;
+                    case 'vocal': this.vocalSpellIds.push(spell.uuid); break;
+                    case 'somatic': this.somaticSpellIds.push(spell.uuid); break;
+                    case 'material': this.materialSpellIds.push(spell.uuid); break;
+                    case 'ritual': this.ritualSpellIds.push(spell.uuid); break;
+                    case 'concentration': this.concentrationSpellIds.push(spell.uuid); break;
                 }
             }
         }
@@ -399,7 +305,6 @@ export class SpellSearchIndex {
 }
 
 export class SpellSearchApp extends FormApplication {
-
     _searchFilter = new SearchFilter();
     searchResults = new Array();
 
@@ -612,11 +517,11 @@ export class SpellSearchApp extends FormApplication {
             tableBodyString += `<td>${(CONFIG.DND5E.spellLevels[result.system.level]).replace(' Level', '')}</td>\n`;
             tableBodyString += `<td class="spell-search-result-cast-time">${renderCastTime(result)}</td>\n`;
             tableBodyString += `<td><img src="${CONFIG.DND5E.spellSchools[result.system.school].icon}"/>${CONFIG.DND5E.spellSchools[result.system.school].label}</td>\n`;
-            tableBodyString += `<td>${renderComponents(result)}</td>\n`
-            tableBodyString += `<td>${renderConcentration(result)}</td>\n`
-            tableBodyString += `<td>${renderRitual(result)}</td>\n`
+            tableBodyString += `<td>${renderComponents(result)}</td>\n`;
+            tableBodyString += `<td>${renderConcentration(result)}</td>\n`;
+            tableBodyString += `<td>${renderRitual(result)}</td>\n`;
             tableBodyString += `<td class="spell-search-result-range">${renderRange(result)}</td>\n`;
-            tableBodyString += `<tr>`
+            tableBodyString += `<tr>\n`;
         }
         
         document.getElementById("spell-search-results-body").innerHTML = tableBodyString;
