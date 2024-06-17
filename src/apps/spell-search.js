@@ -23,7 +23,14 @@ function renderComponents(spell) {
 
 function renderConcentration(spell) {
     if (spell.system.properties.has('concentration')) {
-        return 'X';
+        return `<img src="${CONFIG.DND5E.spellTags['concentration'].icon}"/>`
+    } else {
+        return '';
+    }
+}
+function renderRitual(spell) {
+    if (spell.system.properties.has('ritual')) {
+        return `<img src="${CONFIG.DND5E.spellTags['ritual'].icon}"/>`
     } else {
         return '';
     }
@@ -105,6 +112,10 @@ function getSpellsForComponent(searchIndex, component) {
             return searchIndex.somaticSpellIds;
         case 'material':
             return searchIndex.materialSpellIds;
+        case 'ritual':
+            return searchIndex.ritualSpellIds;
+        case 'concentration':
+            return searchIndex.concentrationSpellIds;
     }
 }
 
@@ -232,6 +243,8 @@ export class SpellSearchIndex {
     vocalSpellIds = new Array();
     materialSpellIds = new Array();
     somaticSpellIds = new Array();
+    ritualSpellIds = new Array();
+    concentrationSpellIds = new Array();
 
     allSpellIds = new Array();
 
@@ -254,7 +267,7 @@ export class SpellSearchIndex {
                 level: spell.system.level,
                 school: spell.system.school,
                 classLists: spell.flags['materia-dnd']['spell-lists'],
-                components: spell.system.properties.filter(x => ['vocal', 'somatic', 'material'].includes(x)),
+                components: spell.system.properties.filter(x => ['vocal', 'somatic', 'material', 'ritual', 'concentration'].includes(x)),
             };
             this.allSpellIds.push(spell.uuid);
             switch (spellObject.level) {
@@ -356,6 +369,12 @@ export class SpellSearchIndex {
                         break;
                     case 'material':
                         this.materialSpellIds.push(spell.uuid);
+                        break;
+                    case 'ritual':
+                        this.ritualSpellIds.push(spell.uuid);
+                        break;
+                    case 'concentration':
+                        this.concentrationSpellIds.push(spell.uuid);
                         break;
                 }
             }
@@ -572,11 +591,16 @@ export class SpellSearchApp extends FormApplication {
 
         for (let result of this.searchResults) {
             let richName = await TextEditor.enrichHTML(`@UUID[${result.uuid}]`);
-            tableBodyString += `<tr>\n<td>${richName}</td>\n`;
+            tableBodyString += `<tr class="spell-search-result-row">\n`;
+            tableBodyString += `<td style="text-align: left">${richName}</td>\n`;
             tableBodyString += `<td>${CONFIG.DND5E.spellLevels[result.system.level]}</td>\n`;
-            tableBodyString += `<td>${CONFIG.DND5E.spellSchools[result.system.school].label}</td>\n`;
+            tableBodyString += `<td>${result.system.activation?.cost} ${result.system.activation?.type}</td>\n`;
+            tableBodyString += `<td><img src="${CONFIG.DND5E.spellSchools[result.system.school].icon}"/>${CONFIG.DND5E.spellSchools[result.system.school].label}</td>\n`;
             tableBodyString += `<td>${renderComponents(result)}</td>\n`
-            tableBodyString += `<td>${renderConcentration(result)}</td>\n</tr>\n`
+            tableBodyString += `<td>${renderConcentration(result)}</td>\n`
+            tableBodyString += `<td>${renderRitual(result)}</td>\n`
+            tableBodyString += `<td>${result.system.range?.value ?? ''} ${result.system.range?.units}</td>\n`;
+            tableBodyString += `<tr>`
         }
         
         document.getElementById("spell-search-results-body").innerHTML = tableBodyString;
