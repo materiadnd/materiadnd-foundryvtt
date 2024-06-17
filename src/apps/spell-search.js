@@ -1,28 +1,10 @@
 import { Constants } from "../constants.js";
+import { Settings } from "../settings.js";
 
 //FILTER_STATES = ["ignore", "yes", "no"]    //yes this is cribbed from 5etools
 
 function printSet(set) {
     return new Array(...set).join(' ');
-}
-
-function getSpellLists(spell) {
-    if (spell.flags.hasOwnProperty('materia-dnd') &&
-        spell.flags['materia-dnd'].hasOwnProperty('spell-lists')) {
-        return new Set(spell.flags['materia-dnd']['spell-lists'].split(','));
-    } else {
-        console.log('materia-dnd | Spell search: no spell lists found, returning empty set')
-        return new Set();
-    }
-}
-
-function hasExcludeFromSearchResultsFlag(spell) {
-    if (spell.flags.hasOwnProperty('materia-dnd') &&
-        spell.flags['materia-dnd'].hasOwnProperty('exclude-from-spell-search')) {
-            return spell.flags['materia-dnd']['exclude-from-spell-search'] == "true";
-        } else {
-            return false;
-        }
 }
 
 function renderComponents(spell) {
@@ -46,6 +28,85 @@ function renderConcentration(spell) {
         return '';
     }
 }
+function getSpellsForLevel(searchIndex, level) {
+    switch(level) {
+        case 0:
+            return searchIndex.level0SpellIds;
+        case 1:
+            return searchIndex.level1SpellIds;
+        case 2:
+            return searchIndex.level2SpellIds;
+        case 3:
+            return searchIndex.level3SpellIds;
+        case 4:
+            return searchIndex.level4SpellIds;
+        case 5:
+            return searchIndex.level5SpellIds;
+        case 6:
+            return searchIndex.level6SpellIds;
+        case 7:
+            return searchIndex.level7SpellIds;
+        case 8:
+            return searchIndex.level8SpellIds;
+        case 9:
+            return searchIndex.level9SpellIds;
+    }
+}
+
+function getSpellsForSchool(searchIndex, school) {
+    switch(school) {
+        case 'abj':
+            return searchIndex.abjSpellIds;
+        case 'con':
+            return searchIndex.conSpellIds;
+        case 'div':
+            return searchIndex.divSpellIds;
+        case 'enc':
+            return searchIndex.encSpellIds;
+        case 'evo':
+            return searchIndex.evoSpellIds;
+        case 'ill':
+            return searchIndex.illSpellIds;
+        case 'nec':
+            return searchIndex.necSpellIds;
+        case 'trs':
+            return searchIndex.trsSpellIds;
+    }
+}
+
+function getSpellsForClass(searchIndex, className) {
+    switch (className) {
+        case 'artificer':
+            return searchIndex.artificerSpellIds;
+        case 'bard':
+            return searchIndex.bardSpellIds;
+        case 'cleric':
+            return searchIndex.clericSpellIds;
+        case 'druid':
+            return searchIndex.druidSpellIds;
+        case 'paladin':
+            return searchIndex.paladinSpellIds;
+        case 'ranger':
+            return searchIndex.rangerSpellIds;
+        case 'sorcerer':
+            return searchIndex.sorcererSpellIds;
+        case 'warlock':
+            return searchIndex.warlockSpellIds;
+        case 'wizard':
+            return searchIndex.wizardSpellIds;
+    }
+}
+
+function getSpellsForComponent(searchIndex, component) {
+    switch (component) {
+        case 'vocal':
+            return searchIndex.vocalSpellIds;
+        case 'somatic':
+            return searchIndex.somaticSpellIds;
+        case 'material':
+            return searchIndex.materialSpellIds;
+    }
+}
 
 class SearchFilter {
     includeLevels = new Set();
@@ -61,70 +122,70 @@ class SearchFilter {
     requireLevel(level) {
         if (!this.includeLevels.has(level)) { this.includeLevels.add(level); }
         if (this.excludeLevels.has(level)) { this.excludeLevels.delete(level); }
-        this.printFilters();
+        // this.printFilters();
     }
     excludeLevel(level) {
         if (this.includeLevels.has(level)) { this.includeLevels.delete(level); }
         if (!this.excludeLevels.has(level)) { this.excludeLevels.add(level); }
-        this.printFilters();
+        // this.printFilters();
     }
     ignoreLevel(level) {
         if (this.includeLevels.has(level)) { this.includeLevels.delete(level); }
         if (this.excludeLevels.has(level)) { this.excludeLevels.delete(level); }
-        this.printFilters();
+        // this.printFilters();
     }
 
     requireList(list) {
         if (!this.includeLists.has(list)) { this.includeLists.add(list); }
         if (this.excludeLists.has(list)) { this.excludeLists.delete(list); }
-        this.printFilters();
+        // this.printFilters();
     }
     excludeList(list) {
         if (this.includeLists.has(list)) { this.includeLists.delete(list); }
         if (!this.excludeLists.has(list)) { this.excludeLists.add(list); }
-        this.printFilters();
+        // this.printFilters();
     }
     ignoreList(list) {
         if (this.includeLists.has(list)) { this.includeLists.delete(list); }
         if (this.excludeLists.has(list)) { this.excludeLists.delete(list); }
-        this.printFilters();
+        // this.printFilters();
     }
 
     requireSchool(school) {
         if (!this.includeSchools.has(school)) { this.includeSchools.add(school); }
         if (this.excludeSchools.has(school)) { this.excludeSchools.delete(school); }
-        this.printFilters();
+        // this.printFilters();
     }
     excludeSchool(school) {
         if (this.includeSchools.has(school)) { this.includeSchools.delete(school); }
         if (!this.excludeSchools.has(school)) { this.excludeSchools.add(school); }
-        this.printFilters();
+        // this.printFilters();
     }
     ignoreSchool(school) {
         if (this.includeSchools.has(school)) { this.includeSchools.delete(school); }
         if (this.excludeSchools.has(school)) { this.excludeSchools.delete(school); }
-        this.printFilters();
+        // this.printFilters();
     }
 
     requireComponent(component) {
         if (!this.includeComponents.has(component)) { this.includeComponents.add(component); }
         if (this.excludeComponents.has(component)) { this.excludeComponents.delete(component); }
-        this.printFilters();
+        // this.printFilters();
     }
     excludeComponent(component) {
         if (this.includeComponents.has(component)) { this.includeComponents.delete(component); }
         if (!this.excludeComponents.has(component)) { this.excludeComponents.add(component); }
-        this.printFilters();
+        // this.printFilters();
     }
     ignoreComponent(component) {
         if (this.excludeComponents.has(component)) { this.excludeComponents.delete(component); }
         if (this.includeComponents.has(component)) { this.includeComponents.delete(component); }
-        this.printFilters();
+        // this.printFilters();
     }
 
     updateText(text) {
         this.textFilter = text;
-        this.printFilters();
+        // this.printFilters();
     }
 
     printFilters() {
@@ -134,6 +195,171 @@ class SearchFilter {
         filterString += `Components: IN: ${printSet(this.includeComponents)}; OUT: ${printSet(this.excludeComponents)}\n`
         filterString += `Text: ${this.textFilter}`;
         console.log(`materia-dnd | Spell search: Filter:\n${filterString}`);
+    }
+}
+
+export class SpellSearchIndex {
+    artificerSpellIds = new Array();
+    bardSpellIds = new Array();
+    clericSpellIds = new Array();
+    druidSpellIds = new Array();
+    paladinSpellIds = new Array();
+    rangerSpellIds = new Array();
+    sorcererSpellIds = new Array();
+    warlockSpellIds = new Array();
+    wizardSpellIds = new Array();
+
+    level0SpellIds = new Array();
+    level1SpellIds = new Array();
+    level2SpellIds = new Array();
+    level3SpellIds = new Array();
+    level4SpellIds = new Array();
+    level5SpellIds = new Array();
+    level6SpellIds = new Array();
+    level7SpellIds = new Array();
+    level8SpellIds = new Array();
+    level9SpellIds = new Array();
+
+    abjSpellIds = new Array();
+    conSpellIds = new Array();
+    divSpellIds = new Array();
+    encSpellIds = new Array();
+    evoSpellIds = new Array();
+    illSpellIds = new Array();
+    necSpellIds = new Array();
+    trsSpellIds = new Array();
+
+    vocalSpellIds = new Array();
+    materialSpellIds = new Array();
+    somaticSpellIds = new Array();
+
+    allSpellIds = new Array();
+
+    async updateIndexForPack(packName) {
+        let pack = game.packs.get(packName);
+        let packDocs = await pack.getDocuments();
+        // run data sanity checks to exclude any weirdly malformed spell things
+        let cleanDocs = packDocs.filter(x => x.type == 'spell')
+            .filter(x => x.name != "")
+            .filter(x => x.hasOwnProperty('system'))
+            .filter(x => x.hasOwnProperty('flags') && x.flags.hasOwnProperty('materia-dnd') && x.flags['materia-dnd'].hasOwnProperty('spell-lists') && !x.flags['materia-dnd'].hasOwnProperty('exclude-from-spell-search'))
+            .filter(x => x.system.hasOwnProperty('level'))
+            .filter(x => x.system.hasOwnProperty('school'))
+            .filter(x => x.system.hasOwnProperty('properties'))
+
+        for (const spell of cleanDocs) {
+            var spellObject = {
+                uuid: spell.uuid,
+                name: spell.name,
+                level: spell.system.level,
+                school: spell.system.school,
+                classLists: spell.flags['materia-dnd']['spell-lists'],
+                components: spell.system.properties.filter(x => ['vocal', 'somatic', 'material'].includes(x)),
+            };
+            this.allSpellIds.push(spell.uuid);
+            switch (spellObject.level) {
+                case 0:
+                    this.level0SpellIds.push(spell.uuid);
+                    break;
+                case 1:
+                    this.level1SpellIds.push(spell.uuid);
+                    break;
+                case 2:
+                    this.level2SpellIds.push(spell.uuid);
+                    break;
+                case 3:
+                    this.level3SpellIds.push(spell.uuid);
+                    break;
+                case 4:
+                    this.level4SpellIds.push(spell.uuid);
+                    break;
+                case 5:
+                    this.level5SpellIds.push(spell.uuid);
+                    break;
+                case 6:
+                    this.level6SpellIds.push(spell.uuid);
+                    break;
+                case 7:
+                    this.level7SpellIds.push(spell.uuid);
+                    break;
+                case 8:
+                    this.level8SpellIds.push(spell.uuid);
+                    break;
+                case 9:
+                    this.level9SpellIds.push(spell.uuid);
+                    break;
+            }
+            switch (spellObject.school) {
+                case 'abj':
+                    this.abjSpellIds.push(spell.uuid);
+                    break;
+                case 'con':
+                    this.conSpellIds.push(spell.uuid);
+                    break;
+                case 'div':
+                    this.divSpellIds.push(spell.uuid);
+                    break;
+                case 'enc':
+                    this.encSpellIds.push(spell.uuid);
+                    break;
+                case 'evo':
+                    this.evoSpellIds.push(spell.uuid);
+                    break;
+                case 'ill':
+                    this.illSpellIds.push(spell.uuid);
+                    break;
+                case 'nec':
+                    this.necSpellIds.push(spell.uuid);
+                    break;
+                case 'trs':
+                    this.trsSpellIds.push(spell.uuid);
+                    break;
+            }
+            for (const className of spellObject.classLists.split(',')) {
+                switch (className) {
+                    case 'artificer':
+                        this.artificerSpellIds.push(spell.uuid);
+                        break;
+                    case 'bard':
+                        this.bardSpellIds.push(spell.uuid);
+                        break;
+                    case 'cleric':
+                        this.clericSpellIds.push(spell.uuid);
+                        break;
+                    case 'druid':
+                        this.druidSpellIds.push(spell.uuid);
+                        break;
+                    case 'paladin':
+                        this.paladinSpellIds.push(spell.uuid);
+                        break;
+                    case 'ranger':
+                        this.rangerSpellIds.push(spell.uuid);
+                        break;
+                    case 'sorcerer':
+                        this.sorcererSpellIds.push(spell.uuid);
+                        break;
+                    case 'warlock':
+                        this.warlockSpellIds.push(spell.uuid);
+                        break;
+                    case 'wizard':
+                        this.wizardSpellIds.push(spell.uuid);
+                        break;
+                }
+            }
+            for (const component of spellObject.components) {
+                switch (component) {
+                    case 'vocal':
+                        this.vocalSpellIds.push(spell.uuid);
+                        break;
+                    case 'somatic':
+                        this.somaticSpellIds.push(spell.uuid);
+                        break;
+                    case 'material':
+                        this.materialSpellIds.push(spell.uuid);
+                        break;
+                }
+            }
+        }
     }
 }
 
@@ -166,7 +392,7 @@ export class SpellSearchApp extends FormApplication {
         // loadTemplates();
 
         // set properties
-
+        this.searchIndex = JSON.parse(await game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.SPELL_SEARCH_INDEX));
         // register Handlebars helpers
     }
 
@@ -252,61 +478,89 @@ export class SpellSearchApp extends FormApplication {
     }
 
     async _updateSearchResults(html) {
-        let pack = game.packs.get(this.spellPackName);
-        let packSpells = await pack.getDocuments();
 
-        let results = packSpells.filter( x => x.type == 'spell' );
+        let results = this.searchIndex.allSpellIds.reduce( (acc, id) => { acc.push(fromUuidSync(id)); return acc;}, new Array())
+        if (this._searchFilter.includeLevels.size > 0) {
+            // console.log(`materia-dnd | Spell Search: including spell levels.  Before: ${results.length}`);
+            let includeSpellIds = new Array();
+            for ( const level of this._searchFilter.includeLevels.values() ) {
+                includeSpellIds = new Array(...includeSpellIds, ...getSpellsForLevel(this.searchIndex, level));
+            }
+            results = results.filter(x => includeSpellIds.includes(x.uuid));
+            // console.log(`materia-dnd | After: ${results.length}`);
+        }
+        if (this._searchFilter.excludeLevels.size > 0) {
+            // console.log(`materia-dnd | Spell Search: excluding spell levels.  Before: ${results.length}`);
+            let excludeSpellIds = new Array();
+            for (const level of this._searchFilter.excludeLevels.values() ) {
+                excludeSpellIds = new Array(...excludeSpellIds, ...getSpellsForLevel(this.searchIndex, level));
+            }
+            results = results.filter( x => !excludeSpellIds.includes(x.uuid));
+            // console.log(`materia-dnd | After: ${results.length}`);
+        }
+        if (this._searchFilter.includeSchools.size > 0) {
+            // console.log(`materia-dnd | Spell Search: including spell schools.  Before: ${results.length}`);
+            let includeSpellIds = new Array();
+            for ( const school of this._searchFilter.includeSchools.values() ) {
+                includeSpellIds = new Array(...includeSpellIds, ...getSpellsForSchool(this.searchIndex, school));
+            }
+            results = results.filter( x => includeSpellIds.includes(x.uuid));
+            // console.log(`materia-dnd | After: ${results.length}`);
+        }
+        if (this._searchFilter.excludeSchools.size > 0) {
+            // console.log(`materia-dnd | Spell Search: excluding spell schools.  Before: ${results.length}`);
+            let excludeSpellIds = new Array();
+            for (const school of this._searchFilter.excludeSchools.values() ) {
+                excludeSpellIds = new Array(...excludeSpellIds, ...getSpellsForSchool(this.searchIndex, school));
+            }
+            results = results.filter( x => !excludeSpellIds.includes(x.uuid));
+            // console.log(`materia-dnd | After: ${results.length}`);
+        }
+        if (this._searchFilter.includeComponents.size > 0) {
+            // console.log(`materia-dnd | Spell Search: including spell components.  Before: ${results.length}`);
+            let includeSpellIds = new Array();
+            for ( const component of this._searchFilter.includeComponents.values() ) {
+                includeSpellIds = new Array(...includeSpellIds, ...getSpellsForComponent(this.searchIndex, component));
+            }
+            results = results.filter( x => includeSpellIds.includes(x.uuid));
+            // console.log(`materia-dnd | After: ${results.length}`);
+        }
+        if (this._searchFilter.excludeComponents.size > 0) {
+            // console.log(`materia-dnd | Spell Search: excluding spell components.  Before: ${results.length}`);
+            let excludeSpellIds = new Array();
+            for (const component of this._searchFilter.excludeComponents.values() ) {
+                excludeSpellIds =  new Array(...excludeSpellIds, ...getSpellsForComponent(this.searchIndex, component));
+            }
+            results = results.filter( x => !excludeSpellIds.includes(x.uuid));
+            // console.log(`materia-dnd | After: ${results.length}`);
+        }
+        if (this._searchFilter.includeLists.size > 0) {
+            // console.log(`materia-dnd | Spell Search: including class spell lists.  Before: ${results.length}`);
+            let includeSpellIds = new Array();
+            for ( const className of this._searchFilter.includeLists.values() ) {
+                includeSpellIds = new Array(...includeSpellIds, ...getSpellsForClass(this.searchIndex, className));
+            }
+            results = results.filter( x => includeSpellIds.includes(x.uuid));
+            // console.log(`materia-dnd | After: ${results.length}`);
+        }
+        if (this._searchFilter.excludeLists.size > 0) {
+            // console.log(`materia-dnd | Spell Search: excluding class spell lists.  Before: ${results.length}`);
+            let excludeSpellIds = new Array();
+            for (const className of this._searchFilter.excludeLists.values() ) {
+                excludeSpellIds = new Array(...excludeSpellIds, ...getSpellsForClass(this.searchIndex, className));
+            }
+            results = results.filter( x => !excludeSpellIds.includes(x.uuid));
+            // console.log(`materia-dnd | After: ${results.length}`);
+        }
+
         if (this._searchFilter.textFilter != "") {
-            console.log(`materia-dnd | Filtering by text ${printSet(this._searchFilter.textFilter)} | Before: ${results.length}`);
+            // console.log(`materia-dnd | Spell Search: filtering text.  Before: ${results.length}`);
             results = results.filter(x => {
                 let regexp = new RegExp(this._searchFilter.textFilter, "i");
                 return x.name.match(regexp);
             });
-            console.log(`materia-dnd | After: ${results.length}`);
+            // console.log(`materia-dnd | After: ${results.length}`);
         }
-        if (this._searchFilter.includeLevels.size > 0) {
-            console.log(`materia-dnd | Including spell levels ${printSet(this._searchFilter.includeLevels)} | Before: ${results.length}`);
-            results = results.filter(x => this._searchFilter.includeLevels.has(x?.system?.level));
-            console.log(`materia-dnd | After: ${results.length}`);
-        }
-        if (this._searchFilter.excludeLevels.size > 0) {
-            console.log(`materia-dnd | Excluding spell levels ${printSet(this._searchFilter.excludeLevels)} | Before: ${results.length}`);
-            results = results.filter(x => !this._searchFilter.excludeLevels.has(x?.system?.level));
-            console.log(`materia-dnd | After: ${results.length}`);
-        }
-        if (this._searchFilter.includeSchools.size > 0) {
-            console.log(`materia-dnd | Including spell schools ${printSet(this._searchFilter.includeSchools)} | Before: ${results.length}`);
-            results = results.filter(x => this._searchFilter.includeSchools.has(x?.system?.school));
-            console.log(`materia-dnd | After: ${results.length}`);
-        }
-        if (this._searchFilter.excludeSchools.size > 0) {
-            console.log(`materia-dnd | Excluding spell schools ${printSet(this._searchFilter.excludeSchools)} | Before: ${results.length}`);
-            results = results.filter(x => !this._searchFilter.excludeSchools.has(x?.system?.school));
-            console.log(`materia-dnd | After: ${results.length}`);
-        }
-        if (this._searchFilter.includeComponents.size > 0) {
-            console.log(`materia-dnd | Including spell components ${printSet(this._searchFilter.includeComponents)} | Before: ${results.length}`);
-            results = results.filter(x => this._searchFilter.includeComponents.intersection(x?.system?.properties).size > 0 );
-            console.log(`materia-dnd | After: ${results.length}`);
-        }
-        if (this._searchFilter.excludeComponents.size > 0) {
-            console.log(`materia-dnd | Excluding spell components ${printSet(this._searchFilter.excludeComponents)} | Before: ${results.length}`);
-            results = results.filter(x => this._searchFilter.excludeComponents.isDisjointFrom(x?.system?.properties))
-            console.log(`materia-dnd | After: ${results.length}`);
-        }
-        if (this._searchFilter.includeLists.size > 0) {
-            console.log(`materia-dnd | Including spell lists ${printSet(this._searchFilter.includeLists)} | Before: ${results.length}`);
-            results = results.filter( x => getSpellLists(x).intersection(this._searchFilter.includeLists).size > 0 );
-            console.log(`materia-dnd | After: ${results.length}`);
-        }
-        if (this._searchFilter.excludeLists.size > 0) {
-            console.log(`materia-dnd | Excluding spell lists ${printSet(this._searchFilter.excludeLists)} | Before: ${results.length}`);
-            results = results.filter( x => getSpellLists(x).isDisjointFrom(this._searchFilter.excludeLists) );
-            console.log(`materia-dnd | After: ${results.length}`);
-        }
-        console.log(`materia-dnd | Excluding spells with flag to exclude from search results | Before ${results.length}`);
-        results = results.filter( x => !hasExcludeFromSearchResultsFlag(x));
-        console.log(`materia-dnd | After: ${results.length}`);
 
         results.sort((a, b) => a.name.localeCompare(b.name));
         this.searchResults = results;

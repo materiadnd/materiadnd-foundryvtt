@@ -7,7 +7,7 @@ import { ItemRestoreApp } from "./apps/item-restore.js";
 import { ItemUseCreateIemHandler, ItemUseUpdateUserHandler, ItemUseUserConnectedHandler } from "./item-use.js";
 import { Replace5eSourcePacks } from "./source-packs.js";
 import { Settings } from "./settings.js";
-import { SpellSearchApp } from "./apps/spell-search.js";
+import { SpellSearchApp, SpellSearchIndex } from "./apps/spell-search.js";
 import { SpellcastingRenderActorSheetHandler, AddThirdPactCaster, SpellcastingAddThirdPactProgression } from "./spellcasting-utils.js";
 import { UpdateTeleBonusFlag } from "./tele.js";
 import { WildShapeTransformActorHandler } from "./wild-shape.js";
@@ -37,6 +37,10 @@ Hooks.once("ready", () => {
         spellSearchButton.click(async (event) => {
             var spellSearchApp = new SpellSearchApp("materia-dnd.spells");   // TODO: make a setting
             spellSearchApp.render(true);
+        });
+        let index = new SpellSearchIndex();
+        index.updateIndexForPack('materia-dnd.spells').then( _ => {
+            game.settings.set(Constants.MODULE_ID, Settings.SETTINGS.SPELL_SEARCH_INDEX, JSON.stringify(index));
         });
     }
 })
