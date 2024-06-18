@@ -7,11 +7,11 @@ import { ItemRestoreApp } from "./apps/item-restore.js";
 import { ItemUseCreateIemHandler, ItemUseUpdateUserHandler, ItemUseUserConnectedHandler } from "./item-use.js";
 import { Replace5eSourcePacks } from "./source-packs.js";
 import { Settings } from "./settings.js";
-import { SpellSearchApp, SpellSearchIndex, SpellSearchRenderActorSheetHandler } from "./apps/spell-search.js";
+import { SpellSearchApp, SpellSearchIndex } from "./apps/spell-search.js";
 import { SpellcastingRenderActorSheetHandler, AddThirdPactCaster, SpellcastingAddThirdPactProgression } from "./spellcasting-utils.js";
 import { UpdateTeleBonusFlag } from "./tele.js";
 import { WildShapeTransformActorHandler } from "./wild-shape.js";
-import { SpellSearchAppV2 } from "./apps/spell-search-2.js";
+import { SpellSearchAppV2, SpellSearchRenderActorSheetHandler } from "./apps/spell-search-2.js";
 
 Hooks.once('init', () => {
     Settings.initialize();

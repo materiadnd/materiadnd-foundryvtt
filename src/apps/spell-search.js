@@ -1,5 +1,6 @@
 import { Constants } from "../constants.js";
 import { Settings } from "../settings.js";
+import { SpellSearchAppV2 } from "./spell-search-2.js";
 
 //FILTER_STATES = ["ignore", "yes", "no"]    //yes this is cribbed from 5etools
 
@@ -528,9 +529,4 @@ export class SpellSearchApp extends FormApplication {
         document.getElementById("spell-search-results-count").innerHTML = this.searchResults.length;
     }
 
-}
-
-export function SpellSearchRenderActorSheetHandler(html, actor) {
-    // TODO: do something
-    console.log('materia-dnd | Spell Search: TODO IMPLEMENT');
 }

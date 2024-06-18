@@ -2,17 +2,39 @@
     <p class="spell-search-header">Filters</p>
     <div class="spell-search-filter level-filter">
         <p class="spell-search-category-header">Spell Level</p>
+        <div class="filter-toggles">
         {{#each levelFilters}}
             <span class="toggle-text" id="spell-level-filter-{{this.level}}" state="{{this.state}}">{{this.levelName}}</span>
         {{/each}}
+        </div>
     </div>
-    <div class="spell-search filter class-filter">
+    <div class="spell-search-filter class-filter">
         <p class="spell-search-category-header">Spell List</p>
         <div class="class-spell-lists filter-toggles">
         {{#each classFilters}}
             <span class="toggle-text class-toggle" id="spell-class-filter-{{this.id}}" state="{{this.state}}">{{this.label}}</span>
         {{/each}}
         </ul>
+    </div>
+    <div class="spell-search-filter school-filter">
+        <p class="spell-search-category-header">Spell School</p>
+        <div class="filter-toggles">
+        {{#each schoolFilters}}
+            <span class="toggle-text" id="spell-school-filter-{{this.abbr}}" state="{{this.state}}">{{this.name}}</span>
+        {{/each}}
+        </div>
+    </div>
+    <div class="spell-search-filter components-filter">
+        <p class="spell-search-category-header">Spell Properties</p>
+        <div class="filter-toggles">
+        {{#each componentFilters}}
+            <span class="toggle-text component-toggle" id="spell-component-filter-{{this.key}}" state="{{this.state}}">{{this.name}}</span>
+        {{/each}}
+        </div>
+    </div>
+    <div class="spell-search-filter text-filter">
+        <label for="spell-text-search" class="spell-search-category-header">Search:</label>
+        <input type="textbox" id="spell-text-search" value="{{ searchText }}" />
     </div>
     <hr />
     <div class="spell-search-results-container">

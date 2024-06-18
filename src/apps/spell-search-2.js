@@ -13,6 +13,17 @@ function getLevelsToExclude(maxValidSpellLevel) {
     return [...Array(10).keys()].filter(x => x > maxValidSpellLevel);
 }
 
+function getMaxLevelForClass(actor, className) {
+    let spellClassItem = actor.items.find(x => x.type == 'class' && x.name.toLowerCase() == className.toLowerCase());
+    if (['full', 'pact'].includes(spellClassItem.system.spellcasting.progression)) {
+        return Math.min(Math.floor((spellClassItem.system.levels + 1) / 2), 9);
+    } else if (spellClassItem.system.spellcasting.progression == 'half') {
+        return Math.min(Math.ceil(spellClassItem.system.levels / 4), 5);
+    } else {
+        return undefined;
+    }
+}
+
 function getComponentString(spell) {
     let componentList = [];
     if (spell.system.properties.has('vocal')) { componentList.push(CONFIG.DND5E.spellComponents['vocal'].abbr); }
@@ -63,8 +74,19 @@ function getSpellsForClass(searchIndex, className) {
     }
 }
 
+function getSpellsForComponent(searchIndex, component) {
+    switch (component) {
+        case 'vocal': return searchIndex.vocalSpellIds;
+        case 'somatic': return searchIndex.somaticSpellIds;
+        case 'material': return searchIndex.materialSpellIds;
+        case 'ritual': return searchIndex.ritualSpellIds;
+        case 'concentration': return searchIndex.concentrationSpellIds;
+    }
+}
+
+
 function renderSpellField(spellData, fieldName) {
-    switch(fieldName) {
+    switch (fieldName) {
         case 'level': return renderSpellLevel(spellData);
         case 'castTime': return renderSpellCastTime(spellData);
         case 'school': return renderSpellSchool(spellData);
@@ -126,15 +148,14 @@ export class SpellSearchAppV2 extends Application {
     constructor(className = undefined, maxLevel = undefined) {
         console.log("materia-dnd | Spell Search: CTOR");
         super();
-        this._initialize();
         this.className = className;
         this.maxLevel = maxLevel;
+        this._initialize();
     }
 
     render(force = false, options = {}) {
         console.log("materia-dnd | Spell Search: RENDER");
         super.render(force, options);
-
     }
 
     static get defaultOptions() {
@@ -156,12 +177,20 @@ export class SpellSearchAppV2 extends Application {
         let data = {};
         data.levelFilters = this.levelFilters;
         data.classFilters = this.classFilters;
+        data.schoolFilters = this.schoolFilters;
+        data.componentFilters = this.componentFilters;
+        data.searchText = this.searchText;
         data.searchResults = this.searchResults;
         return data;
     }
 
     activateListeners(html) {
         html.find('.toggle-text').on("click", async ev => await this._toggleText(html, ev));
+        html.find('#spell-text-search').on("input", async ev => {
+            this.searchText = ev.target.value;
+            this.searchFilter.updateText(this.searchText);
+            await this._applySearchFilter().then(() => this.render());
+        });
     }
 
     async _initialize() {
@@ -170,17 +199,20 @@ export class SpellSearchAppV2 extends Application {
         // set properties
         this._initializeLevelFilters();
         this._initializeClassFilters();
+        this._initializeSchoolFilters();
+        this._initializeComponentFilters();
         this.searchIndex = JSON.parse(await game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.SPELL_SEARCH_INDEX));
         this.searchFilter = new SearchFilter();
-        if (this.maxLevel) { 
+        if (this.maxLevel) {
             for (const levelNum of getLevelsToExclude(this.maxLevel)) {
                 this.searchFilter.excludeLevel(levelNum);
+                await this._setFilterState("level", levelNum, "no");
             }
         }
         if (this.className) {
             this.searchFilter.requireList(this.className);
+            await this._setFilterState("class", this.className, "yes");
         }
-        await this._applySearchFilter().then(() => { this.render(); });
         // register Handlebars helpers
         Handlebars.registerHelper("renderSpellField", (item, fieldName) => renderSpellField(item, fieldName));
     }
@@ -196,6 +228,20 @@ export class SpellSearchAppV2 extends Application {
                 x => { return { id: x, label: x, state: 'ignore' } }
             );
     }
+
+    _initializeSchoolFilters() {
+        this.schoolFilters = Object.entries(CONFIG.DND5E.spellSchools).map(
+            x => { return { abbr: x[0], name: x[1].label, state: 'ignore' } }
+        );
+    }
+
+    _initializeComponentFilters() {
+        var fullSpellProps = new Array(...Object.entries(CONFIG.DND5E.spellComponents), ...Object.entries(CONFIG.DND5E.spellTags));
+        this.componentFilters = fullSpellProps.map(
+            x => { return { key: x[0], name: x[1].label, state: 'ignore' } }
+        );
+    }
+
 
     async _applySearchFilter() {
         let results = this.searchIndex.allSpellIds.reduce((acc, id) => { acc.push(fromUuidSync(id)); return acc; }, new Array())
@@ -217,69 +263,69 @@ export class SpellSearchAppV2 extends Application {
             results = results.filter(x => !excludeSpellIds.includes(x.uuid));
             // console.log(`materia-dnd | After: ${results.length}`);
         }
-        // if (this.searchFilter.includeSchools.size > 0) {
-        //     // console.log(`materia-dnd | Spell Search: including spell schools.  Before: ${results.length}`);
-        //     let includeSpellIds = new Array();
-        //     for (const school of this.searchFilter.includeSchools.values()) {
-        //         includeSpellIds = new Array(...includeSpellIds, ...getSpellsForSchool(this.searchIndex, school));
-        //     }
-        //     results = results.filter(x => includeSpellIds.includes(x.uuid));
-        //     // console.log(`materia-dnd | After: ${results.length}`);
-        // }
-        // if (this.searchFilter.excludeSchools.size > 0) {
-        //     // console.log(`materia-dnd | Spell Search: excluding spell schools.  Before: ${results.length}`);
-        //     let excludeSpellIds = new Array();
-        //     for (const school of this.searchFilter.excludeSchools.values()) {
-        //         excludeSpellIds = new Array(...excludeSpellIds, ...getSpellsForSchool(this.searchIndex, school));
-        //     }
-        //     results = results.filter(x => !excludeSpellIds.includes(x.uuid));
-        //     // console.log(`materia-dnd | After: ${results.length}`);
-        // }
-        // if (this.searchFilter.includeComponents.size > 0) {
-        //     // console.log(`materia-dnd | Spell Search: including spell components.  Before: ${results.length}`);
-        //     let includeSpellIds = new Array();
-        //     for ( const component of this.searchFilter.includeComponents.values() ) {
-        //         includeSpellIds = new Array(...includeSpellIds, ...getSpellsForComponent(this.searchIndex, component));
-        //     }
-        //     results = results.filter( x => includeSpellIds.includes(x.uuid));
-        //     // console.log(`materia-dnd | After: ${results.length}`);
-        // }
-        // if (this.searchFilter.excludeComponents.size > 0) {
-        //     // console.log(`materia-dnd | Spell Search: excluding spell components.  Before: ${results.length}`);
-        //     let excludeSpellIds = new Array();
-        //     for (const component of this.searchFilter.excludeComponents.values() ) {
-        //         excludeSpellIds =  new Array(...excludeSpellIds, ...getSpellsForComponent(this.searchIndex, component));
-        //     }
-        //     results = results.filter( x => !excludeSpellIds.includes(x.uuid));
-        //     // console.log(`materia-dnd | After: ${results.length}`);
-        // }
+        if (this.searchFilter.includeSchools.size > 0) {
+            // console.log(`materia-dnd | Spell Search: including spell schools.  Before: ${results.length}`);
+            let includeSpellIds = new Array();
+            for (const school of this.searchFilter.includeSchools.values()) {
+                includeSpellIds = new Array(...includeSpellIds, ...getSpellsForSchool(this.searchIndex, school));
+            }
+            results = results.filter(x => includeSpellIds.includes(x.uuid));
+            // console.log(`materia-dnd | After: ${results.length}`);
+        }
+        if (this.searchFilter.excludeSchools.size > 0) {
+            // console.log(`materia-dnd | Spell Search: excluding spell schools.  Before: ${results.length}`);
+            let excludeSpellIds = new Array();
+            for (const school of this.searchFilter.excludeSchools.values()) {
+                excludeSpellIds = new Array(...excludeSpellIds, ...getSpellsForSchool(this.searchIndex, school));
+            }
+            results = results.filter(x => !excludeSpellIds.includes(x.uuid));
+            // console.log(`materia-dnd | After: ${results.length}`);
+        }
+        if (this.searchFilter.includeComponents.size > 0) {
+            // console.log(`materia-dnd | Spell Search: including spell components.  Before: ${results.length}`);
+            let includeSpellIds = new Array();
+            for (const component of this.searchFilter.includeComponents.values()) {
+                includeSpellIds = new Array(...includeSpellIds, ...getSpellsForComponent(this.searchIndex, component));
+            }
+            results = results.filter(x => includeSpellIds.includes(x.uuid));
+            // console.log(`materia-dnd | After: ${results.length}`);
+        }
+        if (this.searchFilter.excludeComponents.size > 0) {
+            // console.log(`materia-dnd | Spell Search: excluding spell components.  Before: ${results.length}`);
+            let excludeSpellIds = new Array();
+            for (const component of this.searchFilter.excludeComponents.values()) {
+                excludeSpellIds = new Array(...excludeSpellIds, ...getSpellsForComponent(this.searchIndex, component));
+            }
+            results = results.filter(x => !excludeSpellIds.includes(x.uuid));
+            // console.log(`materia-dnd | After: ${results.length}`);
+        }
         if (this.searchFilter.includeLists.size > 0) {
             // console.log(`materia-dnd | Spell Search: including class spell lists.  Before: ${results.length}`);
             let includeSpellIds = new Array();
-            for ( const className of this.searchFilter.includeLists.values() ) {
+            for (const className of this.searchFilter.includeLists.values()) {
                 includeSpellIds = new Array(...includeSpellIds, ...getSpellsForClass(this.searchIndex, className));
             }
-            results = results.filter( x => includeSpellIds.includes(x.uuid));
+            results = results.filter(x => includeSpellIds.includes(x.uuid));
             // console.log(`materia-dnd | After: ${results.length}`);
         }
         if (this.searchFilter.excludeLists.size > 0) {
             // console.log(`materia-dnd | Spell Search: excluding class spell lists.  Before: ${results.length}`);
             let excludeSpellIds = new Array();
-            for (const className of this.searchFilter.excludeLists.values() ) {
+            for (const className of this.searchFilter.excludeLists.values()) {
                 excludeSpellIds = new Array(...excludeSpellIds, ...getSpellsForClass(this.searchIndex, className));
             }
-            results = results.filter( x => !excludeSpellIds.includes(x.uuid));
+            results = results.filter(x => !excludeSpellIds.includes(x.uuid));
             // console.log(`materia-dnd | After: ${results.length}`);
         }
 
-        // if (this.searchFilter.textFilter != "") {
-        //     // console.log(`materia-dnd | Spell Search: filtering text.  Before: ${results.length}`);
-        //     results = results.filter(x => {
-        //         let regexp = new RegExp(this.searchFilter.textFilter, "i");
-        //         return x.name.match(regexp);
-        //     });
-        //     // console.log(`materia-dnd | After: ${results.length}`);
-        // }
+        if (this.searchFilter.textFilter != "") {
+            // console.log(`materia-dnd | Spell Search: filtering text.  Before: ${results.length}`);
+            results = results.filter(x => {
+                let regexp = new RegExp(this.searchFilter.textFilter, "i");
+                return x.name.match(regexp);
+            });
+            // console.log(`materia-dnd | After: ${results.length}`);
+        }
 
         results.sort((a, b) => a.name.localeCompare(b.name));
 
@@ -300,24 +346,20 @@ export class SpellSearchAppV2 extends Application {
         this.searchResults = resultsArr;
     }
 
-    async _toggleText(html, ev) {
-        const filterRegexp = /spell-(\w+)-filter-(\w+)/;
-        var matches = ev.target.id.match(filterRegexp);
-        switch (matches[1]) {
+    async _setFilterState(filterName, filterItem, state) {
+        switch (filterName) {
             case "level":
-                var spellLevel = parseInt(matches[2]);
-                var currentState = this.levelFilters.find(x => x.level == spellLevel).state;
-                var newState = toggleState(currentState);
+                var spellLevel = parseInt(filterItem);
                 this.levelFilters = this.levelFilters.reduce((acc, item) => {
                     if (item.level == spellLevel) {
-                        acc.push({ level: item.level, levelName: item.levelName, state: newState });
+                        acc.push({ level: item.level, levelName: item.levelName, state: state });
                         return acc;
                     } else {
                         acc.push(item);
                         return acc;
                     }
                 }, new Array());
-                switch (newState) {
+                switch (state) {
                     case "ignore":
                         this.searchFilter.ignoreLevel(spellLevel);
                         break;
@@ -330,19 +372,17 @@ export class SpellSearchAppV2 extends Application {
                 }
                 break;
             case "class":
-                var className = matches[2];
-                var currentState = this.classFilters.find(x => x.id == className).state;
-                var newState = toggleState(currentState);
+                var className = filterItem;
                 this.classFilters = this.classFilters.reduce((acc, item) => {
                     if (item.id == className) {
-                        acc.push({ id: item.id, label: item.label, state: newState });
+                        acc.push({ id: item.id, label: item.label, state: state });
                         return acc;
                     } else {
                         acc.push(item);
                         return acc;
                     }
                 }, new Array());
-                switch (newState) {
+                switch (state) {
                     case "ignore":
                         this.searchFilter.ignoreList(className);
                         break;
@@ -354,7 +394,73 @@ export class SpellSearchAppV2 extends Application {
                         break;
                 }
                 break;
+            case "school":
+                var school = filterItem;
+                this.schoolFilters = this.schoolFilters.reduce((acc, item) => {
+                    if (item.abbr == school) {
+                        acc.push({ abbr: item.abbr, name: item.name, state: state });
+                        return acc;
+                    } else {
+                        acc.push(item);
+                        return acc;
+                    }
+                }, new Array());
+                switch (state) {
+                    case "ignore":
+                        this.searchFilter.ignoreSchool(school);
+                        break;
+                    case "yes":
+                        this.searchFilter.requireSchool(school);
+                        break;
+                    case "no":
+                        this.searchFilter.excludeSchool(school);
+                        break;
+                }
+                break;
+            case "component":
+                var component = filterItem;
+                this.componentFilters = this.componentFilters.reduce((acc, item) => {
+                    if (item.key == component) {
+                        acc.push({ key: item.key, name: item.name, state: state });
+                        return acc;
+                    } else {
+                        acc.push(item);
+                        return acc;
+                    }
+                }, new Array());
+                switch (state) {
+                    case "ignore":
+                        this.searchFilter.ignoreComponent(component);
+                        break;
+                    case "yes":
+                        this.searchFilter.requireComponent(component);
+                        break;
+                    case "no":
+                        this.searchFilter.excludeComponent(component);
+                        break;
+                }
         }
         await this._applySearchFilter().then(() => this.render());
+    }
+
+    async _toggleText(html, ev) {
+        const filterRegexp = /spell-(\w+)-filter-(\w+)/;
+        var matches = ev.target.id.match(filterRegexp);
+        var currentState = ev.target.attributes['state'].value;
+        let newState = toggleState(currentState);
+        await this._setFilterState(matches[1], matches[2], newState);
+    }
+}
+
+export function SpellSearchRenderActorSheetHandler(html, actor) {
+    for (const header of html.find("div.spellcasting > div.header > h3")) {
+        let searchElt = $(`<span>&nbsp;&nbsp;<i class="fa-solid fa-magnifying-glass"></i> Search</span>`);
+        let className = header.innerHTML.replace(' Spellcasting', '').toLowerCase();
+        let maxLevel = getMaxLevelForClass(actor, className);
+        let searchApp = new SpellSearchAppV2(className, maxLevel);
+        searchElt.on("click", (evt) => {
+            searchApp.render(true);
+        });
+        header.insertAdjacentElement("beforeend", searchElt[0]);
     }
 }
