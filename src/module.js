@@ -11,6 +11,7 @@ import { SpellSearchApp, SpellSearchIndex, SpellSearchRenderActorSheetHandler } 
 import { SpellcastingRenderActorSheetHandler, AddThirdPactCaster, SpellcastingAddThirdPactProgression } from "./spellcasting-utils.js";
 import { UpdateTeleBonusFlag } from "./tele.js";
 import { WildShapeTransformActorHandler } from "./wild-shape.js";
+import { SpellSearchAppV2 } from "./apps/spell-search-2.js";
 
 Hooks.once('init', () => {
     Settings.initialize();
@@ -35,7 +36,7 @@ Hooks.once("ready", () => {
         searchButtonHtml.insertAfter(compendiumSearchElement);
         let spellSearchButton = $('.spell-search').first();
         spellSearchButton.click(async (event) => {
-            var spellSearchApp = new SpellSearchApp();   
+            var spellSearchApp = new SpellSearchAppV2();   
             spellSearchApp.render(true);
         });
         let index = new SpellSearchIndex();

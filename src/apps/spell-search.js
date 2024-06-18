@@ -103,7 +103,7 @@ function getSpellsForComponent(searchIndex, component) {
     }
 }
 
-class SearchFilter {
+export class SearchFilter {
     includeLevels = new Set();
     excludeLevels = new Set();
     includeLists = new Set();

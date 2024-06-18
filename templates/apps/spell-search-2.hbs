@@ -1,0 +1,54 @@
+<div class="spell-search-filter-container">
+    <p class="spell-search-header">Filters</p>
+    <div class="spell-search-filter level-filter">
+        <p class="spell-search-category-header">Spell Level</p>
+        {{#each levelFilters}}
+            <span class="toggle-text" id="spell-level-filter-{{this.level}}" state="{{this.state}}">{{this.levelName}}</span>
+        {{/each}}
+    </div>
+    <div class="spell-search filter class-filter">
+        <p class="spell-search-category-header">Spell List</p>
+        <div class="class-spell-lists filter-toggles">
+        {{#each classFilters}}
+            <span class="toggle-text class-toggle" id="spell-class-filter-{{this.id}}" state="{{this.state}}">{{this.label}}</span>
+        {{/each}}
+        </ul>
+    </div>
+    <hr />
+    <div class="spell-search-results-container">
+        <table id="spell-search-results-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Level</th>
+                    <th>Cast Time</th>
+                    <th>School</th>
+                    <th>Components</th>
+                    <th>C</th>
+                    <th>R</th>
+                    <th>Range</th>
+                </tr>
+            </thead>
+            <tbody id="spell-search-results-body">
+                {{#each searchResults}}
+                    <tr class="spell-search-result-row">
+                        <td style="text-align: left">{{{this.fancyName}}}</td>
+                        <td>{{renderSpellField this 'level'}}</td>
+                        <td class="spell-search-result-cast-time">{{renderSpellField this 'castTime'}}</td>
+                        <td>{{{renderSpellField this 'school'}}}</td>
+                        <td>{{this.components}}</td>
+                        <td>{{{renderSpellField this 'concentration'}}}</td>
+                        <td>{{{renderSpellField this 'ritual'}}}</td>
+                        <td class="spell-search-result-range">{{renderSpellField this 'range'}}</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">Results:</td>
+                    <td colspan="3" id="spell-search-results-count">{{ searchResults.length }}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
