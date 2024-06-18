@@ -454,13 +454,13 @@ export class SpellSearchAppV2 extends Application {
 
 export function SpellSearchRenderActorSheetHandler(html, actor) {
     for (const header of html.find("div.spellcasting > div.header > h3")) {
-        let searchElt = $(`<span>&nbsp;&nbsp;<i class="fa-solid fa-magnifying-glass"></i> Search</span>`);
+        let searchElt = $(`<span>&nbsp;&nbsp;<i class="fa-solid fa-magnifying-glass"></i> Spells</span>`);
         let className = header.innerHTML.replace(' Spellcasting', '').toLowerCase();
         let maxLevel = getMaxLevelForClass(actor, className);
         let searchApp = new SpellSearchAppV2(className, maxLevel);
         searchElt.on("click", (evt) => {
             searchApp.render(true);
         });
-        header.insertAdjacentElement("beforeend", searchElt[0]);
+        header.insertAdjacentElement("afterend", searchElt[0]);
     }
 }
