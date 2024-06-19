@@ -7,11 +7,10 @@ import { ItemRestoreApp } from "./apps/item-restore.js";
 import { ItemUseCreateIemHandler, ItemUseUpdateUserHandler, ItemUseUserConnectedHandler } from "./item-use.js";
 import { Replace5eSourcePacks } from "./source-packs.js";
 import { Settings } from "./settings.js";
-import { SpellSearchIndex } from "./apps/spell-search.js";
 import { SpellcastingRenderActorSheetHandler, AddThirdPactCaster, SpellcastingAddThirdPactProgression } from "./spellcasting-utils.js";
 import { UpdateTeleBonusFlag } from "./tele.js";
 import { WildShapeTransformActorHandler } from "./wild-shape.js";
-import { SpellSearchAppV2, SpellSearchRenderActorSheetHandler } from "./apps/spell-search-2.js";
+import { SpellSearchIndex, SpellSearchApp, SpellSearchRenderActorSheetHandler } from "./apps/spell-search.js";
 
 Hooks.once('init', () => {
     Settings.initialize();
@@ -36,7 +35,7 @@ Hooks.once("ready", () => {
         searchButtonHtml.insertAfter(compendiumSearchElement);
         let spellSearchButton = $('.spell-search').first();
         spellSearchButton.click(async (event) => {
-            var spellSearchApp = new SpellSearchAppV2();   
+            var spellSearchApp = new SpellSearchApp();   
             spellSearchApp.render(true);
         });
         let index = new SpellSearchIndex();

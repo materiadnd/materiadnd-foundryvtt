@@ -1,4 +1,3 @@
-import { SpellSearchIndex } from "./apps/spell-search.js";
 import { Constants } from "./constants.js"
 
 export class Settings { 

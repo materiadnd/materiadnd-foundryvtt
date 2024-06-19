@@ -1,86 +1,89 @@
-<div class="spell-search-filter-container">
-    <p class="spell-search-header">Spell Search</p>
-    <div class="spell-search-filter level-filter">
-        <p class="spell-search-category-header">Spell Level</p>
-        <div class="filter-toggles">
-            <span class="toggle-text" id="spell-level-filter-0" state="ignore">Cantrip</span>
-            <span class="toggle-text" id="spell-level-filter-1" state="ignore">1st Level</span>
-            <span class="toggle-text" id="spell-level-filter-2" state="ignore">2nd Level</span>
-            <span class="toggle-text" id="spell-level-filter-3" state="ignore">3rd Level</span>
-            <span class="toggle-text" id="spell-level-filter-4" state="ignore">4th Level</span>
-            <span class="toggle-text" id="spell-level-filter-5" state="ignore">5th Level</span>
-            <span class="toggle-text" id="spell-level-filter-6" state="ignore">6th Level</span>
-            <span class="toggle-text" id="spell-level-filter-7" state="ignore">7th Level</span>
-            <span class="toggle-text" id="spell-level-filter-8" state="ignore">8th Level</span>
-            <span class="toggle-text" id="spell-level-filter-9" state="ignore">9th Level</span>
+<div class="spell-search-container">
+    <div class="spell-search-header">
+        <div class="spell-search-filter level-filter">
+            <p class="spell-search-category-header">Spell Level</p>
+            <div class="filter-toggles">
+            {{#each levelFilters}}
+                <span class="toggle-text" id="spell-level-filter-{{this.level}}" state="{{this.state}}">{{this.levelName}}</span>
+            {{/each}}
+            </div>
+        </div>
+        <div class="spell-search-filter class-filter">
+            <p class="spell-search-category-header">Spell List</p>
+            <div class="class-spell-lists filter-toggles">
+            {{#each classFilters}}
+                <span class="toggle-text class-toggle" id="spell-class-filter-{{this.id}}" state="{{this.state}}">{{this.label}}</span>
+            {{/each}}
+            </ul>
+        </div>
+        <div class="spell-search-filter school-filter">
+            <p class="spell-search-category-header">Spell School</p>
+            <div class="filter-toggles">
+            {{#each schoolFilters}}
+                <span class="toggle-text" id="spell-school-filter-{{this.abbr}}" state="{{this.state}}">{{this.name}}</span>
+            {{/each}}
+            </div>
+        </div>
+        <div class="spell-search-filter components-filter">
+            <p class="spell-search-category-header">Spell Properties</p>
+            <div class="filter-toggles">
+            {{#each componentFilters}}
+                <span class="toggle-text component-toggle" id="spell-component-filter-{{this.key}}" state="{{this.state}}">{{this.name}}</span>
+            {{/each}}
+                <i class="fa-solid fa-grip-lines-vertical"></i>
+            {{#each otherFilters}}
+                <span class="toggle-text component-toggle" id="spell-component-filter-{{this.key}}" state="{{this.state}}">{{this.name}}</span>
+            {{/each}}
+            </div>
+        </div>
+        <div class="spell-search-filter cast-time-filter">
+            <p class="spell-search-category-header">Cast Time</p>
+            <div class="filter-toggles">
+            {{#each castTimeFilters}}
+                <span class="toggle-text cast-time-toggle" id="spell-castTime-filter-{{this.key}}" state="{{this.state}}">{{this.name}}</span>
+            {{/each}}
+            </div>
+        </div>
+        <div class="spell-search-filter text-filter">
+            <input type="search" id="spell-text-search" disabled autofocus spellcheck="false" placeholder="Search..." value="{{ searchText }}" />
+            {{!-- <button type="submit"><i class="fa fa-search"></i></button> --}}
         </div>
     </div>
-    <div class="spell-search-filter class-filter">
-        <p class="spell-search-category-header">Spell List</p>
-        <div class="class-spell-lists filter-toggles">
-            <span class="toggle-text" id="spell-class-filter-artificer" state="ignore">Artificer</span>
-            <span class="toggle-text" id="spell-class-filter-bard" state="ignore">Bard</span>
-            <span class="toggle-text" id="spell-class-filter-cleric" state="ignore">Cleric</span>
-            <span class="toggle-text" id="spell-class-filter-druid" state="ignore">Druid</span>
-            <span class="toggle-text" id="spell-class-filter-paladin" state="ignore">Paladin</span>
-            <span class="toggle-text" id="spell-class-filter-ranger" state="ignore">Ranger</span>
-            <span class="toggle-text" id="spell-class-filter-sorcerer" state="ignore">Sorcerer</span>
-            <span class="toggle-text" id="spell-class-filter-warlock" state="ignore">Warlock</span>
-            <span class="toggle-text" id="spell-class-filter-wizard" state="ignore">Wizard</span>
-        </div>
+    <div class="spell-search-results-info">
+        <p>Matching Spells Found: {{ searchResults.length }}</p>
     </div>
-    <div class="spell-search-filter school-filter">
-        <p class="spell-search-category-header">Spell School</p>
-        <div class="filter-toggles">
-            <span class="toggle-text" id="spell-school-filter-abj" state="ignore">Abujuration</span>
-            <span class="toggle-text" id="spell-school-filter-con" state="ignore">Conjuration</span>
-            <span class="toggle-text" id="spell-school-filter-div" state="ignore">Divination</span>
-            <span class="toggle-text" id="spell-school-filter-enc" state="ignore">Enchantment</span>
-            <span class="toggle-text" id="spell-school-filter-evo" state="ignore">Evocation</span>
-            <span class="toggle-text" id="spell-school-filter-ill" state="ignore">Illusion</span>
-            <span class="toggle-text" id="spell-school-filter-nec" state="ignore">Necromancy</span>
-            <span class="toggle-text" id="spell-school-filter-trs" state="ignore">Transmutation</span>
-        </div>
+    <div class="spell-search-results-container">
+        <table id="spell-search-results-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Level</th>
+                    <th>Cast Time</th>
+                    <th>School</th>
+                    <th>Components</th>
+                    <th>C</th>
+                    <th>R</th>
+                    <th>Range</th>
+                </tr>
+            </thead>
+            <tbody id="spell-search-results-body">
+                {{#each searchResults}}
+                    <tr class="spell-search-result-row">
+                        <td style="text-align: left">{{{this.fancyName}}}</td>
+                        <td>{{renderSpellField this 'level'}}</td>
+                        <td class="spell-search-result-cast-time">{{renderSpellField this 'castTime'}}</td>
+                        <td>{{{renderSpellField this 'school'}}}</td>
+                        <td>{{this.components}}</td>
+                        <td>{{{renderSpellField this 'concentration'}}}</td>
+                        <td>{{{renderSpellField this 'ritual'}}}</td>
+                        <td class="spell-search-result-range">{{renderSpellField this 'range'}}</td>
+                    </tr>
+                {{else}}
+                    <tr>
+                        <td colspan="8" style="font-weight: bold; text-align: center">NO RESULTS FOUND</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
     </div>
-    <div class="spell-search-filter components-filter">
-        <p class="spell-search-category-header">Spell Properties</p>
-        <div class="filter-toggles">
-            <span class="toggle-text" id="spell-component-filter-vocal" state="ignore">Verbal</span>
-            <span class="toggle-text" id="spell-component-filter-somatic" state="ignore">Somatic</span>
-            <span class="toggle-text" id="spell-component-filter-material" state="ignore">Material</span>
-            <i class="fa-solid fa-grip-lines-vertical"></i>            
-            <span class="toggle-text" id="spell-component-filter-concentration" state="ignore">Concentration</span>
-            <span class="toggle-text" id="spell-component-filter-ritual" state="ignore">Ritual</span>
-        </div>
-    </div>
-    <div class="spell-search-filter text-filter">
-        <label for="spell-text-search" class="spell-search-category-header">Search:</label>
-        <input type="textbox" id="spell-text-search" />
-        <!--<button class="search-button"><i class="fa-solid fa-magnifying-glass"></i> Search</button>-->
-    </div>
-</div>
-<hr/>
-<div class="spell-search-results-container">
-    <table id="spell-search-results-table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Level</th>
-                <th>Cast Time</th>
-                <th>School</th>
-                <th>Components</th>
-                <th>C</th>
-                <th>R</th>
-                <th>Range</th>
-            </tr>
-        </thead>
-        <tbody id="spell-search-results-body">
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="5">Results:</td>
-                <td colspan="3" id="spell-search-results-count"></td>
-            </tr>
-        </tfoot>
-    </table>
 </div>
