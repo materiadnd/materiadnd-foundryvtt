@@ -87,6 +87,7 @@ function getSpellsForComponent(searchIndex, component) {
 
 function renderSpellField(spellData, fieldName) {
     switch (fieldName) {
+        // case 'fancyName': return renderSpellFancyName(spellData);
         case 'level': return renderSpellLevel(spellData);
         case 'castTime': return renderSpellCastTime(spellData);
         case 'school': return renderSpellSchool(spellData);
@@ -94,6 +95,11 @@ function renderSpellField(spellData, fieldName) {
         case 'ritual': return renderSpellRitual(spellData);
         case 'range': return renderSpellRange(spellData);
     }
+}
+
+function renderSpellFancyName(spellData) {
+    TextEditor.enrichHTML(`@UUID[${spellData.uuid}]`).then(res => res);
+
 }
 
 function renderSpellLevel(spellData) {
@@ -185,12 +191,20 @@ export class SpellSearchAppV2 extends Application {
     }
 
     activateListeners(html) {
+        // html = html[0] ?? html;  // cribbed from theripper93
         html.find('.toggle-text').on("click", async ev => await this._toggleText(html, ev));
         html.find('#spell-text-search').on("input", async ev => {
             this.searchText = ev.target.value;
             this.searchFilter.updateText(this.searchText);
             await this._applySearchFilter().then(() => this.render());
         });
+        //timeout for janky core behavior
+        // setTimeout(() => {
+        //     //enable the input
+        //     html.querySelector("input").disabled = false;
+        //     //focus the input
+        //     html.querySelector("input").focus();
+        // }, 50);
     }
 
     async _initialize() {
@@ -201,7 +215,8 @@ export class SpellSearchAppV2 extends Application {
         this._initializeClassFilters();
         this._initializeSchoolFilters();
         this._initializeComponentFilters();
-        this.searchIndex = JSON.parse(await game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.SPELL_SEARCH_INDEX));
+        this.searchIndex = JSON.parse(game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.SPELL_SEARCH_INDEX));
+        await this._initializeSpellData();
         this.searchFilter = new SearchFilter();
         if (this.maxLevel) {
             for (const levelNum of getLevelsToExclude(this.maxLevel)) {
@@ -215,6 +230,39 @@ export class SpellSearchAppV2 extends Application {
         }
         // register Handlebars helpers
         Handlebars.registerHelper("renderSpellField", (item, fieldName) => renderSpellField(item, fieldName));
+    }
+
+    async _initializeSpellData() {
+        let packName = game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.SPELL_SEARCH_PACK_NAME);
+        let pack = game.packs.get(packName);
+        let spellDocs = await pack.getDocuments();
+
+        spellDocs = spellDocs.filter(x => x.type == 'spell')
+            .filter( x => x.name != "" )
+            .filter( x => x.hasOwnProperty('system'))
+            .filter( x => x.hasOwnProperty('flags') && x.flags.hasOwnProperty('materia-dnd') && x.flags['materia-dnd'].hasOwnProperty('spell-lists') && !x.flags['materia-dnd'].hasOwnProperty('exclude-from-spell-search'))
+            .filter( x => x.system.hasOwnProperty('level'))
+            .filter( x => x.system.hasOwnProperty('school'))
+            .filter( x => x.system.hasOwnProperty('properties'))
+            .map( item => {
+                return {
+                    uuid: item.uuid,
+                    name: item.name,
+                    level: CONFIG.DND5E.spellLevels[item.system.level],
+                    castTime: item.system?.activation,
+                    school: CONFIG.DND5E.spellSchools[item.system.school],
+                    components: getComponentString(item),
+                    concentration: item.system?.properties?.has('concentration'),
+                    ritual: item.system?.properties?.has('ritual'),
+                    range: item.system?.range
+                }
+            });
+        for ( const i in spellDocs ) {
+            let currentDoc = spellDocs[i];
+            currentDoc.fancyName = await TextEditor.enrichHTML(`@UUID[${currentDoc.uuid}]`);
+            spellDocs[i] = currentDoc;
+        }
+        this.spellData = spellDocs;
     }
 
     _initializeLevelFilters() {
@@ -242,9 +290,9 @@ export class SpellSearchAppV2 extends Application {
         );
     }
 
-
     async _applySearchFilter() {
-        let results = this.searchIndex.allSpellIds.reduce((acc, id) => { acc.push(fromUuidSync(id)); return acc; }, new Array())
+        let results = structuredClone(this.spellData);  // copy every time, spellData should only ever be written on init
+
         if (this.searchFilter.includeLevels.size > 0) {
             // console.log(`materia-dnd | Spell Search: including spell levels.  Before: ${results.length}`);
             let includeSpellIds = new Array();
@@ -328,22 +376,7 @@ export class SpellSearchAppV2 extends Application {
         }
 
         results.sort((a, b) => a.name.localeCompare(b.name));
-
-        let resultsArr = new Array();
-        for (const item of results) {
-            resultsArr.push({
-                name: item.name,
-                fancyName: await TextEditor.enrichHTML(`@UUID[${item.uuid}]`),
-                level: CONFIG.DND5E.spellLevels[item.system.level],
-                castTime: item.system?.activation,
-                school: CONFIG.DND5E.spellSchools[item.system.school],
-                components: getComponentString(item),
-                concentration: item.system?.properties?.has('concentration'),
-                ritual: item.system?.properties?.has('ritual'),
-                range: item.system?.range
-            });
-        }
-        this.searchResults = resultsArr;
+        this.searchResults = results;
     }
 
     async _setFilterState(filterName, filterItem, state) {

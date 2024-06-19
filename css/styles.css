@@ -153,8 +153,15 @@ p.spell-search-header {
     flex-grow: 1;
 }
 
+.spell-search-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 .spell-search-results-container {
     width: 100%;
+    margin-bottom: 50px;
 }
 
 .spell-search-result-row {
@@ -175,4 +182,25 @@ p.spell-search-header {
 
 .search-results-body-icon {
     --icon-fill: var(--color-text-dark-primary);
+}
+
+.spell-search-filter {
+    box-sizing: border-box;
+}
+
+.spell-search-filter input {
+    float: left;
+    width: 80%;
+}
+
+.spell-search-filter button {
+    cursor: pointer;
+    float: left;
+    width: 20%;
+}
+
+.spell-search-filter::after {
+    content: "";
+    clear: both;
+    display: table;
 }

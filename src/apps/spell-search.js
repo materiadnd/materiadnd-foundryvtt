@@ -333,7 +333,7 @@ export class SpellSearchApp extends FormApplication {
         // loadTemplates();
 
         // set properties
-        this.searchIndex = JSON.parse(await game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.SPELL_SEARCH_INDEX));
+        this.searchIndex = JSON.parse(game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.SPELL_SEARCH_INDEX));
         // register Handlebars helpers
     }
 
