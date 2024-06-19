@@ -457,6 +457,9 @@ export class SpellSearchApp extends Application {
                 this.searchFilter.excludeLevel(levelNum);
                 await this._setFilterState("level", levelNum, "no");
             }
+            // also ignore cantrips because this is presumably for spell preps
+            this.searchFilter.excludeLevel(0);
+            await this._setFilterState("level", 0, "no");
         }
         if (this.className) {
             this.searchFilter.requireList(this.className);
