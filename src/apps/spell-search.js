@@ -113,6 +113,8 @@ export class SearchFilter {
     excludeSchools = new Set();
     includeComponents = new Set();
     excludeComponents = new Set();
+    includeCastTimes = new Set();
+    excludeCastTimes = new Set();
     textFilter = "";
 
     requireLevel(level) {
@@ -179,6 +181,22 @@ export class SearchFilter {
         // this.printFilters();
     }
 
+    requireCastTime(castTime) {
+        if (!this.includeCastTimes.has(castTime)) { this.includeCastTimes.add(castTime); }
+        if (this.excludeCastTimes.has(castTime)) { this.excludeCastTimes.delete(castTime); }
+        // this.printFilters();
+    }
+    excludeCastTime(castTime) {
+        if (this.includeCastTimes.has(castTime)) { this.includeCastTimes.delete(castTime); }
+        if (!this.excludeCastTimes.has(castTime)) { this.excludeCastTimes.add(castTime); }
+        // this.printFilters();
+    }
+    ignoreCastTime(castTime) {
+        if (this.excludeCastTimes.has(castTime)) { this.excludeCastTimes.delete(castTime); }
+        if (this.includeCastTimes.has(castTime)) { this.includeCastTimes.delete(castTime); }
+        // this.printFilters();
+    }
+
     updateText(text) {
         this.textFilter = text;
         // this.printFilters();
@@ -233,6 +251,11 @@ export class SpellSearchIndex {
     ritualSpellIds = new Array();
     concentrationSpellIds = new Array();
 
+    bonusSpellIds = new Array();
+    actionSpellIds = new Array();
+    reactionSpellIds = new Array();
+    otherCastTimeSpellIds = new Array();
+
     allSpellIds = new Array();
 
     async updateIndexForPack(packName) {
@@ -255,6 +278,7 @@ export class SpellSearchIndex {
                 school: spell.system.school,
                 classLists: spell.flags['materia-dnd']['spell-lists'],
                 components: spell.system.properties.filter(x => ['vocal', 'somatic', 'material', 'ritual', 'concentration'].includes(x)),
+                castTime: ['action', 'bonus', 'reaction'].includes(spell.system.activation.type) ? spell.system.activation.type : 'other',
             };
             this.allSpellIds.push(spell.uuid);
             switch (spellObject.level) {
@@ -300,6 +324,12 @@ export class SpellSearchIndex {
                     case 'ritual': this.ritualSpellIds.push(spell.uuid); break;
                     case 'concentration': this.concentrationSpellIds.push(spell.uuid); break;
                 }
+            }
+            switch (spellObject.castTime) {
+                case 'bonus': this.bonusSpellIds.push(spell.uuid); break;
+                case 'action': this.actionSpellIds.push(spell.uuid); break;
+                case 'reaction': this.reactionSpellIds.push(spell.uuid); break;
+                case 'other': this.otherCastTimeSpellIds.push(spell.uuid); break;
             }
         }
     }

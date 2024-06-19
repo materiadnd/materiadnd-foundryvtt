@@ -84,6 +84,15 @@ function getSpellsForComponent(searchIndex, component) {
     }
 }
 
+function getSpellsForCastTime(searchIndex, castTime) {
+    switch (castTime) {
+        case 'bonus': return searchIndex.bonusSpellIds;
+        case 'action': return searchIndex.actionSpellIds;
+        case 'reaction': return searchIndex.reactionSpellIds;
+        case 'other': return searchIndex.otherCastTimeSpellIds;
+    }
+}
+
 
 function renderSpellField(spellData, fieldName) {
     switch (fieldName) {
@@ -186,6 +195,7 @@ export class SpellSearchAppV2 extends Application {
         data.schoolFilters = this.schoolFilters;
         data.componentFilters = this.componentFilters;
         data.otherFilters = this.otherFilters;
+        data.castTimeFilters = this.castTimeFilters;
         data.searchText = this.searchText;
         data.searchResults = this.searchResults;
         return data;
@@ -217,6 +227,7 @@ export class SpellSearchAppV2 extends Application {
         this._initializeClassFilters();
         this._initializeSchoolFilters();
         this._initializeComponentFilters();
+        this._initializeCastTimeFilters();
         this.searchIndex = JSON.parse(game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.SPELL_SEARCH_INDEX));
         await this._initializeSpellData();
         this.searchFilter = new SearchFilter();
@@ -242,13 +253,13 @@ export class SpellSearchAppV2 extends Application {
         let spellDocs = await pack.getDocuments();
 
         spellDocs = spellDocs.filter(x => x.type == 'spell')
-            .filter( x => x.name != "" )
-            .filter( x => x.hasOwnProperty('system'))
-            .filter( x => x.hasOwnProperty('flags') && x.flags.hasOwnProperty('materia-dnd') && x.flags['materia-dnd'].hasOwnProperty('spell-lists') && !x.flags['materia-dnd'].hasOwnProperty('exclude-from-spell-search'))
-            .filter( x => x.system.hasOwnProperty('level'))
-            .filter( x => x.system.hasOwnProperty('school'))
-            .filter( x => x.system.hasOwnProperty('properties'))
-            .map( item => {
+            .filter(x => x.name != "")
+            .filter(x => x.hasOwnProperty('system'))
+            .filter(x => x.hasOwnProperty('flags') && x.flags.hasOwnProperty('materia-dnd') && x.flags['materia-dnd'].hasOwnProperty('spell-lists') && !x.flags['materia-dnd'].hasOwnProperty('exclude-from-spell-search'))
+            .filter(x => x.system.hasOwnProperty('level'))
+            .filter(x => x.system.hasOwnProperty('school'))
+            .filter(x => x.system.hasOwnProperty('properties'))
+            .map(item => {
                 return {
                     uuid: item.uuid,
                     name: item.name,
@@ -261,7 +272,7 @@ export class SpellSearchAppV2 extends Application {
                     range: item.system?.range
                 }
             });
-        for ( const i in spellDocs ) {
+        for (const i in spellDocs) {
             let currentDoc = spellDocs[i];
             currentDoc.fancyName = await TextEditor.enrichHTML(`@UUID[${currentDoc.uuid}]`);
             spellDocs[i] = currentDoc;
@@ -293,6 +304,13 @@ export class SpellSearchAppV2 extends Application {
         );
         this.otherFilters = Object.entries(CONFIG.DND5E.spellTags).map(
             x => { return { key: x[0], name: x[1].label, state: 'ignore' } }
+        );
+    }
+
+    _initializeCastTimeFilters() {
+        this.castTimeFilters = [['action', 'Action'], ['reaction', 'Reaction'],
+        ['bonus', 'Bonus Action'], ['other', 'Other']].map(
+            x => { return { key: x[0], name: x[1], state: 'ignore' } }
         );
     }
 
@@ -367,6 +385,25 @@ export class SpellSearchAppV2 extends Application {
             let excludeSpellIds = new Array();
             for (const className of this.searchFilter.excludeLists.values()) {
                 excludeSpellIds = new Array(...excludeSpellIds, ...getSpellsForClass(this.searchIndex, className));
+            }
+            results = results.filter(x => !excludeSpellIds.includes(x.uuid));
+            // console.log(`materia-dnd | After: ${results.length}`);
+        }
+
+        if (this.searchFilter.includeCastTimes.size > 0) {
+            // console.log(`materia-dnd | Spell Search: including class spell lists.  Before: ${results.length}`);
+            let includeSpellIds = new Array();
+            for (const castTime of this.searchFilter.includeCastTimes.values()) {
+                includeSpellIds = new Array(...includeSpellIds, ...getSpellsForCastTime(this.searchIndex, castTime));
+            }
+            results = results.filter(x => includeSpellIds.includes(x.uuid));
+            // console.log(`materia-dnd | After: ${results.length}`);
+        }
+        if (this.searchFilter.excludeCastTimes.size > 0) {
+            // console.log(`materia-dnd | Spell Search: excluding class spell lists.  Before: ${results.length}`);
+            let excludeSpellIds = new Array();
+            for (const castTime of this.searchFilter.excludeCastTimes.values()) {
+                excludeSpellIds = new Array(...excludeSpellIds, ...getSpellsForCastTime(this.searchIndex, castTime));
             }
             results = results.filter(x => !excludeSpellIds.includes(x.uuid));
             // console.log(`materia-dnd | After: ${results.length}`);
@@ -487,6 +524,30 @@ export class SpellSearchAppV2 extends Application {
                         this.searchFilter.excludeComponent(component);
                         break;
                 }
+                break;
+            case "castTime":
+                var castTime = filterItem;
+                this.castTimeFilters = this.castTimeFilters.reduce((acc, item) => {
+                    if (item.key == castTime) {
+                        acc.push({ key: item.key, name: item.name, state: state });
+                        return acc;
+                    } else {
+                        acc.push(item);
+                        return acc;
+                    }
+                }, new Array());
+                switch (state) {
+                    case "ignore":
+                        this.searchFilter.ignoreCastTime(castTime);
+                        break;
+                    case "yes":
+                        this.searchFilter.requireCastTime(castTime);
+                        break;
+                    case "no":
+                        this.searchFilter.excludeCastTime(castTime);
+                        break;
+                }
+                break;
         }
         await this._applySearchFilter().then(() => this.render());
     }

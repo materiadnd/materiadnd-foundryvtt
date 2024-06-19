@@ -36,6 +36,14 @@
             {{/each}}
             </div>
         </div>
+        <div class="spell-search-filter cast-time-filter">
+            <p class="spell-search-category-header">Cast Time</p>
+            <div class="filter-toggles">
+            {{#each castTimeFilters}}
+                <span class="toggle-text cast-time-toggle" id="spell-castTime-filter-{{this.key}}" state="{{this.state}}">{{this.name}}</span>
+            {{/each}}
+            </div>
+        </div>
         <div class="spell-search-filter text-filter">
             <input type="search" id="spell-text-search" disabled autofocus spellcheck="false" placeholder="Search..." value="{{ searchText }}" />
             {{!-- <button type="submit"><i class="fa fa-search"></i></button> --}}
@@ -69,6 +77,10 @@
                         <td>{{{renderSpellField this 'concentration'}}}</td>
                         <td>{{{renderSpellField this 'ritual'}}}</td>
                         <td class="spell-search-result-range">{{renderSpellField this 'range'}}</td>
+                    </tr>
+                {{else}}
+                    <tr>
+                        <td colspan="8" style="font-weight: bold; text-align: center">NO RESULTS FOUND</td>
                     </tr>
                 {{/each}}
             </tbody>
