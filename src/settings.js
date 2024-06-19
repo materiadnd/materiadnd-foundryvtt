@@ -139,7 +139,7 @@ export class Settings {
             hint: `MATERIA-DND.settings.${this.SETTINGS.SPELL_SEARCH_PACK_NAME}.Hint`,
             config: true,
             scope: 'world',
-            default: 'materia-dnd',
+            default: 'materia-dnd.spells',
             type: String,
             onChange: () => {},
             requiresReload: true,
