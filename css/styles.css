@@ -108,7 +108,7 @@ p.spell-search-header {
     padding: 2px 6px;
     white-space: nowrap;
     text-align: center;
-    font-size: 10.5px;
+    /* font-size: 12.5px; */
     cursor: pointer;
     user-select: none;
     border: 1px solid #ccc;
@@ -149,8 +149,8 @@ p.spell-search-header {
     font-size: x-large;
 }
 
-#spell-text-search {
-    flex-grow: 1;
+#spell-text-search:focus {
+    box-shadow: none !important;
 }
 
 .spell-search-container {
@@ -179,28 +179,9 @@ p.spell-search-header {
     text-transform: capitalize;
 }
 
-
 .search-results-body-icon {
     --icon-fill: var(--color-text-dark-primary);
 }
-
-.spell-search-filter {
-    box-sizing: border-box;
-}
-
-.spell-search-filter input {
-    float: left;
-    width: 80%;
-}
-
-.spell-search-filter button {
-    cursor: pointer;
-    float: left;
-    width: 20%;
-}
-
-.spell-search-filter::after {
-    content: "";
-    clear: both;
-    display: table;
+.spell-search-results-info {
+    text-align: right;
 }

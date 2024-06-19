@@ -30,12 +30,19 @@
             {{#each componentFilters}}
                 <span class="toggle-text component-toggle" id="spell-component-filter-{{this.key}}" state="{{this.state}}">{{this.name}}</span>
             {{/each}}
+                <i class="fa-solid fa-grip-lines-vertical"></i>
+            {{#each otherFilters}}
+                <span class="toggle-text component-toggle" id="spell-component-filter-{{this.key}}" state="{{this.state}}">{{this.name}}</span>
+            {{/each}}
             </div>
         </div>
         <div class="spell-search-filter text-filter">
             <input type="search" id="spell-text-search" disabled autofocus spellcheck="false" placeholder="Search..." value="{{ searchText }}" />
             {{!-- <button type="submit"><i class="fa fa-search"></i></button> --}}
         </div>
+    </div>
+    <div class="spell-search-results-info">
+        <p>Matching Spells Found: {{ searchResults.length }}</p>
     </div>
     <div class="spell-search-results-container">
         <table id="spell-search-results-table">
@@ -66,8 +73,5 @@
                 {{/each}}
             </tbody>
         </table>
-    </div>
-    <div class="spell-search-results-footer">
-        <p>Matching Spells Found: {{ searchResults.length }}</p>
     </div>
 </div>

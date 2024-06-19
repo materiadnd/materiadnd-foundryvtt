@@ -167,8 +167,8 @@ export class SpellSearchAppV2 extends Application {
     static get defaultOptions() {
         const defaults = super.defaultOptions;
         const overrides = {
-            height: 1080,
-            width: 720,
+            height: 800,
+            width: 850,
             template: Constants.TEMPLATES.SPELL_SEARCH_V2,
             title: 'Spell Search',
             resizable: true,
@@ -185,6 +185,7 @@ export class SpellSearchAppV2 extends Application {
         data.classFilters = this.classFilters;
         data.schoolFilters = this.schoolFilters;
         data.componentFilters = this.componentFilters;
+        data.otherFilters = this.otherFilters;
         data.searchText = this.searchText;
         data.searchResults = this.searchResults;
         return data;
@@ -285,8 +286,10 @@ export class SpellSearchAppV2 extends Application {
     }
 
     _initializeComponentFilters() {
-        var fullSpellProps = new Array(...Object.entries(CONFIG.DND5E.spellComponents), ...Object.entries(CONFIG.DND5E.spellTags));
-        this.componentFilters = fullSpellProps.map(
+        this.componentFilters = Object.entries(CONFIG.DND5E.spellComponents).map(
+            x => { return { key: x[0], name: x[1].label, state: 'ignore' } }
+        );
+        this.otherFilters = Object.entries(CONFIG.DND5E.spellTags).map(
             x => { return { key: x[0], name: x[1].label, state: 'ignore' } }
         );
     }
@@ -454,6 +457,15 @@ export class SpellSearchAppV2 extends Application {
             case "component":
                 var component = filterItem;
                 this.componentFilters = this.componentFilters.reduce((acc, item) => {
+                    if (item.key == component) {
+                        acc.push({ key: item.key, name: item.name, state: state });
+                        return acc;
+                    } else {
+                        acc.push(item);
+                        return acc;
+                    }
+                }, new Array());
+                this.otherFilters = this.otherFilters.reduce((acc, item) => {
                     if (item.key == component) {
                         acc.push({ key: item.key, name: item.name, state: state });
                         return acc;
