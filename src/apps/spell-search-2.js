@@ -232,6 +232,8 @@ export class SpellSearchAppV2 extends Application {
         }
         // register Handlebars helpers
         Handlebars.registerHelper("renderSpellField", (item, fieldName) => renderSpellField(item, fieldName));
+
+        await this._applySearchFilter().then(() => this.render());
     }
 
     async _initializeSpellData() {
