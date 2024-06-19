@@ -191,20 +191,21 @@ export class SpellSearchAppV2 extends Application {
     }
 
     activateListeners(html) {
-        // html = html[0] ?? html;  // cribbed from theripper93
         html.find('.toggle-text').on("click", async ev => await this._toggleText(html, ev));
         html.find('#spell-text-search').on("input", async ev => {
             this.searchText = ev.target.value;
             this.searchFilter.updateText(this.searchText);
             await this._applySearchFilter().then(() => this.render());
         });
-        //timeout for janky core behavior
-        // setTimeout(() => {
-        //     //enable the input
-        //     html.querySelector("input").disabled = false;
-        //     //focus the input
-        //     html.querySelector("input").focus();
-        // }, 50);
+        html = html[0] ?? html;  // cribbed from theripper93
+        // timeout for janky core behavior
+        setTimeout(() => {
+            //enable the input
+            html.querySelector("input").disabled = false;
+            //focus the input
+            html.querySelector("input").focus();
+            html.querySelector("input").selectionStart = html.querySelector("input").selectionEnd = 9999;
+        }, 20);
     }
 
     async _initialize() {
