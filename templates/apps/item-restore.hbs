@@ -1,0 +1,48 @@
+<div class="body">
+    <div class="title">
+        <span class="application-title">Item Restore</span>
+    </div>
+    <div class="buttons">
+        <p class="restore-item-button enabled">Replace Entire Item</p>
+    </div>
+    {{#if diff}}
+    <div class="item-diff">
+        <table>
+            <thead class="diff-header">
+                <td>Keep?</td>
+                <td>Field Name</td>
+                <td class="item-header">{{existingItem.name}} on {{actor.name}}</td>
+                <td class="item-header">Reference Item</td>
+            </thead>
+            <tbody>
+                {{#each diff}}
+                    <tr class="diff-table-row diff-table-section-row">
+                        <th></th>
+                        <th colspan="3">Properties: {{section}}</th>
+                    </tr>
+                    {{#each fields}}
+                    <tr class="diff-table-row" id="{{field}}-row">
+                        <td><input type="checkbox" class="diff-ckbox" id="{{field}}" /></td>
+                        <td>{{label}}</td>
+                        {{#if renderFunc }}
+                        <td class="diff-exclude" id="{{field}}-existing">{{{render existing renderFunc}}}</td>
+                        <td class="diff-keep" id="{{field}}-orig">{{{render reference renderFunc}}}</td>
+                        {{else}}
+                        <td class="diff-exclude norender" id="{{field}}-existing">{{existing}}</td>
+                        <td class="diff-keep norender" id="{{field}}-orig">{{reference}}</td>
+                        {{/if}}
+                    </tr>
+                    {{/each}}
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+    <div class="buttons">
+        <p class="update-item-button disabled" id="update-item-button">Keep Selected Fields and Update</p>
+    </div>
+    {{else}}
+    <div class="messages">
+        <p>No differences detected, you may still chosoe to replace the entire item to force a refresh.</p>
+    </div>
+    {{/if}}
+</div>

@@ -1,0 +1,26 @@
+{
+  "name": "Prefix Features with Prerequisites",
+  "type": "script",
+  "scope": "global",
+  "author": "0lUbZH4eQxZ94yga",
+  "img": "icons/svg/dice-target.svg",
+  "command": "// Prefix Featurse with Prerequisites\n// ==================================\n// Updates the selected token's character sheet so that the Features on it are prefixed with the prerequisites for that\n// feature.  For example, a fighter's first-level feature \"Second Wind\" would become \"[Fighter 1] Second Wind\".  Ignores\n// any features that already start with a \"[\" or doesn't have any requirements.\n//\n// To use:  select a single token that you have rights to update, and then click \"Execute Macro\"\n\nif (canvas.tokens.controlled.length == 0) { ui.notifications.error(\"You must select a token first.\"); }\nif (canvas.tokens.controlled.length > 1)  { ui.notifications.error(\"You must only select a single token.\"); }\n\nlet selectedToken = canvas.tokens.controlled[0];\nlet actor = selectedToken.actor;\n// check permission\nif (actor.ownership.default == 3 || actor.ownership[game.user._id] == 3) {\n    let updates = actor.items\n    \t\t.filter( x => x.type == 'feat' )\n    \t\t.filter( x => x.system?.requirements != \"\" )\n    \t\t.filter( x => !x.name.startsWith(\"[\") )\n    \t\t.reduce((acc, item) => {\n    \t\t\tacc.push({ _id: item.id, \"name\": `[${item.system.requirements}] ${item.name}` });\n    \t\t\treturn acc;\n    \t\t }, []);\n    ui.notifications.info(`Updating ${updates.length} features on ${actor.name}`);\n    await actor.updateEmbeddedDocuments(\"Item\", updates);\n    ui.notifications.info(`Features on ${actor.name} successfully updated.`);\n} else {\n    ui.notifications.error(\"You do not have permissions to update this token.\");\n}",
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "3.1.2",
+    "coreVersion": "12.325",
+    "createdTime": 1715133677663,
+    "modifiedTime": 1715135051089,
+    "lastModifiedBy": "dnd5mbuilder0000",
+    "compendiumSource": null,
+    "duplicateSource": null
+  },
+  "_id": "RFi4Cm8qeUeUVPlw",
+  "sort": 0,
+  "_key": "!macros!RFi4Cm8qeUeUVPlw"
+}
