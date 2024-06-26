@@ -789,9 +789,9 @@ export function SpellSearchRenderActorSheetHandler(html, actor) {
     for (const header of html.find("div.spellcasting > div.header > h3")) {
         let searchElt = $(`<span>&nbsp;&nbsp;<i class="fa-solid fa-magnifying-glass"></i> Spells</span>`);
         let className = header.innerHTML.replace(' Spellcasting', '').toLowerCase();
-        className = className.replace('/\s*\(\w+\)\s*/', '');  // for Warlock (INT) variant, and if we ever
-                                                               // do any other variant class
         let maxLevel = getMaxLevelForClass(actor, className);
+        className = className.replace(/\s*\(\w+\)\s*/i, '');    // for Warlock (INT) variant, and if we ever
+                                                                // do any other variant class
         let searchApp = new SpellSearchApp(className, maxLevel);
         searchElt.on("click", (evt) => {
             searchApp.render(true);
