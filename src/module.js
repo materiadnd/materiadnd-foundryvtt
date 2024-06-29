@@ -1,15 +1,16 @@
-import { ItemRestoreApp } from "./apps/item-restore.js";
 import { AddMateriaArmor } from "./armor.js"
 import { AddMateriaConditions } from "./conditions.js";
+import { AddMateriaWeapons } from "./weapons.js";
 import { Constants } from "./constants.js";
 import { ExhastionActiveEffectHandler, ExhaustionDamageHandler } from "./exhaustion.js";
+import { ItemRestoreApp } from "./apps/item-restore.js";
 import { ItemUseCreateIemHandler, ItemUseUpdateUserHandler, ItemUseUserConnectedHandler } from "./item-use.js";
+import { Replace5eSourcePacks } from "./source-packs.js";
 import { Settings } from "./settings.js";
 import { SpellcastingRenderActorSheetHandler, AddThirdPactCaster, SpellcastingAddThirdPactProgression } from "./spellcasting-utils.js";
 import { UpdateTeleBonusFlag } from "./tele.js";
-import { AddMateriaWeapons } from "./weapons.js";
 import { WildShapeTransformActorHandler } from "./wild-shape.js";
-import { Replace5eSourcePacks } from "./source-packs.js";
+import { SpellSearchIndex, SpellSearchApp, SpellSearchRenderActorSheetHandler } from "./apps/spell-search.js";
 
 Hooks.once('init', () => {
     Settings.initialize();
@@ -24,6 +25,24 @@ Hooks.once("ready", () => {
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_THIRD_PACT_CASTER)) { AddThirdPactCaster(); }
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_WEAPONS_AND_WEAPON_PROPS)) { AddMateriaWeapons(); }
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.REPLACE_SOURCE_PACKS)) { Replace5eSourcePacks(); }
+    if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ENABLE_SPELL_SEARCH)) { 
+        let searchButtonHtml = $(`<div class="header-actions action-buttons flexrow">
+            <button class="spell-search">
+            <i class="fa-solid fa-magnifying-glass"></i> Open Spell Search
+        </button>
+        </div>`);
+        let compendiumSearchElement = $('.compendium-sidebar').find('.directory-header').find('.header-search');
+        searchButtonHtml.insertAfter(compendiumSearchElement);
+        let spellSearchButton = $('.spell-search').first();
+        spellSearchButton.click(async (event) => {
+            var spellSearchApp = new SpellSearchApp();   
+            spellSearchApp.render(true);
+        });
+        let index = new SpellSearchIndex();
+        index.updateIndexForPack('materia-dnd.spells').then( _ => {
+            game.settings.set(Constants.MODULE_ID, Settings.SETTINGS.SPELL_SEARCH_INDEX, JSON.stringify(index));
+        });
+    }
 })
 
 Hooks.on("dnd5e.damageActor", async (actor, heal, diff, id) => {
@@ -59,6 +78,9 @@ Hooks.on("createItem", (item, flags, itemId) => {
 Hooks.on("renderActorSheet5eCharacter2", (app, html, actor) => {
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_SPELL_PREP_COUNTER)) {
         SpellcastingRenderActorSheetHandler(html, actor);
+    }
+    if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ENABLE_SPELL_SEARCH)) {
+        SpellSearchRenderActorSheetHandler(html, actor);
     }
 });
 

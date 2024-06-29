@@ -9,7 +9,9 @@
       "value": "<p>Starting at 3rd level, you can use your reaction to deflect melee and ranged attacks, when you or a target within your unarmed reach is hit by a melee or ranged weapon attack that deals bludgeoning, piercing or slashing damage. If the attack is ranged than you can potentially catch the missile. When you do so, the damage the target would take from the attack is reduced by 1d10 + your Dexterity modifier + your monk level. If you have taken the Dodge action, you can deflect or catch missiles in this way until the start of your next turn.</p><p>If you reduce the damage to 0, you can spend 1 Ki Point to redirect some of the attack's force. If you do so, choose a creature within reach of your unarmed strike if the attack was a melee attack or 60 feet of yourself that is not behind Total Cover if the attack was a ranged attack. Make an attack as if with a monk weapon against your target and on a hit it deals one martial arts die plus your Dexterity modifier of damage. The damage is the same type that was dealt by the original attack.</p><p>You may make only one such attack until the beginning of your next turn.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "custom": ""
+    },
     "activation": {
       "type": "reaction",
       "cost": 1,
@@ -46,8 +48,8 @@
       "amount": null,
       "scale": false
     },
-    "ability": null,
-    "actionType": "",
+    "ability": "dex",
+    "actionType": "util",
     "attackBonus": "",
     "chatFlavor": "",
     "critical": {
@@ -55,10 +57,15 @@
       "damage": ""
     },
     "damage": {
-      "parts": [],
+      "parts": [
+        [
+          "@scale.monk.martial-arts-die + @mod",
+          ""
+        ]
+      ],
       "versatile": ""
     },
-    "formula": "",
+    "formula": "1d10 + @mod + @classes.monk.levels",
     "save": {
       "ability": "",
       "dc": null,
@@ -83,10 +90,10 @@
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "3.2.1",
+    "coreVersion": "12.327",
     "createdTime": 1708913309848,
-    "modifiedTime": 1708913432066,
+    "modifiedTime": 1718922279778,
     "lastModifiedBy": "dnd5mbuilder0000",
     "compendiumSource": null,
     "duplicateSource": null
