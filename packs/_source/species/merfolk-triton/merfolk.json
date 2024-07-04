@@ -9,7 +9,9 @@
       "value": "",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "custom": ""
+    },
     "advancement": [
       {
         "type": "AbilityScoreImprovement",
@@ -76,19 +78,24 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.species.Item.j99NiERLwZqZvjGc"
+              "uuid": "Compendium.materia-dnd.species.Item.j99NiERLwZqZvjGc",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.1El2qCSwRtnc8qSz"
+              "uuid": "Compendium.materia-dnd.species.Item.1El2qCSwRtnc8qSz",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.fjf407Teo3ZvToQE"
+              "uuid": "Compendium.materia-dnd.species.Item.fjf407Teo3ZvToQE",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.6N2isg5tEf0J4hLg"
+              "uuid": "Compendium.materia-dnd.species.Item.6N2isg5tEf0J4hLg",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.w8iaaxyqoDVJacqU"
+              "uuid": "Compendium.materia-dnd.species.Item.8D90yNTqKR3Ja4mQ",
+              "optional": false
             }
           ],
           "optional": false,
@@ -105,30 +112,33 @@
         "configuration": {
           "items": [
             {
+              "optional": false,
               "uuid": "Compendium.materia-dnd.spells.Item.jyYhD2zbDZZ1tPxp"
             }
           ],
           "optional": false,
           "spell": {
-            "ability": "",
+            "ability": [],
             "preparation": "always",
             "uses": {
-              "max": "",
-              "per": ""
+              "max": "1",
+              "per": "lr"
             }
           }
         },
         "value": {},
         "level": 0,
-        "title": "Control Air and Water",
-        "icon": null
+        "title": "Control Air and Water: Fog Cloud"
       },
       {
         "_id": "B4pyURvNQbVk5ZNx",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "3": 1
+            "3": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": "spell",
@@ -144,7 +154,9 @@
             }
           ],
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "always",
             "uses": {
               "max": "",
@@ -156,33 +168,22 @@
             "level": ""
           }
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Control Air and Water: Gust of Wind",
         "icon": "icons/magic/air/wind-swirl-gray-blue.webp"
       },
       {
-        "_id": "2x12GD1iSztBsBSN",
-        "type": "ItemGrant",
-        "configuration": {
-          "items": [
-            {
-              "uuid": "Compendium.materia-dnd.species.Item.r5c24agTOcmSjkqs"
-            }
-          ],
-          "optional": false,
-          "spell": null
-        },
-        "value": {},
-        "level": 5,
-        "title": "Control Air and Water: Water Walk",
-        "icon": null
-      },
-      {
-        "_id": "",
+        "_id": "g1RLJEFdHvIiXLcG",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "6": 1
+            "6": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -210,18 +211,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs).",
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
         "icon": null
       },
       {
-        "_id": "",
+        "_id": "2YSV6WdyguDtgeOR",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "12": 1
+            "12": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -249,18 +257,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs).",
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
         "icon": null
       },
       {
-        "_id": "",
+        "_id": "351C75tcuuf0ZrHT",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "18": 1
+            "18": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -288,11 +303,39 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs).",
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
         "icon": null
+      },
+      {
+        "_id": "Enln2MCGJAvKj9sV",
+        "type": "ItemGrant",
+        "configuration": {
+          "items": [
+            {
+              "optional": false,
+              "uuid": "Compendium.materia-dnd.spells.Item.jI4dAUKCk2pQJfwi"
+            }
+          ],
+          "optional": false,
+          "spell": {
+            "ability": [],
+            "preparation": "always",
+            "uses": {
+              "max": "1",
+              "per": "lr"
+            }
+          }
+        },
+        "value": {},
+        "level": 5,
+        "title": "Control Air and Water: Water Walk"
       }
     ],
     "movement": {
@@ -314,7 +357,8 @@
     },
     "type": {
       "value": "humanoid"
-    }
+    },
+    "identifier": ""
   },
   "effects": [],
   "sort": 0,
@@ -324,10 +368,10 @@
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "3.2.1",
+    "coreVersion": "12.328",
     "createdTime": 1710782237554,
-    "modifiedTime": 1712147766078,
+    "modifiedTime": 1720056463788,
     "lastModifiedBy": "dnd5mbuilder0000",
     "compendiumSource": null,
     "duplicateSource": null
