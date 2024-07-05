@@ -11,6 +11,7 @@ import { SpellcastingRenderActorSheetHandler, AddThirdPactCaster, SpellcastingAd
 import { UpdateTeleBonusFlag } from "./tele.js";
 import { WildShapeTransformActorHandler } from "./wild-shape.js";
 import { SpellSearchIndex, SpellSearchApp, SpellSearchRenderActorSheetHandler } from "./apps/spell-search.js";
+import { StatRollerRenderActorSheetHandler } from "./apps/stat-roller.js";
 
 Hooks.once('init', () => {
     Settings.initialize();
@@ -81,6 +82,9 @@ Hooks.on("renderActorSheet5eCharacter2", (app, html, actor) => {
     }
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ENABLE_SPELL_SEARCH)) {
         SpellSearchRenderActorSheetHandler(html, actor);
+    }
+    if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.SHOW_STARTING_STAT_ROLLER)) {
+        StatRollerRenderActorSheetHandler(app, html, actor);
     }
 });
 

@@ -14,7 +14,8 @@ export class Settings {
         REPLACE_SOURCE_PACKS: 'replace-source-packs',
         SPELL_SEARCH_INDEX: 'spell-search-index',
         ENABLE_SPELL_SEARCH: 'enable-spell-search',
-        SPELL_SEARCH_PACK_NAME: 'spell-search-pack-name'
+        SPELL_SEARCH_PACK_NAME: 'spell-search-pack-name',
+        SHOW_STARTING_STAT_ROLLER: 'show-starting-stat-roller'
     }
 
     static initialize() {
@@ -144,5 +145,15 @@ export class Settings {
             onChange: () => {},
             requiresReload: true,
         });
+        game.settings.register(Constants.MODULE_ID, this.SETTINGS.SHOW_STARTING_STAT_ROLLER, {
+            name: `MATERIA-DND.settings.${this.SETTINGS.SHOW_STARTING_STAT_ROLLER}.Name`,
+            hint: `MATERIA-DND.settings.${this.SETTINGS.SHOW_STARTING_STAT_ROLLER}.Hint`,
+            config: true,
+            scope: 'world',
+            default: true,
+            type: Boolean,
+            onChange: () => {},
+            requiresReload: true,
+        })
     }
 }

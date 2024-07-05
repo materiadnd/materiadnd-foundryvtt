@@ -1,0 +1,28 @@
+<div class="roller-instructions">
+    <p>Materia stat rolling rules are as follows:</p>
+    <ul>
+        <li>Roll 4d6, keep the highest 3.  Repeat this six times for all your stats.</li>
+        <li>If you have no negative modifiers (stats of less than 10), you must set one to an 8.  Alternatively, you may choose to set one to an 8 even if it is already below 10.</li>
+        <li>If you take the 8, you may choose to reroll any of your other stats but you must take the new roll.</li>
+        <li>If, after all of this, your total stats are below 70, you may start over.</li>
+        <li>Otherwise, assign one of each of the resulting roll values to each of your six stats.</li>
+    </ul>
+</div>
+<div class="roller-controls">
+    <p class="roller-button roller-starting-rolls">Roll starting stats</p>
+    <p class="roller-button roller-starting-rolls">Set stat to 8</p>
+    <p class="roller-button roller-starting-rolls">Reroll one stat</p>
+    <p class="roller-button roller-starting-rolls">Start over</p>
+    <p class="roller-button roller-starting-rolls">Assign stats</p>
+</div>
+<div class="roller-roll-container">
+    {{#if rolls}}
+    <ul class="roller-roll-list">
+        {{#each rolls}}
+            {{> rollDisplay this}}
+        {{/each}}
+    </ul>
+    {{else}}
+    <p>No rolls yet.</p>
+    {{/if}}
+</div>
