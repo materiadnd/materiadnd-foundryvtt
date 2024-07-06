@@ -105,7 +105,7 @@ Hooks.on("renderItemSheet5e", async (app, html, item) => {
         if(item.item?.actor != null && item.item?.actor?.type == "character" && item.item?.isOwner) {
             var origItemId = await item.item?.getFlag('materia-dnd', 'sourceId');
             if (origItemId == null) { return; }
-            const buttonText = game.i18n.localize('MATERIA-DND.ui.item-restore.itemsheet-titlebar-button');
+            const buttonText = game.i18n.localize(`${Constants.MODULE_ID}.ui.item-restore.itemsheet-titlebar-button`);
             let openButton = $(`<a class="open-item-restore"><i class="fas fa-layer-group"></i> ${buttonText}</a>`);
             openButton.click(async (event) => {
                 var itemRestoreApp = new ItemRestoreApp();

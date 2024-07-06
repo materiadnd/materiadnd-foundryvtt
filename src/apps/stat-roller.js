@@ -21,7 +21,7 @@ export function StatRollerRenderActorSheetHandler(app, html, actor) {
     if (!Object.entries(actor.system.abilities).some( x => x[1].value != 10 ) &&
         !actor.items.some( x => x?.type == 'class' && x?.system.levels > 0)) {
         let actorId = app.actor.id;
-        const buttonText = game.i18n.localize('MATERIA-DND.ui.stat-roller.charsheet-titlebar-button');
+        const buttonText = game.i18n.localize(`${Constants.MODULE_ID}.ui.stat-roller.charsheet-titlebar-button`);
         let openButton = $(`<a class="open-stat-roller"><i class="fa-solid fa-dice"></i> ${buttonText}</a>`);
         openButton.on("click", async (event) => {
             var statRollerApp = new StatRollerApp(actorId);
@@ -57,7 +57,9 @@ class StatRollerApp extends Application {
     getData() {
         let data = {};
         data.buttonStates = this.buttonStates;
+        data.buttonText = this.buttonText;
         data.discardedRoll = this.discardedRoll;
+        data.message = this.message;
         data.rolls = this.rolls;
         return data;
     }
@@ -80,6 +82,14 @@ class StatRollerApp extends Application {
             'start-over-button': ButtonFlags.Disabled,
             'assign-stats-button': ButtonFlags.Disabled,
         }
+        this.buttonText = {
+            'roll_starting_stats_button': game.i18n.localize(Constants.MESSAGES.STAT_ROLLER.BUTTONS.ROLL_STARTING_STATS),
+            'set_stat_to_eight_button': game.i18n.localize(Constants.MESSAGES.STAT_ROLLER.BUTTONS.SET_STAT_TO_EIGHT),
+            'reroll_one_stat_button': game.i18n.localize(Constants.MESSAGES.STAT_ROLLER.BUTTONS.REROLL_ONE_STAT),
+            'start_over_button': game.i18n.localize(Constants.MESSAGES.STAT_ROLLER.BUTTONS.START_OVER),
+            'assign_stats_button': game.i18n.localize(Constants.MESSAGES.STAT_ROLLER.BUTTONS.ASSIGN_STATS),
+        }
+        this.message = game.i18n.localize(Constants.MESSAGES.STAT_ROLLER.INSTRUCTIONS.STARTING_ROLLS);
         Handlebars.registerHelper('isEnabled', function(btnName) {
             if (btnName in this.buttonStates) {
                 if (this.buttonStates[btnName] === ButtonFlags.Enabled) {
@@ -116,6 +126,7 @@ class StatRollerApp extends Application {
             } else {
                 this.buttonStates['assign-stats-button'] = ButtonFlags.Disabled;
             }
+            this.message = game.i18n.localize(Constants.MESSAGES.STAT_ROLLER.INSTRUCTIONS.POST_STARTING_ROLLS);
             this.render(true);
         }
     }

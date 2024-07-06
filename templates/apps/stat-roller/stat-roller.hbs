@@ -1,28 +1,20 @@
-<div class="roller-instructions">
-    <p>Materia stat rolling rules are as follows:</p>
-    <ul>
-        <li>Roll 4d6, keep the highest 3.  Repeat this seven times for all your stats, take the six with the highest totals.</li>
-        <li>If you have no negative modifiers (stats of less than 10), you must set one to an 8.  Alternatively, you may choose to set one to an 8 even if it is already below 10.</li>
-        <li>If you take the 8, you may choose to reroll any of your other stats but you must take the new roll.</li>
-        <li>If, after all of this, your total stats are below 70, you may start over.</li>
-        <li>Otherwise, assign one of each of the resulting roll values to each of your six stats.</li>
-    </ul>
+<div class="messages">
+    <p class="instruction-header">Instructions:</p>
+    <p class="instruction-message">{{ message }}</p>
     <p>NOTE: You may always <em>reduce</em> any stat you wish after this process is done!</p>
 </div>
 <div class="roller-controls buttons">
-    <p class="roll-starting-stats-button {{isEnabled 'roll-starting-stats-button'}}">Roll starting stats</p>
-    <p class="set-stat-to-eight-button {{isEnabled 'set-stat-to-eight-button'}}">Set stat to 8</p>
-    <p class="reroll-one-stat-button {{isEnabled 'reroll-one-stat-button'}}">Reroll one stat</p>
-    <p class="start-over-button {{isEnabled 'start-over-button'}}">Start over</p>
-    <p class="assign-stats-button {{isEnabled 'assign-stats-button'}}">Assign stats</p>
+    <p class="roll-starting-stats-button {{isEnabled 'roll-starting-stats-button'}}">{{ buttonText.roll_starting_stats_button }}</p>
+    <p class="set-stat-to-eight-button {{isEnabled 'set-stat-to-eight-button'}}">{{ buttonText.set_stat_to_eight_button }}</p>
+    <p class="reroll-one-stat-button {{isEnabled 'reroll-one-stat-button'}}">{{ buttonText.reroll_one_stat_button }}</p>
+    <p class="start-over-button {{isEnabled 'start-over-button'}}">{{ buttonText.start_over_button }}</p>
+    <p class="assign-stats-button {{isEnabled 'assign-stats-button'}}">{{ buttonText.assign_stats_button }}</p>
 </div>
 <div class="roller-roll-container">
     {{#if rolls}}
     <ul class="roller-roll-list">
-        {{ log 'discardedRoll:' discardedRoll}}
         {{> rollDisplay roll=discardedRoll ignoredRoll=true}}
         {{#each rolls}}
-            {{ log 'roll:' this}}
             {{> rollDisplay roll=this index=@index}}
         {{/each}}
     </ul>
