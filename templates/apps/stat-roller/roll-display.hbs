@@ -1,3 +1,24 @@
 <li class="roller-roll-display">
-
+    <div class="roll-label">Roll #{{ index }}</div>
+    <div class="roll-render">
+        <ol class="roll-results">
+        {{#each roll.dice.[0].results }}
+            <li {{#if discarded}}class="discarded-die"{{/if}}>{{ result }}</li>
+        {{/each}}
+        </ol>
+    </div>
+    <div class="roll-total">
+        {{ roll.total }}
+    </div>
+    <div class="stat-picker-label">Ability score:
+        <select id="roll-{{index}}-stat" class="stat-selector">
+            <option value="Empty" selected="true">---</option>
+            <option value="str">Strength</option>
+            <option value="dex">Dexterity</option>
+            <option value="con">Constitution</option>
+            <option value="int">Intelligence</option>
+            <option value="wis">Wisdom</option>
+            <option value="cha">Charisma</option>
+        </select>
+    </div>
 </li>

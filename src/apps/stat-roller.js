@@ -33,6 +33,13 @@ export function StatRollerRenderActorSheetHandler(app, html, actor) {
     }
 }
 
+class StatRollData {
+    constructor(roll, index) {
+        this.roll = roll;
+        this.index = index;
+    }
+}
+
 class StatRollerApp extends Application {
     constructor() {
         super();
@@ -60,6 +67,7 @@ class StatRollerApp extends Application {
     }
 
     activateListeners(html) {
+        html.find("#roller-roll-starting-stats-button").on("click", ev => this._rollStartingStats());
     }
 
     setActor(actorId) {
@@ -67,5 +75,19 @@ class StatRollerApp extends Application {
     }
 
     _initialize() {
+        loadTemplates({
+            rollDisplay: Constants.TEMPLATES.STAT_ROLLER.ROLL_DISPLAY
+        });
+    }
+
+    async _rollStartingStats() {
+        this.rolls = [];
+        for (let i=1; i <= 6; i++) {
+            let roll = new Roll("4d6kh3");
+            await roll.evaluate();
+            console.log(`materia-dnd | Stat Roller: Roll ${i} = ${roll.total}`);
+            this.rolls.push( new StatRollData(roll, i) );
+        }
+        this.render(true);
     }
 }
