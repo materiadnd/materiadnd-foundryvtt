@@ -11,3 +11,8 @@ export class Constants {
         }
     }
 }
+
+export class ButtonFlags  {
+    static Disabled = 0;
+    static Enabled = 1;
+}

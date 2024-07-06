@@ -1,5 +1,9 @@
-<li class="roller-roll-display">
+<li class="roller-roll-display{{#if ignoredRoll}} roller-roll-display-discarded{{/if}}">
+    {{#if ignoredRoll}}
+    <div class="roll-label">IGNORED ROLL</div>
+    {{else}}
     <div class="roll-label">Roll #{{ index }}</div>
+    {{/if}}
     <div class="roll-render">
         <ol class="roll-results">
         {{#each roll.dice.[0].results }}
@@ -10,6 +14,7 @@
     <div class="roll-total">
         Total: {{ roll.total }}
     </div>
+    {{#unless ignoredRoll}}
     <div class="stat-picker-label">Ability score:
         <select id="roll-{{index}}-stat" class="stat-selector">
             <option value="Empty" selected="true">---</option>
@@ -21,4 +26,5 @@
             <option value="cha">Charisma</option>
         </select>
     </div>
+    {{/unless}}
 </li>
