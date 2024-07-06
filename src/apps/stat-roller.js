@@ -20,10 +20,11 @@ export function StatRollerRenderActorSheetHandler(app, html, actor) {
     // 2. there is no class with levels on this character
     if (!Object.entries(actor.system.abilities).some( x => x[1].value != 10 ) &&
         !actor.items.some( x => x?.type == 'class' && x?.system.levels > 0)) {
+        let actorId = app.actor.id;
         const buttonText = game.i18n.localize('MATERIA-DND.ui.stat-roller.charsheet-titlebar-button');
         let openButton = $(`<a class="open-stat-roller"><i class="fa-solid fa-dice"></i> ${buttonText}</a>`);
         openButton.on("click", async (event) => {
-            var statRollerApp = new StatRollerApp(actor._id);
+            var statRollerApp = new StatRollerApp(actorId);
             statRollerApp.render(true);
         });
         html.closest('.app').find('.open-stat-roller').remove();
@@ -130,9 +131,31 @@ class StatRollerApp extends Application {
     }
 
     async _assignStatsAndClose(html) {
-
-
+        if (this.buttonStates['assign-stats-button'] === ButtonFlags.Enabled) {
+            let statSelectors = html.find('.stat-selector');
+            let accruedStats = {};
+            for (var i=0; i < statSelectors.length; i++) {
+                accruedStats[statSelectors[i].value] = parseInt(html.find(`#roll-${i}-total`)[0].innerHTML.replace('Total: ', ''));
+            }
+            if (Object.keys(accruedStats).length === 6) {
+                let actor = game.actors.get(this.actorId);
+                if (actor === null) {
+                    ui.notifications.warn("Unable to find appropriate actor");
+                } else {
+                    let updateData = {};
+                    for (let stat in accruedStats) {
+                        if (stat === "Empty") {
+                            ui.notifications.error("Assign all ability scores before applying.");
+                            return;
+                        }
+                        updateData[`system.abilities.${stat}.value`] = accruedStats[stat];
+                    }
+                    actor.update(updateData);
+                }
+                this.close();
+            } else {
+                ui.notifications.error("Assign all all ability scores before applying.");
+            }
+        }
     }
-
-
 }
