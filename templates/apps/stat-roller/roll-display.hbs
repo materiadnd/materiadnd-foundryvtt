@@ -1,19 +1,20 @@
-{{ log 'rollDisplay this: ' this }}
 <li class="roller-roll-display{{#if rollsActive}} active-roll{{/if}}{{#if isIgnored}} roller-roll-display-discarded{{/if}}{{#if isManual}} reroll{{/if}}" id="roll-{{index}}-container">
-    {{#if isIgnored}}
-    <div class="roll-label">IGNORED ROLL</div>
-    {{else}}
-    <div class="roll-label">Roll #{{ index }}{{#if isManual}} (set manually){{/if}}</div>
-    {{/if}}
-    <div class="roll-render">
-        <ol class="roll-results">
-        {{#each roll.roll.dice.[0].results }}
-            <li class="d6{{#if discarded}} discarded-die{{/if}}">{{ result }}</li>
-        {{/each}}
-        </ol>
-    </div>
-    <div class="{{#if isManual}}reroll{{/if}}" id="roll-{{index}}-total">
-        Total: {{ roll.roll.total }}
+    <div class="roll-container-contents">
+        <div class="{{#if isManual}}reroll{{/if}} roll-total" id="roll-{{index}}-total">
+            {{ roll.roll.total }}
+        </div>
+        <div class="roll-render">
+            <ol class="roll-results">
+            {{#each roll.roll.dice.[0].results }}
+                <li class="d6{{#if discarded}} discarded-die{{/if}}">{{ result }}</li>
+            {{/each}}
+            </ol>
+        </div>
+        {{#if isIgnored}}
+        <div class="roll-label">IGNORED ROLL</div>
+        {{else}}
+        <div class="roll-label">Roll #{{ index }}{{#if isManual}} (set manually){{/if}}</div>
+        {{/if}}
     </div>
     {{#unless isIgnored}}
     <div class="stat-picker-label">Ability score:
