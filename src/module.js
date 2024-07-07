@@ -11,6 +11,7 @@ import { SpellcastingRenderActorSheetHandler, AddThirdPactCaster, SpellcastingAd
 import { UpdateTeleBonusFlag } from "./tele.js";
 import { WildShapeTransformActorHandler } from "./wild-shape.js";
 import { SpellSearchIndex, SpellSearchApp, SpellSearchRenderActorSheetHandler } from "./apps/spell-search.js";
+import { StatRollerRenderActorSheetHandler } from "./apps/stat-roller.js";
 
 Hooks.once('init', () => {
     Settings.initialize();
@@ -82,6 +83,9 @@ Hooks.on("renderActorSheet5eCharacter2", (app, html, actor) => {
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ENABLE_SPELL_SEARCH)) {
         SpellSearchRenderActorSheetHandler(html, actor);
     }
+    if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.SHOW_STARTING_STAT_ROLLER)) {
+        StatRollerRenderActorSheetHandler(app, html, actor);
+    }
 });
 
 Hooks.on("dnd5e.transformActor", (actor, target, d, txOptions, options) => {
@@ -101,7 +105,7 @@ Hooks.on("renderItemSheet5e", async (app, html, item) => {
         if(item.item?.actor != null && item.item?.actor?.type == "character" && item.item?.isOwner) {
             var origItemId = await item.item?.getFlag('materia-dnd', 'sourceId');
             if (origItemId == null) { return; }
-            const buttonText = game.i18n.localize('MATERIA-DND.ui.item-restore.itemsheet-titlebar-button');
+            const buttonText = game.i18n.localize(`${Constants.MODULE_ID}.ui.item-restore.itemsheet-titlebar-button`);
             let openButton = $(`<a class="open-item-restore"><i class="fas fa-layer-group"></i> ${buttonText}</a>`);
             openButton.click(async (event) => {
                 var itemRestoreApp = new ItemRestoreApp();
