@@ -33,6 +33,10 @@ export function StatRollerRenderActorSheetHandler(app, html, actor) {
     }
 }
 
+function sumRolls(rolls) {
+    return rolls.map(val => val.isIgnored ? 0 : val.roll.total).reduce((acc, val) => acc + val, 0);
+}
+
 class StatRollData {
     constructor(roll, index, isIgnored = false) {
         this.roll = roll;
@@ -80,6 +84,7 @@ class StatRollerApp extends Application {
         html.find(".set-stat-to-eight-button").on("click", ev => this._promptForStatToMakeEight());
         html.find(".reroll-one-stat-button").on("click", ev => this._promptForStatToReroll());
         html.find(".assign-stats-button").on("click", ev => this._assignStatsAndClose(html));
+        html.find(".start-over-button").on("click", ev => this.close());
 
         html.find(".roller-roll-display").on("click", ev => this._handleRollClick(ev));
 
@@ -179,7 +184,7 @@ class StatRollerApp extends Application {
         this.rollsActive = false;
         this.message = game.i18n.localize(Constants.MESSAGES.STAT_ROLLER.INSTRUCTIONS.AFTER_SETTING_EIGHT);
         this.buttonStates['reroll-one-stat-button'] = ButtonFlags.Enabled;
-        if (this.rolls.reduce((acc, val) => acc + val.roll.total, 0) >= 70) {
+        if (sumRolls(this.rolls) >= 70) {
             this.buttonStates['assign-stats-button'] = ButtonFlags.Enabled;
         }
         this.rollClickEight = false;  // now if we click a roll, it is for a reroll
@@ -202,7 +207,7 @@ class StatRollerApp extends Application {
             let statRollData = new StatRollData(roll, index-1);
             this.rolls.splice(index-1, 1, statRollData);
             this.rollsActive = false;
-            if (this.rolls.reduce((acc, val) => acc + val.roll.total, 0) >= 70) {
+            if (sumRolls(this.rolls) >= 70) {
                 this.message = game.i18n.localize(Constants.MESSAGES.STAT_ROLLER.INSTRUCTIONS.AFTER_REROLL_VALID_STATS);
                 this.buttonStates['assign-stats-button'] = ButtonFlags.Enabled;
             } else {
@@ -224,12 +229,12 @@ class StatRollerApp extends Application {
             if (Object.keys(accruedStats).length === 6) {
                 let actor = game.actors.get(this.actorId);
                 if (actor === null) {
-                    ui.notifications.warn("Unable to find appropriate actor");
+                    ui.notifications.warn(game.i18n.localize(Constants.MESSAGES.STAT_ROLLER.ERROR.UNABLE_TO_FIND_ACTOR));
                 } else {
                     let updateData = {};
                     for (let stat in accruedStats) {
                         if (stat === "Empty") {
-                            ui.notifications.error("Assign all ability scores before applying.");
+                            ui.notifications.error(game.i18n.localize(Constants.MESSAGES.STAT_ROLLER.ERROR.ASSIGN_ABILITY_SCORES));
                             return;
                         }
                         updateData[`system.abilities.${stat}.value`] = accruedStats[stat];
@@ -238,7 +243,7 @@ class StatRollerApp extends Application {
                 }
                 this.close();
             } else {
-                ui.notifications.error("Assign all all ability scores before applying.");
+                ui.notifications.error(game.i18n.localize(Constants.MESSAGES.STAT_ROLLER.ERROR.ASSIGN_ABILITY_SCORES));
             }
         }
     }

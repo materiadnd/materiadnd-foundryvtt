@@ -27,6 +27,10 @@ export class Constants {
                 REROLL_PROMPT: `${this.MODULE_ID}.ui.stat-roller.messages.reroll-prompt`,
                 AFTER_REROLL_VALID_STATS: `${this.MODULE_ID}.ui.stat-roller.messages.after-reroll-valid-stats`,
                 AFTER_REROLL_INVALID_STATS: `${this.MODULE_ID}.ui.stat-roller.messages.after-reroll-invalid-stats`,
+            },
+            ERROR: {
+                UNABLE_TO_FIND_ACTOR: `${this.MODULE_ID}.ui.stat-roller.error.unable-to-find-actor`,
+                ASSIGN_ABILITY_SCORES: `${this.MODULE_ID}.ui.stat-roller.error.assign-ability-scores`
             }
         }
     }
