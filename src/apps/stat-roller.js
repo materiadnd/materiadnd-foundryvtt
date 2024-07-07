@@ -6,11 +6,11 @@ export function StatRollerRenderActorSheetHandler(app, html, actor) {
     // check if the user is either a GM or an owner of the actor
     let isOwner = false;
     // if they're a GM or if the default permission is owner, we're good
-    if (game.user.isGM || actor.ownership[Constants.ACTOR_DEFAULT_OWNER_KEY] >= Constants.MINIMUM_OWNERSHIP_VALUE) {
+    if (game.user.isGM || app.actor.ownership[Constants.ACTOR_DEFAULT_OWNER_KEY] >= Constants.MINIMUM_OWNERSHIP_VALUE) {
         isOwner = true;
     } else {
         // otherwise, check if exists in perm list and if meets ownership min val
-        if (game.userId in actor.ownership && actor.ownership[game.userId] >= Constants.MINIMUM_OWNERSHIP_VALUE ) {
+        if (game.userId in app.actor.ownership && app.actor.ownership[game.userId] >= Constants.MINIMUM_OWNERSHIP_VALUE ) {
             isOwner = true;
         }
     }
@@ -18,7 +18,7 @@ export function StatRollerRenderActorSheetHandler(app, html, actor) {
     // we only want to display if all of the following are true:
     // 1. the stats are not currently rolled (ie, they are currently all 10s)
     // 2. there is no class with levels on this character
-    if (!Object.entries(actor.system.abilities).some( x => x[1].value != 10 ) &&
+    if (!Object.entries(app.actor.system.abilities).some( x => x[1].value != 10 ) &&
         !actor.items.some( x => x?.type == 'class' && x?.system.levels > 0)) {
         let actorId = app.actor.id;
         const buttonText = game.i18n.localize(`${Constants.MODULE_ID}.ui.stat-roller.charsheet-titlebar-button`);
