@@ -33,10 +33,21 @@ export function StatRollerRenderActorSheetHandler(app, html, actor) {
     }
 }
 
+class StatRollData {
+    constructor(roll, index, isIgnored = false) {
+        this.roll = roll;
+        this.index = index;
+        this.isIgnored = isIgnored;
+        this.isManual = false;
+    }
+}
+
+
 class StatRollerApp extends Application {
     constructor(actorId) {
         super();
         this.actorId = actorId;
+        this.rollClickEight = true;  // flag so we know what clicking on a roll means
         this._initialize();
     }
 
@@ -58,15 +69,19 @@ class StatRollerApp extends Application {
         let data = {};
         data.buttonStates = this.buttonStates;
         data.buttonText = this.buttonText;
-        data.discardedRoll = this.discardedRoll;
         data.message = this.message;
         data.rolls = this.rolls;
+        data.rollsActive = this.rollsActive;
         return data;
     }
 
     activateListeners(html) {
         html.find(".roll-starting-stats-button").on("click", ev => this._rollStartingStats());
+        html.find(".set-stat-to-eight-button").on("click", ev => this._promptForStatToMakeEight());
+        html.find(".reroll-one-stat-button").on("click", ev => this._promptForStatToReroll());
         html.find(".assign-stats-button").on("click", ev => this._assignStatsAndClose(html));
+
+        html.find(".roller-roll-display").on("click", ev => this._handleRollClick(ev));
 
         html.find(".stat-selector").change( ev => this._onStatSelectorChange(ev, html.find('.stat-selector')));
     }
@@ -90,6 +105,7 @@ class StatRollerApp extends Application {
             'assign_stats_button': game.i18n.localize(Constants.MESSAGES.STAT_ROLLER.BUTTONS.ASSIGN_STATS),
         }
         this.message = game.i18n.localize(Constants.MESSAGES.STAT_ROLLER.INSTRUCTIONS.STARTING_ROLLS);
+        this.rollsActive = false;
         Handlebars.registerHelper('isEnabled', function(btnName) {
             if (btnName in this.buttonStates) {
                 if (this.buttonStates[btnName] === ButtonFlags.Enabled) {
@@ -111,12 +127,11 @@ class StatRollerApp extends Application {
             for (let i=1; i <= 7; i++) {
                 let roll = new Roll("4d6kh3");
                 await roll.evaluate();
-                console.log(`materia-dnd | Stat Roller: Roll ${i} = ${roll.total}`);
-                candidateRolls.push(roll);
+                let statRollData = new StatRollData(roll, i);
+                candidateRolls.push(statRollData);
             }
-            candidateRolls.sort((a, b) => a.total - b.total);
-            this.discardedRoll = candidateRolls.shift();
-            this.rolls = candidateRolls;
+            candidateRolls.sort((a, b) => a.roll.total - b.roll.total);
+            candidateRolls[0].isIgnored = true;
             // now we assess what the next state is
             this.buttonStates['roll-starting-stats-button'] = ButtonFlags.Disabled;  // cannot roll new stats
             this.buttonStates['set-stat-to-eight-button'] = ButtonFlags.Enabled;     // can always set something to eight
@@ -126,19 +141,76 @@ class StatRollerApp extends Application {
             } else {
                 this.buttonStates['assign-stats-button'] = ButtonFlags.Disabled;
             }
+            // re-sort by index
+            candidateRolls.sort((a, b) => a.index - b.index);
+            this.rolls = candidateRolls;
             this.message = game.i18n.localize(Constants.MESSAGES.STAT_ROLLER.INSTRUCTIONS.POST_STARTING_ROLLS);
             this.render(true);
         }
     }
 
-    _onStatSelectorChange(ev, statSelectors) {
-        let selectorId = ev.target.id;
-        let selectedStat = ev.target.value;
-        for (var i = 0; i < statSelectors.length; i++) {
-            if (statSelectors[i].id !== selectorId && statSelectors[i].value == selectedStat) {
-                statSelectors[i].value = 'Empty';
+    _promptForStatToMakeEight() {
+        if (this.buttonStates['set-stat-to-eight-button'] === ButtonFlags.Enabled) {
+            this.message = game.i18n.localize(Constants.MESSAGES.STAT_ROLLER.INSTRUCTIONS.SETTING_AN_EIGHT);
+            this.buttonStates['set-stat-to-eight-button'] = ButtonFlags.Disabled;
+            this.buttonStates['assign-stats-button'] = ButtonFlags.Disabled;
+            this.rollsActive = true;
+            this.render(true);
+        }
+    }
+
+    async _handleRollClick(ev) {
+        if (this.rollsActive) {
+            let rollContainer = ev.target.closest('.active-roll');
+            let index = parseInt(rollContainer.id.match(/\d/)[0]);
+            if (this.rollClickEight) {
+                this._setStatToEight(index);
+            } else {
+                await this._rerollStat(index);
             }
         }
+    }
+
+    _setStatToEight(index) {
+        let selectedRoll = this.rolls[index-1];
+        selectedRoll.isManual = true;
+        selectedRoll.roll.terms[0].results.forEach(x => { x.active = false; x.discarded = true; });
+        selectedRoll.roll._total = 8;
+        this.rollsActive = false;
+        this.message = game.i18n.localize(Constants.MESSAGES.STAT_ROLLER.INSTRUCTIONS.AFTER_SETTING_EIGHT);
+        this.buttonStates['reroll-one-stat-button'] = ButtonFlags.Enabled;
+        if (this.rolls.reduce((acc, val) => acc + val.roll.total, 0) >= 70) {
+            this.buttonStates['assign-stats-button'] = ButtonFlags.Enabled;
+        }
+        this.rollClickEight = false;  // now if we click a roll, it is for a reroll
+        this.render(true);
+    }
+
+    _promptForStatToReroll() {
+        if (this.buttonStates['reroll-one-stat-button'] === ButtonFlags.Enabled) {
+            this.message = game.i18n.localize(Constants.MESSAGES.STAT_ROLLER.INSTRUCTIONS.REROLL_PROMPT);
+            this.buttonStates['reroll-one-stat-button'] = ButtonFlags.Disabled;
+            this.buttonStates['assign-stats-button'] = ButtonFlags.Disabled;
+            this.rollsActive = true;
+            this.render(true);
+        }
+    }
+
+    async _rerollStat(index) {
+            let roll = new Roll("4d6kh3");
+            await roll.evaluate();
+            let statRollData = new StatRollData(roll, index-1);
+            this.rolls.splice(index-1, 1, statRollData);
+            this.rollsActive = false;
+            if (this.rolls.reduce((acc, val) => acc + val.roll.total, 0) >= 70) {
+                this.message = game.i18n.localize(Constants.MESSAGES.STAT_ROLLER.INSTRUCTIONS.AFTER_REROLL_VALID_STATS);
+                this.buttonStates['assign-stats-button'] = ButtonFlags.Enabled;
+            } else {
+                this.message = game.i18n.localize(Constants.MESSAGES.STAT_ROLLER.INSTRUCTIONS.AFTER_REROLL_INVALID_STATS);
+                this.buttonStates['start-over-button'] = ButtonFlags.Enabled;
+                this.buttonStates['assign-stats-button'] = ButtonFlags.Disabled;
+            }
+            this.render(true);
     }
 
     async _assignStatsAndClose(html) {
@@ -146,7 +218,8 @@ class StatRollerApp extends Application {
             let statSelectors = html.find('.stat-selector');
             let accruedStats = {};
             for (var i=0; i < statSelectors.length; i++) {
-                accruedStats[statSelectors[i].value] = parseInt(html.find(`#roll-${i}-total`)[0].innerHTML.replace('Total: ', ''));
+                let index = parseInt(statSelectors[i].id.match(/\d/)[0]);
+                accruedStats[statSelectors[i].value] = this.rolls[index-1].roll.total;
             }
             if (Object.keys(accruedStats).length === 6) {
                 let actor = game.actors.get(this.actorId);
@@ -169,4 +242,15 @@ class StatRollerApp extends Application {
             }
         }
     }
+
+    _onStatSelectorChange(ev, statSelectors) {
+        let selectorId = ev.target.id;
+        let selectedStat = ev.target.value;
+        for (var i = 0; i < statSelectors.length; i++) {
+            if (statSelectors[i].id !== selectorId && statSelectors[i].value == selectedStat) {
+                statSelectors[i].value = 'Empty';
+            }
+        }
+    }
+
 }

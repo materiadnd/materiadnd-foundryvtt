@@ -24,6 +24,7 @@ export class Constants {
                 POST_STARTING_ROLLS: `${this.MODULE_ID}.ui.stat-roller.messages.post-starting-rolls`,
                 SETTING_AN_EIGHT: `${this.MODULE_ID}.ui.stat-roller.messages.setting-an-eight`,
                 AFTER_SETTING_EIGHT: `${this.MODULE_ID}.ui.stat-roller.messages.after-setting-eight`,
+                REROLL_PROMPT: `${this.MODULE_ID}.ui.stat-roller.messages.reroll-prompt`,
                 AFTER_REROLL_VALID_STATS: `${this.MODULE_ID}.ui.stat-roller.messages.after-reroll-valid-stats`,
                 AFTER_REROLL_INVALID_STATS: `${this.MODULE_ID}.ui.stat-roller.messages.after-reroll-invalid-stats`,
             }

@@ -13,9 +13,8 @@
 <div class="roller-roll-container">
     {{#if rolls}}
     <ul class="roller-roll-list">
-        {{> rollDisplay roll=discardedRoll ignoredRoll=true}}
         {{#each rolls}}
-            {{> rollDisplay roll=this index=@index}}
+            {{> rollDisplay roll=this  rollsActive=../rollsActive}}
         {{/each}}
     </ul>
     {{else}}
