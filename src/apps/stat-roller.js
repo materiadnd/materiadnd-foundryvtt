@@ -59,7 +59,7 @@ class StatRollerApp extends Application {
         const defaults = super.defaultOptions;
         const overrides = {
             height: "auto",
-            width: "auto",
+            width: "920",
             template: Constants.TEMPLATES.STAT_ROLLER.APP,
             title: "Stat Roller",
             resizable: true,
@@ -257,5 +257,4 @@ class StatRollerApp extends Application {
             }
         }
     }
-
 }
