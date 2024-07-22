@@ -1,0 +1,23 @@
+<div class="messages">
+    <p class="instruction-header">Instructions:</p>
+    <p class="instruction-message">{{ message }}</p>
+    <p>NOTE: You may always <em>reduce</em> any stat you wish after this process is done!</p>
+</div>
+<div class="roller-controls buttons">
+    <p class="roll-starting-stats-button {{isEnabled 'roll-starting-stats-button'}}">{{ buttonText.roll_starting_stats_button }}</p>
+    <p class="set-stat-to-eight-button {{isEnabled 'set-stat-to-eight-button'}}">{{ buttonText.set_stat_to_eight_button }}</p>
+    <p class="reroll-one-stat-button {{isEnabled 'reroll-one-stat-button'}}">{{ buttonText.reroll_one_stat_button }}</p>
+    <p class="start-over-button {{isEnabled 'start-over-button'}}">{{ buttonText.start_over_button }}</p>
+    <p class="assign-stats-button {{isEnabled 'assign-stats-button'}}">{{ buttonText.assign_stats_button }}</p>
+</div>
+<div class="roller-roll-container">
+    {{#if rolls}}
+    <div class="roller-roll-list">
+        {{#each rolls}}
+            {{> rollDisplay roll=this  rollsActive=../rollsActive}}
+        {{/each}}
+    </div>
+    {{else}}
+    <p>No rolls yet.</p>
+    {{/if}}
+</div>
