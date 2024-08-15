@@ -1,3 +1,5 @@
+import { Constants } from "./constants.js"
+
 export const THIRD_PACT_ABBR = "thirdpact";
 export const THIRD_PACT_LABEL = "Third Pact";
 
@@ -180,10 +182,17 @@ export function SpellcastingAddThirdPactProgression() {
 // monkey-patch the prepareDerivedData function of the Actor5e type
 export function AddThirdPactCaster() {
     console.log('materia-dnd | Third-Pact: Patching prepareDerivedData function of Actor5e datatype.');
-    const origFunc = dnd5e.documents.Actor5e.prototype.prepareDerivedData;
-    dnd5e.documents.Actor5e.prototype.prepareDerivedData = function() {
-        origFunc.call(this);
-        derivePactSlots(this);
+    let libWrapper = globalThis.libWrapper;
+    if (libWrapper != undefined) {
+        console.log('materia-dnd | Third-Pact: libWrapper detected, patching with libWrapper');
+        libWrapper.register(Constants.MODULE_ID, 'dnd5e.documents.Actor5e.prototype.prepareDerivedData', derivePactSlots, "WRAPPER"); 
+    } else {
+        console.log('materia-dnd | Third-Pact: no libWrapper detected, brute-force patching');
+        const origFunc = dnd5e.documents.Actor5e.prototype.prepareDerivedData;
+        dnd5e.documents.Actor5e.prototype.prepareDerivedData = function() {
+            origFunc.call(this);
+            derivePactSlots(this);
+        }
     }
     console.log('materia-dnd | Third-Pact: Performing once-on-launch update of pact slots of all game actors.');
     refreshPactSlots();
