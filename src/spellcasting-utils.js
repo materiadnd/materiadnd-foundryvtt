@@ -185,7 +185,11 @@ export function AddThirdPactCaster() {
     let libWrapper = globalThis.libWrapper;
     if (libWrapper != undefined) {
         console.log('materia-dnd | Third-Pact: libWrapper detected, patching with libWrapper');
-        libWrapper.register(Constants.MODULE_ID, 'dnd5e.documents.Actor5e.prototype.prepareDerivedData', derivePactSlots, "WRAPPER"); 
+        libWrapper.register(Constants.MODULE_ID, 'dnd5e.documents.Actor5e.prototype.prepareDerivedData', function(wrapped, ...args) {
+            derivePactSlots(...args);
+            let result = wrapped(...args);
+            return result;
+        }, "WRAPPER"); 
     } else {
         console.log('materia-dnd | Third-Pact: no libWrapper detected, brute-force patching');
         const origFunc = dnd5e.documents.Actor5e.prototype.prepareDerivedData;
@@ -194,7 +198,4 @@ export function AddThirdPactCaster() {
             derivePactSlots(this);
         }
     }
-    console.log('materia-dnd | Third-Pact: Performing once-on-launch update of pact slots of all game actors.');
-    refreshPactSlots();
-    console.log('materia-dnd | Third-Pact: Patch setup complete.');
 }
