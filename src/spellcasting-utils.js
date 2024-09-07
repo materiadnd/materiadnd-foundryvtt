@@ -186,8 +186,8 @@ export function AddThirdPactCaster() {
     if (libWrapper != undefined) {
         console.log('materia-dnd | Third-Pact: libWrapper detected, patching with libWrapper');
         libWrapper.register(Constants.MODULE_ID, 'dnd5e.documents.Actor5e.prototype.prepareDerivedData', function(wrapped, ...args) {
-            derivePactSlots(...args);
-            let result = wrapped(...args);
+            derivePactSlots(args);
+            let result = wrapped(args);
             return result;
         }, "WRAPPER"); 
     } else {
