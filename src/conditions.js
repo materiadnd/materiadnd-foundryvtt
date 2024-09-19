@@ -12,7 +12,7 @@ export function AddMateriaConditions() {
     console.log("materia-dnd | Conditions: Added three status effects.")
     // Overwriting exhaustion
     CONFIG.DND5E.conditionTypes.exhaustion.reference = "Compendium.materia-dnd.rules.JournalEntry.MpEv2KTNEY6lLelV.JournalEntryPage.9XAWvL8gnCtdez6U";
-    CONFIG.DND5E.conditionTypes.exhaustion.delete("reduction");
+    delete CONFIG.DND5E.conditionTypes.exhaustion.reduction;
     const exh = CONFIG.statusEffects.find(e => e.id === "exhaustion");
     foundry.utils.mergeObject(exh, CONFIG.DND5E.conditionTypes.exhaustion, { insertKeys: false });
     console.log("materia-dnd | Conditions: Overwrote existing exhaustion with Materia version.");
