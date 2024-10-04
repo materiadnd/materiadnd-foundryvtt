@@ -30,12 +30,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 30,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -87,12 +94,108 @@
     "properties": [
       "vocal"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Blind",
+        "img": "systems/dnd5e/icons/svg/statuses/blinded.svg",
+        "appliedEffects": [
+          "59WpbiZFULwixyvC",
+          "H0SG0oq3VfiCxBOQ"
+        ],
+        "effects": [
+          {
+            "_id": "59WpbiZFULwixyvC",
+            "onSave": false
+          }
+        ]
+      },
+      "z0Z6qkPnm8WYGzjA": {
+        "type": "save",
+        "_id": "z0Z6qkPnm8WYGzjA",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "i8DlzL77vyPrNyTK",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "con",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Deafen",
+        "img": "systems/dnd5e/icons/svg/statuses/deafened.svg",
+        "appliedEffects": [
+          "i8DlzL77vyPrNyTK"
+        ]
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.mycojDbHOZg2luJc",
       "spell-lists": "bard,cleric,sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      }
     }
   },
   "img": "icons/magic/perception/eye-ringed-glow-angry-red.webp",
@@ -120,16 +223,16 @@
       "flags": {},
       "tint": "#ffffff",
       "_stats": {
-        "coreVersion": "12.325",
+        "coreVersion": "12.331",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "modifiedTime": 1728025242868,
+        "lastModifiedBy": "dnd5mbuilder0000",
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "icons/magic/perception/eye-ringed-glow-angry-red.webp",
+      "img": "systems/dnd5e/icons/svg/statuses/blinded.svg",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -137,7 +240,14 @@
     },
     {
       "name": "Deafness",
-      "origin": "Compendium.dnd5e.spells.Item.zwGsAv6kmwzYGhh3",
+      "img": "systems/dnd5e/icons/svg/statuses/deafened.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.mycojDbHOZg2luJc",
+      "transfer": false,
+      "_id": "i8DlzL77vyPrNyTK",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
       "duration": {
         "startTime": null,
         "seconds": 60,
@@ -147,40 +257,33 @@
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "H0SG0oq3VfiCxBOQ",
-      "changes": [],
-      "description": "<p>The target is Deafened for the duration. At the end of each of its turns, the target can make a Constitution saving throw. On a success, the spell ends.</p>",
-      "transfer": false,
+      "description": "<p>The target is deafened for the duration. At the end of each of its turns, the target can make a Constitution saving throw. On a success, the spell ends.</p>",
+      "tint": "#ffffff",
       "statuses": [
         "deafened"
       ],
-      "flags": {},
-      "tint": "#ffffff",
-      "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "icons/magic/perception/eye-ringed-glow-angry-red.webp",
-      "type": "base",
-      "system": {},
       "sort": 0,
-      "_key": "!items.effects!mycojDbHOZg2luJc.H0SG0oq3VfiCxBOQ"
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728025341111,
+        "modifiedTime": 1728025407051,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!mycojDbHOZg2luJc.i8DlzL77vyPrNyTK"
     }
   ],
   "folder": "3rC3qr5FIlZymxFD",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1661787234247,
-    "modifiedTime": 1709954927813,
+    "modifiedTime": 1728025450415,
     "lastModifiedBy": "dnd5mbuilder0000",
     "compendiumSource": null,
     "duplicateSource": null
