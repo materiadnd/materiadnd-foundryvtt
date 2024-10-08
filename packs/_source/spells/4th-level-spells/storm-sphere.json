@@ -28,12 +28,20 @@
       "units": "ft",
       "type": "sphere",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "count": ""
+      }
     },
     "range": {
       "value": 150,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -92,7 +100,88 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "dnd5eactivity100": {
+        "sort": -100000,
+        "name": "Summon Sphere",
+        "img": "",
+        "appliedEffects": [],
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "bludgeoning"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ]
+        }
+      },
+      "dnd5eactivity000": {
+        "name": "Conjure Bolt",
+        "img": "",
+        "appliedEffects": [],
+        "activation": {
+          "override": true,
+          "type": "bonus",
+          "condition": ""
+        },
+        "duration": {
+          "override": true
+        },
+        "consumption": {
+          "spellSlot": false
+        },
+        "range": {
+          "override": true,
+          "units": "spec",
+          "special": "within 60 feet of the center of the Storm Sphere"
+        },
+        "target": {
+          "override": true,
+          "affects": {
+            "count": "1",
+            "type": "creature"
+          },
+          "template": {
+            "type": ""
+          }
+        },
+        "damage": {
+          "parts": [
+            {
+              "number": 4,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "lightning"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ]
+        }
+      }
+    }
   },
   "img": "icons/commodities/gems/pearl-water.webp",
   "ownership": {
@@ -108,16 +197,38 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.Tw0UXiS129kFLcTN",
       "spell-lists": "sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickAttack": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
     }
   },
   "effects": [],
   "folder": "PrScRYl7JdLxwH3K",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1709151910733,
-    "modifiedTime": 1709226592285,
+    "modifiedTime": 1728388657806,
     "lastModifiedBy": "dnd5mbuilder0000",
     "compendiumSource": null,
     "duplicateSource": null

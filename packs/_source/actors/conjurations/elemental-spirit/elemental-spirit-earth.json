@@ -1,8 +1,8 @@
 {
-  "folder": "2wdhUYFTi9bQ9ePO",
-  "name": "Construct Spirit - Metal",
+  "folder": "EeQ9aTVfr2dbI2Af",
+  "name": "Elemental Spirit - Earth",
   "type": "npc",
-  "img": "icons/tools/smithing/tongs-steel-grey.webp",
+  "img": "icons/magic/earth/construct-stone-long-arms.webp",
   "system": {
     "currency": {
       "pp": 0,
@@ -22,7 +22,7 @@
         }
       },
       "dex": {
-        "value": 10,
+        "value": 15,
         "proficient": 0,
         "max": null,
         "bonuses": {
@@ -31,7 +31,7 @@
         }
       },
       "con": {
-        "value": 18,
+        "value": 17,
         "proficient": 0,
         "max": null,
         "bonuses": {
@@ -40,7 +40,7 @@
         }
       },
       "int": {
-        "value": 14,
+        "value": 4,
         "proficient": 0,
         "max": null,
         "bonuses": {
@@ -58,7 +58,7 @@
         }
       },
       "cha": {
-        "value": 5,
+        "value": 16,
         "proficient": 0,
         "max": null,
         "bonuses": {
@@ -285,13 +285,13 @@
     "attributes": {
       "init": {},
       "movement": {
-        "burrow": null,
+        "burrow": 40,
         "climb": null,
         "fly": null,
         "swim": null,
-        "walk": 30,
+        "walk": 40,
         "units": null,
-        "hover": false
+        "hover": true
       },
       "attunement": {
         "max": 3
@@ -299,7 +299,7 @@
       "senses": {
         "darkvision": 60,
         "blindsight": null,
-        "tremorsense": null,
+        "tremorsense": 60,
         "truesight": null,
         "units": null,
         "special": ""
@@ -307,12 +307,12 @@
       "spellcasting": "int",
       "exhaustion": 0,
       "ac": {
-        "flat": 18,
+        "flat": 13,
         "calc": "natural"
       },
       "hp": {
-        "value": 40,
-        "max": 40,
+        "value": 50,
+        "max": 50,
         "temp": 0,
         "tempmax": 0,
         "formula": ""
@@ -326,7 +326,7 @@
       "alignment": "",
       "race": null,
       "type": {
-        "value": "construct",
+        "value": "elemental",
         "custom": "",
         "subtype": "",
         "swarm": ""
@@ -361,7 +361,11 @@
       },
       "dr": {
         "bypasses": [],
-        "value": [],
+        "value": [
+          "bludgeoning",
+          "piercing",
+          "slashing"
+        ],
         "custom": ""
       },
       "dv": {
@@ -375,18 +379,18 @@
       },
       "ci": {
         "value": [
-          "charmed",
           "exhaustion",
-          "frightened",
-          "incapacitated",
           "paralyzed",
           "petrified",
-          "poisoned"
+          "poisoned",
+          "unconscious"
         ],
         "custom": ""
       },
       "languages": {
-        "value": [],
+        "value": [
+          "primordial"
+        ],
         "custom": "understands the languages you speak"
       }
     },
@@ -395,13 +399,13 @@
     }
   },
   "prototypeToken": {
-    "name": "Construct Spirit",
+    "name": "Elemental Spirit",
     "displayName": 0,
     "actorLink": false,
     "appendNumber": false,
     "prependAdjective": false,
     "texture": {
-      "src": "icons/tools/smithing/tongs-steel-grey.webp",
+      "src": "icons/magic/water/bubbles-air-water-light.webp",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,
@@ -485,13 +489,112 @@
   "items": [
     {
       "folder": "EyT6wN4Hl33u5SG9",
+      "name": "Multiattack",
+      "type": "feat",
+      "_id": "equenfl6aJV2fDYt",
+      "img": "icons/skills/melee/blade-tips-triple-steel.webp",
+      "system": {
+        "description": {
+          "value": "<p>The {creature} makes a number of attacks equal to half this spell's level (rounded down).</p>",
+          "chat": ""
+        },
+        "source": {},
+        "activation": {
+          "type": "action",
+          "cost": 1,
+          "condition": ""
+        },
+        "duration": {
+          "value": "",
+          "units": ""
+        },
+        "cover": null,
+        "crewed": false,
+        "target": {
+          "value": null,
+          "width": null,
+          "units": "",
+          "type": "",
+          "prompt": true
+        },
+        "range": {
+          "value": null,
+          "long": null,
+          "units": ""
+        },
+        "uses": {
+          "value": null,
+          "max": "",
+          "per": null,
+          "recovery": "",
+          "prompt": true
+        },
+        "consume": {
+          "type": "",
+          "target": null,
+          "amount": null,
+          "scale": false
+        },
+        "ability": null,
+        "actionType": "",
+        "attackBonus": "",
+        "chatFlavor": "",
+        "critical": {
+          "threshold": null,
+          "damage": ""
+        },
+        "damage": {
+          "parts": [],
+          "versatile": ""
+        },
+        "formula": "",
+        "save": {
+          "ability": "",
+          "dc": null,
+          "scaling": "spell"
+        },
+        "type": {
+          "value": "monster",
+          "subtype": ""
+        },
+        "properties": [],
+        "requirements": "",
+        "recharge": {
+          "value": null,
+          "charged": false
+        }
+      },
+      "effects": [],
+      "flags": {
+        "core": {
+          "sourceId": "Compendium.materia-dnd.monster-features.Item.UWiAfJBbkP2sct4e"
+        }
+      },
+      "_stats": {
+        "systemId": "dnd5e",
+        "systemVersion": "3.0.3",
+        "coreVersion": "12.325",
+        "createdTime": 1708315022641,
+        "modifiedTime": 1709330983902,
+        "lastModifiedBy": "dnd5mbuilder0000",
+        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.UWiAfJBbkP2sct4e",
+        "duplicateSource": null
+      },
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!J9uZ2kpbPEWmohnX.equenfl6aJV2fDYt"
+    },
+    {
+      "folder": "EyT6wN4Hl33u5SG9",
       "name": "Slam",
       "type": "feat",
-      "_id": "JyowMJJg88K3M09i",
+      "_id": "gf4Cyuij1rOKgO4n",
       "img": "icons/skills/melee/strike-hammer-destructive-orange.webp",
       "system": {
         "description": {
-          "value": "<p><em>Melee Weapon Attack:</em> your spell attack modifier to hit, reach 5 ft., one target. Hit: 1d8 + 4 + the spell's level force damage.</p>",
+          "value": "<p><em>Melee Weapon Attack:</em> your spell attack modifier to hit, reach 5 ft., one target. Hit: 1d10 + 4 + the spell's level magical bludgeoning damage.</p>",
           "chat": ""
         },
         "source": {},
@@ -542,8 +645,8 @@
         "damage": {
           "parts": [
             [
-              "1d8 + 4 + @item.level",
-              "force"
+              "1d10 + 4 + @item.level",
+              "bludgeoning"
             ]
           ],
           "versatile": ""
@@ -563,6 +666,35 @@
         "recharge": {
           "value": null,
           "charged": false
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "name": "",
+            "img": "",
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": "1d10 + 4 + @item.level"
+                  },
+                  "number": 1,
+                  "denomination": 10,
+                  "bonus": "4",
+                  "types": [
+                    "bludgeoning"
+                  ],
+                  "scaling": {
+                    "number": 1
+                  }
+                }
+              ]
+            },
+            "appliedEffects": [],
+            "attack": {
+              "ability": "spellcasting"
+            }
+          }
         }
       },
       "effects": [],
@@ -573,54 +705,73 @@
       "flags": {
         "core": {
           "sourceId": "Compendium.materia-dnd.monster-features.Item.cQvT92YRW5sCyIfw"
+        },
+        "dnd5e": {
+          "riders": {
+            "activity": [],
+            "effect": []
+          }
+        },
+        "rsr5e": {
+          "quickFooter": {
+            "value": true
+          },
+          "quickAttack": {
+            "value": true
+          },
+          "quickDamage": {
+            "value": {
+              "0": true
+            }
+          }
         }
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.0.3",
-        "coreVersion": "12.325",
+        "systemVersion": "4.0.4",
+        "coreVersion": "12.331",
         "createdTime": 1709329213999,
-        "modifiedTime": 1709330339858,
+        "modifiedTime": 1728392464752,
         "lastModifiedBy": "dnd5mbuilder0000",
         "compendiumSource": "Compendium.materia-dnd.monster-features.Item.cQvT92YRW5sCyIfw",
         "duplicateSource": null
       },
-      "_key": "!actors.items!4K86FpV0rjdvWCZ5.JyowMJJg88K3M09i"
+      "_key": "!actors.items!J9uZ2kpbPEWmohnX.gf4Cyuij1rOKgO4n"
     },
     {
       "folder": "PIJ5b0aWAuZeYaDP",
-      "name": "Heated Body",
+      "name": "Earth Glide",
       "type": "feat",
-      "_id": "hacGYmMGLXQYgj5h",
-      "img": "icons/tools/smithing/furnace-fire-metal-orange.webp",
+      "_id": "0U3fI2plE9FR5QxM",
+      "img": "icons/magic/earth/explosion-lava-stone-yellow.webp",
       "system": {
         "description": {
-          "value": "<p>A creature that touches the {creature} or hits it with a melee attack while within 5 feet of it takes 1d10 fire or radiant damage (your choice).</p>",
+          "value": "<p>The {creature} can burrow through nonmagical, unworked earth and stone. While doing so, the {creature} does not disturb the material it moves through.</p>",
           "chat": ""
         },
         "source": {},
         "activation": {
-          "type": "special",
+          "type": "",
           "cost": null,
           "condition": ""
         },
         "duration": {
           "value": "",
-          "units": "inst"
+          "units": ""
         },
         "cover": null,
         "crewed": false,
         "target": {
-          "value": 1,
+          "value": null,
           "width": null,
           "units": "",
-          "type": "creature",
+          "type": "",
           "prompt": true
         },
         "range": {
-          "value": 5,
+          "value": null,
           "long": null,
-          "units": "ft"
+          "units": ""
         },
         "uses": {
           "value": null,
@@ -635,8 +786,8 @@
           "amount": null,
           "scale": false
         },
-        "ability": "",
-        "actionType": "other",
+        "ability": null,
+        "actionType": "",
         "attackBonus": "",
         "chatFlavor": "",
         "critical": {
@@ -644,12 +795,7 @@
           "damage": ""
         },
         "damage": {
-          "parts": [
-            [
-              "1d10",
-              "fire"
-            ]
-          ],
+          "parts": [],
           "versatile": ""
         },
         "formula": "",
@@ -676,38 +822,47 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.materia-dnd.monster-features.Item.oq7gGmevUm7O0svP"
+          "sourceId": "Compendium.materia-dnd.monster-features.Item.3JMWvSiHxhbS0cVT"
+        },
+        "rsr5e": {
+          "quickFooter": {
+            "value": true
+          }
         }
       },
       "_stats": {
         "systemId": "dnd5e",
         "systemVersion": "3.0.3",
-        "coreVersion": "12.325",
-        "createdTime": 1709328698286,
-        "modifiedTime": 1709330441817,
+        "coreVersion": "12.331",
+        "createdTime": 1709331139505,
+        "modifiedTime": 1728392434551,
         "lastModifiedBy": "dnd5mbuilder0000",
-        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.oq7gGmevUm7O0svP",
+        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.3JMWvSiHxhbS0cVT",
         "duplicateSource": null
       },
-      "_key": "!actors.items!4K86FpV0rjdvWCZ5.hacGYmMGLXQYgj5h"
+      "_key": "!actors.items!J9uZ2kpbPEWmohnX.0U3fI2plE9FR5QxM"
     }
   ],
   "effects": [],
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "showTokenPortrait": false
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1709328443159,
-    "modifiedTime": 1709330445412,
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
+    "createdTime": 1709330753739,
+    "modifiedTime": 1728392668202,
     "lastModifiedBy": "dnd5mbuilder0000",
     "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "4K86FpV0rjdvWCZ5",
+  "_id": "J9uZ2kpbPEWmohnX",
   "sort": 300000,
-  "_key": "!actors!4K86FpV0rjdvWCZ5"
+  "_key": "!actors!J9uZ2kpbPEWmohnX"
 }

@@ -1,8 +1,8 @@
 {
-  "folder": "9Ov36jvSf6ADIOlV",
-  "name": "Aberrant Spirit - Star Spawn",
+  "folder": "EeQ9aTVfr2dbI2Af",
+  "name": "Elemental Spirit - Fire",
   "type": "npc",
-  "img": "icons/creatures/magical/spirit-undead-ghost-tan-teal.webp",
+  "img": "icons/magic/fire/elemental-fire-humanoid.webp",
   "system": {
     "currency": {
       "pp": 0,
@@ -13,7 +13,7 @@
     },
     "abilities": {
       "str": {
-        "value": 16,
+        "value": 18,
         "proficient": 0,
         "max": null,
         "bonuses": {
@@ -22,15 +22,6 @@
         }
       },
       "dex": {
-        "value": 10,
-        "proficient": 0,
-        "max": null,
-        "bonuses": {
-          "check": "",
-          "save": ""
-        }
-      },
-      "con": {
         "value": 15,
         "proficient": 0,
         "max": null,
@@ -39,8 +30,17 @@
           "save": ""
         }
       },
+      "con": {
+        "value": 17,
+        "proficient": 0,
+        "max": null,
+        "bonuses": {
+          "check": "",
+          "save": ""
+        }
+      },
       "int": {
-        "value": 16,
+        "value": 4,
         "proficient": 0,
         "max": null,
         "bonuses": {
@@ -49,7 +49,7 @@
         }
       },
       "wis": {
-        "value": 10,
+        "value": 11,
         "proficient": 0,
         "max": null,
         "bonuses": {
@@ -58,7 +58,7 @@
         }
       },
       "cha": {
-        "value": 6,
+        "value": 16,
         "proficient": 0,
         "max": null,
         "bonuses": {
@@ -287,11 +287,11 @@
       "movement": {
         "burrow": null,
         "climb": null,
-        "fly": 30,
+        "fly": null,
         "swim": null,
-        "walk": 30,
+        "walk": 40,
         "units": null,
-        "hover": true
+        "hover": false
       },
       "attunement": {
         "max": 3
@@ -307,12 +307,12 @@
       "spellcasting": "int",
       "exhaustion": 0,
       "ac": {
-        "flat": 15,
+        "flat": 11,
         "calc": "natural"
       },
       "hp": {
-        "value": 40,
-        "max": 40,
+        "value": 50,
+        "max": 50,
         "temp": 0,
         "tempmax": 0,
         "formula": ""
@@ -326,7 +326,7 @@
       "alignment": "",
       "race": null,
       "type": {
-        "value": "aberration",
+        "value": "elemental",
         "custom": "",
         "subtype": "",
         "swarm": ""
@@ -355,7 +355,8 @@
       "di": {
         "bypasses": [],
         "value": [
-          "psychic"
+          "fire",
+          "poison"
         ],
         "custom": ""
       },
@@ -375,13 +376,17 @@
       },
       "ci": {
         "value": [
-          "prone"
+          "exhaustion",
+          "paralyzed",
+          "petrified",
+          "poisoned",
+          "unconscious"
         ],
         "custom": ""
       },
       "languages": {
         "value": [
-          "deep"
+          "primordial"
         ],
         "custom": "understands the languages you speak"
       }
@@ -391,13 +396,13 @@
     }
   },
   "prototypeToken": {
-    "name": "Aberrant Spirit - Beholderkin",
+    "name": "Elemental Spirit",
     "displayName": 0,
     "actorLink": false,
     "appendNumber": false,
     "prependAdjective": false,
     "texture": {
-      "src": "icons/creatures/magical/spirit-undead-ghost-tan-teal.webp",
+      "src": "icons/magic/water/bubbles-air-water-light.webp",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,
@@ -480,10 +485,114 @@
   },
   "items": [
     {
+      "folder": "PIJ5b0aWAuZeYaDP",
+      "name": "Amorphous",
+      "type": "feat",
+      "_id": "4PcVXgqYWQ5UBWV5",
+      "img": "icons/creatures/slimes/slime-movement-swirling-blue.webp",
+      "system": {
+        "description": {
+          "value": "<p>The {creature} can move through a space as narrow as 1 inch wide without squeezing</p>",
+          "chat": ""
+        },
+        "source": {},
+        "activation": {
+          "type": "",
+          "cost": null,
+          "condition": ""
+        },
+        "duration": {
+          "value": "",
+          "units": ""
+        },
+        "cover": null,
+        "crewed": false,
+        "target": {
+          "value": null,
+          "width": null,
+          "units": "",
+          "type": "",
+          "prompt": true
+        },
+        "range": {
+          "value": null,
+          "long": null,
+          "units": ""
+        },
+        "uses": {
+          "value": null,
+          "max": "",
+          "per": null,
+          "recovery": "",
+          "prompt": true
+        },
+        "consume": {
+          "type": "",
+          "target": null,
+          "amount": null,
+          "scale": false
+        },
+        "ability": null,
+        "actionType": "",
+        "attackBonus": "",
+        "chatFlavor": "",
+        "critical": {
+          "threshold": null,
+          "damage": ""
+        },
+        "damage": {
+          "parts": [],
+          "versatile": ""
+        },
+        "formula": "",
+        "save": {
+          "ability": "",
+          "dc": null,
+          "scaling": "spell"
+        },
+        "type": {
+          "value": "monster",
+          "subtype": ""
+        },
+        "properties": [],
+        "requirements": "",
+        "recharge": {
+          "value": null,
+          "charged": false
+        }
+      },
+      "effects": [],
+      "flags": {
+        "core": {
+          "sourceId": "Compendium.materia-dnd.monster-features.Item.8E50UeShzES7NFTM"
+        },
+        "rsr5e": {
+          "quickFooter": {
+            "value": true
+          }
+        }
+      },
+      "_stats": {
+        "systemId": "dnd5e",
+        "systemVersion": "3.0.3",
+        "coreVersion": "12.331",
+        "createdTime": 1708357475446,
+        "modifiedTime": 1728392566312,
+        "lastModifiedBy": "dnd5mbuilder0000",
+        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.8E50UeShzES7NFTM",
+        "duplicateSource": null
+      },
+      "sort": 300000,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!o52FGA3wjwdBc0Ni.4PcVXgqYWQ5UBWV5"
+    },
+    {
       "folder": "EyT6wN4Hl33u5SG9",
       "name": "Multiattack",
       "type": "feat",
-      "_id": "RSWfq6GeqrsivNc4",
+      "_id": "equenfl6aJV2fDYt",
       "img": "icons/skills/melee/blade-tips-triple-steel.webp",
       "system": {
         "description": {
@@ -567,7 +676,7 @@
         "systemVersion": "3.0.3",
         "coreVersion": "12.325",
         "createdTime": 1708315022641,
-        "modifiedTime": 1709327335136,
+        "modifiedTime": 1709330983902,
         "lastModifiedBy": "dnd5mbuilder0000",
         "compendiumSource": "Compendium.materia-dnd.monster-features.Item.UWiAfJBbkP2sct4e",
         "duplicateSource": null
@@ -576,116 +685,17 @@
       "ownership": {
         "default": 0
       },
-      "_key": "!actors.items!cReLza3Y9bwQFM05.RSWfq6GeqrsivNc4"
-    },
-    {
-      "folder": "PIJ5b0aWAuZeYaDP",
-      "name": "Whispering Aura",
-      "type": "feat",
-      "_id": "PaqUdPLHBkfBDDs4",
-      "img": "icons/magic/control/fear-fright-white.webp",
-      "system": {
-        "description": {
-          "value": "<p>At the start of each of the {creature}'s turns, each creature within 5 feet of the {creature} must succeed on a Intelligence saving throw against your spell save DC or become dazed until the start of the {creature}'s next turn, provided that the {creature} is not incapacitated.</p>",
-          "chat": ""
-        },
-        "source": {},
-        "activation": {
-          "type": "special",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": "1",
-          "units": "turn"
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": 5,
-          "width": null,
-          "units": "ft",
-          "type": "radius",
-          "prompt": false
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": "self"
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": "",
-        "actionType": "save",
-        "attackBonus": "",
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "int",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "type": {
-          "value": "monster",
-          "subtype": ""
-        },
-        "properties": [],
-        "requirements": "",
-        "recharge": {
-          "value": null,
-          "charged": false
-        }
-      },
-      "effects": [],
-      "sort": 0,
-      "ownership": {
-        "default": 0
-      },
-      "flags": {
-        "core": {
-          "sourceId": "Compendium.materia-dnd.monster-features.Item.TSZ6ouyiEvLvj6iQ"
-        }
-      },
-      "_stats": {
-        "systemId": "dnd5e",
-        "systemVersion": "3.0.3",
-        "coreVersion": "12.325",
-        "createdTime": 1709327206718,
-        "modifiedTime": 1709328346542,
-        "lastModifiedBy": "dnd5mbuilder0000",
-        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.TSZ6ouyiEvLvj6iQ",
-        "duplicateSource": null
-      },
-      "_key": "!actors.items!cReLza3Y9bwQFM05.PaqUdPLHBkfBDDs4"
+      "_key": "!actors.items!o52FGA3wjwdBc0Ni.equenfl6aJV2fDYt"
     },
     {
       "folder": "EyT6wN4Hl33u5SG9",
-      "name": "Psychic Slam",
+      "name": "Slam",
       "type": "feat",
-      "_id": "U8Ok45Fy1Lopg7IQ",
-      "img": "icons/magic/light/beam-strike-village-yellow.webp",
+      "_id": "gf4Cyuij1rOKgO4n",
+      "img": "icons/skills/melee/strike-hammer-destructive-orange.webp",
       "system": {
         "description": {
-          "value": "<p><em>Melee Spell Attack:</em> your spell attack modifier to hit, reach 5 ft., one creature. Hit: 1d8 + 3 + the spell's level psychic damage.</p>",
+          "value": "<p><em>Melee Weapon Attack:</em> your spell attack modifier to hit, reach 5 ft., one target. Hit: 1d10 + 4 + the spell's level fire damage.</p>",
           "chat": ""
         },
         "source": {},
@@ -726,7 +736,7 @@
           "scale": false
         },
         "ability": "",
-        "actionType": "msak",
+        "actionType": "mwak",
         "attackBonus": "",
         "chatFlavor": "",
         "critical": {
@@ -736,8 +746,160 @@
         "damage": {
           "parts": [
             [
-              "1d8 + 3 + @item.level",
-              "psychic"
+              "1d10 + 4 + @item.level",
+              "fire"
+            ]
+          ],
+          "versatile": ""
+        },
+        "formula": "",
+        "save": {
+          "ability": "",
+          "dc": null,
+          "scaling": "spell"
+        },
+        "type": {
+          "value": "monster",
+          "subtype": ""
+        },
+        "properties": [],
+        "requirements": "",
+        "recharge": {
+          "value": null,
+          "charged": false
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "name": "",
+            "img": "",
+            "attack": {
+              "ability": "spellcasting"
+            },
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": "1d10 + 4 + @item.level"
+                  },
+                  "number": 1,
+                  "denomination": 10,
+                  "bonus": "4",
+                  "types": [
+                    "fire"
+                  ],
+                  "scaling": {
+                    "number": 1
+                  }
+                }
+              ]
+            },
+            "appliedEffects": []
+          }
+        }
+      },
+      "effects": [],
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "core": {
+          "sourceId": "Compendium.materia-dnd.monster-features.Item.cQvT92YRW5sCyIfw"
+        },
+        "dnd5e": {
+          "riders": {
+            "activity": [],
+            "effect": []
+          }
+        },
+        "rsr5e": {
+          "quickFooter": {
+            "value": true
+          },
+          "quickAttack": {
+            "value": true
+          },
+          "quickDamage": {
+            "value": {
+              "0": true
+            }
+          }
+        }
+      },
+      "_stats": {
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "coreVersion": "12.331",
+        "createdTime": 1709329213999,
+        "modifiedTime": 1728392626601,
+        "lastModifiedBy": "dnd5mbuilder0000",
+        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.cQvT92YRW5sCyIfw",
+        "duplicateSource": null
+      },
+      "_key": "!actors.items!o52FGA3wjwdBc0Ni.gf4Cyuij1rOKgO4n"
+    },
+    {
+      "folder": "PIJ5b0aWAuZeYaDP",
+      "name": "Fiery Form",
+      "type": "feat",
+      "_id": "LEKlCasbJoyT6aNM",
+      "img": "icons/magic/fire/orb-lightning-sun.webp",
+      "system": {
+        "description": {
+          "value": "<p>The {creature} sheds bright light in a 30-foot radius and dim light in an additional 30 feet. A creature that touches the {creature} or hits it with a melee attack takes 5 (1d10) fire damage.</p>",
+          "chat": ""
+        },
+        "source": {},
+        "activation": {
+          "type": "special",
+          "cost": null,
+          "condition": ""
+        },
+        "duration": {
+          "value": "",
+          "units": "inst"
+        },
+        "cover": null,
+        "crewed": false,
+        "target": {
+          "value": 1,
+          "width": null,
+          "units": "",
+          "type": "creature",
+          "prompt": true
+        },
+        "range": {
+          "value": 5,
+          "long": null,
+          "units": "ft"
+        },
+        "uses": {
+          "value": null,
+          "max": "",
+          "per": null,
+          "recovery": "",
+          "prompt": true
+        },
+        "consume": {
+          "type": "",
+          "target": null,
+          "amount": null,
+          "scale": false
+        },
+        "ability": "",
+        "actionType": "other",
+        "attackBonus": "",
+        "chatFlavor": "",
+        "critical": {
+          "threshold": null,
+          "damage": ""
+        },
+        "damage": {
+          "parts": [
+            [
+              "1d10",
+              "fire"
             ]
           ],
           "versatile": ""
@@ -766,38 +928,156 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.materia-dnd.monster-features.Item.hxxbUMURo8DmbUjB"
+          "sourceId": "Compendium.materia-dnd.monster-features.Item.JZweem7Pp7Umloeg"
+        },
+        "rsr5e": {
+          "quickFooter": {
+            "value": true
+          },
+          "quickDamage": {
+            "value": {
+              "0": true
+            }
+          }
         }
       },
       "_stats": {
         "systemId": "dnd5e",
         "systemVersion": "3.0.3",
-        "coreVersion": "12.325",
-        "createdTime": 1709327543295,
-        "modifiedTime": 1709328353818,
+        "coreVersion": "12.331",
+        "createdTime": 1709331196271,
+        "modifiedTime": 1728392585912,
         "lastModifiedBy": "dnd5mbuilder0000",
-        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.hxxbUMURo8DmbUjB",
+        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.JZweem7Pp7Umloeg",
         "duplicateSource": null
       },
-      "_key": "!actors.items!cReLza3Y9bwQFM05.U8Ok45Fy1Lopg7IQ"
+      "_key": "!actors.items!o52FGA3wjwdBc0Ni.LEKlCasbJoyT6aNM"
+    },
+    {
+      "folder": "b9RWOfHLAxF32EiS",
+      "name": "Blazing Speed",
+      "type": "feat",
+      "_id": "QuhTCJGp9RIBplvn",
+      "img": "icons/magic/fire/projectile-fireball-orange-yellow.webp",
+      "system": {
+        "description": {
+          "value": "<p>The {creature} can Dash as a bonus action as long as it is not in water.</p>",
+          "chat": ""
+        },
+        "source": {},
+        "activation": {
+          "type": "bonus",
+          "cost": 1,
+          "condition": ""
+        },
+        "duration": {
+          "value": "",
+          "units": "inst"
+        },
+        "cover": null,
+        "crewed": false,
+        "target": {
+          "value": null,
+          "width": null,
+          "units": "",
+          "type": "self",
+          "prompt": true
+        },
+        "range": {
+          "value": null,
+          "long": null,
+          "units": "self"
+        },
+        "uses": {
+          "value": null,
+          "max": "",
+          "per": null,
+          "recovery": "",
+          "prompt": true
+        },
+        "consume": {
+          "type": "",
+          "target": null,
+          "amount": null,
+          "scale": false
+        },
+        "ability": null,
+        "actionType": "",
+        "attackBonus": "",
+        "chatFlavor": "",
+        "critical": {
+          "threshold": null,
+          "damage": ""
+        },
+        "damage": {
+          "parts": [],
+          "versatile": ""
+        },
+        "formula": "",
+        "save": {
+          "ability": "",
+          "dc": null,
+          "scaling": "spell"
+        },
+        "type": {
+          "value": "monster",
+          "subtype": ""
+        },
+        "properties": [],
+        "requirements": "",
+        "recharge": {
+          "value": null,
+          "charged": false
+        }
+      },
+      "effects": [],
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "core": {
+          "sourceId": "Compendium.materia-dnd.monster-features.Item.BA1Mzl1asXio2eAG"
+        },
+        "rsr5e": {
+          "quickFooter": {
+            "value": true
+          }
+        }
+      },
+      "_stats": {
+        "systemId": "dnd5e",
+        "systemVersion": "3.0.3",
+        "coreVersion": "12.331",
+        "createdTime": 1709331312112,
+        "modifiedTime": 1728392603800,
+        "lastModifiedBy": "dnd5mbuilder0000",
+        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.BA1Mzl1asXio2eAG",
+        "duplicateSource": null
+      },
+      "_key": "!actors.items!o52FGA3wjwdBc0Ni.QuhTCJGp9RIBplvn"
     }
   ],
   "effects": [],
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "showTokenPortrait": false
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1709326958805,
-    "modifiedTime": 1709328353818,
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
+    "createdTime": 1709330753739,
+    "modifiedTime": 1728392641194,
     "lastModifiedBy": "dnd5mbuilder0000",
     "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "cReLza3Y9bwQFM05",
-  "sort": 0,
-  "_key": "!actors!cReLza3Y9bwQFM05"
+  "_id": "o52FGA3wjwdBc0Ni",
+  "sort": 100000,
+  "_key": "!actors!o52FGA3wjwdBc0Ni"
 }

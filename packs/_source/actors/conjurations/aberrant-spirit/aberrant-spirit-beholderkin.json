@@ -1,7 +1,8 @@
 {
   "folder": "9Ov36jvSf6ADIOlV",
-  "name": "Aberrant Spirit - Slaad",
+  "name": "Aberrant Spirit - Beholderkin",
   "type": "npc",
+  "_id": "LvoRFQj7e13Er4BN",
   "img": "icons/creatures/magical/spirit-undead-ghost-tan-teal.webp",
   "system": {
     "currency": {
@@ -287,11 +288,11 @@
       "movement": {
         "burrow": null,
         "climb": null,
-        "fly": null,
+        "fly": 30,
         "swim": null,
         "walk": 30,
         "units": null,
-        "hover": false
+        "hover": true
       },
       "attunement": {
         "max": 3
@@ -307,7 +308,7 @@
       "spellcasting": "int",
       "exhaustion": 0,
       "ac": {
-        "flat": 15,
+        "flat": 11,
         "calc": "natural"
       },
       "hp": {
@@ -374,7 +375,10 @@
         "bypasses": []
       },
       "ci": {
-        "value": [],
+        "value": [
+          "prone",
+          "weakened"
+        ],
         "custom": ""
       },
       "languages": {
@@ -558,14 +562,19 @@
       "flags": {
         "core": {
           "sourceId": "Compendium.materia-dnd.monster-features.Item.UWiAfJBbkP2sct4e"
+        },
+        "rsr5e": {
+          "quickFooter": {
+            "value": true
+          }
         }
       },
       "_stats": {
         "systemId": "dnd5e",
         "systemVersion": "3.0.3",
-        "coreVersion": "12.325",
+        "coreVersion": "12.331",
         "createdTime": 1708315022641,
-        "modifiedTime": 1709327335136,
+        "modifiedTime": 1728389240263,
         "lastModifiedBy": "dnd5mbuilder0000",
         "compendiumSource": "Compendium.materia-dnd.monster-features.Item.UWiAfJBbkP2sct4e",
         "duplicateSource": null
@@ -574,116 +583,17 @@
       "ownership": {
         "default": 0
       },
-      "_key": "!actors.items!QIlzrGqdtiWfG6Io.RSWfq6GeqrsivNc4"
-    },
-    {
-      "folder": "PIJ5b0aWAuZeYaDP",
-      "name": "Regeneration",
-      "type": "feat",
-      "_id": "IMz2p9ARxBwewNrq",
-      "img": "icons/magic/life/heart-cross-strong-flame-green.webp",
-      "system": {
-        "description": {
-          "value": "<p>The {creature} regains proficiency bonus hit points at the start of its turn if it has at least 1 hit point.</p>",
-          "chat": ""
-        },
-        "source": {},
-        "activation": {
-          "type": "",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": null,
-          "width": null,
-          "units": "",
-          "type": "",
-          "prompt": true
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": null,
-        "actionType": "",
-        "attackBonus": "",
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "type": {
-          "value": "monster",
-          "subtype": ""
-        },
-        "properties": [],
-        "requirements": "",
-        "recharge": {
-          "value": null,
-          "charged": false
-        }
-      },
-      "effects": [],
-      "sort": 0,
-      "ownership": {
-        "default": 0
-      },
-      "flags": {
-        "core": {
-          "sourceId": "Compendium.materia-dnd.monster-features.Item.qx1akT6hgXBenOER"
-        }
-      },
-      "_stats": {
-        "systemId": "dnd5e",
-        "systemVersion": "3.0.3",
-        "coreVersion": "12.325",
-        "createdTime": 1709327146613,
-        "modifiedTime": 1709328226639,
-        "lastModifiedBy": "dnd5mbuilder0000",
-        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.qx1akT6hgXBenOER",
-        "duplicateSource": null
-      },
-      "_key": "!actors.items!QIlzrGqdtiWfG6Io.IMz2p9ARxBwewNrq"
+      "_key": "!actors.items!LvoRFQj7e13Er4BN.RSWfq6GeqrsivNc4"
     },
     {
       "folder": "EyT6wN4Hl33u5SG9",
-      "name": "Claws",
+      "name": "Eye Ray",
       "type": "feat",
-      "_id": "yl216OyYUOxrniBA",
-      "img": "icons/commodities/biological/hand-clawed-green.webp",
+      "_id": "EXFqvTzjp5I80Drm",
+      "img": "icons/commodities/biological/eye-green-pink.webp",
       "system": {
         "description": {
-          "value": "<p><em>Melee Weapon Attack:</em> your spell attack modifier to hit, reach 5 ft., one target. Hit: 1d10 + 3 + the spell's level magical slashing damage. If the target is a creature, it cannot regain hit points until the start of the aberration's next turn.</p>",
+          "value": "<p><em>Ranged Spell Attack:</em> your spell attack modifier to hit, range 150 ft., one creature. Hit: 1d8 + 3 + the spell's level psychic damage.</p>",
           "chat": ""
         },
         "source": {},
@@ -706,7 +616,7 @@
           "prompt": true
         },
         "range": {
-          "value": 5,
+          "value": 150,
           "long": null,
           "units": "ft"
         },
@@ -724,7 +634,7 @@
           "scale": false
         },
         "ability": "",
-        "actionType": "mwak",
+        "actionType": "rsak",
         "attackBonus": "",
         "chatFlavor": "",
         "critical": {
@@ -734,8 +644,8 @@
         "damage": {
           "parts": [
             [
-              "1d10 + 3 + @item.level",
-              "slashing"
+              "1d8 + 3 + @item.level",
+              "psychic"
             ]
           ],
           "versatile": ""
@@ -755,6 +665,32 @@
         "recharge": {
           "value": null,
           "charged": false
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "name": "",
+            "img": "",
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": "1d8 + 3 + @item.level"
+                  },
+                  "number": 1,
+                  "denomination": 8,
+                  "bonus": "3",
+                  "types": [
+                    "psychic"
+                  ],
+                  "scaling": {
+                    "number": 1
+                  }
+                }
+              ]
+            },
+            "appliedEffects": []
+          }
         }
       },
       "effects": [],
@@ -764,38 +700,60 @@
       },
       "flags": {
         "core": {
-          "sourceId": "Compendium.materia-dnd.monster-features.Item.vaNSaTFtJKzVPyZQ"
+          "sourceId": "Compendium.materia-dnd.monster-features.Item.4OcERZdcGmXsX0cR"
+        },
+        "dnd5e": {
+          "riders": {
+            "activity": [],
+            "effect": []
+          }
+        },
+        "rsr5e": {
+          "quickFooter": {
+            "value": true
+          },
+          "quickAttack": {
+            "value": true
+          },
+          "quickDamage": {
+            "value": {
+              "0": true
+            }
+          }
         }
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.0.3",
-        "coreVersion": "12.325",
-        "createdTime": 1709327345357,
-        "modifiedTime": 1709328232937,
+        "systemVersion": "4.0.4",
+        "coreVersion": "12.331",
+        "createdTime": 1709327458548,
+        "modifiedTime": 1728389283474,
         "lastModifiedBy": "dnd5mbuilder0000",
-        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.vaNSaTFtJKzVPyZQ",
+        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.4OcERZdcGmXsX0cR",
         "duplicateSource": null
       },
-      "_key": "!actors.items!QIlzrGqdtiWfG6Io.yl216OyYUOxrniBA"
+      "_key": "!actors.items!LvoRFQj7e13Er4BN.EXFqvTzjp5I80Drm"
     }
   ],
   "effects": [],
+  "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "showTokenPortrait": false
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1709326958805,
-    "modifiedTime": 1709328232937,
+    "modifiedTime": 1728389206578,
     "lastModifiedBy": "dnd5mbuilder0000",
     "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "QIlzrGqdtiWfG6Io",
-  "sort": 0,
-  "_key": "!actors!QIlzrGqdtiWfG6Io"
+  "_key": "!actors!LvoRFQj7e13Er4BN"
 }
