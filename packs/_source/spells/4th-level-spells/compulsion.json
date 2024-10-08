@@ -27,12 +27,20 @@
       "width": null,
       "units": "any",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "1",
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 30,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -86,23 +94,84 @@
       "somatic",
       "concentration"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "dnd5eactivity000": {
+        "effects": [
+          {
+            "_id": "gFVt9xSXMu6JcaBP",
+            "onSave": false
+          }
+        ]
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.esqd87ofSUEicowg",
       "spell-lists": "bard,sorcerer"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      }
     }
   },
   "img": "icons/magic/fire/explosion-fireball-large-purple-pink.webp",
-  "effects": [],
+  "effects": [
+    {
+      "name": "Charmed",
+      "img": "systems/dnd5e/icons/svg/statuses/charmed.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.esqd87ofSUEicowg",
+      "transfer": false,
+      "_id": "gFVt9xSXMu6JcaBP",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>Until the spell ends, you can use a bonus action on each of your turns to designate a direction that is relative to you for each creature (given it is possible for the creature to do so; you cannot request a flightless humanoid to move vertically into the air).</p><p>Each affected target must use as much of its movement as possible to move in that direction on its next turn. It can take any action before it moves. After moving in this way, it can make another Wisdom save to try to end the effect.</p><p>A target isn't compelled to move into an obviously deadly hazard, such as a fire or a pit, but it will provoke opportunity attacks to move in the designated direction.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728321274951,
+        "modifiedTime": 1728321326173,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!esqd87ofSUEicowg.gFVt9xSXMu6JcaBP"
+    }
+  ],
   "folder": "PrScRYl7JdLxwH3K",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1661787234132,
-    "modifiedTime": 1709226592285,
+    "modifiedTime": 1728321348385,
     "lastModifiedBy": "dnd5mbuilder0000",
     "compendiumSource": null,
     "duplicateSource": null

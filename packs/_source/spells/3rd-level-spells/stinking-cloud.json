@@ -27,12 +27,20 @@
       "width": null,
       "units": "ft",
       "type": "sphere",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "count": ""
+      }
     },
     "range": {
       "value": 90,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -87,23 +95,171 @@
       "material",
       "concentration"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Start of Turn Save",
+        "img": "",
+        "appliedEffects": [],
+        "activation": {
+          "override": true,
+          "type": "",
+          "condition": ""
+        },
+        "duration": {
+          "override": true
+        },
+        "consumption": {
+          "spellSlot": false
+        },
+        "range": {
+          "override": true,
+          "units": "spec",
+          "special": ""
+        },
+        "target": {
+          "override": true,
+          "affects": {
+            "count": "1",
+            "type": "creature"
+          },
+          "template": {
+            "type": ""
+          }
+        },
+        "damage": {
+          "parts": []
+        },
+        "effects": [
+          {
+            "_id": "NiqNP2s8c0yb9ak4",
+            "onSave": false
+          }
+        ],
+        "sort": 200000
+      },
+      "w9y5aTP117pp7Uvl": {
+        "type": "utility",
+        "_id": "w9y5aTP117pp7Uvl",
+        "sort": 100000,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Create Cloud",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.3qKA9Ojxpr2u04kO",
       "spell-lists": "bard,sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      }
     }
   },
   "img": "icons/magic/air/fog-gas-smoke-dense-green.webp",
-  "effects": [],
+  "effects": [
+    {
+      "name": "Retching",
+      "img": "icons/magic/air/fog-gas-smoke-dense-green.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.3qKA9Ojxpr2u04kO",
+      "transfer": false,
+      "_id": "NiqNP2s8c0yb9ak4",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The creature spends its action that turn retching and reeling. Creatures that don't need to breathe or are immune to poison automatically succeed on this saving throw.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728310216501,
+        "modifiedTime": 1728310268722,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!3qKA9Ojxpr2u04kO.NiqNP2s8c0yb9ak4"
+    }
+  ],
   "folder": "CxgAwElQGTbcnuvc",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1661787234146,
-    "modifiedTime": 1713584796371,
+    "modifiedTime": 1728310296670,
     "lastModifiedBy": "dnd5mbuilder0000",
     "compendiumSource": null,
     "duplicateSource": null

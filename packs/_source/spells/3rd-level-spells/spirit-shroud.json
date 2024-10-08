@@ -28,12 +28,19 @@
       "units": "self",
       "type": "self",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "units": "self",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "bonus",
@@ -83,7 +90,22 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Invoke Shroud",
+        "img": "",
+        "appliedEffects": [],
+        "roll": {
+          "formula": ""
+        },
+        "effects": [
+          {
+            "_id": "WoH4oyrVrSJKJZLk"
+          }
+        ]
+      }
+    }
   },
   "img": "icons/magic/death/projectile-skull-fire-purple.webp",
   "ownership": {
@@ -99,16 +121,89 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.dXzcOLJXbNOeN3uJ",
       "spell-lists": "cleric,paladin,warlock,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Shroud of Death",
+      "img": "icons/magic/death/projectile-skull-fire-purple.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.dXzcOLJXbNOeN3uJ",
+      "transfer": false,
+      "_id": "WoH4oyrVrSJKJZLk",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.bonuses.mwak.damage",
+          "mode": 2,
+          "value": "(floor(((@item.level) - 1) / 2))d8",
+          "priority": null
+        },
+        {
+          "key": "system.bonuses.msak.damage",
+          "mode": 2,
+          "value": "(floor(((@item.level) - 1) / 2))d8",
+          "priority": null
+        },
+        {
+          "key": "system.bonuses.rwak.damage",
+          "mode": 2,
+          "value": "(floor(((@item.level) - 1) / 2))d8",
+          "priority": null
+        },
+        {
+          "key": "system.bonuses.rsak.damage",
+          "mode": 2,
+          "value": "(floor(((@item.level) - 1) / 2))d8",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728309791156,
+        "modifiedTime": 1728310011150,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!dXzcOLJXbNOeN3uJ.WoH4oyrVrSJKJZLk"
+    }
+  ],
   "folder": "CxgAwElQGTbcnuvc",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1708931508173,
-    "modifiedTime": 1713584796371,
+    "modifiedTime": 1728310167759,
     "lastModifiedBy": "dnd5mbuilder0000",
     "compendiumSource": null,
     "duplicateSource": null

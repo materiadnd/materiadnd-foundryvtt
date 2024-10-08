@@ -28,12 +28,19 @@
       "width": null,
       "units": "",
       "type": "self",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "self"
+      "units": "self",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -90,6 +97,113 @@
     "scaling": {
       "mode": "level",
       "formula": "1d8"
+    },
+    "activities": {
+      "QZkgFYagHD7voiKS": {
+        "type": "damage",
+        "_id": "QZkgFYagHD7voiKS",
+        "sort": 100000,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 3,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "lightning"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "name": "Bonus Attack Damage",
+        "img": "",
+        "appliedEffects": []
+      },
+      "dnd5eactivity000": {
+        "sort": 200000,
+        "name": "",
+        "img": "",
+        "target": {
+          "override": true,
+          "affects": {
+            "count": "",
+            "type": ""
+          },
+          "template": {
+            "type": "sphere",
+            "size": "10",
+            "count": ""
+          }
+        },
+        "appliedEffects": [],
+        "range": {
+          "override": true,
+          "units": "spec",
+          "special": ""
+        },
+        "consumption": {
+          "spellSlot": false
+        },
+        "activation": {
+          "override": true,
+          "condition": "",
+          "type": ""
+        },
+        "duration": {
+          "override": true
+        }
+      }
     }
   },
   "effects": [],
@@ -101,14 +215,33 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.TyISh7mnwLlT3YKV",
       "spell-lists": "ranger"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1708819054141,
-    "modifiedTime": 1713584796371,
+    "modifiedTime": 1728222524668,
     "lastModifiedBy": "dnd5mbuilder0000",
     "compendiumSource": null,
     "duplicateSource": null
