@@ -307,7 +307,7 @@
       "spellcasting": "int",
       "exhaustion": 0,
       "ac": {
-        "flat": 19,
+        "flat": 14,
         "calc": "natural"
       },
       "hp": {
@@ -332,7 +332,7 @@
         "swarm": ""
       },
       "environment": "",
-      "cr": 5,
+      "cr": null,
       "spellLevel": 0,
       "source": {}
     },
@@ -565,6 +565,112 @@
         "recharge": {
           "value": null,
           "charged": false
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "name": "Cone Breath",
+            "img": "",
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 2,
+                  "denomination": 6,
+                  "bonus": "",
+                  "types": [],
+                  "scaling": {
+                    "number": 1
+                  }
+                }
+              ]
+            },
+            "appliedEffects": []
+          },
+          "UbRB41hnC3CYy55W": {
+            "type": "save",
+            "_id": "UbRB41hnC3CYy55W",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false,
+              "condition": ""
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": true,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "override": false,
+              "units": "self",
+              "special": ""
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft",
+                "type": "line",
+                "size": "60",
+                "width": "5",
+                "count": ""
+              },
+              "affects": {
+                "choice": false,
+                "count": "",
+                "type": ""
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 2,
+                  "denomination": 6,
+                  "bonus": "",
+                  "types": [],
+                  "scaling": {
+                    "number": 1
+                  }
+                }
+              ],
+              "onSave": "half"
+            },
+            "save": {
+              "ability": "dex",
+              "dc": {
+                "calculation": "",
+                "formula": ""
+              }
+            },
+            "name": "Line Breath",
+            "img": "",
+            "appliedEffects": []
+          }
         }
       },
       "effects": [],
@@ -575,14 +681,33 @@
       "flags": {
         "core": {
           "sourceId": "Compendium.materia-dnd.monster-features.Item.VdrxZa3m3O7EYDQy"
+        },
+        "dnd5e": {
+          "riders": {
+            "activity": [],
+            "effect": []
+          }
+        },
+        "rsr5e": {
+          "quickFooter": {
+            "value": true
+          },
+          "quickSave": {
+            "value": true
+          },
+          "quickDamage": {
+            "value": {
+              "0": true
+            }
+          }
         }
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.0.4",
-        "coreVersion": "12.325",
+        "systemVersion": "4.0.4",
+        "coreVersion": "12.331",
         "createdTime": 1710354372653,
-        "modifiedTime": 1710354936801,
+        "modifiedTime": 1728565511154,
         "lastModifiedBy": "dnd5mbuilder0000",
         "compendiumSource": "Compendium.materia-dnd.monster-features.Item.VdrxZa3m3O7EYDQy",
         "duplicateSource": null
@@ -675,14 +800,14 @@
       "_stats": {
         "systemId": "dnd5e",
         "systemVersion": "3.0.4",
-        "coreVersion": "12.325",
+        "coreVersion": "12.331",
         "createdTime": 1708315022641,
-        "modifiedTime": 1710354944729,
+        "modifiedTime": 1728565514489,
         "lastModifiedBy": "dnd5mbuilder0000",
         "compendiumSource": "Compendium.materia-dnd.monster-features.Item.UWiAfJBbkP2sct4e",
         "duplicateSource": null
       },
-      "sort": 1400000,
+      "sort": 0,
       "ownership": {
         "default": 0
       },
@@ -768,6 +893,35 @@
         "recharge": {
           "value": null,
           "charged": false
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "name": "",
+            "img": "",
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": "1d6 + 4 + @item.level"
+                  },
+                  "number": 1,
+                  "denomination": 6,
+                  "bonus": "4",
+                  "types": [
+                    "piercing"
+                  ],
+                  "scaling": {
+                    "number": 1
+                  }
+                }
+              ]
+            },
+            "appliedEffects": [],
+            "attack": {
+              "ability": "spellcasting"
+            }
+          }
         }
       },
       "effects": [],
@@ -778,14 +932,33 @@
       "flags": {
         "core": {
           "sourceId": "Compendium.materia-dnd.monster-features.Item.2TMC5PDGCnp7tp2m"
+        },
+        "dnd5e": {
+          "riders": {
+            "activity": [],
+            "effect": []
+          }
+        },
+        "rsr5e": {
+          "quickFooter": {
+            "value": true
+          },
+          "quickAttack": {
+            "value": true
+          },
+          "quickDamage": {
+            "value": {
+              "0": true
+            }
+          }
         }
       },
       "_stats": {
         "systemId": "dnd5e",
-        "systemVersion": "3.0.4",
-        "coreVersion": "12.325",
+        "systemVersion": "4.0.4",
+        "coreVersion": "12.331",
         "createdTime": 1710354239014,
-        "modifiedTime": 1710354946152,
+        "modifiedTime": 1728565465965,
         "lastModifiedBy": "dnd5mbuilder0000",
         "compendiumSource": "Compendium.materia-dnd.monster-features.Item.2TMC5PDGCnp7tp2m",
         "duplicateSource": null
@@ -896,13 +1069,17 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "showTokenPortrait": false
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1710353604030,
-    "modifiedTime": 1710354950001,
+    "modifiedTime": 1728564566176,
     "lastModifiedBy": "dnd5mbuilder0000",
     "compendiumSource": null,
     "duplicateSource": null
