@@ -6,7 +6,7 @@
       "book": "Materia"
     },
     "description": {
-      "value": "<p>While speaking an intricate incantation, you cut yourself with a jewel-encrusted dagger, taking [[/r 2d4]] piercing damage that cannot be reduced in any way. You then drip your blood on the spell's other components and touch them, transforming them into a special construct called a homunculus.</p><p>You determine the homunculus's appearance. Some wizards prefer mechanical-looking birds, whereas some like winged vials or miniature, animate cauldrons.</p><p>The homunculus is friendly to you and your companions, and it obeys your commands. See this creature's game statistics in the Homunculus Servant stat block, which uses your proficiency bonus (PB) in several places.</p><p>In combat, the homunculus shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the homunculus can take any action of its choice, not just Dodge.</p><p>You and the homunculus servant share a telepathic bond. While the homunculus servant is on the same plane of existence as its master, it can magically convey what it senses to its master, and the two can communicate telepathically.</p><p>The homunculus regains [[/r 2d6]] + its creator's proficiency bonus hit points if the mending spell is cast on it. If you or the homunculus dies, it vanishes, leaving its heart in its space, and the infusion ends.</p><p>You can have only one homunculus servant at a time. If you cast this spell while your homunculus servant lives, the spell fails.</p>",
+      "value": "<p>While speaking an intricate incantation, you cut yourself with a jewel-encrusted dagger, taking [[/r 2d4]] piercing damage that cannot be reduced in any way. You then drip your blood on the spell's other components and touch them, transforming them into a special construct called a homunculus.</p><p>You determine the homunculus's appearance. Some wizards prefer mechanical-looking birds, whereas some like winged vials or miniature, animate cauldrons.</p><p>The homunculus is friendly to you and your companions, and it obeys your commands. See this creature's game statistics in the Homunculus Servant stat block, which uses your proficiency bonus (PB) in several places.</p><p>In combat, the homunculus shares your initiative count, but it takes its turn immediately after yours. It can move and use its reaction on its own, but the only action it takes on its turn is the Dodge action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. If you are incapacitated, the homunculus can take any action of its choice, not just Dodge.</p><p>You and the homunculus servant share a telepathic bond. While the homunculus servant is on the same plane of existence as its master, it can magically convey what it senses to its master, and the two can communicate telepathically.</p><p>The homunculus regains [[/r 2d6]] + its creator's proficiency bonus hit points if the mending spell is cast on it. If you or the homunculus dies, it vanishes, leaving its heart in its space, and the infusion ends.</p><p>You can have only one homunculus servant at a time. If you cast this spell while your homunculus servant lives, the spell fails.</p><section id=\"secret-xySKyYIhiG2tP4at\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The summoned homunculus will not have your caster level in HP added to it, and it must be added manually.</p></section>",
       "chat": ""
     },
     "actionType": "util",
@@ -29,12 +29,20 @@
       "units": "touch",
       "type": "",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "units": "touch",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "hour",
@@ -89,7 +97,89 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "wgXjvjNtcmdusoU5": {
+        "type": "summon",
+        "_id": "wgXjvjNtcmdusoU5",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "bonuses": {
+          "ac": "@prof",
+          "hd": "",
+          "hp": "@abilities.int.mod",
+          "attackDamage": "",
+          "saveDamage": "",
+          "healing": ""
+        },
+        "creatureSizes": [],
+        "creatureTypes": [],
+        "match": {
+          "attacks": true,
+          "proficiency": true,
+          "saves": true
+        },
+        "profiles": [
+          {
+            "count": "",
+            "name": "",
+            "_id": "5Z3cRO29L8pTtbH1",
+            "uuid": "Compendium.materia-dnd.actors.Actor.GmD01plAWKgLrNH5",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": []
+          }
+        ],
+        "summon": {
+          "prompt": true,
+          "mode": ""
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "img": "icons/commodities/treasure/statuette-gargoyle-green-gold.webp",
   "ownership": {
@@ -105,16 +195,32 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.dasbEECWFfWBfL5h",
       "spell-lists": "wizard"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "effects": [],
   "folder": "UjV13fGRtZfpmOAS",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1709219827688,
-    "modifiedTime": 1712723507206,
+    "modifiedTime": 1728585866713,
     "lastModifiedBy": "dnd5mbuilder0000",
     "compendiumSource": null,
     "duplicateSource": null
