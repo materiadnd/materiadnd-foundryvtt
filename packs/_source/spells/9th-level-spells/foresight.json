@@ -27,12 +27,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "touch"
+      "units": "touch",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -86,23 +93,105 @@
       "somatic",
       "material"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "dnd5eactivity000": {
+        "effects": [
+          {
+            "_id": "Kh0AIpXTPxDPOmGn"
+          }
+        ]
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.45X8oow8hhElQL7a",
       "spell-lists": "bard,druid,warlock,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
     }
   },
   "img": "icons/magic/perception/eye-ringed-glow-angry-large-teal.webp",
-  "effects": [],
+  "effects": [
+    {
+      "name": "Foresight",
+      "img": "icons/magic/perception/eye-ringed-glow-angry-large-teal.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.45X8oow8hhElQL7a",
+      "transfer": false,
+      "_id": "Kh0AIpXTPxDPOmGn",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "flags.midi-qol.advantage.attack.all",
+          "mode": 0,
+          "value": "1",
+          "priority": null
+        },
+        {
+          "key": "flags.midi-qol.advantage.ability.check.all",
+          "mode": 0,
+          "value": "1",
+          "priority": null
+        },
+        {
+          "key": "flags.midi-qol.advantage.ability.save.all",
+          "mode": 0,
+          "value": "1",
+          "priority": null
+        },
+        {
+          "key": "flags.midi-qol.grants.disadvantage.attack.all",
+          "mode": 0,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 28800,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target can't be surprised and has advantage on Attack rolls, Ability Checks, and Saving Throws. Additionally, other creatures have disadvantage on attack rolls against the target for the duration.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728941030762,
+        "modifiedTime": 1728941105655,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!45X8oow8hhElQL7a.Kh0AIpXTPxDPOmGn"
+    }
+  ],
   "folder": "89VDZRAxJ1IDvEOP",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1661787234072,
-    "modifiedTime": 1709232343876,
+    "modifiedTime": 1728941125289,
     "lastModifiedBy": "dnd5mbuilder0000",
     "compendiumSource": null,
     "duplicateSource": null
