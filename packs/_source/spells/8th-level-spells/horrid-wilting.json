@@ -96,7 +96,97 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "mDYUmipjINqdtOEz": {
+        "type": "save",
+        "_id": "mDYUmipjINqdtOEz",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "AKTs8ve3rTSctLGk",
+            "onSave": false
+          },
+          {
+            "_id": "GljCwnAoWAkaUfeo",
+            "onSave": true
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 12,
+              "denomination": 12,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "con",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": [
+          "AKTs8ve3rTSctLGk",
+          "GljCwnAoWAkaUfeo"
+        ]
+      }
+    }
   },
   "img": "icons/magic/unholy/strike-body-explode-disintegrate.webp",
   "ownership": {
@@ -125,16 +215,99 @@
           "0": true
         }
       }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Weakened (1 minute)",
+      "img": "modules/materia-dnd/icons/statuses/weakened.png",
+      "origin": "Compendium.materia-dnd.spells.Item.mFfU2gH35n1tuq5z",
+      "transfer": false,
+      "_id": "AKTs8ve3rTSctLGk",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "weakened"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728916638401,
+        "modifiedTime": 1728916672891,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!mFfU2gH35n1tuq5z.AKTs8ve3rTSctLGk"
+    },
+    {
+      "name": "Weakend (1 turn)",
+      "img": "modules/materia-dnd/icons/statuses/weakened.png",
+      "origin": "Compendium.materia-dnd.spells.Item.mFfU2gH35n1tuq5z",
+      "transfer": false,
+      "_id": "GljCwnAoWAkaUfeo",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "weakened"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728916679514,
+        "modifiedTime": 1728916703407,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!mFfU2gH35n1tuq5z.GljCwnAoWAkaUfeo"
+    }
+  ],
   "folder": "IeD7MeayeQqIoNnW",
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "4.0.4",
     "coreVersion": "12.331",
     "createdTime": 1709231428603,
-    "modifiedTime": 1728231816124,
+    "modifiedTime": 1728916705634,
     "lastModifiedBy": "dnd5mbuilder0000",
     "compendiumSource": null,
     "duplicateSource": null
