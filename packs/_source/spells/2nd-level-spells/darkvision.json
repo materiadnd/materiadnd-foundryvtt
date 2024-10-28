@@ -93,7 +93,67 @@
       "somatic",
       "material"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "Vsk6kdsMO2icIY3k": {
+        "type": "utility",
+        "_id": "Vsk6kdsMO2icIY3k",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "OF3WprnB0QDv7zDQ"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
@@ -104,13 +164,33 @@
       "quickFooter": {
         "value": true
       }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "img": "icons/magic/perception/eye-ringed-glow-angry-small-red.webp",
   "effects": [
     {
       "name": "Darkvision",
-      "origin": "Compendium.dnd5e.spells.Item.hJ6ZiA3fpoY8v9cp",
+      "img": "icons/magic/perception/eye-ringed-glow-angry-small-red.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.JxQOGWuvP28suqhx",
+      "transfer": false,
+      "_id": "OF3WprnB0QDv7zDQ",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.senses.darkvision",
+          "mode": 4,
+          "value": "60",
+          "priority": null
+        }
+      ],
+      "disabled": false,
       "duration": {
         "startTime": null,
         "seconds": 28800,
@@ -120,36 +200,22 @@
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "9qaZQFN5xP8Gig8f",
-      "changes": [
-        {
-          "key": "system.attributes.senses.darkvision",
-          "mode": 4,
-          "value": "60",
-          "priority": null
-        }
-      ],
-      "description": "<p>The target has darkvision out to a range of 60 feet.</p>",
-      "transfer": true,
-      "statuses": [],
-      "flags": {},
+      "description": "<p>For the duration, that creature has darkvision out to a range of 60 feet.</p>",
       "tint": "#ffffff",
-      "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "icons/magic/perception/eye-ringed-glow-angry-small-red.webp",
-      "type": "base",
-      "system": {},
+      "statuses": [],
       "sort": 0,
-      "_key": "!items.effects!JxQOGWuvP28suqhx.9qaZQFN5xP8Gig8f"
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730123464434,
+        "modifiedTime": 1730123502673,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!JxQOGWuvP28suqhx.OF3WprnB0QDv7zDQ"
     }
   ],
   "folder": "3rC3qr5FIlZymxFD",
@@ -158,7 +224,7 @@
     "systemVersion": "4.0.4",
     "coreVersion": "12.331",
     "createdTime": 1661787234195,
-    "modifiedTime": 1728048926886,
+    "modifiedTime": 1730123464467,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
