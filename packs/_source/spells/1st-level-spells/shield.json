@@ -91,12 +91,77 @@
       "somatic",
       "mgc"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "k532GPSataUB9MZy": {
+        "type": "utility",
+        "_id": "k532GPSataUB9MZy",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "znSf1F1WdUaHnHGx"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "effects": [
     {
-      "_id": "6pbotGIvqQkraPva",
-      "flags": {},
+      "name": "Shield",
+      "img": "icons/magic/defensive/shield-barrier-glowing-triangle-magenta.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.qfw9ai1KUb6vXwRL",
+      "transfer": false,
+      "_id": "znSf1F1WdUaHnHGx",
+      "type": "base",
+      "system": {},
       "changes": [
         {
           "key": "system.attributes.ac.bonus",
@@ -105,37 +170,32 @@
           "priority": null
         }
       ],
-      "disabled": true,
+      "disabled": false,
       "duration": {
         "startTime": null,
-        "rounds": 1,
         "seconds": null,
         "combat": null,
+        "rounds": 1,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "origin": "Item.FlLKKv7bQBlIAs11",
+      "description": "<p><span style=\"font-family:Signika, sans-serif\">Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from <em style=\"box-sizing:border-box;user-select:text;scrollbar-width:thin;scrollbar-color:var(--color-scrollbar) var(--color-scrollbar-track);color:rgb(25, 24, 19);font-family:Signika, sans-serif;font-size:15.75px;font-variant-ligatures:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:2;text-align:start;text-indent:0px;text-transform:none;widows:2;word-spacing:0px;-webkit-text-stroke-width:0px;white-space:normal;text-decoration-thickness:initial;text-decoration-style:initial;text-decoration-color:initial\">Magic Missile</em>.</span></p>",
       "tint": "#ffffff",
-      "transfer": false,
-      "name": "Shield",
-      "description": "<p>Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from magic missile.</p>",
       "statuses": [],
-      "_stats": {
-        "coreVersion": "12.331",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": 1728230507051,
-        "lastModifiedBy": "dnd5mbuilder0000",
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "icons/magic/defensive/shield-barrier-glowing-triangle-magenta.webp",
-      "type": "base",
-      "system": {},
       "sort": 0,
-      "_key": "!items.effects!qfw9ai1KUb6vXwRL.6pbotGIvqQkraPva"
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730089949666,
+        "modifiedTime": 1730089968940,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!qfw9ai1KUb6vXwRL.znSf1F1WdUaHnHGx"
     }
   ],
   "folder": "JMRA2elEdmr5pgX7",
@@ -151,14 +211,20 @@
       "quickFooter": {
         "value": true
       }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.0.2",
+    "systemVersion": "4.0.4",
     "coreVersion": "12.331",
     "createdTime": 1661787234244,
-    "modifiedTime": 1728230508891,
+    "modifiedTime": 1730089949742,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

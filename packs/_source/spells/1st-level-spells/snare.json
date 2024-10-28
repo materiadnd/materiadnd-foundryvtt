@@ -28,12 +28,20 @@
       "units": "touch",
       "type": "",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "units": "touch",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "minute",
@@ -83,7 +91,104 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "dnd5eactivity000": {
+        "effects": [
+          {
+            "_id": "Lty7aZVSGZY5PZUu",
+            "onSave": false
+          }
+        ],
+        "name": "Snare Save",
+        "img": "",
+        "appliedEffects": [
+          "Lty7aZVSGZY5PZUu"
+        ],
+        "consumption": {
+          "spellSlot": false
+        },
+        "activation": {
+          "override": true,
+          "type": "",
+          "condition": ""
+        },
+        "duration": {
+          "override": true
+        },
+        "range": {
+          "override": true,
+          "units": "spec",
+          "special": ""
+        },
+        "target": {
+          "override": true,
+          "affects": {
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "template": {
+            "type": ""
+          }
+        },
+        "sort": 200000
+      },
+      "vDnlaYl9MjsAyk8A": {
+        "type": "utility",
+        "_id": "vDnlaYl9MjsAyk8A",
+        "sort": 100000,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "img": "icons/skills/targeting/crosshair-mark-rough-pink.webp",
   "ownership": {
@@ -99,16 +204,61 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.QkuKrqnCpAcjL7T5",
       "spell-lists": "artificer,druid,ranger,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Restrained",
+      "img": "systems/dnd5e/icons/svg/statuses/restrained.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.QkuKrqnCpAcjL7T5",
+      "transfer": false,
+      "_id": "Lty7aZVSGZY5PZUu",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 28800,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "restrained"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730090286399,
+        "modifiedTime": 1730090311263,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!QkuKrqnCpAcjL7T5.Lty7aZVSGZY5PZUu"
+    }
+  ],
   "folder": "JMRA2elEdmr5pgX7",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1708312544224,
-    "modifiedTime": 1711345286465,
+    "modifiedTime": 1730090353040,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
