@@ -34,7 +34,8 @@
         "type": ""
       },
       "template": {
-        "count": ""
+        "count": "",
+        "type": "sphere"
       }
     },
     "range": {
@@ -103,6 +104,84 @@
     "scaling": {
       "mode": "level",
       "formula": "1d6"
+    },
+    "activities": {
+      "zlSSKsOurP9CBgo8": {
+        "type": "save",
+        "_id": "zlSSKsOurP9CBgo8",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": [
+                "necrotic"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "con",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -130,6 +209,12 @@
           "1": true
         }
       }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
@@ -137,7 +222,7 @@
     "systemVersion": "4.0.4",
     "coreVersion": "12.331",
     "createdTime": 1708312542342,
-    "modifiedTime": 1728160924690,
+    "modifiedTime": 1730126728429,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
