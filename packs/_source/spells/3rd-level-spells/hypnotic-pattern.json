@@ -95,7 +95,73 @@
       "concentration",
       "mgc"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "YlSF6MC6nPJKmc0x": {
+        "type": "save",
+        "_id": "YlSF6MC6nPJKmc0x",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "dPqxVU2l02HmkdM9",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "none"
+        },
+        "save": {
+          "ability": "wis",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
@@ -109,79 +175,54 @@
       "quickSave": {
         "value": true
       }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "img": "icons/magic/air/air-burst-spiral-pink.webp",
   "effects": [
     {
-      "name": "Hypnotic Pattern",
-      "origin": "Compendium.dnd5e.spells.Item.6g3WLOZ2u0EbaLAd",
+      "name": "Hypnotized",
+      "img": "icons/magic/air/air-burst-spiral-pink.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.E5BaOOU4mP5fBIme",
+      "transfer": false,
+      "_id": "dPqxVU2l02HmkdM9",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
       "duration": {
         "startTime": null,
-        "seconds": null,
+        "seconds": 60,
         "combat": null,
         "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "SQnfuD2rHVcyLZ4j",
-      "changes": [
-        {
-          "key": "system.attributes.movement.burrow",
-          "mode": 5,
-          "value": "0",
-          "priority": null
-        },
-        {
-          "key": "system.attributes.movement.climb",
-          "mode": 5,
-          "value": "0",
-          "priority": null
-        },
-        {
-          "key": "system.attributes.movement.fly",
-          "mode": 5,
-          "value": "0",
-          "priority": null
-        },
-        {
-          "key": "system.attributes.movement.swim",
-          "mode": 5,
-          "value": "0",
-          "priority": null
-        },
-        {
-          "key": "system.attributes.movement.walk",
-          "mode": 5,
-          "value": "0",
-          "priority": null
-        }
-      ],
-      "description": "<p>The creature is Charmed for the duration. While charmed by this spell, the creature is Incapacitated and has a speed of 0.</p>",
-      "transfer": false,
+      "description": "<p>The creature becomes charmed for the duration. While charmed by this spell, the creature is incapacitated and has a speed of 0.</p>",
+      "tint": "#ffffff",
       "statuses": [
         "charmed",
         "incapacitated"
       ],
-      "flags": {},
-      "tint": "#ffffff",
-      "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "icons/magic/air/air-burst-spiral-pink.webp",
-      "type": "base",
-      "system": {},
       "sort": 0,
-      "_key": "!items.effects!E5BaOOU4mP5fBIme.SQnfuD2rHVcyLZ4j"
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730168502040,
+        "modifiedTime": 1730168530603,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!E5BaOOU4mP5fBIme.dPqxVU2l02HmkdM9"
     }
   ],
   "folder": "CxgAwElQGTbcnuvc",
@@ -190,7 +231,7 @@
     "systemVersion": "4.0.4",
     "coreVersion": "12.331",
     "createdTime": 1661787234072,
-    "modifiedTime": 1728222065410,
+    "modifiedTime": 1730168502073,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
