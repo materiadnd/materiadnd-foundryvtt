@@ -1,9 +1,9 @@
 import os
 import json
 
-DIR_ROOT = 'packs\\_source\\spells'
+DIR_ROOT = 'packs\\_source'
 FILES_TO_IGNORE = [ '_folder.json' ]
-TYPES_TO_CHECK = [ 'spell', 'weapon' ]
+TYPES_TO_CHECK = [ 'spell' ]
 
 def findJsonFiles(rootDir, func):
     for root, dirs, files in os.walk(rootDir):
