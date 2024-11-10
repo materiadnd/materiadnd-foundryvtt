@@ -1,0 +1,25 @@
+{
+  "name": "[deprecated] Fix Channel Divinity consumption",
+  "type": "script",
+  "scope": "global",
+  "author": "XUUgw2rBkybOB3tL",
+  "img": "icons/svg/dice-target.svg",
+  "command": "// NOTE: this is deprecated now and the consumption wire-ups are done at the module level\n\n// find all actors with the fighter class\nlet clericActors = game.actors.filter(x => x.type == 'character' && x._classes.hasOwnProperty('cleric'));\n\nfor (const clericActor of clericActors) {\n    // find the \"Combat Superiority\" item that we will update each maneuver to consume\n    let channelDivinityItem = clericActor.items.find(x => x.name == 'Channel Divinity' && x.type == 'feat');\n    // find the maneuver items to update\n    let cdItems = clericActor.items.filter(x => x.system?.type?.subtype == \"channelDivinity\" && x.system?.consume?.target != channelDivinityItem.id)\n    for (const cdItem of cdItems) {\n        console.log('Updating actor ' + clericActor.name + ' feature ' + cdItem.name + ' to consume item ' + channelDivinityItem.name);\n        cdItem.system.consume.target = channelDivinityItem.id;\n    }\n}",
+  "folder": null,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "3.0.3",
+    "coreVersion": "12.331",
+    "createdTime": 1707678611993,
+    "modifiedTime": 1731227409218,
+    "lastModifiedBy": "dnd5mbuilder0000",
+    "duplicateSource": null
+  },
+  "_id": "jsnnq2oHGcRBJ4pt",
+  "sort": 300000,
+  "_key": "!macros!jsnnq2oHGcRBJ4pt"
+}
