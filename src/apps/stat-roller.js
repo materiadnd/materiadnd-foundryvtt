@@ -44,6 +44,10 @@ class StatRollData {
         this.isIgnored = isIgnored;
         this.isManual = false;
     }
+
+    get indexPlusOne() {
+        return this.index + 1;
+    }
 }
 
 
@@ -124,12 +128,15 @@ class StatRollerApp extends Application {
                 return "";
             }
         });
+        Handlebars.registerHelper('plusOne', function(val) {
+            return val + 1;
+        });
     }
 
     async _rollStartingStats() {
         if (this.buttonStates['roll-starting-stats-button'] == ButtonFlags.Enabled) {
             let candidateRolls = [];
-            for (let i=1; i <= 7; i++) {
+            for (let i=0; i <= 6; i++) {
                 let roll = new Roll("4d6kh3");
                 await roll.evaluate();
                 let statRollData = new StatRollData(roll, i);
@@ -177,7 +184,7 @@ class StatRollerApp extends Application {
     }
 
     _setStatToEight(index) {
-        let selectedRoll = this.rolls[index-1];
+        let selectedRoll = this.rolls[index];
         selectedRoll.isManual = true;
         selectedRoll.roll.terms[0].results.forEach(x => { x.active = false; x.discarded = true; });
         selectedRoll.roll._total = 8;
@@ -204,8 +211,8 @@ class StatRollerApp extends Application {
     async _rerollStat(index) {
             let roll = new Roll("4d6kh3");
             await roll.evaluate();
-            let statRollData = new StatRollData(roll, index-1);
-            this.rolls.splice(index-1, 1, statRollData);
+            let statRollData = new StatRollData(roll, index);
+            this.rolls.splice(index, 1, statRollData);
             this.rollsActive = false;
             if (sumRolls(this.rolls) >= 70) {
                 this.message = game.i18n.localize(Constants.MESSAGES.STAT_ROLLER.INSTRUCTIONS.AFTER_REROLL_VALID_STATS);
@@ -224,7 +231,7 @@ class StatRollerApp extends Application {
             let accruedStats = {};
             for (var i=0; i < statSelectors.length; i++) {
                 let index = parseInt(statSelectors[i].id.match(/\d/)[0]);
-                accruedStats[statSelectors[i].value] = this.rolls[index-1].roll.total;
+                accruedStats[statSelectors[i].value] = this.rolls[index].roll.total;
             }
             if (Object.keys(accruedStats).length === 6) {
                 let actor = game.actors.get(this.actorId);
