@@ -27,12 +27,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "touch"
+      "units": "touch",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -86,7 +93,67 @@
       "somatic",
       "concentration"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "J7hv4htb3urGNvEA": {
+        "type": "utility",
+        "_id": "J7hv4htb3urGNvEA",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "oVcK1jPBYnXomhhl"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
@@ -96,8 +163,15 @@
   "img": "icons/magic/air/fog-gas-smoke-dense-gray.webp",
   "effects": [
     {
-      "name": "Invisibility",
-      "origin": "Compendium.dnd5e.spells.Item.1N8dDMMgZ1h1YJ3B",
+      "name": "Invisible",
+      "img": "systems/dnd5e/icons/svg/statuses/invisible.svg",
+      "origin": "Compendium.materia-dnd.species.Item.Pg4KYnNPco2CFuPa",
+      "transfer": false,
+      "_id": "oVcK1jPBYnXomhhl",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
       "duration": {
         "startTime": null,
         "seconds": 3600,
@@ -107,31 +181,24 @@
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "TeFxBRKYKIXtg6pS",
-      "changes": [],
-      "description": "<p>The target becomes Invisible until the spell ends. Anything the target is wearing or carrying is invisible as long as it is on the target's person. The spell ends for a target that attacks or casts a spell.</p>",
-      "transfer": true,
+      "description": "",
+      "tint": "#ffffff",
       "statuses": [
         "invisible"
       ],
-      "flags": {},
-      "tint": "#ffffff",
-      "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "icons/magic/air/fog-gas-smoke-dense-gray.webp",
-      "type": "base",
-      "system": {},
       "sort": 0,
-      "_key": "!items.effects!Pg4KYnNPco2CFuPa.TeFxBRKYKIXtg6pS"
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730125670339,
+        "modifiedTime": 1730125696402,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!Pg4KYnNPco2CFuPa.oVcK1jPBYnXomhhl"
     }
   ],
   "folder": "KtrCTJdVjFF5Oaf2",

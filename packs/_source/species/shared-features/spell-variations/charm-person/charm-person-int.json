@@ -24,12 +24,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 30,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -80,9 +87,78 @@
     },
     "properties": [
       "vocal",
-      "somatic"
+      "somatic",
+      "mgc"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "5F9TmLW5rRLIDM75": {
+        "type": "save",
+        "_id": "5F9TmLW5rRLIDM75",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "1QhUB3231btaCO0b",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "wis",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": [
+          "1QhUB3231btaCO0b"
+        ]
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
@@ -93,7 +169,7 @@
   "effects": [
     {
       "name": "Charm Person",
-      "origin": "Compendium.dnd5e.spells.Item.eS7XnnApoxRxYXPs",
+      "origin": "Compendium.materia-dnd.species.Item.FEBmQ7FVUxKTeTj5",
       "duration": {
         "startTime": null,
         "seconds": 3600,
