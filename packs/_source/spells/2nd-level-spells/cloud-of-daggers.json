@@ -3,10 +3,7 @@
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "PHB",
-      "page": "222",
-      "license": ""
+      "book": "Materia"
     },
     "description": {
       "value": "<p>You fill the air with spinning daggers in a cube 5 feet on each side, centered on a point you choose within range. A creature takes [[/r 4d4]] slashing damage when it enters the spell's area for the first time on a turn or starts its turn there.</p><p><strong>At Higher Levels. </strong>When you cast this spell using a spell slot of 3rd level or higher, the damage increases by [[/r 2d4]] for each slot level above 2nd.</p>",
@@ -32,12 +29,20 @@
       "units": "ft",
       "type": "cube",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "count": ""
+      }
     },
     "range": {
       "value": 60,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -92,7 +97,135 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": null
+    "ability": null,
+    "activities": {
+      "kczS66Ki4D9zZfXK": {
+        "type": "utility",
+        "_id": "kczS66Ki4D9zZfXK",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": []
+      },
+      "GPSyaTHrrxm86EY5": {
+        "type": "damage",
+        "_id": "GPSyaTHrrxm86EY5",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 4,
+              "denomination": 4,
+              "bonus": "",
+              "types": [
+                "slashing"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 2,
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "img": "icons/skills/ranged/daggers-thrown-salvo-green.webp",
   "ownership": {
@@ -108,18 +241,33 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.3xuxLorITn76wbgb",
       "spell-lists": "bard,sorcerer,warlock,wizard"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "effects": [],
   "folder": "3rC3qr5FIlZymxFD",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1708312537071,
-    "modifiedTime": 1708930454014,
+    "modifiedTime": 1730123384677,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "3xuxLorITn76wbgb",

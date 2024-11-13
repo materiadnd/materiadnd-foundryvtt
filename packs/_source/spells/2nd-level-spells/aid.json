@@ -6,14 +6,11 @@
   "type": "spell",
   "system": {
     "description": {
-      "value": "<p>Your spell bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd.</p>",
+      "value": "<p>Your spell bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd.</p><section id=\"secret-0QCKv8Sq0iMEBKoL\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The default <strong>Heal</strong> activity is configured with multiple Active Effects representing the temporary maximum Hit Points provided by this spell.</p><p>Users should apply the appropriate Active Effect for the spell slot level used in the casting of this spell.</p></section>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
@@ -30,12 +27,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 30,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -94,25 +98,423 @@
       "somatic",
       "material"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "healing": {
+          "scaling": {
+            "formula": "5"
+          },
+          "custom": {
+            "enabled": false
+          },
+          "denomination": "",
+          "bonus": "5"
+        },
+        "appliedEffects": [],
+        "effects": [
+          {
+            "_id": "BihhLYSlmeryt8aM"
+          },
+          {
+            "_id": "dOHQWL6ZXNPnBEiW"
+          },
+          {
+            "_id": "4tS9OViiuQzUAGAj"
+          },
+          {
+            "_id": "A86lSTNPokAHwbbm"
+          },
+          {
+            "_id": "t2hiT2qyj9ZfpDQY"
+          },
+          {
+            "_id": "NlesCjst3gdlbeWl"
+          },
+          {
+            "_id": "7ASU4oXkWXwm8e27"
+          },
+          {
+            "_id": "0I5tiIDqXYUa4M8M"
+          }
+        ]
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.8NeNOaQTZZWFjJ0d",
       "spell-lists": "artificer,bard,cleric,paladin,ranger"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
     }
   },
   "img": "icons/magic/life/heart-cross-blue.webp",
-  "effects": [],
+  "effects": [
+    {
+      "name": "Level 2: +5 Max HP",
+      "img": "icons/magic/life/heart-cross-blue.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.8NeNOaQTZZWFjJ0d",
+      "transfer": false,
+      "_id": "BihhLYSlmeryt8aM",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.hp.bonuses.overall",
+          "mode": 2,
+          "value": "5",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 28800,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728023439404,
+        "modifiedTime": 1728023475387,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!8NeNOaQTZZWFjJ0d.BihhLYSlmeryt8aM"
+    },
+    {
+      "name": "Level 3: +10 Max HP",
+      "img": "icons/magic/life/heart-cross-blue.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.8NeNOaQTZZWFjJ0d",
+      "transfer": false,
+      "_id": "dOHQWL6ZXNPnBEiW",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.hp.bonuses.overall",
+          "mode": 2,
+          "value": "10",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 28800,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728023479236,
+        "modifiedTime": 1728023504027,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!8NeNOaQTZZWFjJ0d.dOHQWL6ZXNPnBEiW"
+    },
+    {
+      "name": "Level 4: +15 Max HP",
+      "img": "icons/magic/life/heart-cross-blue.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.8NeNOaQTZZWFjJ0d",
+      "transfer": false,
+      "_id": "4tS9OViiuQzUAGAj",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.hp.bonuses.overall",
+          "mode": 2,
+          "value": "15",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 28800,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728023531959,
+        "modifiedTime": 1728023547177,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!8NeNOaQTZZWFjJ0d.4tS9OViiuQzUAGAj"
+    },
+    {
+      "name": "Level 5: +20 Max HP",
+      "img": "icons/magic/life/heart-cross-blue.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.8NeNOaQTZZWFjJ0d",
+      "transfer": false,
+      "_id": "A86lSTNPokAHwbbm",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.hp.bonuses.overall",
+          "mode": 2,
+          "value": "20",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 28800,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728023549628,
+        "modifiedTime": 1728023565983,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!8NeNOaQTZZWFjJ0d.A86lSTNPokAHwbbm"
+    },
+    {
+      "name": "Level 6: +25 Max HP",
+      "img": "icons/magic/life/heart-cross-blue.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.8NeNOaQTZZWFjJ0d",
+      "transfer": false,
+      "_id": "t2hiT2qyj9ZfpDQY",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.hp.bonuses.overall",
+          "mode": 2,
+          "value": "25",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 28800,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728023576336,
+        "modifiedTime": 1728023590766,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!8NeNOaQTZZWFjJ0d.t2hiT2qyj9ZfpDQY"
+    },
+    {
+      "name": "Level 7: +30 Max HP",
+      "img": "icons/magic/life/heart-cross-blue.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.8NeNOaQTZZWFjJ0d",
+      "transfer": false,
+      "_id": "NlesCjst3gdlbeWl",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.hp.bonuses.overall",
+          "mode": 2,
+          "value": "30",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 28800,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728023596270,
+        "modifiedTime": 1728023613908,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!8NeNOaQTZZWFjJ0d.NlesCjst3gdlbeWl"
+    },
+    {
+      "name": "Level 8: +35 Max HP",
+      "img": "icons/magic/life/heart-cross-blue.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.8NeNOaQTZZWFjJ0d",
+      "transfer": false,
+      "_id": "7ASU4oXkWXwm8e27",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.hp.bonuses.overall",
+          "mode": 2,
+          "value": "35",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 28800,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728023627320,
+        "modifiedTime": 1728023644752,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!8NeNOaQTZZWFjJ0d.7ASU4oXkWXwm8e27"
+    },
+    {
+      "name": "Level 9: +40 Max HP",
+      "img": "icons/magic/life/heart-cross-blue.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.8NeNOaQTZZWFjJ0d",
+      "transfer": false,
+      "_id": "0I5tiIDqXYUa4M8M",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.hp.bonuses.overall",
+          "mode": 2,
+          "value": "40",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 28800,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728023645988,
+        "modifiedTime": 1728023662844,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!8NeNOaQTZZWFjJ0d.0I5tiIDqXYUa4M8M"
+    }
+  ],
   "folder": "3rC3qr5FIlZymxFD",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1661787234131,
-    "modifiedTime": 1708930454014,
+    "modifiedTime": 1728023746266,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "8NeNOaQTZZWFjJ0d",

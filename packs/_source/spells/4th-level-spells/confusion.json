@@ -9,7 +9,9 @@
       "value": "<p>This spell assaults and twists creatures' minds, spawning delusions and provoking uncontrolled action. Each creature of your choice in a 10-foot-radius sphere centered on a point you choose within range must succeed on a Wisdom saving throw when you cast this spell or be affected by it.</p><p>An affected target can't take reactions and must roll a d10 at the start of each of its turns to determine its behavior for that turn.</p><table><thead><tr><th>d10</th><th>Behavior</th></tr></thead><tbody><tr><td>1</td><td>The creature uses all its movement to move in a random direction. To determine the direction, roll a d8 and assign a direction to each die face. The creature doesn't take an action this turn.</td></tr><tr><td>2-6</td><td>The creature doesn't move or take actions this turn.</td></tr><tr><td>7-8</td><td>The creature uses its action to make a melee attack against a randomly determined creature within its reach. If there is no creature within its reach, the creature does nothing this turn.</td></tr><tr><td>9-10</td><td>The creature can act and move normally.</td></tr></tbody></table><p>At the end of each of its turns, an affected target that has acted normally can make a Wisdom saving throw. If it succeeds, this effect ends for that target.</p><p>At Higher Levels. When you cast this spell using a spell slot of 9th level or higher, the radius of the sphere increases by 5 feet for each slot level above 4th.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -26,12 +28,20 @@
       "width": null,
       "units": "ft",
       "type": "radius",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "count": ""
+      }
     },
     "range": {
       "value": 90,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -85,23 +95,83 @@
     "scaling": {
       "mode": "none",
       "formula": ""
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "effects": [
+          {
+            "_id": "BBBzMCxakS1F9ktR",
+            "onSave": false
+          }
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Confused",
+      "img": "icons/magic/symbols/question-stone-yellow.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.IVSsvCN7diHIuseG",
+      "transfer": false,
+      "_id": "BBBzMCxakS1F9ktR",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>An affected target can't take reactions and must roll a d10 at the start of each of its turns to determine its behavior for that turn.</p><table><thead><tr><th>d10</th><th>Behavior</th></tr></thead><tbody><tr><td>1</td><td>The creature uses all its movement to move in a random direction. To determine the direction, roll a d8 and assign a direction to each die face. The creature doesn't take an action this turn.</td></tr><tr><td>2-6</td><td>The creature doesn't move or take actions this turn.</td></tr><tr><td>7-8</td><td>The creature uses its action to make a melee attack against a randomly determined creature within its reach. If there is no creature within its reach, the creature does nothing this turn.</td></tr><tr><td>9-10</td><td>The creature can act and move normally.</td></tr></tbody></table><p>At the end of each of its turns, an affected target that has acted normally can make a Wisdom saving throw. If it succeeds, this effect ends for that target.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728321433127,
+        "modifiedTime": 1728321470786,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!IVSsvCN7diHIuseG.BBBzMCxakS1F9ktR"
+    }
+  ],
   "flags": {
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.IVSsvCN7diHIuseG",
       "spell-lists": "bard,druid,sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1707667464930,
-    "modifiedTime": 1709226592285,
+    "modifiedTime": 1728321479690,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 3800000,

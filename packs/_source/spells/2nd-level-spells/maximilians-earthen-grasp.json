@@ -9,10 +9,7 @@
       "chat": ""
     },
     "source": {
-      "book": "",
-      "page": "",
-      "custom": "",
-      "license": ""
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
@@ -30,12 +27,20 @@
       "width": null,
       "units": "",
       "type": "",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 30,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -94,9 +99,137 @@
     "scaling": {
       "mode": "level",
       "formula": "1d6"
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Summon and Grasp",
+        "img": "",
+        "appliedEffects": [],
+        "effects": [
+          {
+            "_id": "i2lefg9EChhh5484",
+            "onSave": false
+          }
+        ]
+      },
+      "TngpZrFMqrjuKtqh": {
+        "type": "save",
+        "_id": "TngpZrFMqrjuKtqh",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 3,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "bludgeoning"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "str",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Crush Grasped Target",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Grasped",
+      "img": "icons/magic/earth/strike-fist-stone-light.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.mTw6sBK8ukDoM9q4",
+      "transfer": false,
+      "_id": "i2lefg9EChhh5484",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target is restrained for the spell's duration.</p>",
+      "tint": "#ffffff",
+      "statuses": [
+        "restrained"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728126149848,
+        "modifiedTime": 1728126183845,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!mTw6sBK8ukDoM9q4.i2lefg9EChhh5484"
+    }
+  ],
   "folder": "3rC3qr5FIlZymxFD",
   "flags": {
     "plutonium": {
@@ -108,16 +241,34 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.mTw6sBK8ukDoM9q4",
       "spell-lists": "druid,sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1708312543850,
-    "modifiedTime": 1708930454014,
+    "modifiedTime": 1728127107150,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 7500000,

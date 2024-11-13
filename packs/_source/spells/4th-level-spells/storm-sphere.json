@@ -3,10 +3,7 @@
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "book": "Materia"
     },
     "description": {
       "value": "<p>A 20-foot-radius sphere of whirling air springs into existence, centered on a point you choose within range. The sphere remains for the spell's duration. Each creature in the sphere when it appears or that ends its turn there must succeed on a Strength saving throw or take [[/r 2d8]] magical bludgeoning damage. The sphere's space is difficult terrain.</p><p>Until the spell ends, you can use a bonus action on each of your turns to cause a bolt of lightning to leap from the center of the sphere toward one creature you choose within 60 feet of the center. Make a ranged spell attack. You have advantage on the attack roll if the target is in the sphere. On a hit, the target takes [[/r 4d8]] lightning damage.</p><p>Creatures within 30 feet of the sphere have disadvantage on Wisdom (Perception) checks made to listen.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 5th level or higher, the damage for each of its effects increases by [[/r 1d8]] for each slot level above 4th.</p>",
@@ -31,12 +28,20 @@
       "units": "ft",
       "type": "sphere",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "count": ""
+      }
     },
     "range": {
       "value": 150,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -95,7 +100,88 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "dnd5eactivity100": {
+        "sort": -100000,
+        "name": "Summon Sphere",
+        "img": "",
+        "appliedEffects": [],
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "bludgeoning"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ]
+        }
+      },
+      "dnd5eactivity000": {
+        "name": "Conjure Bolt",
+        "img": "",
+        "appliedEffects": [],
+        "activation": {
+          "override": true,
+          "type": "bonus",
+          "condition": ""
+        },
+        "duration": {
+          "override": true
+        },
+        "consumption": {
+          "spellSlot": false
+        },
+        "range": {
+          "override": true,
+          "units": "spec",
+          "special": "within 60 feet of the center of the Storm Sphere"
+        },
+        "target": {
+          "override": true,
+          "affects": {
+            "count": "1",
+            "type": "creature"
+          },
+          "template": {
+            "type": ""
+          }
+        },
+        "damage": {
+          "parts": [
+            {
+              "number": 4,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "lightning"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ]
+        }
+      }
+    }
   },
   "img": "icons/commodities/gems/pearl-water.webp",
   "ownership": {
@@ -111,18 +197,39 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.Tw0UXiS129kFLcTN",
       "spell-lists": "sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickAttack": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
     }
   },
   "effects": [],
   "folder": "PrScRYl7JdLxwH3K",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1709151910733,
-    "modifiedTime": 1709226592285,
+    "modifiedTime": 1728388657806,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "Tw0UXiS129kFLcTN",

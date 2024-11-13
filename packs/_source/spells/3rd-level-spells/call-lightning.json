@@ -9,7 +9,9 @@
       "value": "<p>A storm cloud appears in the shape of a cylinder that is 10 feet tall with a 60-foot radius, centered on a point you can see within range directly above you. The spell fails if you can't see a point in the air where the storm cloud could appear (for example, if you are in a room that cannot accommodate the cloud).</p><p>When you cast the spell, choose a point you can see under the cloud. A bolt of lightning flashes down from the cloud to that point. Each creature within 5 feet of that point must make a Dexterity saving throw. A creature takes [[/r 3d10]] lightning damage on a failed save, or half as much damage on a successful one. On each of your turns until the spell ends, you can use your bonus action to call down lightning in this way again, targeting the same point or a different one.</p><p>If you are outdoors in stormy conditions when you cast this spell, the spell gives you control over the existing storm instead of creating a new one. Under such conditions, the spell's damage increases by [[/r 1d10]].</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 4th or higher level, the damage increases by 1d10 for each slot level above 3rd.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -26,12 +28,22 @@
       "width": null,
       "units": "ft",
       "type": "radius",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "type": "cylinder",
+        "count": "",
+        "height": "10"
+      }
     },
     "range": {
       "value": 120,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -89,6 +101,117 @@
     "scaling": {
       "mode": "none",
       "formula": ""
+    },
+    "activities": {
+      "io1Y2Li3QxuHgCl5": {
+        "type": "utility",
+        "_id": "io1Y2Li3QxuHgCl5",
+        "sort": 100000,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Conjure Cloud",
+        "img": "",
+        "appliedEffects": []
+      },
+      "dnd5eactivity000": {
+        "sort": 200000,
+        "name": "Lightning Strike",
+        "img": "",
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 3,
+              "denomination": 10,
+              "bonus": "",
+              "types": [
+                "lightning"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "activation": {
+          "override": true,
+          "type": "bonus",
+          "condition": ""
+        },
+        "duration": {
+          "override": true
+        },
+        "consumption": {
+          "spellSlot": false
+        },
+        "range": {
+          "override": true,
+          "units": "spec",
+          "special": "within the cloud radius"
+        },
+        "target": {
+          "override": true,
+          "affects": {
+            "count": "",
+            "type": ""
+          },
+          "template": {
+            "type": "circle",
+            "size": "5",
+            "count": ""
+          }
+        }
+      }
     }
   },
   "effects": [],
@@ -100,16 +223,34 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.e6VPzVXIHT6sNxgg",
       "spell-lists": "druid"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1708816919386,
-    "modifiedTime": 1713584796371,
+    "modifiedTime": 1728193781754,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_key": "!items!e6VPzVXIHT6sNxgg"

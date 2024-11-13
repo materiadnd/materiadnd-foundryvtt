@@ -9,7 +9,9 @@
       "value": "<p>You sacrifice some of your health to mend another creature's injuries. You take [[/r 4d8]] necrotic damage, which cannot be reduced in any way, and one creature of your choice that you can see within range regains a number of hit points equal to twice the necrotic damage you take plus your spellcasting modifier.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 4th level or higher, the damage increases by [[/r 1d8]] for each slot level above 3rd.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -26,12 +28,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 30,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -88,6 +97,13 @@
     "scaling": {
       "mode": "level",
       "formula": "1d8"
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Self-Damage and Healing",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -99,16 +115,31 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.W7Wmp2HHTKUMt9dq",
       "spell-lists": "cleric,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1708818872153,
-    "modifiedTime": 1713584796371,
+    "modifiedTime": 1728222276196,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_key": "!items!W7Wmp2HHTKUMt9dq"

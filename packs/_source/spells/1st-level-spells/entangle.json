@@ -8,10 +8,7 @@
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
@@ -28,12 +25,20 @@
       "width": null,
       "units": "ft",
       "type": "square",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "count": ""
+      }
     },
     "range": {
       "value": 90,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -88,11 +93,79 @@
       "concentration",
       "mgc"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "ohd5VpTD4Tg55bYD": {
+        "type": "save",
+        "_id": "ohd5VpTD4Tg55bYD",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "fO14IutGR3Hrepun",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "str",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": [
+          "fO14IutGR3Hrepun"
+        ]
+      }
+    }
   },
   "effects": [
     {
-      "name": "Entangle",
+      "name": "Restrained",
       "origin": "Compendium.dnd5e.spells.Item.gMrWeG8fMDPRFiVe",
       "duration": {
         "startTime": null,
@@ -114,16 +187,16 @@
       "flags": {},
       "tint": "#ffffff",
       "_stats": {
-        "coreVersion": "12.325",
+        "coreVersion": "12.331",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "modifiedTime": 1730054930649,
+        "lastModifiedBy": "dnd5mbuilder0000",
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "icons/magic/nature/vines-thorned-curled-glow-green.webp",
+      "img": "systems/dnd5e/icons/svg/statuses/restrained.svg",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -134,6 +207,12 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.uQP1D9ifN3E9SfZ3",
       "spell-lists": "druid,ranger"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "folder": "JMRA2elEdmr5pgX7",
@@ -142,12 +221,11 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1661787234191,
-    "modifiedTime": 1711345228633,
+    "modifiedTime": 1730054895798,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "uQP1D9ifN3E9SfZ3",

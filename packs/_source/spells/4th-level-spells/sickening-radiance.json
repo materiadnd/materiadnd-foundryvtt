@@ -3,10 +3,7 @@
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "XGE",
-      "page": "164",
-      "license": ""
+      "book": "Materia"
     },
     "description": {
       "value": "<p>Dim, greenish light spreads within a 30-foot-radius sphere centered on a point you choose within range. The light spreads around corners, and it lasts until the spell ends.</p><p>When a creature moves into the spell's area for the first time on a turn or starts its turn there, that creature must succeed on a Constitution saving throw or take [[/r 4d10]] radiant damage, and it suffers one level of exhaustion and emits a dim, greenish light in a 5-foot radius. This light makes it impossible for the creature to benefit from being invisible. The light and any levels of exhaustion caused by this spell go away when the spell ends.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 5th level or higher, the damage increases by 1d10 for each slot level above 4th.</p><p>When you cast this spell using a spell slot of 9th level or higher, the spell no long requires your concentration to maintain.</p>",
@@ -31,12 +28,20 @@
       "units": "ft",
       "type": "sphere",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "count": ""
+      }
     },
     "range": {
       "value": 120,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -91,7 +96,100 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "dnd5eactivity000": {
+        "effects": [
+          {
+            "_id": "H9p5pye2IpTlKXps",
+            "onSave": false
+          }
+        ]
+      },
+      "YJ59CaAVcBDkpCbG": {
+        "type": "save",
+        "_id": "YJ59CaAVcBDkpCbG",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "H9p5pye2IpTlKXps",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 4,
+              "denomination": 10,
+              "bonus": "",
+              "types": [
+                "radiant"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "str",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": [
+          "H9p5pye2IpTlKXps"
+        ]
+      }
+    }
   },
   "img": "icons/magic/air/air-burst-spiral-large-teal-green.webp",
   "ownership": {
@@ -107,18 +205,82 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.ay3480O6PFfZrhBx",
       "spell-lists": "sorcerer,warlock,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Exhausted",
+      "img": "icons/magic/air/air-burst-spiral-large-teal-green.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.ay3480O6PFfZrhBx",
+      "transfer": false,
+      "_id": "H9p5pye2IpTlKXps",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.exhaustion",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "exhaustion"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728388124871,
+        "modifiedTime": 1728388198285,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!ay3480O6PFfZrhBx.H9p5pye2IpTlKXps"
+    }
+  ],
   "folder": "PrScRYl7JdLxwH3K",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1709151724570,
-    "modifiedTime": 1709226592285,
+    "modifiedTime": 1728388218637,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "ay3480O6PFfZrhBx",

@@ -13,6 +13,10 @@ import { WildShapeTransformActorHandler } from "./wild-shape.js";
 import { SpellSearchIndex, SpellSearchApp, SpellSearchRenderActorSheetHandler } from "./apps/spell-search.js";
 import { StatRollerRenderActorSheetHandler } from "./apps/stat-roller.js";
 
+Hooks.once("init", () => {
+    CONFIG.DND5E.sourceBooks["Materia"] = "Materia D&D 5.M";
+})
+
 Hooks.once('init', () => {
     Settings.initialize();
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_THIRD_PACT_CASTER)) {

@@ -3,10 +3,7 @@
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "XGE",
-      "page": "164",
-      "license": ""
+      "book": "Materia"
     },
     "description": {
       "value": "<p>You choose an area of water that you can see within range and that fits within a 5-foot cube. You manipulate it in one of the following ways:</p><ul><li>You instantaneously move or otherwise change the flow of the water as you direct, up to 5 feet in any direction. This movement doesn't have enough force to cause damage.</li><li>You cause the water to form into simple shapes and animate at your direction. This change lasts for 1 hour.</li><li>You change the water's color or opacity. The water must be changed in the same way throughout. This change lasts for 1 hour.</li><li>You freeze the water, provided that there are no creatures in it. The water unfreezes in 1 hour.</li></ul><p>If you cast this spell multiple times, you can have no more than two of its non-instantaneous effects active at a time, and you can dismiss such an effect as an action.</p>",
@@ -29,12 +26,20 @@
       "units": "ft",
       "type": "cube",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "count": ""
+      }
     },
     "range": {
       "value": 30,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -84,7 +89,68 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": null
+    "ability": null,
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": []
+      },
+      "gmhSnPMYcEmeJ5CZ": {
+        "type": "utility",
+        "_id": "gmhSnPMYcEmeJ5CZ",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "img": "icons/creatures/fish/fish-marlin-swordfight-blue.webp",
   "ownership": {
@@ -100,18 +166,23 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.Wjs1RzvHwnAoH0Li",
       "spell-lists": "druid,sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "effects": [],
   "folder": "WtBByem45tjsGx6Z",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1708312544148,
-    "modifiedTime": 1708927608467,
+    "modifiedTime": 1730988959287,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "Wjs1RzvHwnAoH0Li",

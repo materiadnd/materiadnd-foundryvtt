@@ -9,7 +9,9 @@
       "value": "<p>The gravity in a 10-foot-radius sphere centered on a point you can see within range increases for a moment. Each creature in the sphere on the turn when you cast the spell must make a Constitution saving throw. On a failed save, a creature takes [[/r 2d8]] plus your spellcasting modifier force damage, and its speed is halved until the end of its next turn. On a successful save, a creature takes half as much damage and suffers no reduction to its speed.</p><p>Until the start of your next turn, any object that is not being worn or carried in the sphere requires a successful Strength check against your spell save DC to pick up or move.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by [[/r 1d8]] for each slot level above 1st.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -26,12 +28,20 @@
       "width": null,
       "units": "ft",
       "type": "sphere",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "count": ""
+      }
     },
     "range": {
       "value": 60,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -88,6 +98,13 @@
     "scaling": {
       "mode": "level",
       "formula": "1d8"
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -95,16 +112,21 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.PyGiGbe8QbBuYBth",
       "spell-lists": "wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1707663987977,
-    "modifiedTime": 1708928830321,
+    "modifiedTime": 1730089307394,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 5300000,

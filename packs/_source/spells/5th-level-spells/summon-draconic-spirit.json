@@ -3,10 +3,7 @@
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "book": "Materia"
     },
     "description": {
       "value": "<p>You call forth a draconic spirit. It manifests in an unoccupied space that you can see within range. This corporeal form uses the Draconic Spirit stat block. When you cast this spell, choose a family of dragon: chromatic, gem, or metallic. The creature resembles a dragon of the chosen family, which determines certain traits in its stat block. The creature disappears when it drops to 0 hit points or when the spell ends.</p><p>The creature is an ally to you and your companions. In combat, the creature acts during your turn. It obeys your verbal commands (no action required by you). If you don't issue any, it takes the @action[Dodge] action and uses its move to avoid danger.</p><p><strong>At Higher Levels.</strong>  When you cast this spell using a spell slot of 6th level or higher, use the higher level wherever the spell's level appears in the stat block.</p><p>When you cast this spell using a spell slot of 9th level or higher, grants a duration that does not require concentration.</p>",
@@ -32,12 +29,20 @@
       "units": "",
       "type": "",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 90,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -87,7 +92,111 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "TiV7MiHzCAnLqfyD": {
+        "type": "summon",
+        "_id": "TiV7MiHzCAnLqfyD",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "bonuses": {
+          "ac": "@item.level",
+          "hd": "@item.level",
+          "hp": "10 * @item.level",
+          "attackDamage": "@item.level",
+          "saveDamage": "",
+          "healing": ""
+        },
+        "creatureSizes": [],
+        "creatureTypes": [],
+        "match": {
+          "attacks": true,
+          "proficiency": true,
+          "saves": true
+        },
+        "profiles": [
+          {
+            "count": "",
+            "name": "",
+            "_id": "Dz1o7zcgxfKDu5IZ",
+            "uuid": "Compendium.materia-dnd.actors.Actor.1b3E6QRX05nq2G3Q",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": []
+          },
+          {
+            "count": "",
+            "name": "",
+            "_id": "If1C2BqpC6Y5V6VO",
+            "uuid": "Compendium.materia-dnd.actors.Actor.PwCRbv8XOoUirprW",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": []
+          },
+          {
+            "count": "",
+            "name": "",
+            "_id": "d5Un19M81izjXqbT",
+            "uuid": "Compendium.materia-dnd.actors.Actor.GgGbGP7yZXzeEGRt",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": []
+          }
+        ],
+        "summon": {
+          "prompt": true,
+          "mode": ""
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "img": "icons/creatures/reptiles/dragon-horned-blue.webp",
   "ownership": {
@@ -103,18 +212,28 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.vYCMKtBVX8JvCdPo",
       "spell-lists": "druid,sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
     }
   },
   "effects": [],
   "folder": "slWnSXtwvwnA9EXJ",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1709185332628,
-    "modifiedTime": 1709186114418,
+    "modifiedTime": 1728565597099,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "vYCMKtBVX8JvCdPo",

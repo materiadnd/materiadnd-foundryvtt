@@ -3,10 +3,7 @@
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "book": "Materia"
     },
     "description": {
       "value": "<p>You create intense pressure, unleash it in a 30-foot cone, and decide whether the pressure pulls or pushes creatures and objects. Each creature in that cone must make a Strength saving throw. A creature takes [[/r 6d6]] plus your spellcasting ability modifier force damage on a failed save, or half as much damage on a successful one. And every creature that fails the save is either pulled 15 feet toward you or pushed 15 feet away from you, depending on the choice you made for the spell.</p><p>In addition, unsecured objects that are completely within the cone are likewise pulled or pushed 15 feet.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 4th level or higher, the damage increases by [[/r 1d6]] and the distance pulled or pushed increases by 5 feet for each slot level above 3rd.</p>",
@@ -30,12 +27,20 @@
       "units": "ft",
       "type": "cone",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "count": ""
+      }
     },
     "range": {
       "value": null,
       "units": "self",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -90,7 +95,17 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "save": {
+          "ability": "str"
+        },
+        "appliedEffects": []
+      }
+    }
   },
   "img": "icons/magic/lightning/bolt-strike-explosion-purple.webp",
   "ownership": {
@@ -106,18 +121,36 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.Pi2sT5FifMMFutLd",
       "spell-lists": "artificer,sorcerer,warlock,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
     }
   },
   "effects": [],
   "folder": "CxgAwElQGTbcnuvc",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1708931260363,
-    "modifiedTime": 1713584796371,
+    "modifiedTime": 1728288789493,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "Pi2sT5FifMMFutLd",

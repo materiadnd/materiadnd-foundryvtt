@@ -10,10 +10,7 @@
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
@@ -30,12 +27,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 60,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -91,18 +95,100 @@
       "concentration",
       "mgc"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": [
+          "mVqFBzC5qYpFnZFV"
+        ]
+      },
+      "SDVaeQKidBeNsxN2": {
+        "type": "save",
+        "_id": "SDVaeQKidBeNsxN2",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "con",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Subsequent Save",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.IHcKNLSWj9E8BnQ4",
       "spell-lists": "druid,warlock,sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      }
     }
   },
   "img": "icons/magic/control/energy-stream-link-large-blue.webp",
   "effects": [
     {
-      "name": "Flesh to Stone",
+      "name": "Turning to Stone",
       "origin": "Compendium.dnd5e.spells.Item.kozNy29b0X6exFhY",
       "duration": {
         "startTime": null,
@@ -124,16 +210,16 @@
       "flags": {},
       "tint": "#ffffff",
       "_stats": {
-        "coreVersion": "12.325",
+        "coreVersion": "12.331",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "modifiedTime": 1728646119065,
+        "lastModifiedBy": "dnd5mbuilder0000",
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "icons/magic/control/energy-stream-link-large-blue.webp",
+      "img": "icons/magic/earth/strike-fist-stone.webp",
       "type": "base",
       "system": {},
       "sort": 0,
@@ -143,12 +229,11 @@
   "folder": "UjV13fGRtZfpmOAS",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1661787234215,
-    "modifiedTime": 1711345729962,
+    "modifiedTime": 1728646340170,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "IHcKNLSWj9E8BnQ4",

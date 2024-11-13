@@ -9,7 +9,9 @@
       "value": "<p>You draw on knowledge from spirits of the past. Choose one skill or tool in which you lack proficiency. For the spell's duration, you have proficiency in the chosen skill or tool. The spell ends early if you cast it again.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 4th to 5th level, you gain an additional skill or tool in which you lack proficiency.</p><p>When you cast this spell using a spell slot of 6th level, the duration does not require concentration.</p><p>When you cast this spell using a slot of 7th or 8th level, you gain expertise in a skill or tool you have proficiency with.</p><p>When you cast this spell using a slot of 9th level, you gain expertise in all skill or tool you have proficiency with, and the duration is 8 hours.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -26,12 +28,19 @@
       "width": null,
       "units": "",
       "type": "self",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "self"
+      "units": "self",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -84,23 +93,938 @@
     "scaling": {
       "mode": "none",
       "formula": ""
+    },
+    "activities": {
+      "DuoQMbSbc5dtoTUW": {
+        "type": "utility",
+        "_id": "DuoQMbSbc5dtoTUW",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "OOuyymVMFiGMtY1q"
+          },
+          {
+            "_id": "Lf0IYuX7s1kQC9v2"
+          },
+          {
+            "_id": "y6kjJXPAppJRirIF"
+          },
+          {
+            "_id": "otJZjOubDNQ78Fcb"
+          },
+          {
+            "_id": "FZAQ7Nuivsee857N"
+          },
+          {
+            "_id": "qKOPXiwm0z5xyXNp"
+          },
+          {
+            "_id": "vqwMkMcgMc2CUdw4"
+          },
+          {
+            "_id": "qHezAsPLDPIMeNuh"
+          },
+          {
+            "_id": "qeY4yBlDgqxfyKmI"
+          },
+          {
+            "_id": "hCgxz25Phm7k9nSh"
+          },
+          {
+            "_id": "SzA0c3HgeKZAJBoy"
+          },
+          {
+            "_id": "Qi3FFDLeQ0ISvHgB"
+          },
+          {
+            "_id": "JwjhCuNUqC9MC0KE"
+          },
+          {
+            "_id": "399Ly4pGZY0PYm5r"
+          },
+          {
+            "_id": "E41pSMAbHzPrqPYW"
+          },
+          {
+            "_id": "RbwoZS0me80mUc2O"
+          },
+          {
+            "_id": "B6Mab4jNaO8mN7Ol"
+          },
+          {
+            "_id": "JXhtKe7dbPodXLQE"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Add Proficiency",
+        "img": "",
+        "appliedEffects": [
+          "OOuyymVMFiGMtY1q",
+          "Lf0IYuX7s1kQC9v2",
+          "y6kjJXPAppJRirIF",
+          "otJZjOubDNQ78Fcb",
+          "FZAQ7Nuivsee857N",
+          "qKOPXiwm0z5xyXNp",
+          "vqwMkMcgMc2CUdw4",
+          "qHezAsPLDPIMeNuh",
+          "qeY4yBlDgqxfyKmI",
+          "hCgxz25Phm7k9nSh",
+          "SzA0c3HgeKZAJBoy",
+          "Qi3FFDLeQ0ISvHgB",
+          "JwjhCuNUqC9MC0KE",
+          "399Ly4pGZY0PYm5r",
+          "E41pSMAbHzPrqPYW",
+          "RbwoZS0me80mUc2O",
+          "B6Mab4jNaO8mN7Ol",
+          "JXhtKe7dbPodXLQE"
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Borrowed Proficiency (Acrobatics)",
+      "img": "icons/sundries/books/book-stack.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.lBKzvHuaVQxibIpF",
+      "transfer": false,
+      "_id": "OOuyymVMFiGMtY1q",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.acr.value",
+          "mode": 4,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730122286996,
+        "modifiedTime": 1730122350318,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!lBKzvHuaVQxibIpF.OOuyymVMFiGMtY1q"
+    },
+    {
+      "name": "Borrowed Proficiency (Animal Handling)",
+      "img": "icons/sundries/books/book-stack.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.lBKzvHuaVQxibIpF",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.ani.value",
+          "mode": 4,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730122359830,
+        "modifiedTime": 1730122431691,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "Lf0IYuX7s1kQC9v2",
+      "_key": "!items.effects!lBKzvHuaVQxibIpF.Lf0IYuX7s1kQC9v2"
+    },
+    {
+      "name": "Borrowed Proficiency (Arcana)",
+      "img": "icons/sundries/books/book-stack.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.lBKzvHuaVQxibIpF",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.arc.value",
+          "mode": 4,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730122361686,
+        "modifiedTime": 1730122459216,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "y6kjJXPAppJRirIF",
+      "_key": "!items.effects!lBKzvHuaVQxibIpF.y6kjJXPAppJRirIF"
+    },
+    {
+      "name": "Borrowed Proficiency (Athletics)",
+      "img": "icons/sundries/books/book-stack.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.lBKzvHuaVQxibIpF",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.ath.value",
+          "mode": 4,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730122370507,
+        "modifiedTime": 1730122481436,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "otJZjOubDNQ78Fcb",
+      "_key": "!items.effects!lBKzvHuaVQxibIpF.otJZjOubDNQ78Fcb"
+    },
+    {
+      "name": "Borrowed Proficiency (Deception)",
+      "img": "icons/sundries/books/book-stack.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.lBKzvHuaVQxibIpF",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.dec.value",
+          "mode": 4,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730122381977,
+        "modifiedTime": 1730122496585,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "FZAQ7Nuivsee857N",
+      "_key": "!items.effects!lBKzvHuaVQxibIpF.FZAQ7Nuivsee857N"
+    },
+    {
+      "name": "Borrowed Proficiency (History)",
+      "img": "icons/sundries/books/book-stack.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.lBKzvHuaVQxibIpF",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.his.value",
+          "mode": 4,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730122384358,
+        "modifiedTime": 1730122518920,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "qKOPXiwm0z5xyXNp",
+      "_key": "!items.effects!lBKzvHuaVQxibIpF.qKOPXiwm0z5xyXNp"
+    },
+    {
+      "name": "Borrowed Proficiency (Insight)",
+      "img": "icons/sundries/books/book-stack.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.lBKzvHuaVQxibIpF",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.insr.value",
+          "mode": 4,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730122385876,
+        "modifiedTime": 1730122532899,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "vqwMkMcgMc2CUdw4",
+      "_key": "!items.effects!lBKzvHuaVQxibIpF.vqwMkMcgMc2CUdw4"
+    },
+    {
+      "name": "Borrowed Proficiency (Intimidation)",
+      "img": "icons/sundries/books/book-stack.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.lBKzvHuaVQxibIpF",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.itm.value",
+          "mode": 4,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730122387566,
+        "modifiedTime": 1730122747557,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "qHezAsPLDPIMeNuh",
+      "_key": "!items.effects!lBKzvHuaVQxibIpF.qHezAsPLDPIMeNuh"
+    },
+    {
+      "name": "Borrowed Proficiency (Investigation)",
+      "img": "icons/sundries/books/book-stack.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.lBKzvHuaVQxibIpF",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.inv.value",
+          "mode": 4,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730122390257,
+        "modifiedTime": 1730122568158,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "qeY4yBlDgqxfyKmI",
+      "_key": "!items.effects!lBKzvHuaVQxibIpF.qeY4yBlDgqxfyKmI"
+    },
+    {
+      "name": "Borrowed Proficiency (Medicine)",
+      "img": "icons/sundries/books/book-stack.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.lBKzvHuaVQxibIpF",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.med.value",
+          "mode": 4,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730122392168,
+        "modifiedTime": 1730122580265,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "hCgxz25Phm7k9nSh",
+      "_key": "!items.effects!lBKzvHuaVQxibIpF.hCgxz25Phm7k9nSh"
+    },
+    {
+      "name": "Borrowed Proficiency (Nature)",
+      "img": "icons/sundries/books/book-stack.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.lBKzvHuaVQxibIpF",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.nat.value",
+          "mode": 4,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730122394205,
+        "modifiedTime": 1730122590943,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "SzA0c3HgeKZAJBoy",
+      "_key": "!items.effects!lBKzvHuaVQxibIpF.SzA0c3HgeKZAJBoy"
+    },
+    {
+      "name": "Borrowed Proficiency (Perception)",
+      "img": "icons/sundries/books/book-stack.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.lBKzvHuaVQxibIpF",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.prc.value",
+          "mode": 4,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730122396107,
+        "modifiedTime": 1730122610960,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "Qi3FFDLeQ0ISvHgB",
+      "_key": "!items.effects!lBKzvHuaVQxibIpF.Qi3FFDLeQ0ISvHgB"
+    },
+    {
+      "name": "Borrowed Proficiency (Performance)",
+      "img": "icons/sundries/books/book-stack.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.lBKzvHuaVQxibIpF",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.prf.value",
+          "mode": 4,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730122397764,
+        "modifiedTime": 1730122631305,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "JwjhCuNUqC9MC0KE",
+      "_key": "!items.effects!lBKzvHuaVQxibIpF.JwjhCuNUqC9MC0KE"
+    },
+    {
+      "name": "Borrowed Proficiency (Persuasion)",
+      "img": "icons/sundries/books/book-stack.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.lBKzvHuaVQxibIpF",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.per.value",
+          "mode": 4,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730122399359,
+        "modifiedTime": 1730122645260,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "399Ly4pGZY0PYm5r",
+      "_key": "!items.effects!lBKzvHuaVQxibIpF.399Ly4pGZY0PYm5r"
+    },
+    {
+      "name": "Borrowed Proficiency (Religion)",
+      "img": "icons/sundries/books/book-stack.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.lBKzvHuaVQxibIpF",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.rel.value",
+          "mode": 4,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730122401037,
+        "modifiedTime": 1730122665731,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "E41pSMAbHzPrqPYW",
+      "_key": "!items.effects!lBKzvHuaVQxibIpF.E41pSMAbHzPrqPYW"
+    },
+    {
+      "name": "Borrowed Proficiency (Sleight of Hand)",
+      "img": "icons/sundries/books/book-stack.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.lBKzvHuaVQxibIpF",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.slt.value",
+          "mode": 4,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730122402693,
+        "modifiedTime": 1730122681779,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "RbwoZS0me80mUc2O",
+      "_key": "!items.effects!lBKzvHuaVQxibIpF.RbwoZS0me80mUc2O"
+    },
+    {
+      "name": "Borrowed Proficiency (Stealth)",
+      "img": "icons/sundries/books/book-stack.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.lBKzvHuaVQxibIpF",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.ste.value",
+          "mode": 4,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730122404255,
+        "modifiedTime": 1730122704435,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "B6Mab4jNaO8mN7Ol",
+      "_key": "!items.effects!lBKzvHuaVQxibIpF.B6Mab4jNaO8mN7Ol"
+    },
+    {
+      "name": "Borrowed Proficiency (Survival)",
+      "img": "icons/sundries/books/book-stack.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.lBKzvHuaVQxibIpF",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.sur.value",
+          "mode": 4,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730122405579,
+        "modifiedTime": 1730122735681,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "JXhtKe7dbPodXLQE",
+      "_key": "!items.effects!lBKzvHuaVQxibIpF.JXhtKe7dbPodXLQE"
+    }
+  ],
   "flags": {
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.lBKzvHuaVQxibIpF",
       "spell-lists": "bard,cleric,warlock,wizard"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1708310987619,
-    "modifiedTime": 1708930454014,
+    "modifiedTime": 1730122951654,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 7300000,

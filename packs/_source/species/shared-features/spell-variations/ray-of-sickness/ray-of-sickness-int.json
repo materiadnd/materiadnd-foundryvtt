@@ -5,11 +5,11 @@
   "img": "icons/magic/unholy/beam-impact-green.webp",
   "system": {
     "description": {
-      "value": "<p>A ray of sickening greenish energy lashes out toward a creature within range and explodes in a nauseous gas upon impact. Make a ranged spell attack against the target. On a hit, the target takes 2d8 poison damage. The target of the attack and each creature within 5 feet of it must make a Constitution saving throw or be poisoned until the end of your next turn.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.</p>",
+      "value": "<p>A ray of sickening greenish energy lashes out toward a creature within range and explodes in a nauseous gas upon impact. Make a ranged spell attack against the target. On a hit, the target takes [[/r 2d8]] poison damage. The target of the attack and each creature within 5 feet of it must make a Constitution saving throw or be poisoned until the end of your next turn.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by [[/r 1d8]] for each slot level above 1st.</p>",
       "chat": ""
     },
     "source": {
-      "custom": ""
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
@@ -27,12 +27,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 60,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -89,6 +96,93 @@
     "scaling": {
       "mode": "level",
       "formula": "1d8"
+    },
+    "activities": {
+      "zdplAinb6SvKo2uR": {
+        "type": "attack",
+        "_id": "zdplAinb6SvKo2uR",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "attack": {
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": ""
+          },
+          "ability": "",
+          "bonus": ""
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": true,
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "poison"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -104,7 +198,6 @@
     "createdTime": 1707664105719,
     "modifiedTime": 1720058087215,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "ownership": {

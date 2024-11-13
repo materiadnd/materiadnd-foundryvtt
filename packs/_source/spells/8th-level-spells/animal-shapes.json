@@ -10,10 +10,7 @@
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
@@ -30,12 +27,20 @@
       "width": null,
       "units": "any",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 30,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -89,25 +94,124 @@
       "somatic",
       "concentration"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "4AdIbLkeWWe3Emj2": {
+        "type": "utility",
+        "_id": "4AdIbLkeWWe3Emj2",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {},
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "hcMsCyhxrnd3m4c4"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.1pMJkY5zqxZZncmi",
       "spell-lists": "druid"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
     }
   },
   "img": "icons/magic/nature/wolf-paw-glow-large-teal-blue.webp",
-  "effects": [],
+  "effects": [
+    {
+      "name": "Transformed into Beast",
+      "img": "icons/magic/nature/wolf-paw-glow-large-teal-blue.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.1pMJkY5zqxZZncmi",
+      "transfer": false,
+      "_id": "hcMsCyhxrnd3m4c4",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 86400,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>Each target transforms into the form of a Large or smaller beast that uses the Bestial Spirit stat block. If the form taken is Tiny then use the Small Bestial Spirit stat block and replace its Hit Dice with d4s. On subsequent turns, you can use your action to transform affected creatures into new forms as shown in the Bestial Spirit stat block.</p><p>The transformation lasts for the duration for each target, or until the target drops to 0 hit points or dies. You can choose a different form for each target. A target's game statistics are replaced by the statistics of the chosen Bestial Spirit, though the target retains its alignment and Intelligence, Wisdom, and Charisma scores. The target assumes the hit points of its new form, and when it reverts to its normal form, it returns to the number of hit points it had before it transformed. If it reverts as a result of dropping to 0 hit points, any excess damage carries over to its normal form. As long as the excess damage does not reduce the creature's normal form to 0 hit points, it is not knocked unconscious. The creature is limited in the actions it can perform by the nature of its new form, and it cannot speak or cast spells.</p><p>The target's gear melds into the new form. The target cannot activate, wield, or otherwise benefit from any of its equipment.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728913213630,
+        "modifiedTime": 1728913262870,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!1pMJkY5zqxZZncmi.hcMsCyhxrnd3m4c4"
+    }
+  ],
   "folder": "IeD7MeayeQqIoNnW",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1661787234225,
-    "modifiedTime": 1709231525089,
+    "modifiedTime": 1728913496320,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "1pMJkY5zqxZZncmi",

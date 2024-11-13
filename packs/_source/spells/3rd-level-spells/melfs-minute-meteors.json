@@ -9,7 +9,9 @@
       "value": "<p>You create six tiny meteors in your space. They float in the air and orbit you for the spell's duration. When you cast the spell - and as a bonus action on each of your turns thereafter - you can expend a number of meteors up to your proficiency bonus, sending them streaking toward a point or points you choose within 120 feet of you. Once a meteor reaches its destination or impacts against a solid surface, the meteor explodes. Each creature within 5 feet of the point where the meteor explodes must make a Dexterity saving throw. A creature takes [[/r 2d6]] fire damage on a failed save, or half as much damage on a successful one.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 4th level or higher, the number of meteors created increases by two for each slot level above 3rd.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -26,12 +28,19 @@
       "width": null,
       "units": "",
       "type": "self",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 120,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -90,9 +99,360 @@
     "scaling": {
       "mode": "none",
       "formula": ""
+    },
+    "activities": {
+      "ecM6bvOi3PYc5ft5": {
+        "type": "utility",
+        "_id": "ecM6bvOi3PYc5ft5",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "R3IGjzKuP7AOHiOn"
+          },
+          {
+            "_id": "E0sIYekg41KTcPB7"
+          },
+          {
+            "_id": "qYyAIR0h3b7DKPD0"
+          },
+          {
+            "_id": "gp0dXgMFGg6IZ8VQ"
+          },
+          {
+            "_id": "9a5kZkTgobzvPSXg"
+          },
+          {
+            "_id": "nUJlYNvZtk3JqsM6"
+          }
+        ],
+        "range": {
+          "override": true,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Conjure Meteors",
+        "img": "",
+        "appliedEffects": [
+          "R3IGjzKuP7AOHiOn",
+          "E0sIYekg41KTcPB7",
+          "qYyAIR0h3b7DKPD0",
+          "gp0dXgMFGg6IZ8VQ",
+          "9a5kZkTgobzvPSXg",
+          "nUJlYNvZtk3JqsM6"
+        ]
+      },
+      "dnd5eactivity000": {
+        "sort": 100000,
+        "name": "Hurl Meteor",
+        "img": "",
+        "consumption": {
+          "spellSlot": false
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "fire"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "activation": {
+          "override": true,
+          "type": "bonus",
+          "condition": ""
+        },
+        "duration": {
+          "override": true
+        },
+        "target": {
+          "override": true,
+          "affects": {
+            "count": "",
+            "type": "space",
+            "special": ""
+          },
+          "template": {
+            "type": "square",
+            "size": "5",
+            "count": ""
+          }
+        }
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Meteor 1",
+      "img": "icons/magic/earth/projectiles-fire-stone-salvo.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.nTIREV9K5Z0F1596",
+      "transfer": false,
+      "_id": "R3IGjzKuP7AOHiOn",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>This meteor floats in the air and orbits you for the spell's duration. When you cast the spell - and as a bonus action on each of your turns thereafter - you can expend a number of meteors up to your proficiency bonus, sending them streaking toward a point or points you choose within 120 feet of you. Once a meteor reaches its destination or impacts against a solid surface, the meteor explodes. Each creature within 5 feet of the point where the meteor explodes must make a Dexterity saving throw. A creature takes 2d6 fire damage on a failed save, or half as much damage on a successful one.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728282895009,
+        "modifiedTime": 1728282947097,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!nTIREV9K5Z0F1596.R3IGjzKuP7AOHiOn"
+    },
+    {
+      "name": "Meteor 2",
+      "img": "icons/magic/earth/projectiles-fire-stone-salvo.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.nTIREV9K5Z0F1596",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>This meteor floats in the air and orbits you for the spell's duration. When you cast the spell - and as a bonus action on each of your turns thereafter - you can expend a number of meteors up to your proficiency bonus, sending them streaking toward a point or points you choose within 120 feet of you. Once a meteor reaches its destination or impacts against a solid surface, the meteor explodes. Each creature within 5 feet of the point where the meteor explodes must make a Dexterity saving throw. A creature takes 2d6 fire damage on a failed save, or half as much damage on a successful one.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728282970858,
+        "modifiedTime": 1728282986858,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "E0sIYekg41KTcPB7",
+      "_key": "!items.effects!nTIREV9K5Z0F1596.E0sIYekg41KTcPB7"
+    },
+    {
+      "name": "Meteor 6",
+      "img": "icons/magic/earth/projectiles-fire-stone-salvo.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.nTIREV9K5Z0F1596",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>This meteor floats in the air and orbits you for the spell's duration. When you cast the spell - and as a bonus action on each of your turns thereafter - you can expend a number of meteors up to your proficiency bonus, sending them streaking toward a point or points you choose within 120 feet of you. Once a meteor reaches its destination or impacts against a solid surface, the meteor explodes. Each creature within 5 feet of the point where the meteor explodes must make a Dexterity saving throw. A creature takes 2d6 fire damage on a failed save, or half as much damage on a successful one.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728282973363,
+        "modifiedTime": 1728283001953,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "nUJlYNvZtk3JqsM6",
+      "_key": "!items.effects!nTIREV9K5Z0F1596.nUJlYNvZtk3JqsM6"
+    },
+    {
+      "name": "Meteor 3",
+      "img": "icons/magic/earth/projectiles-fire-stone-salvo.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.nTIREV9K5Z0F1596",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>This meteor floats in the air and orbits you for the spell's duration. When you cast the spell - and as a bonus action on each of your turns thereafter - you can expend a number of meteors up to your proficiency bonus, sending them streaking toward a point or points you choose within 120 feet of you. Once a meteor reaches its destination or impacts against a solid surface, the meteor explodes. Each creature within 5 feet of the point where the meteor explodes must make a Dexterity saving throw. A creature takes 2d6 fire damage on a failed save, or half as much damage on a successful one.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728282975385,
+        "modifiedTime": 1728282990712,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "qYyAIR0h3b7DKPD0",
+      "_key": "!items.effects!nTIREV9K5Z0F1596.qYyAIR0h3b7DKPD0"
+    },
+    {
+      "name": "Meteor 4",
+      "img": "icons/magic/earth/projectiles-fire-stone-salvo.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.nTIREV9K5Z0F1596",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>This meteor floats in the air and orbits you for the spell's duration. When you cast the spell - and as a bonus action on each of your turns thereafter - you can expend a number of meteors up to your proficiency bonus, sending them streaking toward a point or points you choose within 120 feet of you. Once a meteor reaches its destination or impacts against a solid surface, the meteor explodes. Each creature within 5 feet of the point where the meteor explodes must make a Dexterity saving throw. A creature takes 2d6 fire damage on a failed save, or half as much damage on a successful one.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728282977657,
+        "modifiedTime": 1728282994139,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "gp0dXgMFGg6IZ8VQ",
+      "_key": "!items.effects!nTIREV9K5Z0F1596.gp0dXgMFGg6IZ8VQ"
+    },
+    {
+      "name": "Meteor 5",
+      "img": "icons/magic/earth/projectiles-fire-stone-salvo.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.nTIREV9K5Z0F1596",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>This meteor floats in the air and orbits you for the spell's duration. When you cast the spell - and as a bonus action on each of your turns thereafter - you can expend a number of meteors up to your proficiency bonus, sending them streaking toward a point or points you choose within 120 feet of you. Once a meteor reaches its destination or impacts against a solid surface, the meteor explodes. Each creature within 5 feet of the point where the meteor explodes must make a Dexterity saving throw. A creature takes 2d6 fire damage on a failed save, or half as much damage on a successful one.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728282980549,
+        "modifiedTime": 1728282997926,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "9a5kZkTgobzvPSXg",
+      "_key": "!items.effects!nTIREV9K5Z0F1596.9a5kZkTgobzvPSXg"
+    }
+  ],
   "sort": 5300000,
   "ownership": {
     "default": 0
@@ -101,16 +461,34 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.nTIREV9K5Z0F1596",
       "spell-lists": "druid,sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1708819168957,
-    "modifiedTime": 1713584796371,
+    "modifiedTime": 1728283147917,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_key": "!items!nTIREV9K5Z0F1596"

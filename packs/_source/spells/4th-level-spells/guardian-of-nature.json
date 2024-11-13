@@ -3,10 +3,7 @@
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "XGE",
-      "page": "157",
-      "license": ""
+      "book": "Materia"
     },
     "description": {
       "value": "<p>A nature spirit answers your call and transforms you into a powerful guardian. The transformation lasts until the spell ends. You choose one of the following forms to assume: Primal Beast or Great Tree.</p><p><strong>Primal Beast.</strong></p><p>Bestial fur covers your body, your facial features become feral, and you gain the following benefits:</p><ul><li>Your walking speed increases by 10 feet.</li><li>You gain darkvision with a range of 120 feet.</li><li>You make Strength-based attack rolls with advantage.</li><li>Your melee weapon attacks deal an extra [[/r 1d6]] force damage on a hit.</li></ul><p><strong>Great Tree.</strong></p><p>Your skin appears barky, leaves sprout from your hair, and you gain the following benefits:</p><ul><li>You gain 10 temporary hit points.</li><li>You make Constitution saving throws with advantage.</li><li>You make Dexterity- and Wisdom-based attack rolls with advantage.</li><li>While you are on the ground, the ground within 15 feet of you is difficult terrain for your enemies.</li></ul>",
@@ -31,12 +28,19 @@
       "units": "self",
       "type": "self",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "units": "self",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "bonus",
@@ -91,7 +95,136 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "AbMS5sTtNQQzW3DS": {
+        "type": "utility",
+        "_id": "AbMS5sTtNQQzW3DS",
+        "sort": -200000,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "UtYkLHhzzCJcfhNS"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Primal Beast",
+        "img": "icons/creatures/abilities/cougar-roar-rush-orange.webp",
+        "appliedEffects": []
+      },
+      "RIL29JeRfo2He85K": {
+        "type": "heal",
+        "_id": "RIL29JeRfo2He85K",
+        "sort": -100000,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "E4IqEl7muEDlo74f"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": 10,
+          "denomination": "",
+          "types": [
+            "temphp"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1,
+            "mode": ""
+          },
+          "bonus": ""
+        },
+        "name": "Great Tree",
+        "img": "icons/magic/nature/tree-animated-smile.webp",
+        "appliedEffects": [
+          "E4IqEl7muEDlo74f"
+        ]
+      }
+    }
   },
   "img": "icons/magic/nature/root-vines-face-glow-green.webp",
   "ownership": {
@@ -107,25 +240,86 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.asKlBmBcM572XTWq",
       "spell-lists": "druid,ranger"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "effects": [
     {
-      "name": "Primal Beast",
+      "name": "Great Tree",
+      "img": "icons/magic/nature/tree-animated-smile.webp",
       "origin": "Compendium.materia-dnd.spells.Item.asKlBmBcM572XTWq",
+      "transfer": false,
+      "_id": "E4IqEl7muEDlo74f",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "flags.midi-qol.advantage.ability.save.con",
+          "mode": 0,
+          "value": "1",
+          "priority": null
+        },
+        {
+          "key": "flags.midi-qol.advantage.attack.dex",
+          "mode": 0,
+          "value": "1",
+          "priority": null
+        },
+        {
+          "key": "flags.midi-qol.advantage.attack.wis",
+          "mode": 0,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
       "duration": {
-        "rounds": null,
         "startTime": null,
-        "seconds": null,
+        "seconds": 60,
         "combat": null,
+        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
+      "description": "<p>Your skin appears barky, leaves sprout from your hair, and you gain the following benefits:</p><ul><li>You gain 10 temporary hit points.</li><li>You make Constitution saving throws with advantage.</li><li>You make Dexterity- and Wisdom-based attack rolls with advantage.</li><li>While you are on the ground, the ground within 15 feet of you is difficult terrain for your enemies.</li></ul>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
       "flags": {},
-      "img": "icons/magic/nature/root-vines-face-glow-green.webp",
-      "_id": "LhGG5bdSsuBwPuzG",
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728384993958,
+        "modifiedTime": 1728385095461,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!asKlBmBcM572XTWq.E4IqEl7muEDlo74f"
+    },
+    {
+      "name": "Primal Beast",
+      "img": "icons/creatures/abilities/cougar-roar-rush-orange.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.asKlBmBcM572XTWq",
+      "transfer": false,
+      "_id": "UtYkLHhzzCJcfhNS",
       "type": "base",
       "system": {},
       "changes": [
@@ -154,94 +348,42 @@
           "priority": null
         }
       ],
-      "description": "",
-      "tint": "#ffffff",
-      "transfer": true,
-      "statuses": [],
-      "sort": 0,
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.328",
-        "systemId": "dnd5e",
-        "systemVersion": "3.2.1",
-        "createdTime": 1720058585549,
-        "modifiedTime": 1720058732202,
-        "lastModifiedBy": "dnd5mbuilder0000"
-      },
-      "_key": "!items.effects!asKlBmBcM572XTWq.LhGG5bdSsuBwPuzG"
-    },
-    {
-      "name": "Great Tree",
-      "origin": "Compendium.materia-dnd.spells.Item.asKlBmBcM572XTWq",
+      "disabled": false,
       "duration": {
-        "rounds": null,
         "startTime": null,
-        "seconds": null,
+        "seconds": 60,
         "combat": null,
+        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "flags": {},
-      "img": "icons/magic/nature/root-vines-face-glow-green.webp",
-      "_id": "IbzSjAsi9V7gTk9E",
-      "type": "base",
-      "system": {},
-      "changes": [
-        {
-          "key": "flags.midi-qol.advantage.ability.save.con",
-          "mode": 0,
-          "value": "1",
-          "priority": null
-        },
-        {
-          "key": "flags.midi-qol.advantage.attack.wis",
-          "mode": 0,
-          "value": "1",
-          "priority": null
-        },
-        {
-          "key": "flags.midi-qol.advantage.attack.dex",
-          "mode": 0,
-          "value": "1",
-          "priority": null
-        },
-        {
-          "key": "system.attributes.hp.temp",
-          "mode": 2,
-          "value": "10",
-          "priority": null
-        }
-      ],
-      "description": "",
+      "description": "<p>Bestial fur covers your body, your facial features become feral, and you gain the following benefits:</p><ul><li>Your walking speed increases by 10 feet.</li><li>You gain darkvision with a range of 120 feet.</li><li>You make Strength-based attack rolls with advantage.</li><li>Your melee weapon attacks deal an extra 1d6 force damage on a hit.</li></ul>",
       "tint": "#ffffff",
-      "transfer": true,
       "statuses": [],
       "sort": 0,
+      "flags": {},
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.328",
+        "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "3.2.1",
-        "createdTime": 1720058585750,
-        "modifiedTime": 1720058921065,
+        "systemVersion": "4.0.4",
+        "createdTime": 1728385216484,
+        "modifiedTime": 1728385405468,
         "lastModifiedBy": "dnd5mbuilder0000"
       },
-      "_key": "!items.effects!asKlBmBcM572XTWq.IbzSjAsi9V7gTk9E"
+      "_key": "!items.effects!asKlBmBcM572XTWq.UtYkLHhzzCJcfhNS"
     }
   ],
   "folder": "PrScRYl7JdLxwH3K",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.2.1",
-    "coreVersion": "12.328",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1709152490462,
-    "modifiedTime": 1720058749828,
+    "modifiedTime": 1728385428682,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "asKlBmBcM572XTWq",

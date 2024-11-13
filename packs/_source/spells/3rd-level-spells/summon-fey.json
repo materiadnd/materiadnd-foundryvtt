@@ -3,10 +3,7 @@
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "book": "Materia"
     },
     "description": {
       "value": "<p>You call forth a fey spirit. It manifests in an unoccupied space that you can see within range. This corporeal form uses the Fey Spirit stat block. When you cast the spell, choose a mood: Fuming, Mirthful, or Tricksy. The creature resembles a fey creature of your choice marked by the chosen mood, which determines one of the traits in its stat block. The creature disappears when it drops to 0 hit points or when the spell ends.</p><p>@UUID[Compendium.materia-dnd.actors.Actor.XDI0Xr2KzRE7EXvZ]{Fey Spirit - Fuming}</p><p>@UUID[Compendium.materia-dnd.actors.Actor.35eogKmmM3tikO21]{Fey Spirit - Mirthful}</p><p>@UUID[Compendium.materia-dnd.actors.Actor.kfMCS4N7PtqjxlpV]{Fey Spirit - Tricksy}</p><p>The creature is an ally to you and your companions. In combat, the creature acts during your turn. It obeys your verbal commands (no action required by you). If you don't issue any, it takes the @action[Dodge] action and uses its move to avoid danger.</p><p><strong>At Higher Levels</strong>. </span>When you cast this spell using a spell slot of 4th level or higher, use the higher level wherever the spell's level appears in the stat block.</p><p>When you cast this spell using a spell slot of 9th level or higher, grants a duration that does not require concentration.</p>",
@@ -33,12 +30,20 @@
       "units": "",
       "type": "",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 90,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -119,6 +124,110 @@
           "uuid": "Compendium.materia-dnd.actors.Actor.kfMCS4N7PtqjxlpV"
         }
       ]
+    },
+    "activities": {
+      "mShlhyZkQqSDs4GS": {
+        "type": "summon",
+        "_id": "mShlhyZkQqSDs4GS",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "bonuses": {
+          "ac": "@item.level",
+          "hd": "",
+          "hp": "@item.level * 10",
+          "attackDamage": "@item.level",
+          "saveDamage": "@item.level",
+          "healing": "@item.level"
+        },
+        "creatureSizes": [],
+        "creatureTypes": [],
+        "match": {
+          "attacks": true,
+          "proficiency": true,
+          "saves": true
+        },
+        "profiles": [
+          {
+            "count": "",
+            "name": "",
+            "_id": "cZ3YiOkc5qog6iHm",
+            "uuid": "Compendium.materia-dnd.actors.Actor.XDI0Xr2KzRE7EXvZ",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": []
+          },
+          {
+            "count": "",
+            "name": "",
+            "_id": "shpx0BBE65QPhVwm",
+            "uuid": "Compendium.materia-dnd.actors.Actor.35eogKmmM3tikO21",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": []
+          },
+          {
+            "count": "",
+            "name": "",
+            "_id": "yqvl4k1f9FRT4OOd",
+            "uuid": "Compendium.materia-dnd.actors.Actor.kfMCS4N7PtqjxlpV",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": []
+          }
+        ],
+        "summon": {
+          "prompt": true,
+          "mode": ""
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "img": "icons/creatures/mammals/elk-moose-marked-green.webp",
@@ -153,18 +262,28 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.LXv3UjhBq0OcC6sA",
       "spell-lists": "druid,ranger,warlock,wizard"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "effects": [],
   "folder": "CxgAwElQGTbcnuvc",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1708931717817,
-    "modifiedTime": 1713584796371,
+    "modifiedTime": 1730169104256,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "LXv3UjhBq0OcC6sA",

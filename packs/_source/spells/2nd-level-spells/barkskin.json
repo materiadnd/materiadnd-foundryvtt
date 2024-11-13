@@ -8,10 +8,7 @@
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "Materia Source of Truth",
-      "page": "",
-      "license": ""
+      "book": "Materia"
     },
     "activation": {
       "type": "bonus",
@@ -28,12 +25,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "touch"
+      "units": "touch",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -86,7 +90,21 @@
       "vocal",
       "material"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "appliedEffects": [
+          "uM6rgctYpcbCVSkn"
+        ],
+        "effects": [
+          {
+            "_id": "uM6rgctYpcbCVSkn"
+          }
+        ]
+      }
+    }
   },
   "effects": [
     {
@@ -95,14 +113,14 @@
       "changes": [
         {
           "key": "system.attributes.ac.formula",
-          "value": "16",
           "mode": 5,
+          "value": "15 + max(2, @abilities.dex.mod)",
           "priority": null
         },
         {
           "key": "system.attributes.ac.calc",
-          "value": "custom",
           "mode": 5,
+          "value": "custom",
           "priority": null
         }
       ],
@@ -123,12 +141,12 @@
       "description": "",
       "statuses": [],
       "_stats": {
-        "coreVersion": "12.325",
+        "coreVersion": "12.331",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "modifiedTime": 1728025147687,
+        "lastModifiedBy": "dnd5mbuilder0000",
         "compendiumSource": null,
         "duplicateSource": null
       },
@@ -144,16 +162,26 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.xjqKL8Z2me1lZPhW",
       "spell-lists": "druid,ranger"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1661787234113,
-    "modifiedTime": 1708930454014,
+    "modifiedTime": 1728025172537,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "xjqKL8Z2me1lZPhW",

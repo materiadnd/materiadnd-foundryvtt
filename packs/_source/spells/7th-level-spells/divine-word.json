@@ -10,10 +10,7 @@
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "book": "Materia"
     },
     "activation": {
       "type": "bonus",
@@ -30,12 +27,20 @@
       "width": null,
       "units": "any",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 60,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -87,18 +92,54 @@
     "properties": [
       "vocal"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "dnd5eactivity000": {
+        "effects": [
+          {
+            "_id": "ng33sfAG959luxm1",
+            "onSave": false
+          },
+          {
+            "_id": "WFygB4koHfaqBOiK",
+            "onSave": false
+          },
+          {
+            "_id": "QNru4BLkBqnn3uBB",
+            "onSave": false
+          },
+          {
+            "_id": "TC7oDIvod7AMxbun",
+            "onSave": false
+          }
+        ]
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.n26SuUP14AqTgeBu",
       "spell-lists": "cleric"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      }
     }
   },
   "img": "icons/magic/light/explosion-star-large-orange-purple.webp",
   "effects": [
     {
-      "name": "Divine Word (50 hp or fewer)",
+      "name": "Deafened (1 minute)",
       "origin": "Compendium.dnd5e.spells.Item.T1vpZLam7LezjToj",
       "duration": {
         "startTime": null,
@@ -120,23 +161,23 @@
       "flags": {},
       "tint": "#ffffff",
       "_stats": {
-        "coreVersion": "12.325",
+        "coreVersion": "12.331",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "modifiedTime": 1728822137100,
+        "lastModifiedBy": "dnd5mbuilder0000",
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "icons/magic/light/explosion-star-large-orange-purple.webp",
+      "img": "systems/dnd5e/icons/svg/statuses/deafened.svg",
       "type": "base",
       "system": {},
       "sort": 0,
       "_key": "!items.effects!n26SuUP14AqTgeBu.ng33sfAG959luxm1"
     },
     {
-      "name": "Divine Word (40 hp or fewer)",
+      "name": "Deafened and Blinded (10 minute)",
       "origin": "Compendium.dnd5e.spells.Item.T1vpZLam7LezjToj",
       "duration": {
         "startTime": null,
@@ -153,29 +194,29 @@
       "description": "<p>Creature is Deafened and Blinded for 10 minutes.</p>",
       "transfer": false,
       "statuses": [
-        "deafened",
-        "blinded"
+        "blinded",
+        "deafened"
       ],
       "flags": {},
       "tint": "#ffffff",
       "_stats": {
-        "coreVersion": "12.325",
+        "coreVersion": "12.331",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "modifiedTime": 1728822166686,
+        "lastModifiedBy": "dnd5mbuilder0000",
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "icons/magic/light/explosion-star-large-orange-purple.webp",
+      "img": "systems/dnd5e/icons/svg/statuses/blinded.svg",
       "type": "base",
       "system": {},
       "sort": 0,
       "_key": "!items.effects!n26SuUP14AqTgeBu.WFygB4koHfaqBOiK"
     },
     {
-      "name": "Divine Word (30 hp or fewer)",
+      "name": "Blinded, Deafened, Stunned (1 hour)",
       "origin": "Compendium.dnd5e.spells.Item.T1vpZLam7LezjToj",
       "duration": {
         "startTime": null,
@@ -192,39 +233,76 @@
       "description": "<p>Creature is Blinded, Deafened, and Stunned for 1 hour.</p>",
       "transfer": false,
       "statuses": [
-        "deafened",
         "blinded",
-        "stunned",
-        "incapacitated"
+        "deafened",
+        "incapacitated",
+        "stunned"
       ],
       "flags": {},
       "tint": "#ffffff",
       "_stats": {
-        "coreVersion": "12.325",
+        "coreVersion": "12.331",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "modifiedTime": 1728822196295,
+        "lastModifiedBy": "dnd5mbuilder0000",
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "icons/magic/light/explosion-star-large-orange-purple.webp",
+      "img": "systems/dnd5e/icons/svg/statuses/stunned.svg",
       "type": "base",
       "system": {},
       "sort": 0,
       "_key": "!items.effects!n26SuUP14AqTgeBu.QNru4BLkBqnn3uBB"
+    },
+    {
+      "name": "Death",
+      "img": "systems/dnd5e/icons/svg/statuses/dead.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.n26SuUP14AqTgeBu",
+      "transfer": false,
+      "_id": "TC7oDIvod7AMxbun",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "dead"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728822201733,
+        "modifiedTime": 1728822224145,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!n26SuUP14AqTgeBu.TC7oDIvod7AMxbun"
     }
   ],
   "folder": "0whxxbO5gmG63mDV",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1661787234144,
-    "modifiedTime": 1709231295849,
+    "modifiedTime": 1728822228814,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "n26SuUP14AqTgeBu",

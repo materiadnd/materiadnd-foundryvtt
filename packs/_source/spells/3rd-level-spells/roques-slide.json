@@ -7,7 +7,9 @@
       "value": "<p>You teleport yourself to an unoccupied space you can see within range.  Rather than instantly traveling, you teleport along a line 90 feet long and 5 feet wide in the direction of the chosen space.  Each creature in the line must make a Strength saving throw.  A creature takes [[/r 3d8]] plus your AC as magical bludgeoning damage and is knocked prone on a failed save, or takes half as much damage and is not knocked prone on a successful one.</p><p>You can bring along objects as long as their weight does not exceed what you can carry.  You can also teleport one willing creature of your size or smaller who is carrying gear up to its carrying capacity.  The creature must be within 5 feet of you when you cast this spell, and there must be an unoccupied space within 5 feet of your destination space for the creature to appear in, otherwise the creature is left behind.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 5th or 6th level, the teleport distance is increased by 30 feet for a total of 120 feet.</p><p>When you cast this spell using a spell slot of 7th or 8th level, the teleport distance is increased by an additional 30 feet for a total of 150 feet.</p><p>When you cast this spell using a spell slot of 9th level or higher, the teleport distance is up to 300 feet.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -24,12 +26,20 @@
       "width": 5,
       "units": "ft",
       "type": "line",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "count": ""
+      }
     },
     "range": {
       "value": 90,
       "long": null,
-      "units": "self"
+      "units": "self",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -90,9 +100,58 @@
     "scaling": {
       "mode": "none",
       "formula": ""
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "effects": [
+          {
+            "_id": "gf8UU61fV4lIdyQk",
+            "onSave": false
+          }
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Prone",
+      "img": "systems/dnd5e/icons/svg/statuses/prone.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.H4LzZXKp62jq37PK",
+      "transfer": false,
+      "_id": "gf8UU61fV4lIdyQk",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "prone"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728289093514,
+        "modifiedTime": 1728289121728,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!H4LzZXKp62jq37PK.gf8UU61fV4lIdyQk"
+    }
+  ],
   "folder": "CxgAwElQGTbcnuvc",
   "ownership": {
     "default": 0
@@ -102,16 +161,34 @@
       "tele-flag": "true",
       "sourceId": "Compendium.materia-dnd.spells.Item.H4LzZXKp62jq37PK",
       "spell-lists": "wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1713584359457,
-    "modifiedTime": 1713584796371,
+    "modifiedTime": 1728289168232,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "H4LzZXKp62jq37PK",

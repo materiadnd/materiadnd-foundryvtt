@@ -8,10 +8,7 @@
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
@@ -28,12 +25,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "touch"
+      "units": "touch",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -87,11 +91,69 @@
       "somatic",
       "material"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "SJ8msnEYBOvhSqoc": {
+        "type": "utility",
+        "_id": "SJ8msnEYBOvhSqoc",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {},
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "vPGEMgjNjOE3wdZh"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    }
   },
   "effects": [
     {
-      "_id": "cfwMU7LuOJ619Lny",
+      "name": "Mage Armor",
+      "img": "icons/magic/defensive/shield-barrier-glowing-triangle-blue.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.FkZmu10CDljXqfED",
+      "transfer": false,
+      "_id": "vPGEMgjNjOE3wdZh",
+      "type": "base",
+      "system": {},
       "changes": [
         {
           "key": "system.attributes.ac.calc",
@@ -100,7 +162,7 @@
           "priority": null
         }
       ],
-      "disabled": true,
+      "disabled": false,
       "duration": {
         "startTime": null,
         "seconds": 28800,
@@ -110,28 +172,22 @@
         "startRound": null,
         "startTurn": null
       },
-      "origin": "Compendium.dnd5e.spells.CKZTpZlxj7hjjo2H",
-      "transfer": true,
-      "flags": {},
-      "tint": "#ffffff",
-      "name": "Mage Armor",
       "description": "<p>The target's base AC becomes 13 + its Dexterity modifier.</p>",
+      "tint": "#ffffff",
       "statuses": [],
-      "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "icons/magic/defensive/shield-barrier-glowing-triangle-blue.webp",
-      "type": "base",
-      "system": {},
       "sort": 0,
-      "_key": "!items.effects!FkZmu10CDljXqfED.cfwMU7LuOJ619Lny"
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730056562236,
+        "modifiedTime": 1730056598475,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!FkZmu10CDljXqfED.vPGEMgjNjOE3wdZh"
     }
   ],
   "folder": "JMRA2elEdmr5pgX7",
@@ -142,16 +198,26 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.FkZmu10CDljXqfED",
       "spell-lists": "sorcerer,wizard"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1661787234095,
-    "modifiedTime": 1708928830321,
+    "modifiedTime": 1730056562278,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "FkZmu10CDljXqfED",

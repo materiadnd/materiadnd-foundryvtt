@@ -10,7 +10,7 @@
       "chat": ""
     },
     "source": {
-      "custom": ""
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
@@ -28,12 +28,19 @@
       "width": null,
       "units": "",
       "type": "space",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 90,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -88,6 +95,110 @@
     "scaling": {
       "mode": "none",
       "formula": ""
+    },
+    "activities": {
+      "GQ9xh8OyZhgLxdmL": {
+        "type": "summon",
+        "_id": "GQ9xh8OyZhgLxdmL",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "bonuses": {
+          "ac": "@item.level",
+          "hd": "d6",
+          "hp": "10 * @item.level",
+          "attackDamage": "@item.level",
+          "saveDamage": "",
+          "healing": ""
+        },
+        "creatureSizes": [],
+        "creatureTypes": [],
+        "match": {
+          "attacks": true,
+          "proficiency": true,
+          "saves": true
+        },
+        "profiles": [
+          {
+            "count": "",
+            "name": "",
+            "_id": "AMrGIxxlcEeWQKxs",
+            "uuid": "Compendium.materia-dnd.actors.Actor.MLAIS1lRNPUIqElC",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": []
+          },
+          {
+            "count": "",
+            "name": "",
+            "_id": "Kl81wpYJE5ozLe5n",
+            "uuid": "Compendium.materia-dnd.actors.Actor.DBiGdR6nNl3DQ04b",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": []
+          },
+          {
+            "count": "",
+            "name": "",
+            "_id": "dL60FB4qpa4VAng9",
+            "uuid": "Compendium.materia-dnd.actors.Actor.L9AO8pAaoninCJMv",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": []
+          }
+        ],
+        "summon": {
+          "prompt": true,
+          "mode": ""
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -95,16 +206,26 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.WAALnzahHxWmYtJT",
       "spell-lists": "druid,ranger"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.2.1",
-    "coreVersion": "12.327",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1708314206857,
-    "modifiedTime": 1718793286410,
+    "modifiedTime": 1728159338521,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 6400000,
