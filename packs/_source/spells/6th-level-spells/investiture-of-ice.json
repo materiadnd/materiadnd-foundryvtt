@@ -3,10 +3,7 @@
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "book": "Materia"
     },
     "description": {
       "value": "<p>Ice rimes your body, and and chills the area around you. Liquid water within a 10-foot radius of you or a liquid that is principally water (not including water-based creatures), it freezes the liquid to a depth of 6 inches over an area 10 feet square of difficult terrain. This ice lasts for 1 minute, and creatures can move across the icy path. Until the spell ends, you gain the following benefits:</p><ul><li>You are immune to cold damage and have resistance to fire damage.</li><li>You can move across difficult terrain created by ice or snow without spending extra movement.</li><li>The ground in a 10-foot radius around you is icy and is difficult terrain for creatures other than you. The radius moves with you.</li><li>When you take the attack action, you can replace one of your attacks to create a 15-foot cone of freezing wind extending from your outstretched hand in a direction you choose. Each creature in the cone must make a Constitution saving throw. A creature takes [[/r 4d6]] cold damage on a failed save, or half as much damage on a successful one. A creature that fails its save against this effect has its speed halved until the start of your next turn.</li></ul><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 9th level or higher, the duration granted no longer requires concentration.</p>",
@@ -31,12 +28,19 @@
       "units": "self",
       "type": "self",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "units": "self",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -91,7 +95,126 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "JsjXZXJzf0WV5zZt": {
+        "type": "utility",
+        "_id": "JsjXZXJzf0WV5zZt",
+        "sort": -100000,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "9fiUVYTkaJBGbvmH"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": []
+      },
+      "dnd5eactivity000": {
+        "name": "Freezing Cone",
+        "img": "",
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 4,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "cold"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "activation": {
+          "override": true,
+          "condition": "when you take the attack action, you can replace one of your attacks",
+          "type": "special"
+        },
+        "duration": {
+          "override": true
+        },
+        "consumption": {
+          "spellSlot": false
+        },
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "override": true,
+          "affects": {
+            "count": "",
+            "type": ""
+          },
+          "template": {
+            "type": "cone",
+            "size": "15",
+            "count": ""
+          }
+        },
+        "effects": [
+          {
+            "_id": "1Xhb9Ff4zzeccUET",
+            "onSave": false
+          }
+        ]
+      }
+    }
   },
   "img": "icons/magic/water/elemental-water.webp",
   "ownership": {
@@ -107,18 +230,153 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.ic3Y26Hr7s5XVES9",
       "spell-lists": "druid,sorcerer,warlock,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Rimed in Ice",
+      "img": "icons/magic/water/elemental-water.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.ic3Y26Hr7s5XVES9",
+      "transfer": false,
+      "_id": "9fiUVYTkaJBGbvmH",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.di.value",
+          "mode": 2,
+          "value": "cold",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "fire",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<ul><li>You are immune to cold damage and have resistance to fire damage.</li><li>You can move across difficult terrain created by ice or snow without spending extra movement.</li><li>The ground in a 10-foot radius around you is icy and is difficult terrain for creatures other than you. The radius moves with you.</li><li>When you take the attack action, you can replace one of your attacks to create a 15-foot cone of freezing wind extending from your outstretched hand in a direction you choose. Each creature in the cone must make a Constitution saving throw. A creature takes 4d6 cold damage on a failed save, or half as much damage on a successful one. A creature that fails its save against this effect has its speed halved until the start of your next turn.</li></ul>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728761447001,
+        "modifiedTime": 1728761486203,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!ic3Y26Hr7s5XVES9.9fiUVYTkaJBGbvmH"
+    },
+    {
+      "name": "Half Speed",
+      "img": "icons/magic/control/debuff-chains-shackles-movement-blue.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.ic3Y26Hr7s5XVES9",
+      "transfer": false,
+      "_id": "1Xhb9Ff4zzeccUET",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.movement.walk",
+          "mode": 1,
+          "value": "0.5",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.swim",
+          "mode": 1,
+          "value": "0.5",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.fly",
+          "mode": 1,
+          "value": "0.5",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.climb",
+          "mode": 1,
+          "value": "0.5",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.burrow",
+          "mode": 1,
+          "value": "0.5",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": 1,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target has its speed halved until the start of your next turn.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728761559655,
+        "modifiedTime": 1728761664595,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!ic3Y26Hr7s5XVES9.1Xhb9Ff4zzeccUET"
+    }
+  ],
   "folder": "UjV13fGRtZfpmOAS",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1709219914327,
-    "modifiedTime": 1709222420345,
+    "modifiedTime": 1728761880178,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "ic3Y26Hr7s5XVES9",

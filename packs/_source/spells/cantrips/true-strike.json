@@ -9,7 +9,9 @@
       "value": "<div><p>You brandish the weapon used in the spell's casting and make a melee attack with it against one creature within 5 feet of you. Your magic grants you a brief insight into the target's defenses and you gain advantage on the attack roll.</p></div><div><div><p>This spell's damage increases when you reach higher levels. At 5th level, the weapon attack deals an extra [[/r 1d6]] of the same type dealt by the weapon to a hit. This extra damage increases at 11th level ([[/r 2d6]]), and 17th level ([[/r 3d6]]).</p></div></div>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -26,12 +28,19 @@
       "width": null,
       "units": "",
       "type": "self",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "self"
+      "units": "self",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -88,6 +97,115 @@
     "scaling": {
       "mode": "cantrip",
       "formula": "1d6"
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Additional Damage",
+        "img": "",
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": "0"
+              },
+              "number": 0,
+              "denomination": 6,
+              "bonus": "",
+              "types": [],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ],
+          "critical": {
+            "allow": true
+          }
+        },
+        "appliedEffects": [],
+        "activation": {
+          "override": true,
+          "condition": "",
+          "type": ""
+        },
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        }
+      },
+      "SkWbfRb3xejbAUlQ": {
+        "type": "damage",
+        "_id": "SkWbfRb3xejbAUlQ",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": true,
+            "bonus": ""
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 0,
+              "denomination": 6,
+              "bonus": "",
+              "types": [],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "name": "Estra Weapon Damage",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -95,16 +213,21 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.3pqqmtZ5N9uxeLr6",
       "spell-lists": "bard,sorcerer,warlock,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.2",
+    "coreVersion": "12.331",
     "createdTime": 1707166411077,
-    "modifiedTime": 1708927608467,
+    "modifiedTime": 1727104550259,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 2400000,

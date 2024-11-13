@@ -7,10 +7,7 @@
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "Materia Source of Truth",
-      "page": "",
-      "license": ""
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
@@ -27,12 +24,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 10,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -90,7 +94,105 @@
       "vocal",
       "somatic"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "appliedEffects": [
+          "aMeKSsXfJiM12n5o"
+        ],
+        "effects": [
+          {
+            "_id": "aMeKSsXfJiM12n5o",
+            "onSave": false
+          }
+        ]
+      },
+      "IvLLnAfn9sgDiuDY": {
+        "type": "save",
+        "_id": "IvLLnAfn9sgDiuDY",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "aMeKSsXfJiM12n5o",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 10,
+              "bonus": "",
+              "types": [
+                "poison"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "onSave": "none"
+        },
+        "save": {
+          "ability": "con",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": [
+          "aMeKSsXfJiM12n5o"
+        ]
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
@@ -98,16 +200,54 @@
     }
   },
   "img": "icons/magic/fire/projectile-fireball-smoke-large-green.webp",
-  "effects": [],
+  "effects": [
+    {
+      "name": "Poisoned",
+      "img": "systems/dnd5e/icons/svg/statuses/poisoned.svg",
+      "_id": "aMeKSsXfJiM12n5o",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>You suffer the poisoned condition until the beginning of your next turn.</p>",
+      "origin": "Compendium.materia-dnd.species.Item.5ftfulKjHtAwrXEQ",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "poisoned"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.2",
+        "createdTime": 1726887310795,
+        "modifiedTime": 1726887361047,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!5ftfulKjHtAwrXEQ.aMeKSsXfJiM12n5o"
+    }
+  ],
   "folder": "sEUxl97yXTfnEXgF",
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "3.2.1",
-    "coreVersion": "12.328",
+    "coreVersion": "12.331",
     "createdTime": 1661787234190,
-    "modifiedTime": 1720058040441,
+    "modifiedTime": 1731229681900,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "ownership": {

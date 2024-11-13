@@ -3,10 +3,7 @@
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "TCE",
-      "page": "107",
-      "license": ""
+      "book": "Materia"
     },
     "description": {
       "value": "<p>For the duration, you or one willing creature you can see within range has resistance to psychic damage, as well as advantage on Intelligence, Wisdom, and Charisma saving throws.</p><p><strong>At Higher Levels.</strong> </span>When you cast this spell using a spell slot of 4th level or higher, you can target one additional creature for each slot level above 3rd. The creatures must be within 30 feet of each other when you target them.</p>",
@@ -31,12 +28,20 @@
       "units": "",
       "type": "",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 30,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -86,7 +91,16 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "dnd5eactivity000": {
+        "effects": [
+          {
+            "_id": "j8AsAsVE7FELoGmf"
+          }
+        ]
+      }
+    }
   },
   "img": "icons/magic/control/control-influence-rally-purple.webp",
   "ownership": {
@@ -102,18 +116,90 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.tBXaR6gRVszFVJgD",
       "spell-lists": "artificer,bard,sorcerer,warlock,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Fortified Mind",
+      "img": "icons/magic/control/control-influence-rally-purple.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.tBXaR6gRVszFVJgD",
+      "transfer": false,
+      "_id": "j8AsAsVE7FELoGmf",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "flags.midi-qol.advantage.ability.save.int",
+          "mode": 0,
+          "value": "1",
+          "priority": null
+        },
+        {
+          "key": "flags.midi-qol.advantage.ability.save.wis",
+          "mode": 0,
+          "value": "1",
+          "priority": null
+        },
+        {
+          "key": "flags.midi-qol.advantage.ability.save.cha",
+          "mode": 0,
+          "value": "1",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "psychic",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The creature has resistance to psychic damage, as well as advantage on Intelligence, Wisdom, and Charisma saving throws.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728222079417,
+        "modifiedTime": 1728222196720,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!tBXaR6gRVszFVJgD.j8AsAsVE7FELoGmf"
+    }
+  ],
   "folder": "CxgAwElQGTbcnuvc",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1708932452354,
-    "modifiedTime": 1713584796371,
+    "modifiedTime": 1728222212439,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "tBXaR6gRVszFVJgD",

@@ -3,10 +3,7 @@
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "book": "Materia"
     },
     "description": {
       "value": "<p>Choose one creature you can see within range, and choose one of the following damage types: acid, cold, fire, lightning, or thunder. The target must succeed on a Charisma saving throw or be affected by the spell for its duration. The first time each turn the affected target takes damage of the chosen type, the target takes an extra [[/r 2d6]] damage of that type. Moreover, the target loses any resistance to that damage type until the spell ends.</p><p>As an Action on your turn, you can change to a different damage type from the following damage types: acid, cold, fire, lightning or thunder.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 5th level or higher, you can target one additional creature for each slot level above 4th. The creatures must be within 30 feet of each other when you target them.</p>",
@@ -31,12 +28,21 @@
       "units": "",
       "type": "",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 90,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -91,7 +97,339 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "oBaPIuT887RdmW3O": {
+        "type": "save",
+        "_id": "oBaPIuT887RdmW3O",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "c2aQPOLajDEMfbgI",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "cha",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Acid Bane",
+        "img": "icons/magic/acid/dissolve-drip-droplet-smoke.webp",
+        "appliedEffects": [
+          "c2aQPOLajDEMfbgI"
+        ]
+      },
+      "yaSndH1zI4MxamI3": {
+        "type": "save",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "e0XZJ9NA4C8Y9bQg",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "cha",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Cold Bane",
+        "img": "icons/magic/water/snowflake-ice-blue.webp",
+        "_id": "yaSndH1zI4MxamI3",
+        "appliedEffects": [
+          "e0XZJ9NA4C8Y9bQg"
+        ]
+      },
+      "IUR4Lq8p3nnVMzK1": {
+        "type": "save",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "fW8qdHZXosUi86Vh",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "cha",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Fire Bane",
+        "img": "icons/magic/fire/flame-burning-earth-yellow.webp",
+        "_id": "IUR4Lq8p3nnVMzK1",
+        "appliedEffects": [
+          "fW8qdHZXosUi86Vh"
+        ]
+      },
+      "wujrvX9aMrmCjZm9": {
+        "type": "save",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "2EsOVBRlcYzzKxfh",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "cha",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Lightning Bane",
+        "img": "icons/magic/lightning/bolt-strike-blue.webp",
+        "_id": "wujrvX9aMrmCjZm9",
+        "appliedEffects": [
+          "2EsOVBRlcYzzKxfh"
+        ]
+      },
+      "stdJv7qlIwKu82EK": {
+        "type": "save",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "KLsygsjT8cMJbglr",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "cha",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Thunder Bane",
+        "img": "icons/magic/lightning/bolt-cloud-sky-white.webp",
+        "_id": "stdJv7qlIwKu82EK",
+        "appliedEffects": [
+          "KLsygsjT8cMJbglr"
+        ]
+      }
+    }
   },
   "img": "icons/magic/death/skull-fire-white-yellow.webp",
   "ownership": {
@@ -107,18 +445,217 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.IUCJ5JSBnXkD6KtM",
       "spell-lists": "artificer,druid,warlock,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Acid Baned",
+      "img": "icons/magic/acid/dissolve-drip-droplet-smoke.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.IUCJ5JSBnXkD6KtM",
+      "transfer": false,
+      "_id": "c2aQPOLajDEMfbgI",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The first time each turn the affected target takes acid damage, the target takes an extra 2d6 acid damage. Moreover, the target loses any resistance to acid damage until the spell ends.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728332877966,
+        "modifiedTime": 1728333534203,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!IUCJ5JSBnXkD6KtM.c2aQPOLajDEMfbgI"
+    },
+    {
+      "name": "Cold Baned",
+      "img": "icons/magic/water/snowflake-ice-blue.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.IUCJ5JSBnXkD6KtM",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The first time each turn the affected target takes cold damage, the target takes an extra 2d6 cold damage. Moreover, the target loses any resistance to cold damage until the spell ends.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728333249099,
+        "modifiedTime": 1728333278287,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "e0XZJ9NA4C8Y9bQg",
+      "_key": "!items.effects!IUCJ5JSBnXkD6KtM.e0XZJ9NA4C8Y9bQg"
+    },
+    {
+      "name": "Fire Baned",
+      "img": "icons/magic/fire/flame-burning-earth-yellow.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.IUCJ5JSBnXkD6KtM",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The first time each turn the affected target takes fire damage, the target takes an extra 2d6 fire damage. Moreover, the target loses any resistance to fire damage until the spell ends.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728333555702,
+        "modifiedTime": 1728333583672,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "fW8qdHZXosUi86Vh",
+      "_key": "!items.effects!IUCJ5JSBnXkD6KtM.fW8qdHZXosUi86Vh"
+    },
+    {
+      "name": "Lightning Baned",
+      "img": "icons/magic/lightning/bolt-strike-blue.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.IUCJ5JSBnXkD6KtM",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The first time each turn the affected target takes lightning damage, the target takes an extra 2d6 lightning damage. Moreover, the target loses any resistance to lightning damage until the spell ends.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728333639061,
+        "modifiedTime": 1728333660505,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "2EsOVBRlcYzzKxfh",
+      "_key": "!items.effects!IUCJ5JSBnXkD6KtM.2EsOVBRlcYzzKxfh"
+    },
+    {
+      "name": "Thunder Baned",
+      "img": "icons/magic/lightning/bolt-cloud-sky-white.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.IUCJ5JSBnXkD6KtM",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The first time each turn the affected target takes thunder damage, the target takes an extra 2d6 thunder damage. Moreover, the target loses any resistance to thunder damage until the spell ends.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728333666991,
+        "modifiedTime": 1728333685742,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "KLsygsjT8cMJbglr",
+      "_key": "!items.effects!IUCJ5JSBnXkD6KtM.KLsygsjT8cMJbglr"
+    }
+  ],
   "folder": "PrScRYl7JdLxwH3K",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1709150712030,
-    "modifiedTime": 1709226592285,
+    "modifiedTime": 1728333707000,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "IUCJ5JSBnXkD6KtM",

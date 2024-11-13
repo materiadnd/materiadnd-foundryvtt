@@ -3,10 +3,7 @@
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "book": "Materia"
     },
     "description": {
       "value": "<p>You create a field of silvery light that surrounds a creature of your choice within range (you can choose yourself). The field sheds dim light out to 5 feet. While surrounded by the field, a creature gains the following benefits:<br /><strong>Cover.</strong> The creature has half cover.<br /><strong>Damage Resistance.</strong> The creature has resistance to acid, cold, fire, lightning, and poison damage.<br /><strong>Dampen Harm.</strong> If the creature is subjected to an effect that allows it to make any saving throw to take only half damage, the creature instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.<br />As a bonus action on subsequent turns, you can move the field to another creature within 60 feet of the field.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 9th level or higher, grants a duration that does not require concentration.</p>",
@@ -32,12 +29,21 @@
       "units": "",
       "type": "",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 60,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "bonus",
@@ -87,7 +93,75 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "dnd5eactivity000": {
+        "effects": [
+          {
+            "_id": "EcfPopxerZM1SFpx"
+          }
+        ],
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": [
+          "EcfPopxerZM1SFpx"
+        ]
+      },
+      "3TY0m062pJPBA8Qc": {
+        "type": "utility",
+        "_id": "3TY0m062pJPBA8Qc",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Move Field",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "img": "icons/magic/defensive/shield-barrier-flaming-pentagon-blue-yellow.webp",
   "ownership": {
@@ -103,18 +177,98 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.v0u5v1ZOUV787OkS",
       "spell-lists": "sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Platinum Shield",
+      "img": "icons/magic/defensive/shield-barrier-flaming-pentagon-blue-yellow.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.v0u5v1ZOUV787OkS",
+      "transfer": false,
+      "_id": "EcfPopxerZM1SFpx",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "acid",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "cold",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "fire",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "lightning",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "poison",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p><strong>Cover</strong>. The creature has half cover.<br /><strong>Damage Resistance</strong>. The creature has resistance to acid, cold, fire, lightning, and poison damage.<br /><strong>Dampen Harm</strong>. If the creature is subjected to an effect that allows it to make any saving throw to take only half damage, the creature instead takes no damage if it succeeds on the saving throw, and only half damage if it fails.</p>",
+      "tint": "#ffffff",
+      "statuses": [
+        "coverHalf"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728769119205,
+        "modifiedTime": 1728769205422,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!v0u5v1ZOUV787OkS.EcfPopxerZM1SFpx"
+    }
+  ],
   "folder": "UjV13fGRtZfpmOAS",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1709221747961,
-    "modifiedTime": 1709222420345,
+    "modifiedTime": 1728769245850,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "v0u5v1ZOUV787OkS",

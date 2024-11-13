@@ -10,10 +10,7 @@
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "book": "Materia"
     },
     "activation": {
       "type": "bonus",
@@ -30,12 +27,21 @@
       "width": null,
       "units": "",
       "type": "",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "1",
+        "type": "object",
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "touch"
+      "units": "touch",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -89,25 +95,299 @@
       "somatic",
       "concentration"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "BtahXhuHoL3LfXM5": {
+        "type": "enchant",
+        "_id": "BtahXhuHoL3LfXM5",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "1zInuiigPuGWD9en",
+            "level": {
+              "min": 2,
+              "max": 3
+            },
+            "riders": {
+              "activity": [],
+              "effect": [],
+              "item": []
+            }
+          },
+          {
+            "_id": "8kIlj5kRDQWtHPnJ",
+            "level": {
+              "min": 3,
+              "max": 5
+            },
+            "riders": {
+              "activity": [],
+              "effect": [],
+              "item": []
+            }
+          },
+          {
+            "_id": "igjl3Pj67RtI3kd1",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "riders": {
+              "activity": [],
+              "effect": [],
+              "item": []
+            }
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "enchant": {},
+        "restrictions": {
+          "allowMagical": false,
+          "categories": [],
+          "properties": [],
+          "type": "weapon"
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": [
+          "1zInuiigPuGWD9en",
+          "8kIlj5kRDQWtHPnJ",
+          "igjl3Pj67RtI3kd1"
+        ]
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.dUFB8zgpjBTJIZkc",
       "spell-lists": "artificer,paladin,ranger,sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
     }
   },
   "img": "icons/magic/fire/dagger-rune-enchant-flame-blue.webp",
-  "effects": [],
+  "effects": [
+    {
+      "type": "enchantment",
+      "name": "Magic Weapon +1",
+      "img": "icons/magic/fire/dagger-rune-enchant-flame-blue.webp",
+      "disabled": true,
+      "_id": "1zInuiigPuGWD9en",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "value": "mgc",
+          "priority": null
+        },
+        {
+          "key": "system.magicalBonus",
+          "mode": 4,
+          "value": "1",
+          "priority": null
+        },
+        {
+          "key": "name",
+          "mode": 5,
+          "value": "Magic {} +1",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>Until the spell ends, that weapon becomes a magic weapon with a +1 bonus to Attack rolls and Damage Rolls.</p>",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728125305126,
+        "modifiedTime": 1728125381234,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!dUFB8zgpjBTJIZkc.1zInuiigPuGWD9en"
+    },
+    {
+      "type": "enchantment",
+      "name": "Magic Weapon +2",
+      "img": "icons/magic/fire/dagger-rune-enchant-flame-blue.webp",
+      "disabled": true,
+      "_id": "8kIlj5kRDQWtHPnJ",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "value": "mgc",
+          "priority": null
+        },
+        {
+          "key": "system.magicalBonus",
+          "mode": 4,
+          "value": "2",
+          "priority": null
+        },
+        {
+          "key": "name",
+          "mode": 5,
+          "value": "Magic {} +2",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>Until the spell ends, that weapon becomes a magic weapon with a +2 bonus to Attack rolls and Damage Rolls.</p>",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728125585311,
+        "modifiedTime": 1728125627127,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!dUFB8zgpjBTJIZkc.8kIlj5kRDQWtHPnJ"
+    },
+    {
+      "type": "enchantment",
+      "name": "Magic Weapon +3",
+      "img": "icons/magic/fire/dagger-rune-enchant-flame-blue.webp",
+      "disabled": true,
+      "_id": "igjl3Pj67RtI3kd1",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "value": "mgc",
+          "priority": null
+        },
+        {
+          "key": "system.magicalBonus",
+          "mode": 4,
+          "value": "3",
+          "priority": null
+        },
+        {
+          "key": "name",
+          "mode": 5,
+          "value": "Magic {} +3",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>Until the spell ends, that weapon becomes a magic weapon with a +3 bonus to Attack rolls and Damage Rolls.</p>",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728125689930,
+        "modifiedTime": 1728125736985,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!dUFB8zgpjBTJIZkc.igjl3Pj67RtI3kd1"
+    }
+  ],
   "folder": "3rC3qr5FIlZymxFD",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1661787234141,
-    "modifiedTime": 1708930454014,
+    "modifiedTime": 1728125871715,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "dUFB8zgpjBTJIZkc",

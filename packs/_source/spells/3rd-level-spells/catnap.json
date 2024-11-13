@@ -9,7 +9,9 @@
       "value": "<p>You make a calming gesture, and up to three willing creatures of your choice that you can see within range fall unconscious for the spell's duration. The spell ends on a target early if it takes damage or someone uses an action to shake or slap it awake. If a target remains unconscious for the full duration, that target gains the benefit of a short rest (including gaining benefits of features like meditation for a monk to regain ki), and for each Hit Die a creature expends to regain hit points they increase the amount restored by your spellcasting ability modifier. A creature cannot be affected by this spell again until it finishes a long rest.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 4th level or higher, you can target one additional willing creature for each slot level above 3rd.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -26,12 +28,20 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "type": "willing",
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 30,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -83,9 +93,57 @@
     "scaling": {
       "mode": "level",
       "formula": ""
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "effects": [
+          {
+            "_id": "9r7Oo371A0G6HqIt"
+          }
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Napping",
+      "img": "icons/magic/control/hypnosis-mesmerism-pendulum.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.w83Acscr5UM5RB3Q",
+      "transfer": false,
+      "_id": "9r7Oo371A0G6HqIt",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target is unconscious for the spell's duration. The spell ends on a target early if it takes damage or someone uses an action to shake or slap it awake. If a target remains unconscious for the full duration, that target gains the benefit of a short rest (including gaining benefits of features like meditation for a monk to regain ki), and for each Hit Die a creature expends to regain hit points they increase the amount restored by your spellcasting ability modifier.</p>",
+      "tint": "#ffffff",
+      "statuses": [
+        "unconscious"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728193821132,
+        "modifiedTime": 1728193860814,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!w83Acscr5UM5RB3Q.9r7Oo371A0G6HqIt"
+    }
+  ],
   "sort": 3400000,
   "ownership": {
     "default": 0
@@ -94,16 +152,26 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.w83Acscr5UM5RB3Q",
       "spell-lists": "artificer,bard,sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1708817080726,
-    "modifiedTime": 1713584796371,
+    "modifiedTime": 1728193871082,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_key": "!items!w83Acscr5UM5RB3Q"

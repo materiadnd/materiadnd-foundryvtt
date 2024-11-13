@@ -11,8 +11,8 @@ export function AddMateriaConditions() {
     CONFIG.statusEffects.push({'id': 'weakened', 'name': 'Weakened', 'icon': 'modules/materia-dnd/icons/statuses/noun-weakness.svg', 'label': 'Weakened', 'reference': 'Compendium.materia-dnd.rules.JournalEntry.MpEv2KTNEY6lLelV.JournalEntryPage.AEqHmIZbN8B1DxAJ'});
     console.log("materia-dnd | Conditions: Added three status effects.")
     // Overwriting exhaustion
-    CONFIG.DND5E.conditionEffects.halfHealth.delete("exhaustion-4");
     CONFIG.DND5E.conditionTypes.exhaustion.reference = "Compendium.materia-dnd.rules.JournalEntry.MpEv2KTNEY6lLelV.JournalEntryPage.9XAWvL8gnCtdez6U";
+    delete CONFIG.DND5E.conditionTypes.exhaustion.reduction;
     const exh = CONFIG.statusEffects.find(e => e.id === "exhaustion");
     foundry.utils.mergeObject(exh, CONFIG.DND5E.conditionTypes.exhaustion, { insertKeys: false });
     console.log("materia-dnd | Conditions: Overwrote existing exhaustion with Materia version.");

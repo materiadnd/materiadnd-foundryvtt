@@ -3,10 +3,7 @@
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "book": "Materia"
     },
     "description": {
       "value": "<p>You draw the moisture from every creature in a 30-foot cube centered on a point you choose within range. Each creature in that area must make a Constitution saving throw. Constructs and undead are not affected, and plants, water elementals and creatures that breathe water make this saving throw with disadvantage. A creature takes [[/r 12d12]] necrotic damage on a failed save and are weakened for up to 1 minute, or half as much damage and are weakened until the end of their next turn on a successful one.</p><p>Nonmagical plants in the area that are not creatures, such as trees and shrubs, wither and die instantly.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 9th level or higher, it can be cast as a Bonus Action instead of an Action.</p>",
@@ -31,12 +28,20 @@
       "units": "ft",
       "type": "cube",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "count": ""
+      }
     },
     "range": {
       "value": 150,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -91,7 +96,97 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "mDYUmipjINqdtOEz": {
+        "type": "save",
+        "_id": "mDYUmipjINqdtOEz",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "AKTs8ve3rTSctLGk",
+            "onSave": false
+          },
+          {
+            "_id": "GljCwnAoWAkaUfeo",
+            "onSave": true
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 12,
+              "denomination": 12,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "con",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": [
+          "AKTs8ve3rTSctLGk",
+          "GljCwnAoWAkaUfeo"
+        ]
+      }
+    }
   },
   "img": "icons/magic/unholy/strike-body-explode-disintegrate.webp",
   "ownership": {
@@ -107,18 +202,113 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.mFfU2gH35n1tuq5z",
       "spell-lists": "sorcerer,wizard"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Weakened (1 minute)",
+      "img": "modules/materia-dnd/icons/statuses/weakened.png",
+      "origin": "Compendium.materia-dnd.spells.Item.mFfU2gH35n1tuq5z",
+      "transfer": false,
+      "_id": "AKTs8ve3rTSctLGk",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "weakened"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728916638401,
+        "modifiedTime": 1728916672891,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!mFfU2gH35n1tuq5z.AKTs8ve3rTSctLGk"
+    },
+    {
+      "name": "Weakend (1 turn)",
+      "img": "modules/materia-dnd/icons/statuses/weakened.png",
+      "origin": "Compendium.materia-dnd.spells.Item.mFfU2gH35n1tuq5z",
+      "transfer": false,
+      "_id": "GljCwnAoWAkaUfeo",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "weakened"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728916679514,
+        "modifiedTime": 1728916703407,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!mFfU2gH35n1tuq5z.GljCwnAoWAkaUfeo"
+    }
+  ],
   "folder": "IeD7MeayeQqIoNnW",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1709231428603,
-    "modifiedTime": 1709231854693,
+    "modifiedTime": 1728916705634,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "mFfU2gH35n1tuq5z",

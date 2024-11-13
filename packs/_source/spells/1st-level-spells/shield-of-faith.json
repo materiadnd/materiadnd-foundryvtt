@@ -10,10 +10,7 @@
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "book": "Materia"
     },
     "activation": {
       "type": "bonus",
@@ -30,12 +27,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 60,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -90,19 +94,96 @@
       "material",
       "concentration"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "LNWQdRVsXQclyChd": {
+        "type": "utility",
+        "_id": "LNWQdRVsXQclyChd",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {},
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "nDKFlR2G224pkn0A"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.fFYfJ2Foz7FuGUr7",
       "spell-lists": "cleric,paladin"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "img": "icons/magic/defensive/shield-barrier-flaming-diamond-blue-yellow.webp",
   "effects": [
     {
-      "name": "Shield of Faith",
-      "origin": "Compendium.dnd5e.spells.Item.jZ6JNykRtdQ90MOo",
+      "name": "Shimmering Field",
+      "img": "icons/magic/defensive/shield-barrier-flaming-diamond-blue-yellow.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.fFYfJ2Foz7FuGUr7",
+      "transfer": false,
+      "_id": "nDKFlR2G224pkn0A",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.ac.bonus",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        }
+      ],
+      "disabled": false,
       "duration": {
         "startTime": null,
         "seconds": 600,
@@ -112,47 +193,32 @@
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "FKDbXBUs6VJlf8ZY",
-      "changes": [
-        {
-          "key": "system.attributes.ac.bonus",
-          "mode": 2,
-          "value": "2",
-          "priority": null
-        }
-      ],
-      "description": "<p>The target gains it a +2 bonus to AC for the duration.</p>",
-      "transfer": true,
-      "statuses": [],
-      "flags": {},
+      "description": "<p>A shimmering field appears and surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration.</p>",
       "tint": "#ffffff",
-      "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "icons/magic/defensive/shield-barrier-flaming-diamond-blue-yellow.webp",
-      "type": "base",
-      "system": {},
+      "statuses": [],
       "sort": 0,
-      "_key": "!items.effects!fFYfJ2Foz7FuGUr7.FKDbXBUs6VJlf8ZY"
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730089884532,
+        "modifiedTime": 1730089913904,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!fFYfJ2Foz7FuGUr7.nDKFlR2G224pkn0A"
     }
   ],
   "folder": "JMRA2elEdmr5pgX7",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1661787234212,
-    "modifiedTime": 1708928830321,
+    "modifiedTime": 1730089884575,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "fFYfJ2Foz7FuGUr7",

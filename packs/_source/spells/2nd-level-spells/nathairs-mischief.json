@@ -10,10 +10,7 @@
       "chat": ""
     },
     "source": {
-      "book": "",
-      "page": "",
-      "custom": "",
-      "license": ""
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
@@ -31,12 +28,20 @@
       "width": null,
       "units": "ft",
       "type": "cube",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "count": ""
+      }
     },
     "range": {
       "value": 60,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -89,9 +94,287 @@
     "scaling": {
       "mode": "none",
       "formula": ""
+    },
+    "activities": {
+      "dnd5eactivity100": {
+        "name": "Spraying Flowers",
+        "img": "icons/magic/nature/plant-poison-spit-green.webp",
+        "appliedEffects": [
+          "jGADiOEE5m0OZf82"
+        ],
+        "effects": [
+          {
+            "_id": "jGADiOEE5m0OZf82",
+            "onSave": false
+          }
+        ],
+        "activation": {
+          "override": true,
+          "condition": "",
+          "type": ""
+        },
+        "duration": {
+          "override": true
+        },
+        "consumption": {
+          "spellSlot": false
+        }
+      },
+      "dnd5eactivity000": {
+        "name": "Place Area",
+        "img": "",
+        "appliedEffects": []
+      },
+      "uuL6nkiMVvU4ZsYT": {
+        "type": "save",
+        "_id": "uuL6nkiMVvU4ZsYT",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [
+          {
+            "_id": "8lteQ3cTHQUoHUbS",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "wis",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Pie Scents",
+        "img": "icons/consumables/fruit/apple-glowing-green.webp",
+        "appliedEffects": [
+          "8lteQ3cTHQUoHUbS"
+        ]
+      },
+      "WMXEdpzA3pCAQahW": {
+        "type": "save",
+        "_id": "WMXEdpzA3pCAQahW",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [
+          {
+            "_id": "PvJZSI25mxtiCVn0",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "wis",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Giggles",
+        "img": "icons/magic/control/fear-fright-monster-grin-purple-blue.webp",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Blinded",
+      "img": "systems/dnd5e/icons/svg/statuses/blinded.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.hlnfnOw4yI3i136U",
+      "transfer": false,
+      "_id": "jGADiOEE5m0OZf82",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": 1,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target is blinded until the start of your next turn as the flowers spray water in their faces.</p>",
+      "tint": "#ffffff",
+      "statuses": [
+        "blinded"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728131244411,
+        "modifiedTime": 1728131728900,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!hlnfnOw4yI3i136U.jGADiOEE5m0OZf82"
+    },
+    {
+      "name": "Charmed",
+      "img": "systems/dnd5e/icons/svg/statuses/charmed.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.hlnfnOw4yI3i136U",
+      "transfer": false,
+      "_id": "8lteQ3cTHQUoHUbS",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": 1,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target is charmed by you until the start of your next turn. A charmed creature regards you and your companions as friendly acquaintances.</p>",
+      "tint": "#ffffff",
+      "statuses": [
+        "charmed"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728132650555,
+        "modifiedTime": 1728133354818,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!hlnfnOw4yI3i136U.8lteQ3cTHQUoHUbS"
+    },
+    {
+      "name": "Incapacitated",
+      "img": "systems/dnd5e/icons/svg/statuses/incapacitated.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.hlnfnOw4yI3i136U",
+      "transfer": false,
+      "_id": "PvJZSI25mxtiCVn0",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": 1,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target is incapacitated and uses all its movement at the start of its turn to move to move in a random direction.</p>",
+      "tint": "#ffffff",
+      "statuses": [
+        "incapacitated"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728133259840,
+        "modifiedTime": 1728133306071,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!hlnfnOw4yI3i136U.PvJZSI25mxtiCVn0"
+    }
+  ],
   "flags": {
     "plutonium": {
       "page": "spells.html",
@@ -102,16 +385,29 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.hlnfnOw4yI3i136U",
       "spell-lists": "bard,sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.2.1",
-    "coreVersion": "12.327",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1708312536001,
-    "modifiedTime": 1719379914785,
+    "modifiedTime": 1728133360299,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 7100000,

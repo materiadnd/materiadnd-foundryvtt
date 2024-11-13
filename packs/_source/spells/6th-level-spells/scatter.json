@@ -3,13 +3,10 @@
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "book": "Materia"
     },
     "description": {
-      "value": "<p>The air quivers around up to five creatures of your choice that you can see within range. An unwilling creature must succeed on a Wisdom saving throw to resist this spell. You teleport each affected target to an unoccupied space that you can see within 120 feet of you. That space must be on the ground or on a floor.</p><p>If the creature has a fly speed than the unoccupied space can be in the air</p><p>If the creature has a swim speed than the unoccupied space can be in the water. If the creature has a climb speed or the ability to walk on vertical walls or upside down, as if with the spider walk spell, than the unoccupied space can be on a wall or ceiling.</p>",
+      "value": "<p>The air quivers around up to five creatures of your choice that you can see within range. An unwilling creature must succeed on a Wisdom saving throw to resist this spell. You teleport each affected target to an unoccupied space that you can see within 120 feet of you. That space must be on the ground or on a floor.</p><p>If the creature has a fly speed then the unoccupied space can be in the air</p><p>If the creature has a swim speed then the unoccupied space can be in the water. If the creature has a climb speed or the ability to walk on vertical walls or upside down, as if with the spider walk spell, than the unoccupied space can be on a wall or ceiling.</p>",
       "chat": ""
     },
     "actionType": "save",
@@ -29,12 +26,21 @@
       "units": "",
       "type": "",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "5",
+        "type": "creature",
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 30,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -84,7 +90,68 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "Ywlf8PlHjIhi3XEO": {
+        "type": "save",
+        "_id": "Ywlf8PlHjIhi3XEO",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "wis",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "img": "icons/consumables/eggs/egg-broken-spotted-white.webp",
   "ownership": {
@@ -101,18 +168,31 @@
       "tele-flag": "true",
       "sourceId": "Compendium.materia-dnd.spells.Item.9KZEfNRThuVGa3Kw",
       "spell-lists": "sorcerer,warlock,wizard"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "effects": [],
   "folder": "UjV13fGRtZfpmOAS",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1709219997993,
-    "modifiedTime": 1709222420345,
+    "modifiedTime": 1730253808213,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "9KZEfNRThuVGa3Kw",

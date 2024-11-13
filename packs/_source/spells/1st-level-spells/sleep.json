@@ -8,10 +8,7 @@
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
@@ -28,12 +25,20 @@
       "width": null,
       "units": "ft",
       "type": "sphere",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "count": ""
+      }
     },
     "range": {
       "value": 90,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -93,7 +98,67 @@
       "material",
       "mgc"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "3eKxOaKNOaRfzmID": {
+        "type": "utility",
+        "_id": "3eKxOaKNOaRfzmID",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "7wuSWwtdThwFTNZr"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": "5d8"
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "effects": [
     {
@@ -134,6 +199,44 @@
       "system": {},
       "sort": 0,
       "_key": "!items.effects!0ToJPjO85bRZfq2f.MowBnXpRu2aG48i9"
+    },
+    {
+      "name": "Unconscious",
+      "img": "systems/dnd5e/icons/svg/statuses/unconscious.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.0ToJPjO85bRZfq2f",
+      "transfer": false,
+      "_id": "7wuSWwtdThwFTNZr",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "unconscious"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730090195131,
+        "modifiedTime": 1730090219010,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!0ToJPjO85bRZfq2f.7wuSWwtdThwFTNZr"
     }
   ],
   "folder": "JMRA2elEdmr5pgX7",
@@ -144,16 +247,21 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.0ToJPjO85bRZfq2f",
       "spell-lists": "bard,sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1661787234117,
-    "modifiedTime": 1712122130085,
+    "modifiedTime": 1730090195175,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "0ToJPjO85bRZfq2f",

@@ -9,7 +9,9 @@
       "value": "<p>You cause a cloud of mites, fleas, and other parasites to appear momentarily on one creature you can see within range. The target must succeed on a Constitution saving throw, or it takes [[/r 1d6]] poison damage, has disadvantage on the next concentration check it makes before the start of its next turn, and moves 5 feet in a random direction if it can move and its speed is at least 5 feet. Roll a d4 for the direction: 1, north; 2, south; 3, east; or 4, west. This movement does not provoke opportunity attacks, and if the direction rolled is blocked, the target does not move.</p><p>When you reach 5th level, the spell causes disadvantage on the next 2 concentration checks and the damage increases to [[/r 2d6]] poison damage. When you reach 11th level, it causes disadvantage on the next 3 concentration checks and the damage increases to [[/r 3d6]] poison damage. When you reach 17th level, it causes disadvantage on the next 6 concentration checks and the damage increases to [[/r 4d6]] poison damage.</p><p>The spell causes disadvantage on the next 2 concentration checks when you reach 5th level and deals an additional d6 damage ([[/r 2d6]]), the next 3 concentration checks at 11th level and deals an additional d6 damage ([[/r 3d6]]), and the next 6 concentration checks at 17th level and deals an additional d6 damage ([[/r 4d6]]).</p><p>The spell's damage increases by 1d6 when you reach 5th level ([[/r 2d6]]), 11th level ([[/r 3d6]]), and 17th level ([[/r 4d6]]).</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -26,12 +28,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 30,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -77,7 +86,7 @@
       "material"
     ],
     "materials": {
-      "value": "",
+      "value": "a living flea",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -89,23 +98,151 @@
     "scaling": {
       "mode": "cantrip",
       "formula": "1d6"
+    },
+    "activities": {
+      "o2cOTuDcJJtn1ls4": {
+        "type": "save",
+        "_id": "o2cOTuDcJJtn1ls4",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "nnnt8Q2qJ7aNK3fL",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "poison"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ],
+          "onSave": "none"
+        },
+        "save": {
+          "ability": "con",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": [
+          "nnnt8Q2qJ7aNK3fL"
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Infested",
+      "img": "icons/creatures/invertebrates/wasp-swarm-attack.webp",
+      "_id": "nnnt8Q2qJ7aNK3fL",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": 1,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target has disadvantage on a number of concentration checks made before the start of its next turn.</p>",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.2",
+        "createdTime": 1726908667877,
+        "modifiedTime": 1726908783080,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!OMfdPKQ1OP8VujEy.nnnt8Q2qJ7aNK3fL"
+    }
+  ],
   "flags": {
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.OMfdPKQ1OP8VujEy",
       "spell-lists": "druid,sorcerer,warlock,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.2",
+    "coreVersion": "12.331",
     "createdTime": 1707665455419,
-    "modifiedTime": 1708927608467,
+    "modifiedTime": 1726908790713,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 3000000,

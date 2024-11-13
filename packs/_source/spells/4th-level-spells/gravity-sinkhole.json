@@ -3,10 +3,7 @@
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "EGW",
-      "page": "187",
-      "license": ""
+      "book": "Materia"
     },
     "description": {
       "value": "<p>A 20-foot-radius sphere of crushing force forms at a point you can see within range and tugs at the creatures there. Each creature in the sphere must make a Constitution saving throw. On a failed save, the creature takes [[/r 5d12]] force damage and is pulled in a straight line toward the center of the sphere, ending in an unoccupied space as close to the center as possible (even if that space is in the air). On a successful save, the creature takes half as much damage and isn't pulled.</p><p>A creature that is pulled by this spell cannot Dash, Disengage, Dodge or stand from prone until the end of their next turn.</p><p><strong>At Higher Levels.</strong>  When you cast this spell using a spell slot of 5th level or higher, the damage increases by [[/r 1d12]] for each slot level above 4th.</p>",
@@ -31,12 +28,20 @@
       "units": "",
       "type": "",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 120,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -91,7 +96,17 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "dnd5eactivity000": {
+        "effects": [
+          {
+            "_id": "rRp4gTmoVGcChGue",
+            "onSave": false
+          }
+        ]
+      }
+    }
   },
   "img": "icons/magic/water/beam-ice-impact.webp",
   "ownership": {
@@ -107,18 +122,73 @@
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.spells.Item.k79YoQimzBXmDdhv",
       "spell-lists": "wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Pulled",
+      "img": "icons/magic/water/beam-ice-impact.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.k79YoQimzBXmDdhv",
+      "transfer": false,
+      "_id": "rRp4gTmoVGcChGue",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>A creature that is pulled by this spell cannot Dash, Disengage, Dodge or stand from prone until the end of their next turn.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728381396508,
+        "modifiedTime": 1728381498724,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!k79YoQimzBXmDdhv.rRp4gTmoVGcChGue"
+    }
+  ],
   "folder": "PrScRYl7JdLxwH3K",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1709150940515,
-    "modifiedTime": 1709226592285,
+    "modifiedTime": 1728381511638,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "k79YoQimzBXmDdhv",
