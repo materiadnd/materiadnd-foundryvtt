@@ -1,6 +1,6 @@
 {
-  "folder": "5T58BMMLa8ZxGmr5",
-  "name": "Upgraded Protector",
+  "folder": "aMxtfjIkxshG9OTs",
+  "name": "Fortified Arcane Screamer",
   "type": "npc",
   "img": "icons/weapons/artillery/cannon-banded.webp",
   "system": {
@@ -387,7 +387,7 @@
         "climb": null,
         "fly": null,
         "swim": null,
-        "walk": 15,
+        "walk": null,
         "units": null,
         "hover": false
       },
@@ -436,6 +436,9 @@
         },
         "success": 0,
         "failure": 0
+      },
+      "hd": {
+        "spent": 0
       }
     },
     "details": {
@@ -454,7 +457,9 @@
       "environment": "",
       "cr": null,
       "spellLevel": 0,
-      "source": {}
+      "ideal": "",
+      "bond": "",
+      "flaw": ""
     },
     "resources": {
       "legact": {
@@ -471,7 +476,7 @@
       }
     },
     "traits": {
-      "size": "tiny",
+      "size": "med",
       "di": {
         "bypasses": [],
         "value": [
@@ -504,7 +509,8 @@
       }
     },
     "source": {
-      "book": "Materia"
+      "revision": 1,
+      "rules": "2024"
     }
   },
   "prototypeToken": {
@@ -526,8 +532,8 @@
       "fit": "contain",
       "alphaThreshold": 0.75
     },
-    "width": 0.5,
-    "height": 0.5,
+    "width": 1,
+    "height": 1,
     "lockRotation": false,
     "rotation": 0,
     "alpha": 1,
@@ -602,11 +608,13 @@
   },
   "items": [
     {
-      "name": "Bolster Allies",
+      "folder": "EyT6wN4Hl33u5SG9",
+      "name": "Arcane Exhalation (Line)",
       "type": "feat",
+      "img": "icons/magic/light/beam-rays-magenta-large.webp",
       "system": {
         "description": {
-          "value": "<p>The cannon emits a burst of positive energy that grants itself and each creature of your choice within 10 feet of it a number of temporary hit points equal to 1d8 + your Intelligence modifier (minimum of +1).</p>",
+          "value": "<p>The cannon exhales your choice of fire, lightning, necrotic, radiant or thunder damage in a 5 by 30-foot line on each of it's turns. Each creature in that area must make a Dexterity saving throw against your spell save DC, taking 2d8 + your Intelligence modifier chosen damage type on a failed save or half as much damage on a successful one. If the damage is fire it ignites any flammable objects in the area that are not being worn or carried</p>",
           "chat": ""
         },
         "source": {
@@ -620,18 +628,15 @@
           "recovery": []
         },
         "type": {
-          "value": "monster",
+          "value": "class",
           "subtype": ""
-        },
-        "prerequisites": {
-          "level": null
         },
         "properties": [],
         "requirements": "",
         "activities": {
           "dnd5eactivity000": {
             "_id": "dnd5eactivity000",
-            "type": "heal",
+            "type": "save",
             "activation": {
               "type": "bonus",
               "value": 1,
@@ -658,7 +663,6 @@
             },
             "effects": [],
             "range": {
-              "value": "10",
               "units": "self",
               "special": "",
               "override": false
@@ -667,15 +671,15 @@
               "template": {
                 "count": "",
                 "contiguous": false,
-                "type": "radius",
-                "size": "10",
-                "width": "",
+                "type": "line",
+                "size": "60",
+                "width": "10",
                 "height": "",
                 "units": "ft"
               },
               "affects": {
                 "count": "",
-                "type": "creature",
+                "type": "",
                 "choice": false,
                 "special": ""
               },
@@ -687,20 +691,32 @@
               "max": "",
               "recovery": []
             },
-            "healing": {
-              "number": 2,
-              "denomination": "8",
-              "bonus": "",
-              "types": [
-                "temphp"
+            "damage": {
+              "onSave": "half",
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 4,
+                  "denomination": 8,
+                  "bonus": "",
+                  "types": [
+                    "fire"
+                  ],
+                  "scaling": {
+                    "number": 1
+                  }
+                }
+              ]
+            },
+            "save": {
+              "ability": [
+                "dex"
               ],
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "scaling": {
-                "mode": "whole",
-                "number": null,
+              "dc": {
+                "calculation": "spellcasting",
                 "formula": ""
               }
             },
@@ -710,18 +726,20 @@
             "appliedEffects": []
           }
         },
-        "identifier": "bolster-allies",
-        "enchant": {}
+        "identifier": "arcane-exhalation-line",
+        "enchant": {},
+        "prerequisites": {
+          "level": null
+        }
       },
-      "_id": "7KTf5YTVP73H9tvU",
-      "img": "icons/magic/life/cross-area-circle-green-white.webp",
       "effects": [],
-      "folder": null,
-      "sort": 0,
       "ownership": {
         "default": 0
       },
       "flags": {
+        "core": {
+          "sourceId": "Compendium.materia-dnd.monster-features.Item.EuufUtp4ZDPgm9rc"
+        },
         "dnd5e": {
           "persistSourceMigration": true,
           "riders": {
@@ -731,22 +749,179 @@
         }
       },
       "_stats": {
-        "compendiumSource": "Compendium.materia-dnd.actors.Actor.2ElkZB7AWhBNuNiA.Item.XqgOUHO9AQAk0wiJ",
+        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.EuufUtp4ZDPgm9rc",
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
         "systemVersion": "4.1.1",
-        "createdTime": 1731572096383,
-        "modifiedTime": 1731572632452,
+        "createdTime": 1731572328199,
+        "modifiedTime": 1731572515140,
         "lastModifiedBy": "dnd5mbuilder0000"
       },
-      "_key": "!actors.items!UypBsBY5WKOYMREJ.7KTf5YTVP73H9tvU"
+      "_id": "fapaGiwJsoqI64hl",
+      "sort": 100000,
+      "_key": "!actors.items!dTAhYH93ZjrcP4G2.fapaGiwJsoqI64hl"
+    },
+    {
+      "folder": "EyT6wN4Hl33u5SG9",
+      "name": "Arcane Exhalation (Cone)",
+      "type": "feat",
+      "_id": "pcUwOJXGTHGbaZmW",
+      "img": "icons/magic/light/beam-rays-magenta-large.webp",
+      "system": {
+        "description": {
+          "value": "<p>The cannon exhales your choice of fire, lightning, necrotic, radiant or thunder damage in an adjacent 15-foot cone on each of it's turns. Each creature in that area must make a Dexterity saving throw against your spell save DC, taking 2d8 + your Intelligence modifier chosen damage type on a failed save or half as much damage on a successful one. If the damage is fire it ignites any flammable objects in the area that are not being worn or carried</p>",
+          "chat": ""
+        },
+        "source": {
+          "custom": "",
+          "revision": 1,
+          "rules": "2024"
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "type": {
+          "value": "class",
+          "subtype": ""
+        },
+        "properties": [],
+        "requirements": "",
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "save",
+            "activation": {
+              "type": "bonus",
+              "value": 1,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "cone",
+                "size": "30",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "uses": {
+              "spent": 0,
+              "max": "",
+              "recovery": []
+            },
+            "damage": {
+              "onSave": "half",
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 4,
+                  "denomination": 8,
+                  "bonus": "",
+                  "types": [
+                    "fire"
+                  ],
+                  "scaling": {
+                    "number": 1
+                  }
+                }
+              ]
+            },
+            "save": {
+              "ability": [
+                "dex"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              }
+            },
+            "sort": 0,
+            "name": "",
+            "img": "",
+            "appliedEffects": []
+          }
+        },
+        "identifier": "arcane-exhalation-cone",
+        "enchant": {},
+        "prerequisites": {
+          "level": null
+        }
+      },
+      "effects": [],
+      "sort": 600000,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "core": {
+          "sourceId": "Compendium.materia-dnd.monster-features.Item.xli7fKN1fPK5zDbI"
+        },
+        "dnd5e": {
+          "persistSourceMigration": true,
+          "riders": {
+            "activity": [],
+            "effect": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.xli7fKN1fPK5zDbI",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.1.1",
+        "createdTime": 1731572329144,
+        "modifiedTime": 1731572526088,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!actors.items!dTAhYH93ZjrcP4G2.pcUwOJXGTHGbaZmW"
     },
     {
       "folder": "EyT6wN4Hl33u5SG9",
       "name": "Cannon Detonation",
       "type": "feat",
-      "_id": "z4nzFSPKUUMK5rpB",
+      "_id": "qcEg2PdOInOvmOTS",
       "img": "icons/magic/fire/explosion-fireball-large-orange.webp",
       "system": {
         "description": {
@@ -830,7 +1005,7 @@
                 "units": "ft",
                 "count": "",
                 "type": "radius",
-                "size": "20"
+                "size": "40"
               },
               "affects": {
                 "choice": false,
@@ -875,7 +1050,9 @@
                 "formula": ""
               }
             },
-            "name": ""
+            "name": "",
+            "img": "",
+            "appliedEffects": []
           }
         },
         "identifier": "cannon-detonation",
@@ -907,11 +1084,152 @@
         "coreVersion": "12.331",
         "systemId": "dnd5e",
         "systemVersion": "4.1.1",
-        "createdTime": 1731572288845,
-        "modifiedTime": 1731572288845,
+        "createdTime": 1731572330405,
+        "modifiedTime": 1731572454139,
         "lastModifiedBy": "dnd5mbuilder0000"
       },
-      "_key": "!actors.items!UypBsBY5WKOYMREJ.z4nzFSPKUUMK5rpB"
+      "_key": "!actors.items!dTAhYH93ZjrcP4G2.qcEg2PdOInOvmOTS"
+    },
+    {
+      "name": "Bolster Allies",
+      "type": "feat",
+      "system": {
+        "description": {
+          "value": "<p>The cannon emits a burst of positive energy that grants itself and each creature of your choice within 10 feet of it a number of temporary hit points equal to 1d8 + your Intelligence modifier (minimum of +1).</p>",
+          "chat": ""
+        },
+        "source": {
+          "custom": "",
+          "revision": 1,
+          "rules": "2024"
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "type": {
+          "value": "monster",
+          "subtype": ""
+        },
+        "prerequisites": {
+          "level": null
+        },
+        "properties": [],
+        "requirements": "",
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "heal",
+            "activation": {
+              "type": "bonus",
+              "value": 1,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "value": "20",
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "radius",
+                "size": "20",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "creature",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "uses": {
+              "spent": 0,
+              "max": "",
+              "recovery": []
+            },
+            "healing": {
+              "number": 3,
+              "denomination": "8",
+              "bonus": "",
+              "types": [
+                "temphp"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "whole",
+                "number": null,
+                "formula": ""
+              }
+            },
+            "sort": 0,
+            "name": "",
+            "img": "",
+            "appliedEffects": []
+          }
+        },
+        "identifier": "bolster-allies",
+        "enchant": {}
+      },
+      "_id": "PR0ZAY54wiYabJ4f",
+      "img": "icons/magic/life/cross-area-circle-green-white.webp",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "dnd5e": {
+          "persistSourceMigration": true,
+          "riders": {
+            "activity": [],
+            "effect": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.materia-dnd.actors.Actor.2ElkZB7AWhBNuNiA.Item.XqgOUHO9AQAk0wiJ",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.1.1",
+        "createdTime": 1731572362224,
+        "modifiedTime": 1731572489432,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!actors.items!dTAhYH93ZjrcP4G2.PR0ZAY54wiYabJ4f"
     }
   ],
   "effects": [],
@@ -924,15 +1242,15 @@
     }
   },
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
     "systemVersion": "4.1.1",
-    "coreVersion": "12.331",
-    "createdTime": 1711373117630,
-    "modifiedTime": 1731569339691,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "createdTime": 1731569886348,
+    "modifiedTime": 1731569918954,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "UypBsBY5WKOYMREJ",
-  "sort": 100000,
-  "_key": "!actors!UypBsBY5WKOYMREJ"
+  "_id": "dTAhYH93ZjrcP4G2",
+  "sort": 0,
+  "_key": "!actors!dTAhYH93ZjrcP4G2"
 }

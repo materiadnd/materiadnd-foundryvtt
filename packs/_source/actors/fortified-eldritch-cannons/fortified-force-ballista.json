@@ -1,6 +1,6 @@
 {
-  "folder": "5T58BMMLa8ZxGmr5",
-  "name": "Upgraded Protector",
+  "folder": "aMxtfjIkxshG9OTs",
+  "name": "Fortified Force Ballista",
   "type": "npc",
   "img": "icons/weapons/artillery/cannon-banded.webp",
   "system": {
@@ -387,7 +387,7 @@
         "climb": null,
         "fly": null,
         "swim": null,
-        "walk": 15,
+        "walk": null,
         "units": null,
         "hover": false
       },
@@ -436,6 +436,9 @@
         },
         "success": 0,
         "failure": 0
+      },
+      "hd": {
+        "spent": 0
       }
     },
     "details": {
@@ -454,7 +457,9 @@
       "environment": "",
       "cr": null,
       "spellLevel": 0,
-      "source": {}
+      "ideal": "",
+      "bond": "",
+      "flaw": ""
     },
     "resources": {
       "legact": {
@@ -471,7 +476,7 @@
       }
     },
     "traits": {
-      "size": "tiny",
+      "size": "med",
       "di": {
         "bypasses": [],
         "value": [
@@ -504,7 +509,8 @@
       }
     },
     "source": {
-      "book": "Materia"
+      "revision": 1,
+      "rules": "2024"
     }
   },
   "prototypeToken": {
@@ -526,8 +532,8 @@
       "fit": "contain",
       "alphaThreshold": 0.75
     },
-    "width": 0.5,
-    "height": 0.5,
+    "width": 1,
+    "height": 1,
     "lockRotation": false,
     "rotation": 0,
     "alpha": 1,
@@ -602,6 +608,318 @@
   },
   "items": [
     {
+      "folder": "EyT6wN4Hl33u5SG9",
+      "name": "Cannon Detonation",
+      "type": "feat",
+      "_id": "J22LJ3dMWLq70rpF",
+      "img": "icons/magic/fire/explosion-fireball-large-orange.webp",
+      "system": {
+        "description": {
+          "value": "<p>As an action, you can command the cannon to detonate if you are within 60 feet of it. Doing so destroys the cannon and forces each creature within 20 feet of it to make a Dexterity saving throw against your spell save DC, taking a number of d8s equal to half your artificer level in force damage on a failed save or half as much damage on a successful one.</p>",
+          "chat": ""
+        },
+        "source": {
+          "revision": 1,
+          "rules": "2024"
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "type": {
+          "value": "monster",
+          "subtype": ""
+        },
+        "properties": [],
+        "requirements": "",
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "save",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "radius",
+                "size": "20",
+                "width": "",
+                "height": "",
+                "units": "ft"
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "uses": {
+              "spent": 0,
+              "max": "",
+              "recovery": []
+            },
+            "damage": {
+              "onSave": "half",
+              "parts": []
+            },
+            "save": {
+              "ability": [
+                "dex"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              }
+            },
+            "sort": 0
+          }
+        },
+        "identifier": "",
+        "enchant": {},
+        "prerequisites": {
+          "level": null
+        }
+      },
+      "effects": [],
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "core": {
+          "sourceId": "Compendium.materia-dnd.monster-features.Item.DdJqTs0jAhMUPTKK"
+        },
+        "dnd5e": {
+          "persistSourceMigration": true
+        }
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.DdJqTs0jAhMUPTKK",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.1.1",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!actors.items!AGbp5nzDY8qLvieG.J22LJ3dMWLq70rpF"
+    },
+    {
+      "folder": "EyT6wN4Hl33u5SG9",
+      "name": "Force Ballista",
+      "type": "feat",
+      "_id": "FKIEitNinilh2usi",
+      "img": "icons/skills/ranged/arrows-flying-salvo-yellow.webp",
+      "system": {
+        "description": {
+          "value": "<p>Make a ranged spell attack, originating from the cannon, at one creature or object within 120 feet of it. On a hit, the target takes 2d8 + your Intelligence modifier force damage, and if the target is a creature, it is pushed up to 5 feet away from the cannon.</p>",
+          "chat": ""
+        },
+        "source": {
+          "custom": "",
+          "revision": 1,
+          "rules": "2024"
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "type": {
+          "value": "monster",
+          "subtype": ""
+        },
+        "properties": [],
+        "requirements": "",
+        "activities": {
+          "dnd5eactivity000": {
+            "name": "",
+            "img": "",
+            "duration": {
+              "units": "inst"
+            },
+            "damage": {
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 2,
+                  "denomination": 8,
+                  "bonus": "",
+                  "types": [
+                    "force"
+                  ],
+                  "scaling": {
+                    "number": 1
+                  }
+                }
+              ]
+            },
+            "appliedEffects": []
+          },
+          "8zTsDRCcXus5XdhS": {
+            "type": "attack",
+            "_id": "8zTsDRCcXus5XdhS",
+            "sort": 0,
+            "activation": {
+              "type": "bonus",
+              "value": null,
+              "override": false,
+              "condition": ""
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": true,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "override": false,
+              "value": "240",
+              "units": "ft",
+              "special": ""
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft",
+                "type": ""
+              },
+              "affects": {
+                "choice": false,
+                "count": "1",
+                "type": "creatureOrObject",
+                "special": ""
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "attack": {
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "spell"
+              },
+              "ability": "",
+              "bonus": ""
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": 4,
+                  "denomination": 8,
+                  "bonus": "",
+                  "types": [
+                    "force"
+                  ],
+                  "scaling": {
+                    "number": 1
+                  }
+                }
+              ]
+            },
+            "name": "",
+            "img": "",
+            "appliedEffects": []
+          }
+        },
+        "identifier": "force-ballista",
+        "enchant": {},
+        "prerequisites": {
+          "level": null
+        }
+      },
+      "effects": [],
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "core": {
+          "sourceId": "Compendium.materia-dnd.monster-features.Item.coUdP83KwnIP28XS"
+        },
+        "dnd5e": {
+          "riders": {
+            "activity": [],
+            "effect": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.coUdP83KwnIP28XS",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.1.1",
+        "createdTime": 1731572781579,
+        "modifiedTime": 1731572853232,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!actors.items!AGbp5nzDY8qLvieG.FKIEitNinilh2usi"
+    },
+    {
       "name": "Bolster Allies",
       "type": "feat",
       "system": {
@@ -658,7 +976,7 @@
             },
             "effects": [],
             "range": {
-              "value": "10",
+              "value": "20",
               "units": "self",
               "special": "",
               "override": false
@@ -668,7 +986,7 @@
                 "count": "",
                 "contiguous": false,
                 "type": "radius",
-                "size": "10",
+                "size": "20",
                 "width": "",
                 "height": "",
                 "units": "ft"
@@ -688,8 +1006,8 @@
               "recovery": []
             },
             "healing": {
-              "number": 2,
-              "denomination": "8",
+              "number": 3,
+              "denomination": 8,
               "bonus": "",
               "types": [
                 "temphp"
@@ -705,15 +1023,13 @@
               }
             },
             "sort": 0,
-            "name": "",
-            "img": "",
-            "appliedEffects": []
+            "name": ""
           }
         },
         "identifier": "bolster-allies",
         "enchant": {}
       },
-      "_id": "7KTf5YTVP73H9tvU",
+      "_id": "oqUJndSI51fAJmaL",
       "img": "icons/magic/life/cross-area-circle-green-white.webp",
       "effects": [],
       "folder": null,
@@ -736,182 +1052,11 @@
         "coreVersion": "12.331",
         "systemId": "dnd5e",
         "systemVersion": "4.1.1",
-        "createdTime": 1731572096383,
-        "modifiedTime": 1731572632452,
+        "createdTime": 1731572866181,
+        "modifiedTime": 1731572866181,
         "lastModifiedBy": "dnd5mbuilder0000"
       },
-      "_key": "!actors.items!UypBsBY5WKOYMREJ.7KTf5YTVP73H9tvU"
-    },
-    {
-      "folder": "EyT6wN4Hl33u5SG9",
-      "name": "Cannon Detonation",
-      "type": "feat",
-      "_id": "z4nzFSPKUUMK5rpB",
-      "img": "icons/magic/fire/explosion-fireball-large-orange.webp",
-      "system": {
-        "description": {
-          "value": "<p>As an action, you can command the cannon to detonate if you are within 60 feet of it. Doing so destroys the cannon and forces each creature within 20 feet of it to make a Dexterity saving throw against your spell save DC, taking a number of d8s equal to half your artificer level in force damage on a failed save or half as much damage on a successful one.</p>",
-          "chat": ""
-        },
-        "source": {
-          "revision": 1,
-          "rules": "2024"
-        },
-        "uses": {
-          "max": "1",
-          "spent": 0,
-          "recovery": []
-        },
-        "type": {
-          "value": "monster",
-          "subtype": ""
-        },
-        "properties": [],
-        "requirements": "",
-        "activities": {
-          "dnd5eactivity000": {
-            "damage": {
-              "parts": [
-                {
-                  "custom": {
-                    "enabled": true,
-                    "formula": "(@classes.artificer.levels / 2)d8"
-                  },
-                  "number": null,
-                  "denomination": 8,
-                  "bonus": "",
-                  "types": [
-                    "force"
-                  ],
-                  "scaling": {
-                    "number": 1
-                  }
-                }
-              ]
-            },
-            "name": "",
-            "img": "",
-            "appliedEffects": []
-          },
-          "TAsr7sKjz5iPvQAt": {
-            "type": "save",
-            "_id": "TAsr7sKjz5iPvQAt",
-            "sort": 0,
-            "activation": {
-              "type": "action",
-              "value": null,
-              "override": false,
-              "condition": ""
-            },
-            "consumption": {
-              "scaling": {
-                "allowed": false
-              },
-              "spellSlot": true,
-              "targets": []
-            },
-            "description": {
-              "chatFlavor": ""
-            },
-            "duration": {
-              "units": "inst",
-              "concentration": false,
-              "override": false
-            },
-            "effects": [],
-            "range": {
-              "override": false,
-              "units": "self",
-              "special": ""
-            },
-            "target": {
-              "template": {
-                "contiguous": false,
-                "units": "ft",
-                "count": "",
-                "type": "radius",
-                "size": "20"
-              },
-              "affects": {
-                "choice": false,
-                "count": "",
-                "type": "creature",
-                "special": ""
-              },
-              "override": false,
-              "prompt": true
-            },
-            "uses": {
-              "spent": 0,
-              "recovery": [],
-              "max": "1"
-            },
-            "damage": {
-              "parts": [
-                {
-                  "custom": {
-                    "enabled": false,
-                    "formula": ""
-                  },
-                  "number": null,
-                  "denomination": 8,
-                  "bonus": "",
-                  "types": [
-                    "force"
-                  ],
-                  "scaling": {
-                    "number": 1
-                  }
-                }
-              ],
-              "onSave": "half"
-            },
-            "save": {
-              "ability": [
-                "dex"
-              ],
-              "dc": {
-                "calculation": "spellcasting",
-                "formula": ""
-              }
-            },
-            "name": ""
-          }
-        },
-        "identifier": "cannon-detonation",
-        "enchant": {},
-        "prerequisites": {
-          "level": null
-        }
-      },
-      "effects": [],
-      "sort": 0,
-      "ownership": {
-        "default": 0
-      },
-      "flags": {
-        "core": {
-          "sourceId": "Compendium.materia-dnd.monster-features.Item.DdJqTs0jAhMUPTKK"
-        },
-        "dnd5e": {
-          "riders": {
-            "activity": [],
-            "effect": []
-          },
-          "migratedUses": null
-        }
-      },
-      "_stats": {
-        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.DdJqTs0jAhMUPTKK",
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "dnd5e",
-        "systemVersion": "4.1.1",
-        "createdTime": 1731572288845,
-        "modifiedTime": 1731572288845,
-        "lastModifiedBy": "dnd5mbuilder0000"
-      },
-      "_key": "!actors.items!UypBsBY5WKOYMREJ.z4nzFSPKUUMK5rpB"
+      "_key": "!actors.items!AGbp5nzDY8qLvieG.oqUJndSI51fAJmaL"
     }
   ],
   "effects": [],
@@ -924,15 +1069,15 @@
     }
   },
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
     "systemVersion": "4.1.1",
-    "coreVersion": "12.331",
-    "createdTime": 1711373117630,
-    "modifiedTime": 1731569339691,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "createdTime": 1731569888428,
+    "modifiedTime": 1731572749409,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "UypBsBY5WKOYMREJ",
-  "sort": 100000,
-  "_key": "!actors!UypBsBY5WKOYMREJ"
+  "_id": "AGbp5nzDY8qLvieG",
+  "sort": 0,
+  "_key": "!actors!AGbp5nzDY8qLvieG"
 }
