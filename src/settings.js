@@ -15,7 +15,8 @@ export class Settings {
         SPELL_SEARCH_INDEX: 'spell-search-index',
         ENABLE_SPELL_SEARCH: 'enable-spell-search',
         SPELL_SEARCH_PACK_NAME: 'spell-search-pack-name',
-        SHOW_STARTING_STAT_ROLLER: 'show-starting-stat-roller'
+        SHOW_STARTING_STAT_ROLLER: 'show-starting-stat-roller',
+        ADD_TOOLS: 'add-tools',
     }
 
     static initialize() {
@@ -154,6 +155,16 @@ export class Settings {
             type: Boolean,
             onChange: () => {},
             requiresReload: true,
-        })
+        });
+        game.settings.register(Constants.MODULE_ID, this.SETTINGS.ADD_TOOLS, {
+            name: `${Constants.MODULE_ID}.settings.${this.SETTINGS.ADD_TOOLS}.Name`,
+            hint: `${Constants.MODULE_ID}.settings.${this.SETTINGS.ADD_TOOLS}.Hint`,
+            config: true,
+            scope: 'world',
+            default: true,
+            type: Boolean,
+            onChange: () => {},
+            requiresReload: true,
+        });
     }
 }
