@@ -96,7 +96,7 @@
     },
     "type": {
       "value": "martialM",
-      "baseItem": ""
+      "baseItem": "scimitar"
     },
     "properties": [
       "two"
@@ -106,7 +106,7 @@
       "zVexAvqTFE7p9Trm": {
         "type": "attack",
         "_id": "zVexAvqTFE7p9Trm",
-        "sort": 0,
+        "sort": 200000,
         "activation": {
           "type": "bonus",
           "value": null,
@@ -140,7 +140,7 @@
           },
           "affects": {
             "choice": false,
-            "count": "",
+            "count": "1",
             "type": "creature",
             "special": ""
           },
@@ -168,12 +168,82 @@
           "critical": {
             "bonus": ""
           },
-          "includeBase": true,
-          "parts": []
+          "includeBase": false,
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 4,
+              "bonus": "",
+              "types": [
+                "slashing"
+              ],
+              "scaling": {
+                "number": 1
+              }
+            }
+          ]
         },
         "name": "Bonus Action Attack",
         "img": "",
         "appliedEffects": []
+      },
+      "eoceadbz8sJ5bQbP": {
+        "type": "attack",
+        "_id": "eoceadbz8sJ5bQbP",
+        "sort": 100000,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {},
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "attack": {
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {}
+        },
+        "damage": {
+          "critical": {},
+          "includeBase": true,
+          "parts": []
+        }
       }
     },
     "mastery": ""
@@ -196,10 +266,10 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "systemVersion": "4.1.1",
     "coreVersion": "12.331",
     "createdTime": 1708539741411,
-    "modifiedTime": 1730381820770,
+    "modifiedTime": 1732003563222,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
