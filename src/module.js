@@ -13,6 +13,7 @@ import { WildShapeTransformActorHandler } from "./wild-shape.js";
 import { SpellSearchIndex, SpellSearchApp, SpellSearchRenderActorSheetHandler } from "./apps/spell-search.js";
 import { StatRollerRenderActorSheetHandler } from "./apps/stat-roller.js";
 import { AddMateriaTools } from "./tools.js";
+import { TableOfContentsCompendium } from "./apps/table-of-contents.js";
 
 Hooks.once("init", () => {
     CONFIG.DND5E.sourceBooks["Materia"] = "Materia D&D 5.M";
@@ -23,11 +24,11 @@ Hooks.once('init', () => {
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_THIRD_PACT_CASTER)) {
         SpellcastingAddThirdPactProgression();
     }
+    if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_MATERIA_CONDITIONS)) { AddMateriaConditions(); }
 });
 
 Hooks.once("ready", () => {
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_ARMOR_TYPES)) { AddMateriaArmor(); }
-    if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_MATERIA_CONDITIONS)) { AddMateriaConditions(); }
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_THIRD_PACT_CASTER)) { AddThirdPactCaster(); }
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_WEAPONS_AND_WEAPON_PROPS)) { AddMateriaWeapons(); }
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_TOOLS)) { AddMateriaTools(); }
@@ -51,6 +52,13 @@ Hooks.once("ready", () => {
         });
     }
 })
+
+Hooks.once("setup", () => {
+    // change the appropriately flagged compendiums to use the ToC compendium application
+    game.packs
+        .filter(p => p.metadata.flags?.display == "table-of-contents")
+        .forEach(p => p.applicationClass = TableOfContentsCompendium);
+});
 
 Hooks.on("dnd5e.damageActor", async (actor, heal, diff, id) => {
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_EXHAUSTION_HANDLING)) {
