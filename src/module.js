@@ -55,9 +55,7 @@ Hooks.once("ready", () => {
 
 Hooks.once("setup", () => {
     // change the appropriately flagged compendiums to use the ToC compendium application
-    game.packs
-        .filter(p => p.metadata.flags?.display == "table-of-contents")
-        .forEach(p => p.applicationClass = TableOfContentsCompendium);
+    game.packs.get("materia-dnd.rules").applicationClass = TableOfContentsCompendium;
 });
 
 Hooks.on("dnd5e.damageActor", async (actor, heal, diff, id) => {

@@ -1,5 +1,6 @@
 {{#*inline "pages"}}
 <ul class="pages">
+    {{ log pages }}
     {{#each pages}}
     {{#unless flags.materia-dnd.tocHidden}}
     <li class="{{#if (and showPages pages.length)}}child-pages{{/if}} {{#if entry}}special-entry{{/if}}">
@@ -14,6 +15,7 @@
 {{/inline}}
 
 <article>
+    {{ log header }}
     {{#if header}}
     <aside>
         <header>
@@ -27,6 +29,7 @@
             <h2>{{ localize "DND5E.Contents" }}</h2>
         </header>
         <section>
+            {{ log chapters }}
             {{#each chapters}}
             <div class="chapter" data-document-id="{{ id }}" data-entry-id="{{ id }}">
                 <h3><a class="journal-entry-link">{{ name }}</a></h3>

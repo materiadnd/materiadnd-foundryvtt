@@ -42,14 +42,14 @@ export class TableOfContentsCompendium extends Compendium {
       if ( !flags ) continue;
       const type = flags.type ?? "chapter";
 
-      if ( type === "header" ) {
-        const page = entry.pages.contents[0];
-        context.header = {
-          title: flags.title ?? page?.name,
-          content: page?.text.content
-        };
-        continue;
-      }
+      // if ( type === "header" ) {
+      //   const page = entry.pages.contents[0];
+      //   context.header = {
+      //     title: flags.title ?? page?.name,
+      //     content: page?.text.content
+      //   };
+      //   continue;
+      // }
 
       const data = {
         type, flags,
@@ -62,14 +62,14 @@ export class TableOfContentsCompendium extends Compendium {
         }))
       };
 
-      if ( type === "special" ) {
-        data.showPages = flags.showPages ?? !flags.append;
-        specialEntries.push(data);
-      } else {
-        data.order = (this.constructor.TYPES[type] ?? 200) + (flags.position ?? 0);
-        data.showPages = (flags.showPages !== false) && ((flags.showPages === true) || (type === "chapter"));
-        context.chapters.push(data);
-      }
+      // if ( type === "special" ) {
+      //   data.showPages = flags.showPages ?? !flags.append;
+      //   specialEntries.push(data);
+      // } else {
+      //   data.order = (this.constructor.TYPES[type] ?? 200) + (flags.position ?? 0);
+      //   data.showPages = (flags.showPages !== false) && ((flags.showPages === true) || (type === "chapter"));
+      //   context.chapters.push(data);
+      // }
     }
 
     context.chapters.sort((lhs, rhs) => lhs.order - rhs.order);
