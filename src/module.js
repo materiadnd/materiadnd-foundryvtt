@@ -13,7 +13,7 @@ import { WildShapeTransformActorHandler } from "./wild-shape.js";
 import { SpellSearchIndex, SpellSearchApp, SpellSearchRenderActorSheetHandler } from "./apps/spell-search.js";
 import { StatRollerRenderActorSheetHandler } from "./apps/stat-roller.js";
 import { AddMateriaTools } from "./tools.js";
-import { TableOfContentsCompendium } from "./apps/table-of-contents.js";
+import { MateriaTableOfContentsCompendium } from "./apps/table-of-contents.js";
 
 Hooks.once("init", () => {
     CONFIG.DND5E.sourceBooks["Materia"] = "Materia D&D 5.M";
@@ -55,7 +55,7 @@ Hooks.once("ready", () => {
 
 Hooks.once("setup", () => {
     // change the appropriately flagged compendiums to use the ToC compendium application
-    game.packs.get("materia-dnd.rules").applicationClass = TableOfContentsCompendium;
+    game.packs.get("materia-dnd.rules").applicationClass = MateriaTableOfContentsCompendium;
 });
 
 Hooks.on("dnd5e.damageActor", async (actor, heal, diff, id) => {
