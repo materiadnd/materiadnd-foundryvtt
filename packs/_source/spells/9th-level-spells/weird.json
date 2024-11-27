@@ -6,7 +6,7 @@
   "type": "spell",
   "system": {
     "description": {
-      "value": "<p>Drawing on the deepest fears of a group of creatures, you create illusory creatures in their minds, visible only to them. Each creature in a 30-foot-radius sphere centered on a point of your choice within range must make a Wisdom saving throw. On a failed save, a creature becomes Frightened for the Duration. The illusion calls on the creature's deepest fears, manifesting its worst nightmares as an implacable threat. At the end of each of the Frightened creature's turns, it must succeed on a Wisdom saving throw or take [[/r 4d10]] psychic damage. On a successful save, the spell ends for that creature.</p>",
+      "value": "<p>Drawing on the deepest fears of a group of creatures, you create illusory creatures in their minds, visible only to them. Each creature of your choice in a 30-foot-radius sphere centered on a point of your choice within range must make a Wisdom saving throw. On a failed save, a creature becomes <em>frightened</em> and <em>paralyzed</em> with fear for the duration. The illusion calls on the creature's deepest fears, manifesting its worst nightmares as an implacable threat. At the end of each of the <em>paralyzed</em> creature's turns, it must succeed on a Wisdom saving throw or take [[/r 5d10]] psychic damage. On a successful save, the creature are no longer <em>paralyzed</em> (but still <em>frightened</em>).</p>",
       "chat": ""
     },
     "source": {
@@ -142,7 +142,16 @@
           "concentration": false,
           "override": true
         },
-        "effects": [],
+        "effects": [
+          {
+            "_id": "FkcKtsxT2uPsu0qt",
+            "onSave": false
+          },
+          {
+            "_id": "PgwMBOQejgnnfjS4",
+            "onSave": false
+          }
+        ],
         "range": {
           "override": true,
           "units": "spec",
@@ -175,7 +184,7 @@
                 "enabled": false,
                 "formula": ""
               },
-              "number": 4,
+              "number": 5,
               "denomination": 10,
               "bonus": "",
               "types": [
@@ -261,15 +270,91 @@
         "lastModifiedBy": "dnd5mbuilder0000"
       },
       "_key": "!items.effects!R52QxbpxxZVWrY4r.bmxJ5gNXfX1WNL5M"
+    },
+    {
+      "name": "Frightened",
+      "img": "systems/dnd5e/icons/svg/statuses/frightened.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.R52QxbpxxZVWrY4r",
+      "transfer": false,
+      "_id": "FkcKtsxT2uPsu0qt",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "frightened"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.1.2",
+        "createdTime": 1732722196480,
+        "modifiedTime": 1732722222307,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!R52QxbpxxZVWrY4r.FkcKtsxT2uPsu0qt"
+    },
+    {
+      "name": "Paralyzed",
+      "img": "systems/dnd5e/icons/svg/statuses/paralyzed.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.R52QxbpxxZVWrY4r",
+      "transfer": false,
+      "_id": "PgwMBOQejgnnfjS4",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "paralyzed"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.1.2",
+        "createdTime": 1732722197284,
+        "modifiedTime": 1732722237346,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!R52QxbpxxZVWrY4r.PgwMBOQejgnnfjS4"
     }
   ],
   "folder": "89VDZRAxJ1IDvEOP",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "systemVersion": "4.1.2",
     "coreVersion": "12.331",
     "createdTime": 1661787234153,
-    "modifiedTime": 1728944545795,
+    "modifiedTime": 1732722197324,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
