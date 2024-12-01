@@ -1,4 +1,4 @@
-const STANDARD_TRAITS = ["Armor Training", "Saving Throws", "Skills", "Tool Proficiencies", "Weapon Proficiencies"];
+const STANDARD_TRAITS = ["Armor Training", "Saving Throws", "Skills", "Tool Proficiencies", "Weapon Proficiencies", "Multiclass Proficiencies"];
 
 export class EnhancedJournalClassPageSheet extends dnd5e.applications.journal.JournalClassPageSheet {
   /**
@@ -105,23 +105,55 @@ export class EnhancedJournalClassPageSheet extends dnd5e.applications.journal.Jo
   async _getFeatures(item, { modernStyle, optional=false }) {
     const prepareFeature = async (f, level) => {
       const document = await fromUuid(f.uuid);
-      if ( document?.type !== "feat" ) return null;
+      // if ( document?.type !== "feat" ) return null;
+      let name = "";
+      let description = "";
+      if (document?.type !== "feat") {
+        switch (document.constructor.typeName) {
+          case "ItemChoice":
+          case "Trait":
+            name = document.title;
+            description = document.hint;
+            break;
+          default:
+            return null;
+        }
+      } else {
+        name = document.name;
+        description = document.system.description.value;
+      }
       return {
         document,
         name: modernStyle ? game.i18n.format("JOURNALENTRYPAGE.DND5E.Class.Features.Name", {
-          name: document.name, level: dnd5e.utils.formatNumber(level)
-        }) : document.name,
-        description: await TextEditor.enrichHTML(document.system.description.value, {
+          name: name, level: dnd5e.utils.formatNumber(level)
+        }) : name,
+        description: await TextEditor.enrichHTML(description, {
           relativeTo: item, secrets: false
         })
       };
     };
 
     let features = [];
-    const itemGrants = Array.from(item.advancement.byType.ItemGrant ?? []).sort((lhs, rhs) => lhs.level - rhs.level);
-    for ( const advancement of itemGrants ) {
-      if ( !!advancement.configuration.optional !== optional ) continue;
-      features.push(...advancement.configuration.items.map(f => prepareFeature(f, advancement.level)));
+    let choiceFeatureIds = [];
+    for ( const level of Array.fromRange(CONFIG.DND5E.maxLevel, 1) ) {
+      for ( const advancement of item.advancement.byLevel[level] ) {
+        if (!!advancement.configuration.optional !== optional) continue;
+        if (advancement.constructor.typeName == "Trait" && STANDARD_TRAITS.includes(advancement.title)) continue;
+        if (advancement.title.startsWith("Starting")) continue;
+        if (advancement.constructor.typeName == "ItemGrant") {
+          features.push(...advancement.configuration.items.map(f => prepareFeature(f, advancement.level)));
+        } else {
+          if (advancement.constructor.typeName == "ItemChoice") {
+            if (!choiceFeatureIds.includes(advancement._id)) { 
+              choiceFeatureIds.push(advancement._id);
+            } else{
+              // skip subsequent instances of choices
+              continue;
+            }
+          }
+          features.push(prepareFeature(advancement, level));
+        }
+      }
     }
     features = await Promise.all(features);
     return features.filter(f => f);
