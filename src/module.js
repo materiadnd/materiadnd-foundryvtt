@@ -14,9 +14,15 @@ import { SpellSearchIndex, SpellSearchApp, SpellSearchRenderActorSheetHandler } 
 import { StatRollerRenderActorSheetHandler } from "./apps/stat-roller.js";
 import { AddMateriaTools } from "./tools.js";
 import { MateriaTableOfContentsCompendium } from "./apps/table-of-contents.js";
+import { EnhancedJournalClassPageSheet } from "./apps/enhanced-class-page-sheet.js"
 
 Hooks.once("init", () => {
     CONFIG.DND5E.sourceBooks["Materia"] = "Materia D&D 5.M";
+
+    DocumentSheetConfig.registerSheet(JournalEntryPage, "dnd5e", EnhancedJournalClassPageSheet, {
+        label: "Enhanced Class Page",
+        types: ["class", "subclass"]
+    });
 })
 
 Hooks.once('init', () => {
