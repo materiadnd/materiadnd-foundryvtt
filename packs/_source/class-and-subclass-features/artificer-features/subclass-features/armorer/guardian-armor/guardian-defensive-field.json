@@ -37,7 +37,7 @@
     },
     "uses": {
       "value": null,
-      "max": "@prof",
+      "max": "",
       "per": "lr",
       "recovery": "",
       "prompt": true
@@ -80,6 +80,38 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "uses": {
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll"
+            }
+          ],
+          "max": "@prof"
+        },
+        "name": "",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "",
+              "scaling": {}
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -87,13 +119,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.1.1",
+    "coreVersion": "12.331",
     "createdTime": 1709578527778,
-    "modifiedTime": 1709578598792,
+    "modifiedTime": 1731567860141,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

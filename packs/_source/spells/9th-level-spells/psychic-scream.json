@@ -6,7 +6,7 @@
       "book": "Materia"
     },
     "description": {
-      "value": "<p>You unleash the power of your mind to blast the intellect of up to ten creatures of your choice that you can see within range. Creatures that have an Intelligence score of 2 or lower are unaffected.</p><p>Each target must make an Intelligence saving throw. On a failed save, a target takes [[/r 14d6]] psychic damage and is stunned. On a successful save, a target takes half as much damage and isn't stunned. If a target is killed by this damage, its head explodes, assuming it has one.</p><p>A stunned target can make an Intelligence saving throw at the end of each of its turns. On a successful save, the stunning effect ends.</p>",
+      "value": "<p>You unleash the power of your mind to blast the intellect of up to ten creatures of your choice that you can see within range. Creatures that have an Intelligence score of 2 or lower are unaffected.</p><p>Each target must make an Intelligence saving throw. On a failed save, a target takes [[/r 20d6]] psychic damage and is stunned. On a successful save, a target takes half as much damage and isn't stunned. If a target is killed by this damage, its head explodes, assuming it has one.</p><p>A stunned target can make an Intelligence saving throw at the end of each of its turns. On a successful save, the stunning effect ends.</p>",
       "chat": ""
     },
     "actionType": "save",
@@ -104,6 +104,89 @@
             "onSave": false
           }
         ]
+      },
+      "DWaXbUJUg4ZXeNrM": {
+        "type": "save",
+        "_id": "DWaXbUJUg4ZXeNrM",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "TRbBBcnK72xo6mML",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 20,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "psychic"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "int"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
       }
     }
   },
@@ -180,15 +263,53 @@
         "lastModifiedBy": "dnd5mbuilder0000"
       },
       "_key": "!items.effects!H99tEeXp4uQwTnEl.MhkvqHzZNwFn2Ojj"
+    },
+    {
+      "name": "Stunned",
+      "img": "systems/dnd5e/icons/svg/statuses/stunned.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.H99tEeXp4uQwTnEl",
+      "transfer": false,
+      "_id": "TRbBBcnK72xo6mML",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "stunned"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.1.2",
+        "createdTime": 1732721562990,
+        "modifiedTime": 1732721592812,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!H99tEeXp4uQwTnEl.TRbBBcnK72xo6mML"
     }
   ],
   "folder": "89VDZRAxJ1IDvEOP",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "systemVersion": "4.1.2",
     "coreVersion": "12.331",
     "createdTime": 1709232299929,
-    "modifiedTime": 1728942897471,
+    "modifiedTime": 1732721563033,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

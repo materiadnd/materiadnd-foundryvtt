@@ -117,10 +117,10 @@ function renderSpellCastTime(spellData) {
     } else if (spellData.castTime?.type == 'bonus') {
         return `${spellData.castTime?.type} action`;
     } else {
-        if (spellData.castTime?.cost > 1) {
-            return `${spellData.castTime?.cost} ${spellData.castTime?.type}s`;
+        if (spellData.castTime?.value > 1) {
+            return `${spellData.castTime?.value} ${spellData.castTime?.type}s`;
         } else {
-            return `${spellData.castTime?.cost} ${spellData.castTime?.type}`;
+            return `${spellData.castTime?.value} ${spellData.castTime?.type}`;
         }
     }
 }

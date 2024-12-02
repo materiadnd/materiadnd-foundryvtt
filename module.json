@@ -2,7 +2,7 @@
   "id": "materia-dnd",
   "title": "Materia D&D",
   "description": "Module with the customizations of Dungeons and Dragons 5th Edition for the Materia homebrew setting.",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "authors": [
     {
       "name": "Daniel DiPaolo",
@@ -20,7 +20,7 @@
     }
   ],
   "compatibility": {
-    "minimum": "0.8.6",
+    "minimum": "12.324",
     "verified": "12.331"
   },
   "relationships": {
@@ -29,7 +29,7 @@
         "id": "dnd5e",
         "type": "system",
         "compatibility": {
-          "verified": "4.1.1"
+          "verified": "4.1.2"
         }
       }
     ]
@@ -153,13 +153,16 @@
     },
     {
       "name": "rules",
-      "label": "Rules (Materia)",
+      "label": "Materia Handbook",
       "path": "packs/rules",
       "type": "JournalEntry",
       "system": "dnd5e",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
+      },
+      "flags": {
+          "display": "materia-table-of-contents"
       }
     },
     {
@@ -199,8 +202,9 @@
   "packFolders": [
     {
       "name": "Materia Content",
-      "sorting": "a",
+      "sorting": "m",
       "packs": [
+        "rules",
         "actors",
         "backgrounds",
         "class-and-subclass-features",
@@ -210,7 +214,6 @@
         "macros",
         "magic-items",
         "monster-features",
-        "rules",
         "rollable-tables",
         "species",
         "spells",
@@ -220,6 +223,21 @@
       "color": null
     }
   ],
+  "flags": {
+    "dnd5e": {
+        "spellLists": [
+            "Compendium.materia-dnd.rules.JournalEntry.xL1RnhxE3qZRDvml.JournalEntryPage.NmMmptlf7kpSXP6L",
+            "Compendium.materia-dnd.rules.JournalEntry.gnuh2kue9uqZpA72.JournalEntryPage.uNfn3hEZ0HbtVBCj",
+            "Compendium.materia-dnd.rules.JournalEntry.iP1dkRR5XjXBzGp6.JournalEntryPage.NtHJscPurS2dcHYM",
+            "Compendium.materia-dnd.rules.JournalEntry.LZUwyLHk746KzSw4.JournalEntryPage.nvFUEazu0Xbj3EXx",
+            "Compendium.materia-dnd.rules.JournalEntry.iZNDQAnjPjioquhr.JournalEntryPage.DhDtTgNV1HwL42Zp",
+            "Compendium.materia-dnd.rules.JournalEntry.GUdhw3Fk1kAUQn8Q.JournalEntryPage.flEJp2YdSikr5j4c",
+            "Compendium.materia-dnd.rules.JournalEntry.gMj3ebxhdppsYFsc.JournalEntryPage.0C55thjALBnQk82z",
+            "Compendium.materia-dnd.rules.JournalEntry.oX2Zl9pDIcTlA1O7.JournalEntryPage.8we1wWPCjgF1qxZ1",
+            "Compendium.materia-dnd.rules.JournalEntry.Ko6oQhoTaw2ATSvp.JournalEntryPage.pmoXt4aDLr9UJ8OQ"
+        ]
+    }
+  },
   "manifest": "https://github.com/materiadnd/materiadnd-foundryvtt/releases/latest/download/module.json",
-  "download": "https://github.com/materiadnd/materiadnd-foundryvtt/releases/download/release-0.9.6/materia-dnd-release-0.9.6.zip"
+  "download": "https://github.com/materiadnd/materiadnd-foundryvtt/releases/download/release-0.9.7/materia-dnd-release-0.9.7.zip"
 }

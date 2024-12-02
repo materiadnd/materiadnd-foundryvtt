@@ -6,7 +6,7 @@
   "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You utter a word of power that can compel one creature you can see within range to die instantly. If the creature you choose has 100 hit points or fewer, it dies. Otherwise, the spell has no effect.</p>",
+      "value": "<p>You utter a word of power that can compel one creature you can see within range to die instantly. If the creature you choose has 100 hit points or fewer, it dies. Otherwise, the spell deals 100 hit points of necrotic damage (that cannot be reduced in anyway) to the target and its hit point maximum is reduced by the same amount.</p>",
       "chat": ""
     },
     "source": {
@@ -146,6 +146,81 @@
         "name": "Cast",
         "img": "",
         "appliedEffects": []
+      },
+      "hmSvIwFYxJulIcLw": {
+        "type": "damage",
+        "_id": "hmSvIwFYxJulIcLw",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "uEylCyP8QKNJdPJL"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "100"
+              },
+              "number": null,
+              "denomination": 0,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "name": "Non-Lethal Damage",
+        "img": "",
+        "appliedEffects": []
       }
     }
   },
@@ -167,14 +242,58 @@
     }
   },
   "img": "icons/magic/unholy/strike-beam-blood-large-red-teal.webp",
-  "effects": [],
+  "effects": [
+    {
+      "name": "Reduced Life",
+      "img": "icons/magic/unholy/strike-beam-blood-large-red-teal.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.zuk9c5xEx70AYMow",
+      "transfer": false,
+      "_id": "uEylCyP8QKNJdPJL",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.hp.bonuses.overall",
+          "mode": 2,
+          "value": "-100",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.1.2",
+        "createdTime": 1732721385690,
+        "modifiedTime": 1732721451965,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!zuk9c5xEx70AYMow.uEylCyP8QKNJdPJL"
+    }
+  ],
   "folder": "89VDZRAxJ1IDvEOP",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "systemVersion": "4.1.2",
     "coreVersion": "12.331",
     "createdTime": 1661787234182,
-    "modifiedTime": 1730359948234,
+    "modifiedTime": 1732721385723,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

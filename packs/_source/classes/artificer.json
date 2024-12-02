@@ -109,8 +109,7 @@
             "saves:con",
             "saves:int"
           ],
-          "choices": [],
-          "hint": ""
+          "choices": []
         },
         "level": 1,
         "title": "",
@@ -140,8 +139,7 @@
                 "skills:slt"
               ]
             }
-          ],
-          "hint": ""
+          ]
         },
         "level": 1,
         "title": "",
@@ -162,8 +160,7 @@
             "armor:med",
             "armor:shl"
           ],
-          "choices": [],
-          "hint": ""
+          "choices": []
         },
         "level": 1,
         "title": "",
@@ -182,16 +179,15 @@
             "weapon:mar:handcrossbow",
             "weapon:mar:heavycrossbow"
           ],
-          "choices": [],
-          "hint": ""
+          "choices": []
         },
         "level": 1,
         "title": "",
-        "icon": null,
         "classRestriction": "primary",
         "value": {
           "chosen": []
-        }
+        },
+        "hint": ""
       },
       {
         "_id": "MGy2sEeUm27IAiC5",
@@ -203,8 +199,7 @@
             "tool:art:tinker",
             "tool:thief"
           ],
-          "choices": [],
-          "hint": ""
+          "choices": []
         },
         "level": 1,
         "title": "",
@@ -226,8 +221,7 @@
                 "tool:art:*"
               ]
             }
-          ],
-          "hint": ""
+          ]
         },
         "level": 1,
         "title": "",
@@ -250,7 +244,8 @@
             "wis": 0,
             "cha": 0
           },
-          "cap": 2
+          "cap": 2,
+          "locked": []
         },
         "value": {
           "type": "asi"
@@ -272,7 +267,8 @@
             "wis": 0,
             "cha": 0
           },
-          "cap": 2
+          "cap": 2,
+          "locked": []
         },
         "value": {
           "type": "asi"
@@ -294,7 +290,8 @@
             "wis": 0,
             "cha": 0
           },
-          "cap": 2
+          "cap": 2,
+          "locked": []
         },
         "value": {
           "type": "asi"
@@ -316,7 +313,8 @@
             "wis": 0,
             "cha": 0
           },
-          "cap": 2
+          "cap": 2,
+          "locked": []
         },
         "value": {
           "type": "asi"
@@ -338,7 +336,8 @@
             "wis": 0,
             "cha": 0
           },
-          "cap": 2
+          "cap": 2,
+          "locked": []
         },
         "value": {
           "type": "asi"
@@ -646,7 +645,8 @@
             "wis": 0,
             "cha": 0
           },
-          "cap": 1
+          "cap": 1,
+          "locked": []
         },
         "value": {
           "type": "asi"
@@ -721,7 +721,6 @@
             }
           ],
           "spell": null,
-          "hint": "Choose any two simple weapons of your choice.",
           "restriction": {}
         },
         "value": {
@@ -729,7 +728,8 @@
           "replaced": {}
         },
         "title": "Starting Equipment - Weapons",
-        "classRestriction": "primary"
+        "classRestriction": "primary",
+        "hint": "Choose any two simple weapons of your choice."
       },
       {
         "_id": "2lUJA5FhGq9kuBGU",
@@ -790,7 +790,6 @@
             }
           ],
           "spell": null,
-          "hint": "Choose one of: studded leather armor or scale mail",
           "restriction": {}
         },
         "value": {
@@ -798,7 +797,8 @@
           "replaced": {}
         },
         "title": "Starting Equipment - Armor",
-        "classRestriction": "primary"
+        "classRestriction": "primary",
+        "hint": "Choose one of: studded leather armor or scale mail"
       },
       {
         "_id": "b7JXGj5r50aB3zNB",
@@ -875,9 +875,112 @@
     ],
     "spellcasting": {
       "progression": "half",
-      "ability": "int"
+      "ability": "int",
+      "preparation": {
+        "formula": ""
+      }
     },
-    "wealth": ""
+    "wealth": "",
+    "primaryAbility": {
+      "value": [
+        "int"
+      ]
+    },
+    "startingEquipment": [
+      {
+        "type": "weapon",
+        "count": 2,
+        "key": "sim",
+        "requiresProficiency": false,
+        "_id": "dPOTxu2i83tzuPhW",
+        "group": "",
+        "sort": 100000
+      },
+      {
+        "type": "AND",
+        "requiresProficiency": false,
+        "_id": "TNoTNi1JwybMW331",
+        "group": "",
+        "sort": 200000
+      },
+      {
+        "type": "linked",
+        "count": null,
+        "key": "Compendium.materia-dnd.items.Item.wTnY23M2KdNeFQDD",
+        "requiresProficiency": false,
+        "_id": "1hiVB3FOR8aHq80A",
+        "group": "TNoTNi1JwybMW331",
+        "sort": 300000
+      },
+      {
+        "type": "linked",
+        "count": 20,
+        "key": "Compendium.materia-dnd.items.Item.luvMP28JNHHd2wCX",
+        "requiresProficiency": false,
+        "_id": "Fp2SXwRWk31dMqfi",
+        "group": "TNoTNi1JwybMW331",
+        "sort": 400000
+      },
+      {
+        "type": "OR",
+        "requiresProficiency": false,
+        "_id": "w2kriRkw9s3GchJ0",
+        "group": "",
+        "sort": 500000
+      },
+      {
+        "type": "linked",
+        "count": null,
+        "key": "Compendium.materia-dnd.items.Item.6RB6SbCsqgl9m2cP",
+        "requiresProficiency": false,
+        "_id": "xhKE7pf40jlbWTAO",
+        "group": "w2kriRkw9s3GchJ0",
+        "sort": 600000
+      },
+      {
+        "type": "linked",
+        "count": null,
+        "key": "Compendium.materia-dnd.items.Item.SMsv6uHDL4quUjLs",
+        "requiresProficiency": false,
+        "_id": "BJ8Lb13ZbIN5K3X2",
+        "group": "w2kriRkw9s3GchJ0",
+        "sort": 700000
+      },
+      {
+        "type": "AND",
+        "requiresProficiency": false,
+        "_id": "DhQRMuySxcldx4rb",
+        "group": "",
+        "sort": 800000
+      },
+      {
+        "type": "linked",
+        "count": null,
+        "key": "Compendium.materia-dnd.items.Item.ehq4ZWJVSI9SGEzm",
+        "requiresProficiency": false,
+        "_id": "u1peXGPedavh2wrZ",
+        "group": "DhQRMuySxcldx4rb",
+        "sort": 900000
+      },
+      {
+        "type": "linked",
+        "count": null,
+        "key": "Compendium.materia-dnd.items.Item.4djMM5MgkcTpfw2k",
+        "requiresProficiency": false,
+        "_id": "26QpeWuL9tYdtn3F",
+        "group": "DhQRMuySxcldx4rb",
+        "sort": 1000000
+      },
+      {
+        "type": "linked",
+        "count": null,
+        "key": "Compendium.materia-dnd.items.Item.4t9qac2NnnSYNyP7",
+        "requiresProficiency": false,
+        "_id": "muUUwimiiV2WYJyb",
+        "group": "",
+        "sort": 1100000
+      }
+    ]
   },
   "effects": [],
   "folder": null,
@@ -888,10 +991,10 @@
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.2.1",
-    "coreVersion": "12.328",
+    "systemVersion": "4.1.2",
+    "coreVersion": "12.331",
     "createdTime": 1708875205226,
-    "modifiedTime": 1719550198515,
+    "modifiedTime": 1732955005602,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
