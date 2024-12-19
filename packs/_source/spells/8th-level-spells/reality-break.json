@@ -6,7 +6,7 @@
       "book": "Materia"
     },
     "description": {
-      "value": "<p>You shatter the barriers between realities and timelines, thrusting a creature into turmoil and madness. The target must succeed on a Wisdom saving throw, or it can't take reactions until the spell ends. The affected target must also roll a [[/r d10]] at the start of each of its turns; the number rolled determines what happens to the target, as shown on the Reality Break Effects table.</p><p>At the end of each of its turns, the affected target can repeat the Wisdom saving throw, ending the spell on itself on a success.</p><table><caption>Reality Break Effects</caption><thead><tr><th>[[/r d10]]</th><th>Effect</th></tr></thead><tbody><tr><td>1-2</td><td><b>Vision of the Far Realm.</b> The target takes [[/r 6d12]] psychic damage, and it is stunned until the end of the turn.</td></tr><tr><td>3-5</td><td><b>Rending Rift.</b> The target must make a Dexterity saving throw, taking [[/r 8d12]] force damage on a failed save, or half as much damage on a successful one.</td></tr><tr><td>6-8</td><td><b>Wormhole.</b> The target is teleported, along with everything it is wearing and carrying, up to 30 feet to an unoccupied space of your choice that you can see. The target also takes [[/r 10d12]] force damage and is knocked prone.</td></tr><tr><td>9-10</td><td><b>Chill of the Dark Void.</b> The target takes [[/r 10d12]] cold damage, and it is blinded until the end of the turn.</td></tr></tbody></table></div>",
+      "value": "<p>You shatter the barriers between realities and timelines, thrusting a creature into turmoil and madness. The target must succeed on a Intelligence, Wisdom, or Charisma saving throw (whichever is lowest), or it can't take reactions until the spell ends. The affected target must also roll a [[/r d10]] at the start of each of its turns; the number rolled determines what happens to the target, as shown on the Reality Break Effects table.</p><p>At the end of each of its turns, the affected target can repeat the saving throw, ending the spell on itself on a success.</p><table><caption>Reality Break Effects</caption><thead><tr><th>[[/r d10]]</th><th>Effect</th></tr></thead><tbody><tr><td>1-2</td><td><strong>Vision of the Far Realm.</strong> The target takes [[/r 8d12]] psychic damage, and it is stunned until the end of its next turn.</td></tr><tr><td>3-5</td><td><strong>Rending Rift.</strong> The target takes [[/r 8d12]] thunder damage, it cannot regain hit points until the start of your next turn.</td></tr><tr><td>6-8</td><td><strong>Wormhole.</strong> The target is teleported, along with everything it is wearing and carrying, up to 30 feet to an unoccupied visible space of your choice. The target also takes [[/r 10d12]] force damage and is knocked prone.</td></tr><tr><td>9-10</td><td><strong>Chill of the Dark Void.</strong> The target takes [[/r 10d12]] cold damage, and it is blinded and cannot benefit from any special senses until the end of the turn.</td></tr></tbody></table>",
       "chat": ""
     },
     "actionType": "save",
@@ -19,7 +19,7 @@
       "concentration"
     ],
     "materials": {
-      "value": "a crystal prism",
+      "value": "a crystal prism with an intentional crack in it",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -114,7 +114,7 @@
       "h0HFSE1ZAUwstAg4": {
         "type": "save",
         "_id": "h0HFSE1ZAUwstAg4",
-        "sort": 0,
+        "sort": 100000,
         "activation": {
           "type": "action",
           "value": null,
@@ -178,7 +178,7 @@
       "gHrtlFJSEO5nlE4a": {
         "type": "damage",
         "_id": "gHrtlFJSEO5nlE4a",
-        "sort": 0,
+        "sort": 200000,
         "activation": {
           "type": "",
           "value": null,
@@ -237,7 +237,7 @@
                 "enabled": false,
                 "formula": ""
               },
-              "number": 6,
+              "number": 8,
               "denomination": 12,
               "bonus": "",
               "types": [
@@ -252,89 +252,14 @@
         },
         "name": "Vision of the Far Realm",
         "img": "",
-        "appliedEffects": []
-      },
-      "epy2qWsoY8M8oWTG": {
-        "type": "save",
-        "_id": "epy2qWsoY8M8oWTG",
-        "sort": 0,
-        "activation": {
-          "type": "",
-          "value": null,
-          "override": true,
-          "condition": ""
-        },
-        "consumption": {
-          "scaling": {
-            "allowed": false
-          },
-          "spellSlot": false,
-          "targets": []
-        },
-        "description": {
-          "chatFlavor": ""
-        },
-        "duration": {
-          "units": "inst",
-          "concentration": false,
-          "override": true
-        },
-        "effects": [],
-        "range": {
-          "override": true,
-          "units": "spec",
-          "special": ""
-        },
-        "target": {
-          "template": {
-            "contiguous": false,
-            "units": "ft"
-          },
-          "affects": {
-            "choice": false
-          },
-          "override": false,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 8,
-              "denomination": 12,
-              "bonus": "",
-              "types": [],
-              "scaling": {
-                "mode": "",
-                "number": 1
-              }
-            }
-          ],
-          "onSave": "half"
-        },
-        "save": {
-          "ability": "dex",
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
-        },
-        "name": "Rending Rift",
-        "img": "",
-        "appliedEffects": []
+        "appliedEffects": [
+          "jWKLPHFtja4HGfBC"
+        ]
       },
       "hCut5vdcDrEj4DaR": {
         "type": "damage",
         "_id": "hCut5vdcDrEj4DaR",
-        "sort": 0,
+        "sort": 300000,
         "activation": {
           "type": "",
           "value": null,
@@ -412,7 +337,7 @@
       "KdWjTMYGvjYX5Wvb": {
         "type": "damage",
         "_id": "KdWjTMYGvjYX5Wvb",
-        "sort": 0,
+        "sort": 500000,
         "activation": {
           "type": "",
           "value": null,
@@ -485,6 +410,80 @@
           ]
         },
         "name": "Chill of the Dark Void",
+        "img": "",
+        "appliedEffects": []
+      },
+      "0rlDhe72VTeuydqg": {
+        "type": "damage",
+        "_id": "0rlDhe72VTeuydqg",
+        "sort": 250000,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true,
+          "units": "spec",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 8,
+              "denomination": 12,
+              "bonus": "",
+              "types": [
+                "thunder"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "name": "Rending Rift",
         "img": "",
         "appliedEffects": []
       }
@@ -684,10 +683,10 @@
   "folder": "IeD7MeayeQqIoNnW",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "systemVersion": "4.1.2",
     "coreVersion": "12.331",
     "createdTime": 1709232194848,
-    "modifiedTime": 1728922231457,
+    "modifiedTime": 1734577027249,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
