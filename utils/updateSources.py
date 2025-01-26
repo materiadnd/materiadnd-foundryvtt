@@ -1,7 +1,7 @@
 import os
 import json
 
-DIR_ROOT = 'packs\\_source'
+DIR_ROOT = 'packs\\_source\\spells\\cantrips'
 FILES_TO_IGNORE = [ '_folder.json' ]
 
 def updateJsonFiles(rootDir, func):
@@ -17,7 +17,7 @@ def addOrUpdateSource(filePath):
         jsonObj = json.load(jsonFile)
         if 'system' not in jsonObj:
             return  # should never happen I think
-        jsonObj['system']['source'] = {'book': 'Materia'}
+        jsonObj['system']['source'] = {'rules': '2024', 'revision': 1, 'book': 'Materia'}
         updated = True
     if updated and jsonObj is not None:
         with open(filePath, 'w') as updatedFile:
