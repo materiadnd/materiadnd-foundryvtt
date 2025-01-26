@@ -1,18 +1,15 @@
 {
-  "name": "Thorn Whip",
-  "_id": "matSplThornWhip",
+  "name": "Sorcerous Burst",
+  "_id": "matSplSorcerousB",
   "system": {
     "description": {
-      "value": "<p>You create a vine-like whip covered in thorns that lashes out at your command toward a creature in range. Make a melee spell attack against the target. On a hit, the target takes [[/damage 1d6 piercing]] damage, and if it is Large or smaller, you can pull it up to 10 feet closer to you.</p><p><strong>Cantrip Upgrade.</strong> The damage increases by 1d6 when you reach levels 5 ([[/damage 2d6 piercing]]), 11 ([[/damage 3d6 piercing]]), and 17 ([[/damage 4d6 piercing]]).</p>",
+      "value": "<p>You cast sorcerous energy at one creature or object within range. Make a ranged attack roll against the target. On a hit, the target takes [[/damage 1d8]] damage of a type you choose: Acid, Cold, Fire, Lightning, Poison, Psychic, or Thunder.</p><p>If you roll an 8 on a d8 for this spell, you can roll another d8, and add it to the damage. When you cast this spell, the maximum number of these d8s you can add to the spell's damage equals your spellcasting ability modifier.</p><p><strong>Cantrip Upgrade. </strong>The damage increases by 1d8 when you reach levels 5 ([[/damage 2d8]]), 11 ([[/damage 3d8]]), and 17 ([[/damage 4d8]]).</p>",
       "chat": ""
     },
     "source": {
       "custom": "",
       "rules": "2024",
-      "revision": 1,
-      "book": "Materia",
-      "page": "",
-      "license": ""
+      "revision": 1
     },
     "activation": {
       "type": "action",
@@ -27,7 +24,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "creatureOrObject",
         "special": ""
       },
       "template": {
@@ -39,7 +36,7 @@
     "range": {
       "units": "ft",
       "special": "",
-      "value": "30"
+      "value": "120"
     },
     "uses": {
       "max": "",
@@ -47,14 +44,13 @@
       "recovery": []
     },
     "level": 0,
-    "school": "trs",
+    "school": "evo",
     "properties": [
       "vocal",
-      "somatic",
-      "material"
+      "somatic"
     ],
     "materials": {
-      "value": "the stem of a thorny plant",
+      "value": "",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -64,9 +60,9 @@
       "prepared": false
     },
     "activities": {
-      "B9qItxRUVxoUGst3": {
+      "X7SNcRLlaMQA1Dzg": {
         "type": "attack",
-        "_id": "B9qItxRUVxoUGst3",
+        "_id": "X7SNcRLlaMQA1Dzg",
         "sort": 0,
         "activation": {
           "type": "action",
@@ -114,7 +110,7 @@
           },
           "flat": false,
           "type": {
-            "value": "melee",
+            "value": "ranged",
             "classification": ""
           },
           "ability": "",
@@ -128,14 +124,20 @@
           "parts": [
             {
               "custom": {
-                "enabled": false,
-                "formula": ""
+                "enabled": true,
+                "formula": "1d8x@mod=8"
               },
               "number": 1,
-              "denomination": 6,
+              "denomination": 8,
               "bonus": "",
               "types": [
-                "piercing"
+                "acid",
+                "cold",
+                "fire",
+                "lightning",
+                "poison",
+                "psychic",
+                "thunder"
               ],
               "scaling": {
                 "mode": "whole",
@@ -145,13 +147,13 @@
             }
           ]
         },
-        "name": "Attack and Pull"
+        "name": ""
       }
     },
-    "identifier": "thorn-whip"
+    "identifier": "sorcerous-burst"
   },
   "type": "spell",
-  "img": "icons/magic/nature/root-vine-thorns-poison-green.webp",
+  "img": "icons/magic/lightning/bolt-strike-embers-teal.webp",
   "effects": [],
   "folder": "WtBByem45tjsGx6Z",
   "ownership": {
@@ -170,10 +172,10 @@
     "coreVersion": "12.331",
     "systemId": "dnd5e",
     "systemVersion": "4.2.2",
-    "createdTime": 1737926670634,
-    "modifiedTime": 1737930408221,
+    "createdTime": 1737926229765,
+    "modifiedTime": 1737930197906,
     "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "sort": 0,
-  "_key": "!items!matSplThornWhip"
+  "sort": 300000,
+  "_key": "!items!matSplSorcerousB"
 }

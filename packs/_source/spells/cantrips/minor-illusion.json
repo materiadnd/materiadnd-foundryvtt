@@ -1,104 +1,70 @@
 {
   "name": "Minor Illusion",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You create a sound or an image of an object within range that lasts for the duration. The illusion also ends if you dismiss it as an action or cast this spell again.</p><p>If you create a sound, its volume can range from a whisper to a scream. It can be your voice, someone else's voice, a lion's roar, a beating of drums, or any other sound you choose. The sound continues unabated throughout the duration, or you can make discrete sounds at different times before the spell ends.</p><p>If you create an image of an object - such as a chair, muddy footprints, or a small chest - it must be no larger than a 5-foot cube. The image can't create sound, light, smell, or any other sensory effect. Physical interaction with the image reveals it to be an illusion, because things can pass through it.</p><p>If a creature uses its action to examine the sound or image, the creature can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the illusion becomes faint to the creature.</p>",
+      "value": "<p>You create a sound or an image of an object within range that lasts for the duration. See the descriptions below for the effects of each. The illusion ends if you cast this spell again.</p><p>If a creature takes a Study action to examine the sound or image, the creature can determine that it is an illusion with a successful [[/check ability=int skill=inv dc=@attributes.spelldc]] check against your spell save DC. If a creature discerns the illusion for what it is, the illusion becomes faint to the creature.</p><p><strong>Sound.</strong> If you create a sound, its volume can range from a whisper to a scream. It can be your voice, someone else's voice, a lion's roar, a beating of drums, or any other sound you choose. The sound continues unabated throughout the duration, or you can make discrete sounds at different times before the spell ends.</p><p><strong>Image.</strong> If you create an image of an object\u00e2\u20ac\u201dsuch as a chair, muddy footprints, or a small chest\u00e2\u20ac\u201dit must be no larger than a 5-foot Cube. The image can't create sound, light, smell, or any other sensory effect. Physical interaction with the image reveals it to be an illusion, since things can pass through it.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia",
+      "page": "",
+      "license": ""
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 5,
-      "width": null,
-      "units": "ft",
-      "type": "cube",
-      "prompt": true,
       "affects": {
-        "count": "",
-        "type": ""
+        "choice": false,
+        "count": "1",
+        "type": "space",
+        "special": ""
       },
       "template": {
-        "count": ""
+        "units": "",
+        "contiguous": false,
+        "type": ""
       }
     },
     "range": {
-      "value": 30,
-      "long": null,
       "units": "ft",
-      "special": ""
+      "special": "",
+      "value": "30"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 0,
     "school": "ill",
+    "properties": [
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "A bit of fleece.",
+      "value": "a bit of fleece",
       "consumed": false,
       "cost": 0,
       "supply": 0
     },
     "preparation": {
-      "mode": "prepared",
+      "mode": "always",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "somatic",
-      "material",
-      "mgc"
-    ],
-    "crewed": false,
     "activities": {
-      "WB7sGsGj6Cljo73C": {
+      "XkQLfFVopYW3SasN": {
         "type": "summon",
-        "_id": "WB7sGsGj6Cljo73C",
+        "_id": "XkQLfFVopYW3SasN",
         "sort": 0,
         "activation": {
           "type": "action",
@@ -120,23 +86,18 @@
           "concentration": false,
           "override": false
         },
-        "effects": [],
         "range": {
           "override": false
         },
         "target": {
           "template": {
             "contiguous": false,
-            "units": "ft",
-            "type": ""
+            "units": "ft"
           },
           "affects": {
-            "choice": false,
-            "count": "1",
-            "type": "space",
-            "special": ""
+            "choice": false
           },
-          "override": true,
+          "override": false,
           "prompt": true
         },
         "uses": {
@@ -161,47 +122,53 @@
         "match": {
           "attacks": false,
           "proficiency": false,
-          "saves": false
+          "saves": false,
+          "ability": ""
         },
         "profiles": [
           {
             "count": "",
-            "name": "",
-            "_id": "1fwa37rn6tpLbPsd",
+            "name": "Image",
+            "_id": "5knkToNNGVeWpRlx",
             "uuid": "Compendium.materia-dnd.actors.Actor.LQDcBWZN0GLz7vj4",
             "level": {
               "min": null,
               "max": null
-            },
-            "types": []
+            }
           },
           {
             "count": "",
-            "name": "",
-            "_id": "JJeiPWdoVjXjO6xO",
+            "name": "Sound",
+            "_id": "g0vzLQLJvCeTntda",
             "uuid": "Compendium.materia-dnd.actors.Actor.ARkmsu46FmQWDPOV",
             "level": {
               "min": null,
               "max": null
-            },
-            "types": []
+            }
           }
         ],
         "summon": {
           "prompt": true,
-          "mode": ""
+          "mode": "",
+          "identifier": ""
         },
         "name": "Create Illusion",
+        "effects": [],
         "img": "",
         "appliedEffects": []
       }
-    }
+    },
+    "identifier": "minor-illusion"
+  },
+  "_id": "matSplMinorIllus",
+  "type": "spell",
+  "img": "icons/sundries/gaming/playing-cards.webp",
+  "effects": [],
+  "folder": "WtBByem45tjsGx6Z",
+  "ownership": {
+    "default": 0
   },
   "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.n0Bo39iWm09h4Iqq",
-      "spell-lists": "bard,sorcerer,warlock,wizard"
-    },
     "dnd5e": {
       "riders": {
         "activity": [],
@@ -209,19 +176,15 @@
       }
     }
   },
-  "img": "icons/magic/control/hypnosis-mesmerism-eye.webp",
-  "effects": [],
-  "folder": "WtBByem45tjsGx6Z",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.2",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1661787234224,
-    "modifiedTime": 1726887224522,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1737925821636,
+    "modifiedTime": 1737929522143,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "n0Bo39iWm09h4Iqq",
-  "sort": 0,
-  "_key": "!items!n0Bo39iWm09h4Iqq"
+  "sort": 900000,
+  "_key": "!items!matSplMinorIllus"
 }

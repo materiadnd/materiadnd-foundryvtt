@@ -1,79 +1,58 @@
 {
   "name": "Guidance",
-  "ownership": {
-    "default": 0
-  },
   "type": "spell",
+  "_id": "matSplGuidance",
   "system": {
     "description": {
-      "value": "<p>You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The spell then ends.</p>",
+      "value": "<p>You touch a willing creature and choose a skill. Until the spell ends, the creature adds [[/r 1d4]] to any ability check using the chosen skill.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia",
+      "page": "",
+      "license": ""
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "willing",
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "touch",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "1d4",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 0,
     "school": "div",
+    "properties": [
+      "vocal",
+      "somatic",
+      "concentration"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -81,23 +60,13 @@
       "supply": 0
     },
     "preparation": {
-      "mode": "prepared",
+      "mode": "always",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "concentration"
-    ],
-    "crewed": false,
     "activities": {
-      "8PAPLcguqyg10C6w": {
+      "R6Fs3rsgXlgHPOFn": {
         "type": "utility",
-        "_id": "8PAPLcguqyg10C6w",
+        "_id": "R6Fs3rsgXlgHPOFn",
         "sort": 0,
         "activation": {
           "type": "action",
@@ -119,7 +88,62 @@
           "concentration": false,
           "override": false
         },
-        "effects": [],
+        "effects": [
+          {
+            "_id": "GezMMzvZhWXEYyGm"
+          },
+          {
+            "_id": "y6aODSkiubtFt6Ap"
+          },
+          {
+            "_id": "Vlfh8IFOezrSpeBZ"
+          },
+          {
+            "_id": "sPkLWVpkJ7NqDQT0"
+          },
+          {
+            "_id": "Je4xWElmaiSDsOjU"
+          },
+          {
+            "_id": "cw02ZbuiRn6GyoEv"
+          },
+          {
+            "_id": "VsU5vUhMioT9pCwG"
+          },
+          {
+            "_id": "UQixxmOdHUDjVYNh"
+          },
+          {
+            "_id": "Cpte6tynFFJbraX2"
+          },
+          {
+            "_id": "Vl1YSG1DlZvx9nSI"
+          },
+          {
+            "_id": "IqxGXju1tYDWoda6"
+          },
+          {
+            "_id": "fCdLUO5DoSIT4wVK"
+          },
+          {
+            "_id": "qPowjrduxnzKpH8x"
+          },
+          {
+            "_id": "E4BqoCkyoKLJbGmb"
+          },
+          {
+            "_id": "jVKWknHHFuMwvTct"
+          },
+          {
+            "_id": "pwFahx7uqM4DOgnu"
+          },
+          {
+            "_id": "Vb4iRJ73Nw78UUMW"
+          },
+          {
+            "_id": "A1T0X0DUFIxx3qhE"
+          }
+        ],
         "range": {
           "override": false
         },
@@ -142,40 +166,805 @@
         "roll": {
           "prompt": false,
           "visible": false,
-          "name": "Guidance Bonus",
-          "formula": "d4"
+          "name": "",
+          "formula": ""
         },
-        "name": "Guidance Bonus",
-        "img": "",
-        "appliedEffects": []
+        "name": "Cast"
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.OMXnxuJi49IrjhP9",
-      "spell-lists": "artificer,cleric,druid"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
+    "identifier": "guidance"
+  },
+  "img": "icons/sundries/lights/candle-lit-angelic.webp",
+  "effects": [
+    {
+      "name": "Acrobatic Guidance",
+      "img": "systems/dnd5e/icons/svg/activity/check.svg",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplGuidance00",
+      "transfer": false,
+      "_id": "GezMMzvZhWXEYyGm",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.acr.bonuses.check",
+          "mode": 2,
+          "value": "1d4",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!9lJj0oJ9ZbcWipZl.GezMMzvZhWXEYyGm"
+    },
+    {
+      "name": "Animal Handling Guidance",
+      "img": "systems/dnd5e/icons/svg/activity/check.svg",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplGuidance00",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.ani.bonuses.check",
+          "mode": 2,
+          "value": "1d4",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "y6aODSkiubtFt6Ap",
+      "_key": "!items.effects!9lJj0oJ9ZbcWipZl.y6aODSkiubtFt6Ap"
+    },
+    {
+      "name": "Arcana Guidance",
+      "img": "systems/dnd5e/icons/svg/activity/check.svg",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplGuidance00",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.arc.bonuses.check",
+          "mode": 2,
+          "value": "1d4",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "Vlfh8IFOezrSpeBZ",
+      "_key": "!items.effects!9lJj0oJ9ZbcWipZl.Vlfh8IFOezrSpeBZ"
+    },
+    {
+      "name": "Athletic Guidance",
+      "img": "systems/dnd5e/icons/svg/activity/check.svg",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplGuidance00",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.ath.bonuses.check",
+          "mode": 2,
+          "value": "1d4",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "sPkLWVpkJ7NqDQT0",
+      "_key": "!items.effects!9lJj0oJ9ZbcWipZl.sPkLWVpkJ7NqDQT0"
+    },
+    {
+      "name": "Deception Guidance",
+      "img": "systems/dnd5e/icons/svg/activity/check.svg",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplGuidance00",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.dec.bonuses.check",
+          "mode": 2,
+          "value": "1d4",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "Je4xWElmaiSDsOjU",
+      "_key": "!items.effects!9lJj0oJ9ZbcWipZl.Je4xWElmaiSDsOjU"
+    },
+    {
+      "name": "History Guidance",
+      "img": "systems/dnd5e/icons/svg/activity/check.svg",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplGuidance00",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.his.bonuses.check",
+          "mode": 2,
+          "value": "1d4",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "cw02ZbuiRn6GyoEv",
+      "_key": "!items.effects!9lJj0oJ9ZbcWipZl.cw02ZbuiRn6GyoEv"
+    },
+    {
+      "name": "Insight Guidance",
+      "img": "systems/dnd5e/icons/svg/activity/check.svg",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplGuidance00",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.ins.bonuses.check",
+          "mode": 2,
+          "value": "1d4",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "VsU5vUhMioT9pCwG",
+      "_key": "!items.effects!9lJj0oJ9ZbcWipZl.VsU5vUhMioT9pCwG"
+    },
+    {
+      "name": "Investigation Guidance",
+      "img": "systems/dnd5e/icons/svg/activity/check.svg",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplGuidance00",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.inv.bonuses.check",
+          "mode": 2,
+          "value": "1d4",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "UQixxmOdHUDjVYNh",
+      "_key": "!items.effects!9lJj0oJ9ZbcWipZl.UQixxmOdHUDjVYNh"
+    },
+    {
+      "name": "Intimidation Guidance",
+      "img": "systems/dnd5e/icons/svg/activity/check.svg",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplGuidance00",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.itm.bonuses.check",
+          "mode": 2,
+          "value": "1d4",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "Cpte6tynFFJbraX2",
+      "_key": "!items.effects!9lJj0oJ9ZbcWipZl.Cpte6tynFFJbraX2"
+    },
+    {
+      "name": "Medicine Guidance",
+      "img": "systems/dnd5e/icons/svg/activity/check.svg",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplGuidance00",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.med.bonuses.check",
+          "mode": 2,
+          "value": "1d4",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "Vl1YSG1DlZvx9nSI",
+      "_key": "!items.effects!9lJj0oJ9ZbcWipZl.Vl1YSG1DlZvx9nSI"
+    },
+    {
+      "name": "Nature Guidance",
+      "img": "systems/dnd5e/icons/svg/activity/check.svg",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplGuidance00",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.nat.bonuses.check",
+          "mode": 2,
+          "value": "1d4",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "IqxGXju1tYDWoda6",
+      "_key": "!items.effects!9lJj0oJ9ZbcWipZl.IqxGXju1tYDWoda6"
+    },
+    {
+      "name": "Persuasion Guidance",
+      "img": "systems/dnd5e/icons/svg/activity/check.svg",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplGuidance00",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.per.bonuses.check",
+          "mode": 2,
+          "value": "1d4",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "fCdLUO5DoSIT4wVK",
+      "_key": "!items.effects!9lJj0oJ9ZbcWipZl.fCdLUO5DoSIT4wVK"
+    },
+    {
+      "name": "Perception Guidance",
+      "img": "systems/dnd5e/icons/svg/activity/check.svg",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplGuidance00",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.prc.bonuses.check",
+          "mode": 2,
+          "value": "1d4",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "qPowjrduxnzKpH8x",
+      "_key": "!items.effects!9lJj0oJ9ZbcWipZl.qPowjrduxnzKpH8x"
+    },
+    {
+      "name": "Performance Guidance",
+      "img": "systems/dnd5e/icons/svg/activity/check.svg",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplGuidance00",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.prf.bonuses.check",
+          "mode": 2,
+          "value": "1d4",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "E4BqoCkyoKLJbGmb",
+      "_key": "!items.effects!9lJj0oJ9ZbcWipZl.E4BqoCkyoKLJbGmb"
+    },
+    {
+      "name": "Religion Guidance",
+      "img": "systems/dnd5e/icons/svg/activity/check.svg",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplGuidance00",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.rel.bonuses.check",
+          "mode": 2,
+          "value": "1d4",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "jVKWknHHFuMwvTct",
+      "_key": "!items.effects!9lJj0oJ9ZbcWipZl.jVKWknHHFuMwvTct"
+    },
+    {
+      "name": "Sleight of Hand Guidance",
+      "img": "systems/dnd5e/icons/svg/activity/check.svg",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplGuidance00",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.slt.bonuses.check",
+          "mode": 2,
+          "value": "1d4",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "pwFahx7uqM4DOgnu",
+      "_key": "!items.effects!9lJj0oJ9ZbcWipZl.pwFahx7uqM4DOgnu"
+    },
+    {
+      "name": "Stealth Guidance",
+      "img": "systems/dnd5e/icons/svg/activity/check.svg",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplGuidance00",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.ste.bonuses.check",
+          "mode": 2,
+          "value": "1d4",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "Vb4iRJ73Nw78UUMW",
+      "_key": "!items.effects!9lJj0oJ9ZbcWipZl.Vb4iRJ73Nw78UUMW"
+    },
+    {
+      "name": "Survival Guidance",
+      "img": "systems/dnd5e/icons/svg/activity/check.svg",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplGuidance00",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.skills.sur.bonuses.check",
+          "mode": 2,
+          "value": "1d4",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "A1T0X0DUFIxx3qhE",
+      "_key": "!items.effects!9lJj0oJ9ZbcWipZl.A1T0X0DUFIxx3qhE"
     }
-  },
-  "img": "icons/magic/control/buff-flight-wings-blue.webp",
-  "effects": [],
+  ],
   "folder": "WtBByem45tjsGx6Z",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.2",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234132,
-    "modifiedTime": 1726882750947,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "OMXnxuJi49IrjhP9",
-  "sort": 100000,
-  "_key": "!items!OMXnxuJi49IrjhP9"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1737925506939,
+    "modifiedTime": 1737928866398,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 400000,
+  "_key": "!items!matSplGuidance"
 }

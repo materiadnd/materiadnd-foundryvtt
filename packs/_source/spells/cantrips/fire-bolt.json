@@ -1,85 +1,56 @@
 {
   "name": "Fire Bolt",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You hurl a mote of fire at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes [[/r 1d10]] fire damage. A flammable object hit by this spell ignites if it isn't being worn or carried.</p><p>This spell's damage increases by [[/r 1d10]] when you reach 5th level ([[/r 2d10]]), 11th level ([[/r 3d10]]), and 17th level ([[/r 4d10]]).</p>",
+      "value": "<p>You hurl a mote of fire at a creature or an object within range. Make a ranged spell attack against the target. On a hit, the target takes [[/damage 1d10  fire]] damage. A flammable object hit by this spell starts burning if it isn't being worn or carried.</p><p><strong>Cantrip Upgrade.</strong> The damage increases by 1d10 when you reach levels 5 ([[/damage 2d10 fire]]), 11 ([[/damage 3d10 fire]]), and 17 ([[/damage 4d10 fire]]).</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia",
+      "page": "",
+      "license": ""
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
-        "special": "",
-        "type": "creatureOrObject"
+        "choice": false,
+        "count": "1",
+        "type": "creatureOrObject",
+        "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 120,
-      "long": null,
       "units": "ft",
-      "special": ""
+      "special": "",
+      "value": "120"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "rsak",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "1d10",
-          "fire"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 0,
     "school": "evo",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -87,22 +58,13 @@
       "supply": 0
     },
     "preparation": {
-      "mode": "prepared",
+      "mode": "always",
       "prepared": false
     },
-    "scaling": {
-      "mode": "cantrip",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic"
-    ],
-    "crewed": false,
     "activities": {
-      "H8GyMPkxHZ1httDX": {
+      "23hcoYMwc0GUIB6V": {
         "type": "attack",
-        "_id": "H8GyMPkxHZ1httDX",
+        "_id": "23hcoYMwc0GUIB6V",
         "sort": 0,
         "activation": {
           "type": "action",
@@ -170,7 +132,9 @@
               "number": 1,
               "denomination": 10,
               "bonus": "",
-              "types": [],
+              "types": [
+                "fire"
+              ],
               "scaling": {
                 "mode": "whole",
                 "number": 1
@@ -179,36 +143,29 @@
           ]
         },
         "name": "",
-        "img": "systems/dnd5e/icons/svg/damage/force.svg",
-        "appliedEffects": []
+        "img": "systems/dnd5e/icons/svg/damage/force.svg"
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.QVrWCZrGqO61xcmm",
-      "spell-lists": "artificer,sorcerer,wizard"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
+    "identifier": "fire-bolt"
   },
-  "img": "icons/magic/fire/projectile-fireball-smoke-orange.webp",
+  "_id": "matSplFireBolt",
+  "type": "spell",
+  "img": "icons/magic/fire/projectile-fireball-orange-green.webp",
   "effects": [],
   "folder": "WtBByem45tjsGx6Z",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.2",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234100,
-    "modifiedTime": 1726882235717,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "QVrWCZrGqO61xcmm",
-  "sort": 1300000,
-  "_key": "!items!QVrWCZrGqO61xcmm"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1737925260655,
+    "modifiedTime": 1737927680956,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 1500000,
+  "_key": "!items!matSplFireBolt"
 }

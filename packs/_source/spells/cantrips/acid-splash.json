@@ -1,84 +1,58 @@
 {
   "name": "Acid Splash",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You hurl a bubble of acid. Choose one creature you can see within range, or choose two creatures you can see within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take [[/r 1d6]] acid damage.</p><p>This spell's damage increases by 1d6 when you reach 5th level ([[/r 2d6]]), 11th level ([[/r 3d6]]), and 17th level ([[/r 4d6]]).</p>",
+      "value": "<p>You create an acidic bubble at a point within range, where it explodes in a 5-foot-radius Sphere. Each creature in that Sphere must succeed on a Dexterity saving throw or take [[/damage 1d6 acid]] damage.</p><p><strong>Cantrip Upgrade.</strong> The damage increases by 1d6 when you reach levels 5 ([[/damage 2d6 acid]]), 11 ([[/damage 3d6 acid]]), and 17 ([[/damage 4d6 acid]]).</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia",
+      "page": "",
+      "license": ""
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 2,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "choice": false,
+        "count": "",
+        "type": "creature",
         "special": ""
       },
       "template": {
-        "type": ""
+        "units": "ft",
+        "contiguous": false,
+        "type": "sphere",
+        "size": "5",
+        "count": ""
       }
     },
     "range": {
-      "value": 60,
-      "long": null,
       "units": "ft",
-      "special": ""
+      "special": "",
+      "value": "60"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "1d6",
-          "acid"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 0,
-    "school": "con",
+    "school": "evo",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -86,24 +60,13 @@
       "supply": 0
     },
     "preparation": {
-      "mode": "prepared",
+      "mode": "always",
       "prepared": false
     },
-    "scaling": {
-      "mode": "cantrip",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "mgc"
-    ],
-    "crewed": false,
     "activities": {
-      "SsWde4YaKZXCriYA": {
+      "eOJpSDmq0JkmzpAV": {
         "type": "save",
-        "_id": "SsWde4YaKZXCriYA",
-        "sort": 0,
+        "_id": "eOJpSDmq0JkmzpAV",
         "activation": {
           "type": "action",
           "value": null,
@@ -144,6 +107,7 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "damage": {
           "parts": [
             {
@@ -159,51 +123,44 @@
               ],
               "scaling": {
                 "mode": "whole",
-                "number": 1,
-                "formula": ""
+                "number": 1
               }
             }
           ],
           "onSave": "none"
         },
         "save": {
-          "ability": "dex",
+          "ability": [
+            "dex"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
         },
-        "name": "",
-        "img": "",
-        "appliedEffects": []
+        "name": ""
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.y2NEcVFSiKsInPWI",
-      "spell-lists": "artificer,sorcerer,wizard"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
+    "identifier": "acid-splash"
   },
-  "img": "icons/magic/fire/projectile-fireball-smoke-green.webp",
+  "_id": "matSplAcidSplash",
+  "type": "spell",
+  "img": "icons/magic/acid/dissolve-drip-droplet-smoke.webp",
   "effects": [],
   "folder": "WtBByem45tjsGx6Z",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.2",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234112,
-    "modifiedTime": 1726875877888,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "y2NEcVFSiKsInPWI",
-  "sort": 1400000,
-  "_key": "!items!y2NEcVFSiKsInPWI"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1737924725945,
+    "modifiedTime": 1737927135090,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 200000,
+  "_key": "!items!matSplAcidSplash"
 }

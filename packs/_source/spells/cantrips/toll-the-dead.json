@@ -1,82 +1,50 @@
 {
-  "folder": "WtBByem45tjsGx6Z",
   "name": "Toll the Dead",
-  "type": "spell",
-  "_id": "HgNtwayu8u1AtbCI",
-  "img": "icons/magic/unholy/strike-body-life-soul-green.webp",
+  "_id": "matSplTollTheDea",
   "system": {
     "description": {
-      "value": "<p>You point at one creature you can see within range, and the sound of a dolorous bell fills the air around it for a moment. The target must succeed on a Wisdom saving throw or take [[/r 1d8]] necrotic damage. If the target is missing any of its hit points, it instead takes [[/r 1d12]] necrotic damage.</p><p>The spell's damage increases by one die when you reach 5th level ([[/r 2d8]] or [[/r 2d12]]), 11th level ([[/r 3d8]] or [[/r 3d12]]), and 17th level ([[/r 4d8]] or [[/r 4d12]]).</p>",
+      "value": "<p>You point at one creature you can see within range, and the single chime of a dolorous bell is audible within 10 feet of the target. The target must succeed on a Wisdom saving throw or take [[/damage 1d8 necrotic]] damage. If the target is missing any of its Hit Points, it instead takes [[/damage 1d12 necrotic]] damage.</p><p><strong>Cantrip Upgrade.</strong> The damage increases by one die when you reach levels 5 ([[/damage 2d8 necrotic]] or [[/damage 2d12 necrotic]]), 11 ([[/damage 3d8  necrotic]] or [[/damage 3d12 necrotic]]), and 17 ([[/damage 4d8 necrotic]] or [[/damage 4d12 necrotic]]).</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia",
+      "page": "",
+      "license": ""
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
-    "crewed": false,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 60,
-      "long": null,
       "units": "ft",
-      "special": ""
+      "special": "",
+      "value": "60"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "1d8",
-          "necrotic"
-        ]
-      ],
-      "versatile": "1d12"
-    },
-    "formula": "",
-    "save": {
-      "ability": "wis",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 0,
     "school": "nec",
@@ -91,22 +59,14 @@
       "supply": 0
     },
     "preparation": {
-      "mode": "prepared",
+      "mode": "always",
       "prepared": false
     },
-    "scaling": {
-      "mode": "cantrip",
-      "formula": ""
-    },
     "activities": {
-      "dnd5eactivity000": {
-        "name": "Healthy Target",
-        "img": "",
-        "appliedEffects": []
-      },
-      "hqOlszY4m3ZzZglp": {
+      "LFXYm5sLg6D3ZilN": {
         "type": "save",
-        "_id": "hqOlszY4m3ZzZglp",
+        "name": "Healthy Target",
+        "_id": "LFXYm5sLg6D3ZilN",
         "sort": 0,
         "activation": {
           "type": "action",
@@ -135,12 +95,16 @@
         "target": {
           "template": {
             "contiguous": false,
-            "units": "ft"
+            "units": "ft",
+            "type": ""
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": "undamaged creature"
           },
-          "override": false,
+          "override": true,
           "prompt": true
         },
         "uses": {
@@ -171,18 +135,19 @@
           "onSave": "none"
         },
         "save": {
-          "ability": "wis",
+          "ability": [
+            "wis"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
         },
-        "name": "Undamaged Target",
-        "img": "",
-        "appliedEffects": []
+        "img": "systems/dnd5e/icons/svg/hit-points.svg"
       },
-      "Prp8aI6noenpgCl0": {
+      "w9KUTNVoj3K8XSlv": {
         "type": "save",
+        "name": "Damaged Target",
         "sort": 0,
         "activation": {
           "type": "action",
@@ -211,12 +176,16 @@
         "target": {
           "template": {
             "contiguous": false,
-            "units": "ft"
+            "units": "ft",
+            "type": ""
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": "creature missing any of its Hit Points"
           },
-          "override": false,
+          "override": true,
           "prompt": true
         },
         "uses": {
@@ -247,23 +216,28 @@
           "onSave": "none"
         },
         "save": {
-          "ability": "wis",
+          "ability": [
+            "wis"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
         },
-        "name": "Damaged Target",
-        "_id": "Prp8aI6noenpgCl0"
+        "_id": "w9KUTNVoj3K8XSlv",
+        "img": "systems/dnd5e/icons/svg/trait-damage-vulnerabilities.svg"
       }
-    }
-  },
-  "effects": [],
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.HgNtwayu8u1AtbCI",
-      "spell-lists": "cleric,warlock,wizard"
     },
+    "identifier": "toll-the-dead"
+  },
+  "type": "spell",
+  "img": "icons/magic/sonic/bell-alarm-red-purple.webp",
+  "effects": [],
+  "folder": "WtBByem45tjsGx6Z",
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
     "dnd5e": {
       "riders": {
         "activity": [],
@@ -272,17 +246,14 @@
     }
   },
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1706863926580,
-    "modifiedTime": 1730990868246,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1737926753491,
+    "modifiedTime": 1737930955062,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "sort": 2900000,
-  "ownership": {
-    "default": 0
-  },
-  "_key": "!items!HgNtwayu8u1AtbCI"
+  "sort": 0,
+  "_key": "!items!matSplTollTheDea"
 }

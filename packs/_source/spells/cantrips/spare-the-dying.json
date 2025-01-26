@@ -1,79 +1,57 @@
 {
   "name": "Spare the Dying",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplSpareTheDy",
   "system": {
     "description": {
-      "value": "<p>You touch a living creature that has 0 hit points. The creature becomes stable. This spell has no effect on undead or constructs.</p>",
+      "value": "<p>Choose a creature within range that has 0 Hit Points and isn't dead. The creature becomes Stable.</p><p><strong>Cantrip Upgrade.</strong> The range doubles when you reach levels 5 (30 feet), 11 (60 feet), and 17 (120 feet).</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia",
+      "page": "",
+      "license": ""
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
-        "special": ""
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": "0 Hit Points and isn't dead"
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "touch",
-      "special": ""
+      "units": "ft",
+      "special": "",
+      "value": "15 * pow(2, @scaling.increase)"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "heal",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 0,
     "school": "nec",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -81,30 +59,13 @@
       "supply": 0
     },
     "preparation": {
-      "mode": "prepared",
+      "mode": "always",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic"
-    ],
-    "crewed": false,
     "activities": {
-      "dnd5eactivity000": {
-        "name": "asdfasdf",
-        "img": "",
-        "healing": {
-          "denomination": ""
-        },
-        "appliedEffects": []
-      },
-      "ImxtfXi2TQK5lyrP": {
+      "8i1RYhFvUQJXnnNj": {
         "type": "utility",
-        "_id": "ImxtfXi2TQK5lyrP",
+        "_id": "8i1RYhFvUQJXnnNj",
         "sort": 0,
         "activation": {
           "type": "action",
@@ -126,7 +87,11 @@
           "concentration": false,
           "override": false
         },
-        "effects": [],
+        "effects": [
+          {
+            "_id": "4werkFeLTqFwHRIa"
+          }
+        ],
         "range": {
           "override": false
         },
@@ -152,17 +117,58 @@
           "name": "",
           "formula": ""
         },
-        "name": "Cast",
-        "img": "",
-        "appliedEffects": []
+        "name": "Cast"
       }
+    },
+    "identifier": "spare-the-dying"
+  },
+  "type": "spell",
+  "img": "icons/magic/death/hand-undead-skeleton-fire-pink.webp",
+  "effects": [
+    {
+      "name": "Stabilized",
+      "img": "systems/dnd5e/icons/svg/trait-damage-vulnerabilities.svg",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplSparetheDy",
+      "transfer": false,
+      "_id": "4werkFeLTqFwHRIa",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "stable"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!ZtU1LzMnSsqsTe6w.4werkFeLTqFwHRIa"
     }
+  ],
+  "folder": "WtBByem45tjsGx6Z",
+  "ownership": {
+    "default": 0
   },
   "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.94zPsOkZQCs4cnxl",
-      "spell-lists": "artificer,cleric"
-    },
     "dnd5e": {
       "riders": {
         "activity": [],
@@ -170,19 +176,15 @@
       }
     }
   },
-  "img": "icons/magic/life/heart-cross-blue.webp",
-  "effects": [],
-  "folder": "WtBByem45tjsGx6Z",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1661787234083,
-    "modifiedTime": 1730600723468,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1737926510027,
+    "modifiedTime": 1737926517391,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "94zPsOkZQCs4cnxl",
-  "sort": 600000,
-  "_key": "!items!94zPsOkZQCs4cnxl"
+  "sort": 0,
+  "_key": "!items!matSplSpareTheDy"
 }

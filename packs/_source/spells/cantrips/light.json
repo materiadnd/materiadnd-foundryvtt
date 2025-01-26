@@ -1,102 +1,68 @@
 {
   "name": "Light",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You touch one object that is no larger than 10 feet in any dimension. Until the spell ends, the object sheds bright light in a 20-foot radius and dim light for an additional 20 feet. The light can be colored as you like. Completely covering the object with something opaque blocks the light. The spell ends if you cast it again or dismiss it as an action.</p><p>If you target an object held or worn by a hostile creature, that creature must succeed on a Dexterity saving throw to avoid the spell.</p>",
+      "value": "<p>You touch one Large or smaller object that isn't being worn or carried by someone else. Until the spell ends, the object sheds Bright Light in a 20-foot radius and Dim Light for an additional 20 feet. The light can be colored as you like.</p><p>Covering the object with something opaque blocks the light. The spell ends if you cast it again.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia",
+      "page": "",
+      "license": ""
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "object",
-      "prompt": true,
       "affects": {
-        "special": ""
+        "choice": false,
+        "count": "",
+        "type": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "touch",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 0,
     "school": "evo",
+    "properties": [
+      "vocal",
+      "material"
+    ],
     "materials": {
-      "value": "A firefly or phosphorescent moss.",
+      "value": "a firefly or phosphorescent moss",
       "consumed": false,
       "cost": 0,
       "supply": 0
     },
     "preparation": {
-      "mode": "prepared",
+      "mode": "always",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "material"
-    ],
-    "crewed": false,
     "activities": {
-      "Sugx6h0sWImlPtdh": {
+      "EnaiVH67oUJzyHsF": {
         "type": "summon",
-        "_id": "Sugx6h0sWImlPtdh",
+        "_id": "EnaiVH67oUJzyHsF",
         "sort": 0,
         "activation": {
           "type": "action",
@@ -118,22 +84,18 @@
           "concentration": false,
           "override": false
         },
-        "effects": [],
         "range": {
           "override": false
         },
         "target": {
           "template": {
             "contiguous": false,
-            "units": "ft",
-            "type": ""
+            "units": "ft"
           },
           "affects": {
-            "choice": false,
-            "count": "",
-            "type": ""
+            "choice": false
           },
-          "override": true,
+          "override": false,
           "prompt": true
         },
         "uses": {
@@ -150,10 +112,10 @@
           "healing": ""
         },
         "creatureSizes": [
-          "tiny",
           "sm",
           "med",
-          "lg"
+          "lg",
+          "tiny"
         ],
         "creatureTypes": [],
         "match": {
@@ -163,32 +125,35 @@
         },
         "profiles": [
           {
-            "count": "",
-            "name": "",
-            "_id": "AEidI75dalAlfLeD",
-            "uuid": "Compendium.materia-dnd.actors.Actor.rLGA3qkIBwKpCrK6",
+            "_id": "TgXMt8uJmdHSZ2dj",
             "level": {
               "min": null,
               "max": null
             },
-            "types": []
+            "types": [],
+            "uuid": "Compendium.materia-dnd.actors.Actor.rLGA3qkIBwKpCrK6"
           }
         ],
         "summon": {
-          "prompt": true,
-          "mode": ""
+          "prompt": false,
+          "mode": "",
+          "identifier": ""
         },
         "name": "Cast",
-        "img": "",
-        "appliedEffects": []
+        "effects": []
       }
-    }
+    },
+    "identifier": "light"
+  },
+  "_id": "matSplLight",
+  "type": "spell",
+  "img": "icons/sundries/lights/candle-pillar-lit-yellow.webp",
+  "effects": [],
+  "folder": "WtBByem45tjsGx6Z",
+  "ownership": {
+    "default": 0
   },
   "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.lbsiGregKkaMODUF",
-      "spell-lists": "artificer,bard,cleric,sorcerer,wizard"
-    },
     "dnd5e": {
       "riders": {
         "activity": [],
@@ -196,19 +161,15 @@
       }
     }
   },
-  "img": "icons/magic/light/explosion-star-small-blue-yellow.webp",
-  "effects": [],
-  "folder": "WtBByem45tjsGx6Z",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.2",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1661787234093,
-    "modifiedTime": 1726883359461,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1737925682744,
+    "modifiedTime": 1737928291584,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "lbsiGregKkaMODUF",
-  "sort": 1100000,
-  "_key": "!items!lbsiGregKkaMODUF"
+  "sort": 500000,
+  "_key": "!items!matSplLight"
 }

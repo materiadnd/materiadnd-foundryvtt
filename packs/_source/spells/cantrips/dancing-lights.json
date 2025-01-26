@@ -1,105 +1,72 @@
 {
   "name": "Dancing Lights",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You create up to four torch-sized lights within range, making them appear as torches, lanterns, or glowing orbs that hover in the air for the duration. You can also combine the four lights into one glowing vaguely humanoid form of Medium size. Whichever form you choose, each light sheds dim light in a 10-foot radius.</p><p>As a bonus action on your turn, you can move the lights up to 60 feet to a new spot within range. A light must be within 20 feet of another light created by this spell, and a light winks out if it exceeds the spell's range.</p>",
+      "value": "<p>You create up to four torch-size lights within range, making them appear as torches, lanterns, or glowing orbs that hover for the duration. Alternatively, you combine the four lights into one glowing Medium form that is vaguely humanlike. Whichever form you choose, each light sheds Dim Light in a 10-foot radius.</p><p>As a Bonus Action, you can move the lights up to 60 feet to a space within range. A light must be within 20 feet of another light created by this spell, and a light vanishes if it exceeds the spell's range.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia",
+      "page": "",
+      "license": ""
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "any",
-      "type": "space",
-      "prompt": true,
       "affects": {
+        "choice": false,
         "count": "",
-        "special": ""
+        "type": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 120,
-      "long": null,
       "units": "ft",
-      "special": ""
+      "special": "",
+      "value": "120"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 0,
-    "school": "evo",
-    "materials": {
-      "value": "A bit of phosphorus or wychwood, or a glowworm",
-      "consumed": false,
-      "cost": 0,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
+    "school": "ill",
     "properties": [
       "vocal",
       "somatic",
       "material",
       "concentration"
     ],
-    "crewed": false,
+    "materials": {
+      "value": "a bit of phosphorus",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "always",
+      "prepared": false
+    },
     "activities": {
-      "yMNliDcnKQqAVJcQ": {
+      "7uE4AFHftJsK3rYK": {
         "type": "summon",
-        "_id": "yMNliDcnKQqAVJcQ",
+        "name": "Create Lights",
+        "_id": "7uE4AFHftJsK3rYK",
         "sort": 0,
         "activation": {
           "type": "action",
@@ -121,7 +88,6 @@
           "concentration": false,
           "override": false
         },
-        "effects": [],
         "range": {
           "override": false
         },
@@ -158,10 +124,10 @@
         },
         "profiles": [
           {
-            "count": "",
+            "count": "4",
             "name": "",
-            "_id": "Tkv0qO5DYdh9YxS3",
-            "uuid": "Compendium.materia-dnd.actors.Actor.rVk2b9yMZBcBo6pb",
+            "_id": "iOdIvk0ZQyeQJGC3",
+            "uuid": "Compendium.dnd-players-handbook.actors.Actor.phbsplTinyDancin",
             "level": {
               "min": null,
               "max": null
@@ -169,10 +135,10 @@
             "types": []
           },
           {
-            "count": "4",
+            "count": "1",
             "name": "",
-            "_id": "Ydfa1RqEpu5FHW9z",
-            "uuid": "Compendium.materia-dnd.actors.Actor.unI4fznfF6s3IGgA",
+            "_id": "bXvBLXJoA9YMkbbd",
+            "uuid": "Compendium.dnd-players-handbook.actors.Actor.phbsplMediumDanc",
             "level": {
               "min": null,
               "max": null
@@ -182,15 +148,14 @@
         ],
         "summon": {
           "prompt": true,
-          "mode": ""
+          "mode": "",
+          "identifier": ""
         },
-        "name": "Create Lights",
-        "img": "",
-        "appliedEffects": []
+        "effects": []
       },
-      "NMuhvFnN6Boa7O01": {
+      "4a3L8r8Iobi24dBr": {
         "type": "utility",
-        "_id": "NMuhvFnN6Boa7O01",
+        "_id": "4a3L8r8Iobi24dBr",
         "sort": 0,
         "activation": {
           "type": "bonus",
@@ -229,8 +194,7 @@
           "affects": {
             "choice": false,
             "count": "",
-            "type": "space",
-            "special": ""
+            "type": "space"
           },
           "override": true,
           "prompt": true
@@ -247,36 +211,29 @@
           "formula": ""
         },
         "name": "Move Lights",
-        "img": "systems/dnd5e/icons/svg/statuses/concentrating.svg",
-        "appliedEffects": []
+        "img": "systems/dnd5e/icons/svg/statuses/concentrating.svg"
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.AH9yEHaya3nj9Va2",
-      "spell-lists": "artificer,bard,sorcerer,wizard"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
+    "identifier": "dancing-lights"
   },
-  "img": "icons/magic/fire/projectile-meteor-salvo-strong-blue.webp",
+  "_id": "matSplDancingLig",
+  "type": "spell",
+  "img": "icons/magic/light/light-candles-lit-white.webp",
   "effects": [],
   "folder": "WtBByem45tjsGx6Z",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.2",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234094,
-    "modifiedTime": 1726881951366,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "AH9yEHaya3nj9Va2",
-  "sort": 1200000,
-  "_key": "!items!AH9yEHaya3nj9Va2"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1737924883158,
+    "modifiedTime": 1737926564673,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 1700000,
+  "_key": "!items!matSplDancingLig"
 }

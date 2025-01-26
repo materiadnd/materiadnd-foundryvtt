@@ -1,12 +1,13 @@
 {
   "name": "Gust",
   "type": "spell",
+  "_id": "matSplGust",
   "system": {
     "source": {
       "book": "Materia"
     },
     "description": {
-      "value": "<p>You seize the air and compel it to create one of the following effects at a point you can see within range:</p><ul><li>One Medium or smaller creature that you choose must succeed on a Strength saving throw or be pushed up to 5 feet away from you.</li><li>You create a small blast of air capable of moving one object that is neither held nor carried and that weighs no more than 5 pounds. The object is pushed up to 10 feet away from you. It isn't pushed with enough force to cause damage.</li><li>You create a harmless sensory effect using air, such as causing leaves to rustle, wind to slam shutters closed, or your clothing to ripple in a breeze.</li></ul>",
+      "value": "<p>You seize the air and compel it to create one of the following effects at a point you can see within range:</p><ul><li><strong>Push Creature.</strong>  One Medium or smaller creature that you choose must succeed on a Strength saving throw or be pushed up to 5 feet away from you.</li><li><strong>Move Object.</strong>  You create a small blast of air capable of moving one object that is neither held nor carried and that weighs no more than 5 pounds. The object is pushed up to 10 feet away from you. It isn't pushed with enough force to cause damage.</li><li><strong>Sensory Effect.</strong>  You create a harmless sensory effect using air, such as causing leaves to rustle, wind to slam shutters closed, or your clothing to ripple in a breeze.</li></ul>",
       "chat": ""
     },
     "actionType": "save",
@@ -111,7 +112,7 @@
       "CTkTAuWbkoXgJriG": {
         "type": "utility",
         "_id": "CTkTAuWbkoXgJriG",
-        "sort": 0,
+        "sort": 100000,
         "activation": {
           "type": "action",
           "value": null,
@@ -162,14 +163,14 @@
           "name": "",
           "formula": ""
         },
-        "name": "Push Object",
+        "name": "Move Object",
         "img": "",
         "appliedEffects": []
       },
       "WI6y8wKoWzwJCwue": {
         "type": "utility",
         "_id": "WI6y8wKoWzwJCwue",
-        "sort": 0,
+        "sort": 300000,
         "activation": {
           "type": "action",
           "value": null,
@@ -223,6 +224,60 @@
         "name": "Sensory Effect",
         "img": "",
         "appliedEffects": []
+      },
+      "iQcgYnw8plR07D2v": {
+        "type": "utility",
+        "_id": "iQcgYnw8plR07D2v",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Push Creature",
+        "img": "",
+        "appliedEffects": []
       }
     }
   },
@@ -252,14 +307,13 @@
   "folder": "WtBByem45tjsGx6Z",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.0.2",
+    "systemVersion": "4.2.2",
     "coreVersion": "12.331",
     "createdTime": 1708312543488,
-    "modifiedTime": 1726882939953,
+    "modifiedTime": 1737928091031,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "_id": "lCEjgAoju5S1cTEO",
-  "sort": 2000000,
-  "_key": "!items!lCEjgAoju5S1cTEO"
+  "sort": 2700000,
+  "_key": "!items!matSplGust"
 }

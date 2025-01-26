@@ -1,83 +1,55 @@
 {
-  "folder": "WtBByem45tjsGx6Z",
   "name": "Blade Ward",
-  "type": "spell",
-  "_id": "BAGEUPexA80kyKKo",
-  "img": "icons/skills/melee/shield-damaged-broken-blue.webp",
   "system": {
     "description": {
-      "value": "<p>You extend your hand and trace a sigil of warding in the air. Until the end of your next turn, you have resistance against bludgeoning, piercing, and slashing damage dealt by weapon attacks.</p>",
+      "value": "<p>Whenever a creature makes an attack roll against you before the spell ends, the attacker subtracts [[/r 1d4]] from the attack roll.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia",
+      "page": "",
+      "license": ""
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
-      "units": "round"
+      "units": "minute"
     },
-    "cover": null,
-    "crewed": false,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "self",
-      "prompt": true,
       "affects": {
+        "choice": false,
+        "count": "",
+        "type": "creature",
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "self",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": null,
-    "actionType": "",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 0,
     "school": "abj",
     "properties": [
       "vocal",
-      "somatic"
+      "somatic",
+      "concentration"
     ],
     "materials": {
       "value": "",
@@ -86,17 +58,13 @@
       "supply": 0
     },
     "preparation": {
-      "mode": "prepared",
+      "mode": "always",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
     "activities": {
-      "b0TnKTnVqM7vyYH7": {
+      "1wca3rjsdb0agWqk": {
         "type": "utility",
-        "_id": "b0TnKTnVqM7vyYH7",
+        "_id": "1wca3rjsdb0agWqk",
         "sort": 0,
         "activation": {
           "type": "action",
@@ -118,11 +86,7 @@
           "concentration": false,
           "override": false
         },
-        "effects": [
-          {
-            "_id": "96SsFjtn8KuEqBel"
-          }
-        ],
+        "effects": [],
         "range": {
           "override": false
         },
@@ -144,99 +108,33 @@
         },
         "roll": {
           "prompt": false,
-          "visible": false,
-          "name": "",
-          "formula": ""
+          "visible": true,
+          "name": "Attack Penalty",
+          "formula": "1d4"
         },
-        "name": "Cast",
-        "img": "",
-        "appliedEffects": [
-          "96SsFjtn8KuEqBel"
-        ]
+        "name": "Cast"
       }
-    }
-  },
-  "effects": [
-    {
-      "name": "Blade Ward - Resistance",
-      "img": "systems/dnd5e/icons/svg/statuses/cover-half.svg",
-      "_id": "96SsFjtn8KuEqBel",
-      "type": "base",
-      "system": {},
-      "changes": [
-        {
-          "key": "system.traits.dr.value",
-          "mode": 2,
-          "value": "bludgeoning",
-          "priority": null
-        },
-        {
-          "key": "system.traits.dr.value",
-          "mode": 2,
-          "value": "piercing",
-          "priority": null
-        },
-        {
-          "key": "system.traits.dr.value",
-          "mode": 2,
-          "value": "slashing",
-          "priority": null
-        }
-      ],
-      "disabled": false,
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": 1,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "description": "<p>You have resistance against bludgeoning, piercing, and slashing damage dealt by weapon attacks.</p>",
-      "origin": null,
-      "tint": "#ffffff",
-      "transfer": false,
-      "statuses": [],
-      "sort": 0,
-      "flags": {},
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "dnd5e",
-        "systemVersion": "4.0.2",
-        "createdTime": 1726875947621,
-        "modifiedTime": 1726900193924,
-        "lastModifiedBy": "dnd5mbuilder0000"
-      },
-      "_key": "!items.effects!BAGEUPexA80kyKKo.96SsFjtn8KuEqBel"
-    }
-  ],
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.BAGEUPexA80kyKKo",
-      "spell-lists": "bard,sorcerer,warlock,wizard"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
+    "identifier": "blade-ward"
   },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.2",
-    "coreVersion": "12.331",
-    "createdTime": 1706861869026,
-    "modifiedTime": 1726899794352,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
-  },
-  "sort": 2500000,
+  "_id": "matSplBladeWard",
+  "type": "spell",
+  "img": "icons/skills/melee/weapons-crossed-swords-purple.webp",
+  "effects": [],
+  "folder": "WtBByem45tjsGx6Z",
   "ownership": {
     "default": 0
   },
-  "_key": "!items!BAGEUPexA80kyKKo"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1737924768589,
+    "modifiedTime": 1737927161858,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 1800000,
+  "_key": "!items!matSplBladeWard"
 }

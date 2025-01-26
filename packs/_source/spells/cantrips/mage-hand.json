@@ -1,79 +1,53 @@
 {
   "name": "Mage Hand",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>A spectral, floating hand appears at a point you choose within range. The hand lasts for the duration or until you dismiss it as an action. The hand vanishes if it is ever more than 30 feet away from you or if you cast this spell again.</p><p>You can use your action to control the hand. You can use the hand to manipulate an object, open an unlocked door or container, stow or retrieve an item from an open container, or pour the contents out of a vial. You can move the hand up to 30 feet each time you use it.</p><p>The hand can't attack, activate magic items, or carry more than 10 pounds.</p>",
+      "value": "<p>A spectral, floating hand appears at a point you choose within range. The hand lasts for the duration. The hand vanishes if it is ever more than 30 feet away from you or if you cast this spell again.</p><p>When you cast the spell, you can use the hand to manipulate an object, open an unlocked door or container, stow or retrieve an item from an open container, or pour the contents out of a vial.</p><p>As a Magic action on your later turns, you can control the hand thus again. As part of that action, you can move the hand up to 30 feet.</p><p>The hand can't attack, activate magic items, or carry more than 10 pounds.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "space",
-      "prompt": true,
       "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "space",
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 30,
-      "long": null,
       "units": "ft",
-      "special": ""
+      "special": "",
+      "value": "30"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 0,
     "school": "con",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -81,22 +55,13 @@
       "supply": 0
     },
     "preparation": {
-      "mode": "prepared",
+      "mode": "always",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic"
-    ],
-    "crewed": false,
     "activities": {
-      "qhFcgTifaZvKdlGp": {
+      "QdMC2s97UJKjUBoD": {
         "type": "summon",
-        "_id": "qhFcgTifaZvKdlGp",
+        "_id": "QdMC2s97UJKjUBoD",
         "sort": 0,
         "activation": {
           "type": "action",
@@ -118,7 +83,6 @@
           "concentration": false,
           "override": false
         },
-        "effects": [],
         "range": {
           "override": false
         },
@@ -142,23 +106,23 @@
           "ac": "",
           "hd": "",
           "hp": "",
-          "attackDamage": "",
-          "saveDamage": "",
-          "healing": ""
+          "attackDamage": "0",
+          "saveDamage": "0",
+          "healing": "0"
         },
         "creatureSizes": [],
         "creatureTypes": [],
         "match": {
-          "attacks": true,
-          "proficiency": true,
-          "saves": true
+          "attacks": false,
+          "proficiency": false,
+          "saves": false
         },
         "profiles": [
           {
             "count": "",
             "name": "",
-            "_id": "Aa4ZTgIaDr2vxdEs",
-            "uuid": "Compendium.materia-dnd.actors.Actor.a6kVpBJ0G9WGjgul",
+            "_id": "yXLZxwYBIj9AR2iQ",
+            "uuid": "Compendium.dnd-players-handbook.actors.Actor.phbsplMageHand00",
             "level": {
               "min": null,
               "max": null
@@ -171,16 +135,20 @@
           "mode": ""
         },
         "name": "",
-        "img": "",
-        "appliedEffects": []
+        "effects": []
       }
-    }
+    },
+    "identifier": "mage-hand"
+  },
+  "_id": "matSplMageHand",
+  "type": "spell",
+  "img": "icons/magic/light/hand-sparks-smoke-teal.webp",
+  "effects": [],
+  "folder": "WtBByem45tjsGx6Z",
+  "ownership": {
+    "default": 0
   },
   "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.1mSmSMfpGVk5QyAT",
-      "spell-lists": "artificer,bard,sorcerer,warlock,wizard"
-    },
     "dnd5e": {
       "riders": {
         "activity": [],
@@ -188,19 +156,15 @@
       }
     }
   },
-  "img": "icons/magic/water/water-hand.webp",
-  "effects": [],
-  "folder": "WtBByem45tjsGx6Z",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1661787234148,
-    "modifiedTime": 1730793236310,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1737925722284,
+    "modifiedTime": 1737926229907,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "1mSmSMfpGVk5QyAT",
-  "sort": 900000,
-  "_key": "!items!1mSmSMfpGVk5QyAT"
+  "sort": 600000,
+  "_key": "!items!matSplMageHand"
 }

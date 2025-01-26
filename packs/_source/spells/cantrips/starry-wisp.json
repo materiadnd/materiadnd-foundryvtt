@@ -1,9 +1,9 @@
 {
-  "name": "Thorn Whip",
-  "_id": "matSplThornWhip",
+  "name": "Starry Wisp",
+  "_id": "matSplStarryWisp",
   "system": {
     "description": {
-      "value": "<p>You create a vine-like whip covered in thorns that lashes out at your command toward a creature in range. Make a melee spell attack against the target. On a hit, the target takes [[/damage 1d6 piercing]] damage, and if it is Large or smaller, you can pull it up to 10 feet closer to you.</p><p><strong>Cantrip Upgrade.</strong> The damage increases by 1d6 when you reach levels 5 ([[/damage 2d6 piercing]]), 11 ([[/damage 3d6 piercing]]), and 17 ([[/damage 4d6 piercing]]).</p>",
+      "value": "<p>You launch a mote of light at one creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes [[/damage 1d8 radiant]] damage, and until the end of your next turn, it emits Dim Light in a 10-foot radius and can't benefit from the &amp;Reference[Invisible] condition.</p><p><strong>Cantrip Upgrade.</strong> The damage increases by 1d8 when you reach levels 5 ([[/damage 2d8 radiant]]), 11 ([[/damage 3d8 radiant]]), and 17 ([[/damage 4d8 radiant]]).</p>",
       "chat": ""
     },
     "source": {
@@ -27,7 +27,7 @@
       "affects": {
         "choice": false,
         "count": "1",
-        "type": "creature",
+        "type": "creatureOrObject",
         "special": ""
       },
       "template": {
@@ -39,7 +39,7 @@
     "range": {
       "units": "ft",
       "special": "",
-      "value": "30"
+      "value": "60"
     },
     "uses": {
       "max": "",
@@ -47,14 +47,13 @@
       "recovery": []
     },
     "level": 0,
-    "school": "trs",
+    "school": "evo",
     "properties": [
       "vocal",
-      "somatic",
-      "material"
+      "somatic"
     ],
     "materials": {
-      "value": "the stem of a thorny plant",
+      "value": "",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -64,9 +63,9 @@
       "prepared": false
     },
     "activities": {
-      "B9qItxRUVxoUGst3": {
+      "iuVRPWuNTiTm0fkj": {
         "type": "attack",
-        "_id": "B9qItxRUVxoUGst3",
+        "_id": "iuVRPWuNTiTm0fkj",
         "sort": 0,
         "activation": {
           "type": "action",
@@ -88,7 +87,11 @@
           "concentration": false,
           "override": false
         },
-        "effects": [],
+        "effects": [
+          {
+            "_id": "T9kBIL7LS3j0Upwz"
+          }
+        ],
         "range": {
           "override": false
         },
@@ -114,7 +117,7 @@
           },
           "flat": false,
           "type": {
-            "value": "melee",
+            "value": "ranged",
             "classification": ""
           },
           "ability": "",
@@ -132,27 +135,63 @@
                 "formula": ""
               },
               "number": 1,
-              "denomination": 6,
+              "denomination": 8,
               "bonus": "",
               "types": [
-                "piercing"
+                "radiant"
               ],
               "scaling": {
                 "mode": "whole",
-                "number": 1,
-                "formula": ""
+                "number": 1
               }
             }
           ]
         },
-        "name": "Attack and Pull"
+        "name": ""
       }
     },
-    "identifier": "thorn-whip"
+    "identifier": "starry-wisp"
   },
   "type": "spell",
-  "img": "icons/magic/nature/root-vine-thorns-poison-green.webp",
-  "effects": [],
+  "img": "icons/magic/light/orb-hand-green.webp",
+  "effects": [
+    {
+      "name": "Illuminated",
+      "img": "icons/sundries/lights/lantern-iron-lit-yellow.webp",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplStarryWisp",
+      "transfer": false,
+      "_id": "T9kBIL7LS3j0Upwz",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": 1,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>Until the end of your next turn, it emits Dim Light in a 10-foot radius and can\u00e2\u20ac\u2122t benefit from the &amp;Reference[Invisible] condition.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!8rtoAKh5wXESCkBS.T9kBIL7LS3j0Upwz"
+    }
+  ],
   "folder": "WtBByem45tjsGx6Z",
   "ownership": {
     "default": 0
@@ -170,10 +209,10 @@
     "coreVersion": "12.331",
     "systemId": "dnd5e",
     "systemVersion": "4.2.2",
-    "createdTime": 1737926670634,
-    "modifiedTime": 1737930408221,
+    "createdTime": 1737926611535,
+    "modifiedTime": 1737930313138,
     "lastModifiedBy": "dnd5mbuilder0000"
   },
   "sort": 0,
-  "_key": "!items!matSplThornWhip"
+  "_key": "!items!matSplStarryWisp"
 }

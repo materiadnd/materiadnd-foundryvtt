@@ -1,81 +1,56 @@
 {
   "name": "Poison Spray",
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You extend your hand toward a creature you can see within range and project a puff of noxious gas from your palm. The creature must succeed on a Constitution saving throw or take [[/r 1d10]] poison damage and suffer the poisoned condition until the beginning of your next turn.</p><p>This spell's damage increases by [[/r 1d10]] when you reach 5th level ([[/r 2d10]]), 11th level ([[/r 3d10]]), and 17th level ([[/r 4d10]]).</p>",
+      "value": "<p>You spray toxic mist at a creature within range. Make a ranged spell attack against the target. On a hit, the target takes [[/damage 1d12 poison]] damage.</p><p><strong>Cantrip Upgrade.</strong> The damage increases by 1d12 when you reach levels 5 ([[/damage 2d12 poison]]), 11 ([[/damage 3d12 poison]]), and 17 ([[/damage 4d12 poison]]).</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia",
+      "page": "",
+      "license": ""
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 10,
-      "long": null,
       "units": "ft",
-      "special": ""
+      "special": "",
+      "value": "30"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "1d10",
-          "poison"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "con",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 0,
-    "school": "evo",
+    "school": "nec",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -83,35 +58,13 @@
       "supply": 0
     },
     "preparation": {
-      "mode": "prepared",
+      "mode": "always",
       "prepared": false
     },
-    "scaling": {
-      "mode": "cantrip",
-      "formula": "1d10"
-    },
-    "properties": [
-      "vocal",
-      "somatic"
-    ],
-    "crewed": false,
     "activities": {
-      "dnd5eactivity000": {
-        "name": "",
-        "img": "",
-        "appliedEffects": [
-          "aMeKSsXfJiM12n5o"
-        ],
-        "effects": [
-          {
-            "_id": "aMeKSsXfJiM12n5o",
-            "onSave": false
-          }
-        ]
-      },
-      "IvLLnAfn9sgDiuDY": {
-        "type": "save",
-        "_id": "IvLLnAfn9sgDiuDY",
+      "UbLJ36AaSvIMQ2dy": {
+        "type": "attack",
+        "_id": "UbLJ36AaSvIMQ2dy",
         "sort": 0,
         "activation": {
           "type": "action",
@@ -133,12 +86,7 @@
           "concentration": false,
           "override": false
         },
-        "effects": [
-          {
-            "_id": "aMeKSsXfJiM12n5o",
-            "onSave": false
-          }
-        ],
+        "effects": [],
         "range": {
           "override": false
         },
@@ -158,7 +106,23 @@
           "recovery": [],
           "max": ""
         },
+        "attack": {
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": ""
+          },
+          "ability": "",
+          "bonus": ""
+        },
         "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": true,
           "parts": [
             {
               "custom": {
@@ -166,101 +130,42 @@
                 "formula": ""
               },
               "number": 1,
-              "denomination": 10,
+              "denomination": 12,
               "bonus": "",
               "types": [
                 "poison"
               ],
               "scaling": {
                 "mode": "whole",
-                "number": 1
+                "number": 1,
+                "formula": ""
               }
             }
-          ],
-          "onSave": "none"
+          ]
         },
-        "save": {
-          "ability": "con",
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
-        },
-        "name": "",
-        "img": "",
-        "appliedEffects": [
-          "aMeKSsXfJiM12n5o"
-        ]
+        "name": ""
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.xJ1b0lry7GAWf3sJ",
-      "spell-lists": "artificer,druid,sorcerer,warlock,wizard"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
+    "identifier": "poison-spray"
   },
-  "img": "icons/magic/fire/projectile-fireball-smoke-large-green.webp",
-  "effects": [
-    {
-      "name": "Poisoned",
-      "img": "systems/dnd5e/icons/svg/statuses/poisoned.svg",
-      "_id": "aMeKSsXfJiM12n5o",
-      "type": "base",
-      "system": {},
-      "changes": [],
-      "disabled": false,
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": 1,
-        "startRound": null,
-        "startTurn": null
-      },
-      "description": "<p>You suffer the poisoned condition until the beginning of your next turn.</p>",
-      "origin": null,
-      "tint": "#ffffff",
-      "transfer": false,
-      "statuses": [
-        "poisoned"
-      ],
-      "sort": 0,
-      "flags": {},
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "dnd5e",
-        "systemVersion": "4.0.2",
-        "createdTime": 1726887310795,
-        "modifiedTime": 1726887361047,
-        "lastModifiedBy": "dnd5mbuilder0000"
-      },
-      "_key": "!items.effects!xJ1b0lry7GAWf3sJ.aMeKSsXfJiM12n5o"
-    }
-  ],
+  "_id": "matSplPoisonSpra",
+  "type": "spell",
+  "img": "icons/magic/acid/pouring-gas-smoke-liquid.webp",
+  "effects": [],
   "folder": "WtBByem45tjsGx6Z",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.2",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234190,
-    "modifiedTime": 1727100357051,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
-  },
-  "_id": "xJ1b0lry7GAWf3sJ",
-  "sort": 4500000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!xJ1b0lry7GAWf3sJ"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1737925877691,
+    "modifiedTime": 1737929621057,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 1000000,
+  "_key": "!items!matSplPoisonSpra"
 }

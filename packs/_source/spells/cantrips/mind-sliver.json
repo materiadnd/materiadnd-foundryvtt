@@ -1,15 +1,51 @@
 {
   "name": "Mind Sliver",
-  "type": "spell",
+  "_id": "matSplMindSliver",
   "system": {
-    "source": {
-      "book": "Materia"
-    },
     "description": {
-      "value": "<p>You drive a disorienting spike of psychic energy into the mind of one creature you can see within range. The target must succeed on an Intelligence saving throw or take [[/r 1d6]] psychic damage and subtract [[/r 1d4]] from the next saving throw it makes before the end of your next turn.</p><p>This spell's damage increases by [[/r 1d6]] when you reach certain levels: 5th level ([[/r 2d6]]), 11th level ([[/r 3d6]]), and 17th level ([[/r 4d6]]).</p>",
+      "value": "<p>You try to temporarily sliver the mind of one creature you can see within range. The target must succeed on an Intelligence saving throw or take [[/damage 1d6 psychic]] damage and subtract [[/r 1d4]] from the next saving throw it makes before the end of your next turn.</p><p><strong>Cantrip Upgrade.</strong> The damage increases by 1d6 when you reach levels 5 ([[/damage 2d6 psychic]]), 11 ([[/damage 3d6 psychic]]), and 17 ([[/damage 4d6 psychic]]).</p>",
       "chat": ""
     },
-    "actionType": "save",
+    "source": {
+      "custom": "",
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia",
+      "page": "",
+      "license": ""
+    },
+    "activation": {
+      "type": "action",
+      "condition": "",
+      "value": null
+    },
+    "duration": {
+      "value": "1",
+      "units": "round"
+    },
+    "target": {
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
+    },
+    "range": {
+      "units": "ft",
+      "special": "",
+      "value": "60"
+    },
+    "uses": {
+      "max": "",
+      "spent": 0,
+      "recovery": []
+    },
     "level": 0,
     "school": "enc",
     "properties": [
@@ -21,83 +57,14 @@
       "cost": 0,
       "supply": 0
     },
-    "target": {
-      "value": 1,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
-      "width": null,
-      "affects": {
-        "special": ""
-      },
-      "template": {
-        "type": ""
-      }
-    },
-    "range": {
-      "value": 60,
-      "units": "ft",
-      "long": null,
-      "special": ""
-    },
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": "1",
-      "units": "round"
-    },
-    "damage": {
-      "parts": [
-        [
-          "1d6",
-          "psychic"
-        ]
-      ],
-      "versatile": ""
-    },
-    "scaling": {
-      "mode": "cantrip",
-      "formula": "1d6"
-    },
-    "save": {
-      "ability": "int",
-      "dc": null,
-      "scaling": "spell"
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "formula": "",
     "preparation": {
       "mode": "always",
       "prepared": false
     },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "cover": null,
-    "crewed": false,
-    "ability": "",
     "activities": {
-      "X7bqat1cb1QHJHx0": {
+      "pIHrgeAoBDsA7vv8": {
         "type": "save",
-        "_id": "X7bqat1cb1QHJHx0",
+        "_id": "pIHrgeAoBDsA7vv8",
         "sort": 0,
         "activation": {
           "type": "action",
@@ -121,7 +88,7 @@
         },
         "effects": [
           {
-            "_id": "q2mgEI9Y5tc06sYF",
+            "_id": "DMjD7IpAZuoVPCXY",
             "onSave": false
           }
         ],
@@ -167,47 +134,28 @@
           "onSave": "none"
         },
         "save": {
-          "ability": "int",
+          "ability": [
+            "int"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
         },
-        "name": "",
-        "img": "",
-        "appliedEffects": [
-          "q2mgEI9Y5tc06sYF"
-        ]
+        "name": ""
       }
-    }
-  },
-  "img": "icons/magic/light/beam-rays-magenta.webp",
-  "ownership": {
-    "default": 0
-  },
-  "flags": {
-    "plutonium": {
-      "page": "spells.html",
-      "source": "TCE",
-      "hash": "mind%20sliver_tce",
-      "propDroppable": "spell"
     },
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.LPwkaDdv1EYQXod7",
-      "spell-lists": "sorcerer,warlock,wizard"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
+    "identifier": "mind-sliver"
   },
+  "type": "spell",
+  "img": "icons/magic/control/silhouette-aura-energy.webp",
   "effects": [
     {
       "name": "Slivered",
-      "img": "icons/magic/light/beam-rays-magenta.webp",
-      "_id": "q2mgEI9Y5tc06sYF",
+      "img": "icons/magic/control/silhouette-aura-energy.webp",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplMindSliver",
+      "transfer": false,
+      "_id": "DMjD7IpAZuoVPCXY",
       "type": "base",
       "system": {},
       "changes": [
@@ -229,9 +177,7 @@
         "startTurn": null
       },
       "description": "<p>The target subtracts 1d4 from the next saving throw it makes before the end of your next turn.</p>",
-      "origin": null,
       "tint": "#ffffff",
-      "transfer": false,
       "statuses": [],
       "sort": 0,
       "flags": {},
@@ -240,25 +186,28 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.2",
-        "createdTime": 1726886612684,
-        "modifiedTime": 1726886654452,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!LPwkaDdv1EYQXod7.q2mgEI9Y5tc06sYF"
+      "_key": "!items.effects!cQkAFmY9kqrmD6fn.DMjD7IpAZuoVPCXY"
     }
   ],
   "folder": "WtBByem45tjsGx6Z",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.2",
-    "coreVersion": "12.331",
-    "createdTime": 1708312542491,
-    "modifiedTime": 1726886670048,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "LPwkaDdv1EYQXod7",
-  "sort": 1900000,
-  "_key": "!items!LPwkaDdv1EYQXod7"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1737925795998,
+    "modifiedTime": 1737928686488,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 800000,
+  "_key": "!items!matSplMindSliver"
 }

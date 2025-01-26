@@ -1,8 +1,8 @@
 {
-  "name": "Produce Flame",
+  "name": "Elementalism",
   "system": {
     "description": {
-      "value": "<p>A flickering flame appears in your hand and remains there for the duration. While there, the flame emits no heat and ignites nothing, and it sheds Bright Light in a 20-foot radius and Dim Light for an additional 20 feet. The spell ends if you cast it again.</p><p>Until the spell ends, you can take a Magic action to hurl fire at a creature or an object within 60 feet of you. Make a ranged spell attack. On a hit, the target takes [[/damage 1d8 fire]] damage.</p><p><strong>Cantrip Upgrade.</strong> The damage increases by 1d8 when you reach levels 5 ([[/damage 2d8 fire]]), 11 ([[/damage 3d8 fire]]), and 17 ([[/damage 4d8 fire]]).</p>",
+      "value": "<p>You exert control over the elements, creating one of the following effects within range.</p><p><strong>Beckon Air.</strong> You create a breeze strong enough to ripple cloth, stir dust, rustle leaves, and close open doors and shutters, all in a 5-foot Cube. Doors and shutters being held open by someone or something aren't affected.</p><p><strong>Beckon Earth.</strong> You create a thin shroud of dust or sand that covers surfaces in a 5-foot-square area, or you cause a single word to appear in your handwriting in a patch of dirt or sand.</p><p><strong>Beckon Fire.</strong> You create a thin cloud of harmless embers and colored, scented smoke in a 5-foot Cube. You choose the color and scent, and the embers can light candles, torches, or lamps in that area. The smoke's scent lingers for 1 minute.</p><p><strong>Beckon Water.</strong> You create a spray of cool mist that lightly dampens creatures and objects in a 5-foot Cube. Alternatively, you create 1 cup of clean water either in an open container or on a surface, and the water evaporates in 1 minute.</p><p><strong>Sculpt Element.</strong> You cause dirt, sand, fire, smoke, mist, or water that can fit in a 1-foot Cube to assume a crude shape (such as that of a creature) for 1 hour.</p>",
       "chat": ""
     },
     "source": {
@@ -14,30 +14,33 @@
       "license": ""
     },
     "activation": {
-      "type": "bonus",
+      "type": "action",
       "condition": "",
       "value": null
     },
     "duration": {
-      "value": "10",
-      "units": "minute"
+      "value": "",
+      "units": "inst"
     },
     "target": {
       "affects": {
         "choice": false,
-        "count": "",
-        "type": "self",
+        "count": "1",
+        "type": "space",
         "special": ""
       },
       "template": {
-        "units": "",
+        "units": "ft",
         "contiguous": false,
-        "type": ""
+        "type": "cube",
+        "size": "5",
+        "count": ""
       }
     },
     "range": {
-      "units": "self",
-      "special": ""
+      "units": "ft",
+      "special": "",
+      "value": "30"
     },
     "uses": {
       "max": "",
@@ -45,7 +48,7 @@
       "recovery": []
     },
     "level": 0,
-    "school": "con",
+    "school": "trs",
     "properties": [
       "vocal",
       "somatic"
@@ -61,10 +64,9 @@
       "prepared": false
     },
     "activities": {
-      "MModRd17Oi6hhztj": {
+      "NND0Ry2h5vSfZgq5": {
         "type": "utility",
-        "name": "Cast",
-        "_id": "MModRd17Oi6hhztj",
+        "_id": "NND0Ry2h5vSfZgq5",
         "sort": 0,
         "activation": {
           "type": "action",
@@ -78,7 +80,9 @@
           "spellSlot": true,
           "targets": []
         },
-        "description": {},
+        "description": {
+          "chatFlavor": "Fire and water beckoning lasts for 1 minute"
+        },
         "duration": {
           "units": "inst",
           "concentration": false,
@@ -101,23 +105,26 @@
         },
         "uses": {
           "spent": 0,
-          "recovery": []
+          "recovery": [],
+          "max": ""
         },
         "roll": {
           "prompt": false,
-          "visible": false
-        }
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Beckon Element",
+        "img": "systems/dnd5e/icons/svg/statuses/grappled.svg"
       },
-      "tqKlIEdglRYdqHrp": {
-        "type": "attack",
-        "name": "Hurl Fire",
-        "_id": "tqKlIEdglRYdqHrp",
+      "8IholW9syQX6TFOg": {
+        "type": "utility",
+        "_id": "8IholW9syQX6TFOg",
         "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
-          "override": true,
-          "condition": ""
+          "override": false
         },
         "consumption": {
           "scaling": {
@@ -130,27 +137,27 @@
           "chatFlavor": ""
         },
         "duration": {
-          "units": "inst",
+          "units": "hour",
           "concentration": false,
-          "override": true
+          "override": true,
+          "value": "1"
         },
         "effects": [],
         "range": {
-          "override": true,
-          "units": "ft",
-          "special": "",
-          "value": "60"
+          "override": false
         },
         "target": {
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": ""
+            "type": "cube",
+            "size": "1",
+            "count": ""
           },
           "affects": {
             "choice": false,
             "count": "1",
-            "type": "creatureOrObject",
+            "type": "space",
             "special": ""
           },
           "override": true,
@@ -161,49 +168,21 @@
           "recovery": [],
           "max": ""
         },
-        "attack": {
-          "critical": {
-            "threshold": null
-          },
-          "flat": false,
-          "type": {
-            "value": "ranged",
-            "classification": ""
-          },
-          "ability": "",
-          "bonus": ""
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
         },
-        "damage": {
-          "critical": {
-            "bonus": ""
-          },
-          "includeBase": true,
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 8,
-              "bonus": "",
-              "types": [
-                "fire"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ]
-        }
+        "name": "Sculpt Element",
+        "img": "systems/dnd5e/icons/svg/damage/bludgeoning.svg"
       }
     },
-    "identifier": "produce-flame"
+    "identifier": "elementalism"
   },
-  "_id": "matSplProduceFla",
+  "_id": "matSplElementali",
   "type": "spell",
-  "img": "icons/magic/light/hand-sparks-glow-yellow.webp",
+  "img": "icons/magic/nature/leaf-hand-green.webp",
   "effects": [],
   "folder": "WtBByem45tjsGx6Z",
   "ownership": {
@@ -215,10 +194,10 @@
     "coreVersion": "12.331",
     "systemId": "dnd5e",
     "systemVersion": "4.2.2",
-    "createdTime": 1737925925885,
-    "modifiedTime": 1737929741825,
+    "createdTime": 1737925232979,
+    "modifiedTime": 1737926229907,
     "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "sort": 1200000,
-  "_key": "!items!matSplProduceFla"
+  "sort": 1600000,
+  "_key": "!items!matSplElementali"
 }
