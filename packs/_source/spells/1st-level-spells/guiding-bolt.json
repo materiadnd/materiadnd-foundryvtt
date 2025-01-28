@@ -1,84 +1,53 @@
 {
   "name": "Guiding Bolt",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>A flash of light streaks toward a creature of your choice within range. Make a ranged spell attack against the target. On a hit, the target takes [[/r 4d6]] radiant damage, and the next attack roll made against this target before the end of your next turn has advantage, thanks to the mystical dim light glittering on the target until then.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by [[/r 1d6]] for each slot level above 1st.</p>",
+      "value": "<p>You hurl a bolt of light toward a creature within range. Make a ranged spell attack against the target. On a hit, it takes 4d6 Radiant damage, and the next attack roll made against it before the end of your next turn has Advantage.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d6 for each spell slot level above 1.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "round"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "type": "creature",
+        "count": "1",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 120,
-      "long": null,
+      "value": "120",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "rsak",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "4d6",
-          "radiant"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 1,
     "school": "evo",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -89,49 +58,41 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "1d6"
-    },
-    "properties": [
-      "vocal",
-      "somatic"
-    ],
-    "crewed": false,
     "activities": {
-      "HNxbTDqh8eRIySGT": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "attack",
-        "_id": "HNxbTDqh8eRIySGT",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [
           {
-            "_id": "kgEaQqZ8xDqSA0gb"
+            "_id": "rHzZCeXfdeTcYyk8"
           }
         ],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -139,25 +100,19 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
+          "override": false
         },
         "attack": {
+          "ability": "",
+          "bonus": "",
           "critical": {
             "threshold": null
           },
           "flat": false,
           "type": {
             "value": "ranged",
-            "classification": ""
-          },
-          "ability": "",
-          "bonus": ""
+            "classification": "spell"
+          }
         },
         "damage": {
           "critical": {
@@ -166,91 +121,90 @@
           "includeBase": true,
           "parts": [
             {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
               "number": 4,
               "denomination": 6,
               "bonus": "",
               "types": [
                 "radiant"
               ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
               "scaling": {
                 "mode": "whole",
-                "number": 1
+                "number": 1,
+                "formula": ""
               }
             }
           ]
         },
-        "name": "",
-        "img": "",
-        "appliedEffects": []
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.9gBEWySceHTQUip0",
-      "spell-lists": "cleric"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
+    "identifier": "guiding-bolt"
   },
-  "img": "icons/magic/fire/projectile-fireball-smoke-large-blue.webp",
+  "type": "spell",
+  "img": "icons/magic/light/projectile-flare-blue.webp",
   "effects": [
     {
-      "name": "Glittering",
-      "img": "icons/magic/fire/projectile-fireball-smoke-large-blue.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.9gBEWySceHTQUip0",
-      "transfer": false,
-      "_id": "kgEaQqZ8xDqSA0gb",
-      "type": "base",
-      "system": {},
-      "changes": [],
-      "disabled": false,
+      "name": "Guiding Bolt",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplGuidingBol",
       "duration": {
+        "rounds": 1,
         "startTime": null,
         "seconds": null,
         "combat": null,
-        "rounds": 1,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>The next attack roll made against this target before the end of your next turn has advantage, thanks to the mystical dim light glittering on the target until then.</p>",
-      "tint": "#ffffff",
-      "statuses": [],
-      "sort": 0,
+      "disabled": false,
       "flags": {},
+      "img": "icons/skills/targeting/target-strike-triple-blue.webp",
+      "_id": "rHzZCeXfdeTcYyk8",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p><span style=\"font-family:Signika, sans-serif\">The next attack roll made against the target before the end of your next turn has Advantage.</span></p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "marked"
+      ],
+      "sort": 0,
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1730055592531,
-        "modifiedTime": 1730055641560,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!9gBEWySceHTQUip0.kgEaQqZ8xDqSA0gb"
+      "_key": "!items.effects!xLXZFyqAdMwRbJd6.rHzZCeXfdeTcYyk8"
     }
   ],
   "folder": "JMRA2elEdmr5pgX7",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234075,
-    "modifiedTime": 1730055592567,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "9gBEWySceHTQUip0",
-  "sort": 2300000,
-  "_key": "!items!9gBEWySceHTQUip0"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738039411717,
+    "modifiedTime": 1738039411717,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "xLXZFyqAdMwRbJd6",
+  "sort": 0,
+  "_key": "!items!xLXZFyqAdMwRbJd6"
 }

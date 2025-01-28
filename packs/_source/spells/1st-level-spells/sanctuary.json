@@ -1,81 +1,57 @@
 {
   "name": "Sanctuary",
-  "ownership": {
-    "default": 0
-  },
   "type": "spell",
+  "img": "icons/magic/defensive/shield-barrier-deflect-gold.webp",
   "system": {
     "description": {
-      "value": "<p>You ward a creature within range against attack. Until the spell ends, any creature who targets the warded creature with an attack or a harmful spell must first make a Wisdom saving throw. On a failed save, the creature must choose a new target or lose the attack or spell. This spell doesn't protect the warded creature from area effects, such as the explosion of a Fireball.</p><p>If the warded creature makes an attack or casts a spell that affects an enemy creature, this spell ends.</p>",
+      "value": "<div><p>You ward a creature within range. Until the spell ends, any creature who targets the warded creature with an attack roll or a damaging spell must succeed on a [[/save ability=wis dc=@attributes.spelldc format=long]] or either choose a new target or lose the attack or spell. This spell doesn't protect the warded creature from areas of effect. The spell ends if the warded creature makes an attack roll, casts a spell, or deals damage.</p></div>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "bonus",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 30,
-      "long": null,
       "units": "ft",
-      "special": ""
+      "special": "",
+      "value": "30"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "wis",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 1,
     "school": "abj",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "A small silver mirror",
+      "value": "a shard of glass from a mirror",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -84,20 +60,10 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material"
-    ],
-    "crewed": false,
     "activities": {
-      "Fl9H4SIxrn16H1y8": {
+      "2iUeoKysfdtmK0kZ": {
         "type": "utility",
-        "_id": "Fl9H4SIxrn16H1y8",
+        "_id": "2iUeoKysfdtmK0kZ",
         "sort": 0,
         "activation": {
           "type": "action",
@@ -121,7 +87,7 @@
         },
         "effects": [
           {
-            "_id": "6vfYyqZE6XsmBB4W"
+            "_id": "OuM8iKhckcDKavOx"
           }
         ],
         "range": {
@@ -149,13 +115,12 @@
           "name": "",
           "formula": ""
         },
-        "name": "Cast",
-        "img": "",
-        "appliedEffects": []
+        "name": "Cast"
       },
-      "fMoGKqAcUzZyW1ja": {
+      "6TdVnZPI3lxQrycI": {
         "type": "save",
-        "_id": "fMoGKqAcUzZyW1ja",
+        "name": "Save on Target",
+        "_id": "6TdVnZPI3lxQrycI",
         "sort": 0,
         "activation": {
           "type": "",
@@ -205,38 +170,25 @@
           "onSave": "none"
         },
         "save": {
-          "ability": "wis",
+          "ability": [
+            "wis"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
-        },
-        "name": "Save on Target",
-        "img": "",
-        "appliedEffects": []
+        }
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.FiVh5yBuND9KDDkA",
-      "spell-lists": "artificer,cleric"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
+    "identifier": "sanctuary"
   },
-  "img": "icons/magic/defensive/shield-barrier-flaming-diamond-blue-yellow.webp",
   "effects": [
     {
       "name": "Warded",
-      "img": "icons/magic/defensive/shield-barrier-flaming-diamond-blue-yellow.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.FiVh5yBuND9KDDkA",
+      "img": "icons/skills/social/peace-luck-insult.webp",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbSanctuary0000",
       "transfer": false,
-      "_id": "6vfYyqZE6XsmBB4W",
+      "_id": "OuM8iKhckcDKavOx",
       "type": "base",
       "system": {},
       "changes": [],
@@ -250,7 +202,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "description": "",
+      "description": "<p>Until the spell ends, any creature who targets the warded creature with an attack roll or a damaging spell must succeed on a [[/save ability=wis format=long]] or either choose a new target or lose the attack or spell.</p><p> The spell ends if the warded creature makes an attack roll, casts a spell, or deals damage.</p>",
       "tint": "#ffffff",
       "statuses": [],
       "sort": 0,
@@ -260,25 +212,36 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1730089529347,
-        "modifiedTime": 1730089543270,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!FiVh5yBuND9KDDkA.6vfYyqZE6XsmBB4W"
+      "_key": "!items.effects!CKg6xnTqWmLGzmbA.OuM8iKhckcDKavOx"
     }
   ],
   "folder": "JMRA2elEdmr5pgX7",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234193,
-    "modifiedTime": 1730089589661,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
   },
-  "_id": "FiVh5yBuND9KDDkA",
-  "sort": 700000,
-  "_key": "!items!FiVh5yBuND9KDDkA"
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738040568372,
+    "modifiedTime": 1738040568372,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "ownership": {
+    "default": 0
+  },
+  "_id": "CKg6xnTqWmLGzmbA",
+  "sort": 0,
+  "_key": "!items!CKg6xnTqWmLGzmbA"
 }

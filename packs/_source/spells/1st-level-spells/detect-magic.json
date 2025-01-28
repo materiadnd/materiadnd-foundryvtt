@@ -1,79 +1,48 @@
 {
-  "folder": "JMRA2elEdmr5pgX7",
   "name": "Detect Magic",
-  "type": "spell",
-  "_id": "KgidhI9cOSSjvaKK",
-  "img": "icons/magic/symbols/runes-star-pentagon-blue.webp",
   "system": {
     "description": {
-      "value": "<p>For the duration, you sense the presence of magic within 30 feet of you. If you sense magic in this way, you can use your action to see a faint aura around any visible creature or object in the area that bears magic, and you learn its school of magic, if any.</p><p>The spell can penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 5th level or higher, you can maintain your concentration on the spell for up to 1 hour.</p><p>When you cast this spell using a spell slot of 9th level or higher, grants a duration that does not require concentration.</p>",
+      "value": "<p>For the duration, you sense the presence of magical effects within 30 feet of yourself. If you sense such effects, you can take the Magic action to see a faint aura around any visible creature or object in the area that bears the magic, and if an effect was created by a spell, you learn the spell's school of magic.</p><p>The spell is blocked by 1 foot of stone, dirt, or wood; 1 inch of metal; or a thin sheet of lead.</p><p><strong>Using a Higher-Level Spell Slot.</strong><span style=\"font-family:'Roboto Condensed', sans-serif\"><strong style=\"box-sizing:border-box;user-select:text;scrollbar-width:thin;scrollbar-color:var(--color-scrollbar) var(--color-scrollbar-track);color:rgb(207, 210, 218);font-family:'Roboto Condensed', sans-serif;font-size:14.625px;font-style:normal;font-variant-ligatures:normal;font-variant-caps:normal;letter-spacing:normal;orphans:2;text-align:start;text-indent:0px;text-transform:none;widows:2;word-spacing:0px;-webkit-text-stroke-width:0px;white-space:normal;background-color:rgb(37, 40, 48);text-decoration-thickness:initial;text-decoration-style:initial;text-decoration-color:initial\"> </strong>Your Concentration can last longer with a spell slot of 5+ (up to 1 hour). At level 9 or higher, the spell no longer requires your Concentration.</span></p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "10",
       "units": "minute"
     },
-    "cover": null,
-    "crewed": false,
     "target": {
-      "value": 30,
-      "width": null,
-      "units": "",
-      "type": "sphere",
-      "prompt": true,
       "affects": {
+        "type": "self",
         "count": "",
-        "type": ""
+        "choice": false,
+        "special": ""
       },
       "template": {
-        "count": "",
-        "type": "radius"
+        "units": "ft",
+        "contiguous": false,
+        "type": "radius",
+        "size": "30",
+        "count": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
+      "value": "",
       "units": "self",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": null,
-    "actionType": "",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 1,
     "school": "div",
@@ -81,8 +50,7 @@
       "vocal",
       "somatic",
       "concentration",
-      "ritual",
-      "mgc"
+      "ritual"
     ],
     "materials": {
       "value": "",
@@ -94,42 +62,41 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
     "activities": {
-      "kZMsMct32Cac1Ieo": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "utility",
-        "_id": "kZMsMct32Cac1Ieo",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
-        "description": {},
+        "description": {
+          "chatFlavor": ""
+        },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [
           {
-            "_id": "7Qha3sQNDx6PCyxw"
+            "_id": "BHw91lQmVgdx39WZ"
           }
         ],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": false,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -137,87 +104,87 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
         },
         "uses": {
           "spent": 0,
-          "recovery": []
+          "recovery": [],
+          "max": ""
         },
-        "roll": {
-          "prompt": false,
-          "visible": false
-        }
+        "sort": 0,
+        "name": "Cast"
       }
-    }
+    },
+    "identifier": "detect-magic"
   },
+  "type": "spell",
+  "img": "icons/magic/symbols/runes-carved-stone-green.webp",
   "effects": [
     {
       "name": "Detect Magic",
-      "img": "icons/magic/symbols/runes-star-pentagon-blue.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.KgidhI9cOSSjvaKK",
-      "transfer": false,
-      "_id": "7Qha3sQNDx6PCyxw",
-      "type": "base",
-      "system": {},
-      "changes": [],
-      "disabled": false,
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplDetectMagi",
       "duration": {
+        "rounds": null,
         "startTime": null,
         "seconds": 600,
         "combat": null,
-        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>For the duration, you sense the presence of magic within 30 feet of you. If you sense magic in this way, you can use your action to see a faint aura around any visible creature or object in the area that bears magic, and you learn its school of magic, if any.</p><p>The spell can penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.</p>",
+      "disabled": false,
+      "flags": {},
+      "img": "icons/magic/symbols/runes-carved-stone-green.webp",
+      "_id": "BHw91lQmVgdx39WZ",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "",
       "tint": "#ffffff",
+      "transfer": false,
       "statuses": [],
       "sort": 0,
-      "flags": {},
       "_stats": {
-        "compendiumSource": null,
+        "compendiumSource": "Compendium.dnd-players-handbook.spells.Item.phbsplDetectEvil.ActiveEffect.pOgbtXbKVGdbwjjE",
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728245540902,
-        "modifiedTime": 1728245560735,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!KgidhI9cOSSjvaKK.7Qha3sQNDx6PCyxw"
+      "_key": "!items.effects!vvddOueCGRlyOPl7.BHw91lQmVgdx39WZ"
     }
   ],
+  "folder": "JMRA2elEdmr5pgX7",
+  "ownership": {
+    "default": 0
+  },
   "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.KgidhI9cOSSjvaKK",
-      "spell-lists": "artificer,bard,cleric,druid,paladin,ranger,sorcerer,wizard"
-    },
     "dnd5e": {
       "riders": {
         "activity": [],
         "effect": []
       }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
     }
   },
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1707205018895,
-    "modifiedTime": 1728245577180,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738030424439,
+    "modifiedTime": 1738043312911,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "sort": 4900000,
-  "ownership": {
-    "default": 0
-  },
-  "_key": "!items!KgidhI9cOSSjvaKK"
+  "_id": "vvddOueCGRlyOPl7",
+  "sort": 0,
+  "_key": "!items!vvddOueCGRlyOPl7"
 }

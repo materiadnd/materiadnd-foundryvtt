@@ -1,84 +1,53 @@
 {
   "name": "Magic Missile",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range. A dart deals [[/r 1d4 + 1]] force damage to its target. The darts all strike simultaneously, and you can direct them to hit one creature or several.</p><p><strong>Higher Levels. </strong>When you cast this spell using a spell slot of 2nd level or higher, the spell creates one more dart for each slot level above 1st.</p>",
+      "value": "<p>You create three glowing darts of magical force. Each dart strikes a creature of your choice that you can see within range. A dart deals [[/damage 1d4 + 1 force]] damage to its target. The darts all strike simultaneously, and you can direct them to hit one creature or several.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The spell creates one more dart for each spell slot level above 1.</p><p>[[2 + @item.level]]{Level [[lookup @item.level]] darts}</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "type": "creature",
+        "count": "2 + @item.level",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 120,
-      "long": null,
+      "value": "120",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "other",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "1d4 + 1",
-          "force"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 1,
     "school": "evo",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -89,46 +58,37 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "mgc"
-    ],
-    "crewed": false,
     "activities": {
-      "Z0Ceus8JLOgVYAxg": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "damage",
-        "_id": "Z0Ceus8JLOgVYAxg",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -136,17 +96,12 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
+          "override": false
         },
         "damage": {
           "critical": {
-            "allow": false
+            "allow": false,
+            "bonus": ""
           },
           "parts": [
             {
@@ -167,17 +122,25 @@
             }
           ]
         },
-        "name": "Cast",
-        "img": "",
-        "appliedEffects": []
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "name": "Cast"
       }
-    }
+    },
+    "identifier": "magic-missile"
+  },
+  "type": "spell",
+  "img": "icons/magic/light/projectiles-pink-purple.webp",
+  "effects": [],
+  "folder": "JMRA2elEdmr5pgX7",
+  "ownership": {
+    "default": 0
   },
   "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.ClpgcjRJwRPPdcuK",
-      "spell-lists": "sorcerer,wizard"
-    },
     "dnd5e": {
       "riders": {
         "activity": [],
@@ -185,19 +148,16 @@
       }
     }
   },
-  "img": "icons/magic/fire/projectile-meteor-salvo-light-pink.webp",
-  "effects": [],
-  "folder": "JMRA2elEdmr5pgX7",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1661787234065,
-    "modifiedTime": 1730089220294,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738040263122,
+    "modifiedTime": 1738040278023,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "ClpgcjRJwRPPdcuK",
-  "sort": 500000,
-  "_key": "!items!ClpgcjRJwRPPdcuK"
+  "_id": "4EuCYtgbnFL9jYdk",
+  "sort": 0,
+  "_key": "!items!4EuCYtgbnFL9jYdk"
 }

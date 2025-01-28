@@ -1,81 +1,52 @@
 {
   "name": "Cure Wounds",
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>A creature you touch regains a number of hit points equal to [[/r 2d6]] + your spellcasting ability modifier. This spell has no effect on undead or constructs.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 2nd level or higher, the healing increases by [[/r 2d6]] for each slot level above 1st.</p>",
+      "value": "<p>A creature you touch regains a number of Hit Points equal to 2d8 plus your spellcasting ability modifier.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The healing increases by 2d8 for each spell slot level above 1.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "type": "creature",
+        "count": "1",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "touch",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "heal",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "2d6 + @mod",
-          "healing"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 1,
-    "school": "evo",
+    "school": "abj",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -86,45 +57,37 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "2d6"
-    },
-    "properties": [
-      "vocal",
-      "somatic"
-    ],
-    "crewed": false,
     "activities": {
-      "OAMLoFBXCSDFglja": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "heal",
-        "_id": "OAMLoFBXCSDFglja",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -132,62 +95,52 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
+          "override": false
         },
         "healing": {
           "number": 2,
-          "denomination": "6",
-          "types": [],
+          "denomination": 8,
+          "bonus": "@mod",
+          "types": [
+            "healing"
+          ],
           "custom": {
-            "enabled": false
-          },
-          "scaling": {
-            "number": 2,
-            "mode": "whole",
+            "enabled": false,
             "formula": ""
           },
-          "bonus": "@mod"
+          "scaling": {
+            "mode": "whole",
+            "number": 2,
+            "formula": ""
+          }
         },
-        "name": "",
-        "img": "",
-        "appliedEffects": []
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.ramVCIDxs9bThdQ0",
-      "spell-lists": "artificer,bard,cleric,druid,paladin,ranger"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
+    "identifier": "cure-wounds"
   },
-  "img": "icons/magic/life/heart-cross-green.webp",
+  "type": "spell",
+  "img": "icons/magic/nature/leaf-drip-light-green.webp",
   "effects": [],
   "folder": "JMRA2elEdmr5pgX7",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234236,
-    "modifiedTime": 1730054561138,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
-  },
-  "_id": "ramVCIDxs9bThdQ0",
-  "sort": 6900000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!ramVCIDxs9bThdQ0"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738030328412,
+    "modifiedTime": 1738030328412,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "M5N0B6O0LTrHmZJ4",
+  "sort": 0,
+  "_key": "!items!M5N0B6O0LTrHmZJ4"
 }

@@ -1,85 +1,57 @@
 {
   "name": "Sleep",
-  "type": "spell",
-  "img": "icons/magic/light/explosion-star-small-pink.webp",
   "system": {
     "description": {
-      "value": "<p>This spell sends creatures into a magical slumber. Roll [[/r 5d8]]; the total is how many hit points of creatures this spell can affect. Creatures within 20 feet of a point you choose within range are affected in ascending order of their current hit points (ignoring unconscious creatures).</p><p>Starting with the creature that has the lowest current hit points, each creature affected by this spell falls unconscious until the spell ends, the sleeper takes damage, or someone uses an action to shake or slap the sleeper awake. Subtract each creature's hit points from the total before moving on to the creature with the next lowest hit points. A creature's hit points must be equal to or less than the remaining total for that creature to be affected.</p><p>Undead and creatures immune to being charmed aren't affected by this spell.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 2nd level or higher, roll an additional [[/r 2d8]] for each slot level above 1st.</p>",
+      "value": "<p>Each creature of your choice in a 5-foot-radius Sphere centered on a point within range must succeed on a Wisdom saving throw or have the &amp;Reference[incapacitated apply=false] condition until the end of its next turn, at which point it must repeat the save. If the target fails the second save, the target has the &amp;Reference[unconscious] condition for the duration. The spell ends on a target if it takes damage or someone within 5 feet of it takes an action to shake it out of the spell's effect.</p><p>Creatures that don't sleep, such as elves, or that have Immunity to the Exhaustion condition automatically succeed on saves against this spell.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The radius of the area of effect is increased with a spell slot of level 3-5 (10 feet), 6-8 (15 feet) or 9+ (20 feet).</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 20,
-      "width": null,
-      "units": "ft",
-      "type": "sphere",
-      "prompt": true,
       "affects": {
-        "count": "",
+        "choice": false,
         "type": ""
       },
       "template": {
+        "units": "ft",
+        "type": "sphere",
+        "size": "5",
+        "contiguous": false,
         "count": ""
       }
     },
     "range": {
-      "value": 90,
-      "long": null,
+      "value": "60",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "other",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "5d8",
-          ""
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 1,
     "school": "enc",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
     "materials": {
-      "value": "A pinch of fine sand, rose petals, or a cricket.",
+      "value": "a pinch of sand or rose petals",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -88,51 +60,42 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "2d8"
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "mgc"
-    ],
-    "crewed": false,
     "activities": {
-      "3eKxOaKNOaRfzmID": {
-        "type": "utility",
-        "_id": "3eKxOaKNOaRfzmID",
-        "sort": 0,
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "save",
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [
           {
-            "_id": "7wuSWwtdThwFTNZr"
+            "_id": "04Wa4xUzjA31kPno",
+            "onSave": false
           }
         ],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -140,131 +103,87 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
+          "override": false
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": []
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
         },
         "uses": {
           "spent": 0,
-          "recovery": [],
-          "max": ""
+          "recovery": []
         },
-        "roll": {
-          "prompt": false,
-          "visible": false,
-          "name": "",
-          "formula": "5d8"
-        },
-        "name": "",
-        "img": "",
-        "appliedEffects": []
+        "sort": 0
       }
-    }
+    },
+    "identifier": "sleep"
   },
+  "type": "spell",
+  "img": "icons/magic/control/hypnosis-mesmerism-pendulum.webp",
   "effects": [
     {
-      "name": "Sleep",
-      "origin": "Compendium.dnd5e.spells.Item.KhwiSi9fwVfUPtku",
+      "name": "Sleeping",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplSleep00000",
       "duration": {
+        "rounds": null,
         "startTime": null,
         "seconds": 60,
         "combat": null,
-        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "MowBnXpRu2aG48i9",
+      "disabled": false,
+      "flags": {},
+      "img": "icons/magic/control/sleep-bubble-purple.webp",
+      "_id": "04Wa4xUzjA31kPno",
+      "type": "base",
+      "system": {},
       "changes": [],
-      "description": "<p>The creature affected by this spell falls Unconscious until the spell ends, the sleeper takes damage, or someone uses an action to shake or slap the sleeper awake.</p>",
+      "description": "<p>The target has the &amp;Reference[incapacitated apply=false] condition until the end of its next turn, at which point it must repeat the save. If the target fails the second save, the target has the &amp;Reference[unconscious] condition for the duration. The spell ends on a target if it takes damage or someone within 5 feet of it takes an action to shake it out of the spell’s effect.</p>",
+      "tint": "#ffffff",
       "transfer": false,
       "statuses": [
-        "unconscious",
         "incapacitated"
       ],
-      "flags": {},
-      "tint": "#ffffff",
-      "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "icons/magic/light/explosion-star-small-pink.webp",
-      "type": "base",
-      "system": {},
       "sort": 0,
-      "_key": "!items.effects!0ToJPjO85bRZfq2f.MowBnXpRu2aG48i9"
-    },
-    {
-      "name": "Unconscious",
-      "img": "systems/dnd5e/icons/svg/statuses/unconscious.svg",
-      "origin": "Compendium.materia-dnd.spells.Item.0ToJPjO85bRZfq2f",
-      "transfer": false,
-      "_id": "7wuSWwtdThwFTNZr",
-      "type": "base",
-      "system": {},
-      "changes": [],
-      "disabled": false,
-      "duration": {
-        "startTime": null,
-        "seconds": 60,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "description": "",
-      "tint": "#ffffff",
-      "statuses": [
-        "unconscious"
-      ],
-      "sort": 0,
-      "flags": {},
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1730090195131,
-        "modifiedTime": 1730090219010,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!0ToJPjO85bRZfq2f.7wuSWwtdThwFTNZr"
+      "_key": "!items.effects!Cv03uvSxlowPsh4z.04Wa4xUzjA31kPno"
     }
   ],
   "folder": "JMRA2elEdmr5pgX7",
   "ownership": {
     "default": 0
   },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.0ToJPjO85bRZfq2f",
-      "spell-lists": "bard,sorcerer,wizard"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
-  },
+  "flags": {},
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1661787234117,
-    "modifiedTime": 1730090195175,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738040995940,
+    "modifiedTime": 1738041127473,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "0ToJPjO85bRZfq2f",
-  "sort": 1100000,
-  "_key": "!items!0ToJPjO85bRZfq2f"
+  "_id": "Cv03uvSxlowPsh4z",
+  "sort": 0,
+  "_key": "!items!Cv03uvSxlowPsh4z"
 }

@@ -1,82 +1,46 @@
 {
-  "folder": "JMRA2elEdmr5pgX7",
   "name": "Witch Bolt",
-  "type": "spell",
-  "_id": "Em1OSgdssAhlN9t1",
-  "img": "icons/magic/lightning/bolt-strike-blue.webp",
   "system": {
     "description": {
-      "value": "<div><p>A beam of crackling, blue energy lances out toward a creature within range, forming a sustained arc of lightning between you and the target. Make a ranged spell attack against that creature. On a hit, the target takes [[/r 1d8]] lightning damage plus your spellcasting ability modifier and it makes a Constitution saving throw. On a failed save its speed is reduced to 0 until the spell ends. On each of your turns for the duration, you can use your action to deal [[/r 1d8]] lightning damage plus your spellcasting ability modifier to the target automatically. The spell ends if you use your action to do anything else. The spell also ends if the target is ever outside the spell's range or if it has total cover from you.</p></div><div><div><p><strong>At Higher Levels. </strong>When you cast this spell using a spell slot of 2nd level or higher, the damage increases by [[/r 1d8]] for each slot level above 1st.</p></div></div>",
+      "value": "<p>A beam of crackling energy lances toward a creature within range, forming a sustained arc of lightning between you and the target. Make a ranged spell attack against it. On a hit, the target takes [[/damage 1d8]] plus your spellcasting ability modifier lightning damage and it makes a Constitution saving throw.  On a failed save its speed is reduced to 0 until the spell ends.  On each of your turns for the duration, you can use your action to deal [[/damage 1d8]] plus your spellcasting ability modifier lightning damage to the target automatically.  The spell neds if your action to do anything else.   The spell also ends if the target is ever outside the spell's range or if it has &amp;Reference[totalcover] from you.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The initial damage increases by 1d8 for each spell slot level above 1.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
-    "crewed": false,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "type": "creature",
+        "count": "1",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 30,
-      "long": null,
+      "value": "60",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "rsak",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "1d8",
-          "lightning"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "1d8",
-    "save": {
-      "ability": "con",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 1,
     "school": "evo",
@@ -87,7 +51,7 @@
       "concentration"
     ],
     "materials": {
-      "value": "a twig from a tree that has been struck by lightning",
+      "value": "a twig struck by lightning",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -96,25 +60,114 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "1d8"
-    },
     "activities": {
-      "TWAMDxlp4YPIkTE6": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "attack",
-        "_id": "TWAMDxlp4YPIkTE6",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "dIlgrTJWlNoftLKG"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "attack": {
+          "ability": "",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "spell"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": true,
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": "8",
+              "bonus": "@mod",
+              "types": [
+                "lightning"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "name": "",
+        "img": "",
+        "appliedEffects": [
+          "dIlgrTJWlNoftLKG"
+        ]
+      },
+      "ffuqn0xdclG9YAQt": {
+        "type": "damage",
+        "name": "Apply Damage",
+        "_id": "ffuqn0xdclG9YAQt",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
           "scaling": {
             "allowed": false
           },
-          "spellSlot": true,
+          "spellSlot": false,
           "targets": []
         },
         "description": {
@@ -123,7 +176,7 @@
         "duration": {
           "units": "inst",
           "concentration": false,
-          "override": false
+          "override": true
         },
         "effects": [],
         "range": {
@@ -145,23 +198,11 @@
           "recovery": [],
           "max": ""
         },
-        "attack": {
-          "critical": {
-            "threshold": null
-          },
-          "flat": false,
-          "type": {
-            "value": "ranged",
-            "classification": ""
-          },
-          "ability": "",
-          "bonus": ""
-        },
+        "sort": 200000,
         "damage": {
           "critical": {
-            "bonus": ""
+            "allow": false
           },
-          "includeBase": true,
           "parts": [
             {
               "custom": {
@@ -169,29 +210,26 @@
                 "formula": ""
               },
               "number": 1,
-              "denomination": 8,
+              "denomination": "8",
               "bonus": "@mod",
               "types": [
                 "lightning"
               ],
               "scaling": {
-                "mode": "whole",
-                "number": 1,
-                "formula": ""
+                "mode": ""
               }
             }
           ]
         },
-        "name": "Create Bolt",
         "img": "",
         "appliedEffects": []
       },
-      "bCH3zPr1JDbttP71": {
+      "2MrEFcfbxlbIg2vC": {
         "type": "save",
-        "_id": "bCH3zPr1JDbttP71",
-        "sort": 0,
+        "_id": "2MrEFcfbxlbIg2vC",
+        "sort": 100000,
         "activation": {
-          "type": "",
+          "type": "special",
           "value": null,
           "override": true,
           "condition": ""
@@ -209,16 +247,15 @@
         "duration": {
           "units": "inst",
           "concentration": false,
-          "override": true
+          "override": false
         },
         "effects": [
           {
-            "_id": "2GXEHJLjkvOENL9w",
-            "onSave": false
+            "_id": "pGPMvRoMdudSHMyO"
           }
         ],
         "range": {
-          "override": true,
+          "override": false,
           "units": "spec",
           "special": ""
         },
@@ -243,129 +280,96 @@
           "onSave": "half"
         },
         "save": {
-          "ability": "con",
+          "ability": [
+            "con"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
         },
-        "name": "On-Hit Save",
-        "img": "",
-        "appliedEffects": []
-      },
-      "f6Pdq7gQQdA17WKf": {
-        "type": "damage",
-        "_id": "f6Pdq7gQQdA17WKf",
-        "sort": 0,
-        "activation": {
-          "type": "action",
-          "value": null,
-          "override": false,
-          "condition": ""
-        },
-        "consumption": {
-          "scaling": {
-            "allowed": false
-          },
-          "spellSlot": false,
-          "targets": []
-        },
-        "description": {
-          "chatFlavor": ""
-        },
-        "duration": {
-          "units": "inst",
-          "concentration": false,
-          "override": true
-        },
-        "effects": [],
-        "range": {
-          "override": true,
-          "units": "spec",
-          "special": ""
-        },
-        "target": {
-          "template": {
-            "contiguous": false,
-            "units": "ft"
-          },
-          "affects": {
-            "choice": false
-          },
-          "override": false,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
-        },
-        "damage": {
-          "critical": {
-            "allow": false
-          },
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 8,
-              "bonus": "",
-              "types": [
-                "lightning"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ]
-        },
-        "name": "Action Damage",
+        "name": "",
         "img": "",
         "appliedEffects": []
       }
-    }
+    },
+    "identifier": "witch-bolt"
   },
+  "type": "spell",
+  "img": "icons/magic/lightning/bolt-blue.webp",
   "effects": [
     {
-      "name": "Witch Bolt",
-      "img": "icons/magic/lightning/bolt-strike-blue.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.Em1OSgdssAhlN9t1",
+      "name": "Sustained Lightning",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplWitchBolt0",
+      "duration": {
+        "rounds": 1,
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "icons/magic/lightning/bolt-strike-blue-white.webp",
+      "_id": "dIlgrTJWlNoftLKG",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>On each of your subsequent turns, you can take an Action to deal [[/damage 1d8]] plus your spellcasting ability modifier lightning damage to the target automatically.</p><p>The spell ends if the target is ever outside the spell’s range or if it has &amp;Reference[totalcover] from you.</p>",
+      "tint": "#ffffff",
       "transfer": false,
-      "_id": "2GXEHJLjkvOENL9w",
+      "statuses": [],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": 1738042127009,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!7bMWnDbS7ydmSYWE.dIlgrTJWlNoftLKG"
+    },
+    {
+      "name": "Held in Place",
+      "img": "icons/magic/lightning/bolt-blue.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.7bMWnDbS7ydmSYWE",
+      "transfer": false,
+      "_id": "pGPMvRoMdudSHMyO",
       "type": "base",
       "system": {},
       "changes": [
         {
-          "key": "system.attributes.movement.walk",
-          "mode": 3,
+          "key": "system.attributes.movement.burrow",
+          "mode": 5,
           "value": "0",
           "priority": null
         },
         {
           "key": "system.attributes.movement.climb",
-          "mode": 3,
-          "value": "0",
-          "priority": null
-        },
-        {
-          "key": "system.attributes.movement.swim",
-          "mode": 3,
-          "value": "0",
-          "priority": null
-        },
-        {
-          "key": "system.attributes.movement.burrow",
-          "mode": 3,
+          "mode": 5,
           "value": "0",
           "priority": null
         },
         {
           "key": "system.attributes.movement.fly",
-          "mode": 3,
+          "mode": 5,
+          "value": "0",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.swim",
+          "mode": 5,
+          "value": "0",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.walk",
+          "mode": 5,
           "value": "0",
           "priority": null
         }
@@ -390,19 +394,19 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1730092635562,
-        "modifiedTime": 1730092722822,
+        "systemVersion": "4.2.2",
+        "createdTime": 1738042163533,
+        "modifiedTime": 1738042263160,
         "lastModifiedBy": "dnd5mbuilder0000"
       },
-      "_key": "!items.effects!Em1OSgdssAhlN9t1.2GXEHJLjkvOENL9w"
+      "_key": "!items.effects!7bMWnDbS7ydmSYWE.pGPMvRoMdudSHMyO"
     }
   ],
+  "folder": "JMRA2elEdmr5pgX7",
+  "ownership": {
+    "default": 0
+  },
   "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.Em1OSgdssAhlN9t1",
-      "spell-lists": "sorcerer,warlock,wizard"
-    },
     "dnd5e": {
       "riders": {
         "activity": [],
@@ -411,17 +415,15 @@
     }
   },
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1706864754635,
-    "modifiedTime": 1730092770822,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738041908105,
+    "modifiedTime": 1738042296241,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "sort": 4500000,
-  "ownership": {
-    "default": 0
-  },
-  "_key": "!items!Em1OSgdssAhlN9t1"
+  "_id": "7bMWnDbS7ydmSYWE",
+  "sort": 0,
+  "_key": "!items!7bMWnDbS7ydmSYWE"
 }

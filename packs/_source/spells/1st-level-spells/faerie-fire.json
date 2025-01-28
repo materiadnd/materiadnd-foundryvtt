@@ -1,80 +1,53 @@
 {
   "name": "Faerie Fire",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>Each object in a 20-foot cube within range is outlined in blue, green, or violet light (your choice). Any creature in the area when the spell is cast is also outlined in light if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed dim light in a 10-foot radius.</p><p>Any attack roll against an affected creature or object has advantage if the attacker can see it, and the affected creature or object can't benefit from being invisible.</p>",
+      "value": "<p>Objects in a 20-foot Cube within range are outlined in blue, green, or violet light (your choice). Each creature in the Cube is also outlined if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed &amp;Reference[dimlight] in a 10-foot radius and can't benefit from the Invisible condition.</p><p>Attack rolls against an affected creature or object have Advantage if the attacker can see it.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 20,
-      "width": null,
-      "units": "ft",
-      "type": "cube",
-      "prompt": true,
       "affects": {
-        "count": "",
+        "choice": false,
         "type": ""
       },
       "template": {
+        "units": "ft",
+        "type": "cube",
+        "size": "20",
+        "contiguous": false,
         "count": ""
       }
     },
     "range": {
-      "value": 60,
-      "long": null,
+      "value": "60",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 1,
     "school": "evo",
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -85,43 +58,34 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "concentration"
-    ],
-    "crewed": false,
     "activities": {
-      "deRJVmfTV5F0nDZA": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "save",
-        "_id": "deRJVmfTV5F0nDZA",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [
           {
-            "_id": "7M1Bj0bupBXSM0bg",
+            "_id": "Y2i0OvwOixxag0ed",
             "onSave": false
           }
         ],
@@ -129,6 +93,7 @@
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -136,100 +101,85 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
+          "override": false
         },
         "damage": {
-          "parts": [],
-          "onSave": "half"
+          "onSave": "half",
+          "parts": []
         },
         "save": {
-          "ability": "dex",
+          "ability": [
+            "dex"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
         },
-        "name": "",
-        "img": "",
-        "appliedEffects": []
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.q9dRmKVVPACexAmk",
-      "spell-lists": "artificer,bard,druid"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
+    "identifier": "faerie-fire"
   },
-  "img": "icons/magic/fire/projectile-meteor-salvo-strong-teal.webp",
+  "type": "spell",
+  "img": "icons/magic/fire/projectile-meteor-salvo-strong-pink.webp",
   "effects": [
     {
       "name": "Outlined",
-      "img": "icons/magic/control/silhouette-hold-change-green.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.q9dRmKVVPACexAmk",
-      "transfer": false,
-      "_id": "7M1Bj0bupBXSM0bg",
-      "type": "base",
-      "system": {},
-      "changes": [
-        {
-          "key": "flags.midi-qol.grants.advantage.attack.all",
-          "mode": 0,
-          "value": "1",
-          "priority": null
-        }
-      ],
-      "disabled": false,
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplFaerieFire",
       "duration": {
+        "rounds": null,
         "startTime": null,
         "seconds": 60,
         "combat": null,
-        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>The target is outlined in blue, green, or violet light (your choice)</p>",
+      "disabled": false,
+      "flags": {},
+      "img": "icons/magic/control/silhouette-hold-change-green.webp",
+      "_id": "Y2i0OvwOixxag0ed",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>For the duration, objects and affected creatures shed &amp;Reference[dimlight] in a 10-foot radius and can’t benefit from the Invisible condition.</p><p>Attack rolls against an affected creature or object have Advantage if the attacker can see it.</p>",
       "tint": "#ffffff",
+      "transfer": false,
       "statuses": [],
       "sort": 0,
-      "flags": {},
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1730054984650,
-        "modifiedTime": 1730055054369,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!q9dRmKVVPACexAmk.7M1Bj0bupBXSM0bg"
+      "_key": "!items.effects!jPVNLrEaiQteHxMY.Y2i0OvwOixxag0ed"
     }
   ],
   "folder": "JMRA2elEdmr5pgX7",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234222,
-    "modifiedTime": 1730054984695,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "q9dRmKVVPACexAmk",
-  "sort": 1700000,
-  "_key": "!items!q9dRmKVVPACexAmk"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738033181110,
+    "modifiedTime": 1738033230854,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "jPVNLrEaiQteHxMY",
+  "sort": 0,
+  "_key": "!items!jPVNLrEaiQteHxMY"
 }

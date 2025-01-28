@@ -1,15 +1,47 @@
 {
   "name": "Dissonant Whispers",
-  "type": "spell",
   "system": {
-    "source": {
-      "book": "Materia"
-    },
     "description": {
-      "value": "<p>You whisper a discordant melody that only one creature of your choice within range can hear, wracking it with terrible pain. The target must make a Wisdom saving throw. On a failed save, it takes [[/r 3d6]] psychic damage and must immediately use its reaction, if available, to move as far as its speed allows away from you. The creature doesn't move into obviously dangerous ground, such as a fire or a pit. On a successful save, the target takes half as much damage and doesn't have to move away. A deafened creature automatically succeeds on the save.</p><p><strong>At Higher Levels. </strong>When you cast this spell using a spell slot of 2nd level or higher, the damage increases by [[/r 1d6]] for each slot level above 1st.</p>",
+      "value": "<p>One creature of your choice that you can see within range hears a discordant melody in its mind. The target makes a Wisdom saving throw. On a failed save, it takes [[/damage 3d6 psychic]] damage and must immediately use its Reaction, if available, to move as far away from you as it can, using the safest route. On a successful save, the target takes half as much damage only. A &amp;Reference[deafened apply=false] creature automatically succeeds on the save.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d6 for each spell slot level above 1.</p>",
       "chat": ""
     },
-    "actionType": "save",
+    "source": {
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
+    },
+    "activation": {
+      "type": "action",
+      "condition": "",
+      "value": null
+    },
+    "duration": {
+      "value": "",
+      "units": "inst"
+    },
+    "target": {
+      "affects": {
+        "type": "creature",
+        "count": "1",
+        "choice": false,
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
+    },
+    "range": {
+      "value": "60",
+      "units": "ft",
+      "special": ""
+    },
+    "uses": {
+      "max": "",
+      "recovery": [],
+      "spent": 0
+    },
     "level": 1,
     "school": "enc",
     "properties": [
@@ -21,110 +53,41 @@
       "cost": 0,
       "supply": 0
     },
-    "target": {
-      "value": null,
-      "units": "",
-      "type": "",
-      "prompt": true,
-      "width": null,
-      "affects": {
-        "count": "",
-        "type": ""
-      },
-      "template": {
-        "type": ""
-      }
-    },
-    "range": {
-      "value": 60,
-      "units": "ft",
-      "long": null,
-      "special": ""
-    },
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": "",
-      "units": "inst"
-    },
-    "damage": {
-      "parts": [
-        [
-          "3d6",
-          "psychic"
-        ]
-      ],
-      "versatile": ""
-    },
-    "scaling": {
-      "mode": "level",
-      "formula": "1d6"
-    },
-    "save": {
-      "ability": "wis",
-      "dc": null,
-      "scaling": "spell"
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "formula": "",
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "cover": null,
-    "crewed": false,
-    "ability": null,
     "activities": {
-      "o2xAg73IiWgxdb36": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "save",
-        "_id": "o2xAg73IiWgxdb36",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -132,82 +95,66 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
+          "override": false
         },
         "damage": {
+          "onSave": "half",
           "parts": [
             {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
               "number": 3,
               "denomination": 6,
               "bonus": "",
               "types": [
                 "psychic"
               ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
               "scaling": {
                 "mode": "whole",
-                "number": 1
+                "number": 1,
+                "formula": ""
               }
             }
-          ],
-          "onSave": "half"
+          ]
         },
         "save": {
-          "ability": "wis",
+          "ability": [
+            "wis"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
         },
-        "name": "",
-        "img": "",
-        "appliedEffects": []
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
       }
-    }
+    },
+    "identifier": "dissonant-whispers"
   },
-  "img": "icons/magic/death/mouth-teeth-fangs-vampire.webp",
+  "type": "spell",
+  "img": "icons/magic/sonic/projectile-sound-rings-wave.webp",
+  "effects": [],
+  "folder": "JMRA2elEdmr5pgX7",
   "ownership": {
     "default": 0
   },
-  "flags": {
-    "plutonium": {
-      "page": "spells.html",
-      "source": "PHB",
-      "hash": "dissonant%20whispers_phb",
-      "propDroppable": "spell"
-    },
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.NbcIIIGXKBTaROd5",
-      "spell-lists": "bard"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
-  },
-  "effects": [],
-  "folder": "JMRA2elEdmr5pgX7",
+  "flags": {},
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1708928824776,
-    "modifiedTime": 1730054624595,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738030688595,
+    "modifiedTime": 1738043378321,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "NbcIIIGXKBTaROd5",
+  "_id": "6mx79XgeYHJ2WgYd",
   "sort": 0,
-  "_key": "!items!NbcIIIGXKBTaROd5"
+  "_key": "!items!6mx79XgeYHJ2WgYd"
 }

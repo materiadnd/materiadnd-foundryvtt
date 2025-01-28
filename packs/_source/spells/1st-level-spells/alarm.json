@@ -1,82 +1,58 @@
 {
   "name": "Alarm",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the spell ends, an alarm alerts you whenever a Tiny or larger creature touches or enters the warded area. When you cast the spell, you can designate creatures that won't set off the alarm. You also choose whether the alarm is mental or audible.</p><p>A mental alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping.</p><p>An audible alarm produces the sound of a hand bell for 10 seconds within 60 feet.</p>",
+      "value": "<p>You set an alarm against intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot Cube. Until the spell ends, an alarm alerts you whenever a creature touches or enters the warded area. When you cast the spell, you can designate creatures that won't set off the alarm. You also choose whether the alarm is audible or mental:</p><p><strong>Audible Alarm.</strong> The alarm produces the sound of a handbell for 10 seconds within 60 feet of the warded area.</p><p><strong>Mental Alarm.</strong> You are alerted by a mental ping if you are within 1 mile of the warded area. This ping awakens you if you're asleep.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "minute",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": 1
     },
     "duration": {
       "value": "8",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": 20,
-      "width": null,
-      "units": "ft",
-      "type": "cube",
-      "prompt": true,
       "affects": {
+        "choice": false,
         "count": "",
         "type": ""
       },
       "template": {
+        "units": "ft",
+        "type": "cube",
+        "size": "20",
+        "contiguous": false,
         "count": ""
       }
     },
     "range": {
-      "value": 30,
-      "long": null,
+      "value": "30",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 1,
     "school": "abj",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "ritual"
+    ],
     "materials": {
-      "value": "A tiny bell and a piece of fine silver wire.",
+      "value": "a bell and silver wire",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -85,47 +61,37 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "ritual"
-    ],
-    "crewed": false,
     "activities": {
-      "YKzrWmELP5qjEpgZ": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "utility",
-        "_id": "YKzrWmELP5qjEpgZ",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -133,53 +99,51 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
         },
         "uses": {
           "spent": 0,
           "recovery": [],
           "max": ""
         },
-        "roll": {
-          "prompt": false,
-          "visible": false,
-          "name": "",
-          "formula": ""
-        },
-        "name": "Cast over Area",
-        "img": "",
-        "appliedEffects": []
-      },
-      "6i3Ga7OgMTj4qPq4": {
-        "type": "utility",
-        "_id": "6i3Ga7OgMTj4qPq4",
         "sort": 0,
+        "name": "Cast over Area"
+      },
+      "gXbhFkULaCTcB0WJ": {
+        "type": "utility",
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft",
@@ -193,56 +157,51 @@
             "type": "object",
             "special": ""
           },
-          "override": true,
-          "prompt": true
+          "override": true
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
         },
         "uses": {
           "spent": 0,
           "recovery": [],
           "max": ""
         },
-        "roll": {
-          "prompt": false,
-          "visible": false,
-          "name": "",
-          "formula": ""
-        },
+        "sort": 0,
         "name": "Cast on Window or Door",
-        "img": "",
-        "appliedEffects": []
+        "_id": "gXbhFkULaCTcB0WJ"
       }
-    }
+    },
+    "identifier": "alarm"
+  },
+  "type": "spell",
+  "img": "icons/tools/instruments/bell-gold.webp",
+  "effects": [],
+  "folder": "JMRA2elEdmr5pgX7",
+  "ownership": {
+    "default": 0
   },
   "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.mD3dxgLZCkDHcwbp",
-      "spell-lists": "artificer,ranger,wizard"
-    },
     "dnd5e": {
       "riders": {
         "activity": [],
         "effect": []
       }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
     }
   },
-  "img": "icons/magic/symbols/runes-triangle-orange-purple.webp",
-  "effects": [],
-  "folder": "JMRA2elEdmr5pgX7",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.2",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1661787234077,
-    "modifiedTime": 1727224193184,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738029815629,
+    "modifiedTime": 1738029815629,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "mD3dxgLZCkDHcwbp",
-  "sort": 3100000,
-  "_key": "!items!mD3dxgLZCkDHcwbp"
+  "_id": "CF6VglirdMFTCTOt",
+  "sort": 0,
+  "_key": "!items!CF6VglirdMFTCTOt"
 }

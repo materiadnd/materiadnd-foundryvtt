@@ -1,78 +1,54 @@
 {
   "name": "Entangle",
-  "type": "spell",
-  "img": "icons/magic/nature/vines-thorned-curled-glow-green.webp",
   "system": {
     "description": {
-      "value": "<p>Grasping weeds and vines sprout from the ground in a 20-foot square starting from a point within range. For the duration, these plants turn the ground in the area into difficult terrain.</p><p>A creature in the area when you cast the spell must succeed on a Strength saving throw or be Restrained by the entangling plants until the spell ends. A creature restrained by the plants can use its action to make a Strength check against your spell save DC. On a success, it frees itself.</p><p>When the spell ends, the conjured plants wilt away.</p>",
+      "value": "<p>Grasping plants sprout from the ground in a 20-foot square within range. For the duration, these plants turn the ground in the area into &amp;Reference[difficultterrain]. They disappear when the spell ends.</p><p>Each creature (other than you) in the area when you cast the spell must succeed on a Strength saving throw or have the &amp;Reference[restrained apply=false] condition until the spell ends. A Restrained creature can take an action to make a [[/check ability=str skill=ath dc=@attributes.spelldc]] check against your spell save DC. On a success, it frees itself from the grasping plants and is no longer Restrained by them.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 20,
-      "width": null,
-      "units": "ft",
-      "type": "square",
-      "prompt": true,
       "affects": {
-        "count": "",
+        "choice": false,
         "type": ""
       },
       "template": {
+        "units": "ft",
+        "type": "cube",
+        "size": "20",
+        "contiguous": false,
         "count": ""
       }
     },
     "range": {
-      "value": 90,
-      "long": null,
+      "value": "90",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "str",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 1,
     "school": "con",
+    "properties": [
+      "vocal",
+      "somatic",
+      "concentration"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -83,45 +59,34 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "concentration",
-      "mgc"
-    ],
-    "crewed": false,
     "activities": {
-      "ohd5VpTD4Tg55bYD": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "save",
-        "_id": "ohd5VpTD4Tg55bYD",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [
           {
-            "_id": "fO14IutGR3Hrepun",
+            "_id": "wn7K2m4XhXhItgPT",
             "onSave": false
           }
         ],
@@ -129,6 +94,7 @@
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -136,99 +102,87 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
+          "override": false
         },
         "damage": {
-          "parts": [],
-          "onSave": "half"
+          "onSave": "half",
+          "parts": []
         },
         "save": {
-          "ability": "str",
+          "ability": [
+            "str"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
         },
-        "name": "",
-        "img": "",
-        "appliedEffects": [
-          "fO14IutGR3Hrepun"
-        ]
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
       }
-    }
+    },
+    "identifier": "entangle"
   },
+  "type": "spell",
+  "img": "icons/magic/nature/root-vine-entangle-foot-green.webp",
   "effects": [
     {
       "name": "Restrained",
-      "origin": "Compendium.dnd5e.spells.Item.gMrWeG8fMDPRFiVe",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplEntangle00",
       "duration": {
+        "rounds": 1,
         "startTime": null,
         "seconds": 60,
         "combat": null,
-        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "fO14IutGR3Hrepun",
+      "disabled": false,
+      "flags": {},
+      "img": "systems/dnd5e/icons/svg/statuses/restrained.svg",
+      "_id": "wn7K2m4XhXhItgPT",
+      "type": "base",
+      "system": {},
       "changes": [],
-      "description": "<p>A creature in the area is Restrained by the entangling Plants until the spell ends. A creature restrained by the plants can use its action to make a Strength check against your spell save DC. On a success, it frees itself.</p>",
+      "description": "<p>A Restrained creature can take an action to make a [[/check ability=str skill=ath]] check against your spell save DC. On a success, it frees itself from the grasping plants and is no longer Restrained by them.</p>",
+      "tint": "#ffffff",
       "transfer": false,
       "statuses": [
         "restrained"
       ],
-      "flags": {},
-      "tint": "#ffffff",
-      "_stats": {
-        "coreVersion": "12.331",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": 1730054930649,
-        "lastModifiedBy": "dnd5mbuilder0000",
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "systems/dnd5e/icons/svg/statuses/restrained.svg",
-      "type": "base",
-      "system": {},
       "sort": 0,
-      "_key": "!items.effects!uQP1D9ifN3E9SfZ3.fO14IutGR3Hrepun"
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!v3y0Ql319iDI1U6q.wn7K2m4XhXhItgPT"
     }
   ],
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.uQP1D9ifN3E9SfZ3",
-      "spell-lists": "druid,ranger"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
-  },
   "folder": "JMRA2elEdmr5pgX7",
   "ownership": {
     "default": 0
   },
+  "flags": {},
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1661787234191,
-    "modifiedTime": 1730054895798,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738031987819,
+    "modifiedTime": 1738031997614,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "uQP1D9ifN3E9SfZ3",
-  "sort": 1600000,
-  "_key": "!items!uQP1D9ifN3E9SfZ3"
+  "_id": "v3y0Ql319iDI1U6q",
+  "sort": 0,
+  "_key": "!items!v3y0Ql319iDI1U6q"
 }

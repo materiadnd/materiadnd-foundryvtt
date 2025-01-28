@@ -1,84 +1,53 @@
 {
   "name": "Heroism",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>A willing creature you touch is imbued with bravery. Until the spell ends, the creature is immune to being Frightened and gains Temporary Hit Points equal to your Spellcasting ability modifier at the start of each of its turns. When the spell ends, the target loses any remaining temporary hit points from this spell.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st.</p>",
+      "value": "<p>A willing creature you touch is imbued with bravery. Until the spell ends, the creature is immune to the Frightened condition and gains Temporary Hit Points equal to your spellcasting ability modifier at the start of each of its turns.  When the spell ends, the target loses any remaining temporary hit points from this spell.</p><p><strong>Using a Higher-Level Spell Slot.</strong> You can target one additional creature for each spell slot level above 1.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "type": "willing",
+        "count": "@item.level",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "touch",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "heal",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "@mod",
-          "temphp"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 1,
     "school": "enc",
+    "properties": [
+      "vocal",
+      "somatic",
+      "concentration"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -89,50 +58,41 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "concentration"
-    ],
-    "crewed": false,
     "activities": {
-      "fV3zOFZU36YV2JaO": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "heal",
-        "_id": "fV3zOFZU36YV2JaO",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [
           {
-            "_id": "6wYiRgWESrwZIzGy"
+            "_id": "zCpsdUyNz8bL3LF5"
           }
         ],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -140,17 +100,12 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
+          "override": false
         },
         "healing": {
           "number": null,
-          "denomination": "",
+          "denomination": null,
+          "bonus": "",
           "types": [
             "temphp"
           ],
@@ -159,37 +114,39 @@
             "formula": "@mod"
           },
           "scaling": {
-            "number": 1,
-            "mode": ""
-          },
-          "bonus": ""
+            "mode": "",
+            "number": null,
+            "formula": ""
+          }
         },
-        "name": "",
-        "img": "",
-        "appliedEffects": []
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.iIvD4BWCNj4dphWo",
-      "spell-lists": "bard,paladin"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
+    "identifier": "heroism"
   },
-  "img": "icons/magic/life/heart-cross-strong-blue.webp",
+  "type": "spell",
+  "img": "icons/magic/holy/saint-glass-portrait-halo.webp",
   "effects": [
     {
       "name": "Bravery",
-      "img": "icons/magic/life/heart-cross-strong-blue.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.iIvD4BWCNj4dphWo",
-      "transfer": false,
-      "_id": "6wYiRgWESrwZIzGy",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplHeroism000",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "icons/magic/control/control-influence-crown-yellow.webp",
+      "_id": "zCpsdUyNz8bL3LF5",
       "type": "base",
       "system": {},
       "changes": [
@@ -200,45 +157,39 @@
           "priority": null
         }
       ],
-      "disabled": false,
-      "duration": {
-        "startTime": null,
-        "seconds": 60,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
       "description": "<p>The creature is immune to the Frightened condition and gains Temporary Hit Points equal to your spellcasting ability modifier at the start of each of its turns.</p>",
       "tint": "#ffffff",
+      "transfer": false,
       "statuses": [],
       "sort": 0,
-      "flags": {},
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1730055897683,
-        "modifiedTime": 1730055928195,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!iIvD4BWCNj4dphWo.6wYiRgWESrwZIzGy"
+      "_key": "!items.effects!eCTZGyJ2bInr7WTm.zCpsdUyNz8bL3LF5"
     }
   ],
   "folder": "JMRA2elEdmr5pgX7",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234192,
-    "modifiedTime": 1730055897715,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "iIvD4BWCNj4dphWo",
-  "sort": 2100000,
-  "_key": "!items!iIvD4BWCNj4dphWo"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738039616017,
+    "modifiedTime": 1738039641135,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "eCTZGyJ2bInr7WTm",
+  "sort": 0,
+  "_key": "!items!eCTZGyJ2bInr7WTm"
 }

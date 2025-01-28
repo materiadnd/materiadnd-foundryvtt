@@ -1,125 +1,94 @@
 {
   "name": "Illusory Script",
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You write on Parchment, paper, or some other suitable writing material and imbue it with a potent Illusion that lasts for the Duration.</p><p>To you and any creatures you designate when you cast the spell, the writing appears normal, written in your hand, and conveys whatever meaning you intended when you wrote the text. To all others, the writing is invisible. Alternatively, you can cause the writing to appear to be an entirely different message, written in a different hand and language, though the language must be one you know.</p><p>Should the spell be dispelled, the original script and the Illusion both disappear.</p><p>A creature with Truesight can read the hidden message.</p>",
+      "value": "<p>You write on parchment, paper, or another suitable material and imbue it with an illusion that lasts for the duration. To you and any creatures you designate when you cast the spell, the writing appears normal, seems to be written in your hand, and conveys whatever meaning you intended when you wrote the text. To all others, the writing appears as if it were written in an unknown or magical script that is unintelligible. Alternatively, the illusion can alter the meaning, handwriting, and language of the text, though the language must be one you know.</p><p>If the spell is dispelled, the original script and the illusion both disappear.</p><p>A creature that has &amp;Reference[truesight] can read the hidden message.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "minute",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": 1
     },
     "duration": {
       "value": "10",
       "units": "day"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "",
-      "prompt": true,
       "affects": {
-        "count": "",
-        "type": ""
+        "type": "object",
+        "count": "1",
+        "choice": false,
+        "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "touch",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 1,
     "school": "ill",
+    "properties": [
+      "somatic",
+      "material",
+      "ritual"
+    ],
     "materials": {
-      "value": "A lead-based ink worth at least 10gp, which the spell consumes",
+      "value": "ink worth 10+ GP, which the spell consumes",
       "consumed": true,
-      "cost": 10,
+      "cost": 0,
       "supply": 0
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "somatic",
-      "material",
-      "ritual"
-    ],
-    "crewed": false,
     "activities": {
-      "sRELD0zEWHrM1jNq": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "utility",
-        "_id": "sRELD0zEWHrM1jNq",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
-        "description": {},
+        "description": {
+          "chatFlavor": ""
+        },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -127,48 +96,41 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
         },
         "uses": {
           "spent": 0,
           "recovery": []
         },
-        "roll": {
-          "prompt": false,
-          "visible": false
-        }
+        "sort": 0
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.atU2Cgyj2khtzcnl",
-      "spell-lists": "bard,warlock,wizard"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
+    "identifier": "illusory-script"
   },
-  "img": "icons/magic/air/fog-gas-smoke-purple.webp",
+  "type": "spell",
+  "img": "icons/sundries/documents/document-letter-blue.webp",
   "effects": [],
   "folder": "JMRA2elEdmr5pgX7",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234078,
-    "modifiedTime": 1730056404726,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
-  },
-  "_id": "atU2Cgyj2khtzcnl",
-  "sort": 6000000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!atU2Cgyj2khtzcnl"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738040016552,
+    "modifiedTime": 1738040026713,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "nXeKZ7t1BFa9QGDt",
+  "sort": 0,
+  "_key": "!items!nXeKZ7t1BFa9QGDt"
 }

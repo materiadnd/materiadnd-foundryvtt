@@ -1,77 +1,53 @@
 {
-  "_id": "J80ypfhBw5kO44Fy",
   "name": "Charm Person",
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You attempt to charm a humanoid you can see within range. It must make a Wisdom saving throw, and does so with advantage if you or your companions are fighting it. If it fails the saving throw, it is charmed by you until the spell ends or until you or your companions do anything harmful to it. The charmed creature regards you and your companions as friendly acquaintances. When the spell ends, the creature knows it was charmed by you.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.</p>",
+      "value": "<p>One Humanoid you can see within range makes a Wisdom saving throw. It does so with Advantage if you or your allies are fighting it. On a failed save, the target has the &amp;Reference[charmed apply=false] condition until the spell ends or until you or your allies do anything harmful to it. The Charmed creature is Friendly to you. When the spell ends, the target knows it was Charmed by you.</p><p><strong>Using a Higher-Level Spell Slot.</strong> You can target one additional creature for each spell slot level above 1.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "type": "creature",
+        "count": "@item.level",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 30,
-      "long": null,
+      "value": "30",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "wis",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 1,
     "school": "enc",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -82,44 +58,34 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "mgc"
-    ],
-    "crewed": false,
     "activities": {
-      "5F9TmLW5rRLIDM75": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "save",
-        "_id": "5F9TmLW5rRLIDM75",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [
           {
-            "_id": "1QhUB3231btaCO0b",
+            "_id": "78JcD7wFiSCOfmns",
             "onSave": false
           }
         ],
@@ -127,6 +93,7 @@
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -134,107 +101,87 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
+          "override": false
         },
         "damage": {
-          "parts": [],
-          "onSave": "half"
+          "onSave": "half",
+          "parts": []
         },
         "save": {
-          "ability": "wis",
+          "ability": [
+            "wis"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
         },
-        "name": "",
-        "img": "",
-        "appliedEffects": [
-          "1QhUB3231btaCO0b"
-        ]
-      }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.J80ypfhBw5kO44Fy",
-      "spell-lists": "bard,druid,sorcerer,warlock,wizard"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
       }
     },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
-      }
-    }
+    "identifier": "charm-person"
   },
-  "img": "icons/magic/fire/explosion-fireball-medium-purple-pink.webp",
+  "type": "spell",
+  "img": "icons/magic/control/hypnosis-mesmerism-eye.webp",
   "effects": [
     {
-      "name": "Charm Person",
-      "origin": "Compendium.dnd5e.spells.Item.eS7XnnApoxRxYXPs",
+      "name": "Charmed",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplCharmPerso",
       "duration": {
+        "rounds": 1,
         "startTime": null,
         "seconds": 3600,
         "combat": null,
-        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "1QhUB3231btaCO0b",
+      "disabled": false,
+      "flags": {},
+      "img": "systems/dnd5e/icons/svg/statuses/charmed.svg",
+      "_id": "78JcD7wFiSCOfmns",
+      "type": "base",
+      "system": {},
       "changes": [],
-      "description": "<p>The target is Charmed by the caster until the spell ends. The charmed creature regards the caster as a friendly acquaintance. When the spell ends, the creature knows it was charmed.</p>",
+      "description": "<p>the target has the &amp;Reference[charmed apply=false] condition until the spell ends or until you or your allies damage it. The Charmed creature is Friendly to you. When the spell ends, the target knows it was Charmed by you.</p>",
+      "tint": "#ffffff",
       "transfer": false,
       "statuses": [
         "charmed"
       ],
-      "flags": {},
-      "tint": "#ffffff",
+      "sort": 0,
       "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
+        "lastModifiedBy": null
       },
-      "img": "icons/magic/fire/explosion-fireball-medium-purple-pink.webp",
-      "type": "base",
-      "system": {},
-      "sort": 0,
-      "_key": "!items.effects!J80ypfhBw5kO44Fy.1QhUB3231btaCO0b"
+      "_key": "!items.effects!DNpGinoWjr0XnNES.78JcD7wFiSCOfmns"
     }
   ],
   "folder": "JMRA2elEdmr5pgX7",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.3",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234185,
-    "modifiedTime": 1727224894799,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
-  },
-  "sort": 4700000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!J80ypfhBw5kO44Fy"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738030047429,
+    "modifiedTime": 1738030092128,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "DNpGinoWjr0XnNES",
+  "sort": 0,
+  "_key": "!items!DNpGinoWjr0XnNES"
 }

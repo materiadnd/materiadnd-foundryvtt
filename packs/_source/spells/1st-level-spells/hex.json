@@ -1,77 +1,46 @@
 {
-  "folder": "JMRA2elEdmr5pgX7",
   "name": "Hex",
-  "type": "spell",
-  "_id": "O1A3O9HctaW11SdE",
-  "img": "icons/magic/symbols/star-yellow.webp",
   "system": {
     "description": {
-      "value": "<div><p>You place a curse on a creature that you can see within range. Until the spell ends, you deal an extra [[/r 1d6]] necrotic damage to the target whenever you hit it with an attack. Also, choose one ability when you cast the spell. The target has disadvantage on ability checks made with the chosen ability.</p><p>If the target drops to 0 hit points before this spell ends, you can use a bonus action on a subsequent turn of yours to curse a new creature.</p><p>A @UUID[Compendium.dnd5e.spells.Item.XZhdgVK3cLoxNCQl]{Remove Curse} cast on the target ends this spell early.</p></div><div><div><p><strong>At Higher Levels.  </strong>When you cast this spell using a spell slot of 3rd or 4th level, you can maintain your concentration on the spell for up to 8 hours. When you use a spell slot of 5th level or higher, you can maintain your concentration on the spell for up to 24 hours.</p></div></div>",
+      "value": "<p>You place a curse on a creature that you can see within range. Until the spell ends, you deal an extra 1d6 Necrotic damage to the target whenever you hit it with an attack roll. Also, choose one ability when you cast the spell. The target has Disadvantage on ability checks made with the chosen ability.</p><p>If the target drops to 0 Hit Points before this spell ends, you can take a Bonus Action on a later turn to curse a new creature.</p><p>A @UUID[Compendium.materia-dnd.spells.Item.vcL7CJzvhhPeIObK]{Remove Curse} cast on the target ends this spell early.</p><p><strong>Using a Higher-Level Spell Slot.</strong> Your Concentration can last longer with a spell slot of level 2 (up to 4 hours), 3–4 (up to 8 hours), or 5+ (24 hours).</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "bonus",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "hour"
     },
-    "cover": null,
-    "crewed": false,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "type": "creature",
+        "count": "1",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 90,
-      "long": null,
+      "value": "90",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": null,
-    "actionType": "",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 1,
     "school": "enc",
@@ -91,53 +60,122 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
     "activities": {
-      "MagYtaVhqXHZHxRr": {
-        "type": "utility",
-        "_id": "MagYtaVhqXHZHxRr",
-        "sort": 0,
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "damage",
         "activation": {
-          "type": "action",
+          "type": "",
           "value": null,
-          "override": false
+          "override": true,
+          "condition": "whenever you hit the target with an attack roll"
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": false
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
+          "override": true,
+          "concentration": false
+        },
+        "effects": [],
+        "range": {
+          "override": true,
+          "units": "any",
+          "special": ""
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
           "override": false
+        },
+        "damage": {
+          "critical": {
+            "allow": false,
+            "bonus": ""
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 100000,
+        "name": "Bonus Hex Damage"
+      },
+      "Btl8HmGdooXEh2gP": {
+        "type": "utility",
+        "_id": "Btl8HmGdooXEh2gP",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
         },
         "effects": [
           {
-            "_id": "ySx4NkNH0bWWT6UH"
+            "_id": "ljMTBKPVmEnLPX1b"
           },
           {
-            "_id": "b9EnAPVH0bDJdJte"
+            "_id": "Mmss2SPIy7wtt2PV"
           },
           {
-            "_id": "2xTZwpsKI7YNJ5gH"
+            "_id": "XVQwGWbC0A1svBNm"
           },
           {
-            "_id": "cWuQqz2tjzXglKQ2"
+            "_id": "FfVB2Yyb7wfgpsQB"
           },
           {
-            "_id": "WhZaELukFvY9T6ME"
+            "_id": "k2569xtIeXKRReLU"
           },
           {
-            "_id": "Xjftvf12nnL174hR"
+            "_id": "sC2IXWDs07oTt5JN"
           }
         ],
         "range": {
@@ -159,380 +197,265 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "roll": {
           "prompt": false,
-          "visible": false,
+          "visible": true,
           "name": "",
           "formula": ""
         },
-        "name": "Place Curse",
-        "img": "",
-        "appliedEffects": [
-          "ySx4NkNH0bWWT6UH",
-          "b9EnAPVH0bDJdJte",
-          "2xTZwpsKI7YNJ5gH",
-          "cWuQqz2tjzXglKQ2",
-          "WhZaELukFvY9T6ME",
-          "Xjftvf12nnL174hR"
-        ]
-      },
-      "avCj9oWdSlHsZmNh": {
-        "type": "damage",
-        "_id": "avCj9oWdSlHsZmNh",
-        "sort": 0,
-        "activation": {
-          "type": "action",
-          "value": null,
-          "override": false
-        },
-        "consumption": {
-          "scaling": {
-            "allowed": false
-          },
-          "spellSlot": false,
-          "targets": []
-        },
-        "description": {
-          "chatFlavor": ""
-        },
-        "duration": {
-          "units": "inst",
-          "concentration": false,
-          "override": false
-        },
-        "effects": [],
-        "range": {
-          "override": false
-        },
-        "target": {
-          "template": {
-            "contiguous": false,
-            "units": "ft"
-          },
-          "affects": {
-            "choice": false
-          },
-          "override": false,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
-        },
-        "damage": {
-          "critical": {
-            "allow": false
-          },
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 1,
-              "denomination": 6,
-              "bonus": "",
-              "types": [
-                "necrotic"
-              ],
-              "scaling": {
-                "mode": "",
-                "number": 1
-              }
-            }
-          ]
-        },
-        "name": "Hex Damage",
-        "img": "",
-        "appliedEffects": []
+        "name": "Place Curse"
       }
-    }
+    },
+    "identifier": "hex"
   },
+  "type": "spell",
+  "img": "icons/magic/symbols/star-yellow.webp",
   "effects": [
     {
-      "name": "Hexed Charisma",
-      "img": "icons/magic/symbols/star-yellow.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.O1A3O9HctaW11SdE",
-      "transfer": false,
-      "_id": "ySx4NkNH0bWWT6UH",
-      "type": "base",
-      "system": {},
-      "changes": [
-        {
-          "key": "flags.midi-qol.disadvantage.ability.check.cha",
-          "mode": 0,
-          "value": "1",
-          "priority": null
-        }
-      ],
-      "disabled": false,
+      "name": "Hexed Strength",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplHex0000000",
       "duration": {
+        "rounds": 1,
         "startTime": null,
         "seconds": 3600,
         "combat": null,
-        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p><span style=\"font-family:Signika, sans-serif\">The target has Disadvantage on ability checks made with the chosen ability.</span></p>",
-      "tint": "#ffffff",
-      "statuses": [],
-      "sort": 0,
+      "disabled": false,
       "flags": {},
+      "img": "systems/dnd5e/icons/svg/abilities/strength.svg",
+      "_id": "ljMTBKPVmEnLPX1b",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>The target has Disadvantage on ability checks made with the chosen ability.</p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "cursed"
+      ],
+      "sort": 0,
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1730055969006,
-        "modifiedTime": 1730056023765,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!O1A3O9HctaW11SdE.ySx4NkNH0bWWT6UH"
-    },
-    {
-      "name": "Hexed Constitution",
-      "img": "icons/magic/symbols/star-yellow.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.O1A3O9HctaW11SdE",
-      "transfer": false,
-      "type": "base",
-      "system": {},
-      "changes": [
-        {
-          "key": "flags.midi-qol.disadvantage.ability.check.con",
-          "mode": 0,
-          "value": "1",
-          "priority": null
-        }
-      ],
-      "disabled": false,
-      "duration": {
-        "startTime": null,
-        "seconds": 3600,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "description": "<p><span style=\"font-family:Signika, sans-serif\">The target has Disadvantage on ability checks made with the chosen ability.</span></p>",
-      "tint": "#ffffff",
-      "statuses": [],
-      "sort": 0,
-      "flags": {},
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1730056033391,
-        "modifiedTime": 1730056053284,
-        "lastModifiedBy": "dnd5mbuilder0000"
-      },
-      "_id": "b9EnAPVH0bDJdJte",
-      "_key": "!items.effects!O1A3O9HctaW11SdE.b9EnAPVH0bDJdJte"
+      "_key": "!items.effects!fK3KYfyddmmohFCZ.ljMTBKPVmEnLPX1b"
     },
     {
       "name": "Hexed Dexterity",
-      "img": "icons/magic/symbols/star-yellow.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.O1A3O9HctaW11SdE",
-      "transfer": false,
-      "type": "base",
-      "system": {},
-      "changes": [
-        {
-          "key": "flags.midi-qol.disadvantage.ability.check.dex",
-          "mode": 0,
-          "value": "1",
-          "priority": null
-        }
-      ],
-      "disabled": false,
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplHex0000000",
       "duration": {
+        "rounds": 1,
         "startTime": null,
         "seconds": 3600,
         "combat": null,
-        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p><span style=\"font-family:Signika, sans-serif\">The target has Disadvantage on ability checks made with the chosen ability.</span></p>",
-      "tint": "#ffffff",
-      "statuses": [],
-      "sort": 0,
+      "disabled": false,
       "flags": {},
+      "img": "systems/dnd5e/icons/svg/abilities/dexterity.svg",
+      "_id": "Mmss2SPIy7wtt2PV",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>The target has Disadvantage on ability checks made with the chosen ability.</p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "cursed"
+      ],
+      "sort": 0,
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1730056035219,
-        "modifiedTime": 1730056067780,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_id": "2xTZwpsKI7YNJ5gH",
-      "_key": "!items.effects!O1A3O9HctaW11SdE.2xTZwpsKI7YNJ5gH"
+      "_key": "!items.effects!fK3KYfyddmmohFCZ.Mmss2SPIy7wtt2PV"
+    },
+    {
+      "name": "Hexed Constitution",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplHex0000000",
+      "duration": {
+        "rounds": 1,
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "systems/dnd5e/icons/svg/abilities/constitution.svg",
+      "_id": "XVQwGWbC0A1svBNm",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>The target has Disadvantage on ability checks made with the chosen ability.</p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "cursed"
+      ],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!fK3KYfyddmmohFCZ.XVQwGWbC0A1svBNm"
     },
     {
       "name": "Hexed Intelligence",
-      "img": "icons/magic/symbols/star-yellow.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.O1A3O9HctaW11SdE",
-      "transfer": false,
-      "type": "base",
-      "system": {},
-      "changes": [
-        {
-          "key": "flags.midi-qol.disadvantage.ability.check.int",
-          "mode": 0,
-          "value": "1",
-          "priority": null
-        }
-      ],
-      "disabled": false,
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplHex0000000",
       "duration": {
+        "rounds": 1,
         "startTime": null,
         "seconds": 3600,
         "combat": null,
-        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p><span style=\"font-family:Signika, sans-serif\">The target has Disadvantage on ability checks made with the chosen ability.</span></p>",
-      "tint": "#ffffff",
-      "statuses": [],
-      "sort": 0,
+      "disabled": false,
       "flags": {},
+      "img": "systems/dnd5e/icons/svg/abilities/intelligence.svg",
+      "_id": "FfVB2Yyb7wfgpsQB",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>The target has Disadvantage on ability checks made with the chosen ability.</p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "cursed"
+      ],
+      "sort": 0,
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1730056036582,
-        "modifiedTime": 1730056080838,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_id": "cWuQqz2tjzXglKQ2",
-      "_key": "!items.effects!O1A3O9HctaW11SdE.cWuQqz2tjzXglKQ2"
-    },
-    {
-      "name": "Hexed Strength",
-      "img": "icons/magic/symbols/star-yellow.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.O1A3O9HctaW11SdE",
-      "transfer": false,
-      "type": "base",
-      "system": {},
-      "changes": [
-        {
-          "key": "flags.midi-qol.disadvantage.ability.check.str",
-          "mode": 0,
-          "value": "1",
-          "priority": null
-        }
-      ],
-      "disabled": false,
-      "duration": {
-        "startTime": null,
-        "seconds": 3600,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "description": "<p><span style=\"font-family:Signika, sans-serif\">The target has Disadvantage on ability checks made with the chosen ability.</span></p>",
-      "tint": "#ffffff",
-      "statuses": [],
-      "sort": 0,
-      "flags": {},
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1730056038002,
-        "modifiedTime": 1730056090469,
-        "lastModifiedBy": "dnd5mbuilder0000"
-      },
-      "_id": "WhZaELukFvY9T6ME",
-      "_key": "!items.effects!O1A3O9HctaW11SdE.WhZaELukFvY9T6ME"
+      "_key": "!items.effects!fK3KYfyddmmohFCZ.FfVB2Yyb7wfgpsQB"
     },
     {
       "name": "Hexed Wisdom",
-      "img": "icons/magic/symbols/star-yellow.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.O1A3O9HctaW11SdE",
-      "transfer": false,
-      "type": "base",
-      "system": {},
-      "changes": [
-        {
-          "key": "flags.midi-qol.disadvantage.ability.check.wis",
-          "mode": 0,
-          "value": "1",
-          "priority": null
-        }
-      ],
-      "disabled": false,
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplHex0000000",
       "duration": {
+        "rounds": 1,
         "startTime": null,
         "seconds": 3600,
         "combat": null,
-        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p><span style=\"font-family:Signika, sans-serif\">The target has Disadvantage on ability checks made with the chosen ability.</span></p>",
-      "tint": "#ffffff",
-      "statuses": [],
-      "sort": 0,
+      "disabled": false,
       "flags": {},
+      "img": "systems/dnd5e/icons/svg/abilities/wisdom.svg",
+      "_id": "k2569xtIeXKRReLU",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>The target has Disadvantage on ability checks made with the chosen ability.</p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "cursed"
+      ],
+      "sort": 0,
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1730056039317,
-        "modifiedTime": 1730056101681,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_id": "Xjftvf12nnL174hR",
-      "_key": "!items.effects!O1A3O9HctaW11SdE.Xjftvf12nnL174hR"
+      "_key": "!items.effects!fK3KYfyddmmohFCZ.k2569xtIeXKRReLU"
+    },
+    {
+      "name": "Hexed Charisma",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplHex0000000",
+      "duration": {
+        "rounds": 1,
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "systems/dnd5e/icons/svg/abilities/charisma.svg",
+      "_id": "sC2IXWDs07oTt5JN",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>The target has Disadvantage on ability checks made with the chosen ability.</p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "cursed"
+      ],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!fK3KYfyddmmohFCZ.sC2IXWDs07oTt5JN"
     }
   ],
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.O1A3O9HctaW11SdE",
-      "spell-lists": "warlock"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
-  },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1707605909162,
-    "modifiedTime": 1730056247037,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
-  },
-  "sort": 5100000,
+  "folder": "JMRA2elEdmr5pgX7",
   "ownership": {
     "default": 0
   },
-  "_key": "!items!O1A3O9HctaW11SdE"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738039653166,
+    "modifiedTime": 1738039686226,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "fK3KYfyddmmohFCZ",
+  "sort": 0,
+  "_key": "!items!fK3KYfyddmmohFCZ"
 }
