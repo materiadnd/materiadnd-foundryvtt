@@ -1,79 +1,56 @@
 {
   "name": "Alter Self",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You assume a different form. When you cast the spell, choose one of the following options, the effects of which last for the duration of the spell. While the spell lasts, you can end one option as an action to gain the benefits of a different one.</p><p><strong>Aquatic Adaptation. </strong>You adapt your body to an aquatic environment, sprouting gills and growing webbing between your fingers. You can breathe underwater and gain a swimming speed equal to your walking speed.</p><p><strong>Change Appearance. </strong>You transform your appearance. You decide what you look like, including your height, weight, facial features, sound of your voice, hair length, coloration, and distinguishing characteristics, if any. You can make yourself appear as a member of another race, though none of your statistics change. You also can't appear as a creature of a different size than you, and your basic shape stays the same; if you're bipedal, you can't use this spell to become quadrupedal, for instance. At any time for the duration of the spell, you can use your action to change your appearance in this way again.</p><p><strong>Natural Weapons. </strong>You grow claws, fangs, spines, horns, or a different natural weapon of your choice. Your unarmed strikes deal [[/ 1d6]] bludgeoning, piercing, or slashing damage, as appropriate to the natural weapon you chose, and you are proficient with your unarmed strikes. Finally, the natural weapon is magic and you have a +1 bonus to the attack and damage rolls you make using it.</p>",
+      "value": "<p>You alter your physical form. Choose one of the following options. Its effects last for the duration, during which you can take a Magic action to replace the option you chose with a different one.</p><p><strong>Aquatic Adaptation.</strong> You sprout gills and grow webs between your fingers. You can breathe underwater and gain a Swim Speed equal to your Speed.</p><section class=\"secret\" id=\"secret-7sTILHJaR1io7TWi\"><p><strong>Foundry Note</strong></p><p>The Active Effect provided by the <strong>Aquatic Adaptation</strong> activity upgrades the character's Swim Speed to a value of \"1\" to indicate equivalence to (walk) Speed.</p></section><p><strong>Change Appearance.</strong> You alter your appearance. You decide what you look like, including your height, weight, facial features, sound of your voice, hair length, coloration, and other distinguishing characteristics. You can make yourself appear as a member of another species, though none of your statistics change. You can't appear as a creature of a different size, and your basic shape stays the same; if you're bipedal, you can't use this spell to become quadrupedal, for instance. For the duration, you can take a Magic action to change your appearance in this way again.</p><p><strong>Natural Weapons. </strong>You grow claws (Slashing), fangs (Piercing), horns (Piercing), or hooves (Bludgeoning). When you use your Unarmed Strike to deal damage with that new growth, it deals 1d6 damage of the type in parentheses instead of dealing the normal damage for your Unarmed Strike, and you use your spellcasting ability modifier for the attack and damage rolls rather than using Strength. Finally, the natural weapon is magic and you have a +1 bonus to the attack and damage rolls you make using it.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia",
+      "page": "",
+      "license": ""
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "self",
-      "prompt": true,
       "affects": {
+        "choice": false,
+        "count": "",
+        "type": "self",
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "self",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 2,
     "school": "trs",
+    "properties": [
+      "vocal",
+      "somatic",
+      "concentration"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -84,22 +61,68 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "concentration",
-      "mgc"
-    ],
-    "crewed": false,
     "activities": {
-      "yIsZYdBz4monCeMM": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "utility",
-        "_id": "yIsZYdBz4monCeMM",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "6SL9vuAkx7nAfS5D"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
         "sort": 0,
+        "name": "Aquatic Adaptation",
+        "img": "icons/creatures/fish/fish-bluefin-yellow-blue.webp"
+      },
+      "wQGpfux8qzcvwsDo": {
+        "type": "utility",
+        "_id": "wQGpfux8qzcvwsDo",
         "activation": {
           "type": "action",
           "value": null,
@@ -122,7 +145,7 @@
         },
         "effects": [
           {
-            "_id": "T8Hkl5eX2fdNp7Iy"
+            "_id": "1jrUeJtfZMGhJOZa"
           }
         ],
         "range": {
@@ -144,34 +167,19 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "roll": {
           "prompt": false,
           "visible": false,
           "name": "",
           "formula": ""
         },
-        "name": "Agnostic Adaptation",
-        "img": "icons/magic/water/orb-water-bubbles-blue.webp",
-        "appliedEffects": [
-          "T8Hkl5eX2fdNp7Iy"
-        ]
-      },
-      "dnd5eactivity000": {
         "name": "Change Appearance",
-        "img": "icons/magic/control/silhouette-hold-change-blue.webp",
-        "appliedEffects": [
-          "ndvV7ZsKMZvwUnHZ"
-        ],
-        "effects": [
-          {
-            "_id": "ndvV7ZsKMZvwUnHZ"
-          }
-        ]
+        "img": "icons/creatures/magical/spirit-undead-ghost-blue.webp"
       },
-      "mJFw2cJRrj8opPcY": {
+      "dQnMvyjoGqhgl9wP": {
         "type": "utility",
-        "_id": "mJFw2cJRrj8opPcY",
-        "sort": 0,
+        "_id": "dQnMvyjoGqhgl9wP",
         "activation": {
           "type": "action",
           "value": null,
@@ -194,7 +202,7 @@
         },
         "effects": [
           {
-            "_id": "2DOCGVyc6SHEVuFx"
+            "_id": "baEBDez6IgWNpkSX"
           }
         ],
         "range": {
@@ -216,6 +224,7 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "roll": {
           "prompt": false,
           "visible": false,
@@ -223,13 +232,12 @@
           "formula": ""
         },
         "name": "Natural Weapons",
-        "img": "icons/creatures/claws/claw-talons-glowing-purple.webp",
-        "appliedEffects": []
+        "img": "icons/creatures/abilities/fang-tooth-blood-red.webp"
       },
-      "SR96WtJPghfZWEai": {
+      "SEwXqOHdPCyejSYR": {
         "type": "attack",
-        "_id": "SR96WtJPghfZWEai",
-        "sort": 0,
+        "name": "Attack: Claws",
+        "_id": "SEwXqOHdPCyejSYR",
         "activation": {
           "type": "action",
           "value": null,
@@ -273,6 +281,7 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "attack": {
           "critical": {
             "threshold": null
@@ -283,7 +292,7 @@
             "classification": "unarmed"
           },
           "ability": "spellcasting",
-          "bonus": "1"
+          "bonus": ""
         },
         "damage": {
           "critical": {
@@ -298,7 +307,7 @@
               },
               "number": 1,
               "denomination": 6,
-              "bonus": "@mod + 1",
+              "bonus": "@mod",
               "types": [
                 "slashing"
               ],
@@ -308,15 +317,11 @@
               }
             }
           ]
-        },
-        "name": "Attack: Claws",
-        "img": "",
-        "appliedEffects": []
+        }
       },
-      "oqUIT3h0s0llvb3O": {
+      "osceJQzUOQPJ9CLn": {
         "type": "attack",
-        "_id": "oqUIT3h0s0llvb3O",
-        "sort": 0,
+        "name": "Attack: Fangs/Horns",
         "activation": {
           "type": "action",
           "value": null,
@@ -326,7 +331,7 @@
           "scaling": {
             "allowed": false
           },
-          "spellSlot": true,
+          "spellSlot": false,
           "targets": []
         },
         "description": {
@@ -340,9 +345,9 @@
         "effects": [],
         "range": {
           "override": true,
+          "value": "5",
           "units": "ft",
-          "special": "",
-          "value": "5"
+          "special": ""
         },
         "target": {
           "template": {
@@ -360,6 +365,7 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "attack": {
           "critical": {
             "threshold": null
@@ -370,7 +376,7 @@
             "classification": "unarmed"
           },
           "ability": "spellcasting",
-          "bonus": "1"
+          "bonus": ""
         },
         "damage": {
           "critical": {
@@ -385,7 +391,7 @@
               },
               "number": 1,
               "denomination": 6,
-              "bonus": "@mod + 1",
+              "bonus": "@mod",
               "types": [
                 "piercing"
               ],
@@ -396,14 +402,11 @@
             }
           ]
         },
-        "name": "Attack: Fangs/Horns",
-        "img": "",
-        "appliedEffects": []
+        "_id": "osceJQzUOQPJ9CLn"
       },
-      "HsaM4NkYBqR8MKMN": {
+      "eHtpASAnamFUc69H": {
         "type": "attack",
-        "_id": "HsaM4NkYBqR8MKMN",
-        "sort": 0,
+        "name": "Attack: Hooves",
         "activation": {
           "type": "action",
           "value": null,
@@ -413,7 +416,7 @@
           "scaling": {
             "allowed": false
           },
-          "spellSlot": true,
+          "spellSlot": false,
           "targets": []
         },
         "description": {
@@ -427,9 +430,9 @@
         "effects": [],
         "range": {
           "override": true,
+          "value": "5",
           "units": "ft",
-          "special": "",
-          "value": "5"
+          "special": ""
         },
         "target": {
           "template": {
@@ -447,6 +450,7 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "attack": {
           "critical": {
             "threshold": null
@@ -457,7 +461,7 @@
             "classification": "unarmed"
           },
           "ability": "spellcasting",
-          "bonus": "1"
+          "bonus": ""
         },
         "damage": {
           "critical": {
@@ -472,7 +476,7 @@
               },
               "number": 1,
               "denomination": 6,
-              "bonus": "@mod + 1",
+              "bonus": "@mod",
               "types": [
                 "bludgeoning"
               ],
@@ -483,45 +487,20 @@
             }
           ]
         },
-        "name": "Attack: Hooves",
-        "img": "",
-        "appliedEffects": []
-      }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.KV6AtG87SCP7OLzl",
-      "spell-lists": "artificer,sorcerer,wizard"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
+        "_id": "eHtpASAnamFUc69H"
       }
     },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickAttack": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
-        }
-      }
-    }
+    "identifier": "alter-self"
   },
-  "img": "icons/magic/control/debuff-energy-hold-green.webp",
+  "type": "spell",
+  "img": "icons/magic/control/silhouette-hold-change-green.webp",
   "effects": [
     {
       "name": "Aquatic Adaptation",
-      "img": "icons/magic/water/orb-water-bubbles-blue.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.KV6AtG87SCP7OLzl",
+      "img": "icons/creatures/fish/fish-bluefin-yellow-blue.webp",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplAlterSelf0",
       "transfer": false,
-      "_id": "T8Hkl5eX2fdNp7Iy",
+      "_id": "6SL9vuAkx7nAfS5D",
       "type": "base",
       "system": {},
       "changes": [
@@ -542,7 +521,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "description": "",
+      "description": "<p>You can breathe underwater and gain a Swim Speed equal to your Speed.</p>",
       "tint": "#ffffff",
       "statuses": [],
       "sort": 0,
@@ -552,19 +531,19 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728023928446,
-        "modifiedTime": 1728023979693,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!KV6AtG87SCP7OLzl.T8Hkl5eX2fdNp7Iy"
+      "_key": "!items.effects!iAZQjK7xkZNvcns5.6SL9vuAkx7nAfS5D"
     },
     {
       "name": "Altered Appearance",
-      "img": "icons/magic/control/silhouette-hold-change-blue.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.KV6AtG87SCP7OLzl",
+      "img": "icons/creatures/magical/spirit-undead-ghost-blue.webp",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplAlterSelf0",
       "transfer": false,
-      "_id": "ndvV7ZsKMZvwUnHZ",
+      "_id": "1jrUeJtfZMGhJOZa",
       "type": "base",
       "system": {},
       "changes": [],
@@ -588,19 +567,19 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728024042126,
-        "modifiedTime": 1728024101463,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!KV6AtG87SCP7OLzl.ndvV7ZsKMZvwUnHZ"
+      "_key": "!items.effects!iAZQjK7xkZNvcns5.1jrUeJtfZMGhJOZa"
     },
     {
-      "name": "Natural Weapons",
-      "img": "icons/creatures/claws/claw-talons-glowing-purple.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.KV6AtG87SCP7OLzl",
+      "name": "Natural Weapon",
+      "img": "icons/creatures/abilities/fang-tooth-blood-red.webp",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplAlterSelf0",
       "transfer": false,
-      "_id": "2DOCGVyc6SHEVuFx",
+      "_id": "baEBDez6IgWNpkSX",
       "type": "base",
       "system": {},
       "changes": [],
@@ -614,7 +593,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p><span style=\"font-family:Signika, sans-serif\">When you use your Unarmed Strike to deal damage with that new growth, it deals 1d6 damage of the type in parentheses instead of dealing the normal damage for your Unarmed Strike, and you use your spellcasting ability modifier for the attack and damage rolls rather than using Strength.</span></p>",
+      "description": "<p>When you use your Unarmed Strike to deal damage with that new growth, it deals 1d6 damage of the type in parentheses instead of dealing the normal damage for your Unarmed Strike, and you use your spellcasting ability modifier for the attack and damage rolls rather than using Strength.</p>",
       "tint": "#ffffff",
       "statuses": [],
       "sort": 0,
@@ -624,25 +603,29 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728024148144,
-        "modifiedTime": 1728024214508,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!KV6AtG87SCP7OLzl.2DOCGVyc6SHEVuFx"
+      "_key": "!items.effects!iAZQjK7xkZNvcns5.baEBDez6IgWNpkSX"
     }
   ],
   "folder": "3rC3qr5FIlZymxFD",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234080,
-    "modifiedTime": 1728024509695,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "KV6AtG87SCP7OLzl",
-  "sort": 4300000,
-  "_key": "!items!KV6AtG87SCP7OLzl"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738210689804,
+    "modifiedTime": 1738210765663,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "iAZQjK7xkZNvcns5",
+  "sort": 0,
+  "_key": "!items!iAZQjK7xkZNvcns5"
 }

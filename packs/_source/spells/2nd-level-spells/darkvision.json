@@ -1,81 +1,58 @@
 {
   "name": "Darkvision",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You touch a willing creature to grant it the ability to see in the dark. For the duration, that creature has darkvision out to a range of 60 feet.</p>",
+      "value": "<p>For the duration, a willing creature you touch has &amp;Reference[darkvision] with a range of 150 feet.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia",
+      "page": "",
+      "license": ""
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "8",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "type": "willing",
+        "count": "1",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "touch",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 2,
     "school": "trs",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "Either a pinch of dried carrot or an agate",
+      "value": "a dried carrot",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -84,50 +61,41 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material"
-    ],
-    "crewed": false,
     "activities": {
-      "Vsk6kdsMO2icIY3k": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "utility",
-        "_id": "Vsk6kdsMO2icIY3k",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [
           {
-            "_id": "OF3WprnB0QDv7zDQ"
+            "_id": "ZWNC1jxea2RuIRVc"
           }
         ],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -135,62 +103,29 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
         },
         "uses": {
           "spent": 0,
-          "recovery": [],
-          "max": ""
+          "recovery": []
         },
-        "roll": {
-          "prompt": false,
-          "visible": false,
-          "name": "",
-          "formula": ""
-        },
-        "name": "Cast",
-        "img": "",
-        "appliedEffects": []
-      }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.JxQOGWuvP28suqhx",
-      "spell-lists": "artificer,druid,ranger,sorcerer,wizard"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
+        "sort": 0
       }
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
+    "identifier": "darkvision"
   },
-  "img": "icons/magic/perception/eye-ringed-glow-angry-small-red.webp",
+  "type": "spell",
+  "img": "icons/magic/perception/eye-winged-pink.webp",
   "effects": [
     {
       "name": "Darkvision",
-      "img": "icons/magic/perception/eye-ringed-glow-angry-small-red.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.JxQOGWuvP28suqhx",
-      "transfer": false,
-      "_id": "OF3WprnB0QDv7zDQ",
-      "type": "base",
-      "system": {},
-      "changes": [
-        {
-          "key": "system.attributes.senses.darkvision",
-          "mode": 4,
-          "value": "60",
-          "priority": null
-        }
-      ],
-      "disabled": false,
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplDarkvision",
       "duration": {
         "startTime": null,
         "seconds": 28800,
@@ -200,35 +135,53 @@
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>For the duration, that creature has darkvision out to a range of 60 feet.</p>",
-      "tint": "#ffffff",
+      "disabled": false,
+      "_id": "ZWNC1jxea2RuIRVc",
+      "changes": [
+        {
+          "key": "system.attributes.senses.darkvision",
+          "mode": 4,
+          "value": "120",
+          "priority": null
+        }
+      ],
+      "description": "<p>For the duration, a willing creature you touch has &amp;Reference[darkvision] with a range of 150 feet.</p>",
+      "transfer": false,
       "statuses": [],
-      "sort": 0,
       "flags": {},
+      "tint": "#ffffff",
       "_stats": {
-        "compendiumSource": null,
+        "compendiumSource": "Compendium.dnd5e.spells.Item.hJ6ZiA3fpoY8v9cp.ActiveEffect.9qaZQFN5xP8Gig8f",
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1730123464434,
-        "modifiedTime": 1730123502673,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!JxQOGWuvP28suqhx.OF3WprnB0QDv7zDQ"
+      "img": "icons/magic/perception/eye-winged-pink.webp",
+      "type": "base",
+      "system": {},
+      "sort": 0,
+      "_key": "!items.effects!bU4Y3ucsZzcshxSO.ZWNC1jxea2RuIRVc"
     }
   ],
   "folder": "3rC3qr5FIlZymxFD",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234195,
-    "modifiedTime": 1730123464467,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "JxQOGWuvP28suqhx",
-  "sort": 2900000,
-  "_key": "!items!JxQOGWuvP28suqhx"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738212296597,
+    "modifiedTime": 1738212307472,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "bU4Y3ucsZzcshxSO",
+  "sort": 0,
+  "_key": "!items!bU4Y3ucsZzcshxSO"
 }

@@ -1,8 +1,8 @@
 {
-  "name": "Mind Spike",
+  "name": "Shining Smite",
   "system": {
     "description": {
-      "value": "<p>You drive a spike of psionic energy into the mind of one creature you can see within range. Alternatively, you can utter a creature's name. If the named creature is within range, it becomes the spell's target even if you can't see it. If the named creature isn't within range, the spell dissipates without effect. The target makes a Wisdom saving throw, taking [[/damage 3d8 psychic]] damage on a failed save or half as much damage on a successful one. On a failed save, you also always know the target's location until the spell ends, but only while the two of you are on the same plane of existence. While you have this knowledge, the target can't become hidden from you, and if it has the &amp;Reference[invisible apply=false] condition, it gains no benefit from that condition against you.</p><p><strong>Using a Higher-Level Spell Slot. </strong>The damage increases by 1d8 for each spell slot level above 2.</p><p>You know the target's location even if they are on a different plane of existence when using a spell slot level of 6 or higher.</p><p>The spell no longer requires your Concentration when using a spell slot level of 9 or higher.</p>",
+      "value": "<p>The target hit by the strike takes an extra [[/damage 2d6 radiant]] damage from the attack. Until the spell ends, the target sheds &amp;Reference[BrightLight] in a 5-foot radius, attack rolls against it have Advantage, and it can't benefit from the &amp;Reference[Invisible] condition.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d6 for each spell slot level above 2.</p>",
       "chat": ""
     },
     "source": {
@@ -11,19 +11,19 @@
       "revision": 1
     },
     "activation": {
-      "type": "action",
-      "condition": "",
+      "type": "bonus",
+      "condition": "immediately after hitting a creature with a Melee weapon or an Unarmed Strike",
       "value": null
     },
     "duration": {
       "value": "1",
-      "units": "hour"
+      "units": "minute"
     },
     "target": {
       "affects": {
-        "type": "creature",
-        "count": "1",
         "choice": false,
+        "count": "1",
+        "type": "creature",
         "special": ""
       },
       "template": {
@@ -33,8 +33,7 @@
       }
     },
     "range": {
-      "value": "120",
-      "units": "ft",
+      "units": "self",
       "special": ""
     },
     "uses": {
@@ -43,9 +42,9 @@
       "spent": 0
     },
     "level": 2,
-    "school": "div",
+    "school": "trs",
     "properties": [
-      "somatic",
+      "vocal",
       "concentration"
     ],
     "materials": {
@@ -61,7 +60,7 @@
     "activities": {
       "dnd5eactivity000": {
         "_id": "dnd5eactivity000",
-        "type": "save",
+        "type": "damage",
         "activation": {
           "type": "action",
           "value": null,
@@ -85,8 +84,7 @@
         },
         "effects": [
           {
-            "_id": "AbNgTsT2gRxwmBpg",
-            "onSave": false
+            "_id": "pBjrcT286iCAQrjm"
           }
         ],
         "range": {
@@ -104,14 +102,17 @@
           "override": false
         },
         "damage": {
-          "onSave": "half",
+          "critical": {
+            "allow": false,
+            "bonus": ""
+          },
           "parts": [
             {
-              "number": 3,
-              "denomination": 8,
+              "number": 2,
+              "denomination": 6,
               "bonus": "",
               "types": [
-                "psychic"
+                "radiant"
               ],
               "custom": {
                 "enabled": false,
@@ -125,15 +126,6 @@
             }
           ]
         },
-        "save": {
-          "ability": [
-            "wis"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
-        },
         "uses": {
           "spent": 0,
           "recovery": []
@@ -141,18 +133,18 @@
         "sort": 0
       }
     },
-    "identifier": "mind-spike"
+    "identifier": "shining-smite"
   },
   "type": "spell",
-  "img": "icons/magic/unholy/beam-ringed-impact-purple.webp",
+  "img": "icons/skills/melee/strike-sword-dagger-runes-yellow.webp",
   "effects": [
     {
-      "name": "Spiked",
-      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplMindSpike0",
+      "name": "Shining",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplShiningSmi",
       "duration": {
         "rounds": null,
         "startTime": null,
-        "seconds": 3600,
+        "seconds": 60,
         "combat": null,
         "turns": null,
         "startRound": null,
@@ -160,15 +152,24 @@
       },
       "disabled": false,
       "flags": {},
-      "img": "icons/skills/targeting/target-strike-gray.webp",
-      "_id": "AbNgTsT2gRxwmBpg",
+      "img": "icons/magic/light/explosion-star-glow-silhouette.webp",
+      "_id": "pBjrcT286iCAQrjm",
       "type": "base",
       "system": {},
-      "changes": [],
-      "description": "<p>You always know the target’s location until the spell ends, but only while the two of you are on the same plane of existence. While you have this knowledge, the target can’t become hidden from you, and if it has the &amp;Reference[invisible apply=false] condition, it gains no benefit from that condition against you.</p>",
+      "changes": [
+        {
+          "key": "system.traits.ci.value",
+          "mode": 2,
+          "value": "invisible",
+          "priority": null
+        }
+      ],
+      "description": "<p>Until the spell ends, the target sheds &amp;Reference[BrightLight] in a 5-foot radius, attack rolls against it have Advantage, and it can’t benefit from the &amp;Reference[Invisible] condition.</p>",
       "tint": "#ffffff",
       "transfer": false,
-      "statuses": [],
+      "statuses": [
+        "marked"
+      ],
       "sort": 0,
       "_stats": {
         "compendiumSource": null,
@@ -180,7 +181,7 @@
         "modifiedTime": null,
         "lastModifiedBy": null
       },
-      "_key": "!items.effects!Hj6tpkODQF63TGTf.AbNgTsT2gRxwmBpg"
+      "_key": "!items.effects!3e69bxt4NoC7453B.pBjrcT286iCAQrjm"
     }
   ],
   "folder": "3rC3qr5FIlZymxFD",
@@ -193,11 +194,11 @@
     "coreVersion": "12.331",
     "systemId": "dnd5e",
     "systemVersion": "4.2.2",
-    "createdTime": 1738215418617,
-    "modifiedTime": 1738215550405,
+    "createdTime": 1738216867314,
+    "modifiedTime": 1738217132050,
     "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "Hj6tpkODQF63TGTf",
+  "_id": "3e69bxt4NoC7453B",
   "sort": 0,
-  "_key": "!items!Hj6tpkODQF63TGTf"
+  "_key": "!items!3e69bxt4NoC7453B"
 }

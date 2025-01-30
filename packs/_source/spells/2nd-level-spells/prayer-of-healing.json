@@ -1,81 +1,55 @@
 {
   "name": "Prayer of Healing",
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You incite a prayer that upon completion you have a pool of healing equal to [[/r 12d6]] + your spellcasting ability modifier which you roll and add up. This pool of healing is then immediately used on up to six creatures of your choice within range to regain hit points. Any unused healing from the pool is lost. This spell has no effect on undead or constructs.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 3rd level or higher, the healing increases by [[/r 2d6]] for each slot level above 2nd.</p>",
+      "value": "<p>Up to five creatures of your choice who remain within range for the spell's entire casting gain the benefits of a &amp;Reference[shortrest] and also regain 2d8 Hit Points. A creature can't be affected by this spell again until that creature finishes a Long Rest.</p><p><strong>Using a Higher-Level Spell Slot. </strong>The healing increases by 1d8 for each spell slot level above 2.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia",
+      "page": "",
+      "license": ""
     },
     "activation": {
       "type": "minute",
-      "cost": 10,
-      "condition": ""
+      "condition": "",
+      "value": 10
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 6,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "type": "creature",
+        "count": "5",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 30,
-      "long": null,
+      "value": "30",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "heal",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "12d6 + @mod",
-          "healing"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 2,
-    "school": "evo",
+    "school": "abj",
+    "properties": [
+      "vocal"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -86,63 +60,131 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "1d8"
-    },
-    "properties": [
-      "vocal"
-    ],
-    "crewed": false,
     "activities": {
       "dnd5eactivity000": {
-        "name": "",
-        "img": "",
-        "healing": {
-          "denomination": "6",
+        "_id": "dnd5eactivity000",
+        "type": "heal",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
           "scaling": {
-            "formula": "",
-            "number": 2,
-            "mode": "whole"
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "BrBVse9ezicC6IVW"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "healing": {
+          "number": 2,
+          "denomination": 8,
+          "bonus": "",
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": false,
+            "formula": ""
+          },
+          "scaling": {
+            "mode": "whole",
+            "number": 1,
+            "formula": ""
           }
         },
-        "appliedEffects": []
-      }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.bYoWyoMAYez5LOGM",
-      "spell-lists": "cleric,paladin"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
       }
     },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    }
+    "identifier": "prayer-of-healing"
   },
-  "img": "icons/magic/life/heart-cross-strong-green.webp",
-  "effects": [],
+  "type": "spell",
+  "img": "icons/magic/holy/prayer-hands-glowing-yellow.webp",
+  "effects": [
+    {
+      "name": "Healed by Prayer",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplPrayerofHe",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "icons/magic/holy/prayer-hands-glowing-yellow.webp",
+      "_id": "BrBVse9ezicC6IVW",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>A creature can’t be affected by the @UUID[Compendium.dnd-players-handbook.spells.Item.phbsplPrayerofHe] spell again until that creature finishes a Long Rest.</p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!rIaZHG7RqaUcMcE0.BrBVse9ezicC6IVW"
+    }
+  ],
   "folder": "3rC3qr5FIlZymxFD",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234126,
-    "modifiedTime": 1728134271925,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
-  },
-  "_id": "bYoWyoMAYez5LOGM",
-  "sort": 6700000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!bYoWyoMAYez5LOGM"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738216072890,
+    "modifiedTime": 1738216088737,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "rIaZHG7RqaUcMcE0",
+  "sort": 0,
+  "_key": "!items!rIaZHG7RqaUcMcE0"
 }

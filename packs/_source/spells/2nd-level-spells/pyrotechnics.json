@@ -6,7 +6,7 @@
   "img": "icons/magic/fire/projectile-feathers-embers-gold.webp",
   "system": {
     "description": {
-      "value": "<p>Choose an area of flame that you can see and that fits within a 5-foot cube within range. You can extinguish the fire in that area, and you create either fireworks, smoke, or soot when you do so.</p><p><strong>Fireworks</strong>.  </span>The target explodes with a dazzling display of colors. Each creature within 10 feet of the target must succeed on a Constitution saving throw or become blinded until the end of your next turn.</p><p><strong>Smoke</strong>. </span>Thick black smoke spreads out from the target in a 20-foot radius, moving around corners. The area of the smoke is heavily obscured. The smoke persists for 1 minute or until a strong wind disperses it.</p><p><strong>Soot</strong>. Particles of soot fill the air. Each creature within 10 feet of the target must succeed on a Constitution saving throw or begin to cough and choke on the soot. They are unable to speak, preventing them performing the verbal components to spells and if concentrating on a spell they must succeed a concentration check against your spell save DC. Creatures that do not need to breathe automatically succeed on this saving throw.</p>",
+      "value": "<p>Choose an area of flame that you can see and that fits within a 5-foot cube within range. You can extinguish the fire in that area, and you create either fireworks, smoke, or soot when you do so.</p><p><strong>Fireworks</strong>. The target explodes with a dazzling display of colors. Each creature within 10 feet of the target must succeed on a Constitution saving throw or become &amp;Reference[blinded] until the end of your next turn.</p><p><strong>Smoke</strong>. Thick black smoke spreads out from the target in a 20-foot radius, moving around corners. The area of the smoke is &amp;Reference[heavily obscured]. The smoke persists for 1 minute or until a strong wind disperses it.</p><p><strong>Soot</strong>. Particles of soot fill the air. Each creature within 10 feet of the target must succeed on a Constitution saving throw or begin to cough and choke on the soot. They are unable to speak, preventing them performing the verbal components to spells and if concentrating on a spell they must succeed a [[/concentration dc=@attributes.spellmod]]<span style=\"font-family:ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace\"> </span>check against your spell save DC. Creatures that do not need to breathe automatically succeed on this saving throw.</p>",
       "chat": ""
     },
     "source": {
@@ -249,6 +249,75 @@
         "name": "Soot",
         "img": "",
         "appliedEffects": []
+      },
+      "G7raJ0ZHoXr0Af7b": {
+        "type": "save",
+        "_id": "G7raJ0ZHoXr0Af7b",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "CwrvvEDHqEd2heZH",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Fireworks",
+        "img": "",
+        "appliedEffects": [
+          "o4NWZKLdpZcHW1kh",
+          "CwrvvEDHqEd2heZH"
+        ]
       }
     }
   },
@@ -356,10 +425,10 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "systemVersion": "4.2.2",
     "coreVersion": "12.331",
     "createdTime": 1708312544069,
-    "modifiedTime": 1728134902125,
+    "modifiedTime": 1738216411978,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

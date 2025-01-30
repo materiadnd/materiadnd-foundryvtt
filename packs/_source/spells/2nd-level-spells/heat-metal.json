@@ -1,86 +1,60 @@
 {
   "name": "Heat Metal",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>Choose a manufactured metal object, such as a metal weapon or a suit of heavy or medium metal armor, that you can see within range. You cause the object to glow red-hot. Any creature in physical contact with the object takes [[/r 2d8]] fire damage when you cast the spell. Until the spell ends, you can use a bonus action on each of your subsequent turns to cause this damage again.</p><p>If a creature is holding or wearing the object and takes the damage from it, the creature must succeed on a Constitution saving throw or drop the object if it can. If it doesn't drop the object, it has disadvantage on attack rolls and ability checks until the start of your next turn.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by [[/r 1d8]] for each slot level above 2nd.</p>",
+      "value": "<p>Choose a manufactured metal object, such as a metal weapon or a suit of Heavy or Medium metal armor, that you can see within range. You cause the object to glow red-hot. Any creature in physical contact with the object takes [[/damage 2d8 fire]] damage when you cast the spell. Until the spell ends, you can take a Bonus Action on each of your later turns to deal this damage again if the object is within range.</p><p>If a creature is holding or wearing the object and takes the damage from it, the creature must succeed on a Constitution saving throw or drop the object if it can. If it doesn't drop the object, it has Disadvantage on attack rolls and ability checks until the start of your next turn.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d8 for each spell slot level above 2.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia",
+      "page": "",
+      "license": ""
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "object",
-      "prompt": true,
       "affects": {
+        "type": "object",
+        "count": "1",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 60,
-      "long": null,
+      "value": "60",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "2d8",
-          "fire"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "con",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 2,
     "school": "trs",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
     "materials": {
-      "value": "A piece of iron and a flame.",
+      "value": "a piece of iron and a flame",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -89,21 +63,82 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "1d8"
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "concentration"
-    ],
-    "crewed": false,
     "activities": {
-      "Msn8hvhB3GH1T98e": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": false
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": true,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "VVQbCUE5W44bF4QU",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": true,
+          "units": "any",
+          "special": ""
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true
+        },
+        "damage": {
+          "onSave": "none",
+          "parts": []
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 100000,
+        "name": "On Damage Save"
+      },
+      "2jWlvr2titPfBMEm": {
         "type": "damage",
-        "_id": "Msn8hvhB3GH1T98e",
+        "_id": "2jWlvr2titPfBMEm",
         "sort": 0,
         "activation": {
           "type": "action",
@@ -128,129 +163,6 @@
         "effects": [],
         "range": {
           "override": false
-        },
-        "target": {
-          "template": {
-            "contiguous": false,
-            "units": "ft",
-            "type": ""
-          },
-          "affects": {
-            "choice": false,
-            "count": "1",
-            "type": "creatureOrObject",
-            "special": ""
-          },
-          "override": true,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
-        },
-        "damage": {
-          "critical": {
-            "allow": false
-          },
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 2,
-              "denomination": 8,
-              "bonus": "",
-              "types": [
-                "fire"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ]
-        },
-        "name": "Cast and Heat",
-        "img": "",
-        "appliedEffects": []
-      },
-      "dnd5eactivity000": {
-        "damage": {
-          "parts": [],
-          "onSave": "none"
-        },
-        "name": "On Damage Save",
-        "img": "",
-        "appliedEffects": [
-          "buWLuGMWiwvKShd3"
-        ],
-        "effects": [
-          {
-            "_id": "buWLuGMWiwvKShd3",
-            "onSave": false
-          }
-        ],
-        "activation": {
-          "override": true,
-          "type": "",
-          "condition": ""
-        },
-        "duration": {
-          "override": true
-        },
-        "consumption": {
-          "spellSlot": false
-        },
-        "range": {
-          "override": true,
-          "units": "any",
-          "special": ""
-        },
-        "target": {
-          "override": true,
-          "affects": {
-            "count": "1",
-            "type": "creature",
-            "special": ""
-          },
-          "template": {
-            "type": ""
-          }
-        },
-        "sort": 100000
-      },
-      "2R65WAOjf1jSKPZz": {
-        "type": "damage",
-        "_id": "2R65WAOjf1jSKPZz",
-        "sort": 0,
-        "activation": {
-          "type": "bonus",
-          "value": null,
-          "override": true,
-          "condition": ""
-        },
-        "consumption": {
-          "scaling": {
-            "allowed": false
-          },
-          "spellSlot": false,
-          "targets": []
-        },
-        "description": {
-          "chatFlavor": ""
-        },
-        "duration": {
-          "units": "inst",
-          "concentration": false,
-          "override": true
-        },
-        "effects": [],
-        "range": {
-          "override": false,
-          "units": "self",
-          "special": ""
         },
         "target": {
           "template": {
@@ -281,9 +193,7 @@
               "number": 2,
               "denomination": 8,
               "bonus": "",
-              "types": [
-                "fire"
-              ],
+              "types": [],
               "scaling": {
                 "mode": "whole",
                 "number": 1
@@ -291,45 +201,90 @@
             }
           ]
         },
-        "name": "Re-apply Heat",
-        "img": "",
-        "appliedEffects": []
-      }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.0kjllm1Ee3mHzT3H",
-      "spell-lists": "artificer,bard,druid"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
+        "name": "Cast and Heat"
       },
-      "quickSave": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
-        }
+      "YPEmwJHX7g68307N": {
+        "type": "damage",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": 8,
+              "bonus": "",
+              "types": [],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "name": "Reheat",
+        "_id": "YPEmwJHX7g68307N",
+        "img": "systems/dnd5e/icons/svg/statuses/concentrating.svg"
       }
-    }
+    },
+    "identifier": "heat-metal"
   },
-  "img": "icons/magic/light/explosion-star-large-orange.webp",
+  "type": "spell",
+  "img": "icons/magic/fire/flame-burning-chain.webp",
   "effects": [
     {
       "name": "Heated Metal",
-      "img": "icons/magic/light/explosion-star-large-orange.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.0kjllm1Ee3mHzT3H",
+      "img": "icons/magic/fire/flame-burning-chain.webp",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplHeatMetal0",
       "transfer": false,
-      "_id": "buWLuGMWiwvKShd3",
+      "_id": "VVQbCUE5W44bF4QU",
       "type": "base",
       "system": {},
       "changes": [],
@@ -343,7 +298,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>If a creature is holding or wearing the object and takes the damage from it, the creature must succeed on a Constitution saving throw or drop the object if it can. If it doesn't drop the object, it has disadvantage on attack rolls and ability checks until the start of your next turn.</p>",
+      "description": "<p>If a creature is holding or wearing the object and takes the damage from it, The creature must succeed on a [[/save ability=con format=long]] or drop the object if it can. If it doesn’t drop the object, it has Disadvantage on attack rolls and ability checks until the start of your next turn.</p>",
       "tint": "#ffffff",
       "statuses": [],
       "sort": 0,
@@ -353,25 +308,36 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728096975698,
-        "modifiedTime": 1728097002348,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!0kjllm1Ee3mHzT3H.buWLuGMWiwvKShd3"
+      "_key": "!items.effects!Uhw38JUZZbRvLMT5.VVQbCUE5W44bF4QU"
     }
   ],
   "folder": "3rC3qr5FIlZymxFD",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234061,
-    "modifiedTime": 1728097166637,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "0kjllm1Ee3mHzT3H",
-  "sort": 3600000,
-  "_key": "!items!0kjllm1Ee3mHzT3H"
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738214373073,
+    "modifiedTime": 1738214391517,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "Uhw38JUZZbRvLMT5",
+  "sort": 0,
+  "_key": "!items!Uhw38JUZZbRvLMT5"
 }

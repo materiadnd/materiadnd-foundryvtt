@@ -1,82 +1,45 @@
 {
-  "folder": "3rC3qr5FIlZymxFD",
   "name": "Cordon of Arrows",
-  "type": "spell",
-  "_id": "X1dshsD6z6ZyxzHS",
-  "img": "icons/skills/ranged/arrows-flying-salvo-blue.webp",
   "system": {
     "description": {
-      "value": "<p>You plant four pieces of nonmagical ammunition - arrows or crossbow bolts - in the ground within range and lay magic upon them to protect an area. Until the spell ends, whenever a creature other than you comes within 30 feet of the ammunition for the first time on a turn or ends its turn there, one piece of ammunition flies up to strike it. Make a ranged spell attack against the target. On a hit the creature takes [[/r 1d8]] plus your spellcasting ability modifier piercing damage. The piece of ammunition is then destroyed. The spell ends when no ammunition remains.</p><p>When you cast this spell, you can designate any creatures you choose, and the spell ignores them.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 3rd level or higher, the amount of ammunition that can be affected increases by two for each slot level above 2nd.</p>",
+      "value": "<p>You touch up to four nonmagical Arrows or Bolts and plant them in the ground in your space. Until the spell ends, the ammunition can't be physically uprooted, and whenever a creature other than you enters a space within 30 feet of the ammunition for the first time on a turn or ends its turn there, one piece of ammunition flies up to strike it. The creature must succeed on a Dexterity saving throw or take [[/damage 2d4 piercing]] damage. The piece of ammunition is then destroyed. The spell ends when none of the ammunition remains planted in the ground.</p><p>When you cast this spell, you can designate any creatures you choose, and the spell ignores them.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The amount of ammunition that can be affected increases by two for each spell slot level above 2.</p><section class=\"secret\" id=\"secret-hTdxVas0HdLYLcC5\"><p><strong>Foundry Note</strong></p><p>The <strong>Cast</strong> activity will reset the limited uses of this item according to how many pieces of ammunition are affected and can be fired by the <strong>Save</strong> activity.</p></section>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "8",
       "units": "hour"
     },
-    "cover": null,
-    "crewed": false,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "object",
-      "prompt": true,
       "affects": {
+        "type": "object",
+        "count": "2 * @item.level",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 5,
-      "long": null,
-      "units": "ft",
+      "units": "touch",
       "special": ""
     },
     "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "rwak",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "1d8 + @mod",
-          "piercing"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "max": "18",
+      "recovery": [],
+      "spent": 18
     },
     "level": 2,
     "school": "trs",
@@ -86,7 +49,7 @@
       "material"
     ],
     "materials": {
-      "value": "four or more arrows or bolts",
+      "value": "an ornamental braid",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -95,29 +58,74 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
     "activities": {
       "dnd5eactivity000": {
-        "name": "",
-        "img": "",
-        "attack": {
-          "type": {
-            "classification": ""
-          }
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "",
+              "scaling": {
+                "mode": ""
+              }
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": false
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": true,
+          "concentration": false
+        },
+        "effects": [],
+        "range": {
+          "override": true,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true
         },
         "damage": {
+          "onSave": "none",
           "parts": [
             {
               "custom": {
                 "enabled": false,
                 "formula": ""
               },
-              "number": 1,
-              "denomination": 8,
-              "bonus": "@mod",
+              "number": 2,
+              "denomination": 4,
+              "bonus": "",
               "types": [
                 "piercing"
               ],
@@ -128,48 +136,118 @@
             }
           ]
         },
-        "appliedEffects": []
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 100000,
+        "name": ""
+      },
+      "7FxhT4svBreaSOvk": {
+        "type": "utility",
+        "_id": "7FxhT4svBreaSOvk",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "@item.uses.value - (2 * @item.level)",
+              "target": "",
+              "scaling": {
+                "mode": ""
+              }
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "sphere",
+            "size": "30",
+            "count": ""
+          },
+          "affects": {
+            "choice": true,
+            "count": "",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast"
       }
-    }
-  },
-  "effects": [],
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.X1dshsD6z6ZyxzHS",
-      "spell-lists": "ranger"
     },
+    "identifier": "cordon-of-arrows"
+  },
+  "type": "spell",
+  "img": "icons/skills/ranged/arrows-flying-salvo-yellow.webp",
+  "effects": [],
+  "folder": "3rC3qr5FIlZymxFD",
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
     "dnd5e": {
       "riders": {
         "activity": [],
         "effect": []
       }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickAttack": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
-        }
-      }
     }
   },
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1708311098871,
-    "modifiedTime": 1728026062095,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738211958885,
+    "modifiedTime": 1738211974509,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "sort": 6500000,
-  "ownership": {
-    "default": 0
-  },
-  "_key": "!items!X1dshsD6z6ZyxzHS"
+  "_id": "6zV2RrfvEyu8Nvbb",
+  "sort": 0,
+  "_key": "!items!6zV2RrfvEyu8Nvbb"
 }

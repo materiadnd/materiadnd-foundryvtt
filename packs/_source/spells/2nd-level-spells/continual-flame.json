@@ -1,103 +1,70 @@
 {
   "name": "Continual Flame",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>A flame, equivalent in brightness to a torch, springs forth from an object that you touch. The effect looks like a regular flame, but it creates no heat and doesn't use oxygen. A continual flame can be covered or hidden but not smothered or quenched.</p>",
+      "value": "<p>A flame springs from an object that you touch. The effect casts &amp;Reference[brightlight] in a 20-foot radius and &amp;Reference[dimlight] for an additional 20 feet. It looks like a regular flame, but it creates no heat and consumes no fuel. The flame can be covered or hidden but not smothered or quenched.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia",
+      "page": "",
+      "license": ""
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "disp"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "object",
-      "prompt": true,
       "affects": {
+        "type": "object",
+        "count": "1",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "touch",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 2,
     "school": "evo",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "Ruby dust worth 50 gp, which the spell consumes",
+      "value": "ruby dust worth 50+ GP, which the spell consumes",
       "consumed": true,
-      "cost": 50,
+      "cost": 0,
       "supply": 0
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material"
-    ],
-    "crewed": false,
     "activities": {
-      "4EAW4XORgMUPQS3L": {
+      "xRpB1tRGKRpzBwCV": {
         "type": "summon",
-        "_id": "4EAW4XORgMUPQS3L",
+        "_id": "xRpB1tRGKRpzBwCV",
         "sort": 0,
         "activation": {
           "type": "action",
@@ -156,55 +123,49 @@
         },
         "profiles": [
           {
-            "_id": "3JR8gPgEFwwmQlAI",
+            "uuid": "Compendium.dnd-players-handbook.actors.Actor.phbsplLight00000",
+            "_id": "sy8P3JH8E5Ws6Ao6",
             "level": {
               "min": null,
               "max": null
             },
-            "types": [],
-            "uuid": "Compendium.materia-dnd.actors.Actor.rLGA3qkIBwKpCrK6"
+            "types": []
           }
         ],
         "summon": {
-          "prompt": true,
+          "prompt": false,
           "mode": ""
         },
-        "name": "Cast",
-        "img": "",
-        "appliedEffects": []
+        "name": "Cast"
       }
-    }
+    },
+    "identifier": "continual-flame"
+  },
+  "type": "spell",
+  "img": "icons/magic/light/torch-fire-orange.webp",
+  "effects": [],
+  "folder": "3rC3qr5FIlZymxFD",
+  "ownership": {
+    "default": 0
   },
   "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.2xIouUQKUyrhZavb",
-      "spell-lists": "artificer,cleric,druid,wizard"
-    },
     "dnd5e": {
       "riders": {
         "activity": [],
         "effect": []
       }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
     }
   },
-  "img": "icons/magic/fire/explosion-fireball-medium-orange.webp",
-  "effects": [],
-  "folder": "3rC3qr5FIlZymxFD",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1661787234126,
-    "modifiedTime": 1728025950713,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738211936668,
+    "modifiedTime": 1738211944636,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "2xIouUQKUyrhZavb",
-  "sort": 2700000,
-  "_key": "!items!2xIouUQKUyrhZavb"
+  "_id": "F0FLg4GzX32IeLO4",
+  "sort": 0,
+  "_key": "!items!F0FLg4GzX32IeLO4"
 }

@@ -4,7 +4,7 @@
   "img": "icons/magic/defensive/shield-barrier-flaming-diamond-orange.webp",
   "system": {
     "description": {
-      "value": "<p>You touch a willing creature. Until the spell ends, the target's skin has a rough, bark-like appearance, the bark like skin is treated as armor, which the target is considered proficient in, providing AC 15 plus their dexterity modifier up to +2.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.</p>",
+      "value": "<p>You touch a willing creature. Until the spell ends, the target's skin has a rough, bark-like appearance, the bark like skin is treated as armor, which the target is considered proficient in, providing AC 15 plus their dexterity modifier up to +2.</p><p><strong>Using a Higher-Level Spell Slot.</strong> You can target one additional creature for each spell slot level above 2.</p>",
       "chat": ""
     },
     "source": {
@@ -74,7 +74,7 @@
     "level": 2,
     "school": "trs",
     "materials": {
-      "value": "A handful of oak bark",
+      "value": "a handful of bark",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -104,13 +104,68 @@
             "_id": "uM6rgctYpcbCVSkn"
           }
         ]
+      },
+      "62uMouVgo321fL6H": {
+        "type": "utility",
+        "_id": "62uMouVgo321fL6H",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {},
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "V0TSfrApbBassYLI"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
       }
     }
   },
   "effects": [
     {
-      "_id": "uM6rgctYpcbCVSkn",
-      "flags": {},
+      "name": "Bark-like Skin",
+      "img": "icons/magic/defensive/shield-barrier-flaming-diamond-orange.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.xjqKL8Z2me1lZPhW",
+      "transfer": false,
+      "_id": "V0TSfrApbBassYLI",
+      "type": "base",
+      "system": {},
       "changes": [
         {
           "key": "system.attributes.ac.formula",
@@ -125,7 +180,7 @@
           "priority": null
         }
       ],
-      "disabled": true,
+      "disabled": false,
       "duration": {
         "startTime": null,
         "seconds": 3600,
@@ -135,27 +190,22 @@
         "startRound": null,
         "startTurn": null
       },
-      "origin": "Item.VQMKMnQDw5rzL0zp",
-      "tint": "#ffffff",
-      "transfer": true,
-      "name": "Barkskin",
       "description": "",
+      "tint": "#ffffff",
       "statuses": [],
-      "_stats": {
-        "coreVersion": "12.331",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": 1728025147687,
-        "lastModifiedBy": "dnd5mbuilder0000",
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "icons/magic/defensive/shield-barrier-flaming-diamond-orange.webp",
-      "type": "base",
-      "system": {},
       "sort": 0,
-      "_key": "!items.effects!xjqKL8Z2me1lZPhW.uM6rgctYpcbCVSkn"
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": 1738211375748,
+        "modifiedTime": 1738211455416,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!xjqKL8Z2me1lZPhW.V0TSfrApbBassYLI"
     }
   ],
   "folder": "3rC3qr5FIlZymxFD",
@@ -178,10 +228,10 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.1.2",
+    "systemVersion": "4.2.2",
     "coreVersion": "12.331",
     "createdTime": 1661787234113,
-    "modifiedTime": 1736365321072,
+    "modifiedTime": 1738211375808,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
