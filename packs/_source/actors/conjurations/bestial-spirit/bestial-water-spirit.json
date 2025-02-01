@@ -1,20 +1,34 @@
 {
-  "folder": "rKsfdZOg3l0mry6x",
-  "name": "Spiritual Weapon",
+  "name": "Bestial Water Spirit",
+  "_id": "matNpcBestialWat",
   "type": "npc",
-  "_id": "matNpcSpiritualW",
-  "img": "icons/weapons/hammers/hammer-double-glowing-yellow.webp",
   "system": {
-    "currency": {
-      "pp": 0,
-      "gp": 0,
-      "ep": 0,
-      "sp": 0,
-      "cp": 0
+    "details": {
+      "biography": {
+        "value": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonBeas caption=false]</p>",
+        "public": ""
+      },
+      "alignment": "Neutral",
+      "type": {
+        "value": "beast"
+      },
+      "race": null,
+      "cr": null,
+      "spellLevel": 0,
+      "ideal": "",
+      "bond": "",
+      "flaw": "",
+      "habitat": {
+        "custom": "",
+        "value": []
+      },
+      "treasure": {
+        "value": []
+      }
     },
     "abilities": {
       "str": {
-        "value": 0,
+        "value": 18,
         "proficient": 0,
         "max": null,
         "bonuses": {
@@ -23,7 +37,7 @@
         }
       },
       "dex": {
-        "value": 0,
+        "value": 11,
         "proficient": 0,
         "max": null,
         "bonuses": {
@@ -32,7 +46,7 @@
         }
       },
       "con": {
-        "value": 0,
+        "value": 16,
         "proficient": 0,
         "max": null,
         "bonuses": {
@@ -41,7 +55,7 @@
         }
       },
       "int": {
-        "value": 0,
+        "value": 4,
         "proficient": 0,
         "max": null,
         "bonuses": {
@@ -50,7 +64,7 @@
         }
       },
       "wis": {
-        "value": 0,
+        "value": 14,
         "proficient": 0,
         "max": null,
         "bonuses": {
@@ -59,7 +73,7 @@
         }
       },
       "cha": {
-        "value": 0,
+        "value": 5,
         "proficient": 0,
         "max": null,
         "bonuses": {
@@ -67,6 +81,45 @@
           "save": ""
         }
       }
+    },
+    "traits": {
+      "size": "sm",
+      "di": {
+        "bypasses": [],
+        "value": [],
+        "custom": ""
+      },
+      "dr": {
+        "bypasses": [],
+        "value": [],
+        "custom": ""
+      },
+      "dv": {
+        "bypasses": [],
+        "value": [],
+        "custom": ""
+      },
+      "dm": {
+        "amount": {},
+        "bypasses": []
+      },
+      "ci": {
+        "value": [],
+        "custom": ""
+      },
+      "languages": {
+        "value": [],
+        "custom": "understands the languages you know",
+        "communication": {}
+      },
+      "important": false
+    },
+    "currency": {
+      "pp": 0,
+      "gp": 0,
+      "ep": 0,
+      "sp": 0,
+      "cp": 0
     },
     "bonuses": {
       "mwak": {
@@ -387,8 +440,8 @@
         "burrow": null,
         "climb": null,
         "fly": null,
-        "swim": null,
-        "walk": null,
+        "swim": 30,
+        "walk": 30,
         "units": null,
         "hover": false
       },
@@ -396,14 +449,14 @@
         "max": 3
       },
       "senses": {
-        "darkvision": null,
+        "darkvision": 60,
         "blindsight": null,
         "tremorsense": null,
         "truesight": null,
         "units": null,
         "special": ""
       },
-      "spellcasting": "str",
+      "spellcasting": "int",
       "exhaustion": 0,
       "concentration": {
         "ability": "",
@@ -418,18 +471,18 @@
         "limit": 1
       },
       "ac": {
-        "flat": 0,
-        "calc": "flat"
+        "flat": 11,
+        "calc": "natural"
       },
       "hd": {
         "spent": 0
       },
       "hp": {
-        "value": 1,
-        "max": 1,
-        "temp": 0,
-        "tempmax": 0,
-        "formula": ""
+        "value": 30,
+        "max": 30,
+        "temp": null,
+        "tempmax": null,
+        "formula": "30"
       },
       "death": {
         "ability": "",
@@ -439,28 +492,14 @@
           "mode": 0
         },
         "success": 0,
-        "failure": 0
+        "failure": 0,
+        "bonuses": {
+          "save": ""
+        }
+      },
+      "loyalty": {
+        "value": null
       }
-    },
-    "details": {
-      "biography": {
-        "value": "",
-        "public": ""
-      },
-      "alignment": "",
-      "ideal": "",
-      "bond": "",
-      "flaw": "",
-      "race": null,
-      "type": {
-        "value": "custom",
-        "custom": "Spectral Force",
-        "subtype": "",
-        "swarm": ""
-      },
-      "environment": "",
-      "cr": null,
-      "spellLevel": 0
     },
     "resources": {
       "legact": {
@@ -473,60 +512,33 @@
       },
       "lair": {
         "value": false,
-        "initiative": null
+        "initiative": null,
+        "inside": false
       }
     },
     "source": {
-      "book": "Materia"
-    },
-    "traits": {
-      "size": "tiny",
-      "di": {
-        "bypasses": [],
-        "value": [],
-        "custom": ""
-      },
-      "dr": {
-        "bypasses": [],
-        "value": [],
-        "custom": ""
-      },
-      "dv": {
-        "bypasses": [],
-        "value": [],
-        "custom": ""
-      },
-      "dm": {
-        "amount": {},
-        "bypasses": []
-      },
-      "ci": {
-        "value": [],
-        "custom": ""
-      },
-      "languages": {
-        "value": [],
-        "custom": ""
-      }
+      "rules": "2024",
+      "revision": 1
     }
   },
+  "img": "modules/dnd-players-handbook/assets/portraits/reef-shark.webp",
   "prototypeToken": {
-    "name": "Spiritual Weapon",
+    "name": "Bestial Spirit",
     "displayName": 0,
     "actorLink": false,
     "appendNumber": false,
     "prependAdjective": false,
-    "width": 0.5,
-    "height": 0.5,
+    "width": 1,
+    "height": 1,
     "texture": {
-      "src": "icons/weapons/hammers/hammer-double-glowing-yellow.webp",
+      "src": "modules/dnd-players-handbook/assets/tokens/reef-shark.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
       "offsetY": 0,
       "fit": "contain",
-      "scaleX": 1,
-      "scaleY": 1,
+      "scaleX": 0.7,
+      "scaleY": 0.7,
       "rotation": 0,
       "tint": "#ffffff",
       "alphaThreshold": 0.75
@@ -535,7 +547,7 @@
     "lockRotation": false,
     "rotation": 0,
     "alpha": 1,
-    "disposition": -2,
+    "disposition": 1,
     "displayBars": 0,
     "bar1": {
       "attribute": "attributes.hp"
@@ -570,16 +582,22 @@
     },
     "sight": {
       "enabled": false,
-      "range": 0,
+      "range": 60,
       "angle": 360,
-      "visionMode": "basic",
+      "visionMode": "darkvision",
       "color": null,
       "attenuation": 0.1,
       "brightness": 0,
       "saturation": 0,
       "contrast": 0
     },
-    "detectionModes": [],
+    "detectionModes": [
+      {
+        "id": "basicSight",
+        "range": 60,
+        "enabled": true
+      }
+    ],
     "occludable": {
       "radius": 0
     },
@@ -592,7 +610,7 @@
       "effects": 1,
       "subject": {
         "scale": 1,
-        "texture": null
+        "texture": "modules/dnd-players-handbook/assets/subjects/reef-shark.webp"
       }
     },
     "flags": {},
@@ -600,75 +618,339 @@
   },
   "items": [
     {
-      "name": "Move and Attack",
-      "type": "feat",
-      "_id": "gsz2S5ODA2AxqwTu",
-      "img": "icons/weapons/hammers/hammer-double-glowing-yellow.webp",
+      "name": "Pack Tactics",
       "system": {
+        "description": {
+          "value": "<p> The spirit has Advantage on an attack roll against a creature if at least one of the spirit's allies is within 5 feet of the creature and the ally doesn't have the Incapacitated condition.</p>",
+          "chat": ""
+        },
+        "source": {
+          "custom": "",
+          "rules": "2024",
+          "revision": 1
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "type": {
+          "value": "monster",
+          "subtype": ""
+        },
+        "prerequisites": {
+          "level": null,
+          "repeatable": false
+        },
+        "properties": [],
+        "requirements": "Ally within 5 feet of target",
+        "activities": {},
+        "enchant": {},
+        "identifier": "pack-tactics",
+        "advancement": [],
+        "cover": null,
+        "crewed": false
+      },
+      "_id": "phbaoiPackTactic",
+      "type": "feat",
+      "img": "icons/skills/melee/weapons-crossed-swords-black.webp",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!actors.items!matNpcBestialWat.phbaoiPackTactic"
+    },
+    {
+      "name": "Water Breathing",
+      "system": {
+        "description": {
+          "value": "<p> The spirit can breathe only underwater.</p>",
+          "chat": ""
+        },
+        "source": {
+          "custom": "",
+          "rules": "2024",
+          "revision": 1
+        },
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "type": {
+          "value": "monster",
+          "subtype": ""
+        },
+        "prerequisites": {
+          "level": null,
+          "repeatable": false
+        },
+        "properties": [],
+        "requirements": "",
+        "activities": {},
+        "enchant": {},
+        "identifier": "water-breathing",
+        "advancement": [],
+        "cover": null,
+        "crewed": false
+      },
+      "_id": "phbaoiWaterBreat",
+      "type": "feat",
+      "img": "icons/creatures/fish/fish-bluefin-yellow-blue.webp",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!actors.items!matNpcBestialWat.phbaoiWaterBreat"
+    },
+    {
+      "name": "Multiattack",
+      "system": {
+        "description": {
+          "value": "<p>The spirit makes a number of [[/item Rend]] attacks equal to half this spell's level (round down).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Number of attacks}</p>",
+          "chat": ""
+        },
+        "source": {
+          "custom": "",
+          "rules": "2024",
+          "revision": 1
+        },
+        "uses": {
+          "max": "",
+          "recovery": [],
+          "spent": 0
+        },
+        "type": {
+          "value": "monster",
+          "subtype": ""
+        },
+        "prerequisites": {
+          "level": null,
+          "repeatable": false
+        },
+        "properties": [],
+        "requirements": "",
         "activities": {
-          "Nlu7Fhr0YMNX5SDi": {
-            "type": "attack",
-            "_id": "Nlu7Fhr0YMNX5SDi",
-            "sort": 0,
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "utility",
             "activation": {
-              "type": "bonus",
-              "value": null,
-              "override": false,
-              "condition": ""
+              "type": "action",
+              "value": 1,
+              "condition": "",
+              "override": false
             },
             "consumption": {
+              "targets": [],
               "scaling": {
-                "allowed": false
+                "allowed": false,
+                "max": ""
               },
-              "spellSlot": true,
-              "targets": []
+              "spellSlot": true
             },
             "description": {
               "chatFlavor": ""
             },
             "duration": {
+              "value": "",
               "units": "inst",
-              "concentration": false,
-              "override": false
+              "special": "",
+              "override": false,
+              "concentration": false
             },
             "effects": [],
             "range": {
-              "override": false,
-              "units": "ft",
+              "units": "self",
               "special": "",
-              "value": "5"
+              "override": false
             },
             "target": {
               "template": {
+                "count": "",
                 "contiguous": false,
-                "units": "ft",
-                "type": ""
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
               },
               "affects": {
+                "count": "",
+                "type": "",
                 "choice": false,
-                "count": "1",
-                "type": "creature",
                 "special": ""
               },
-              "override": false,
-              "prompt": true
+              "prompt": true,
+              "override": false
+            },
+            "roll": {
+              "formula": "",
+              "name": "",
+              "prompt": false,
+              "visible": false
             },
             "uses": {
               "spent": 0,
               "recovery": [],
               "max": ""
             },
+            "sort": 0,
+            "name": "Activate"
+          }
+        },
+        "enchant": {},
+        "identifier": "multiattack",
+        "advancement": [],
+        "cover": null,
+        "crewed": false
+      },
+      "_id": "phbaoiMultiattac",
+      "type": "feat",
+      "img": "icons/magic/movement/abstract-ribbons-red-orange.webp",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "activity": [],
+            "effect": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!actors.items!matNpcBestialWat.phbaoiMultiattac"
+    },
+    {
+      "name": "Rend",
+      "system": {
+        "description": {
+          "value": "<p> <em>Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> 1d8 + 4 + the spell's level Piercing damage.</p>",
+          "chat": ""
+        },
+        "source": {
+          "custom": "",
+          "rules": "2024",
+          "revision": 1
+        },
+        "uses": {
+          "max": "",
+          "recovery": [],
+          "spent": 0
+        },
+        "type": {
+          "value": "monster",
+          "subtype": ""
+        },
+        "prerequisites": {
+          "level": null,
+          "repeatable": false
+        },
+        "properties": [],
+        "requirements": "",
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "attack",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false,
+              "concentration": false
+            },
+            "effects": [],
+            "range": {
+              "value": "5",
+              "units": "ft",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
             "attack": {
+              "ability": "",
+              "bonus": "",
               "critical": {
                 "threshold": null
               },
-              "flat": true,
+              "flat": false,
               "type": {
                 "value": "melee",
-                "classification": "spell"
-              },
-              "ability": "",
-              "bonus": ""
+                "classification": "weapon"
+              }
             },
             "damage": {
               "critical": {
@@ -683,9 +965,9 @@
                   },
                   "number": 1,
                   "denomination": 8,
-                  "bonus": "",
+                  "bonus": "@mod",
                   "types": [
-                    "force"
+                    "piercing"
                   ],
                   "scaling": {
                     "number": 1
@@ -693,36 +975,24 @@
                 }
               ]
             },
-            "name": "",
-            "img": "",
-            "appliedEffects": []
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "sort": 0,
+            "name": ""
           }
         },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
-        },
-        "description": {
-          "value": "<p>As a bonus action on your turn, you can move the weapon up to 20 feet and repeat the attack against a creature within 5 feet of it.</p><p>On a hit, the target takes force damage equal to 1d8 + your spellcasting ability modifier.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for every two slot levels above the 2nd.</p>",
-          "chat": ""
-        },
-        "identifier": "new-item",
-        "source": {
-          "revision": 1,
-          "rules": "2024"
-        },
         "enchant": {},
-        "type": {
-          "value": "monster",
-          "subtype": ""
-        },
-        "prerequisites": {
-          "level": null
-        },
-        "properties": [],
-        "requirements": ""
+        "identifier": "rend",
+        "advancement": [],
+        "cover": null,
+        "crewed": false
       },
+      "_id": "phbaoiRend000000",
+      "type": "feat",
+      "img": "icons/skills/melee/blood-slash-foam-red.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
@@ -735,19 +1005,6 @@
             "activity": [],
             "effect": []
           }
-        },
-        "rsr5e": {
-          "quickFooter": {
-            "value": true
-          },
-          "quickAttack": {
-            "value": true
-          },
-          "quickDamage": {
-            "value": {
-              "0": true
-            }
-          }
         }
       },
       "_stats": {
@@ -755,16 +1012,16 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728145962428,
-        "modifiedTime": 1728146133025,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!actors.items!matNpcSpiritualW.gsz2S5ODA2AxqwTu"
+      "_key": "!actors.items!matNpcBestialWat.phbaoiRend000000"
     }
   ],
   "effects": [],
-  "sort": 800000,
+  "folder": "xh4QupPnWyfEgLpQ",
   "ownership": {
     "default": 0
   },
@@ -777,10 +1034,11 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "createdTime": 1728145855877,
-    "modifiedTime": 1728916808568,
+    "systemVersion": "4.2.2",
+    "createdTime": 1738400795675,
+    "modifiedTime": 1738400814797,
     "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_key": "!actors!matNpcSpiritualW"
+  "sort": 0,
+  "_key": "!actors!matNpcBestialWat"
 }
