@@ -1,7 +1,7 @@
 import os
 import json
 
-DIR_ROOT = 'packs\\_source\\spells\\2nd-level-spells'
+DIR_ROOT = 'packs\\_source\\spells\\3rd-level-spells'
 FILES_TO_IGNORE = [ '_folder.json' ]
 
 def updateJsonFiles(rootDir, func):
