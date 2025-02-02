@@ -1,80 +1,54 @@
 {
   "name": "Beacon of Hope",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>This spell bestows hope and vitality. Choose any number of creatures within range. For the duration, each target has advantage on Wisdom saving throws and death saving throws, and regains the maximum number of hit points possible from any healing.</p>",
+      "value": "<p>Choose any number of creatures within range. For the duration, each target has Advantage on Wisdom saving throws and Death Saving Throws and regains the maximum number of Hit Points possible from any healing.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "any",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "type": "creature",
         "count": "",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 30,
-      "long": null,
+      "value": "30",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 3,
     "school": "abj",
+    "properties": [
+      "vocal",
+      "somatic",
+      "concentration"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -85,106 +59,120 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "concentration"
-    ],
-    "crewed": false,
     "activities": {
       "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
         "effects": [
           {
-            "_id": "CYQNgm13HdsnWKZZ"
+            "_id": "5fziLN2CaamManlf"
           }
-        ]
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.MajqitvK4J5uDa8q",
-      "spell-lists": "cleric"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    }
+    "identifier": "beacon-of-hope"
   },
-  "img": "icons/magic/light/explosion-star-large-blue-yellow.webp",
+  "type": "spell",
+  "img": "icons/magic/holy/chalice-glowing-gold.webp",
   "effects": [
     {
       "name": "Hopeful",
-      "img": "icons/magic/light/explosion-star-large-blue-yellow.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.MajqitvK4J5uDa8q",
-      "transfer": false,
-      "_id": "CYQNgm13HdsnWKZZ",
-      "type": "base",
-      "system": {},
-      "changes": [
-        {
-          "key": "flags.midi-qol.advantage.ability.save.wis",
-          "mode": 0,
-          "value": "1",
-          "priority": null
-        },
-        {
-          "key": "flags.midi-qol.advantage.deathSave",
-          "mode": 0,
-          "value": "1",
-          "priority": null
-        }
-      ],
-      "disabled": false,
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplBeaconofHo",
       "duration": {
-        "startTime": null,
-        "seconds": 360,
-        "combat": null,
         "rounds": null,
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>The target has advantage on Wisdom saving throws and death saving throws, and regains the maximum number of hit points possible from any healing.</p>",
+      "disabled": false,
+      "flags": {},
+      "img": "icons/magic/holy/chalice-glowing-gold.webp",
+      "_id": "5fziLN2CaamManlf",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>The target has Advantage on Wisdom saving throws and Death Saving Throws and regains the maximum number of Hit Points possible from any healing.</p>",
       "tint": "#ffffff",
+      "transfer": false,
       "statuses": [],
       "sort": 0,
-      "flags": {},
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728189568876,
-        "modifiedTime": 1728189675665,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!MajqitvK4J5uDa8q.CYQNgm13HdsnWKZZ"
+      "_key": "!items.effects!DTLLYPVqdNERmCmB.5fziLN2CaamManlf"
     }
   ],
   "folder": "CxgAwElQGTbcnuvc",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234164,
-    "modifiedTime": 1729138814236,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "MajqitvK4J5uDa8q",
-  "sort": 3700000,
-  "_key": "!items!MajqitvK4J5uDa8q"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738510885507,
+    "modifiedTime": 1738511000745,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "DTLLYPVqdNERmCmB",
+  "sort": 0,
+  "_key": "!items!DTLLYPVqdNERmCmB"
 }

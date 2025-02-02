@@ -1,82 +1,56 @@
 {
   "name": "Fear",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You project a phantasmal image of a creature's worst fears. Each creature in a 30-foot cone must succeed on a Wisdom saving throw or drop whatever it is holding and become Frightened for the duration.</p><p>While Frightened by this spell, a creature must take the Dash action and move away from you by the safest available route on each of its turns, unless there is nowhere to move. If the creature ends its turn in a location where it doesn't have line of sight to you, the creature can make a Wisdom saving throw. On a successful save, the spell ends for that creature.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 6th level or higher, the spell is a 30-foot radius rather than cone and you choose each creature that spell targets.</p>",
+      "value": "<p>Each creature in a 30-foot Cone must succeed on a Wisdom saving throw or drop whatever it is holding and have the &amp;Reference[frightened apply=false] condition for the duration.</p><p>A Frightened creature takes the &amp;Reference[dash] action and moves away from you by the safest route on each of its turns unless there is nowhere to move. If the creature ends its turn in a space where it doesn't have line of sight to you, the creature makes a Wisdom saving throw. On a successful save, the spell ends on that creature.</p><p><strong>Using a Higher-Level Spell Slot.</strong> If you cast this spell using a level 6+ spell slot, the spell is a 30-foot radius rather than cone and you choose each creature that spell targets.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 30,
-      "width": null,
-      "units": "ft",
-      "type": "cone",
-      "prompt": true,
       "affects": {
-        "count": "",
+        "choice": false,
         "type": ""
       },
       "template": {
+        "units": "ft",
+        "type": "cone",
+        "size": "30",
+        "contiguous": false,
         "count": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "self",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "wis",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 3,
     "school": "ill",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
     "materials": {
-      "value": "A white feather or the heart of a hen.",
+      "value": "a white feather",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -85,45 +59,34 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "concentration"
-    ],
-    "crewed": false,
     "activities": {
-      "ARhu00JZBQkLi36c": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "save",
-        "_id": "ARhu00JZBQkLi36c",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [
           {
-            "_id": "8HugjzNb9sQnscjb",
+            "_id": "ijiWLu6EJZmEJPOZ",
             "onSave": false
           }
         ],
@@ -131,6 +94,7 @@
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -138,141 +102,87 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
+          "override": false
         },
         "damage": {
-          "parts": [],
-          "onSave": "half"
+          "onSave": "half",
+          "parts": []
         },
         "save": {
-          "ability": "wis",
+          "ability": [
+            "wis"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
         },
-        "name": "",
-        "img": "",
-        "appliedEffects": []
-      }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.tSF7eBQFH2hscnI8",
-      "spell-lists": "bard,sorcerer,warlock,wizard"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
       }
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
+    "identifier": "fear"
   },
-  "img": "icons/magic/control/fear-fright-monster-purple-blue.webp",
+  "type": "spell",
+  "img": "icons/magic/unholy/silhouette-robe-evil-glow.webp",
   "effects": [
     {
       "name": "Fear",
-      "origin": "Compendium.dnd5e.spells.Item.XXUDGFELgoskdOD0",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplFear000000",
       "duration": {
+        "rounds": 1,
         "startTime": null,
         "seconds": 60,
         "combat": null,
-        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "4QpReACTSQTg2KTw",
-      "changes": [],
-      "description": "<p>The target drops whatever it is holding and become Frightened for the duration. While Frightened by this spell, a creature must take the Dash action and move away from the caster by the safest available route on each of its turns, unless there is nowhere to move.</p>",
-      "transfer": false,
-      "statuses": [
-        "frightened"
-      ],
-      "flags": {},
-      "tint": "#ffffff",
-      "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "icons/magic/control/fear-fright-monster-purple-blue.webp",
-      "type": "base",
-      "system": {},
-      "sort": 0,
-      "_key": "!items.effects!tSF7eBQFH2hscnI8.4QpReACTSQTg2KTw"
-    },
-    {
-      "name": "Frightened",
-      "img": "systems/dnd5e/icons/svg/statuses/frightened.svg",
-      "origin": "Compendium.materia-dnd.spells.Item.tSF7eBQFH2hscnI8",
-      "transfer": false,
-      "_id": "8HugjzNb9sQnscjb",
-      "type": "base",
-      "system": {},
-      "changes": [],
       "disabled": false,
-      "duration": {
-        "startTime": null,
-        "seconds": 60,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "description": "",
+      "flags": {},
+      "img": "systems/dnd5e/icons/svg/statuses/frightened.svg",
+      "_id": "ijiWLu6EJZmEJPOZ",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>A &amp;Reference[frightened apply=false] creature takes the &amp;Reference[dash] action and moves away from you by the safest route on each of its turns unless there is nowhere to move. If the creature ends its turn in a space where it doesn’t have line of sight to you, the creature makes a [[/save ability=wis]] saving throw. On a successful save, the spell ends on that creature.</p>",
       "tint": "#ffffff",
+      "transfer": false,
       "statuses": [
         "frightened"
       ],
       "sort": 0,
-      "flags": {},
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1730168383641,
-        "modifiedTime": 1730168406788,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!tSF7eBQFH2hscnI8.8HugjzNb9sQnscjb"
+      "_key": "!items.effects!fBQ9uLsRDVuFkgD6.ijiWLu6EJZmEJPOZ"
     }
   ],
   "folder": "CxgAwElQGTbcnuvc",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234157,
-    "modifiedTime": 1730168383675,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "tSF7eBQFH2hscnI8",
-  "sort": 5800000,
-  "_key": "!items!tSF7eBQFH2hscnI8"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738511316417,
+    "modifiedTime": 1738511433504,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "fBQ9uLsRDVuFkgD6",
+  "sort": 0,
+  "_key": "!items!fBQ9uLsRDVuFkgD6"
 }

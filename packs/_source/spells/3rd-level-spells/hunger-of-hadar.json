@@ -1,88 +1,48 @@
 {
-  "folder": "CxgAwElQGTbcnuvc",
   "name": "Hunger of Hadar",
-  "type": "spell",
-  "_id": "mTlc6PkQhhHMrfaH",
-  "img": "icons/magic/unholy/orb-swirling-teal.webp",
   "system": {
     "description": {
-      "value": "<p>You open a gateway to the dark between the stars, a region infested with unknown horrors. A 20-foot-radius sphere of blackness and bitter cold appears, centered on a point with range and lasting for the duration. This void is filled with a cacophony of soft whispers and slurping noises that can be heard up to 30 feet away. No light, magical or otherwise, can illuminate the area, and creatures fully within the area are blinded.</p><p>The void creates a warp in the fabric of space, and the area is difficult terrain. Any creature that starts its turn in the area takes [[/r 2d6]] cold damage. Any creature that ends its turn in the area must succeed on a Dexterity saving throw or take [[/r 2d6]] acid damage as milky, otherworldly tentacles rub against it. A caster concentrating on this spell may see normally in the effect and is not blinded. The caster may also move freely through the area as if it were not difficult terrain and takes no damage from the effect.</p>",
+      "value": "<p>You open a gateway to the Far Realm, a region infested with unspeakable horrors. A 20-foot-radius Sphere of &amp;Reference[Darkness] appears, centered on a point with range and lasting for the duration. The Sphere is &amp;Reference[DifficultTerrain], and it is filled with strange whispers and slurping noises, which can be heard up to 30 feet away. No light, magical or otherwise, can illuminate the area, and creatures fully within it have the &amp;Reference[Blinded] condition.</p><p>Any creature that starts its turn in the area takes 2d6 Cold damage. Any creature that ends its turn there must succeed on a Dexterity saving throw or take 2d6 Acid damage from otherworldly tentacles.</p><p>The caster may also move freely through the area as if it were not difficult terrain and takes no damage from the effect.</p><p><strong>Using a Higher-Level Spell Slot. </strong>The Cold or Acid damage (your choice) increases by 1d6 for each spell slot level above 3.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
-    "crewed": false,
     "target": {
-      "value": 20,
-      "width": null,
-      "units": "ft",
-      "type": "radius",
-      "prompt": true,
       "affects": {
+        "choice": false,
         "count": "",
-        "type": ""
+        "type": "creature",
+        "special": ""
       },
       "template": {
+        "units": "ft",
         "type": "sphere",
+        "size": "20",
+        "contiguous": false,
         "count": ""
       }
     },
     "range": {
-      "value": 150,
-      "long": null,
+      "value": "150",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "2d6",
-          "cold"
-        ],
-        [
-          "2d6",
-          "acid"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 3,
     "school": "con",
@@ -93,7 +53,7 @@
       "concentration"
     ],
     "materials": {
-      "value": "a pickled octopus tentacle",
+      "value": "a pickled tentacle",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -102,40 +62,37 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
     "activities": {
-      "TkHdxW24vI6wDp9g": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "utility",
-        "_id": "TkHdxW24vI6wDp9g",
-        "sort": -100000,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -143,80 +100,27 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
         },
         "uses": {
           "spent": 0,
           "recovery": [],
           "max": ""
         },
-        "roll": {
-          "prompt": false,
-          "visible": false,
-          "name": "",
-          "formula": ""
-        },
+        "sort": 0,
         "name": "Open Gateway",
-        "img": "",
-        "appliedEffects": []
+        "img": "systems/dnd5e/icons/svg/activity/summon.svg"
       },
-      "dnd5eactivity000": {
-        "sort": 200000,
-        "name": "End of Turn Save",
-        "img": "",
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 2,
-              "denomination": 6,
-              "bonus": "",
-              "types": [
-                "acid"
-              ],
-              "scaling": {
-                "mode": "",
-                "number": 1
-              }
-            }
-          ]
-        },
-        "appliedEffects": [],
-        "activation": {
-          "override": true,
-          "type": "",
-          "condition": ""
-        },
-        "duration": {
-          "override": true
-        },
-        "consumption": {
-          "spellSlot": false
-        },
-        "range": {
-          "override": true,
-          "units": "spec",
-          "special": ""
-        },
-        "target": {
-          "override": true,
-          "affects": {
-            "count": "1",
-            "type": "creature",
-            "special": ""
-          },
-          "template": {
-            "type": ""
-          }
-        }
-      },
-      "deplB2GTsTeY9SWx": {
+      "G6bH5mBR3kkEYjYe": {
         "type": "damage",
-        "_id": "deplB2GTsTeY9SWx",
+        "name": "Start of Turn Damage",
+        "_id": "G6bH5mBR3kkEYjYe",
         "sort": 0,
         "activation": {
           "type": "",
@@ -242,7 +146,7 @@
         "effects": [],
         "range": {
           "override": true,
-          "units": "spec",
+          "units": "any",
           "special": ""
         },
         "target": {
@@ -253,7 +157,7 @@
           },
           "affects": {
             "choice": false,
-            "count": "2",
+            "count": "1",
             "type": "creature",
             "special": ""
           },
@@ -282,19 +186,17 @@
                 "cold"
               ],
               "scaling": {
-                "mode": "",
+                "mode": "whole",
                 "number": 1
               }
             }
           ]
-        },
-        "name": "Start of Turn Damage",
-        "img": "",
-        "appliedEffects": []
+        }
       },
-      "UOBbGwij1PbckzI7": {
+      "FGDyvqQz5JQQc5mf": {
         "type": "save",
-        "_id": "UOBbGwij1PbckzI7",
+        "name": "End of Turn Save",
+        "_id": "FGDyvqQz5JQQc5mf",
         "sort": 0,
         "activation": {
           "type": "",
@@ -320,7 +222,7 @@
         "effects": [],
         "range": {
           "override": true,
-          "units": "spec",
+          "units": "any",
           "special": ""
         },
         "target": {
@@ -357,65 +259,51 @@
                 "acid"
               ],
               "scaling": {
-                "mode": "",
+                "mode": "whole",
                 "number": 1
               }
             }
           ],
-          "onSave": "half"
+          "onSave": "none"
         },
         "save": {
-          "ability": "dex",
+          "ability": [
+            "dex"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
-        },
-        "name": "End of Turn Save",
-        "img": "",
-        "appliedEffects": []
+        }
       }
-    }
+    },
+    "identifier": "hunger-of-hadar"
   },
+  "type": "spell",
+  "img": "icons/magic/unholy/orb-stone-pink.webp",
   "effects": [],
-  "sort": 5100000,
+  "folder": "CxgAwElQGTbcnuvc",
   "ownership": {
     "default": 0
   },
   "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.mTlc6PkQhhHMrfaH",
-      "spell-lists": "warlock"
-    },
     "dnd5e": {
       "riders": {
         "activity": [],
         "effect": []
       }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true,
-          "1": true
-        }
-      }
     }
   },
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1708818686472,
-    "modifiedTime": 1728221994207,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738513672065,
+    "modifiedTime": 1738513700439,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_key": "!items!mTlc6PkQhhHMrfaH"
+  "_id": "IQMRB6RSlNfAFlG5",
+  "sort": 0,
+  "_key": "!items!IQMRB6RSlNfAFlG5"
 }

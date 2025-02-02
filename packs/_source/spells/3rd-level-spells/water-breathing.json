@@ -1,81 +1,57 @@
 {
   "name": "Water Breathing",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>This spell grants up to ten willing creatures you can see within range the ability to breathe underwater until the spell ends. Affected creatures also retain their normal mode of respiration.</p>",
+      "value": "<p>This spell grants up to ten willing creatures of your choice within range the ability to breathe underwater until the spell ends. Affected creatures also retain their normal mode of respiration.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "24",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": 10,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "type": "willing",
+        "count": "10",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 30,
-      "long": null,
+      "value": "30",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 3,
     "school": "trs",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "ritual"
+    ],
     "materials": {
-      "value": "A short reed or piece of straw",
+      "value": "a short reed",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -84,94 +60,120 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "ritual"
-    ],
-    "crewed": false,
     "activities": {
       "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
         "effects": [
           {
-            "_id": "g87gjWWB12MjjGbA"
+            "_id": "hyFupFam9XIbim0U"
           }
-        ]
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.oucfQyICdTkleTku",
-      "spell-lists": "artificer,druid,ranger,sorcerer,wizard"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    }
+    "identifier": "water-breathing"
   },
-  "img": "icons/magic/water/pseudopod-swirl-blue.webp",
+  "type": "spell",
+  "img": "icons/magic/water/bubbles-air-water-blue.webp",
   "effects": [
     {
       "name": "Water Breathing",
-      "img": "icons/magic/water/pseudopod-swirl-blue.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.oucfQyICdTkleTku",
-      "transfer": false,
-      "_id": "g87gjWWB12MjjGbA",
-      "type": "base",
-      "system": {},
-      "changes": [],
-      "disabled": false,
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplWaterBreat",
       "duration": {
+        "rounds": null,
         "startTime": null,
         "seconds": 86400,
         "combat": null,
-        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>The target has the ability to breathe underwater until the spell ends. Affected creatures also retain their normal mode of respiration.</p>",
+      "disabled": false,
+      "flags": {},
+      "img": "icons/creatures/fish/crab-blue-purple.webp",
+      "_id": "hyFupFam9XIbim0U",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "",
       "tint": "#ffffff",
+      "transfer": false,
       "statuses": [],
       "sort": 0,
-      "flags": {},
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728311936768,
-        "modifiedTime": 1728311973934,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!oucfQyICdTkleTku.g87gjWWB12MjjGbA"
+      "_key": "!items.effects!81LtTMak5D8fCKs1.hyFupFam9XIbim0U"
     }
   ],
   "folder": "CxgAwElQGTbcnuvc",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234054,
-    "modifiedTime": 1728311979019,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "oucfQyICdTkleTku",
-  "sort": 600000,
-  "_key": "!items!oucfQyICdTkleTku"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738514756612,
+    "modifiedTime": 1738514756612,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "81LtTMak5D8fCKs1",
+  "sort": 0,
+  "_key": "!items!81LtTMak5D8fCKs1"
 }

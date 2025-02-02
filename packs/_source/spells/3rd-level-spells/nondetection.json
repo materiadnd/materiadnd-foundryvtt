@@ -1,177 +1,177 @@
 {
   "name": "Nondetection",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>For the Duration, you hide a target that you touch from Divination magic. The target can be a willing creature or a place or an object no larger than 10 feet in any dimension. The target can't be targeted by any divination magic or perceived through magical Scrying sensors.</p>",
+      "value": "<p>For the duration, you hide a target that you touch from Divination spells. The target can be a willing creature, or it can be a place or an object no larger than 10 feet in any dimension. The target can't be targeted by any Divination spell or perceived through magical scrying sensors.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "8",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
-        "type": "creatureOrObject",
+        "type": "any",
+        "count": "",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "touch",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 3,
     "school": "abj",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "A pinch of diamond dust worth 25 gp sprinkled over the target, which the spell consumes",
+      "value": "a pinch of diamond dust worth 25+ GP, which the spell consumes",
       "consumed": true,
-      "cost": 25,
+      "cost": 0,
       "supply": 0
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material"
-    ],
-    "crewed": false,
     "activities": {
       "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
         "effects": [
           {
-            "_id": "wWm3kfSbDKBC1TSB"
+            "_id": "usz9yzOPHV4Nb93D"
           }
-        ]
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.iA57QHGIgGaSpASf",
-      "spell-lists": "bard,ranger,wizard"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    }
+    "identifier": "nondetection"
   },
-  "img": "icons/magic/perception/eye-ringed-glow-angry-red.webp",
+  "type": "spell",
+  "img": "icons/magic/perception/hand-eye-fire-blue.webp",
   "effects": [
     {
       "name": "Hidden from Divination",
-      "img": "icons/magic/perception/eye-ringed-glow-angry-red.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.iA57QHGIgGaSpASf",
-      "transfer": false,
-      "_id": "wWm3kfSbDKBC1TSB",
-      "type": "base",
-      "system": {},
-      "changes": [],
-      "disabled": false,
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplNondetecti",
       "duration": {
+        "rounds": null,
         "startTime": null,
         "seconds": 28800,
         "combat": null,
-        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>The target can't be targeted by any divination magic or perceived through magical Scrying sensors.</p>",
+      "disabled": false,
+      "flags": {},
+      "img": "icons/magic/perception/mask-stone-eyes-orange.webp",
+      "_id": "usz9yzOPHV4Nb93D",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "",
       "tint": "#ffffff",
+      "transfer": false,
       "statuses": [],
       "sort": 0,
-      "flags": {},
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728283212658,
-        "modifiedTime": 1728283285418,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!iA57QHGIgGaSpASf.wWm3kfSbDKBC1TSB"
+      "_key": "!items.effects!SOYYa2ZNFyHtu84W.usz9yzOPHV4Nb93D"
     }
   ],
   "folder": "CxgAwElQGTbcnuvc",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234168,
-    "modifiedTime": 1728283305063,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "iA57QHGIgGaSpASf",
-  "sort": 900000,
-  "_key": "!items!iA57QHGIgGaSpASf"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738514210705,
+    "modifiedTime": 1738514256742,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "SOYYa2ZNFyHtu84W",
+  "sort": 0,
+  "_key": "!items!SOYYa2ZNFyHtu84W"
 }

@@ -1,85 +1,53 @@
 {
-  "folder": "CxgAwElQGTbcnuvc",
   "name": "Animate Dead",
-  "type": "spell",
-  "_id": "3YszGKeKcRAu6KqE",
-  "img": "icons/magic/control/fear-fright-shadow-monster-red.webp",
   "system": {
     "description": {
-      "value": "<p>This spell creates an undead servant. Choose a pile of bones or a corpse of a Medium or Small humanoid within range. Your spell imbues the target with a foul mimicry of life, raising it as an undead creature. The animated target uses the @UUID[Compendium.materia-dnd.actors.Actor.EdSU5juWaAVXxwrs]{Undead Creature}'s stat block.</p><p>On each of your turns, you can use a bonus action to mentally command any creature you made with this spell if the creature is within 60 feet of you (if you control multiple creatures, you can command any or all of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move during its next turn, or you can issue a general command, such as to guard a particular chamber or corridor. If you issue no commands, the creature only defends itself against hostile creatures. Once given an order, the creature continues to follow it until its task is complete.</p><p>The creature is under your control for 24 hours, after which it stops obeying any command you have given it. To maintain control of the creature for another 24 hours, you must cast this spell on the creature again before the current 24-hour period ends. This use of the spell reasserts your control over up to four creatures you have animated with this spell, rather than animating a new one.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 4th level or higher, you animate or reassert control over two additional undead creatures for each slot level above 3rd. Each of the creatures must come from a different corpse or pile of bones.</p>",
+      "value": "<p>Choose a pile of bones or a corpse of a Medium or Small Humanoid within range. The target uses the <strong>@UUID[Compendium.materia-dnd.actors.Actor.EdSU5juWaAVXxwrs]{Undead Creature}</strong> stat block.</p><p>On each of your turns, you can take a Bonus Action to mentally command any creature you made with this spell if the creature is within 60 feet of you (if you control multiple creatures, you can command any of them at the same time, issuing the same command to each one). You decide what action the creature will take and where it will move on its next turn, or you can issue a general command, such as to guard a chamber or corridor. If you issue no commands, the creature takes the Dodge action and moves only to avoid harm. Once given an order, the creature continues to follow it until its task is complete.</p><p>The creature is under your control for 24 hours, after which it stops obeying any command you've given it. To maintain control of the creature for another 24 hours, you must cast this spell on the creature again before the current 24-hour period ends. This use of the spell reasserts your control over up to four creatures you have animated with this spell rather than animating a new creature.</p><p><strong>Using a Higher-Level Spell Slot.</strong> You animate or reassert control over two additional Undead creatures for each spell slot level above 3. Each of the creatures must come from a different corpse or pile of bones.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "minute",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": 1
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
-    "crewed": false,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "object",
-      "prompt": true,
       "affects": {
+        "type": "object",
+        "count": "@item.level * 2 - 5",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 10,
-      "long": null,
+      "value": "10",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "summ",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 3,
     "school": "nec",
     "properties": [
       "vocal",
       "somatic",
-      "material",
-      "mgc"
+      "material"
     ],
     "materials": {
       "value": "a drop of blood, a piece of flesh, and a pinch of bone dust",
@@ -91,61 +59,36 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "summons": {
-      "match": {
-        "proficiency": true,
-        "attacks": true,
-        "saves": false
-      },
-      "bonuses": {
-        "ac": "",
-        "hp": "",
-        "attackDamage": "",
-        "saveDamage": "",
-        "healing": ""
-      },
-      "profiles": [
-        {
-          "name": "",
-          "_id": "pcqmPyQYi2yiIwNS",
-          "uuid": "Compendium.materia-dnd.actors.Actor.EdSU5juWaAVXxwrs"
-        }
-      ]
-    },
     "activities": {
-      "vMtifiIwbYZI0Yz8": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "summon",
-        "_id": "vMtifiIwbYZI0Yz8",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
-        "effects": [],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -153,20 +96,14 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
+          "override": false
         },
         "bonuses": {
           "ac": "",
           "hd": "",
           "hp": "",
-          "attackDamage": "@prof",
-          "saveDamage": "@prof",
+          "attackDamage": "",
+          "saveDamage": "",
           "healing": ""
         },
         "creatureSizes": [],
@@ -174,64 +111,48 @@
         "match": {
           "attacks": true,
           "proficiency": true,
-          "saves": true
+          "saves": true,
+          "ability": ""
         },
         "profiles": [
           {
             "count": "",
             "name": "",
-            "_id": "n4sl7CstKM2str4X",
+            "_id": "JNplyb7jNVmxvkrg",
             "uuid": "Compendium.materia-dnd.actors.Actor.EdSU5juWaAVXxwrs",
             "level": {
               "min": null,
               "max": null
-            },
-            "types": []
+            }
           }
         ],
         "summon": {
-          "prompt": true,
-          "mode": ""
+          "identifier": "",
+          "mode": "",
+          "prompt": false
         },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "effects": [],
         "name": "",
         "img": "",
         "appliedEffects": []
       }
-    }
+    },
+    "identifier": "animate-dead"
   },
+  "type": "spell",
+  "img": "icons/magic/death/undead-zombie-grave-green.webp",
   "effects": [],
-  "sort": 6900000,
+  "folder": "CxgAwElQGTbcnuvc",
   "ownership": {
     "default": 0
   },
   "flags": {
-    "midiProperties": {
-      "confirmTargets": "default",
-      "autoFailFriendly": false,
-      "autoSaveFriendly": false,
-      "critOther": false,
-      "offHandWeapon": false,
-      "magicdam": false,
-      "magiceffect": false,
-      "concentration": false,
-      "noConcentrationCheck": false,
-      "toggleEffect": false,
-      "ignoreTotalCover": false
-    },
-    "midi-qol": {
-      "rollAttackPerTarget": "default",
-      "itemCondition": "",
-      "effectCondition": ""
-    },
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.3YszGKeKcRAu6KqE",
-      "spell-lists": "cleric,wizard"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    },
     "dnd5e": {
       "riders": {
         "activity": [],
@@ -240,13 +161,15 @@
     }
   },
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1708815464989,
-    "modifiedTime": 1730167909018,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738510775182,
+    "modifiedTime": 1738510845664,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_key": "!items!3YszGKeKcRAu6KqE"
+  "_id": "1SzyCr8jo18WbJsD",
+  "sort": 0,
+  "_key": "!items!1SzyCr8jo18WbJsD"
 }

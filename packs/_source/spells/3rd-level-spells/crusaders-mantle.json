@@ -1,85 +1,47 @@
 {
-  "folder": "CxgAwElQGTbcnuvc",
   "name": "Crusader's Mantle",
-  "type": "spell",
-  "_id": "gcyhDtwcVAR6fyWc",
-  "img": "icons/magic/defensive/shield-barrier-flaming-pentagon-orange.webp",
   "system": {
     "description": {
-      "value": "<p>Holy power radiates from you in an aura with a 30-foot radius, awakening boldness in friendly creatures. Until the spell ends, the aura moves with you, centered on you. While in the aura, each nonhostile creature in the aura (including you) deals an extra [[/r 1d4]] radiant damage when it hits with a weapon attack.</p>",
+      "value": "<p>You radiate a magical aura in a 30-foot Emanation. While in the aura, you and your allies each deal an extra [[/damage 1d4 radiant]] damage when hitting with a weapon or an Unarmed Strike.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
-    "crewed": false,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "self",
-      "prompt": true,
       "affects": {
+        "choice": false,
+        "count": "",
+        "type": "ally",
         "special": ""
       },
       "template": {
+        "units": "ft",
+        "contiguous": false,
         "type": "radius",
         "size": "30",
-        "count": "",
-        "units": "ft"
+        "count": ""
       }
     },
     "range": {
-      "value": 30,
-      "long": null,
-      "units": "ft",
+      "units": "self",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "other",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "1d4",
-          "radiant"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 3,
     "school": "evo",
@@ -97,44 +59,41 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
     "activities": {
-      "q8bfokckN4TdjiOl": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "utility",
-        "_id": "q8bfokckN4TdjiOl",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [
           {
-            "_id": "gu1Wk4JyShNE4PaU"
+            "_id": "A0Ygu7lYccaS4Q1K"
           }
         ],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -142,33 +101,34 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
         },
         "uses": {
           "spent": 0,
           "recovery": [],
           "max": ""
         },
-        "roll": {
-          "prompt": false,
-          "visible": false,
-          "name": "",
-          "formula": ""
-        },
-        "name": "Cast",
-        "img": "",
-        "appliedEffects": []
+        "sort": 0,
+        "name": "Cast"
       }
-    }
+    },
+    "identifier": "crusaders-mantle"
   },
+  "type": "spell",
+  "img": "icons/equipment/back/cape-layered-violet-white-accent.webp",
   "effects": [
     {
       "name": "Crusader's Mantle",
-      "img": "icons/magic/defensive/shield-barrier-flaming-pentagon-orange.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.gcyhDtwcVAR6fyWc",
+      "img": "icons/equipment/back/cape-layered-violet-white-swirl.webp",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplCrusadersM",
       "transfer": false,
-      "_id": "gu1Wk4JyShNE4PaU",
+      "_id": "A0Ygu7lYccaS4Q1K",
       "type": "base",
       "system": {},
       "changes": [
@@ -195,7 +155,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>While in the aura, each nonhostile creature in the aura (including you) deals an extra 1d4 radiant damage when it hits with a weapon attack.</p>",
+      "description": "",
       "tint": "#ffffff",
       "statuses": [],
       "sort": 0,
@@ -205,29 +165,19 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728196277984,
-        "modifiedTime": 1728196312426,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!gcyhDtwcVAR6fyWc.gu1Wk4JyShNE4PaU"
+      "_key": "!items.effects!8r1sU69zWcCXfogz.A0Ygu7lYccaS4Q1K"
     }
   ],
+  "folder": "CxgAwElQGTbcnuvc",
+  "ownership": {
+    "default": 0
+  },
   "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.gcyhDtwcVAR6fyWc",
-      "spell-lists": "paladin"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
-        }
-      }
-    },
     "dnd5e": {
       "riders": {
         "activity": [],
@@ -236,17 +186,15 @@
     }
   },
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1707236760084,
-    "modifiedTime": 1728196278042,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738511233665,
+    "modifiedTime": 1738511244159,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "sort": 6800000,
-  "ownership": {
-    "default": 0
-  },
-  "_key": "!items!gcyhDtwcVAR6fyWc"
+  "_id": "8r1sU69zWcCXfogz",
+  "sort": 0,
+  "_key": "!items!8r1sU69zWcCXfogz"
 }

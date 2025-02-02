@@ -1,81 +1,56 @@
 {
   "name": "Gaseous Form",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You transform a willing creature you touch, along with everything it's wearing and carrying, into a misty cloud for the duration. The spell ends if the creature drops to 0 hit points. An incorporeal creature isn't affected.</p><p>While in this form, the target's only method of movement is a flying speed of 10 feet. The target can enter and occupy the space of another creature. The target has immunity to nonmagical damage, and it has advantage on Strength, Dexterity, and Constitution saving throws. The target can pass through small holes, narrow openings, and even mere cracks, though it treats liquids as though they were solid surfaces. The target can't fall and remains hovering in the air even when stunned or otherwise incapacitated.</p><p>While in the form of a misty cloud, the target can't talk or manipulate objects, and any objects it was carrying or holding can't be dropped, used, or otherwise interacted with. The target can't attack or cast spells.</p>",
+      "value": "<p>A willing creature you touch shape-shifts, along with everything it's wearing and carrying, into a misty cloud for the duration. The spell ends on the target if it drops to 0 Hit Points or if it takes a Magic action to end the spell on itself.</p><p>While in this form, the target's only method of movement is a Fly Speed of 10 feet, and it can hover. The target can enter and occupy the space of another creature. The target has Resistance to Bludgeoning, Piercing, and Slashing damage; it has Immunity to the &amp;Reference[prone apply=false] condition; and it has Advantage on Strength, Dexterity, and Constitution saving throws. The target can pass through narrow openings, but it treats liquids as though they were solid surfaces.</p><p>The target can't talk or manipulate objects, and any objects it was carrying or holding can't be dropped, used, or otherwise interacted with. Finally, the target can't attack or cast spells.</p><p><strong>Using a Higher-Level Spell Slot.</strong> You can target one additional creature for each spell slot level above 3.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "type": "willing",
+        "count": "@item.level - 2",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "touch",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 3,
     "school": "trs",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
     "materials": {
-      "value": "A bit of gauze and a wisp of smoke",
+      "value": "a bit of gauze",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -84,52 +59,84 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "concentration"
-    ],
-    "crewed": false,
     "activities": {
       "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
         "effects": [
           {
-            "_id": "Mh9RElOSY0PuPyWs"
+            "_id": "QeYsfnjEj2T9A3C8"
           }
-        ]
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.nziWfOYRpN1xj3Gb",
-      "spell-lists": "sorcerer,warlock,wizard"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    }
+    "identifier": "gaseous-form"
   },
-  "img": "icons/magic/air/fog-gas-smoke-dense-green.webp",
+  "type": "spell",
+  "img": "icons/magic/air/air-smoke-casting.webp",
   "effects": [
     {
       "name": "Gaseous Form",
-      "img": "icons/magic/air/fog-gas-smoke-dense-green.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.nziWfOYRpN1xj3Gb",
-      "transfer": false,
-      "_id": "Mh9RElOSY0PuPyWs",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplGaseousFor",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "icons/magic/air/wind-vortex-swirl-blue-purple.webp",
+      "_id": "QeYsfnjEj2T9A3C8",
       "type": "base",
       "system": {},
       "changes": [
@@ -140,81 +147,77 @@
           "priority": null
         },
         {
-          "key": "system.attributes.movement.walk",
-          "mode": 3,
-          "value": "0",
+          "key": "system.attributes.movement.hover",
+          "mode": 5,
+          "value": "true",
           "priority": null
         },
         {
-          "key": "system.attributes.movement.climb",
-          "mode": 3,
-          "value": "0",
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "bludgeoning",
           "priority": null
         },
         {
-          "key": "system.attributes.movement.swim",
-          "mode": 3,
-          "value": "0",
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "piercing",
           "priority": null
         },
         {
-          "key": "flags.midi-qol.advantage.ability.save.str",
-          "mode": 0,
-          "value": "1",
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "slashing",
           "priority": null
         },
         {
-          "key": "flags.midi-qol.advantage.ability.save.dex",
-          "mode": 0,
-          "value": "1",
+          "key": "system.traits.ci.value",
+          "mode": 2,
+          "value": "prone",
           "priority": null
         },
         {
-          "key": "flags.midi-qol.advantage.ability.save.con",
-          "mode": 0,
-          "value": "1",
+          "key": "img",
+          "mode": 5,
+          "value": "icons/magic/air/wind-vortex-swirl-blue-purple.webp",
           "priority": null
         }
       ],
-      "disabled": false,
-      "duration": {
-        "startTime": null,
-        "seconds": 3600,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "description": "<p>The target is transformed, along with everything it's wearing and carrying, into a misty cloud for the duration. The spell ends if the creature drops to 0 hit points. An incorporeal creature isn't affected.</p><p>While in this form, the target's only method of movement is a flying speed of 10 feet. The target can enter and occupy the space of another creature. The target has immunity to nonmagical damage, and it has advantage on Strength, Dexterity, and Constitution saving throws. The target can pass through small holes, narrow openings, and even mere cracks, though it treats liquids as though they were solid surfaces. The target can't fall and remains hovering in the air even when stunned or otherwise incapacitated.</p><p>While in the form of a misty cloud, the target can't talk or manipulate objects, and any objects it was carrying or holding can't be dropped, used, or otherwise interacted with. The target can't attack or cast spells.</p>",
+      "description": "<p>The target’s only method of movement is a Fly Speed of 10 feet, and it can hover. The target can enter and occupy the space of another creature. The target has Resistance to Bludgeoning, Piercing, and Slashing damage; it has Immunity to the &amp;Reference[prone apply=false] condition; and it has Advantage on Strength, Dexterity, and Constitution saving throws. The target can pass through narrow openings, but it treats liquids as though they were solid surfaces.</p><p>The target can’t talk or manipulate objects, and any objects it was carrying or holding can’t be dropped, used, or otherwise interacted with. Finally, the target can’t attack or cast spells.</p>",
       "tint": "#ffffff",
-      "statuses": [],
+      "transfer": false,
+      "statuses": [
+        "transformed"
+      ],
       "sort": 0,
-      "flags": {},
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728220143911,
-        "modifiedTime": 1728220366599,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!nziWfOYRpN1xj3Gb.Mh9RElOSY0PuPyWs"
+      "_key": "!items.effects!zcsrMAvB7ur53OOM.QeYsfnjEj2T9A3C8"
     }
   ],
   "folder": "CxgAwElQGTbcnuvc",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234058,
-    "modifiedTime": 1728220382916,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "nziWfOYRpN1xj3Gb",
-  "sort": 5700000,
-  "_key": "!items!nziWfOYRpN1xj3Gb"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738513271649,
+    "modifiedTime": 1738513282098,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "zcsrMAvB7ur53OOM",
+  "sort": 0,
+  "_key": "!items!zcsrMAvB7ur53OOM"
 }

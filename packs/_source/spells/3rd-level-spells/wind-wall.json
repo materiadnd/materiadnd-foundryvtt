@@ -1,89 +1,61 @@
 {
   "name": "Wind Wall",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>A wall of strong wind rises from the ground at a point you choose within range. You can make the wall up to 50 feet long, 15 feet high, and 1 foot thick. You can shape the wall in any way you choose so long as it makes one continuous path along the ground. The wall lasts for the Duration.</p>\n        <p>When the wall appears, each creature within its area must make a Strength saving throw. A creature takes [[/r 3d8]] bludgeoning damage on a failed save, or half as much damage on a successful one.</p>\n        <p>The strong wind keeps fog, smoke, and other gases at bay. Small or smaller flying creatures or objects can't pass through the wall. Loose, lightweight materials brought into the wall fly upward. Arrows, bolts, and other ordinary projectiles launched at targets behind the wall are deflected upward and automatically miss. (Boulders hurled by Giants or siege engines, and similar projectiles, are unaffected.) Creatures in gaseous form can't pass through it.</p>",
+      "value": "<p>A wall of strong wind rises from the ground at a point you choose within range. You can make the wall up to 50 feet long, 15 feet high, and 1 foot thick. You can shape the wall in any way you choose so long as it makes one continuous path along the ground. The wall lasts for the duration.</p><p>When the wall appears, each creature in its area makes a Strength saving throw, taking 4d8 Bludgeoning damage on a failed save or half as much damage on a successful one.</p><p>The strong wind keeps fog, smoke, and other gases at bay. Small or smaller flying creatures or objects can't pass through the wall. Loose, lightweight materials brought into the wall fly upward. Arrows, bolts, and other ordinary projectiles launched at targets behind the wall are deflected upward and miss automatically. Boulders hurled by Giants or siege engines, and similar projectiles, are unaffected. Creatures in gaseous form can't pass through it.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 50,
-      "width": null,
-      "units": "ft",
-      "type": "wall",
-      "prompt": true,
       "affects": {
-        "count": "",
-        "type": ""
+        "choice": false,
+        "count": "1",
+        "type": "space",
+        "special": ""
       },
       "template": {
+        "units": "ft",
         "width": "1",
-        "height": "15",
-        "count": ""
+        "type": "",
+        "size": "50",
+        "contiguous": false,
+        "count": "",
+        "height": "15"
       }
     },
     "range": {
-      "value": 120,
-      "long": null,
+      "value": "120",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "3d8",
-          "bludgeoning"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "str",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 3,
     "school": "evo",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
     "materials": {
-      "value": "A tiny fan and a feather of exotic origin",
+      "value": "a fan and a feather",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -92,29 +64,63 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "concentration"
-    ],
-    "crewed": false,
     "activities": {
       "dnd5eactivity000": {
-        "name": "Create Single Wall",
-        "img": "",
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": false,
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "wall",
+            "size": "50",
+            "width": "1",
+            "height": "15",
+            "count": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true
+        },
         "damage": {
+          "onSave": "half",
           "parts": [
             {
               "custom": {
                 "enabled": false,
                 "formula": ""
               },
-              "number": 3,
+              "number": 4,
               "denomination": 8,
               "bonus": "",
               "types": [
@@ -127,37 +133,52 @@
             }
           ]
         },
-        "appliedEffects": []
-      },
-      "rzkFzvbfpxU78u6g": {
-        "type": "save",
-        "_id": "rzkFzvbfpxU78u6g",
+        "save": {
+          "ability": [
+            "str"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
         "sort": 0,
+        "name": "Create Single Wall"
+      },
+      "H2KvnEEAgoE3YeK5": {
+        "type": "save",
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": false,
           "template": {
             "contiguous": true,
             "units": "ft",
@@ -170,71 +191,71 @@
           "affects": {
             "choice": false,
             "count": "",
-            "type": ""
+            "type": "creature",
+            "special": ""
           },
-          "override": true,
-          "prompt": true
+          "override": true
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 4,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "bludgeoning"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "save": {
+          "ability": [
+            "str"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
         },
         "uses": {
           "spent": 0,
           "recovery": [],
           "max": ""
         },
-        "damage": {
-          "parts": [],
-          "onSave": "half"
-        },
-        "save": {
-          "ability": "str",
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
-        },
+        "sort": 0,
         "name": "Create Segmented Wall",
-        "img": "",
-        "appliedEffects": []
-      }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.4T94Gavdu0X1dUSK",
-      "spell-lists": "druid,ranger"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
-        }
+        "_id": "H2KvnEEAgoE3YeK5"
       }
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
+    "identifier": "wind-wall"
   },
-  "img": "icons/magic/air/fog-gas-smoke-swirling-white.webp",
+  "type": "spell",
+  "img": "icons/magic/air/wind-tornado-funnel-damage-blue.webp",
   "effects": [],
   "folder": "CxgAwElQGTbcnuvc",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234188,
-    "modifiedTime": 1728312878180,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "4T94Gavdu0X1dUSK",
-  "sort": 200000,
-  "_key": "!items!4T94Gavdu0X1dUSK"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738514837184,
+    "modifiedTime": 1738514837184,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "BJIcQnb6U73II764",
+  "sort": 0,
+  "_key": "!items!BJIcQnb6U73II764"
 }

@@ -1,83 +1,45 @@
 {
-  "folder": "CxgAwElQGTbcnuvc",
   "name": "Conjure Barrage",
-  "type": "spell",
-  "_id": "d9hL2WW6P8aomrgq",
-  "img": "icons/skills/ranged/arrows-flying-salvo-blue.webp",
   "system": {
     "description": {
-      "value": "<p>You throw a nonmagical weapon or fire a piece of nonmagical ammunition into the air to create a cone of identical weapons that shoot forward and then disappear. Each creature in a 60-foot cone must succeed on a Dexterity saving throw. A creature takes [[/r 5d8]] damage on a failed save, or half as much damage on a successful one. The damage type is the same as that of the weapon or ammunition used as a component.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 4th or higher level, the damage increases by [[/r 1d8]] for each slot level above 3rd.</p>",
+      "value": "<p>You brandish the weapon used to cast the spell and conjure similar spectral weapons (or ammunition appropriate to the weapon) that launch forward and then disappear. Each creature of your choice that you can see in a 60-foot Cone makes a Dexterity saving throw, taking [[/damage 5d8 force]] damage on a failed save or half as much damage on a successful one.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d8 for each spell slot level above 3.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
-    "crewed": false,
     "target": {
-      "value": 60,
-      "width": null,
-      "units": "ft",
-      "type": "cone",
-      "prompt": true,
       "affects": {
-        "count": "",
+        "choice": false,
         "type": ""
       },
       "template": {
+        "units": "ft",
+        "type": "cone",
+        "size": "60",
+        "contiguous": false,
         "count": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "self",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "5d8",
-          ""
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 3,
     "school": "con",
@@ -87,7 +49,7 @@
       "material"
     ],
     "materials": {
-      "value": "one piece of ammunition or a thrown weapon",
+      "value": "a Melee or Ranged weapon worth at least 1 CP",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -96,40 +58,37 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "1d8"
-    },
     "activities": {
-      "AuMExGGCLZajrg8X": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "save",
-        "_id": "AuMExGGCLZajrg8X",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -137,84 +96,66 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
+          "override": false
         },
         "damage": {
+          "onSave": "half",
           "parts": [
             {
+              "number": 5,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "force"
+              ],
               "custom": {
                 "enabled": false,
                 "formula": ""
               },
-              "number": 5,
-              "denomination": 8,
-              "bonus": "",
-              "types": [],
               "scaling": {
                 "mode": "whole",
-                "number": 1
+                "number": 1,
+                "formula": ""
               }
             }
-          ],
-          "onSave": "half"
+          ]
         },
         "save": {
-          "ability": "dex",
+          "ability": [
+            "dex"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
         },
-        "name": "",
-        "img": "",
-        "appliedEffects": []
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
       }
-    }
+    },
+    "identifier": "conjure-barrage"
   },
+  "type": "spell",
+  "img": "icons/skills/ranged/daggers-thrown-salvo-teal.webp",
   "effects": [],
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.d9hL2WW6P8aomrgq",
-      "spell-lists": "ranger"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
-        }
-      }
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
-  },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1707232916531,
-    "modifiedTime": 1730168134173,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
-  },
-  "sort": 6700000,
+  "folder": "CxgAwElQGTbcnuvc",
   "ownership": {
     "default": 0
   },
-  "_key": "!items!d9hL2WW6P8aomrgq"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738511182098,
+    "modifiedTime": 1738511195048,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "c2pyto9RIqSyprUq",
+  "sort": 0,
+  "_key": "!items!c2pyto9RIqSyprUq"
 }

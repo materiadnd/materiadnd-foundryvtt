@@ -1,81 +1,53 @@
 {
   "name": "Vampiric Touch",
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>The touch of your shadow-wreathed hand can siphon life force from others to heal your wounds. Make a melee spell attack against a creature within your reach. On a hit, the target takes [[/r 4d6]] necrotic damage, and you regain hit points equal to half the amount of necrotic damage dealt. Until the spell ends, you can make the attack again on each of your turns as an action.</p><p><strong>Higher Levels.</strong> When you cast this spell using a spell slot of 4th level or higher, the damage increases by [[/r 1d6]] for each slot level above 3rd.</p>",
+      "value": "<p>The touch of your shadow-wreathed hand can siphon life force from others to heal your wounds. Make a melee spell attack against one creature within reach. On a hit, the target takes [[/damage 4d6 necrotic]] damage, and you regain Hit Points equal to half the amount of Necrotic damage dealt.</p><p>Until the spell ends, you can make the attack again on each of your turns as a Magic action, targeting the same creature or a different one.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d6 for each spell slot level above 3.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "type": "creature",
+        "count": "1",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "self",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "msak",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "4d6",
-          "necrotic"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 3,
     "school": "nec",
+    "properties": [
+      "vocal",
+      "somatic",
+      "concentration"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -86,46 +58,37 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "1d6"
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "concentration"
-    ],
-    "crewed": false,
     "activities": {
-      "FGdhFk8W3QEaAuwD": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "attack",
-        "_id": "FGdhFk8W3QEaAuwD",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -133,25 +96,19 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
+          "override": false
         },
         "attack": {
+          "ability": "",
+          "bonus": "",
           "critical": {
             "threshold": null
           },
           "flat": false,
           "type": {
             "value": "melee",
-            "classification": ""
-          },
-          "ability": "",
-          "bonus": ""
+            "classification": "spell"
+          }
         },
         "damage": {
           "critical": {
@@ -165,7 +122,7 @@
                 "formula": ""
               },
               "number": 4,
-              "denomination": 6,
+              "denomination": "6",
               "bonus": "",
               "types": [
                 "necrotic"
@@ -178,112 +135,27 @@
             }
           ]
         },
-        "name": "Initial Attack",
-        "img": "",
-        "appliedEffects": []
-      },
-      "JN1V97eXkN7LutlQ": {
-        "type": "attack",
-        "_id": "JN1V97eXkN7LutlQ",
-        "sort": 0,
-        "activation": {
-          "type": "action",
-          "value": null,
-          "override": false
-        },
-        "consumption": {
-          "scaling": {
-            "allowed": false
-          },
-          "spellSlot": false,
-          "targets": []
-        },
-        "description": {
-          "chatFlavor": ""
-        },
-        "duration": {
-          "units": "inst",
-          "concentration": false,
-          "override": false
-        },
-        "effects": [],
-        "range": {
-          "override": false
-        },
-        "target": {
-          "template": {
-            "contiguous": false,
-            "units": "ft"
-          },
-          "affects": {
-            "choice": false
-          },
-          "override": false,
-          "prompt": true
-        },
         "uses": {
           "spent": 0,
           "recovery": [],
           "max": ""
         },
-        "attack": {
-          "critical": {
-            "threshold": null
-          },
-          "flat": false,
-          "type": {
-            "value": "melee",
-            "classification": ""
-          },
-          "ability": "",
-          "bonus": ""
-        },
-        "damage": {
-          "critical": {
-            "bonus": ""
-          },
-          "includeBase": true,
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 4,
-              "denomination": 6,
-              "bonus": "",
-              "types": [],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ]
-        },
-        "name": "Additional  Attack",
+        "sort": 0,
+        "name": "",
         "img": "",
         "appliedEffects": []
       }
-    }
+    },
+    "identifier": "vampiric-touch"
+  },
+  "type": "spell",
+  "img": "icons/magic/unholy/hand-claw-fire-blue.webp",
+  "effects": [],
+  "folder": "CxgAwElQGTbcnuvc",
+  "ownership": {
+    "default": 0
   },
   "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.TGxK8DE882IpMRXP",
-      "spell-lists": "sorcerer,warlock,wizard"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickAttack": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
-        }
-      }
-    },
     "dnd5e": {
       "riders": {
         "activity": [],
@@ -291,22 +163,16 @@
       }
     }
   },
-  "img": "icons/magic/unholy/strike-beam-blood-red-gray.webp",
-  "effects": [],
-  "folder": "CxgAwElQGTbcnuvc",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1661787234148,
-    "modifiedTime": 1730175425144,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738514714211,
+    "modifiedTime": 1738514733447,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "TGxK8DE882IpMRXP",
-  "sort": 6600000,
-  "ownership": {
-    "default": 0
-  },
-  "_key": "!items!TGxK8DE882IpMRXP"
+  "_id": "8213zRTZIGMAshBt",
+  "sort": 0,
+  "_key": "!items!8213zRTZIGMAshBt"
 }
