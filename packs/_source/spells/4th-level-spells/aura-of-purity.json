@@ -1,78 +1,46 @@
 {
-  "folder": "PrScRYl7JdLxwH3K",
   "name": "Aura of Purity",
-  "type": "spell",
-  "_id": "W1GxZG1jiZzLTNKD",
-  "img": "icons/magic/light/explosion-star-teal.webp",
   "system": {
     "description": {
-      "value": "<div><p>Purifying energy radiates from you in an aura with a 30-foot radius. Until the spell ends, the aura moves with you, centered on you. Each nonhostile creature in the aura (including you) can't become diseased, has resistance to poison damage, and has advantage on saving throws against effects that cause any of the following conditions: blinded, charmed, deafened, frightened, paralyzed, poisoned, and stunned.</p></div><div><div><p><strong>At Higher Levels.  </strong>When you cast this spell using a spell slot of 9th level or higher, it grants a duration that does not require concentration.</p></div></div>",
+      "value": "<p>An aura radiates from you in a 30-foot Emanation for the duration. While in the aura, you and your allies have Resistance to Poison damage and Advantage on saving throws to avoid or end effects that include the &amp;Reference[Blinded apply=false], &amp;Reference[Charmed apply=false], &amp;Reference[Deafened apply=false], &amp;Reference[Frightened apply=false], &amp;Reference[Paralyzed apply=false], &amp;Reference[Poisoned apply=false], or &amp;Reference[Stunned apply=false] condition.</p><p><strong>Using a Higher-Level Spell Slot.</strong> If you use a spell slot level of 9+, the spell does not require your Concentration.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "10",
       "units": "minute"
     },
-    "cover": null,
-    "crewed": false,
     "target": {
-      "value": 30,
-      "width": null,
-      "units": "ft",
-      "type": "radius",
-      "prompt": true,
       "affects": {
+        "choice": false,
         "count": "",
         "type": ""
       },
       "template": {
+        "units": "ft",
+        "type": "radius",
+        "size": "30",
+        "contiguous": false,
         "count": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "self",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": null,
-    "actionType": "",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 4,
     "school": "abj",
@@ -90,30 +58,87 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
     "activities": {
       "dnd5eactivity000": {
-        "name": "Create Aura",
-        "img": "icons/svg/aura.svg",
-        "appliedEffects": [],
+        "_id": "dnd5eactivity000",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
         "effects": [
           {
-            "_id": "BQVwq9S15fwHCGvh"
+            "_id": "oKsHTNzigUbEVvxo"
           }
-        ]
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": false,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "name": "Create Aura",
+        "img": "systems/dnd5e/icons/svg/trait-damage-immunities.svg"
       }
-    }
+    },
+    "identifier": "aura-of-purity"
   },
+  "type": "spell",
+  "img": "icons/magic/holy/chalice-glowing-yellow-blue.webp",
   "effects": [
     {
       "name": "Aura of Purity",
-      "img": "icons/magic/light/explosion-star-teal.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.W1GxZG1jiZzLTNKD",
-      "transfer": false,
-      "_id": "BQVwq9S15fwHCGvh",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplAuraofPuri",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "icons/magic/holy/chalice-glowing-yellow-blue.webp",
+      "_id": "oKsHTNzigUbEVvxo",
       "type": "base",
       "system": {},
       "changes": [
@@ -122,71 +147,41 @@
           "mode": 2,
           "value": "poison",
           "priority": null
-        },
-        {
-          "key": "system.traits.ci.value",
-          "mode": 2,
-          "value": "diseased",
-          "priority": null
         }
       ],
-      "disabled": false,
-      "duration": {
-        "startTime": null,
-        "seconds": 600,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "description": "<p>Each nonhostile creature in the aura (including you) can't become diseased, has resistance to poison damage, and has advantage on saving throws against effects that cause any of the following conditions: blinded, charmed, deafened, frightened, paralyzed, poisoned, and stunned.</p>",
+      "description": "<p>While in the aura, you and your allies have Resistance to Poison damage and Advantage on saving throws to avoid or end effects that include the &amp;Reference[Blinded apply=false], &amp;Reference[Charmed apply=false], &amp;Reference[Deafened apply=false], &amp;Reference[Frightened apply=false], &amp;Reference[Paralyzed apply=false], &amp;Reference[Poisoned apply=false], or &amp;Reference[Stunned apply=false] condition.</p>",
       "tint": "#ffffff",
+      "transfer": false,
       "statuses": [],
       "sort": 0,
-      "flags": {},
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728320746906,
-        "modifiedTime": 1728320803345,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!W1GxZG1jiZzLTNKD.BQVwq9S15fwHCGvh"
+      "_key": "!items.effects!DoI4Py2dFbTOhkV8.oKsHTNzigUbEVvxo"
     }
   ],
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.W1GxZG1jiZzLTNKD",
-      "spell-lists": "cleric,paladin"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    }
-  },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1707595064466,
-    "modifiedTime": 1728320823769,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
-  },
-  "sort": 4200000,
+  "folder": "PrScRYl7JdLxwH3K",
   "ownership": {
     "default": 0
   },
-  "_key": "!items!W1GxZG1jiZzLTNKD"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738677666025,
+    "modifiedTime": 1738719247206,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "DoI4Py2dFbTOhkV8",
+  "sort": 2400000,
+  "_key": "!items!DoI4Py2dFbTOhkV8"
 }

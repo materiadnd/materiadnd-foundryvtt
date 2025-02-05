@@ -400,11 +400,11 @@
       },
       "senses": {
         "darkvision": null,
-        "blindsight": 30,
+        "blindsight": null,
         "tremorsense": null,
-        "truesight": null,
-        "units": null,
-        "special": "sees into ethereal plane; ignores illusions"
+        "truesight": 30,
+        "units": "ft",
+        "special": ""
       },
       "spellcasting": "str",
       "exhaustion": 0,
@@ -430,8 +430,8 @@
       "hp": {
         "value": 1,
         "max": 1,
-        "temp": 0,
-        "tempmax": 0,
+        "temp": null,
+        "tempmax": null,
         "formula": ""
       },
       "death": {
@@ -612,12 +612,12 @@
       "img": "icons/skills/melee/strike-slashes-red.webp",
       "system": {
         "activities": {
-          "pwG0sFUV4rFBjVfY": {
-            "type": "attack",
-            "_id": "pwG0sFUV4rFBjVfY",
+          "Ybu5aqbweLTN8ChO": {
+            "type": "save",
+            "_id": "Ybu5aqbweLTN8ChO",
             "sort": 0,
             "activation": {
-              "type": "",
+              "type": "action",
               "value": null,
               "override": false,
               "condition": ""
@@ -640,9 +640,8 @@
             "effects": [],
             "range": {
               "override": false,
-              "units": "ft",
-              "special": "",
-              "value": "5"
+              "units": "self",
+              "special": ""
             },
             "target": {
               "template": {
@@ -652,9 +651,7 @@
               },
               "affects": {
                 "choice": false,
-                "count": "",
-                "type": "creature",
-                "special": ""
+                "type": ""
               },
               "override": false,
               "prompt": true
@@ -664,23 +661,7 @@
               "recovery": [],
               "max": ""
             },
-            "attack": {
-              "critical": {
-                "threshold": null
-              },
-              "flat": false,
-              "type": {
-                "value": "melee",
-                "classification": "weapon"
-              },
-              "ability": "",
-              "bonus": ""
-            },
             "damage": {
-              "critical": {
-                "bonus": ""
-              },
-              "includeBase": true,
               "parts": [
                 {
                   "custom": {
@@ -688,16 +669,21 @@
                     "formula": ""
                   },
                   "number": 4,
-                  "denomination": 8,
+                  "denomination": "8",
                   "bonus": "",
-                  "types": [
-                    "force"
-                  ],
-                  "scaling": {
-                    "number": 1
-                  }
+                  "types": []
                 }
-              ]
+              ],
+              "onSave": "none"
+            },
+            "save": {
+              "ability": [
+                "dex"
+              ],
+              "dc": {
+                "calculation": "",
+                "formula": ""
+              }
             },
             "name": "",
             "img": "",
@@ -710,7 +696,7 @@
           "max": ""
         },
         "description": {
-          "value": "<p>At the start of each of your turns, the guardian attempts to strike one creature within 5 feet of it that is hostile to you. The guardian's attack bonus is equal to your spellcasting ability modifier + your proficiency bonus. On a hit, it deals 4d8 force damage.</p>",
+          "value": "<p>At the start of each of your turns, the guardian attempts to strike one enemy within 5 feet of it. That enemy must succeed on a Dexterity saving throw or take 4d8 Force damage.</p>",
           "chat": ""
         },
         "identifier": "new-item",
@@ -761,9 +747,9 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
+        "systemVersion": "4.2.2",
         "createdTime": 1728371260273,
-        "modifiedTime": 1728371420066,
+        "modifiedTime": 1738719478719,
         "lastModifiedBy": "dnd5mbuilder0000"
       },
       "_key": "!actors.items!IoJoxG7kzIzUqunS.R0j5WHdhGsXqUyRT"
@@ -908,9 +894,9 @@
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "systemVersion": "4.2.2",
     "createdTime": 1728336261015,
-    "modifiedTime": 1728916808568,
+    "modifiedTime": 1738719512081,
     "lastModifiedBy": "dnd5mbuilder0000"
   },
   "_key": "!actors!IoJoxG7kzIzUqunS"

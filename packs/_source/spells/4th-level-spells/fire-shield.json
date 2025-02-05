@@ -1,86 +1,53 @@
 {
   "name": "Fire Shield",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>Thin and wispy flames wreathe your body for the Duration, shedding bright light in a 10-foot radius and dim light for an additional 10 feet. You can end the spell early by using an action to dismiss it.</p>\n<p>The flames provide you with a warm shield or a chill shield, as you choose. The warm shield grants you Resistance to cold damage, and the chill shield grants you resistance to fire damage.</p>\n<p>In addition, whenever a creature within 5 feet of you hits you with a melee Attack, the shield erupts with flame. The attacker takes [[/r 2d8]] fire damage from a warm shield, or [[/r 2d8]] cold damage from a cold shield.</p>",
+      "value": "<p>Wispy flames wreathe your body for the duration, shedding Bright Light in a 10-foot radius and Dim Light for an additional 10 feet.  You can end the spell early by using a Magic action to dismiss it.</p><p>The flames provide you with a warm shield or a chill shield, as you choose. The warm shield grants you Resistance to Cold damage, and the chill shield grants you Resistance to Fire damage.</p><p>In addition, whenever a creature within 5 feet of you hits you with a melee attack roll, the shield erupts with flame. The attacker takes [[/damage 2d8 type=fire]] damage from a warm shield or [[/damage 2d8 type=cold]] damage from a chill shield.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "10",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "self",
-      "prompt": true,
       "affects": {
-        "special": ""
+        "choice": false,
+        "type": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "self",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "2d8",
-          "fire"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 4,
     "school": "evo",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "A bit of phosphorus or a firefly",
+      "value": "a bit of phosphorus or a firefly",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -89,53 +56,44 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material"
-    ],
-    "crewed": false,
     "activities": {
-      "lyEFhGC6yDFtos6S": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "utility",
-        "_id": "lyEFhGC6yDFtos6S",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [
           {
-            "_id": "lVKx8swB08jm6IFE"
+            "_id": "YbUr13GTnMrootmf"
           },
           {
-            "_id": "UUXwEKSPX4nYfDzo"
+            "_id": "CMEUOmIT16kjGT5J"
           }
         ],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -143,83 +101,44 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
         },
         "uses": {
           "spent": 0,
-          "recovery": [],
-          "max": ""
+          "recovery": []
         },
-        "roll": {
-          "prompt": false,
-          "visible": false,
-          "name": "",
-          "formula": ""
-        },
-        "name": "",
-        "img": "",
-        "appliedEffects": [
-          "lVKx8swB08jm6IFE",
-          "UUXwEKSPX4nYfDzo"
-        ]
-      },
-      "dnd5eactivity000": {
-        "sort": 100000,
-        "name": "",
-        "img": "",
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 2,
-              "denomination": 8,
-              "bonus": "",
-              "types": [
-                "fire",
-                "cold"
-              ],
-              "scaling": {
-                "mode": "",
-                "number": 1
-              }
-            }
-          ]
-        },
-        "appliedEffects": []
-      }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.Ry3YprRRYTovxvuf",
-      "spell-lists": "druid,sorcerer,wizard"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
+        "sort": 0
       }
     },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
-        }
-      }
-    }
+    "identifier": "fire-shield"
   },
-  "img": "icons/magic/defensive/shield-barrier-flaming-pentagon-red.webp",
+  "type": "spell",
+  "img": "icons/equipment/shield/heater-stone-orange.webp",
   "effects": [
     {
-      "_id": "lVKx8swB08jm6IFE",
+      "name": "Warm Shield",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplFireShield",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
       "flags": {},
+      "img": "icons/equipment/shield/heater-steel-crystal-red.webp",
+      "_id": "YbUr13GTnMrootmf",
+      "type": "base",
+      "system": {},
       "changes": [
         {
           "key": "system.traits.dr.value",
@@ -228,41 +147,41 @@
           "priority": null
         }
       ],
-      "disabled": true,
-      "duration": {
-        "startTime": null,
-        "seconds": 600,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null,
-        "combat": null
-      },
-      "origin": "Item.OtcTsffCQaOFkr9K",
+      "description": "<p>Whenever a creature within 5 feet of you hits you with a melee attack roll, the attacker takes [[/damage 2d8 type=fire]] damage.</p>",
       "tint": "#ffffff",
-      "transfer": true,
-      "name": "Warm Shield",
-      "description": "<p>The warm shield grants you Resistance to cold damage.</p>",
+      "transfer": false,
       "statuses": [],
+      "sort": 0,
       "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
+        "lastModifiedBy": null
       },
-      "img": "icons/magic/defensive/shield-barrier-flaming-pentagon-red.webp",
-      "type": "base",
-      "system": {},
-      "sort": 0,
-      "_key": "!items.effects!Ry3YprRRYTovxvuf.lVKx8swB08jm6IFE"
+      "_key": "!items.effects!Eu3CQasPsVZGOBAS.YbUr13GTnMrootmf"
     },
     {
-      "_id": "UUXwEKSPX4nYfDzo",
+      "name": "Chill Shield",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplFireShield",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
       "flags": {},
+      "img": "icons/equipment/shield/heater-crystal-blue.webp",
+      "_id": "CMEUOmIT16kjGT5J",
+      "type": "base",
+      "system": {},
       "changes": [
         {
           "key": "system.traits.dr.value",
@@ -271,50 +190,39 @@
           "priority": null
         }
       ],
-      "disabled": true,
-      "duration": {
-        "startTime": null,
-        "seconds": 600,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null,
-        "combat": null
-      },
-      "origin": "Item.OtcTsffCQaOFkr9K",
+      "description": "<p>Whenever a creature within 5 feet of you hits you with a melee attack roll, the attacker takes [[/damage 2d8 type=cold]] damage.</p>",
       "tint": "#ffffff",
-      "transfer": true,
-      "name": "Chill Shield",
-      "description": "<p>The chill shield grants you resistance to fire damage.</p>",
+      "transfer": false,
       "statuses": [],
+      "sort": 0,
       "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
+        "lastModifiedBy": null
       },
-      "img": "icons/magic/defensive/shield-barrier-flaming-pentagon-blue.webp",
-      "type": "base",
-      "system": {},
-      "sort": 0,
-      "_key": "!items.effects!Ry3YprRRYTovxvuf.UUXwEKSPX4nYfDzo"
+      "_key": "!items.effects!Eu3CQasPsVZGOBAS.CMEUOmIT16kjGT5J"
     }
   ],
   "folder": "PrScRYl7JdLxwH3K",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234170,
-    "modifiedTime": 1728372098382,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "Ry3YprRRYTovxvuf",
-  "sort": 600000,
-  "_key": "!items!Ry3YprRRYTovxvuf"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738678374901,
+    "modifiedTime": 1738719247206,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "Eu3CQasPsVZGOBAS",
+  "sort": 1100000,
+  "_key": "!items!Eu3CQasPsVZGOBAS"
 }

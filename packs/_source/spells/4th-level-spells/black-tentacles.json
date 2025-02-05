@@ -1,87 +1,58 @@
 {
   "name": "Black Tentacles",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>Squirming, ebony tentacles fill a 20-foot square on ground that you can see within range. For the duration, these tentacles turn the ground in the area into difficult terrain. When a creature enters the affected area for the first time on a turn or starts its turn there, the creature must succeed on a Dexterity saving throw or take [[/r 3d6]] bludgeoning damage and be restrained by the tentacles until the spell ends.</p><p>A creature that starts its turn in the area and is already restrained by the tentacles takes [[/r 3d6]] bludgeoning damage. A creature restrained by the tentacles can use its action to make a Strength check against your spell save DC. On a success, it frees itself.</p>",
+      "value": "<p>Squirming, ebony tentacles fill a 20-foot square on ground that you can see within range. For the duration, these tentacles turn the ground in that area into &amp;Reference[DifficultTerrain].</p><p>Each creature in that area makes a Strength saving throw. On a failed save, it takes 3d6 Bludgeoning damage, and it has the &amp;Reference[Restrained apply=false] condition until the spell ends. A creature also makes that save if it enters the area or ends it turn there. A creature makes that save only once per turn.</p><p>A Restrained creature can take an action to make a [[/check ability=str skill=ath dc=@attributes.spelldc]] check against your spell save DC, ending the condition on itself on a success.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 20,
-      "width": null,
-      "units": "ft",
-      "type": "square",
-      "prompt": true,
       "affects": {
+        "choice": false,
         "count": "",
         "type": ""
       },
       "template": {
+        "units": "ft",
+        "type": "square",
+        "size": "20",
+        "contiguous": false,
         "count": ""
       }
     },
     "range": {
-      "value": 90,
-      "long": null,
+      "value": "90",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "3d6",
-          "bludgeoning"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 4,
     "school": "con",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
     "materials": {
-      "value": "A piece of tentacle from a giant octopus or a giant squid",
+      "value": "a tentacle",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -90,48 +61,42 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "concentration",
-      "mgc"
-    ],
-    "crewed": false,
     "activities": {
-      "DQONN7jn00QrD5Vt": {
-        "type": "utility",
-        "_id": "DQONN7jn00QrD5Vt",
-        "sort": 0,
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "save",
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
-        "effects": [],
+        "effects": [
+          {
+            "_id": "NDytclFrNmC418CS",
+            "onSave": false
+          }
+        ],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -139,307 +104,105 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
-        },
-        "roll": {
-          "prompt": false,
-          "visible": false,
-          "name": "",
-          "formula": ""
-        },
-        "name": "Cast",
-        "img": "",
-        "appliedEffects": []
-      },
-      "ndQ989y5LsfHWKAj": {
-        "type": "save",
-        "_id": "ndQ989y5LsfHWKAj",
-        "sort": 0,
-        "activation": {
-          "type": "",
-          "value": null,
-          "override": true,
-          "condition": ""
-        },
-        "consumption": {
-          "scaling": {
-            "allowed": false
-          },
-          "spellSlot": false,
-          "targets": []
-        },
-        "description": {
-          "chatFlavor": ""
-        },
-        "duration": {
-          "units": "inst",
-          "concentration": false,
-          "override": true
-        },
-        "effects": [
-          {
-            "_id": "pYVLNqhFzIq5m2uM",
-            "onSave": false
-          }
-        ],
-        "range": {
-          "override": true,
-          "units": "spec",
-          "special": ""
-        },
-        "target": {
-          "template": {
-            "contiguous": false,
-            "units": "ft",
-            "type": ""
-          },
-          "affects": {
-            "choice": false,
-            "count": "",
-            "type": "creature",
-            "special": ""
-          },
-          "override": true,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
+          "override": false
         },
         "damage": {
+          "onSave": "half",
           "parts": [
             {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
               "number": 3,
               "denomination": 6,
               "bonus": "",
               "types": [
                 "bludgeoning"
               ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
               "scaling": {
                 "mode": "",
-                "number": 1
+                "number": null,
+                "formula": ""
               }
             }
-          ],
-          "onSave": "half"
+          ]
         },
         "save": {
-          "ability": "dex",
+          "ability": [
+            "str"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
         },
-        "name": "Area Save",
-        "img": "",
-        "appliedEffects": []
-      },
-      "5NM3I3wWlQoNAPdj": {
-        "type": "damage",
-        "_id": "5NM3I3wWlQoNAPdj",
-        "sort": 0,
-        "activation": {
-          "type": "",
-          "value": null,
-          "override": true,
-          "condition": ""
-        },
-        "consumption": {
-          "scaling": {
-            "allowed": false
-          },
-          "spellSlot": false,
-          "targets": []
-        },
-        "description": {
-          "chatFlavor": ""
-        },
-        "duration": {
-          "units": "inst",
-          "concentration": false,
-          "override": true
-        },
-        "effects": [],
-        "range": {
-          "override": true,
-          "units": "spec",
-          "special": ""
-        },
-        "target": {
-          "template": {
-            "contiguous": false,
-            "units": "ft",
-            "type": ""
-          },
-          "affects": {
-            "choice": false,
-            "count": "",
-            "type": "creature",
-            "special": ""
-          },
-          "override": true,
-          "prompt": true
-        },
         "uses": {
           "spent": 0,
-          "recovery": [],
-          "max": ""
+          "recovery": []
         },
-        "damage": {
-          "critical": {
-            "allow": false
-          },
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 3,
-              "denomination": 6,
-              "bonus": "",
-              "types": [
-                "bludgeoning"
-              ],
-              "scaling": {
-                "mode": "",
-                "number": 1
-              }
-            }
-          ]
-        },
-        "name": "Restrained Damage",
-        "img": "",
-        "appliedEffects": []
-      }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.4x87NG7ONk27ivIm",
-      "spell-lists": "wizard"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
-        }
+        "sort": 0
       }
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
+    "identifier": "evards-black-tentacles"
   },
-  "img": "icons/magic/nature/vines-thorned-curled-glow-teal-purple.webp",
+  "type": "spell",
+  "img": "icons/creatures/tentacles/tentacles-suctioncups-pink.webp",
   "effects": [
     {
       "name": "Restrained",
-      "origin": "Compendium.dnd5e.spells.Item.DGONTFbk5eORs5qv",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplEvardsBlac",
       "duration": {
+        "rounds": null,
         "startTime": null,
         "seconds": 60,
         "combat": null,
-        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "WTgRpzj4EQGJokA6",
-      "changes": [],
-      "description": "<p>The creature is Restrained by the tentacles until the spell ends or it uses its action to make a Strength or Dexterity check (its choice) to escape.</p>",
-      "transfer": false,
-      "statuses": [
-        "restrained"
-      ],
-      "flags": {},
-      "tint": "#ffffff",
-      "_stats": {
-        "coreVersion": "12.331",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": 1728320911261,
-        "lastModifiedBy": "dnd5mbuilder0000",
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "systems/dnd5e/icons/svg/statuses/restrained.svg",
-      "type": "base",
-      "system": {},
-      "sort": 0,
-      "_key": "!items.effects!4x87NG7ONk27ivIm.WTgRpzj4EQGJokA6"
-    },
-    {
-      "name": "Restrained",
-      "img": "systems/dnd5e/icons/svg/statuses/restrained.svg",
-      "origin": "Compendium.materia-dnd.spells.Item.4x87NG7ONk27ivIm",
-      "transfer": false,
-      "_id": "pYVLNqhFzIq5m2uM",
-      "type": "base",
-      "system": {},
-      "changes": [],
       "disabled": false,
-      "duration": {
-        "startTime": null,
-        "seconds": 60,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "description": "",
+      "flags": {},
+      "img": "systems/dnd5e/icons/svg/statuses/restrained.svg",
+      "_id": "NDytclFrNmC418CS",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>A &amp;Reference[Restrained apply=false] creature can take an action to make a [[/check ability=str skill=ath dc=@attributes.spelldc]] check against your spell save DC, ending the condition on itself on a success.</p>",
       "tint": "#ffffff",
+      "transfer": false,
       "statuses": [
         "restrained"
       ],
       "sort": 0,
-      "flags": {},
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1730175590610,
-        "modifiedTime": 1730175615083,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!4x87NG7ONk27ivIm.pYVLNqhFzIq5m2uM"
+      "_key": "!items.effects!VegN2xlz20RPCRy1.NDytclFrNmC418CS"
     }
   ],
   "folder": "PrScRYl7JdLxwH3K",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234098,
-    "modifiedTime": 1730175653759,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "4x87NG7ONk27ivIm",
-  "sort": 3600000,
-  "_key": "!items!4x87NG7ONk27ivIm"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738678330533,
+    "modifiedTime": 1738719247206,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "VegN2xlz20RPCRy1",
+  "sort": 900000,
+  "_key": "!items!VegN2xlz20RPCRy1"
 }

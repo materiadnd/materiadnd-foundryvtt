@@ -1,85 +1,52 @@
 {
   "name": "Guardian of Faith",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>A Large Spectral Guardian appears and hovers for the Duration in an unoccupied space of your choice that you can see within range. The guardian occupies that space and is indistinct except for a gleaming sword and shield emblazoned with the symbol of your deity.</p><p>Any creature hostile to you that moves to a space within 10 feet of the guardian for the first time on a turn must succeed on a Dexterity saving throw. The creature takes 20 radiant damage on a failed save, or half as much damage on a successful one. The guardian vanishes when it has dealt a total of 60 damage.</p>",
+      "value": "<p>A Large spectral guardian appears and hovers for the duration in an unoccupied space that you can see within range. The guardian occupies that space and is invulnerable, and it appears in a form appropriate for your deity or pantheon.</p><p>Any enemy that moves to a space within 10 feet of the guardian for the first time on a turn or starts its turn there makes a Dexterity saving throw, taking 20 Radiant damage on a failed save or half as much damage on a successful one. The guardian vanishes when it has dealt a total of 60 damage.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "8",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "any",
-      "type": "space",
-      "prompt": true,
       "affects": {
-        "count": "",
+        "type": "space",
+        "count": "1",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 30,
-      "long": null,
+      "value": "30",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "20",
-          "radiant"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 4,
     "school": "con",
+    "properties": [
+      "vocal"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -90,44 +57,36 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal"
-    ],
-    "crewed": false,
     "activities": {
-      "8M3dd02fT7qoQcVW": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "summon",
-        "_id": "8M3dd02fT7qoQcVW",
-        "sort": 100000,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
-        "effects": [],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -135,13 +94,7 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
+          "override": false
         },
         "bonuses": {
           "ac": "",
@@ -154,16 +107,16 @@
         "creatureSizes": [],
         "creatureTypes": [],
         "match": {
-          "attacks": true,
           "proficiency": true,
-          "saves": true
+          "saves": true,
+          "attacks": false
         },
         "profiles": [
           {
             "count": "",
             "name": "",
-            "_id": "iosjPZs95Xd2Lxy8",
-            "uuid": "Compendium.materia-dnd.actors.Actor.uScxZPi198n8PrwF",
+            "_id": "oGUJLtCisJXtU8ay",
+            "uuid": "Compendium.dnd-players-handbook.actors.Actor.phbsplGuardianof",
             "level": {
               "min": null,
               "max": null
@@ -172,56 +125,114 @@
           }
         ],
         "summon": {
-          "prompt": true,
-          "mode": ""
+          "identifier": "",
+          "mode": "",
+          "prompt": true
         },
-        "name": "",
-        "img": "",
-        "appliedEffects": []
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0,
+        "effects": []
       },
-      "dnd5eactivity000": {
-        "sort": 200000
+      "dnd5eactivity100": {
+        "_id": "dnd5eactivity100",
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "number": null,
+              "denomination": null,
+              "bonus": "",
+              "types": [
+                "radiant"
+              ],
+              "custom": {
+                "enabled": true,
+                "formula": "20"
+              },
+              "scaling": {
+                "mode": "",
+                "number": null,
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.6qcPMPR8BfXbU1HC",
-      "spell-lists": "cleric"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
-        }
-      }
-    }
+    "identifier": "guardian-of-faith"
   },
-  "img": "icons/magic/control/buff-flight-wings-runes-blue-white.webp",
+  "type": "spell",
+  "img": "icons/magic/holy/barrier-shield-winged-blue.webp",
   "effects": [],
   "folder": "PrScRYl7JdLxwH3K",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234145,
-    "modifiedTime": 1728382065998,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "6qcPMPR8BfXbU1HC",
-  "sort": 100000,
-  "_key": "!items!6qcPMPR8BfXbU1HC"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738678513112,
+    "modifiedTime": 1738719247206,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "jdTSTDiiFdq7Bgvs",
+  "sort": 1500000,
+  "_key": "!items!jdTSTDiiFdq7Bgvs"
 }

@@ -1,83 +1,57 @@
 {
   "name": "Arcane Eye",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You create an invisible, magical eye within range that hovers in the air for the duration.</p><p>You mentally receive visual information from the eye, which has normal vision and darkvision out to 30 feet. The eye can look in every direction.</p><p>As an action, you can move the eye up to 30 feet in any direction. There is no limit to how far away from you the eye can move, but it can't enter another plane of existence. A solid barrier blocks the eye's movement, but the eye can pass through an opening as small as 1 inch in diameter.</p>",
+      "value": "<p>You create an Invisible, invulnerable eye within range that hovers for the duration. You mentally receive visual information from the eye, which can see in every direction. It also has Darkvision with a range of 30 feet.</p><p>As a Bonus Action, you can move the eye up to 30 feet in any direction. A solid barrier blocks the eye's movement, but the eye can pass through an opening as small as 1 inch in diameter.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "",
-      "prompt": true,
       "affects": {
-        "count": "1",
         "type": "space",
+        "count": "1",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 30,
-      "long": null,
+      "value": "30",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 4,
     "school": "div",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
     "materials": {
-      "value": "A bit of bat fur.",
+      "value": "a bit of bat fur",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -86,46 +60,36 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "concentration",
-      "mgc"
-    ],
-    "crewed": false,
     "activities": {
-      "jHDlBQV3vhPntSTl": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "summon",
-        "_id": "jHDlBQV3vhPntSTl",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
-        "description": {},
+        "description": {
+          "chatFlavor": ""
+        },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
-        "effects": [],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -133,14 +97,16 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
+          "override": false
         },
-        "uses": {
-          "spent": 0,
-          "recovery": []
+        "bonuses": {
+          "ac": "",
+          "hd": "",
+          "hp": "",
+          "attackDamage": "",
+          "saveDamage": "",
+          "healing": ""
         },
-        "bonuses": {},
         "creatureSizes": [],
         "creatureTypes": [],
         "match": {
@@ -150,7 +116,10 @@
         },
         "profiles": [
           {
-            "_id": "x0lfwkVt80KF8siz",
+            "count": "",
+            "name": "",
+            "_id": "OPGmJyPFZox9o5it",
+            "uuid": "Compendium.dnd-players-handbook.actors.Actor.phbsplArcaneEye0",
             "level": {
               "min": null,
               "max": null
@@ -159,41 +128,38 @@
           }
         ],
         "summon": {
+          "identifier": "",
+          "mode": "",
           "prompt": true
-        }
-      }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.SDhKwutWDOIL2lV9",
-      "spell-lists": "artificer,wizard"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0,
+        "effects": []
       }
     },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    }
+    "identifier": "arcane-eye"
   },
-  "img": "icons/magic/perception/eye-ringed-glow-angry-teal.webp",
+  "type": "spell",
+  "img": "icons/magic/perception/eye-slit-pink.webp",
   "effects": [],
   "folder": "PrScRYl7JdLxwH3K",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234109,
-    "modifiedTime": 1728320223198,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "SDhKwutWDOIL2lV9",
-  "sort": 700000,
-  "_key": "!items!SDhKwutWDOIL2lV9"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738677402304,
+    "modifiedTime": 1738719247206,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "xt9iHceURXTDKLty",
+  "sort": 2100000,
+  "_key": "!items!xt9iHceURXTDKLty"
 }

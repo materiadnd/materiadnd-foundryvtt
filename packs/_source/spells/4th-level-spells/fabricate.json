@@ -1,79 +1,50 @@
 {
   "name": "Fabricate",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You convert raw materials into products of the same material. For example, you can fabricate a wooden bridge from a clump of trees, a rope from a patch of hemp, and clothes from flax or wool.</p><p>Choose raw materials that you can see within range. You can fabricate a Large or smaller object (contained within a 10-foot cube, or eight connected 5-foot cubes), given a sufficient quantity of raw material. If you are working with metal, stone, or another mineral substance, however, the fabricated object can be no larger than Medium (contained within a single 5-foot cube). The quality of Objects made by the spell is commensurate with the quality of the raw materials.</p><p>Creatures or Magic Items can't be created or transmuted by this spell. You also can't use it to create items that ordinarily require a high degree of craftsmanship, such as jewelry, Weapons, glass, or armor, unless you have proficiency with the type of artisan's tools used to craft such Objects.</p>",
+      "value": "<p>You convert raw materials into products of the same material. For example, you can fabricate a wooden bridge from a clump of trees, a rope from a patch of hemp, or clothes from flax or wool.</p><p>Choose raw materials that you can see within range. You can fabricate a Large or smaller object (contained within a 10-foot Cube or eight connected 5-foot Cubes) given a sufficient quantity of material. If you're working with metal, stone, or another mineral substance, however, the fabricated object can be no larger than Medium (contained within a 5-foot Cube). The quality of any fabricated objects is based on the quality of the raw materials.</p><p>Creatures and magic items can't be created by this spell. You also can't use it to create items that require a high degree of skill—such as weapons and armor—unless you have proficiency with the type of Artisan's Tools used to craft such objects.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "minute",
-      "cost": 10,
-      "condition": ""
+      "condition": "",
+      "value": 10
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 10,
-      "width": null,
-      "units": "ft",
-      "type": "cube",
-      "prompt": true,
       "affects": {
+        "type": "object",
         "count": "",
-        "type": ""
+        "choice": false
       },
       "template": {
-        "count": ""
+        "units": "",
+        "contiguous": false
       }
     },
     "range": {
-      "value": 120,
-      "long": null,
-      "units": "ft",
-      "special": ""
+      "value": "120",
+      "units": "ft"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 4,
     "school": "trs",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -84,51 +55,37 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "mgc"
-    ],
-    "crewed": false,
-    "attack": {
-      "bonus": "",
-      "flat": false
-    },
-    "summons": null,
     "activities": {
-      "pu1BDQirCxD1TAat": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "utility",
-        "_id": "pu1BDQirCxD1TAat",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -136,56 +93,41 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
         },
         "uses": {
           "spent": 0,
-          "recovery": [],
-          "max": ""
+          "recovery": []
         },
-        "roll": {
-          "prompt": false,
-          "visible": false,
-          "name": "",
-          "formula": ""
-        },
-        "name": "Cast",
-        "img": "",
-        "appliedEffects": []
-      }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.pWIof9jfoHtgn8Qk",
-      "spell-lists": "artificer,wizard"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
+        "sort": 0
       }
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
+    "identifier": "fabricate"
   },
-  "img": "icons/magic/fire/explosion-fireball-medium-purple-orange.webp",
+  "type": "spell",
+  "img": "icons/skills/trades/construction-mason-stonecutter-sculpture.webp",
   "effects": [],
   "folder": "PrScRYl7JdLxwH3K",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234073,
-    "modifiedTime": 1730175910532,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "pWIof9jfoHtgn8Qk",
-  "sort": 0,
-  "_key": "!items!pWIof9jfoHtgn8Qk"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738678358076,
+    "modifiedTime": 1738719247206,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "tFcxMmxpP05ZoUYy",
+  "sort": 1000000,
+  "_key": "!items!tFcxMmxpP05ZoUYy"
 }

@@ -1,79 +1,53 @@
 {
   "name": "Greater Invisibility",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You or a creature you touch becomes Invisible until the spell ends. Anything the target is wearing or carrying is Invisible as long as it is on the target's person.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 9th level or higher, grants a duration that does not require concentration.</p>",
+      "value": "<p>A creature you touch has the Invisible condition until the spell ends.</p><p><strong>Using a Higher-Level Spell Slot.</strong> If you use a spell slot level of 9+, the spell does not require your Concentration.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "type": "creature",
+        "count": "1",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "touch",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 4,
     "school": "ill",
+    "properties": [
+      "vocal",
+      "somatic",
+      "concentration"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -84,100 +58,122 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "concentration"
-    ],
-    "crewed": false,
     "activities": {
       "dnd5eactivity000": {
-        "name": "",
-        "img": "",
-        "appliedEffects": [
-          "lhYVl4DD9jyS5gcn"
-        ],
+        "_id": "dnd5eactivity000",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
         "effects": [
           {
-            "_id": "lhYVl4DD9jyS5gcn"
+            "_id": "NDpw6r63ZdEgks1a"
           }
-        ]
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.T7WVjD10HKfI4VfV",
-      "spell-lists": "bard,sorcerer,wizard"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    }
+    "identifier": "greater-invisibility"
   },
-  "img": "icons/magic/air/fog-gas-smoke-swirling-gray.webp",
+  "type": "spell",
+  "img": "icons/creatures/magical/spirit-undead-ghost-blue.webp",
   "effects": [
     {
-      "name": "Greater Invisibility",
-      "origin": "Compendium.dnd5e.spells.Item.tEpDmYZNGc9f5OhJ",
+      "name": "Invisible",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplGreaterInv",
       "duration": {
+        "rounds": null,
         "startTime": null,
         "seconds": 60,
         "combat": null,
-        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "lhYVl4DD9jyS5gcn",
+      "disabled": false,
+      "flags": {},
+      "img": "systems/dnd5e/icons/svg/statuses/invisible.svg",
+      "_id": "NDpw6r63ZdEgks1a",
+      "type": "base",
+      "system": {},
       "changes": [],
-      "description": "<p>The target becomes Invisible until the spell ends. Anything the target is wearing or carrying is Invisible as long as it is on the target's person.</p>",
-      "transfer": true,
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": false,
       "statuses": [
         "invisible"
       ],
-      "flags": {},
-      "tint": "#ffffff",
+      "sort": 0,
       "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
+        "lastModifiedBy": null
       },
-      "img": "icons/magic/air/fog-gas-smoke-swirling-gray.webp",
-      "type": "base",
-      "system": {},
-      "sort": 0,
-      "_key": "!items.effects!T7WVjD10HKfI4VfV.lhYVl4DD9jyS5gcn"
+      "_key": "!items.effects!PxG7rZQ27nOMkacc.NDpw6r63ZdEgks1a"
     }
   ],
   "folder": "PrScRYl7JdLxwH3K",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234234,
-    "modifiedTime": 1728381554542,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "T7WVjD10HKfI4VfV",
-  "sort": 3400000,
-  "_key": "!items!T7WVjD10HKfI4VfV"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738678464889,
+    "modifiedTime": 1738719247206,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "PxG7rZQ27nOMkacc",
+  "sort": 1400000,
+  "_key": "!items!PxG7rZQ27nOMkacc"
 }

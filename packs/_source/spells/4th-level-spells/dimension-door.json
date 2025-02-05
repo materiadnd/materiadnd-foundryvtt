@@ -1,86 +1,52 @@
 {
   "name": "Dimension Door",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You teleport yourself from your current location to any other spot within range. You arrive at exactly the spot desired. It can be a place you can see, one you can visualize, or one you can describe by stating distance and direction, such as \"200 feet straight downward\" or \"upward to the northwest at a 45-degree angle, 300 feet.\"</p><p>You can bring along objects as long as their weight doesn't exceed what you can carry. You can also bring one willing creature of your size or smaller who is carrying gear up to its carrying capacity. The creature must be within 5 feet of you when you cast this spell.</p><p>If you would arrive in a place already occupied by an object or a creature, you and any creature traveling with you each take [[/r 4d6]] force damage, and the spell fails to teleport you.</p>",
+      "value": "<p>You teleport to a location within range. You arrive at exactly the spot desired. It can be a place you can see, one you can visualize, or one you can describe by stating distance and direction, such as \"200 feet straight downward\" or \"300 feet upward to the northwest at a 45-degree angle.\"</p><p>You can also teleport one willing creature. The creature must be within 5 feet of you when you teleport, and it teleports to a space within 5 feet of your destination space.</p><p>If you, the other creature, or both would arrive in a space occupied by a creature or completely filled by one or more objects, you and any creature traveling with you each take 4d6 Force damage, and the teleportation fails.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "self",
-      "prompt": true,
       "affects": {
         "type": "willing",
-        "special": "",
-        "count": "2"
+        "count": "2",
+        "choice": false,
+        "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 500,
-      "long": null,
+      "value": "500",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "other",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "4d6",
-          "force"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 4,
     "school": "con",
+    "properties": [
+      "vocal"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -91,19 +57,51 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal"
-    ],
-    "crewed": false,
     "activities": {
       "dnd5eactivity000": {
-        "name": "Cast",
-        "img": "",
+        "_id": "dnd5eactivity000",
+        "type": "damage",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
         "damage": {
+          "critical": {
+            "allow": false,
+            "bonus": ""
+          },
           "parts": [
             {
               "custom": {
@@ -123,46 +121,43 @@
             }
           ]
         },
-        "appliedEffects": []
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "name": "Cast",
+        "img": "systems/dnd5e/icons/svg/trait-saves.svg"
       }
-    }
+    },
+    "identifier": "dimension-door"
+  },
+  "type": "spell",
+  "img": "icons/environment/wilderness/portal.webp",
+  "effects": [],
+  "folder": "PrScRYl7JdLxwH3K",
+  "ownership": {
+    "default": 0
   },
   "flags": {
-    "materia-dnd": {
-      "tele-flag": "true",
-      "sourceId": "Compendium.materia-dnd.spells.Item.ouRIgoh3JBZNlfdY",
-      "spell-lists": "bard,sorcerer,warlock,wizard"
-    },
     "dnd5e": {
       "riders": {
         "activity": [],
         "effect": []
       }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
-        }
-      }
     }
   },
-  "img": "icons/magic/air/air-burst-spiral-large-pink.webp",
-  "effects": [],
-  "folder": "PrScRYl7JdLxwH3K",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1661787234087,
-    "modifiedTime": 1728325000902,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738678283511,
+    "modifiedTime": 1738719247206,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "ouRIgoh3JBZNlfdY",
-  "sort": 1100000,
-  "_key": "!items!ouRIgoh3JBZNlfdY"
+  "_id": "WVgl5QUhbUWsmy9K",
+  "sort": 600000,
+  "_key": "!items!WVgl5QUhbUWsmy9K"
 }

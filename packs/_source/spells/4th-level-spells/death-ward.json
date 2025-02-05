@@ -1,77 +1,45 @@
 {
-  "folder": "PrScRYl7JdLxwH3K",
   "name": "Death Ward",
-  "type": "spell",
-  "_id": "OnYKg4boLKhXpmlX",
-  "img": "icons/magic/unholy/strike-body-life-soul-purple.webp",
   "system": {
     "description": {
-      "value": "<p>You touch a creature and grant it a measure of protection from death.</p><p>The first time the target would drop to 0 hit points as a result of taking damage, the target instead drops to 1 hit point, and the spell ends.</p><p>If the spell is still in effect when the target is subjected to an effect that would kill it instantaneously without dealing damage, that effect is instead negated against the target, and the spell ends.</p><p>Whenever the spell ends as listed above the target can spend up to their proficiency bonus of Hit Dice. For each Hit Die spent in this way, the player rolls the die and adds the character's Constitution modifier to it. The character gains temporary hit points equal to the total (minimum of 0).</p>",
+      "value": "<p>You touch a creature and grant it a measure of protection from death. The first time the target would drop to 0 Hit Points before the spell ends, the target instead drops to 1 Hit Point, and the spell ends.</p><p>If the spell is still in effect when the target is subjected to an effect that would kill it instantly without dealing damage, that effect is negated against the target, and the spell ends.</p><p>Whenever the spell ends as listed above the target can spend up to their proficiency bonus of Hit Dice. For each Hit Die spent in this way, the player rolls the die and adds the character's Constitution modifier to it. The character gains temporary hit points equal to the total (minimum of 0).</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "8",
       "units": "hour"
     },
-    "cover": null,
-    "crewed": false,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "type": "creature",
+        "count": "1",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "touch",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": null,
-    "actionType": "",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 4,
     "school": "abj",
@@ -89,87 +57,120 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
     "activities": {
       "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
         "effects": [
           {
-            "_id": "9qMo0B7E70ByboqK"
+            "_id": "mLUL8mRFsCzleR5d"
           }
-        ]
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
       }
-    }
+    },
+    "identifier": "death-ward"
   },
+  "type": "spell",
+  "img": "icons/magic/death/skull-horned-worn-fire-blue.webp",
   "effects": [
     {
-      "name": "Death Ward",
-      "img": "icons/magic/unholy/strike-body-life-soul-purple.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.OnYKg4boLKhXpmlX",
-      "transfer": false,
-      "_id": "9qMo0B7E70ByboqK",
-      "type": "base",
-      "system": {},
-      "changes": [],
-      "disabled": false,
+      "name": "Protection from Death",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplDeathWard0",
       "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
         "rounds": null,
+        "startTime": null,
+        "seconds": 28800,
+        "combat": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "description": "",
+      "disabled": false,
+      "flags": {},
+      "img": "icons/magic/death/skull-horned-worn-fire-blue.webp",
+      "_id": "mLUL8mRFsCzleR5d",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>The first time the target would drop to 0 Hit Points before the spell ends, the target instead drops to 1 Hit Point, and the spell ends.</p><p>If the spell is still in effect when the target is subjected to an effect that would kill it instantly without dealing damage, that effect is negated against the target, and the spell ends.</p>",
       "tint": "#ffffff",
+      "transfer": false,
       "statuses": [],
       "sort": 0,
-      "flags": {},
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728324864036,
-        "modifiedTime": 1728324864036,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!OnYKg4boLKhXpmlX.9qMo0B7E70ByboqK"
+      "_key": "!items.effects!cHAoDVSSB98lD7G6.mLUL8mRFsCzleR5d"
     }
   ],
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.OnYKg4boLKhXpmlX",
-      "spell-lists": "cleric,paladin"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    }
-  },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1707233051886,
-    "modifiedTime": 1728324944938,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
-  },
-  "sort": 3900000,
+  "folder": "PrScRYl7JdLxwH3K",
   "ownership": {
     "default": 0
   },
-  "_key": "!items!OnYKg4boLKhXpmlX"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738678251186,
+    "modifiedTime": 1738719247206,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "cHAoDVSSB98lD7G6",
+  "sort": 500000,
+  "_key": "!items!cHAoDVSSB98lD7G6"
 }

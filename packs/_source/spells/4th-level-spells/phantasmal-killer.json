@@ -1,84 +1,54 @@
 {
   "name": "Phantasmal Killer",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You tap into the nightmares of a creature you can see within range and create an illusory manifestation of its deepest fears, visible only to that creature. The target must make a Wisdom saving throw. On a failed save, the target takes [[/r 4d10]] psychic damage and becomes frightened for the Duration. At the end of each of the target's turns before the spell ends, the target must succeed on a Wisdom saving throw or take [[/r 4d10]] psychic damage. On a successful save, the spell ends.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 5th level or higher, the damage increases by [[/r 1d10]] for each slot level above 4th.</p>",
+      "value": "<p>You tap into the nightmares of a creature you can see within range and create an illusion of its deepest fears, visible only to that creature. The target makes a Wisdom saving throw. On a failed save, the target takes 4d10 Psychic damage and has Disadvantage on ability checks and attack rolls for the duration. On a successful save, the target takes half as much damage, and the spell ends.</p><p>For the duration, the target makes a [[/save ability=wis dc=@attributes.spelldc]] saving throw at the end of each of its turns. On a failed save, it takes the Psychic damage again. On a successful save, the spell ends.</p><p><strong>Using a Higher-Level Spell Slot.</strong>The damage increases by 1d10 for each spell slot level above 4.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "type": "creature",
+        "count": "1",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 120,
-      "long": null,
+      "value": "120",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "4d10",
-          "psychic"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "wis",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 4,
     "school": "ill",
+    "properties": [
+      "vocal",
+      "somatic",
+      "concentration"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -89,45 +59,34 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "1d10"
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "concentration",
-      "mgc"
-    ],
-    "crewed": false,
     "activities": {
-      "4nfn3mSGAcAbZb6L": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "save",
-        "_id": "4nfn3mSGAcAbZb6L",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [
           {
-            "_id": "y3ptGhR4u3Usof8F",
+            "_id": "4k92Sjfpcm5bnguO",
             "onSave": false
           }
         ],
@@ -135,6 +94,7 @@
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -142,243 +102,103 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
+          "override": false
         },
         "damage": {
+          "onSave": "half",
           "parts": [
             {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
               "number": 4,
               "denomination": 10,
               "bonus": "",
               "types": [
                 "psychic"
               ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "onSave": "half"
-        },
-        "save": {
-          "ability": "wis",
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
-        },
-        "name": "",
-        "img": "",
-        "appliedEffects": []
-      },
-      "ONsXb0VxF74JyIvW": {
-        "type": "save",
-        "_id": "ONsXb0VxF74JyIvW",
-        "sort": 0,
-        "activation": {
-          "type": "",
-          "value": null,
-          "override": true,
-          "condition": ""
-        },
-        "consumption": {
-          "scaling": {
-            "allowed": false
-          },
-          "spellSlot": false,
-          "targets": []
-        },
-        "description": {
-          "chatFlavor": ""
-        },
-        "duration": {
-          "units": "inst",
-          "concentration": false,
-          "override": true
-        },
-        "effects": [],
-        "range": {
-          "override": true,
-          "units": "spec",
-          "special": ""
-        },
-        "target": {
-          "template": {
-            "contiguous": false,
-            "units": "ft"
-          },
-          "affects": {
-            "choice": false
-          },
-          "override": false,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
-        },
-        "damage": {
-          "parts": [
-            {
               "custom": {
                 "enabled": false,
                 "formula": ""
               },
-              "number": 4,
-              "denomination": 10,
-              "bonus": "",
-              "types": [
-                "psychic"
-              ],
               "scaling": {
                 "mode": "whole",
                 "number": 1,
                 "formula": ""
               }
             }
-          ],
-          "onSave": "half"
+          ]
         },
         "save": {
-          "ability": "wis",
+          "ability": [
+            ""
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
         },
-        "name": "End of Turn Save",
-        "img": "",
-        "appliedEffects": []
-      }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.ozU4bhqJNftYetM6",
-      "spell-lists": "bard,wizard"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
-        }
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
       }
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
+    "identifier": "phantasmal-killer"
   },
-  "img": "icons/magic/control/fear-fright-monster-grin-purple-blue.webp",
+  "type": "spell",
+  "img": "icons/magic/death/undead-ghosts-trio-blue.webp",
   "effects": [
     {
-      "name": "Phantasmal Killer",
-      "origin": "Compendium.dnd5e.spells.Item.BYNvBJzHcF5VJhXw",
+      "name": "Fears Manifested",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplPhantasmal",
       "duration": {
+        "rounds": null,
         "startTime": null,
         "seconds": 60,
         "combat": null,
-        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "J6OIwL9rmPzNN307",
-      "changes": [],
-      "description": "<p>The target becomes Frightened for the Duration. At the end of each of the target's turns before the spell ends, the target must succeed on a Wisdom saving throw or take psychic damage. On a successful save, the spell ends.</p>",
-      "transfer": false,
-      "statuses": [
-        "frightened"
-      ],
-      "flags": {},
-      "tint": "#ffffff",
-      "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "icons/magic/control/fear-fright-monster-grin-purple-blue.webp",
-      "type": "base",
-      "system": {},
-      "sort": 0,
-      "_key": "!items.effects!ozU4bhqJNftYetM6.J6OIwL9rmPzNN307"
-    },
-    {
-      "name": "Frightened",
-      "img": "systems/dnd5e/icons/svg/statuses/frightened.svg",
-      "origin": "Compendium.materia-dnd.spells.Item.ozU4bhqJNftYetM6",
-      "transfer": false,
-      "_id": "y3ptGhR4u3Usof8F",
-      "type": "base",
-      "system": {},
-      "changes": [],
       "disabled": false,
-      "duration": {
-        "startTime": null,
-        "seconds": 60,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "description": "",
-      "tint": "#ffffff",
-      "statuses": [
-        "frightened"
-      ],
-      "sort": 0,
       "flags": {},
+      "img": "icons/magic/death/skull-horned-white-purple.webp",
+      "_id": "4k92Sjfpcm5bnguO",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>The target has Disadvantage on ability checks and attack rolls for the duration.</p><p>For the duration, the target makes a [[/save ability=wis]] saving throw at the end of each of its turns. On a failed save, it takes the Psychic damage again. On a successful save, the spell ends.</p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1730176032015,
-        "modifiedTime": 1730176050445,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!ozU4bhqJNftYetM6.y3ptGhR4u3Usof8F"
+      "_key": "!items.effects!qiwP2x8G513c543R.4k92Sjfpcm5bnguO"
     }
   ],
   "folder": "PrScRYl7JdLxwH3K",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234093,
-    "modifiedTime": 1730176106486,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "ozU4bhqJNftYetM6",
-  "sort": 2600000,
-  "_key": "!items!ozU4bhqJNftYetM6"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738719616902,
+    "modifiedTime": 1738719616902,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "qiwP2x8G513c543R",
+  "sort": 0,
+  "_key": "!items!qiwP2x8G513c543R"
 }

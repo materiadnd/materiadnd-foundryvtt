@@ -1,92 +1,58 @@
 {
   "name": "Ice Storm",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>A hail of rock-hard ice pounds to the ground in a 20-foot radius, 40-foot-high cylinder centered on a point within range. Each creature in the cylinder must make a Dexterity saving throw. A creature takes [[/r 3d8]] bludgeoning damage and [[/r 5d6]] cold damage on a failed save, or half as much damage on a successful one.</p><p>Hailstones turn the storm's area of effect into difficult terrain until the end of your next turn.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 5th level or higher, the bludgeoning damage increases by [[/r 1d8]] for each slot level above 4th.</p>",
+      "value": "<p>Hail falls in a 20-foot-radius, 40-foot-high Cylinder centered on a point within range. Each creature in the Cylinder makes a Dexterity saving throw. A creature takes 3d8 Bludgeoning damage and 5d6 Cold damage on a failed save or half as much damage on a successful one.</p><p>Hailstones turn ground in the Cylinder into &amp;Reference[DifficultTerrain] until the end of your next turn.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The Bludgeoning damage increases by 1d8 for each spell slot level above 4.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 20,
-      "width": null,
-      "units": "ft",
-      "type": "cylinder",
-      "prompt": true,
       "affects": {
+        "choice": false,
         "count": "",
         "type": ""
       },
       "template": {
-        "height": "40",
+        "units": "ft",
+        "type": "cylinder",
+        "size": "20",
+        "contiguous": false,
+        "height": "",
         "count": ""
       }
     },
     "range": {
-      "value": 300,
-      "long": null,
+      "value": "300",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "3d8",
-          "bludgeoning"
-        ],
-        [
-          "5d6",
-          "cold"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 4,
     "school": "evo",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "A pinch of dust and a few drops of water",
+      "value": "a mitten",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -95,29 +61,56 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "1d8"
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material"
-    ],
-    "crewed": false,
     "activities": {
       "dnd5eactivity000": {
-        "name": "",
-        "img": "",
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
         "damage": {
+          "onSave": "half",
           "parts": [
             {
               "custom": {
                 "enabled": false,
-                "formula": ""
+                "formula": "(@item.level - 2)d10"
               },
               "number": 3,
-              "denomination": 8,
+              "denomination": "8",
               "bonus": "",
               "types": [
                 "bludgeoning"
@@ -134,42 +127,47 @@
                 "formula": ""
               },
               "number": 5,
-              "denomination": 6,
+              "denomination": "6",
               "bonus": "",
               "types": [
                 "cold"
               ],
               "scaling": {
-                "mode": "",
-                "number": null,
-                "formula": "1d8"
+                "mode": ""
               }
             }
           ]
         },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "name": "",
+        "img": "",
         "appliedEffects": []
       }
-    }
+    },
+    "identifier": "ice-storm"
+  },
+  "type": "spell",
+  "img": "icons/magic/water/projectile-ice-chunks-salvo.webp",
+  "effects": [],
+  "folder": "PrScRYl7JdLxwH3K",
+  "ownership": {
+    "default": 0
   },
   "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.KolbUmOsCNtHjOzO",
-      "spell-lists": "druid,sorcerer,wizard"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true,
-          "1": true
-        }
-      }
-    },
     "dnd5e": {
       "riders": {
         "activity": [],
@@ -177,19 +175,16 @@
       }
     }
   },
-  "img": "icons/magic/water/projectiles-ice-faceted-shard-salvo-blue.webp",
-  "effects": [],
-  "folder": "PrScRYl7JdLxwH3K",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1661787234152,
-    "modifiedTime": 1728385621860,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738678555533,
+    "modifiedTime": 1738719247206,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "KolbUmOsCNtHjOzO",
-  "sort": 2300000,
-  "_key": "!items!KolbUmOsCNtHjOzO"
+  "_id": "xo7ddekXsTsB3Nkm",
+  "sort": 1700000,
+  "_key": "!items!xo7ddekXsTsB3Nkm"
 }

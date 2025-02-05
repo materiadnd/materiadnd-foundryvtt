@@ -1,88 +1,58 @@
 {
   "name": "Control Water",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>Until the spell ends, you control any freestanding water inside an area you choose that is a cube up to 100 feet on a side. You can choose from any of the following effects when you cast this spell. As an action on your turn, you can repeat the same effect or choose a different one.</p><p><strong>Flood.</strong> You cause the water level of all standing water in the area to rise by as much as 20 feet. If the area includes a shore, the flooding water spills over onto dry land, instead create a 20-foot tall wave that travels from one side of the area to the other and then crashes down. Any Huge or smaller vehicles in the wave's path are carried with it to the other side. Any Huge or smaller vehicles struck by the wave have a 25 percent chance of capsizing.</p><p>The water level remains elevated until the spell ends or you choose a different effect. If this effect produced a wave, the wave repeats on the start of your next turn while the flood effect lasts.</p><p><strong>Part Water.</strong> You cause water in the area to move apart and create a trench. The trench extends across the spell's area, and the separated water forms a wall to either side. The trench remains until the spell ends or you choose a different effect. The water then slowly fills in the trench over the course of the next round until the normal water level is restored.</p><p><strong>Redirect Flow.</strong> You cause flowing water in the area to move in a direction you choose, even if the water has to flow over obstacles, up walls, or in other unlikely directions. The water in the area moves as you direct it, but once it moves beyond the spell's area, it resumes its flow based on the terrain conditions. The water continues to move in the direction you chose until the spell ends or you choose a different effect.</p><p><strong>Whirlpool.</strong> This effect requires a body of water at least 50 feet square and 25 feet deep. You cause a whirlpool to form in the center of the area. The whirlpool forms a vortex that is 5 feet wide at the base, up to 50 feet wide at the top, and 25 feet tall. Any creature or object in the water and within 25 feet of the vortex is pulled 10 feet toward it. A creature can swim away from the vortex by making a Strength (Athletics) check against your spell save DC.</p><p>When a creature enters the vortex for the first time on a turn or starts its turn there, it must make a Strength saving throw. On a failed save, the creature takes [[/r 2d8]] bludgeoning damage and is caught in the vortex until the spell ends. On a successful save, the creature takes half damage, and isn't caught in the vortex. A creature caught in the vortex can use its action to try to swim away from the vortex as described above, but has disadvantage on the Strength (Athletics) check to do so.</p><p>The first time each turn that an object enters the vortex, the object takes [[/r 2d8]] bludgeoning damage; this damage occurs each round it remains in the vortex.</p>",
+      "value": "<p>Until the spell ends, you control any water inside an area you choose that is a Cube up to 100 feet on a side, using one of the following effects. As a Magic action on your later turns, you can repeat the same effect or choose a different one.</p><p><strong>Flood. </strong>You cause the water level of all standing water in the area to rise by as much as 20 feet. If you choose an area in a large body of water, you instead create a 20-foot tall wave that travels from one side of the area to the other and then crashes. Any Huge or smaller vehicles in the wave's path are carried with it to the other side. Any Huge or smaller vehicles struck by the wave have a [[/r 1d100cs&lt;26#Vehicle is capsized]]{25 percent} chance of capsizing.</p><p>The water level remains elevated until the spell ends or you choose a different effect. If this effect produced a wave, the wave repeats on the start of your next turn while the flood effect lasts.</p><p><strong>Part Water. </strong>You part water in the area and create a trench. The trench extends across the spell's area, and the separated water forms a wall to either side. The trench remains until the spell ends or you choose a different effect. The water then slowly fills in the trench over the course of the next round until the normal water level is restored.</p><p><strong>Redirect Flow. </strong>You cause flowing water in the area to move in a direction you choose, even if the water has to flow over obstacles, up walls, or in other unlikely directions. The water in the area moves as you direct it, but once it moves beyond the spell's area, it resumes its flow based on the terrain. The water continues to move in the direction you chose until the spell ends or you choose a different effect.</p><p><strong>Whirlpool. </strong>You cause a whirlpool to form in the center of the area, which must be at least 50 feet square and 25 feet deep. The whirlpool lasts until you choose a different effect or the spell ends. The whirlpool is 5 feet wide at the base, up to 50 feet wide at the top, and 25 feet tall. Any creature in the water and within 25 feet of the whirlpool is pulled 10 feet toward it. When a creature enters the whirlpool for the first time on a turn or ends its turn there, it makes a Strength saving throw. On a failed save, the creature takes 2d8 Bludgeoning damage. On a successful save, the creature takes half as much damage. A creature can swim away from the whirlpool only if it first takes an action to pull away and succeeds on a [[/check ability=str skill=ath dc=@attributes.spelldc]] check against your spell save DC.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "10",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 100,
-      "width": null,
-      "units": "ft",
-      "type": "cube",
-      "prompt": true,
       "affects": {
+        "choice": false,
         "count": "",
         "type": ""
       },
       "template": {
-        "size": "50",
+        "units": "ft",
+        "type": "cube",
+        "size": "100",
+        "contiguous": false,
         "count": ""
       }
     },
     "range": {
-      "value": 300,
-      "long": null,
+      "value": "300",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "2d8",
-          "bludgeoning"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "str",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 4,
     "school": "trs",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
     "materials": {
-      "value": "A drop of water and a pinch of dust.",
+      "value": "a mixture of water and dust",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -91,23 +61,54 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "concentration",
-      "mgc"
-    ],
-    "crewed": false,
     "activities": {
       "dnd5eactivity000": {
-        "name": "Create Whirlpool",
-        "img": "",
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "cylinder",
+            "size": "25",
+            "height": "-25",
+            "count": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": ""
+          },
+          "override": true
+        },
         "damage": {
+          "onSave": "half",
           "parts": [
             {
               "custom": {
@@ -127,18 +128,27 @@
             }
           ]
         },
-        "appliedEffects": [],
-        "effects": [
-          {
-            "_id": "hiwshNt47MxK3Ma8",
-            "onSave": false
+        "save": {
+          "ability": [
+            "str"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
           }
-        ]
-      },
-      "oTu2eH87lp2lpje0": {
-        "type": "utility",
-        "_id": "oTu2eH87lp2lpje0",
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
         "sort": 0,
+        "name": "Create Whirlpool"
+      },
+      "uvlPi5Em9KSfKICT": {
+        "type": "utility",
+        "name": "Flood, Part, or Redirect",
+        "_id": "uvlPi5Em9KSfKICT",
         "activation": {
           "type": "action",
           "value": null,
@@ -166,109 +176,48 @@
         "target": {
           "template": {
             "contiguous": false,
-            "units": "ft",
-            "type": ""
+            "units": "ft"
           },
           "affects": {
-            "choice": false,
-            "count": "",
-            "type": ""
+            "choice": false
           },
-          "override": true,
-          "prompt": true
+          "override": false,
+          "prompt": false
         },
         "uses": {
           "spent": 0,
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "roll": {
           "prompt": false,
           "visible": false,
-          "name": "",
-          "formula": ""
-        },
-        "name": "Flood, Part, or Redirect",
-        "img": "",
-        "appliedEffects": []
-      }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.s16JeS6J4YpW0DeY",
-      "spell-lists": "cleric,druid,wizard"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
+          "name": "25% Capsize Chance",
+          "formula": "1d100cs<26"
         }
       }
-    }
+    },
+    "identifier": "control-water"
   },
-  "img": "icons/magic/air/fog-gas-smoke-swirling-blue.webp",
-  "effects": [
-    {
-      "name": "Whelmed",
-      "img": "icons/magic/air/fog-gas-smoke-swirling-blue.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.s16JeS6J4YpW0DeY",
-      "transfer": false,
-      "_id": "hiwshNt47MxK3Ma8",
-      "type": "base",
-      "system": {},
-      "changes": [],
-      "disabled": false,
-      "duration": {
-        "startTime": null,
-        "seconds": 600,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "description": "<p>The creature is caught in the vortex until the spell ends. A creature caught in the vortex can use its action to try to swim away from the vortex by making a Strength (Athletics) check against your spell save DC., but has disadvantage on the check to do so.</p><p>The first time each turn that an object enters the vortex, the object takes 2d8 bludgeoning damage; this damage occurs each round it remains in the vortex.</p>",
-      "tint": "#ffffff",
-      "statuses": [],
-      "sort": 0,
-      "flags": {},
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728324579081,
-        "modifiedTime": 1728324663130,
-        "lastModifiedBy": "dnd5mbuilder0000"
-      },
-      "_key": "!items.effects!s16JeS6J4YpW0DeY.hiwshNt47MxK3Ma8"
-    }
-  ],
+  "type": "spell",
+  "img": "icons/magic/water/pseudopod-swirl-blue.webp",
+  "effects": [],
   "folder": "PrScRYl7JdLxwH3K",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234076,
-    "modifiedTime": 1728324834727,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "s16JeS6J4YpW0DeY",
-  "sort": 1500000,
-  "_key": "!items!s16JeS6J4YpW0DeY"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738678237600,
+    "modifiedTime": 1738719247206,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "kyNz7qaA0OTiUvak",
+  "sort": 400000,
+  "_key": "!items!kyNz7qaA0OTiUvak"
 }

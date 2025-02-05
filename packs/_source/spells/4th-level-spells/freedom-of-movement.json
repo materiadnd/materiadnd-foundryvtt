@@ -1,81 +1,55 @@
 {
   "name": "Freedom of Movement",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You touch a willing creature. For the Duration, the target's Movement is unaffected by difficult terrain, and Spells and other magical Effects can neither reduce the target's speed nor cause the target to be Paralyzed or Restrained.</p><p>The target can also spend 5 feet of Movement to automatically escape from nonmagical restraints, such as Manacles or a creature that has it Grappled. Finally, being Underwater imposes no penalties on the target's movement or attacks.</p>",
+      "value": "<p>You touch a willing creature. For the duration, the target's movement is unaffected by &amp;Reference[DifficultTerrain], and spells and other magical effects can neither reduce the target's Speed nor cause the target to have the &amp;Reference[Paralyzed apply=false] or &amp;Reference[Restrained apply=false] conditions. The target also has a Swim Speed equal to its Speed.</p><p>In addition, the target can spend 5 feet of movement to automatically escape from nonmagical restraints, such as manacles or a creature imposing the &amp;Reference[Grappled apply=false] condition on it.</p><p><strong>Using a Higher-Level Spell Slot.</strong> You can target one additional creature for each spell slot level above 4.</p><section class=\"secret\" id=\"secret-uwteEBj1fBNIf7KZ\"><p><strong>Foundry Note</strong></p><p>The Active Effect provided by the <strong>Cast</strong> activity upgrades the character's Swim Speed to a value of \"1\" to indicate equivalence to (walk) Speed, in addition to the condition immunities.</p></section>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "type": "willing",
+        "count": "@item.level - 3",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "touch",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 4,
     "school": "abj",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "A leather strap, bound around the arm or a similar appendage",
+      "value": "a leather strap",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -84,64 +58,88 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material"
-    ],
-    "crewed": false,
     "activities": {
       "dnd5eactivity000": {
-        "name": "",
-        "img": "",
-        "appliedEffects": [
-          "OnWa3f4IQ3pneB5T"
-        ],
+        "_id": "dnd5eactivity000",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
         "effects": [
           {
-            "_id": "OnWa3f4IQ3pneB5T"
+            "_id": "bcTPZ6dJ4kHwaBRD"
           }
-        ]
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "name": "Cast"
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.IzAfw2cGKO1zuCkq",
-      "spell-lists": "artificer,bard,cleric,druid,ranger"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    }
+    "identifier": "freedom-of-movement"
   },
-  "img": "icons/skills/melee/strike-blade-knife-white-red.webp",
+  "type": "spell",
+  "img": "icons/magic/water/elemental-water.webp",
   "effects": [
     {
-      "name": "Freedom of Movement",
-      "origin": "Compendium.dnd5e.spells.Item.da0a1t2FqaTjRZGT",
+      "name": "Unrestricted Movement",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplFreedomofM",
       "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
         "rounds": null,
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "OnWa3f4IQ3pneB5T",
+      "disabled": false,
+      "flags": {},
+      "img": "icons/skills/movement/feet-bladed-boots-fire.webp",
+      "_id": "bcTPZ6dJ4kHwaBRD",
+      "type": "base",
+      "system": {},
       "changes": [
         {
           "key": "system.traits.ci.value",
@@ -154,41 +152,54 @@
           "mode": 2,
           "value": "restrained",
           "priority": null
+        },
+        {
+          "key": "system.attributes.movement.swim",
+          "mode": 4,
+          "value": "1",
+          "priority": null
         }
       ],
-      "description": "<p>The target's Movement is unaffected by difficult terrain, and Spells and other magical Effects can neither reduce the target's speed nor cause the target to be Paralyzed or Restrained.</p>",
-      "transfer": true,
-      "statuses": [],
-      "flags": {},
+      "description": "",
       "tint": "#ffffff",
-      "_stats": {
-        "coreVersion": "12.331",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": 1728372154637,
-        "lastModifiedBy": "dnd5mbuilder0000",
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "icons/skills/melee/strike-blade-knife-white-red.webp",
-      "type": "base",
-      "system": {},
+      "transfer": false,
+      "statuses": [],
       "sort": 0,
-      "_key": "!items.effects!IzAfw2cGKO1zuCkq.OnWa3f4IQ3pneB5T"
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!qu5WWKM253HIWNqT.bcTPZ6dJ4kHwaBRD"
     }
   ],
   "folder": "PrScRYl7JdLxwH3K",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234180,
-    "modifiedTime": 1728372183055,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "IzAfw2cGKO1zuCkq",
-  "sort": 300000,
-  "_key": "!items!IzAfw2cGKO1zuCkq"
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738678419035,
+    "modifiedTime": 1738719247206,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "qu5WWKM253HIWNqT",
+  "sort": 1200000,
+  "_key": "!items!qu5WWKM253HIWNqT"
 }

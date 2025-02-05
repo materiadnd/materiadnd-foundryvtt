@@ -1,130 +1,94 @@
 {
   "name": "Divination",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>Your magic and an offering put you in contact with a god or a god's servants. You ask a single question concerning a specific goal, event, or activity to occur within 7 days. The DM offers a truthful reply. The reply might be a short phrase, a cryptic rhyme, or an omen.</p><p>The spell doesn't take into account any possible circumstances that might change the outcome, such as the casting of additional spells or the loss or gain of a companion.</p><p>If you cast the spell two or more times before finishing your next long rest, there is a cumulative 25 percent chance for each casting after the first that you get a random reading. The DM makes this roll in secret.</p>",
+      "value": "<p>This spell puts you in contact with a god or a god's servants. You ask one question about a specific goal, event, or activity to occur within 7 days. The DM offers a truthful reply, which might be a short phrase or cryptic rhyme. The spell doesn't account for circumstances that might change the answer, such as the casting of other spells.</p><p>If you cast the spell more than once before finishing a Long Rest, there is a cumulative 25 percent chance for each casting after the first that you get no answer.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "self",
-      "prompt": true,
       "affects": {
-        "special": ""
+        "choice": false,
+        "count": "",
+        "type": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "self",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 4,
     "school": "div",
-    "materials": {
-      "value": "Incense and a sacrificial offering appropiate to your religion, together worth at least 25gp, which the spell consumes",
-      "consumed": true,
-      "cost": 25,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
     "properties": [
       "vocal",
       "somatic",
       "material",
       "ritual"
     ],
-    "crewed": false,
+    "materials": {
+      "value": "incense worth 25+ GP, which the spell consumes",
+      "consumed": true,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
     "activities": {
-      "W0HHJRiIBkyW2Cqx": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "utility",
-        "_id": "W0HHJRiIBkyW2Cqx",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -132,36 +96,33 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
         },
         "uses": {
           "spent": 0,
           "recovery": [],
           "max": ""
         },
-        "roll": {
-          "prompt": false,
-          "visible": false,
-          "name": "",
-          "formula": ""
-        },
-        "name": "Cast",
-        "img": "",
-        "appliedEffects": []
+        "sort": 0,
+        "name": "Cast"
       }
-    }
+    },
+    "identifier": "divination"
+  },
+  "type": "spell",
+  "img": "icons/magic/perception/orb-crystal-ball-scrying.webp",
+  "effects": [],
+  "folder": "PrScRYl7JdLxwH3K",
+  "ownership": {
+    "default": 0
   },
   "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.qbe5GNyHte1UaGsC",
-      "spell-lists": "cleric,druid,wizard"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    },
     "dnd5e": {
       "riders": {
         "activity": [],
@@ -169,19 +130,16 @@
       }
     }
   },
-  "img": "icons/magic/light/beam-rays-blue.webp",
-  "effects": [],
-  "folder": "PrScRYl7JdLxwH3K",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1661787234159,
-    "modifiedTime": 1730175754307,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738678293304,
+    "modifiedTime": 1738719247206,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "qbe5GNyHte1UaGsC",
-  "sort": 1200000,
-  "_key": "!items!qbe5GNyHte1UaGsC"
+  "_id": "MFLeFMugTUZEMIN3",
+  "sort": 700000,
+  "_key": "!items!MFLeFMugTUZEMIN3"
 }

@@ -1,80 +1,54 @@
 {
   "name": "Compulsion",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
   "system": {
     "description": {
-      "value": "<p>Creatures of your choice that you can see within range and that can hear you must make a Wisdom saving throw. A target automatically succeeds on this saving throw if it can't be charmed. On a failed save, a target is affected by this spell. Until the spell ends, you can use a bonus action on each of your turns to designate a direction that is relative to you for each creature (given it is possible for the creature to do so; you cannot request a flightless humanoid to move vertically into the air).</p><p>Each affected target must use as much of its movement as possible to move in that direction on its next turn. It can take any action before it moves. After moving in this way, it can make another Wisdom save to try to end the effect.</p><p>A target isn't compelled to move into an obviously deadly hazard, such as a fire or a pit, but it will provoke opportunity attacks to move in the designated direction.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 5th level or higher, the range of this spell increases by 30 feet for each slot level above 4th.</p><p>When you cast this spell using a spell slot of 9th level or higher, the range of this spell is 300 feet instead.</p>",
+      "value": "<p>Each creature of your choice that you can see within range must succeed on a Wisdom saving throw or have the Charmed condition until the spell ends.</p><p>For the duration, you can take a Bonus Action to designate a direction that is relative to you for each creature (given it is possible for the creature to do so; you cannot request a flightless humanoid to move vertically into the air). Each &amp;Reference[Charmed apply=false] target must use as much of its movement as possible to move in that direction on its next turn, taking the safest route. After moving in this way, a target repeats the save, ending the spell on itself on a success. A target isn't compelled to move into an obviously deadly hazard, such as fire or a pit, but it will provoke &amp;Reference[Opportunity Attacks] to move in the designated direction.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The range of the spell increases by 30 feet for each spell slot level above 4. If you use a spell slot level of 9+ the range becomes 300 feet.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "any",
-      "type": "creature",
-      "prompt": true,
       "affects": {
-        "count": "1",
+        "type": "creature",
+        "count": "",
+        "choice": false,
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 30,
-      "long": null,
+      "value": "30",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "wis",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 4,
     "school": "enc",
+    "properties": [
+      "vocal",
+      "somatic",
+      "concentration"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -85,97 +59,130 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "concentration"
-    ],
-    "crewed": false,
     "activities": {
       "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
         "effects": [
           {
-            "_id": "gFVt9xSXMu6JcaBP",
+            "_id": "VMGUJweP1J6ZQUsG",
             "onSave": false
           }
-        ]
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": []
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.esqd87ofSUEicowg",
-      "spell-lists": "bard,sorcerer"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
-      }
-    }
+    "identifier": "compulsion"
   },
-  "img": "icons/magic/fire/explosion-fireball-large-purple-pink.webp",
+  "type": "spell",
+  "img": "icons/skills/wounds/anatomy-organ-brain-pink-red.webp",
   "effects": [
     {
       "name": "Charmed",
-      "img": "systems/dnd5e/icons/svg/statuses/charmed.svg",
-      "origin": "Compendium.materia-dnd.spells.Item.esqd87ofSUEicowg",
-      "transfer": false,
-      "_id": "gFVt9xSXMu6JcaBP",
-      "type": "base",
-      "system": {},
-      "changes": [],
-      "disabled": false,
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplCompulsion",
       "duration": {
+        "rounds": null,
         "startTime": null,
         "seconds": 60,
         "combat": null,
-        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>Until the spell ends, you can use a bonus action on each of your turns to designate a direction that is relative to you for each creature (given it is possible for the creature to do so; you cannot request a flightless humanoid to move vertically into the air).</p><p>Each affected target must use as much of its movement as possible to move in that direction on its next turn. It can take any action before it moves. After moving in this way, it can make another Wisdom save to try to end the effect.</p><p>A target isn't compelled to move into an obviously deadly hazard, such as a fire or a pit, but it will provoke opportunity attacks to move in the designated direction.</p>",
-      "tint": "#ffffff",
-      "statuses": [],
-      "sort": 0,
+      "disabled": false,
       "flags": {},
+      "img": "systems/dnd5e/icons/svg/statuses/charmed.svg",
+      "_id": "VMGUJweP1J6ZQUsG",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>You can take a Bonus Action to designate a direction that is horizontal to you. Each &amp;Reference[Charmed apply=false] target must use as much of its movement as possible to move in that direction on its next turn, taking the safest route. After moving in this way, a target repeats the [[/save ability=wis]] save, ending the spell on itself on a success.</p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "charmed"
+      ],
+      "sort": 0,
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728321274951,
-        "modifiedTime": 1728321326173,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!esqd87ofSUEicowg.gFVt9xSXMu6JcaBP"
+      "_key": "!items.effects!sQHB3DaZnLCMtviW.VMGUJweP1J6ZQUsG"
     }
   ],
   "folder": "PrScRYl7JdLxwH3K",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234132,
-    "modifiedTime": 1728321348385,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "esqd87ofSUEicowg",
-  "sort": 3300000,
-  "_key": "!items!esqd87ofSUEicowg"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738677890050,
+    "modifiedTime": 1738719247206,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_id": "sQHB3DaZnLCMtviW",
+  "sort": 100000,
+  "_key": "!items!sQHB3DaZnLCMtviW"
 }
