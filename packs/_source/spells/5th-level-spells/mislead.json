@@ -1,79 +1,52 @@
 {
   "name": "Mislead",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplMislead000",
   "system": {
     "description": {
-      "value": "<p>You become Invisible at the same time that an illusory double of you appears where you are standing. The double lasts for the Duration, but the Invisibility ends if you Attack or Cast a Spell.</p><p>You can use your action to move your illusory double up to twice your speed and make it gesture, speak, and behave in whatever way you choose.</p><p>You can see through its eyes and hear through its ears as if you were located where it is. On each of your turns as a Bonus Action, you can switch from using its senses to using your own, or back again. While you are using its senses, you are Blinded and Deafened in regard to your own surroundings.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 9th level or higher, grants a duration that does not require concentration.</p>",
+      "value": "<p>You gain the &amp;Reference[Invisible apply=false] condition at the same time that an illusory double of you appears where you are standing. The double lasts for the duration, but the invisibility ends immediately after you make an attack roll, deal damage, or cast a spell.</p><p>As a Magic action, you can move the illusory double up to twice your Speed and make it gesture, speak, and behave in whatever way you choose. It is intangible and invulnerable.</p><p>You can see through its eyes and hear through its ears as if you were located where it is. On each of your turns as a Bonus Action, you can switch from using its senses to using your own, or back again. While you are using its senses, you are Blinded and Deafened in regard to your own surroundings.</p><p><strong>Using a Higher-Level Spell Slot.</strong> If you use a spell slot level of 9+, the spell does not require your Concentration.</p>",
       "chat": ""
     },
     "source": {
+      "rules": "2024",
+      "revision": 1,
       "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "self",
-      "prompt": true,
       "affects": {
-        "special": ""
+        "choice": false,
+        "count": "",
+        "type": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "self",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 5,
     "school": "ill",
+    "properties": [
+      "somatic",
+      "concentration"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -84,43 +57,36 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "somatic",
-      "concentration"
-    ],
-    "crewed": false,
     "activities": {
-      "y2lQQKS3QGM6hJya": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "summon",
-        "_id": "y2lQQKS3QGM6hJya",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
-        "description": {},
+        "description": {
+          "chatFlavor": ""
+        },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
-        "effects": [],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -128,107 +94,112 @@
           "affects": {
             "choice": false
           },
-          "override": false,
+          "override": false
+        },
+        "bonuses": {
+          "ac": "",
+          "hd": "",
+          "hp": "",
+          "attackDamage": "",
+          "saveDamage": "",
+          "healing": ""
+        },
+        "creatureSizes": [],
+        "creatureTypes": [],
+        "match": {
+          "proficiency": false,
+          "attacks": false,
+          "saves": false
+        },
+        "profiles": [
+          {
+            "count": "",
+            "name": "",
+            "_id": "AjhX4dq7UIu11qT8",
+            "uuid": "Compendium.dnd-players-handbook.actors.Actor.phbiluCreature00",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": []
+          }
+        ],
+        "summon": {
+          "identifier": "",
+          "mode": "",
           "prompt": true
         },
         "uses": {
           "spent": 0,
           "recovery": []
         },
-        "bonuses": {},
-        "creatureSizes": [],
-        "creatureTypes": [],
-        "match": {
-          "attacks": false,
-          "proficiency": false,
-          "saves": false
-        },
-        "profiles": [
-          {
-            "_id": "GODbhNQ0HbiQxDd4",
-            "level": {
-              "min": null,
-              "max": null
-            },
-            "types": [],
-            "uuid": "Compendium.materia-dnd.actors.Actor.sHYQiOObTnfRx4fm"
-          }
-        ],
-        "summon": {
-          "prompt": true
-        }
-      }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.Dv9y9TZxEGeQ9Wkk",
-      "spell-lists": "bard,warlock,wizard"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
+        "sort": 0,
+        "effects": []
       }
     },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    }
+    "identifier": "mislead"
   },
-  "img": "icons/magic/control/debuff-energy-hold-levitate-blue-yellow.webp",
+  "type": "spell",
+  "img": "icons/magic/control/fear-fright-mask-orange.webp",
   "effects": [
     {
       "name": "Invisible",
-      "img": "systems/dnd5e/icons/svg/statuses/invisible.svg",
-      "origin": "Compendium.materia-dnd.spells.Item.Dv9y9TZxEGeQ9Wkk",
-      "transfer": false,
-      "_id": "oQCK1pCiCfPljGb3",
-      "type": "base",
-      "system": {},
-      "changes": [],
-      "disabled": false,
+      "origin": "Compendium.materia-dnd.spells.Item.matSplMislead000",
       "duration": {
+        "rounds": null,
         "startTime": null,
         "seconds": 3600,
         "combat": null,
-        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "description": "",
+      "disabled": false,
+      "flags": {},
+      "img": "systems/dnd5e/icons/svg/statuses/invisible.svg",
+      "_id": "3mTWrCYjgS8jIDRU",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>The &amp;Reference[invisible apply=false] immediately after you make an attack roll, deals damage, or casts a spell.</p>",
       "tint": "#ffffff",
+      "transfer": false,
       "statuses": [
         "invisible"
       ],
       "sort": 0,
-      "flags": {},
       "_stats": {
-        "compendiumSource": null,
+        "compendiumSource": "Compendium.materia-dnd.spells.Item.matSplInvisibili.ActiveEffect.9svfDetqjhsFP3ey",
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728557091105,
-        "modifiedTime": 1728557126701,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!Dv9y9TZxEGeQ9Wkk.oQCK1pCiCfPljGb3"
+      "_key": "!items.effects!matSplMislead000.3mTWrCYjgS8jIDRU"
     }
   ],
   "folder": "slWnSXtwvwnA9EXJ",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234123,
-    "modifiedTime": 1728557432991,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "Dv9y9TZxEGeQ9Wkk",
-  "sort": 2400000,
-  "_key": "!items!Dv9y9TZxEGeQ9Wkk"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplMislead000",
+      "spell-lists": "bard,warlock,wizard"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739232673424,
+    "modifiedTime": 1739232753500,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplMislead000"
 }

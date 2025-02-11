@@ -1,89 +1,59 @@
 {
   "name": "Flame Strike",
-  "type": "spell",
+  "_id": "matSplFlameStrik",
   "system": {
     "description": {
-      "value": "<p>A vertical column of divine fire roars down from the heavens in a location you specify. Each creature of your choice in a 10-foot-radius, 40-foot-high cylinder centered on a point within range must make a Dexterity saving throw. A creature takes [[/r 4d8]] fire damage and [[/r 4d8]] radiant damage on a failed save, or half as much damage on a successful one.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 6th level or higher, the fire damage or the radiant damage (your choice) increases by [[/r 1d8]] for each slot level above 5th.</p>",
+      "value": "<p>A vertical column of brilliant fire roars down from above. Each creature in a 10-foot-radius, 40-foot-high Cylinder centered on a point within range makes a Dexterity saving throw, taking [[/damage 5d6 Fire]] damage and 5d6 Radiant damage on a failed save or half as much damage on a successful one.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The Fire damage and the Radiant damage increase by 1d6 for each spell slot level above 5.</p>",
       "chat": ""
     },
     "source": {
+      "rules": "2024",
+      "revision": 1,
       "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 10,
-      "width": null,
-      "units": "ft",
-      "type": "cylinder",
-      "prompt": true,
       "affects": {
+        "choice": false,
         "count": "",
         "type": ""
       },
       "template": {
+        "units": "ft",
+        "type": "cylinder",
+        "size": "10",
+        "contiguous": false,
         "height": "40",
         "count": ""
       }
     },
     "range": {
-      "value": 60,
-      "long": null,
+      "value": "60",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "4d8",
-          "radiant"
-        ],
-        [
-          "4d8",
-          "fire"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 5,
     "school": "evo",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "A pinch of sulfur",
+      "value": "a pinch of sulfur",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -92,32 +62,59 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "1d8"
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material"
-    ],
-    "crewed": false,
     "activities": {
       "dnd5eactivity000": {
-        "name": "",
-        "img": "",
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
         "damage": {
+          "onSave": "half",
           "parts": [
             {
               "custom": {
                 "enabled": false,
-                "formula": ""
+                "formula": "(@item.level)d6"
               },
-              "number": 4,
-              "denomination": 8,
+              "number": 5,
+              "denomination": 6,
               "bonus": "",
               "types": [
-                "radiant"
+                "fire"
               ],
               "scaling": {
                 "mode": "whole",
@@ -128,44 +125,52 @@
             {
               "custom": {
                 "enabled": false,
-                "formula": ""
+                "formula": "(@item.level)d6"
               },
-              "number": 4,
-              "denomination": 8,
+              "number": 5,
+              "denomination": 6,
               "bonus": "",
               "types": [
-                "fire"
+                "radiant"
               ],
               "scaling": {
-                "mode": "",
-                "number": 1,
-                "formula": ""
+                "mode": "whole",
+                "number": 1
               }
             }
           ]
         },
-        "appliedEffects": []
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "name": ""
       }
-    }
+    },
+    "identifier": "flame-strike"
+  },
+  "type": "spell",
+  "img": "icons/magic/fire/beam-jet-stream-embers.webp",
+  "effects": [],
+  "folder": "slWnSXtwvwnA9EXJ",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.eQ1Q69HlGLunH6Lt",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplFlameStrik",
       "spell-lists": "cleric"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true,
-          "1": true
-        }
-      }
     },
     "dnd5e": {
       "riders": {
@@ -174,22 +179,15 @@
       }
     }
   },
-  "img": "icons/magic/light/beam-rays-red-large.webp",
-  "effects": [],
-  "folder": "slWnSXtwvwnA9EXJ",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1661787234070,
-    "modifiedTime": 1728525405311,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739232035501,
+    "modifiedTime": 1739245289305,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "eQ1Q69HlGLunH6Lt",
-  "sort": 5000000,
-  "ownership": {
-    "default": 0
-  },
-  "_key": "!items!eQ1Q69HlGLunH6Lt"
+  "sort": 0,
+  "_key": "!items!matSplFlameStrik"
 }

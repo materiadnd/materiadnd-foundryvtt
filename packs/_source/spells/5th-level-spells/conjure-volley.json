@@ -1,15 +1,50 @@
 {
   "name": "Conjure Volley",
-  "type": "spell",
+  "_id": "matSplConjureVol",
   "system": {
-    "source": {
-      "book": "Materia"
-    },
     "description": {
-      "value": "<p>You fire a piece of ammunition from a ranged weapon or throw a weapon into the air and choose a point within range. Hundreds of duplicates of the ammunition or weapon fall in a volley from above and then disappear. Each creature of your choice in a 40-foot-radius, 20-foot-high cylinder centered on that point must make a Dexterity saving throw. A creature takes [[/r 8d8]] damage on a failed save, or half as much damage on a successful one. The damage type is the same as that of the ammunition or weapon, and if the ammunition or weapon used has additional effects, they apply to each creature in the area.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 6th level or higher, the damage increases by [[/r 1d8]] for each slot level above 5th.</p>",
+      "value": "<p>You brandish the weapon used to cast the spell and choose a point within range. Hundreds of similar spectral weapons (or ammunition appropriate to the weapon) fall in a volley and then disappear. Each creature of your choice that you can see in a 40-foot-radius, 20-foot-high Cylinder centered on that point makes a Dexterity saving throw. A creature takes 8d8 Force damage on a failed save or half as much damage on a successful one.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d8 for each spell slot level above 4.</p>",
       "chat": ""
     },
-    "actionType": "save",
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "action",
+      "condition": "",
+      "value": null
+    },
+    "duration": {
+      "value": "",
+      "units": "inst"
+    },
+    "target": {
+      "affects": {
+        "choice": false,
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "units": "ft",
+        "type": "cylinder",
+        "size": "40",
+        "contiguous": false,
+        "height": "20",
+        "count": ""
+      }
+    },
+    "range": {
+      "value": "150",
+      "units": "ft",
+      "special": ""
+    },
+    "uses": {
+      "max": "",
+      "recovery": [],
+      "spent": 0
+    },
     "level": 5,
     "school": "con",
     "properties": [
@@ -18,159 +53,117 @@
       "material"
     ],
     "materials": {
-      "value": "one piece of ammunition or one thrown weapon",
+      "value": "a Melee or Ranged weapon worth at least 1 CP",
       "consumed": false,
       "cost": 0,
       "supply": 0
     },
-    "target": {
-      "value": 40,
-      "units": "ft",
-      "type": "cylinder",
-      "prompt": true,
-      "width": null,
-      "affects": {
-        "count": "",
-        "type": ""
-      },
-      "template": {
-        "height": "20",
-        "count": ""
-      }
-    },
-    "range": {
-      "value": 150,
-      "units": "ft",
-      "long": null,
-      "special": ""
-    },
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": "",
-      "units": "inst"
-    },
-    "damage": {
-      "parts": [
-        [
-          "8d8",
-          ""
-        ]
-      ],
-      "versatile": ""
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "save": {
-      "ability": "dex",
-      "dc": null,
-      "scaling": "spell"
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "formula": "",
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "cover": null,
-    "crewed": false,
-    "ability": "",
     "activities": {
       "dnd5eactivity000": {
-        "name": "",
-        "img": "",
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
         "damage": {
+          "onSave": "half",
           "parts": [
             {
+              "number": 8,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "force"
+              ],
               "custom": {
                 "enabled": false,
                 "formula": ""
               },
-              "number": 8,
-              "denomination": 8,
-              "bonus": "",
-              "types": [],
               "scaling": {
-                "mode": "whole",
-                "number": 1
+                "mode": "",
+                "number": null,
+                "formula": ""
               }
             }
           ]
         },
-        "appliedEffects": []
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
       }
-    }
+    },
+    "identifier": "conjure-volley"
   },
-  "img": "icons/magic/holy/projectiles-blades-salvo-yellow.webp",
+  "type": "spell",
+  "img": "icons/skills/ranged/arrows-flying-salvo-purple.webp",
+  "effects": [],
+  "folder": "slWnSXtwvwnA9EXJ",
   "ownership": {
     "default": 0
   },
   "flags": {
-    "plutonium": {
-      "page": "spells.html",
-      "source": "PHB",
-      "hash": "conjure%20volley_phb",
-      "propDroppable": "spell"
-    },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.ZleieHGk1lXCZbzD",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplConjureVol",
       "spell-lists": "ranger"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
-        }
-      }
     }
   },
-  "effects": [],
-  "folder": "slWnSXtwvwnA9EXJ",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1709178850404,
-    "modifiedTime": 1728424835166,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739231810336,
+    "modifiedTime": 1739231835002,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "ZleieHGk1lXCZbzD",
-  "sort": 4000000,
-  "_key": "!items!ZleieHGk1lXCZbzD"
+  "sort": 0,
+  "_key": "!items!matSplConjureVol"
 }

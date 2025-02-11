@@ -1,15 +1,50 @@
 {
   "name": "Synaptic Static",
-  "type": "spell",
+  "_id": "matSplSynapticSt",
   "system": {
-    "source": {
-      "book": "Materia"
-    },
     "description": {
-      "value": "<p>You choose a point within range and cause psychic energy to explode there. Each creature in a 20-foot-radius sphere centered on that point must make an Intelligence saving throw. A creature with an Intelligence score of 2 or lower can't be affected by this spell. A target takes [[/r 8d6]] psychic damage on a failed save, or half as much damage on a successful one.</p><p>After a failed save, a target has muddled thoughts for 1 minute. During that time, it rolls a [[/r d6]] and subtracts the number rolled from all its attack rolls and ability checks, as well as its Constitution saving throws to maintain concentration. The target can make an Intelligence saving throw at the end of each of its turns, ending the effect on itself on a success.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 6th level or higher, the damage increases by [[/r 1d6]] for each slot level above 5th.</p><p>When you cast this spell using a spell slot of 9th level or higher, a creature rolls a d12 and subtract the number from all attack rolls and ability checks, as well as its Constitution saving throws to maintain concentration.</p>",
+      "value": "<p>You cause psychic energy to erupt at a point within range. Each creature in a 20-foot-radius Sphere centered on that point makes an Intelligence saving throw, taking 8d6 Psychic damage on a failed save or half as much damage on a successful one.</p><p>On a failed save, a target also has muddled thoughts for 1 minute. During that time, it subtracts [[/r 1d6]] from all its attack rolls and ability checks, as well as any Constitution saving throws to maintain Concentration. The target makes an [[/save ability=int dc=@attributes.spelldc format=long]] at the end of each of its turns, ending the effect on itself on a success.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d6 for each spell slot level above 4.</p><p>If you use a spell slot level of 9+, the penalty changes to a d12.</p>",
       "chat": ""
     },
-    "actionType": "save",
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "action",
+      "condition": "",
+      "value": null
+    },
+    "duration": {
+      "value": "",
+      "units": "inst"
+    },
+    "target": {
+      "affects": {
+        "choice": false,
+        "count": "",
+        "type": "creature",
+        "special": ""
+      },
+      "template": {
+        "units": "ft",
+        "contiguous": false,
+        "type": "sphere",
+        "size": "20",
+        "count": ""
+      }
+    },
+    "range": {
+      "units": "ft",
+      "special": "",
+      "value": "120"
+    },
+    "uses": {
+      "max": "",
+      "spent": 0,
+      "recovery": []
+    },
     "level": 5,
     "school": "enc",
     "properties": [
@@ -22,90 +57,60 @@
       "cost": 0,
       "supply": 0
     },
-    "target": {
-      "value": 20,
-      "units": "ft",
-      "type": "sphere",
-      "prompt": true,
-      "width": null,
-      "affects": {
-        "count": "",
-        "type": ""
-      },
-      "template": {
-        "count": ""
-      }
-    },
-    "range": {
-      "value": 120,
-      "units": "ft",
-      "long": null,
-      "special": ""
-    },
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": "",
-      "units": "inst"
-    },
-    "damage": {
-      "parts": [
-        [
-          "8d6",
-          "psychic"
-        ]
-      ],
-      "versatile": ""
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "save": {
-      "ability": "int",
-      "dc": null,
-      "scaling": "spell"
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "formula": "",
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "cover": null,
-    "crewed": false,
-    "ability": "",
     "activities": {
-      "dnd5eactivity000": {
+      "Um2mWH62piec6mVJ": {
+        "type": "save",
+        "_id": "Um2mWH62piec6mVJ",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
         "effects": [
           {
-            "_id": "d9rzvwh2AVLaIr4d",
+            "_id": "J92ctOoK4mEo5V02",
             "onSave": false
           }
         ],
-        "name": "",
-        "img": "",
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
         "damage": {
           "parts": [
             {
@@ -114,117 +119,93 @@
                 "formula": ""
               },
               "number": 8,
-              "denomination": 6,
+              "denomination": 8,
               "bonus": "",
               "types": [
                 "psychic"
               ],
               "scaling": {
-                "mode": "whole",
+                "mode": "",
                 "number": 1
               }
             }
-          ]
+          ],
+          "onSave": "half"
         },
-        "appliedEffects": [
-          "d9rzvwh2AVLaIr4d"
-        ]
-      }
-    }
-  },
-  "img": "icons/magic/lightning/bolts-strike-salvo-blue.webp",
-  "ownership": {
-    "default": 0
-  },
-  "flags": {
-    "plutonium": {
-      "page": "spells.html",
-      "source": "XGE",
-      "hash": "synaptic%20static_xge",
-      "propDroppable": "spell"
-    },
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.GKK8EztkQOBDveSW",
-      "spell-lists": "bard,sorcerer,warlock,wizard"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
+        "save": {
+          "ability": [
+            "int"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": ""
       }
     },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
-        }
-      }
-    }
+    "identifier": "synaptic-static"
   },
+  "type": "spell",
+  "img": "icons/magic/lightning/barrier-wall-shield-gray.webp",
   "effects": [
     {
       "name": "Muddled Thoughts",
-      "img": "icons/magic/lightning/bolts-strike-salvo-blue.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.GKK8EztkQOBDveSW",
+      "img": "icons/skills/wounds/anatomy-organ-brain-pink-red.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplSynapticSt",
       "transfer": false,
-      "_id": "d9rzvwh2AVLaIr4d",
+      "_id": "J92ctOoK4mEo5V02",
       "type": "base",
       "system": {},
       "changes": [
         {
           "key": "system.bonuses.mwak.attack",
           "mode": 2,
-          "value": "-1d6",
+          "value": "- 1d6",
           "priority": null
         },
         {
           "key": "system.bonuses.msak.attack",
           "mode": 2,
-          "value": "-1d6",
-          "priority": null
-        },
-        {
-          "key": "system.bonuses.rwak.attack",
-          "mode": 2,
-          "value": "-1d6",
+          "value": "- 1d6",
           "priority": null
         },
         {
           "key": "system.bonuses.rsak.attack",
           "mode": 2,
-          "value": "-1d6",
+          "value": "- 1d6",
+          "priority": null
+        },
+        {
+          "key": "system.bonuses.rwak.attack",
+          "mode": 2,
+          "value": "- 1d6",
           "priority": null
         },
         {
           "key": "system.bonuses.abilities.check",
           "mode": 2,
-          "value": "-1d6",
+          "value": "- 1d6",
           "priority": null
         },
         {
           "key": "system.attributes.concentration.bonuses.save",
           "mode": 2,
-          "value": "-1d6",
+          "value": "- 1d6",
           "priority": null
         }
       ],
       "disabled": false,
       "duration": {
         "startTime": null,
-        "seconds": null,
+        "seconds": 60,
         "combat": null,
         "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>The target rolls a d6 and subtracts the number rolled from all its attack rolls and ability checks, as well as its Constitution saving throws to maintain concentration. The target can make an Intelligence saving throw at the end of each of its turns, ending the effect on itself on a success.</p>",
+      "description": "<p>The target subtracts 1d6 from all its attack rolls and ability checks, as well as any Constitution saving throws to maintain Concentration. The target makes an [[/save ability=int format=long]] at the end of each of its turns, ending the effect on itself on a success.</p>",
       "tint": "#ffffff",
       "statuses": [],
       "sort": 0,
@@ -234,25 +215,33 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728565841460,
-        "modifiedTime": 1728565932530,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!GKK8EztkQOBDveSW.d9rzvwh2AVLaIr4d"
+      "_key": "!items.effects!matSplSynapticSt.J92ctOoK4mEo5V02"
     }
   ],
   "folder": "slWnSXtwvwnA9EXJ",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1709185344760,
-    "modifiedTime": 1728565941690,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "GKK8EztkQOBDveSW",
-  "sort": 1300000,
-  "_key": "!items!GKK8EztkQOBDveSW"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplSynapticSt",
+      "spell-lists": "bard,sorcerer,warlock,wizard"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739233270545,
+    "modifiedTime": 1739233337019,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplSynapticSt"
 }

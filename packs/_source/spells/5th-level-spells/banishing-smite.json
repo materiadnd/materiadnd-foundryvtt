@@ -1,85 +1,48 @@
 {
-  "folder": "slWnSXtwvwnA9EXJ",
   "name": "Banishing Smite",
-  "type": "spell",
-  "_id": "a6ZpKhfC1mUsRmMN",
-  "img": "icons/magic/light/beam-strike-village-yellow.webp",
+  "_id": "matSplBanishingS",
   "system": {
     "description": {
-      "value": "<p>As you hit with a weapon attack or unarmed strike, your strike crackles with force, and the attack deals an extra [[/r 5d10]] force damage to the target.</p><p>Additionally, if this attack reduces the target to 50 hit points or fewer, you banish it. If the target is native to a different plane of existence than the one you are on, the target disappears, returning to its home plane. If the target is native to the plane you are on, the creature vanishes into a harmless demiplane. While there, the target is incapacitated. It remains there until the until the end of your next turn or until the spell ends if you choose to maintain concentration on this spell, at which point the target reappears in the space it left or in the nearest unoccupied space if that space is occupied.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 6th level or higher, the extra damage increases by [[/r 1d10]] for each slot level above 5th.</p>",
+      "value": "<p>The target hit by the attack roll takes an extra 5d10 Force damage from the attack. If the attack reduces the target to 50 Hit Points or fewer, the target must succeed on a Charisma saving throw or be transported to a harmless demiplane for the duration. While there, the target has the &amp;Reference[Incapacitated apply=false] condition. When the spell ends, the target reappears in the space it left or in the nearest unoccupied space if that space is occupied.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d10 for each spell slot level above 5.</p>",
       "chat": ""
     },
     "source": {
+      "rules": "2024",
+      "revision": 1,
       "book": "Materia"
     },
     "activation": {
       "type": "bonus",
-      "cost": 1,
-      "condition": "which you take immediately after hitting a target with a weapon or an unarmed strike"
+      "condition": "immediately after hitting a creature with a weapon or an Unarmed Strike",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
-    "crewed": false,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
-        "special": ""
+        "choice": false,
+        "count": "",
+        "type": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "spec",
+      "units": "self",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "other",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "5d10",
-          "force"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 5,
-    "school": "abj",
+    "school": "con",
     "properties": [
       "vocal",
       "concentration"
@@ -94,64 +57,145 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "1d10"
-    },
     "activities": {
       "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
         "effects": [
           {
-            "_id": "3kblR58oiGXUfm3W"
+            "_id": "dAnHnTaGvsiN1WzK",
+            "onSave": false
           }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 5,
+              "denomination": "10",
+              "bonus": "",
+              "types": [
+                "force"
+              ],
+              "scaling": {
+                "mode": "whole"
+              }
+            }
+          ]
+        },
+        "save": {
+          "ability": [
+            "cha"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "name": "Damage and Banish",
+        "img": "",
+        "appliedEffects": [
+          "dAnHnTaGvsiN1WzK"
         ]
       }
-    }
+    },
+    "identifier": "banishing-smite"
   },
+  "type": "spell",
+  "img": "icons/magic/light/explosion-beam-impact-silhouette.webp",
   "effects": [
     {
       "name": "Banished",
-      "img": "icons/magic/light/beam-strike-village-yellow.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.a6ZpKhfC1mUsRmMN",
-      "transfer": false,
-      "_id": "3kblR58oiGXUfm3W",
-      "type": "base",
-      "system": {},
-      "changes": [],
-      "disabled": false,
+      "origin": "Compendium.materia-dnd.spells.Item.matSplBanishingS",
       "duration": {
+        "rounds": null,
         "startTime": null,
         "seconds": 60,
         "combat": null,
-        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>If this attack reduces the target to 50 hit points or fewer, you banish it. If the target is native to a different plane of existence than the one you are on, the target disappears, returning to its home plane. If the target is native to the plane you are on, the creature vanishes into a harmless demiplane. While there, the target is incapacitated. It remains there until the until the end of your next turn or until the spell ends if you choose to maintain concentration on this spell, at which point the target reappears in the space it left or in the nearest unoccupied space if that space is occupied.</p>",
+      "disabled": false,
+      "flags": {},
+      "img": "icons/magic/light/explosion-beam-impact-silhouette.webp",
+      "_id": "dAnHnTaGvsiN1WzK",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>The target is transported to a harmless demiplane for the duration. While there, the target has the &amp;Reference[Incapacitated apply=false] condition. When the spell ends, the target reappears in the space it left or in the nearest unoccupied space if that space is occupied.</p>",
       "tint": "#ffffff",
+      "transfer": false,
       "statuses": [
         "incapacitated"
       ],
       "sort": 0,
-      "flags": {},
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728422200833,
-        "modifiedTime": 1728422281841,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!a6ZpKhfC1mUsRmMN.3kblR58oiGXUfm3W"
+      "_key": "!items.effects!matSplBanishingS.dAnHnTaGvsiN1WzK"
     }
   ],
+  "folder": "slWnSXtwvwnA9EXJ",
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "materia-dnd": {
       "tele-flag": "true",
-      "sourceId": "Compendium.materia-dnd.spells.Item.a6ZpKhfC1mUsRmMN",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplBanishingS",
       "spell-lists": "paladin"
     },
     "dnd5e": {
@@ -159,30 +203,17 @@
         "activity": [],
         "effect": []
       }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
-        }
-      }
     }
   },
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1707604268963,
-    "modifiedTime": 1728422426413,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739230908922,
+    "modifiedTime": 1739231383747,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "sort": 4800000,
-  "ownership": {
-    "default": 0
-  },
-  "_key": "!items!a6ZpKhfC1mUsRmMN"
+  "sort": 0,
+  "_key": "!items!matSplBanishingS"
 }

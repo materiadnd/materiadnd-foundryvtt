@@ -1,84 +1,54 @@
 {
-  "_id": "abPJy51MFTawXUVH",
   "name": "Mass Cure Wounds",
-  "type": "spell",
+  "_id": "matSplMassCureWo",
   "system": {
     "description": {
-      "value": "<p>A wave of healing energy washes out from a point of your choice within range. Choose up to six creatures in a 30-foot-radius sphere centered on that point. Each target regains hit points equal to [[/r 6d6]] + your spellcasting ability modifier . This spell has no effect on undead or constructs.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 6th level or higher, the healing increases by [[/r 2d6]] for each slot level above 5th.</p>",
+      "value": "<p>A wave of healing energy washes out from a point you can see within range. Choose up to six creatures in a 30-foot-radius Sphere centered on that point. Each target regains Hit Points equal to 6d6 plus your spellcasting ability modifier.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The healing increases by 2d6 for each spell slot level above 5.</p>",
       "chat": ""
     },
     "source": {
+      "rules": "2024",
+      "revision": 1,
       "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 30,
-      "width": null,
-      "units": "ft",
-      "type": "sphere",
-      "prompt": true,
       "affects": {
-        "count": "6",
-        "type": "creature",
-        "special": ""
+        "choice": false,
+        "type": ""
       },
       "template": {
+        "units": "ft",
+        "type": "sphere",
+        "size": "30",
+        "contiguous": false,
         "count": ""
       }
     },
     "range": {
-      "value": 60,
-      "long": null,
+      "value": "60",
       "units": "ft",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "heal",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "6d6 + @mod",
-          "healing"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 5,
-    "school": "evo",
+    "school": "abj",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -89,45 +59,37 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "2d6"
-    },
-    "properties": [
-      "vocal",
-      "somatic"
-    ],
-    "crewed": false,
     "activities": {
-      "byU6Qp7lJtjAA1ZF": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
         "type": "heal",
-        "_id": "byU6Qp7lJtjAA1ZF",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
-            "allowed": false
+            "allowed": false,
+            "max": ""
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
           "units": "inst",
-          "concentration": false,
-          "override": false
+          "override": false,
+          "concentration": false
         },
         "effects": [],
         "range": {
           "override": false
         },
         "target": {
+          "prompt": true,
           "template": {
             "contiguous": false,
             "units": "ft"
@@ -135,43 +97,49 @@
           "affects": {
             "choice": false
           },
-          "override": false,
-          "prompt": true
+          "override": false
+        },
+        "healing": {
+          "number": 6,
+          "denomination": "6",
+          "bonus": "@mod",
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": false,
+            "formula": ""
+          },
+          "scaling": {
+            "mode": "whole",
+            "number": 2,
+            "formula": ""
+          }
         },
         "uses": {
           "spent": 0,
           "recovery": [],
           "max": ""
         },
-        "healing": {
-          "number": 6,
-          "denomination": "6",
-          "types": [],
-          "custom": {
-            "enabled": false
-          },
-          "scaling": {
-            "number": 2,
-            "mode": "whole",
-            "formula": ""
-          },
-          "bonus": "@mod"
-        },
+        "sort": 0,
         "name": "",
         "img": "",
         "appliedEffects": []
       }
-    }
+    },
+    "identifier": "mass-cure-wounds"
+  },
+  "type": "spell",
+  "img": "icons/magic/life/cross-area-circle-green-white.webp",
+  "effects": [],
+  "folder": "slWnSXtwvwnA9EXJ",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.abPJy51MFTawXUVH",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplMassCureWo",
       "spell-lists": "bard,cleric,druid"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
     },
     "dnd5e": {
       "riders": {
@@ -180,21 +148,15 @@
       }
     }
   },
-  "img": "icons/magic/life/heart-cross-strong-green.webp",
-  "effects": [],
-  "folder": "slWnSXtwvwnA9EXJ",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1661787234134,
-    "modifiedTime": 1730179245213,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739232620019,
+    "modifiedTime": 1739232650748,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "sort": 4900000,
-  "ownership": {
-    "default": 0
-  },
-  "_key": "!items!abPJy51MFTawXUVH"
+  "sort": 0,
+  "_key": "!items!matSplMassCureWo"
 }

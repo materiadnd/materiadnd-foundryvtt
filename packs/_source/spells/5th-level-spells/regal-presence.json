@@ -1,9 +1,9 @@
 {
-  "name": "Wall of Force",
-  "_id": "matSplWallOfForc",
+  "name": "Regal Presence",
+  "_id": "matSplRegalPrese",
   "system": {
     "description": {
-      "value": "<p>An Invisible wall of force springs into existence at a point you choose within range. The wall appears in any orientation you choose, as a horizontal or vertical barrier or at an angle. It can be free floating or resting on a solid surface. You can form it into a hemispherical dome or a globe with a radius of up to 10 feet, or you can shape a flat surface made up of ten 10-foot-by-10-foot panels. Each panel must be contiguous with another panel. In any form, the wall is 1/4 inch thick and lasts for the duration. If the wall cuts through a creature's space when it appears, the creature is pushed to one side of the wall (you choose which side).</p><p>Nothing can physically pass through the wall. It is immune to all damage and can't be dispelled by <em>@UUID[Compendium.materia-dnd.spells.Item.matSplDispelMagi]{Dispel Magic}.</em> A <em>@UUID[Compendium.materia-dnd.spells.Item.matSplDisintegra]{Disintegrate}</em> spell destroys the wall instantly, however. The wall also extends into the Ethereal Plane and blocks ethereal travel through the wall.</p><p><strong>Using a Higher-Level Spell Slot.</strong> If you use a spell slot level of 9+, the spell does not require your Concentration.</p>",
+      "value": "<p>You surround yourself with unearthly majesty in a 10-foot Emanation. Whenever the Emanation enters the space of a creature you can see and whenever a creature you can see enters the Emanation or ends its turn there, you can force that creature to make a Wisdom saving throw. On a failed save, the target takes 4d6 Psychic damage and has the &amp;Reference[Prone] condition, and you can push it up to 10 feet away. On a successful save, the target takes half as much damage only. A creature makes this save only once per turn.</p>",
       "chat": ""
     },
     "source": {
@@ -17,25 +17,27 @@
       "value": null
     },
     "duration": {
-      "value": "10",
+      "value": "1",
       "units": "minute"
     },
     "target": {
       "affects": {
         "choice": false,
         "count": "",
-        "type": ""
+        "type": "",
+        "special": ""
       },
       "template": {
-        "units": "",
+        "units": "ft",
         "contiguous": false,
-        "type": ""
+        "type": "radius",
+        "size": "10",
+        "count": ""
       }
     },
     "range": {
-      "units": "ft",
-      "special": "",
-      "value": "120"
+      "units": "self",
+      "special": ""
     },
     "uses": {
       "max": "",
@@ -43,7 +45,7 @@
       "recovery": []
     },
     "level": 5,
-    "school": "evo",
+    "school": "enc",
     "properties": [
       "vocal",
       "somatic",
@@ -51,7 +53,7 @@
       "concentration"
     ],
     "materials": {
-      "value": "a shard of glass",
+      "value": "a miniature tiara",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -61,9 +63,9 @@
       "prepared": false
     },
     "activities": {
-      "obcyQX0IlwinXINV": {
+      "OJHRKWz8JvLzyl9R": {
         "type": "utility",
-        "_id": "obcyQX0IlwinXINV",
+        "_id": "OJHRKWz8JvLzyl9R",
         "activation": {
           "type": "action",
           "value": null,
@@ -91,40 +93,35 @@
         "target": {
           "template": {
             "contiguous": false,
-            "units": "ft",
-            "type": "sphere",
-            "size": "10",
-            "count": ""
+            "units": "ft"
           },
           "affects": {
-            "choice": false,
-            "count": "",
-            "type": ""
+            "choice": false
           },
-          "override": true,
-          "prompt": true
+          "override": false,
+          "prompt": false
         },
         "uses": {
           "spent": 0,
           "recovery": [],
           "max": ""
         },
-        "sort": 0,
+        "sort": 100000,
         "roll": {
           "prompt": false,
           "visible": false,
           "name": "",
           "formula": ""
         },
-        "name": "Sphere or Globe"
+        "name": "Surround Self"
       },
-      "O3uhE0OLzsAhHoAg": {
-        "type": "utility",
-        "_id": "O3uhE0OLzsAhHoAg",
+      "dzeoGwKOPG7PHbyE": {
+        "type": "save",
         "activation": {
-          "type": "action",
+          "type": "",
           "value": null,
-          "override": false
+          "override": true,
+          "condition": "a creature is within the Emanation"
         },
         "consumption": {
           "targets": [],
@@ -134,31 +131,30 @@
           "spellSlot": true
         },
         "description": {
-          "chatFlavor": ""
+          "chatFlavor": "Push 10 ft. and &Reference[prone] on failure"
         },
         "duration": {
           "units": "inst",
           "concentration": false,
-          "override": false
+          "override": true
         },
         "effects": [],
         "range": {
-          "override": false
+          "override": true,
+          "value": "10",
+          "units": "ft",
+          "special": ""
         },
         "target": {
           "template": {
-            "contiguous": true,
+            "contiguous": false,
             "units": "ft",
-            "type": "wall",
-            "size": "10",
-            "count": "10",
-            "width": "1/12",
-            "height": "10"
+            "type": ""
           },
           "affects": {
             "choice": false,
-            "count": "",
-            "type": "",
+            "count": "1",
+            "type": "creature",
             "special": ""
           },
           "override": true,
@@ -169,20 +165,45 @@
           "recovery": [],
           "max": ""
         },
-        "sort": 0,
-        "roll": {
-          "prompt": false,
-          "visible": false,
-          "name": "",
-          "formula": ""
+        "sort": 200000,
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 4,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "psychic"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ],
+          "onSave": "half"
         },
-        "name": "Panels"
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Emanation Save",
+        "_id": "dzeoGwKOPG7PHbyE"
       }
     },
-    "identifier": "wall-of-force"
+    "identifier": "yolandes-regal-presence"
   },
   "type": "spell",
-  "img": "icons/magic/defensive/barrier-shield-dome-deflect-blue.webp",
+  "img": "icons/magic/control/control-influence-crown-yellow.webp",
   "effects": [],
   "folder": "slWnSXtwvwnA9EXJ",
   "ownership": {
@@ -190,14 +211,8 @@
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.matSplWallOfForc",
-      "spell-lists": "wizard"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplRegalPrese",
+      "spell-lists": "bard,wizard"
     }
   },
   "_stats": {
@@ -205,10 +220,10 @@
     "coreVersion": "12.331",
     "systemId": "dnd5e",
     "systemVersion": "4.2.2",
-    "createdTime": 1739233650768,
-    "modifiedTime": 1739233676279,
+    "createdTime": 1739233757755,
+    "modifiedTime": 1739233765936,
     "lastModifiedBy": "dnd5mbuilder0000"
   },
   "sort": 0,
-  "_key": "!items!matSplWallOfForc"
+  "_key": "!items!matSplRegalPrese"
 }

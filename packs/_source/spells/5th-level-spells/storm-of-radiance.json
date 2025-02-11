@@ -1,9 +1,9 @@
 {
-  "name": "Dream",
-  "_id": "matSplDream00000",
+  "name": "Storm of Radiance",
+  "_id": "matSplStormOfRad",
   "system": {
     "description": {
-      "value": "<p>You target a creature you know on the same plane of existence. You or a willing creature you touch enters a trance state to act as a dream messenger. While in the trance, the messenger is &amp;Reference[Incapacitated apply=false] and has a Speed of 0.</p><p>If the target is asleep, the messenger appears in the target's dreams and can converse with the target as long as it remains asleep, through the spell's duration. The messenger can also shape the dream's environment, creating landscapes, objects, and other images. The messenger can emerge from the trance at any time, ending the spell. The target recalls the dream perfectly upon waking.</p><p>If the target is awake when you cast the spell, the messenger knows it and can either end the trance (and the spell) or wait for the target to sleep, at which point the messenger enters its dreams.</p><p>You can make the messenger terrifying to the target. If you do so, the messenger can deliver a message of no more than ten words, and then the target makes a Wisdom saving throw. On a failed save, the target gains no benefit from its rest, and it takes 3d6 Psychic damage when it wakes up.</p><p>A target of a dream spell cannot be targeted by a second dream spell for the duration.</p>",
+      "value": "<p>You unleash a storm of flashing light and raging thunder in a 10-foot-radius, 40-foot-high Cylinder centered on a point you can see within range. While in this area, creatures have the &amp;Reference[Blinded apply=false] and &amp;Reference[Deafened apply=false] conditions, and they can't cast spells with a Verbal component.</p><p>When the storm appears, each creature in it makes a Constitution saving throw, taking 2d10 Radiant damage and 2d10 Thunder damage on a failed save or half as much damage on a successful one. A creature also makes this save when it enters the spell's area for the first time on a turn or ends its turn there. A creature makes this save only once per turn.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The Radiant and Thunder damage increase by 1d10 for each spell slot level above 5.</p>",
       "chat": ""
     },
     "source": {
@@ -12,29 +12,32 @@
       "book": "Materia"
     },
     "activation": {
-      "type": "minute",
+      "type": "action",
       "condition": "",
-      "value": 1
+      "value": null
     },
     "duration": {
-      "value": "8",
-      "units": "hour"
+      "value": "1",
+      "units": "minute"
     },
     "target": {
       "affects": {
-        "type": "willing",
-        "count": "1",
         "choice": false,
-        "special": ""
+        "count": "",
+        "type": ""
       },
       "template": {
-        "units": "",
+        "units": "ft",
+        "type": "cylinder",
+        "size": "10",
         "contiguous": false,
-        "type": ""
+        "height": "",
+        "count": ""
       }
     },
     "range": {
-      "units": "spec",
+      "value": "120",
+      "units": "ft",
       "special": ""
     },
     "uses": {
@@ -43,14 +46,15 @@
       "spent": 0
     },
     "level": 5,
-    "school": "ill",
+    "school": "evo",
     "properties": [
       "vocal",
       "somatic",
-      "material"
+      "material",
+      "concentration"
     ],
     "materials": {
-      "value": "a handful of sand",
+      "value": "a pinch of phosphorus",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -86,7 +90,7 @@
         },
         "effects": [
           {
-            "_id": "x52Ga7U45IJOPFxK",
+            "_id": "rzddpZZZN48oTgyo",
             "onSave": false
           }
         ],
@@ -108,15 +112,32 @@
           "onSave": "half",
           "parts": [
             {
-              "number": 3,
-              "denomination": 6,
+              "number": null,
+              "denomination": null,
               "bonus": "",
               "types": [
-                "psychic"
+                "radiant"
               ],
               "custom": {
-                "enabled": false,
+                "enabled": true,
+                "formula": "(@item.level - 3)d10"
+              },
+              "scaling": {
+                "mode": "",
+                "number": null,
                 "formula": ""
+              }
+            },
+            {
+              "number": null,
+              "denomination": null,
+              "bonus": "",
+              "types": [
+                "thunder"
+              ],
+              "custom": {
+                "enabled": true,
+                "formula": "(@item.level - 3)d10"
               },
               "scaling": {
                 "mode": "",
@@ -128,7 +149,7 @@
         },
         "save": {
           "ability": [
-            "wis"
+            "con"
           ],
           "dc": {
             "calculation": "spellcasting",
@@ -142,18 +163,18 @@
         "sort": 0
       }
     },
-    "identifier": "dream"
+    "identifier": "jallarzis-storm-of-radiance"
   },
   "type": "spell",
-  "img": "icons/magic/control/sleep-bubble-purple.webp",
+  "img": "icons/magic/lightning/bolts-salvo-clouds-sky.webp",
   "effects": [
     {
-      "name": "Trance State",
-      "origin": "Compendium.materia-dnd.spells.Item.matSplDream00000",
+      "name": "Senses Overwhelmed",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplStormOfRad",
       "duration": {
         "rounds": null,
         "startTime": null,
-        "seconds": 28800,
+        "seconds": 60,
         "combat": null,
         "turns": null,
         "startRound": null,
@@ -161,47 +182,18 @@
       },
       "disabled": false,
       "flags": {},
-      "img": "icons/magic/control/hypnosis-mesmerism-eye-tan.webp",
-      "_id": "x52Ga7U45IJOPFxK",
+      "img": "icons/magic/lightning/bolt-cloud-sky-green.webp",
+      "_id": "rzddpZZZN48oTgyo",
       "type": "base",
       "system": {},
-      "changes": [
-        {
-          "key": "system.attributes.movement.walk",
-          "mode": 3,
-          "value": "0",
-          "priority": null
-        },
-        {
-          "key": "system.attributes.movement.fly",
-          "mode": 3,
-          "value": "0",
-          "priority": null
-        },
-        {
-          "key": "system.attributes.movement.swim",
-          "mode": 3,
-          "value": "0",
-          "priority": null
-        },
-        {
-          "key": "system.attributes.movement.burrow",
-          "mode": 3,
-          "value": "0",
-          "priority": null
-        },
-        {
-          "key": "system.attributes.movement.climb",
-          "mode": 3,
-          "value": "0",
-          "priority": null
-        }
-      ],
-      "description": "<p><span style=\"font-family:Signika, sans-serif\">While in the trance, the messenger is Incapacitated and has a Speed of 0.</span></p>",
+      "changes": [],
+      "description": "<p>While in this area, creatures have the &amp;Reference[Blinded apply=false] and &amp;Reference[Deafened apply=false] conditions, and they can\u00e2\u20ac\u2122t cast spells with a Verbal component.</p>",
       "tint": "#ffffff",
       "transfer": false,
       "statuses": [
-        "incapacitated"
+        "blinded",
+        "deafened",
+        "silenced"
       ],
       "sort": 0,
       "_stats": {
@@ -214,7 +206,7 @@
         "modifiedTime": null,
         "lastModifiedBy": null
       },
-      "_key": "!items.effects!matSplDream00000.x52Ga7U45IJOPFxK"
+      "_key": "!items.effects!matSplStormOfRad.rzddpZZZN48oTgyo"
     }
   ],
   "folder": "slWnSXtwvwnA9EXJ",
@@ -223,8 +215,8 @@
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.matSplDream00000",
-      "spell-lists": "bard,warlock,wizard"
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplStormOfRad",
+      "spell-lists": "warlock,wizard"
     }
   },
   "_stats": {
@@ -232,10 +224,10 @@
     "coreVersion": "12.331",
     "systemId": "dnd5e",
     "systemVersion": "4.2.2",
-    "createdTime": 1739232011910,
-    "modifiedTime": 1739232022746,
+    "createdTime": 1739232580071,
+    "modifiedTime": 1739232585343,
     "lastModifiedBy": "dnd5mbuilder0000"
   },
   "sort": 0,
-  "_key": "!items!matSplDream00000"
+  "_key": "!items!matSplStormOfRad"
 }

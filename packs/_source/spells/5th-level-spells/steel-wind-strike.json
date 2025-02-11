@@ -1,15 +1,48 @@
 {
   "name": "Steel Wind Strike",
-  "type": "spell",
+  "_id": "matSplSteelWindS",
   "system": {
-    "source": {
-      "book": "Materia"
-    },
     "description": {
-      "value": "<p>You flourish the weapon used in the casting and then vanish to strike like the wind. Choose up to five creatures you can see within range. Make a melee spell attack against each target. On a hit, a target takes [[/r 6d10]] force damage.</p><p>You can then teleport to an unoccupied space you can see within 5 feet of one of the targets you hit or missed.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 6th level or higher, the damage increases by 1d10 for each slot level above 5th.</p><p>When you cast this spell using a spell slot of 9th or higher, the damage is further increased by your weapon used and the weapon's properties.</p>",
+      "value": "<p>You flourish the weapon used in the casting and then vanish to strike like the wind. Choose up to five creatures you can see within range. Make a melee spell attack against each target. On a hit, a target takes 6d10 Force damage.</p><p>You then teleport to an unoccupied space you can see within 5 feet of one of the targets.</p><p><strong>At Higher Levels.</strong> The damage increases by 1d10 for each spell slot level above 5.</p><p>If you use a spell slot level of 9+, the damage is further increased by your weapon used and the weapon's properties.</p>",
       "chat": ""
     },
-    "actionType": "msak",
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "action",
+      "condition": "",
+      "value": null
+    },
+    "duration": {
+      "value": "",
+      "units": "inst"
+    },
+    "target": {
+      "affects": {
+        "choice": false,
+        "count": "5",
+        "type": "creature",
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
+    },
+    "range": {
+      "units": "ft",
+      "special": "",
+      "value": "30"
+    },
+    "uses": {
+      "max": "",
+      "spent": 0,
+      "recovery": []
+    },
     "level": 5,
     "school": "con",
     "properties": [
@@ -17,91 +50,77 @@
       "material"
     ],
     "materials": {
-      "value": "a melee weapon worth at least 1 sp",
+      "value": "a Melee weapon worth 1+ SP",
       "consumed": false,
       "cost": 0,
       "supply": 0
     },
-    "target": {
-      "value": null,
-      "units": "",
-      "type": "",
-      "prompt": true,
-      "width": null,
-      "affects": {
-        "count": "5",
-        "type": "creature",
-        "special": ""
-      },
-      "template": {
-        "type": ""
-      }
-    },
-    "range": {
-      "value": 30,
-      "units": "ft",
-      "long": null,
-      "special": ""
-    },
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": "",
-      "units": "inst"
-    },
-    "damage": {
-      "parts": [
-        [
-          "6d10",
-          "force"
-        ]
-      ],
-      "versatile": ""
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "save": {
-      "dc": null,
-      "scaling": "spell",
-      "ability": ""
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "formula": "",
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "cover": null,
-    "crewed": false,
-    "ability": "",
     "activities": {
-      "dnd5eactivity000": {
-        "name": "",
-        "img": "",
+      "4DkYoalZVajwxqTx": {
+        "type": "attack",
+        "_id": "4DkYoalZVajwxqTx",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "attack": {
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": ""
+          },
+          "ability": "",
+          "bonus": ""
+        },
         "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": true,
           "parts": [
             {
               "custom": {
@@ -109,50 +128,36 @@
                 "formula": ""
               },
               "number": 6,
-              "denomination": 10,
+              "denomination": "10",
               "bonus": "",
               "types": [
                 "force"
               ],
               "scaling": {
-                "mode": "whole",
-                "number": 1
+                "mode": "whole"
               }
             }
           ]
         },
+        "name": "",
+        "img": "",
         "appliedEffects": []
       }
-    }
+    },
+    "identifier": "steel-wind-strike"
   },
-  "img": "icons/skills/melee/maneuver-daggers-paired-orange.webp",
+  "type": "spell",
+  "img": "icons/skills/melee/swords-triple-orange.webp",
+  "effects": [],
+  "folder": "slWnSXtwvwnA9EXJ",
   "ownership": {
     "default": 0
   },
   "flags": {
-    "plutonium": {
-      "page": "spells.html",
-      "source": "XGE",
-      "hash": "steel%20wind%20strike_xge",
-      "propDroppable": "spell"
-    },
     "materia-dnd": {
       "tele-flag": "true",
-      "sourceId": "Compendium.materia-dnd.spells.Item.MLQKQaKSOD7PQbxH",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplSteelWindS",
       "spell-lists": "ranger,wizard"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickAttack": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
-        }
-      }
     },
     "dnd5e": {
       "riders": {
@@ -161,18 +166,15 @@
       }
     }
   },
-  "effects": [],
-  "folder": "slWnSXtwvwnA9EXJ",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1709185285214,
-    "modifiedTime": 1728559988395,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739233141241,
+    "modifiedTime": 1739233240519,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "MLQKQaKSOD7PQbxH",
-  "sort": 1900000,
-  "_key": "!items!MLQKQaKSOD7PQbxH"
+  "sort": 0,
+  "_key": "!items!matSplSteelWindS"
 }

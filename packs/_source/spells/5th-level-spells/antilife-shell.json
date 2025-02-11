@@ -1,80 +1,51 @@
 {
   "name": "Antilife Shell",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplAntilifeSh",
   "system": {
     "description": {
-      "value": "<p>A shimmering barrier extends out from you in a 10-foot radius and moves with you, remaining centered on you and hedging out creatures other than undead and constructs. The barrier lasts for the duration.</p><p>The barrier prevents an affected creature from passing or reaching through. An affected creature can cast spells or make attacks with ranged or reach weapons through the barrier.</p><p>If you move so that an affected creature is forced to pass through the barrier, the spell ends.</p>",
+      "value": "<p>An aura extends from you in a 10-foot Emanation for the duration. The aura prevents creatures other than Constructs and Undead from passing or reaching through it. An affected creature can cast spells or make attacks with Ranged or Reach weapons through the barrier.</p><p>If you move so that an affected creature is forced to pass through the barrier, the spell ends.</p>",
       "chat": ""
     },
     "source": {
+      "rules": "2024",
+      "revision": 1,
       "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": 10,
-      "width": null,
-      "units": "ft",
-      "type": "radius",
-      "prompt": true,
       "affects": {
-        "count": "",
-        "type": ""
+        "choice": false
       },
       "template": {
-        "count": ""
+        "units": "ft",
+        "type": "radius",
+        "size": "10",
+        "contiguous": false
       }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "self",
-      "special": ""
+      "units": "self"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 5,
     "school": "abj",
+    "properties": [
+      "vocal",
+      "somatic",
+      "concentration"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -85,93 +56,124 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "concentration"
-    ],
-    "crewed": false,
     "activities": {
       "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
         "effects": [
           {
-            "_id": "lKOuvuolnflWM3wr"
+            "_id": "IrE5td3goSQtcc0U"
           }
-        ]
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": false,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.3OOulmjxHWAjkKNA",
-      "spell-lists": "druid"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    }
+    "identifier": "antilife-shell"
   },
-  "img": "icons/magic/defensive/shield-barrier-flaming-diamond-teal.webp",
+  "type": "spell",
+  "img": "icons/magic/unholy/silhouette-light-fire-blue.webp",
   "effects": [
     {
       "name": "Antilife Shell",
-      "img": "icons/magic/defensive/shield-barrier-flaming-diamond-teal.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.3OOulmjxHWAjkKNA",
-      "transfer": false,
-      "_id": "lKOuvuolnflWM3wr",
-      "type": "base",
-      "system": {},
-      "changes": [],
-      "disabled": false,
+      "origin": "Compendium.materia-dnd.spells.Item.matSplAntilifeSh",
       "duration": {
+        "rounds": null,
         "startTime": null,
         "seconds": 3600,
         "combat": null,
-        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>The barrier prevents creatures other than undead and constructs from passing or reaching through. An affected creature can cast spells or make attacks with ranged or reach weapons through the barrier.</p>",
+      "disabled": false,
+      "flags": {},
+      "img": "icons/magic/control/silhouette-hold-beam-blue.webp",
+      "_id": "IrE5td3goSQtcc0U",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "",
       "tint": "#ffffff",
+      "transfer": false,
       "statuses": [],
       "sort": 0,
-      "flags": {},
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728401072484,
-        "modifiedTime": 1728401129361,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!3OOulmjxHWAjkKNA.lKOuvuolnflWM3wr"
+      "_key": "!items.effects!matSplAntilifeSh.IrE5td3goSQtcc0U"
     }
   ],
   "folder": "slWnSXtwvwnA9EXJ",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234237,
-    "modifiedTime": 1728401140265,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "3OOulmjxHWAjkKNA",
-  "sort": 600000,
-  "_key": "!items!3OOulmjxHWAjkKNA"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplAntilifeSh",
+      "spell-lists": "druid"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739230888259,
+    "modifiedTime": 1739230897701,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 800000,
+  "_key": "!items!matSplAntilifeSh"
 }
