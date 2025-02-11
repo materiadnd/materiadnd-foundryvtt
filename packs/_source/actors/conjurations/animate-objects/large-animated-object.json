@@ -1,19 +1,34 @@
 {
-  "folder": "Y8Q72pxuI5FfVsos",
   "name": "Large Animated Object",
+  "_id": "matNpcLargeAnima",
   "type": "npc",
-  "img": "icons/commodities/treasure/figurine-rabbit.webp",
   "system": {
-    "currency": {
-      "pp": 0,
-      "gp": 0,
-      "ep": 0,
-      "sp": 0,
-      "cp": 0
+    "details": {
+      "biography": {
+        "value": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplAnimateObj caption=false]</p>",
+        "public": ""
+      },
+      "alignment": "Unaligned",
+      "type": {
+        "value": "construct"
+      },
+      "ideal": "",
+      "bond": "",
+      "flaw": "",
+      "race": null,
+      "cr": null,
+      "spellLevel": 0,
+      "habitat": {
+        "custom": "",
+        "value": []
+      },
+      "treasure": {
+        "value": []
+      }
     },
     "abilities": {
       "str": {
-        "value": 14,
+        "value": 16,
         "proficient": 0,
         "max": null,
         "bonuses": {
@@ -66,6 +81,54 @@
           "save": ""
         }
       }
+    },
+    "traits": {
+      "size": "lg",
+      "di": {
+        "bypasses": [],
+        "value": [
+          "poison",
+          "psychic"
+        ],
+        "custom": ""
+      },
+      "dr": {
+        "bypasses": [],
+        "value": [],
+        "custom": ""
+      },
+      "dv": {
+        "bypasses": [],
+        "value": [],
+        "custom": ""
+      },
+      "dm": {
+        "amount": {},
+        "bypasses": []
+      },
+      "ci": {
+        "value": [
+          "charmed",
+          "exhaustion",
+          "frightened",
+          "paralyzed",
+          "poisoned"
+        ],
+        "custom": ""
+      },
+      "languages": {
+        "value": [],
+        "custom": "Understands the languages you know",
+        "communication": {}
+      },
+      "important": false
+    },
+    "currency": {
+      "pp": 0,
+      "gp": 0,
+      "ep": 0,
+      "sp": 0,
+      "cp": 0
     },
     "bonuses": {
       "mwak": {
@@ -402,7 +465,7 @@
         "units": null,
         "special": ""
       },
-      "spellcasting": "str",
+      "spellcasting": "int",
       "exhaustion": 0,
       "concentration": {
         "ability": "",
@@ -417,18 +480,18 @@
         "limit": 1
       },
       "ac": {
-        "flat": 10,
-        "calc": "flat"
+        "flat": 15,
+        "calc": "natural"
       },
       "hd": {
         "spent": 0
       },
       "hp": {
-        "value": 50,
-        "max": 50,
-        "temp": 0,
-        "tempmax": 0,
-        "formula": ""
+        "value": 20,
+        "max": 20,
+        "temp": null,
+        "tempmax": null,
+        "formula": "20"
       },
       "death": {
         "ability": "",
@@ -438,28 +501,14 @@
           "mode": 0
         },
         "success": 0,
-        "failure": 0
+        "failure": 0,
+        "bonuses": {
+          "save": ""
+        }
+      },
+      "loyalty": {
+        "value": null
       }
-    },
-    "details": {
-      "biography": {
-        "value": "",
-        "public": ""
-      },
-      "alignment": "",
-      "ideal": "",
-      "bond": "",
-      "flaw": "",
-      "race": null,
-      "type": {
-        "value": "construct",
-        "subtype": "",
-        "swarm": "",
-        "custom": ""
-      },
-      "environment": "",
-      "cr": null,
-      "spellLevel": 0
     },
     "resources": {
       "legact": {
@@ -472,45 +521,22 @@
       },
       "lair": {
         "value": false,
-        "initiative": null
+        "initiative": null,
+        "inside": false
       }
     },
     "source": {
-      "book": "Materia"
-    },
-    "traits": {
-      "size": "lg",
-      "di": {
-        "bypasses": [],
-        "value": [],
-        "custom": ""
-      },
-      "dr": {
-        "bypasses": [],
-        "value": [],
-        "custom": ""
-      },
-      "dv": {
-        "bypasses": [],
-        "value": [],
-        "custom": ""
-      },
-      "dm": {
-        "amount": {},
-        "bypasses": []
-      },
-      "ci": {
-        "value": [],
-        "custom": ""
-      },
-      "languages": {
-        "value": [],
-        "custom": ""
-      }
+      "rules": "2024",
+      "custom": "",
+      "revision": 1,
+      "book": "Materia",
+      "page": "",
+      "license": ""
     }
   },
+  "img": "icons/commodities/treasure/figurine-rabbit.webp",
   "prototypeToken": {
-    "name": "Large Animated Object",
+    "name": "Animated Object",
     "displayName": 0,
     "actorLink": false,
     "appendNumber": false,
@@ -524,8 +550,8 @@
       "offsetX": 0,
       "offsetY": 0,
       "fit": "contain",
-      "scaleX": 1,
-      "scaleY": 1,
+      "scaleX": 2,
+      "scaleY": 2,
       "rotation": 0,
       "tint": "#ffffff",
       "alphaThreshold": 0.75
@@ -534,7 +560,7 @@
     "lockRotation": false,
     "rotation": 0,
     "alpha": 1,
-    "disposition": -2,
+    "disposition": 1,
     "displayBars": 0,
     "bar1": {
       "attribute": "attributes.hp"
@@ -569,7 +595,7 @@
     },
     "sight": {
       "enabled": false,
-      "range": 0,
+      "range": 30,
       "angle": 360,
       "visionMode": "basic",
       "color": null,
@@ -578,7 +604,13 @@
       "saturation": 0,
       "contrast": 0
     },
-    "detectionModes": [],
+    "detectionModes": [
+      {
+        "id": "blindsight",
+        "range": 30,
+        "enabled": true
+      }
+    ],
     "occludable": {
       "radius": 0
     },
@@ -590,7 +622,7 @@
       },
       "effects": 1,
       "subject": {
-        "scale": 1,
+        "scale": 2,
         "texture": "icons/commodities/treasure/figurine-rabbit.webp"
       }
     },
@@ -599,75 +631,97 @@
   },
   "items": [
     {
-      "name": "Attack",
-      "type": "feat",
-      "_id": "cRiPBqBD8HzBZT6P",
-      "img": "icons/skills/melee/strike-hammer-destructive-orange.webp",
+      "name": "Slam",
       "system": {
+        "description": {
+          "value": "<p><em>Melee Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. <em>Hit:</em> Force damage equal to 2d6 + 3 + your spellcasting ability modifier.</p>",
+          "chat": ""
+        },
+        "source": {
+          "custom": "",
+          "rules": "2024",
+          "revision": 1
+        },
+        "uses": {
+          "max": "",
+          "recovery": [],
+          "spent": 0
+        },
+        "type": {
+          "value": "monster",
+          "subtype": ""
+        },
+        "prerequisites": {
+          "level": null,
+          "repeatable": false
+        },
+        "properties": [],
+        "requirements": "",
         "activities": {
-          "wpNLpzbTI2MANNXf": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
             "type": "attack",
-            "_id": "wpNLpzbTI2MANNXf",
-            "sort": 0,
             "activation": {
               "type": "action",
-              "value": null,
-              "override": false,
-              "condition": ""
+              "value": 1,
+              "condition": "",
+              "override": false
             },
             "consumption": {
+              "targets": [],
               "scaling": {
-                "allowed": false
+                "allowed": false,
+                "max": ""
               },
-              "spellSlot": true,
-              "targets": []
+              "spellSlot": true
             },
             "description": {
               "chatFlavor": ""
             },
             "duration": {
+              "value": "",
               "units": "inst",
-              "concentration": false,
-              "override": false
+              "special": "",
+              "override": false,
+              "concentration": false
             },
             "effects": [],
             "range": {
-              "override": false,
               "value": "5",
               "units": "ft",
-              "special": ""
+              "special": "",
+              "override": false
             },
             "target": {
               "template": {
+                "count": "",
                 "contiguous": false,
-                "units": "ft",
-                "type": ""
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
               },
               "affects": {
+                "count": "",
+                "type": "",
                 "choice": false,
-                "count": "1",
-                "type": "creature",
                 "special": ""
               },
-              "override": false,
-              "prompt": true
-            },
-            "uses": {
-              "spent": 0,
-              "recovery": [],
-              "max": ""
+              "prompt": true,
+              "override": false
             },
             "attack": {
+              "ability": "",
+              "bonus": "",
               "critical": {
                 "threshold": null
               },
-              "flat": true,
+              "flat": false,
               "type": {
                 "value": "melee",
                 "classification": "weapon"
-              },
-              "ability": "spellcasting",
-              "bonus": "6"
+              }
             },
             "damage": {
               "critical": {
@@ -677,14 +731,14 @@
               "parts": [
                 {
                   "custom": {
-                    "enabled": false,
-                    "formula": ""
+                    "enabled": true,
+                    "formula": "(@flags.dnd5e.summon.level - 3)d6 + @mod + @flags.dnd5e.summon.mod"
                   },
-                  "number": 2,
-                  "denomination": 10,
-                  "bonus": "2",
+                  "number": null,
+                  "denomination": null,
+                  "bonus": "",
                   "types": [
-                    "bludgeoning"
+                    "force"
                   ],
                   "scaling": {
                     "number": 1
@@ -692,36 +746,24 @@
                 }
               ]
             },
-            "name": "",
-            "img": "",
-            "appliedEffects": []
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "sort": 0,
+            "name": ""
           }
         },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
-        },
-        "description": {
-          "value": "",
-          "chat": ""
-        },
-        "identifier": "new-item",
-        "source": {
-          "revision": 1,
-          "rules": "2024"
-        },
         "enchant": {},
-        "type": {
-          "value": "monster",
-          "subtype": ""
-        },
-        "prerequisites": {
-          "level": null
-        },
-        "properties": [],
-        "requirements": ""
+        "identifier": "slam",
+        "advancement": [],
+        "cover": null,
+        "crewed": false
       },
+      "_id": "phbaoiSlam000000",
+      "type": "feat",
+      "img": "icons/skills/melee/unarmed-punch-fist-yellow-red.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
@@ -729,19 +771,6 @@
         "default": 0
       },
       "flags": {
-        "rsr5e": {
-          "quickFooter": {
-            "value": true
-          },
-          "quickAttack": {
-            "value": true
-          },
-          "quickDamage": {
-            "value": {
-              "0": true
-            }
-          }
-        },
         "dnd5e": {
           "riders": {
             "activity": [],
@@ -754,33 +783,37 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
+        "systemVersion": "4.2.2",
         "createdTime": null,
-        "modifiedTime": 1728400553158,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!actors.items!YjIzVUMi1EXIuVPk.cRiPBqBD8HzBZT6P"
+      "_key": "!actors.items!matNpcLargeAnima.phbaoiSlam000000"
     }
   ],
   "effects": [],
+  "folder": "xXQvpNZk0B5s56P4",
   "ownership": {
     "default": 0
   },
   "flags": {
     "dnd5e": {
-      "showTokenPortrait": false
+      "showTokenPortrait": false,
+      "summon": {
+        "level": 5,
+        "mod": 0
+      }
     }
   },
   "_stats": {
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "createdTime": 1728400500583,
-    "modifiedTime": 1728400699486,
+    "systemVersion": "4.2.2",
+    "createdTime": 1739255555956,
+    "modifiedTime": 1739255788717,
     "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "YjIzVUMi1EXIuVPk",
   "sort": 0,
-  "_key": "!actors!YjIzVUMi1EXIuVPk"
+  "_key": "!actors!matNpcLargeAnima"
 }

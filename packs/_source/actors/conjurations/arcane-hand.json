@@ -1,8 +1,7 @@
 {
-  "folder": "rKsfdZOg3l0mry6x",
   "name": "Arcane Hand",
+  "_id": "matNpcArcaneHand",
   "type": "npc",
-  "_id": "UVpLciEFVM9czZn7",
   "img": "icons/skills/melee/unarmed-punch-fist-yellow-red.webp",
   "system": {
     "currency": {
@@ -14,7 +13,7 @@
     },
     "abilities": {
       "str": {
-        "value": 26,
+        "value": 0,
         "proficient": 0,
         "max": null,
         "bonuses": {
@@ -23,7 +22,7 @@
         }
       },
       "dex": {
-        "value": 10,
+        "value": 0,
         "proficient": 0,
         "max": null,
         "bonuses": {
@@ -388,7 +387,7 @@
         "climb": null,
         "fly": null,
         "swim": null,
-        "walk": null,
+        "walk": 60,
         "units": null,
         "hover": false
       },
@@ -403,7 +402,7 @@
         "units": null,
         "special": ""
       },
-      "spellcasting": "str",
+      "spellcasting": "int",
       "exhaustion": 0,
       "concentration": {
         "ability": "",
@@ -425,11 +424,11 @@
         "spent": 0
       },
       "hp": {
-        "value": 1,
-        "max": 1,
-        "temp": 0,
-        "tempmax": 0,
-        "formula": ""
+        "value": 0,
+        "max": 0,
+        "temp": null,
+        "tempmax": null,
+        "formula": "0"
       },
       "death": {
         "ability": "",
@@ -439,12 +438,18 @@
           "mode": 0
         },
         "success": 0,
-        "failure": 0
+        "failure": 0,
+        "bonuses": {
+          "save": ""
+        }
+      },
+      "loyalty": {
+        "value": null
       }
     },
     "details": {
       "biography": {
-        "value": "",
+        "value": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplBigbysHand caption=false]</p>",
         "public": ""
       },
       "alignment": "",
@@ -454,13 +459,19 @@
       "race": null,
       "type": {
         "value": "custom",
-        "custom": "Conjuration",
         "subtype": "",
-        "swarm": ""
+        "swarm": "",
+        "custom": "Shimmering Energy"
       },
-      "environment": "",
       "cr": null,
-      "spellLevel": 0
+      "spellLevel": 0,
+      "habitat": {
+        "custom": "",
+        "value": []
+      },
+      "treasure": {
+        "value": []
+      }
     },
     "resources": {
       "legact": {
@@ -473,11 +484,9 @@
       },
       "lair": {
         "value": false,
-        "initiative": null
+        "initiative": null,
+        "inside": false
       }
-    },
-    "source": {
-      "book": "Materia"
     },
     "traits": {
       "size": "lg",
@@ -506,8 +515,18 @@
       },
       "languages": {
         "value": [],
-        "custom": ""
-      }
+        "custom": "",
+        "communication": {}
+      },
+      "important": false
+    },
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia",
+      "page": "",
+      "custom": "",
+      "license": ""
     }
   },
   "prototypeToken": {
@@ -535,7 +554,7 @@
     "lockRotation": false,
     "rotation": 0,
     "alpha": 1,
-    "disposition": -2,
+    "disposition": 0,
     "displayBars": 0,
     "bar1": {
       "attribute": "attributes.hp"
@@ -584,39 +603,808 @@
       "radius": 0
     },
     "ring": {
-      "enabled": false,
+      "enabled": true,
       "colors": {
         "ring": null,
         "background": null
       },
-      "effects": 0,
+      "effects": 1,
       "subject": {
         "scale": 1,
-        "texture": null
+        "texture": "icons/skills/melee/unarmed-punch-fist-yellow-red.webp"
       }
     },
-    "flags": {},
+    "flags": {
+      "dnd5e": {
+        "tokenRing": {
+          "effects": 1
+        }
+      }
+    },
     "randomImg": false
   },
-  "items": [],
+  "items": [
+    {
+      "name": "Clenched Fist",
+      "system": {
+        "description": {
+          "value": "<p> The hand strikes a target within 5 feet of it. Make a melee spell attack. On a hit, the target takes 5d8 Force damage.</p>",
+          "chat": ""
+        },
+        "source": {
+          "custom": "",
+          "rules": "2024",
+          "revision": 1
+        },
+        "uses": {
+          "max": "",
+          "recovery": [],
+          "spent": 0
+        },
+        "type": {
+          "value": "monster",
+          "subtype": ""
+        },
+        "prerequisites": {
+          "level": null,
+          "repeatable": false
+        },
+        "properties": [
+          "mgc"
+        ],
+        "requirements": "",
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "attack",
+            "activation": {
+              "type": "bonus",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false,
+              "concentration": false
+            },
+            "effects": [],
+            "range": {
+              "value": "5",
+              "units": "ft",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "attack": {
+              "ability": "",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": true,
+              "type": {
+                "value": "melee",
+                "classification": "spell"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": true,
+                    "formula": "(2 * @flags.dnd5e.summon.level - 8)d8"
+                  },
+                  "number": null,
+                  "denomination": 0,
+                  "bonus": "",
+                  "types": [
+                    "force"
+                  ],
+                  "scaling": {
+                    "number": 1
+                  }
+                }
+              ]
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "sort": 0,
+            "name": ""
+          }
+        },
+        "enchant": {},
+        "identifier": "clenched-fist",
+        "advancement": [],
+        "cover": null,
+        "crewed": false
+      },
+      "_id": "phbaoiClenchedFi",
+      "type": "feat",
+      "img": "icons/magic/earth/strike-fist-stone.webp",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "activity": [],
+            "effect": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!actors.items!matNpcArcaneHand.phbaoiClenchedFi"
+    },
+    {
+      "name": "Forceful Hand",
+      "system": {
+        "description": {
+          "value": "<p>The hand attempts to push a Huge or smaller creature within 5 feet of it. The target must succeed on a Strength saving throw, or the hand pushes the target up to 5 feet plus a number of feet equal to five times your spellcasting ability modifier. The hand moves with the target, remaining within 5 feet of it.</p>",
+          "chat": ""
+        },
+        "source": {
+          "custom": "",
+          "rules": "2024",
+          "revision": 1
+        },
+        "uses": {
+          "max": "",
+          "recovery": [],
+          "spent": 0
+        },
+        "type": {
+          "value": "monster",
+          "subtype": ""
+        },
+        "prerequisites": {
+          "level": null,
+          "repeatable": false
+        },
+        "properties": [
+          "mgc"
+        ],
+        "requirements": "",
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "save",
+            "activation": {
+              "type": "bonus",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": "[[5 + 5 * @flags.dnd5e.summon.mod]] foot push"
+            },
+            "duration": {
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false,
+              "concentration": false
+            },
+            "effects": [],
+            "range": {
+              "value": "5",
+              "units": "ft",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "1",
+                "type": "creature",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "damage": {
+              "onSave": "half",
+              "parts": []
+            },
+            "save": {
+              "ability": [
+                "str"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              }
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "sort": 0,
+            "name": ""
+          }
+        },
+        "enchant": {},
+        "identifier": "forceful-hand",
+        "advancement": [],
+        "cover": null,
+        "crewed": false
+      },
+      "_id": "phbaoiForcefulHa",
+      "type": "feat",
+      "img": "icons/magic/earth/strike-fist-stone-gray.webp",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "activity": [],
+            "effect": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!actors.items!matNpcArcaneHand.phbaoiForcefulHa"
+    },
+    {
+      "name": "Grasping Hand",
+      "system": {
+        "description": {
+          "value": "<p>The hand attempts to grapple a Huge or smaller creature within 5 feet of it. The target must succeed on a Dexterity saving throw, or the target has the &amp;Reference[Grappled] condition, with an escape DC equal to your spell save DC. While the hand grapples the target, you can take a Bonus Action to cause the hand to crush it, dealing Bludgeoning damage to the target equal to 4d6 plus your spellcasting ability modifier.</p><h3>Grapple Escape Tests</h3><p>[[/check ability=str skill=ath dc=8+@prof+@flags.dnd5e.summon.mod]]{Strength (Athletics)} [[/check ability=dex skill=acr dc=8+@prof+@flags.dnd5e.summon.mod]]{Dexterity (Acrobatics)}</p>",
+          "chat": ""
+        },
+        "source": {
+          "custom": "",
+          "rules": "2024",
+          "revision": 1
+        },
+        "uses": {
+          "max": "",
+          "recovery": [],
+          "spent": 0
+        },
+        "type": {
+          "value": "monster",
+          "subtype": ""
+        },
+        "prerequisites": {
+          "level": null,
+          "repeatable": false
+        },
+        "properties": [
+          "mgc"
+        ],
+        "requirements": "",
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "save",
+            "activation": {
+              "type": "bonus",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false,
+              "concentration": false
+            },
+            "effects": [],
+            "range": {
+              "value": "5",
+              "units": "ft",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "1",
+                "type": "creature",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "damage": {
+              "onSave": "none",
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": false,
+                    "formula": ""
+                  },
+                  "number": null,
+                  "denomination": 0,
+                  "bonus": "",
+                  "types": [],
+                  "scaling": {
+                    "number": 1
+                  }
+                }
+              ]
+            },
+            "save": {
+              "ability": [
+                "dex"
+              ],
+              "dc": {
+                "calculation": "spellcasting",
+                "formula": ""
+              }
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "sort": 0,
+            "name": "Grapple"
+          },
+          "oVvdrmP4wv1oKWar": {
+            "type": "damage",
+            "name": "Crush",
+            "_id": "oVvdrmP4wv1oKWar",
+            "sort": 0,
+            "activation": {
+              "type": "bonus",
+              "value": null,
+              "override": false,
+              "condition": "has a creature grappled"
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": true,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "override": false,
+              "units": "touch",
+              "special": "",
+              "value": ""
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft",
+                "type": ""
+              },
+              "affects": {
+                "choice": false,
+                "count": "1",
+                "type": "creature",
+                "special": ""
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "damage": {
+              "critical": {
+                "allow": false
+              },
+              "parts": [
+                {
+                  "custom": {
+                    "enabled": true,
+                    "formula": "(2 * @flags.dnd5e.summon.level - 6)d6 + @flags.dnd5e.summon.mod"
+                  },
+                  "number": null,
+                  "denomination": 0,
+                  "bonus": "",
+                  "types": [
+                    "bludgeoning"
+                  ],
+                  "scaling": {
+                    "number": 1
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "enchant": {},
+        "identifier": "grasping-hand",
+        "advancement": [],
+        "cover": null,
+        "crewed": false
+      },
+      "_id": "phbaoiGraspingHa",
+      "type": "feat",
+      "img": "icons/magic/earth/strike-fist-stone-light.webp",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "activity": [],
+            "effect": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!actors.items!matNpcArcaneHand.phbaoiGraspingHa"
+    },
+    {
+      "name": "Interposing Hand",
+      "system": {
+        "description": {
+          "value": "<p>The hand grants you &amp;Reference[HalfCover] against attacks and other effects that originate from its space or that pass through it. In addition, its space counts as &amp;Reference[DifficultTerrain] for your enemies.</p>",
+          "chat": ""
+        },
+        "source": {
+          "custom": "",
+          "rules": "2024",
+          "revision": 1
+        },
+        "uses": {
+          "max": "",
+          "recovery": [],
+          "spent": 0
+        },
+        "type": {
+          "value": "monster",
+          "subtype": ""
+        },
+        "prerequisites": {
+          "level": null,
+          "repeatable": false
+        },
+        "properties": [
+          "mgc"
+        ],
+        "requirements": "",
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "utility",
+            "activation": {
+              "type": "bonus",
+              "value": null,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "value": "",
+              "units": "spec",
+              "special": "",
+              "override": false,
+              "concentration": false
+            },
+            "effects": [
+              {
+                "_id": "wDcd4bpCErQfW0To"
+              },
+              {
+                "_id": "7kq0juDjYR7wlwee"
+              }
+            ],
+            "range": {
+              "units": "self",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "roll": {
+              "formula": "",
+              "name": "",
+              "prompt": false,
+              "visible": false
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "sort": 0,
+            "name": "Interpose"
+          }
+        },
+        "enchant": {},
+        "identifier": "interposing-hand",
+        "advancement": [],
+        "cover": null,
+        "crewed": false
+      },
+      "_id": "phbaoiInterposin",
+      "type": "feat",
+      "img": "icons/magic/earth/barrier-stone-explosion-debris.webp",
+      "effects": [
+        {
+          "name": "Half Cover",
+          "origin": "Actor.phbsplBigbysHand.Item.phbaoiInterposin",
+          "duration": {
+            "rounds": null,
+            "startTime": null,
+            "seconds": null,
+            "combat": null,
+            "turns": 1,
+            "startRound": null,
+            "startTurn": null
+          },
+          "disabled": false,
+          "flags": {},
+          "img": "icons/svg/shield.svg",
+          "_id": "wDcd4bpCErQfW0To",
+          "type": "base",
+          "system": {},
+          "changes": [
+            {
+              "key": "system.attributes.ac.bonus",
+              "mode": 2,
+              "value": "2",
+              "priority": null
+            },
+            {
+              "key": "system.abilities.dex.bonuses.save",
+              "mode": 2,
+              "value": "2",
+              "priority": null
+            }
+          ],
+          "description": "",
+          "tint": "#ffffff",
+          "transfer": false,
+          "statuses": [],
+          "sort": 0,
+          "_stats": {
+            "compendiumSource": "Actor.phbsplBigbysHand.Item.phbaoiInterposin.ActiveEffect.wDcd4bpCErQfW0To",
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "dnd5e",
+            "systemVersion": "4.2.2",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null
+          },
+          "_key": "!actors.items.effects!matNpcArcaneHand.phbaoiInterposin.wDcd4bpCErQfW0To"
+        },
+        {
+          "name": "Interposed",
+          "img": "icons/magic/earth/barrier-stone-explosion-debris.webp",
+          "origin": "Compendium.dnd-players-handbook.actors.Actor.phbsplBigbysHand.Item.phbaoiInterposin",
+          "transfer": false,
+          "_id": "7kq0juDjYR7wlwee",
+          "type": "base",
+          "system": {},
+          "changes": [],
+          "disabled": false,
+          "duration": {
+            "startTime": null,
+            "seconds": 60,
+            "combat": null,
+            "rounds": null,
+            "turns": null,
+            "startRound": null,
+            "startTurn": null
+          },
+          "description": "<p>Granting you &amp;Reference[HalfCover] from attacks or effects that pass through its space.</p>",
+          "tint": "#ffffff",
+          "statuses": [],
+          "sort": 0,
+          "flags": {},
+          "_stats": {
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "dnd5e",
+            "systemVersion": "4.2.2",
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null
+          },
+          "_key": "!actors.items.effects!matNpcArcaneHand.phbaoiInterposin.7kq0juDjYR7wlwee"
+        }
+      ],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "activity": [],
+            "effect": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!actors.items!matNpcArcaneHand.phbaoiInterposin"
+    }
+  ],
   "effects": [],
-  "sort": 1000000,
-  "ownership": {
-    "default": 0
-  },
+  "folder": "rKsfdZOg3l0mry6x",
   "flags": {
     "dnd5e": {
-      "showTokenPortrait": false
+      "showTokenPortrait": false,
+      "summon": {
+        "mod": 2,
+        "level": 5
+      }
     }
   },
   "_stats": {
     "duplicateSource": null,
     "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "createdTime": 1728413265775,
-    "modifiedTime": 1728916808568,
+    "systemVersion": "4.2.2",
+    "createdTime": 1739255986582,
+    "modifiedTime": 1739256047868,
     "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_key": "!actors!UVpLciEFVM9czZn7"
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!actors!matNpcArcaneHand"
 }
