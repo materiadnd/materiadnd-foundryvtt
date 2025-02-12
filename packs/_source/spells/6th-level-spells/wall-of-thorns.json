@@ -1,89 +1,58 @@
 {
   "name": "Wall of Thorns",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "0WaG3zMv4slbIeBJ",
   "system": {
     "description": {
-      "value": "<p>You create a wall of tough, pliable, tangled brush bristling with needle-sharp thorns. The wall appears within range on a solid surface and lasts for the duration. You choose to make the wall up to 60 feet long, 10 feet high, and 5 feet thick or a circle that has a 20-foot diameter and is up to 20 feet high and 5 feet thick. The wall blocks line of sight.</p><p>When the wall appears, each creature within its area must make a Dexterity saving throw. On a failed save, a creature takes [[/r 7d8]] magical piercing damage, or half as much damage on a successful save.</p><p>A creature can move through the wall, albeit slowly and painfully. For every 1 foot a creature moves through the wall, it must spend 4 feet of movement. Furthermore, whenever a creature enters a space occupied by the wall, the creature must make a Dexterity saving throw. It takes [[/r 10d8]] magical slashing damage on a failed save, or half as much damage on a successful one.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 7th level or higher, both types of damage increase by [[/r 1d8]] for each slot level above 6th.</p><p>When you cast this spell using a spell slot of 9th level or higher, grants a duration that does not require concentration.</p>",
+      "value": "<p>You create a wall of tangled brush bristling with needle-sharp thorns. The wall appears within range on a solid surface and lasts for the duration. You choose to make the wall up to 60 feet long, 10 feet high, and 5 feet thick or a circle that has a 20-foot diameter and is up to 20 feet high and 5 feet thick. The wall blocks line of sight.</p><p>When the wall appears, each creature in its area makes a Dexterity saving throw, taking 7d8 Piercing damage on a failed save or half as much damage on a successful one.</p><p>A creature can move through the wall, albeit slowly and painfully. For every 1 foot a creature moves through the wall, it must spend 4 feet of movement. Furthermore, the first time a creature enters a space in the wall on a turn or ends its turn there, the creature makes a Dexterity saving throw, taking 10d8 Slashing damage on a failed save or half as much damage on a successful one. A creature makes this save only once per turn.</p><p><strong>Using a Higher-Level Spell Slot.</strong> Both types of damage increase by 1d8 for each spell slot level above 6.</p><p><span style=\"font-family:'Roboto Condensed', sans-serif\">If you cast this spell with a level 9+ slot, it does not require your Concentration.</span></p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "10",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 60,
-      "width": null,
-      "units": "ft",
-      "type": "wall",
-      "prompt": true,
       "affects": {
+        "choice": false,
         "count": "",
-        "type": ""
+        "type": "space",
+        "special": ""
       },
       "template": {
-        "width": "5",
-        "height": "10",
-        "count": ""
+        "units": "",
+        "contiguous": false,
+        "type": ""
       }
     },
     "range": {
-      "value": 120,
-      "long": null,
       "units": "ft",
-      "special": ""
+      "special": "",
+      "value": "120"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "7d8",
-          "piercing"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 6,
     "school": "con",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
     "materials": {
-      "value": "A handful of thorns",
+      "value": "a handful of thorns",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -92,99 +61,10 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "1d8"
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "concentration"
-    ],
-    "crewed": false,
     "activities": {
-      "OXBfJNd0SjNokpVm": {
+      "Az2cq7SukeQquptz": {
         "type": "save",
-        "_id": "OXBfJNd0SjNokpVm",
-        "sort": 0,
-        "activation": {
-          "type": "action",
-          "value": null,
-          "override": false
-        },
-        "consumption": {
-          "scaling": {
-            "allowed": false
-          },
-          "spellSlot": true,
-          "targets": []
-        },
-        "description": {
-          "chatFlavor": ""
-        },
-        "duration": {
-          "units": "inst",
-          "concentration": false,
-          "override": false
-        },
-        "effects": [],
-        "range": {
-          "override": false
-        },
-        "target": {
-          "template": {
-            "contiguous": false,
-            "units": "ft"
-          },
-          "affects": {
-            "choice": false
-          },
-          "override": false,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
-        },
-        "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 7,
-              "denomination": 8,
-              "bonus": "",
-              "types": [
-                "piercing"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1,
-                "formula": ""
-              }
-            }
-          ],
-          "onSave": "half"
-        },
-        "save": {
-          "ability": "dex",
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
-        },
-        "name": "Create Wall",
-        "img": "icons/magic/nature/root-vine-spiral-thorns-teal.webp",
-        "appliedEffects": []
-      },
-      "5KamhUHQNo0iz6fj": {
-        "type": "save",
-        "_id": "5KamhUHQNo0iz6fj",
-        "sort": 0,
+        "_id": "Az2cq7SukeQquptz",
         "activation": {
           "type": "action",
           "value": null,
@@ -213,15 +93,17 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "cylinder",
-            "size": "10",
-            "height": "20",
-            "count": ""
+            "type": "wall",
+            "size": "60",
+            "width": "5",
+            "count": "",
+            "height": "10"
           },
           "affects": {
             "choice": false,
             "count": "",
-            "type": ""
+            "type": "creature",
+            "special": ""
           },
           "override": true,
           "prompt": true
@@ -231,6 +113,7 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "damage": {
           "parts": [
             {
@@ -246,32 +129,119 @@
               ],
               "scaling": {
                 "mode": "whole",
-                "number": 1
+                "number": 1,
+                "formula": ""
               }
             }
           ],
           "onSave": "half"
         },
         "save": {
-          "ability": "dex",
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Create Wall",
+        "img": "icons/magic/nature/root-vine-entwined-thorns.webp"
+      },
+      "cgge2ISpX3u70Dof": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "count": "",
+            "type": "cylinder",
+            "size": "10",
+            "width": "5",
+            "height": "20"
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 7,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "piercing"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
         },
         "name": "Create Circle",
-        "img": "icons/magic/nature/leaf-oak-wreath-glow-green.webp",
-        "appliedEffects": []
+        "_id": "cgge2ISpX3u70Dof",
+        "img": "icons/magic/nature/trap-spikes-thorns-green.webp"
       },
-      "yglpFTiOHOlA51nD": {
+      "dMiM7Qec4keU3w7B": {
         "type": "save",
-        "_id": "yglpFTiOHOlA51nD",
-        "sort": 0,
+        "_id": "dMiM7Qec4keU3w7B",
         "activation": {
-          "type": "special",
+          "type": "",
           "value": null,
           "override": true,
-          "condition": ""
+          "condition": "first time a creature enters or ends its turn in the wall"
         },
         "consumption": {
           "scaling": {
@@ -291,7 +261,7 @@
         "effects": [],
         "range": {
           "override": true,
-          "units": "self",
+          "units": "any",
           "special": ""
         },
         "target": {
@@ -314,6 +284,7 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "damage": {
           "parts": [
             {
@@ -322,7 +293,7 @@
                 "formula": ""
               },
               "number": 10,
-              "denomination": 8,
+              "denomination": "8",
               "bonus": "",
               "types": [
                 "slashing"
@@ -337,7 +308,9 @@
           "onSave": "half"
         },
         "save": {
-          "ability": "dex",
+          "ability": [
+            "dex"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
@@ -347,46 +320,33 @@
         "img": "icons/magic/nature/root-vine-entangled-humanoid.webp",
         "appliedEffects": []
       }
-    }
+    },
+    "identifier": "wall-of-thorns"
+  },
+  "type": "spell",
+  "img": "icons/magic/nature/root-vine-entwined-thorns.webp",
+  "effects": [],
+  "folder": "UjV13fGRtZfpmOAS",
+  "ownership": {
+    "default": 0
   },
   "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.id0luNmukI3BZbW7",
-      "spell-lists": "druid"
-    },
     "dnd5e": {
       "riders": {
         "activity": [],
         "effect": []
       }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
-        }
-      }
     }
   },
-  "img": "icons/magic/light/beam-rays-green-large.webp",
-  "effects": [],
-  "folder": "UjV13fGRtZfpmOAS",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1661787234088,
-    "modifiedTime": 1728816029538,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739401455088,
+    "modifiedTime": 1739401522008,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "id0luNmukI3BZbW7",
-  "sort": 1500000,
-  "_key": "!items!id0luNmukI3BZbW7"
+  "sort": 0,
+  "_key": "!items!0WaG3zMv4slbIeBJ"
 }

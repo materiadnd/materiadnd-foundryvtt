@@ -1,105 +1,69 @@
 {
   "name": "Find the Path",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "hE82QvpPhULGraWq",
   "system": {
     "description": {
-      "value": "<p>This spell allows you to find the shortest, most direct physical route to a specific fixed location that you are familiar with on the same plane of existence. If you name a destination on another plane of existence, a destination that moves (such as a Mobile fortress), or a destination that isn't specific (such as \"a green dragon's lair\"), the spell fails.</p><p>For the Duration, as long as you are on the same plane of existence as the destination, you know how far it is and in what direction it lies. While you are traveling there, whenever you are presented with a choice of paths along the way, you automatically determine which path is the shortest and most direct route (but not necessarily the safest route) to the destination.</p>",
+      "value": "<p>You magically sense the most direct physical route to a location you name. You must be familiar with the location, and the spell fails if you name a destination on another plane of existence, a moving destination (such as a mobile fortress), or an unspecific destination (such as \"a green dragon's lair\").</p><p>For the duration, as long as you are on the same plane of existence as the destination, you know how far it is and in what direction it lies. Whenever you face a choice of paths along the way there, you know which path is the most direct.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "minute",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": 1
     },
     "duration": {
       "value": "1",
       "units": "day"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "",
-      "prompt": true,
       "affects": {
+        "choice": false,
         "count": "",
-        "type": ""
+        "type": "space",
+        "special": "must be familiar with the location"
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "self",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 6,
     "school": "div",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "A set of divinatory tools - such as bones, ivory sticks, cards, teeth, or carved runes - worth 100 gp and an object from the location you wish to find",
+      "value": "a set of divination tools—such as cards or runes—worth 100+ GP",
       "consumed": false,
-      "cost": 100,
+      "cost": 0,
       "supply": 0
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "mgc"
-    ],
-    "crewed": false,
     "activities": {
-      "uu0lESKpnul2LTP9": {
+      "PHAUPcO1VMXTSyFm": {
         "type": "utility",
-        "_id": "uu0lESKpnul2LTP9",
+        "name": "Cast",
+        "_id": "PHAUPcO1VMXTSyFm",
         "sort": 0,
         "activation": {
           "type": "action",
@@ -113,9 +77,7 @@
           "spellSlot": true,
           "targets": []
         },
-        "description": {
-          "chatFlavor": ""
-        },
+        "description": {},
         "duration": {
           "units": "inst",
           "concentration": false,
@@ -138,31 +100,24 @@
         },
         "uses": {
           "spent": 0,
-          "recovery": [],
-          "max": ""
+          "recovery": []
         },
         "roll": {
           "prompt": false,
-          "visible": false,
-          "name": "",
-          "formula": ""
-        },
-        "name": "Cast",
-        "img": "",
-        "appliedEffects": []
+          "visible": false
+        }
       }
-    }
+    },
+    "identifier": "find-the-path"
+  },
+  "type": "spell",
+  "img": "icons/tools/navigation/spyglass-telescope-brass-blue.webp",
+  "effects": [],
+  "folder": "UjV13fGRtZfpmOAS",
+  "ownership": {
+    "default": 0
   },
   "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.sINePMGyJBqlhUU3",
-      "spell-lists": "bard,cleric,druid"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    },
     "dnd5e": {
       "riders": {
         "activity": [],
@@ -170,19 +125,15 @@
       }
     }
   },
-  "img": "icons/magic/light/explosion-star-teal.webp",
-  "effects": [],
-  "folder": "UjV13fGRtZfpmOAS",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1661787234172,
-    "modifiedTime": 1730252960605,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739393448128,
+    "modifiedTime": 1739393452519,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "sINePMGyJBqlhUU3",
-  "sort": 3400000,
-  "_key": "!items!sINePMGyJBqlhUU3"
+  "sort": 0,
+  "_key": "!items!hE82QvpPhULGraWq"
 }

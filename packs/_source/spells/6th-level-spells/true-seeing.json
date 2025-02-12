@@ -1,134 +1,134 @@
 {
   "name": "True Seeing",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "LMASsgch0lpwIufk",
   "system": {
     "description": {
-      "value": "<p>This spell gives the willing creature you touch the ability to see things as they actually are. For the duration, the creature has truesight, notices secret doors hidden by magic, and can see into the Ethereal Plane, all out to a range of 120 feet.</p>",
+      "value": "<p>For the duration, the willing creature you touch has Truesight with a range of 120 feet.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "willing",
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "touch",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 6,
     "school": "div",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "An ointment for the eyes that costs 25gp; is made from mushroom powder, saffron, and fat; and is consumed by the spell",
+      "value": "mushroom powder worth 25+ GP, which the spell consumes",
       "consumed": true,
-      "cost": 25,
+      "cost": 0,
       "supply": 0
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material"
-    ],
-    "crewed": false,
     "activities": {
-      "dnd5eactivity000": {
+      "qY4ZK8MVwX9xLnV9": {
+        "type": "utility",
+        "_id": "qY4ZK8MVwX9xLnV9",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
         "effects": [
           {
-            "_id": "Y1GpVQLYhsch2wYm"
+            "_id": "nW7Dh0S9wT7QHWCj"
           }
-        ]
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Grant Truesight",
+        "img": "systems/dnd5e/icons/svg/trait-damage-immunities.svg"
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.C1FW1e2USauH3oZq",
-      "spell-lists": "bard,cleric,sorcerer,warlock,wizard"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    }
+    "identifier": "true-seeing"
   },
-  "img": "icons/magic/perception/eye-ringed-glow-angry-large-teal.webp",
+  "type": "spell",
+  "img": "icons/magic/perception/eye-slit-orange.webp",
   "effects": [
     {
-      "name": "True Seeing",
-      "img": "icons/magic/perception/eye-ringed-glow-angry-large-teal.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.C1FW1e2USauH3oZq",
+      "name": "Truesight",
+      "img": "icons/magic/perception/eye-slit-orange.webp",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplTrueSeeing",
       "transfer": false,
-      "_id": "Y1GpVQLYhsch2wYm",
+      "_id": "nW7Dh0S9wT7QHWCj",
       "type": "base",
       "system": {},
       "changes": [
@@ -136,18 +136,6 @@
           "key": "system.attributes.senses.truesight",
           "mode": 4,
           "value": "120",
-          "priority": null
-        },
-        {
-          "key": "system.attributes.senses.special",
-          "mode": 2,
-          "value": ";Secret doors hidden by magic",
-          "priority": null
-        },
-        {
-          "key": "system.attributes.senses.special",
-          "mode": 2,
-          "value": ";Ethereal Plane",
           "priority": null
         }
       ],
@@ -161,7 +149,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>The creature has truesight, notices secret doors hidden by magic, and can see into the Ethereal Plane, all out to a range of 120 feet.</p>",
+      "description": "",
       "tint": "#ffffff",
       "statuses": [],
       "sort": 0,
@@ -171,25 +159,28 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728815088884,
-        "modifiedTime": 1728815231086,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!C1FW1e2USauH3oZq.Y1GpVQLYhsch2wYm"
+      "_key": "!items.effects!LMASsgch0lpwIufk.nW7Dh0S9wT7QHWCj"
     }
   ],
   "folder": "UjV13fGRtZfpmOAS",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234160,
-    "modifiedTime": 1728815240604,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "C1FW1e2USauH3oZq",
-  "sort": 800000,
-  "_key": "!items!C1FW1e2USauH3oZq"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739401281940,
+    "modifiedTime": 1739401281940,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!LMASsgch0lpwIufk"
 }

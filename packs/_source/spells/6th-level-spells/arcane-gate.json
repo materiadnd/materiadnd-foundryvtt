@@ -1,22 +1,56 @@
 {
   "name": "Arcane Gate",
+  "_id": "KI0rUtvW5kcMM8ed",
   "type": "spell",
+  "img": "icons/magic/symbols/chevron-elipse-circle-blue.webp",
   "system": {
-    "source": {
-      "book": "Materia"
-    },
     "description": {
-      "value": "<p>You create linked teleportation portals that remain open for the duration. Choose two points on the ground within range, one point within 10 feet of you and one point within 500 feet of you. A circular portal, 10 feet in diameter, opens over each point. If the portal would open in a space occupied by a creature or an object, the spell fails, and the casting is lost.</p><p>The portals are two-dimensional glowing rings filled with mist, hovering inches from the ground and perpendicular to it at the points you choose. A ring is visible only from one side (your choice), which is the side that functions as a portal.</p><p>Any creature or object entering the portal exits from the other portal as if the two were adjacent to each other; passing through a portal from the nonportal side has no effect. If the creature or object would arrive in a place already occupied by an object or a creature, then they are unable to pass through the portal as long as the obstruction lasts. The mist that fills each portal is opaque and blocks vision through it. On your turn, you can rotate the rings as a bonus action so that the active side faces in a different direction.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 9th level or higher, the duration no long requires your concentration, but you can dismiss the spell at-will (free action).</p>",
+      "value": "<div><p>You create linked teleportation portals. Choose two Large, unoccupied spaces on the ground that you can see, one space within range and the other one within 10 feet of you. A circular portal opens in each of those spaces and remains for the duration.</p><p>The portals are two-dimensional glowing rings filled with mist that blocks sight. They hover inches from the ground and are perpendicular to it.</p><p>A portal is open on only one side (you choose which). Anything entering the open side of a portal exits from the open side of the other portal as if the two were adjacent to each other. As a Bonus Action, you can change the facing of the open sides.</p></div>",
       "chat": ""
     },
-    "actionType": "util",
+    "source": {
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
+    },
+    "activation": {
+      "type": "action",
+      "condition": "",
+      "value": null
+    },
+    "duration": {
+      "value": "10",
+      "units": "minute"
+    },
+    "target": {
+      "affects": {
+        "choice": false,
+        "count": "2",
+        "type": "space",
+        "special": "Large, unoccupied spaces"
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
+    },
+    "range": {
+      "units": "ft",
+      "special": "",
+      "value": "500"
+    },
+    "uses": {
+      "max": "",
+      "spent": 0,
+      "recovery": []
+    },
     "level": 6,
     "school": "con",
     "properties": [
       "vocal",
       "somatic",
-      "concentration",
-      "mgc"
+      "concentration"
     ],
     "materials": {
       "value": "",
@@ -24,83 +58,15 @@
       "cost": 0,
       "supply": 0
     },
-    "target": {
-      "value": 10,
-      "units": "ft",
-      "type": "wall",
-      "prompt": true,
-      "width": null,
-      "affects": {
-        "count": "2",
-        "type": "space",
-        "special": ""
-      },
-      "template": {
-        "width": "",
-        "height": "",
-        "count": "",
-        "type": ""
-      }
-    },
-    "range": {
-      "value": 500,
-      "units": "ft",
-      "long": null,
-      "special": ""
-    },
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": "10",
-      "units": "minute"
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "save": {
-      "dc": null,
-      "scaling": "spell",
-      "ability": ""
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "formula": "",
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "cover": null,
-    "crewed": false,
-    "ability": "",
     "activities": {
-      "S09lNKOBMG7Twwpw": {
+      "Bx8jrZfYP0b7kYXV": {
         "type": "utility",
-        "_id": "S09lNKOBMG7Twwpw",
+        "name": "Cast",
+        "_id": "Bx8jrZfYP0b7kYXV",
         "sort": 0,
         "activation": {
           "type": "action",
@@ -129,12 +95,20 @@
         "target": {
           "template": {
             "contiguous": false,
-            "units": "ft"
+            "units": "ft",
+            "type": "wall",
+            "size": "10",
+            "count": "2",
+            "width": "5",
+            "height": "5"
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "2",
+            "type": "space",
+            "special": "Large, unoccupied spaces"
           },
-          "override": false,
+          "override": true,
           "prompt": true
         },
         "uses": {
@@ -147,34 +121,14 @@
           "visible": false,
           "name": "",
           "formula": ""
-        },
-        "name": "Cast",
-        "img": "",
-        "appliedEffects": []
+        }
       }
-    }
+    },
+    "identifier": "arcane-gate"
   },
-  "img": "icons/magic/fire/orb-vortex.webp",
-  "ownership": {
-    "default": 0
-  },
+  "effects": [],
+  "folder": "UjV13fGRtZfpmOAS",
   "flags": {
-    "plutonium": {
-      "page": "spells.html",
-      "source": "PHB",
-      "hash": "arcane%20gate_phb",
-      "propDroppable": "spell"
-    },
-    "materia-dnd": {
-      "tele-flag": "true",
-      "sourceId": "Compendium.materia-dnd.spells.Item.VBAJ5pedRvTtKxtQ",
-      "spell-lists": "sorcerer,warlock,wizard"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    },
     "dnd5e": {
       "riders": {
         "activity": [],
@@ -182,18 +136,18 @@
       }
     }
   },
-  "effects": [],
-  "folder": "UjV13fGRtZfpmOAS",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1709219783639,
-    "modifiedTime": 1730252702628,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739392465263,
+    "modifiedTime": 1739392465263,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "VBAJ5pedRvTtKxtQ",
-  "sort": 4400000,
-  "_key": "!items!VBAJ5pedRvTtKxtQ"
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!KI0rUtvW5kcMM8ed"
 }

@@ -1,122 +1,82 @@
 {
   "name": "Circle of Death",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "LmNdLV3XshSutC0F",
   "system": {
     "description": {
-      "value": "<p>A sphere of negative energy ripples out in a 60-foot radius from a point within range. Each creature in that area must make a Constitution saving throw. A target takes [[/r 12d6]] necrotic damage on a failed save, or half as much damage on a successful one.</p><p><strong>Higher Levels.</strong> When you cast this spell using a spell slot of 7th level or higher, the damage increases by [[/r 2d6]] for each slot level above 6th.</p><p>When you cast this spell using a spell slot of 9th level or higher, the damage increases by [[/r 9d6]]. This spell's total would damage be [[/r 25d6]] necrotic damage.</p>",
+      "value": "<p>Negative energy ripples out in a 60-foot-radius Sphere from a point you choose within range. Each creature in that area makes a Constitution saving throw, taking 12d6 Necrotic damage on a failed save or half as much damage on a successful one.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 2d6 for each spell slot level above 6.</p><p>If you cast this spell using a level 9+ slot, the damage is 25d6 Necrotic damage.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 60,
-      "width": null,
-      "units": "ft",
-      "type": "sphere",
-      "prompt": true,
       "affects": {
+        "choice": false,
         "count": "",
-        "type": ""
+        "type": "creature",
+        "special": ""
       },
       "template": {
+        "units": "ft",
+        "contiguous": false,
+        "type": "sphere",
+        "size": "60",
         "count": ""
       }
     },
     "range": {
-      "value": 150,
-      "long": null,
       "units": "ft",
-      "special": ""
+      "special": "",
+      "value": "150"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "12d6",
-          "necrotic"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "con",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 6,
     "school": "nec",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "The powder of a crushed black pearl worth at least 500 gp.",
+      "value": "the powder of a crushed black pearl worth 500+ GP",
       "consumed": false,
-      "cost": 500,
+      "cost": 0,
       "supply": 0
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "2d6"
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "mgc"
-    ],
-    "crewed": false,
     "activities": {
-      "BWmtZ6rL8OiD7lmm": {
+      "pgoDU7b0pl63pTw1": {
         "type": "save",
-        "_id": "BWmtZ6rL8OiD7lmm",
-        "sort": 0,
+        "_id": "pgoDU7b0pl63pTw1",
         "activation": {
           "type": "action",
           "value": null,
           "override": false
         },
         "consumption": {
+          "targets": [],
           "scaling": {
             "allowed": false
           },
-          "spellSlot": true,
-          "targets": []
+          "spellSlot": true
         },
         "description": {
           "chatFlavor": ""
@@ -146,6 +106,7 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "damage": {
           "parts": [
             {
@@ -154,7 +115,7 @@
                 "formula": ""
               },
               "number": 12,
-              "denomination": 6,
+              "denomination": "6",
               "bonus": "",
               "types": [
                 "necrotic"
@@ -169,7 +130,9 @@
           "onSave": "half"
         },
         "save": {
-          "ability": "con",
+          "ability": [
+            "con"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
@@ -179,26 +142,17 @@
         "img": "",
         "appliedEffects": []
       }
-    }
+    },
+    "identifier": "circle-of-death"
+  },
+  "type": "spell",
+  "img": "icons/magic/death/skull-horned-goat-pentagram-red.webp",
+  "effects": [],
+  "folder": "UjV13fGRtZfpmOAS",
+  "ownership": {
+    "default": 0
   },
   "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.8cnKFwPzHJVmfELB",
-      "spell-lists": "sorcerer,warlock,wizard"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
-        }
-      }
-    },
     "dnd5e": {
       "riders": {
         "activity": [],
@@ -206,19 +160,15 @@
       }
     }
   },
-  "img": "icons/magic/air/air-burst-spiral-large-teal-green.webp",
-  "effects": [],
-  "folder": "UjV13fGRtZfpmOAS",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1661787234116,
-    "modifiedTime": 1730252844258,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739392686330,
+    "modifiedTime": 1739392885987,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "8cnKFwPzHJVmfELB",
-  "sort": 4000000,
-  "_key": "!items!8cnKFwPzHJVmfELB"
+  "sort": 0,
+  "_key": "!items!LmNdLV3XshSutC0F"
 }

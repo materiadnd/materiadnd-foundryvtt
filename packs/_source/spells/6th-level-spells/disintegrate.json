@@ -1,86 +1,57 @@
 {
   "name": "Disintegrate",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "EW9RbO0WFMzEVfl8",
   "system": {
     "description": {
-      "value": "<p>A thin green ray springs from your pointing finger to a target that you can see within range. The target can be a creature, an object, or a creation of magical force, such as the wall created by wall of force.</p><p>A creature targeted by this spell must make a Dexterity saving throw. On a failed save, the target takes [[/r 10d6 + 40]] force damage. The target is disintegrated if this damage leaves it with 0 hit points.</p><p>A disintegrated creature and everything it is wearing and carrying, except magic items, are reduced to a pile of fine gray dust. The creature can be restored to life only by means of a true resurrection or a wish spell.</p><p>This spell automatically disintegrates a Large or smaller nonmagical object or a creation of magical force. If the target is a Huge or larger object or creation of force, this spell disintegrates a 10-foot-cube portion of it. A magic item is unaffected by this spell.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 7th level or higher, the damage increases by [[/r 3d6]] for each slot level above 6th. When you cast this spell using a spell slot of 9th level or higher, the flat force damage is increased to 100.</p>",
+      "value": "<p>You launch a green ray at a target you can see within range. The target can be a creature, a nonmagical object, or a creation of magical force, such as the wall created by <em>@UUID[Compendium.dnd-players-handbook.spells.Item.phbsplWallofForc]{Wall of Force}.</em></p><p>A creature targeted by this spell makes a Dexterity saving throw. On a failed save, the target takes 10d6 + 40 Force damage. If this damage reduces it to 0 Hit Points, it and everything nonmagical it is wearing and carrying are disintegrated into gray dust. The target can be revived only by a <em>@UUID[Compendium.dnd-players-handbook.spells.Item.phbsplTrueResurr]{True Resurrection}</em> or a <em>@UUID[Compendium.dnd-players-handbook.spells.Item.phbsplWish000000]{Wish}</em> spell.</p><p>This spell automatically disintegrates a Large or smaller nonmagical object or a creation of magical force. If such a target is Huge or larger, this spell disintegrates a 10-foot-Cube portion of it.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 3d6 for each spell slot level above 6.</p><p>If you cast this spell using a 9+ level slot, the flat damage bonus increases from 40 to 100.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
-        "special": ""
+        "choice": false,
+        "count": "",
+        "type": "any",
+        "special": "a creature, a nonmagical object, or a creation of magical force,"
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 60,
-      "long": null,
       "units": "ft",
-      "special": ""
+      "special": "",
+      "value": "60"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "10d6 + 40",
-          "force"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 6,
     "school": "trs",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "A lodestone and a pinch of dust",
+      "value": "a lodestone and dust",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -89,22 +60,10 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "3d6"
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "mgc"
-    ],
-    "crewed": false,
     "activities": {
-      "cac2tLS7KoI5lcqI": {
+      "nsJamHa2MpBw01mY": {
         "type": "save",
-        "_id": "cac2tLS7KoI5lcqI",
-        "sort": 0,
+        "_id": "nsJamHa2MpBw01mY",
         "activation": {
           "type": "action",
           "value": null,
@@ -145,6 +104,7 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "damage": {
           "parts": [
             {
@@ -165,59 +125,39 @@
               }
             }
           ],
-          "onSave": "half"
+          "onSave": "none"
         },
         "save": {
-          "ability": "dex",
+          "ability": [
+            "dex"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
         },
-        "name": "",
-        "img": "",
-        "appliedEffects": []
-      }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.a6JtQzI7pcFFafRP",
-      "spell-lists": "sorcerer,wizard"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
-        }
+        "name": ""
       }
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
+    "identifier": "disintegrate"
   },
-  "img": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
+  "type": "spell",
+  "img": "icons/magic/unholy/hand-claw-fire-green.webp",
   "effects": [],
   "folder": "UjV13fGRtZfpmOAS",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234106,
-    "modifiedTime": 1730252930147,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "a6JtQzI7pcFFafRP",
-  "sort": 3900000,
-  "_key": "!items!a6JtQzI7pcFFafRP"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739393143304,
+    "modifiedTime": 1739393175686,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!EW9RbO0WFMzEVfl8"
 }

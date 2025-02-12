@@ -1,81 +1,57 @@
 {
   "name": "Wind Walk",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "UW6xGbalOKbSNzrj",
   "system": {
     "description": {
-      "value": "<p>You and up to ten willing creatures you can see within range assume a gaseous form for the Duration, appearing as wisps of cloud. While in this cloud form, a creature has a flying speed of 300 feet and has resistance to damage from nonmagical weapons. The only Actions a creature can take in this form are the Dash action or to revert to its normal form. Reverting takes 1 minute, during which time a creature is Incapacitated and can't move. Until the spell ends, a creature can revert to cloud form, which also requires the 1-minute transformation.</p>\n        <p>If a creature is in cloud form and flying when the effect ends, the creature descends 60 feet per round for 1 minute until it lands, which it does safely. If it can't land after 1 minute, the creature falls the remaining distance.</p>",
+      "value": "<p>You and up to ten willing creatures of your choice within range assume gaseous forms for the duration, appearing as wisps of cloud. While in this cloud form, a target has a Fly Speed of 300 feet and can hover; it has Immunity to the Prone condition; and it has Resistance to Bludgeoning, Piercing, and Slashing damage. The only actions a target can take in this form are the &amp;Reference[Dash] action or a Magic action to begin reverting to its normal form. Reverting takes 1 minute, during which the target has the &amp;Reference[Stunned apply=false] condition. Until the spell ends, the target can revert to cloud form, which also requires a Magic action followed by a 1-minute transformation.</p><p>If a target is in cloud form and flying when the effect ends, the target descends 60 feet per round for 1 minute until it lands, which it does safely. If it can't land after 1 minute, it falls the remaining distance.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "minute",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": 1
     },
     "duration": {
       "value": "8",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": 11,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
-        "special": ""
+        "choice": false,
+        "count": "11",
+        "type": "willing",
+        "special": "you and up to ten other creatures"
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 30,
-      "long": null,
       "units": "ft",
-      "special": ""
+      "special": "",
+      "value": "30"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 6,
     "school": "trs",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "Fire and holy water",
+      "value": "a candle",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -84,54 +60,97 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material"
-    ],
-    "crewed": false,
     "activities": {
-      "dnd5eactivity000": {
+      "V8nQQ2Hc6WMnd62Q": {
+        "type": "utility",
+        "name": "Transform to Cloud",
+        "_id": "V8nQQ2Hc6WMnd62Q",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
         "effects": [
           {
-            "_id": "AcWbt88383qWkHYK"
+            "_id": "yuAiVeSve8sEy6JQ"
           }
-        ]
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": true,
+          "name": "",
+          "formula": ""
+        },
+        "img": "icons/magic/air/air-smoke-casting.webp"
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.jaMhSylRYbaPtvni",
-      "spell-lists": "druid"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    }
+    "identifier": "wind-walk"
   },
-  "img": "icons/magic/air/wind-swirl-gray-blue.webp",
+  "type": "spell",
+  "img": "icons/magic/air/wind-weather-snow-gusts.webp",
   "effects": [
     {
       "name": "Cloud Form",
-      "img": "icons/magic/air/wind-swirl-gray-blue.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.jaMhSylRYbaPtvni",
+      "img": "icons/magic/air/weather-clouds.webp",
+      "origin": "Compendium.dnd-players-handbook.spells.Item.phbsplWindWalk00",
       "transfer": false,
-      "_id": "AcWbt88383qWkHYK",
+      "_id": "yuAiVeSve8sEy6JQ",
       "type": "base",
       "system": {},
       "changes": [
+        {
+          "key": "system.attributes.movement.fly",
+          "mode": 4,
+          "value": "300",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.hover",
+          "mode": 5,
+          "value": "true",
+          "priority": null
+        },
+        {
+          "key": "system.traits.ci.value",
+          "mode": 2,
+          "value": "prone",
+          "priority": null
+        },
         {
           "key": "system.traits.dr.value",
           "mode": 2,
@@ -149,18 +168,6 @@
           "mode": 2,
           "value": "slashing",
           "priority": null
-        },
-        {
-          "key": "system.attributes.movement.fly",
-          "mode": 4,
-          "value": "300",
-          "priority": null
-        },
-        {
-          "key": "system.attributes.movement.hover",
-          "mode": 5,
-          "value": "true",
-          "priority": null
         }
       ],
       "disabled": false,
@@ -173,9 +180,11 @@
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>This creature has a flying speed of 300 feet and has resistance to damage from nonmagical weapons. The only Actions a creature can take in this form are the Dash action or to revert to its normal form. Reverting takes 1 minute, during which time a creature is Incapacitated and can't move. Until the spell ends, a creature can revert to cloud form, which also requires the 1-minute transformation.</p>",
+      "description": "<p>The only actions a target can take in this form are the &amp;Reference[Dash] action or a Magic action to begin reverting to its normal form. Reverting takes 1 minute, during which the target has the &amp;Reference[Stunned apply=false] condition. Until the spell ends, the target can revert to cloud form, which also requires a Magic action followed by a 1-minute transformation.</p>",
       "tint": "#ffffff",
-      "statuses": [],
+      "statuses": [
+        "transformed"
+      ],
       "sort": 0,
       "flags": {},
       "_stats": {
@@ -183,25 +192,28 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728816058444,
-        "modifiedTime": 1728816179495,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!jaMhSylRYbaPtvni.AcWbt88383qWkHYK"
+      "_key": "!items.effects!UW6xGbalOKbSNzrj.yuAiVeSve8sEy6JQ"
     }
   ],
   "folder": "UjV13fGRtZfpmOAS",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234079,
-    "modifiedTime": 1728816193905,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "jaMhSylRYbaPtvni",
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739401587467,
+    "modifiedTime": 1739401587467,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
   "sort": 0,
-  "_key": "!items!jaMhSylRYbaPtvni"
+  "_key": "!items!UW6xGbalOKbSNzrj"
 }

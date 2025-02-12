@@ -1,91 +1,58 @@
 {
   "name": "Wall of Ice",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "sUMOBqbyztttKqRm",
   "system": {
     "description": {
-      "value": "<p>You create a wall of ice on a solid surface within range. You can form it into a hemispherical dome or a sphere with a radius of up to 10 feet, or you can shape a flat surface made up of ten 10-foot-square panels. Each panel must be contiguous with another panel. In any form, the wall is 1 foot thick and lasts for the duration.</p><p>If the wall cuts through a creature's space when it appears, the creature within its area is pushed to one side of the wall and must make a Dexterity saving throw. On a failed save, the creature takes [[/r 10d6]] cold damage and you choose on what side of the wall the creature is pushed, or half as much damage on a successful save and the creature decide on what side of the wall they are pushed.</p><p>The wall is an object that can be damaged and thus breached. It has AC 12 and 30 hit points per 10-foot section, it is vulnerable to fire damage, but immune to cold damage. Reducing a 10-foot section of wall to 0 hit points destroys it and leaves behind a sheet of frigid air in the space the wall occupied. A creature moving through the sheet of frigid air for the first time on a turn must make a Constitution saving throw. That creature takes [[/r 10d6]] cold damage on a failed save, or half as much damage on a successful one.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 7th level or higher, the damage the wall deals when it appears as well as the damage from passing through the sheet of frigid air increases by [[/r 2d6]] for each slot level above 6th.</p><p>When you cast this spell using a spell slot of 9th level or higher, grants a duration that does not require concentration.</p>",
+      "value": "<p>You create a wall of ice on a solid surface within range. You can form it into a hemispherical dome or a globe with a radius of up to 10 feet, or you can shape a flat surface made up of ten 10-foot-square panels. Each panel must be contiguous with another panel. In any form, the wall is 1 foot thick and lasts for the duration.</p><p>If the wall cuts through a creature's space when it appears, the creature is pushed to one side of the wall (you choose which side) and makes a Dexterity saving throw, taking 10d6 Cold damage on a failed save or half as much damage on a successful one.</p><p>The wall is an object that can be damaged and thus breached. It has AC 12 and 30 Hit Points per 10-foot section, and it has Immunity to Cold, Poison, and Psychic damage and Vulnerability to Fire damage. Reducing a 10-foot section of wall to 0 Hit Points destroys it and leaves behind a sheet of frigid air in the space the wall occupied.</p><p>A creature moving through the sheet of frigid air for the first time on a turn makes a Constitution saving throw, taking 10d6 Cold damage on a failed save or half as much damage on a successful one.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage the wall deals when it appears increases by 2d6 and the damage from passing through the sheet of frigid air increases by 2d6 for each spell slot level above 6.</p><p>If you cast this spell with a level 9+ slot, it does not require your Concentration.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "10",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 100,
-      "width": null,
-      "units": "ft",
-      "type": "wall",
-      "prompt": true,
       "affects": {
+        "choice": false,
         "count": "",
-        "type": ""
+        "type": "space",
+        "special": "solid surface"
       },
       "template": {
-        "width": "1",
-        "height": "10",
-        "count": "10",
-        "size": "10",
-        "contiguous": true
+        "units": "",
+        "contiguous": false,
+        "type": ""
       }
     },
     "range": {
-      "value": 120,
-      "long": null,
       "units": "ft",
-      "special": ""
+      "special": "",
+      "value": "120"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "10d6",
-          "cold"
-        ]
-      ],
-      "versatile": "5d6"
-    },
-    "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 6,
     "school": "evo",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
     "materials": {
-      "value": "A small piece of quartz",
+      "value": "a piece of quartz",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -94,40 +61,10 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "2d6"
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "concentration"
-    ],
-    "crewed": false,
     "activities": {
-      "dnd5eactivity000": {
-        "name": "Create Globe",
-        "img": "icons/magic/water/barrier-ice-shield.webp",
-        "appliedEffects": [],
-        "target": {
-          "override": true,
-          "affects": {
-            "count": "",
-            "type": ""
-          },
-          "template": {
-            "type": "sphere",
-            "size": "10",
-            "count": ""
-          }
-        },
-        "sort": 100000
-      },
-      "AH3OOn9EPoqwf5vK": {
+      "c4ttlpiIpyf3dFdf": {
         "type": "save",
-        "_id": "AH3OOn9EPoqwf5vK",
-        "sort": 200000,
+        "_id": "c4ttlpiIpyf3dFdf",
         "activation": {
           "type": "action",
           "value": null,
@@ -155,12 +92,17 @@
         "target": {
           "template": {
             "contiguous": false,
-            "units": "ft"
+            "units": "ft",
+            "type": "sphere",
+            "size": "10",
+            "count": ""
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "",
+            "type": ""
           },
-          "override": false,
+          "override": true,
           "prompt": true
         },
         "uses": {
@@ -168,6 +110,7 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "damage": {
           "parts": [
             {
@@ -191,25 +134,110 @@
           "onSave": "half"
         },
         "save": {
-          "ability": "dex",
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Create Globe",
+        "img": "icons/magic/water/barrier-ice-shield.webp"
+      },
+      "zjpb29Tww0iuv1P3": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": true,
+            "units": "ft",
+            "count": "10",
+            "type": "wall",
+            "size": "10",
+            "width": "1",
+            "height": "10"
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 10,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "cold"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 2,
+                "formula": ""
+              }
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
         },
         "name": "Create Panels",
-        "img": "icons/magic/water/barrier-ice-wall-snow.webp",
-        "appliedEffects": []
+        "_id": "zjpb29Tww0iuv1P3",
+        "img": "icons/magic/water/barrier-ice-wall-snow.webp"
       },
-      "maKgJnc9Md7mVM8J": {
+      "D8Q85bjeZgiFky5j": {
         "type": "save",
-        "_id": "maKgJnc9Md7mVM8J",
-        "sort": 300000,
+        "_id": "D8Q85bjeZgiFky5j",
         "activation": {
-          "type": "special",
+          "type": "",
           "value": null,
           "override": true,
-          "condition": ""
+          "condition": "creature moves through the wall for the first time on a turn"
         },
         "consumption": {
           "scaling": {
@@ -252,6 +280,7 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "damage": {
           "parts": [
             {
@@ -260,7 +289,7 @@
                 "formula": ""
               },
               "number": 10,
-              "denomination": 6,
+              "denomination": "6",
               "bonus": "",
               "types": [
                 "cold"
@@ -275,56 +304,45 @@
           "onSave": "half"
         },
         "save": {
-          "ability": "con",
+          "ability": [
+            "con"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
         },
         "name": "Frigid Air",
-        "img": "icons/magic/air/air-wave-gust-blue.webp",
+        "img": "icons/magic/water/snowflake-ice-blue-white.webp",
         "appliedEffects": []
       }
-    }
+    },
+    "identifier": "wall-of-ice"
+  },
+  "type": "spell",
+  "img": "icons/magic/water/barrier-ice-wall-snow.webp",
+  "effects": [],
+  "folder": "UjV13fGRtZfpmOAS",
+  "ownership": {
+    "default": 0
   },
   "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.daHyivcNsXM9E63l",
-      "spell-lists": "wizard"
-    },
     "dnd5e": {
       "riders": {
         "activity": [],
         "effect": []
       }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
-        }
-      }
     }
   },
-  "img": "icons/magic/light/beam-rays-blue-large.webp",
-  "effects": [],
-  "folder": "UjV13fGRtZfpmOAS",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1661787234190,
-    "modifiedTime": 1728815722628,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739401380277,
+    "modifiedTime": 1739401434491,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "daHyivcNsXM9E63l",
-  "sort": 1700000,
-  "_key": "!items!daHyivcNsXM9E63l"
+  "sort": 0,
+  "_key": "!items!sUMOBqbyztttKqRm"
 }

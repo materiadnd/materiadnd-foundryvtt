@@ -1,138 +1,160 @@
 {
   "name": "Contingency",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "FlvvncV4sRiAiPaR",
   "system": {
     "description": {
-      "value": "<p>Choose a spell of 5th level or lower that you can cast, that has a casting time of 1 action, and that can target you. You cast that spell - called the contingent spell - as part of casting contingency, expending spell slots for both, but the contingent spell doesn't come into effect. Instead, it takes effect when a certain circumstance occurs. You describe that circumstance when you cast the two spells. For example, a contingency cast with water breathing might stipulate that water breathing comes into effect when you are engulfed in water or a similar liquid.</p><p>The contingent spell takes effect immediately after the circumstance is met for the first time, whether or not you want it to. and then contingency ends.</p><p>The contingent spell takes effect only on you, even if it can normally target others. You can use only one contingency spell at a time. If you cast this spell again, the effect of another contingency spell on you ends. Also, contingency ends on you if its material component is ever not on your person.</p>",
+      "value": "<p>Choose a spell of level 5 or lower that you can cast, that has a casting time of an action, and that can target you. You cast that spell—called the contingent spell—as part of casting <em>Contingency</em>, expending spell slots for both, but the contingent spell doesn't come into effect. Instead, it takes effect when a certain trigger occurs. You describe that trigger when you cast the two spells. For example, a <em>Contingency</em> cast with <em>Water Breathing</em> might stipulate that <em>Water Breathing</em> comes into effect when you are engulfed in water or a similar liquid.</p><p>The contingent spell takes effect immediately after the trigger occurs for the first time, whether or not you want it to, and then <em>Contingency</em> ends.</p><p>The contingent spell takes effect only on you, even if it can normally target others. You can use only one <em>Contingency</em> spell at a time. If you cast this spell again, the effect of another <em>Contingency</em> spell on you ends. Also, <em>Contingency</em> ends on you if its material component is ever not on your person.</p><section class=\"secret\" id=\"secret-gnXQNvWGYfLGkrBe\"><p><strong>Foundry Note</strong></p><p>The \"create contingency\" activity is configured to optionally enchant a Scroll to track and serve as the triggered spell. Create a spell scroll by right clicking on a spell in your spell list, expend a spell slot of the created scroll's level, and enchant the scroll.</p></section>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "minute",
-      "cost": 10,
-      "condition": ""
+      "condition": "",
+      "value": 10
     },
     "duration": {
       "value": "10",
       "units": "day"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "self",
-      "prompt": true,
       "affects": {
+        "choice": false,
+        "count": "",
+        "type": "self",
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "self",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 6,
-    "school": "evo",
+    "school": "abj",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "A statuette of yourself carved from ivory and decorated with gems worth at least 1,500 gp.",
+      "value": "a gem-encrusted statuette of yourself worth 1,500+ GP",
       "consumed": false,
-      "cost": 1500,
+      "cost": 0,
       "supply": 0
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material"
-    ],
-    "crewed": false,
     "activities": {
-      "dnd5eactivity000": {
+      "5pAraLGEhRIXjEgn": {
+        "type": "enchant",
+        "_id": "5pAraLGEhRIXjEgn",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
         "effects": [
           {
-            "_id": "rqAx1850vmYHwsyW"
+            "_id": "NH2gXEd7ryyntWKE",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "riders": {
+              "activity": [],
+              "effect": [],
+              "item": []
+            }
           }
-        ]
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "enchant": {},
+        "restrictions": {
+          "allowMagical": true,
+          "categories": [
+            "scroll"
+          ],
+          "properties": [],
+          "type": "consumable"
+        },
+        "name": "Create Contingency",
+        "img": "icons/environment/traps/trap-jaw-tan.webp"
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.xizx1zaRgpitpHfv",
-      "spell-lists": "wizard"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    }
+    "identifier": "contingency"
   },
-  "img": "icons/magic/defensive/shield-barrier-flaming-pentagon-teal-purple.webp",
+  "type": "spell",
+  "img": "icons/magic/time/hourglass-tilted-glowing-gold.webp",
   "effects": [
     {
-      "name": "Contingent Spell",
-      "img": "icons/magic/defensive/shield-barrier-flaming-pentagon-teal-purple.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.xizx1zaRgpitpHfv",
-      "transfer": false,
-      "_id": "rqAx1850vmYHwsyW",
-      "type": "base",
-      "system": {},
-      "changes": [],
+      "type": "enchantment",
+      "name": "Contingency Spell",
+      "img": "icons/magic/time/hourglass-tilted-glowing-gold.webp",
       "disabled": false,
+      "_id": "NH2gXEd7ryyntWKE",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "value": "Contengency: {}",
+          "priority": null
+        }
+      ],
       "duration": {
         "startTime": null,
         "seconds": 864000,
@@ -143,7 +165,9 @@
         "startTurn": null
       },
       "description": "",
+      "origin": null,
       "tint": "#ffffff",
+      "transfer": false,
       "statuses": [],
       "sort": 0,
       "flags": {},
@@ -152,25 +176,28 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728582328480,
-        "modifiedTime": 1728582602060,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!xizx1zaRgpitpHfv.rqAx1850vmYHwsyW"
+      "_key": "!items.effects!FlvvncV4sRiAiPaR.NH2gXEd7ryyntWKE"
     }
   ],
   "folder": "UjV13fGRtZfpmOAS",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234067,
-    "modifiedTime": 1728582619744,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "xizx1zaRgpitpHfv",
-  "sort": 1400000,
-  "_key": "!items!xizx1zaRgpitpHfv"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739393057336,
+    "modifiedTime": 1739393057336,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!FlvvncV4sRiAiPaR"
 }

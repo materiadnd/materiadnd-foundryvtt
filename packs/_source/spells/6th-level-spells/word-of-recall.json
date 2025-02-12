@@ -1,79 +1,53 @@
 {
   "name": "Word of Recall",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "tWJS0RIl7zCil3GX",
   "system": {
     "description": {
-      "value": "<p>You and up to five willing creatures within 5 feet of you instantly teleport to a previously designated sanctuary. You and any creatures that teleport with you appear in the nearest unoccupied space to the spot you designated when you prepared your sanctuary (see below). If you cast this spell without first preparing a sanctuary, the spell has no effect.</p><p>You must designate a sanctuary by casting this spell within a location, such as a temple, dedicated to or strongly linked to your deity. If you attempt to cast the spell in this manner in an area that isn't dedicated to your deity, the spell has no effect.</p>",
+      "value": "<p>You and up to five willing creatures within 5 feet of you instantly teleport to a previously designated sanctuary. You and any creatures that teleport with you appear in the nearest unoccupied space to the spot you designated when you prepared your sanctuary (see below). If you cast this spell without first preparing a sanctuary, the spell has no effect.</p><p>You must designate a location, such as a temple, as a sanctuary by casting this spell there.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 6,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
-        "special": ""
+        "choice": false,
+        "count": "6",
+        "type": "willing",
+        "special": "you and five other creatures"
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 5,
-      "long": null,
       "units": "ft",
-      "special": ""
+      "special": "",
+      "value": "5"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 6,
     "school": "con",
+    "properties": [
+      "vocal"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -84,24 +58,10 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal"
-    ],
-    "crewed": false,
     "activities": {
-      "dnd5eactivity000": {
-        "name": "Teleport to Sanctuary",
-        "img": "",
-        "appliedEffects": []
-      },
-      "3VAwhw2HgWiOhIDi": {
+      "fErYiqUpSCDHfV61": {
         "type": "utility",
-        "_id": "3VAwhw2HgWiOhIDi",
-        "sort": 0,
+        "_id": "fErYiqUpSCDHfV61",
         "activation": {
           "type": "action",
           "value": null,
@@ -129,6 +89,62 @@
         "target": {
           "template": {
             "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Teleport to Sanctuary",
+        "img": "systems/dnd5e/icons/svg/trait-saves.svg"
+      },
+      "CJ6NOsqtoO3HCGjQ": {
+        "type": "utility",
+        "name": "Designate Sanctuary",
+        "_id": "CJ6NOsqtoO3HCGjQ",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": true,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
             "units": "ft",
             "type": ""
           },
@@ -146,49 +162,35 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "roll": {
           "prompt": false,
           "visible": false,
           "name": "",
           "formula": ""
         },
-        "name": "Designate Sanctuary",
-        "img": "",
-        "appliedEffects": []
-      }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "tele-flag": "true",
-      "sourceId": "Compendium.materia-dnd.spells.Item.otUXPEIkDzGdSg3k",
-      "spell-lists": "cleric"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
+        "img": "systems/dnd5e/icons/svg/items/background.svg"
       }
     },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    }
+    "identifier": "word-of-recall"
   },
-  "img": "icons/magic/symbols/runes-star-pentagon-orange-purple.webp",
+  "type": "spell",
+  "img": "icons/magic/movement/portal-vortex-orange.webp",
   "effects": [],
   "folder": "UjV13fGRtZfpmOAS",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234073,
-    "modifiedTime": 1728816304127,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "otUXPEIkDzGdSg3k",
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739401614449,
+    "modifiedTime": 1739401614449,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
   "sort": 0,
-  "_key": "!items!otUXPEIkDzGdSg3k"
+  "_key": "!items!tWJS0RIl7zCil3GX"
 }

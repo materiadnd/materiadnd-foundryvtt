@@ -1,106 +1,69 @@
 {
   "name": "Instant Summons",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "ihGa0IRx6e3QqZiY",
   "system": {
     "description": {
-      "value": "<p>You touch an object weighing 10 pounds or less whose longest dimension is 6 feet or less. The spell leaves an Invisible mark on its surface and invisibly inscribes the name of the item on the gemstone you use as the material component. Each time you cast this spell, you must use a different gemstone.</p><p>At any time thereafter, you can use your action to speak the item's name and crush the gemstone. The item instantly appears in your hand regardless of physical or planar distances, and the spell ends.</p><p>If another creature is holding or carrying the item, crushing the sapphire doesn't transport the item to you, but instead you learn who the creature possessing the object is and roughly where that creature is located at that moment.</p><p>Dispel Magic or a similar effect successfully applied to the sapphire ends this spell's effect.</p>",
+      "value": "<p>You touch the gemstoneused in the casting and an object weighing 10 pounds or less whose longest dimension is 6 feet or less. The spell leaves an Invisible mark on that object and invisibly inscribes the object's name on the gemstone. Each time you cast this spell, you must use a different gemstone.</p><p>Thereafter, you can take a Magic action to speak the object's name and crush the gemstone. The object instantly appears in your hand regardless of physical or planar distances, and the spell ends.</p><p>If another creature is holding or carrying the object, crushing the gemstone doesn't transport it, but instead you learn who that creature is and where that creature is currently located.</p><section class=\"secret\" id=\"secret-px4JJQv7QxLmPdka\"><p><strong>Foundry Note</strong></p><p>This spell's Limited Uses are configured to track the number of inscribed objects, with the \"Inscribe\" and \"Recall\" activities restoring and consuming uses as appropriate.</p></section>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "minute",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": 1
     },
     "duration": {
       "value": "",
       "units": "disp"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "object",
-      "prompt": true,
       "affects": {
+        "choice": false,
+        "count": "2",
+        "type": "object",
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "touch",
       "special": ""
     },
     "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "max": "9",
+      "spent": 9,
+      "recovery": []
     },
     "level": 6,
     "school": "con",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "ritual"
+    ],
     "materials": {
-      "value": "A gemstone worth 100gp",
+      "value": "a gemstone worth 1,000+ GP",
       "consumed": false,
-      "cost": 100,
+      "cost": 0,
       "supply": 0
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "ritual",
-      "mgc"
-    ],
-    "crewed": false,
     "activities": {
-      "GnS7TiGXBXq86ccj": {
+      "GdcuXUpcT61NmgSw": {
         "type": "utility",
-        "_id": "GnS7TiGXBXq86ccj",
-        "sort": 0,
+        "_id": "GdcuXUpcT61NmgSw",
         "activation": {
           "type": "action",
           "value": null,
@@ -111,7 +74,16 @@
             "allowed": false
           },
           "spellSlot": true,
-          "targets": []
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": "",
+              "scaling": {
+                "mode": ""
+              }
+            }
+          ]
         },
         "description": {
           "chatFlavor": ""
@@ -141,32 +113,39 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "roll": {
           "prompt": false,
           "visible": false,
           "name": "",
           "formula": ""
         },
-        "name": "Inscribe Mark",
-        "img": "",
-        "appliedEffects": []
+        "name": "Inscribe Mark"
       },
-      "R9amCSYsowB8tc2A": {
+      "ASO8TzkhkDzSNQAD": {
         "type": "utility",
-        "_id": "R9amCSYsowB8tc2A",
-        "sort": 0,
+        "name": "Recall Object",
+        "_id": "ASO8TzkhkDzSNQAD",
         "activation": {
           "type": "action",
           "value": null,
-          "override": true,
-          "condition": ""
+          "override": false
         },
         "consumption": {
           "scaling": {
             "allowed": false
           },
           "spellSlot": false,
-          "targets": []
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "",
+              "scaling": {
+                "mode": ""
+              }
+            }
+          ]
         },
         "description": {
           "chatFlavor": ""
@@ -174,26 +153,21 @@
         "duration": {
           "units": "inst",
           "concentration": false,
-          "override": true
+          "override": false
         },
         "effects": [],
         "range": {
-          "override": true,
-          "units": "self",
-          "special": ""
+          "override": false
         },
         "target": {
           "template": {
             "contiguous": false,
-            "units": "ft",
-            "type": ""
+            "units": "ft"
           },
           "affects": {
-            "choice": false,
-            "count": "",
-            "type": "self"
+            "choice": false
           },
-          "override": true,
+          "override": false,
           "prompt": true
         },
         "uses": {
@@ -201,48 +175,34 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "roll": {
           "prompt": false,
           "visible": false,
           "name": "",
           "formula": ""
-        },
-        "name": "Recall Object",
-        "img": "",
-        "appliedEffects": []
-      }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.I2ZqZqXfGXS0EerB",
-      "spell-lists": "wizard"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
+        }
       }
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
+    "identifier": "drawmijs-instant-summons"
   },
-  "img": "icons/magic/symbols/runes-star-blue.webp",
+  "type": "spell",
+  "img": "icons/commodities/gems/gem-fragments-turquoise.webp",
   "effects": [],
   "folder": "UjV13fGRtZfpmOAS",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234142,
-    "modifiedTime": 1730253326315,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "I2ZqZqXfGXS0EerB",
-  "sort": 3700000,
-  "_key": "!items!I2ZqZqXfGXS0EerB"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739400360743,
+    "modifiedTime": 1739400410953,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!ihGa0IRx6e3QqZiY"
 }
