@@ -1,7 +1,7 @@
 import os
 import json
 
-DIR_ROOT = "packs\\_source\\spells\\5th-level-spells"
+DIR_ROOT = "packs\\_source\\spells\\6th-level-spells"
 FILES_TO_IGNORE = ["_folder.json"]
 
 
@@ -11,11 +11,7 @@ def updateJsonFiles(rootDir, func):
         dirs,
         files,
     ) in os.walk(rootDir):
-        for file in [
-            f
-            for f in files
-            if os.path.splitext(f)[1] == ".json" and f not in FILES_TO_IGNORE
-        ]:
+        for file in [f for f in files if os.path.splitext(f)[1] == ".json" and f not in FILES_TO_IGNORE]:
             fullPath = os.path.join(root, file)
             func(fullPath)
 

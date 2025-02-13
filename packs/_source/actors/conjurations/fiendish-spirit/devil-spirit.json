@@ -1,8 +1,8 @@
 {
-  "folder": "s0JhktUcnydnx0f8",
-  "name": "Fiendish Spirit - Devil",
+  "name": "Devil Spirit",
+  "_id": "matNpcDevilSpiri",
   "type": "npc",
-  "img": "icons/creatures/unholy/demon-fire-imp.webp",
+  "img": "icons/creatures/unholy/demon-fire-horned-winged-roar.webp",
   "system": {
     "currency": {
       "pp": 0,
@@ -426,9 +426,9 @@
       "hp": {
         "value": 40,
         "max": 40,
-        "temp": 0,
-        "tempmax": 0,
-        "formula": ""
+        "temp": null,
+        "tempmax": null,
+        "formula": "40"
       },
       "death": {
         "ability": "",
@@ -438,27 +438,39 @@
           "mode": 0
         },
         "success": 0,
-        "failure": 0
+        "failure": 0,
+        "bonuses": {
+          "save": ""
+        }
+      },
+      "loyalty": {
+        "value": null
       }
     },
     "details": {
       "biography": {
-        "value": "",
+        "value": "<p>@Embed[Compendium.dnd-players-handbook.spells.Item.phbsplSummonFien caption=false]</p>",
         "public": ""
       },
-      "alignment": "",
+      "alignment": "Neutral",
+      "ideal": "",
+      "bond": "",
+      "flaw": "",
       "race": null,
       "type": {
         "value": "fiend",
+        "custom": "",
         "subtype": "",
-        "swarm": "",
-        "custom": ""
+        "swarm": ""
       },
-      "environment": "",
-      "cr": 1,
+      "cr": null,
       "spellLevel": 0,
-      "source": {
-        "custom": ""
+      "habitat": {
+        "custom": "",
+        "value": []
+      },
+      "treasure": {
+        "value": []
       }
     },
     "resources": {
@@ -472,7 +484,8 @@
       },
       "lair": {
         "value": false,
-        "initiative": null
+        "initiative": null,
+        "inside": false
       }
     },
     "traits": {
@@ -511,15 +524,22 @@
           "abyssal",
           "infernal"
         ],
-        "custom": "Telepathy to 60ft."
-      }
+        "custom": "Telepathy 60 ft.",
+        "communication": {}
+      },
+      "important": false
     },
     "source": {
-      "book": "Materia"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia",
+      "page": "",
+      "custom": "",
+      "license": ""
     }
   },
   "prototypeToken": {
-    "name": "Fiendish Spirit - Demon",
+    "name": "Devil Spirit",
     "displayName": 0,
     "actorLink": false,
     "appendNumber": false,
@@ -527,7 +547,7 @@
     "width": 2,
     "height": 2,
     "texture": {
-      "src": "icons/creatures/unholy/demon-fire-imp.webp",
+      "src": "icons/creatures/unholy/demon-fire-horned-winged-roar.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -543,7 +563,7 @@
     "lockRotation": false,
     "rotation": 0,
     "alpha": 1,
-    "disposition": -1,
+    "disposition": 1,
     "displayBars": 0,
     "bar1": {
       "attribute": "attributes.hp"
@@ -578,21 +598,27 @@
     },
     "sight": {
       "enabled": false,
-      "range": 0,
+      "range": 60,
       "angle": 360,
-      "visionMode": "basic",
+      "visionMode": "darkvision",
       "color": null,
       "attenuation": 0.1,
       "brightness": 0,
       "saturation": 0,
       "contrast": 0
     },
-    "detectionModes": [],
+    "detectionModes": [
+      {
+        "id": "basicSight",
+        "range": 60,
+        "enabled": true
+      }
+    ],
     "occludable": {
       "radius": 0
     },
     "ring": {
-      "enabled": false,
+      "enabled": true,
       "colors": {
         "ring": null,
         "background": null
@@ -600,7 +626,7 @@
       "effects": 1,
       "subject": {
         "scale": 1,
-        "texture": null
+        "texture": "icons/creatures/unholy/demon-fire-horned-winged-roar.webp"
       }
     },
     "flags": {},
@@ -608,306 +634,41 @@
   },
   "items": [
     {
-      "folder": "PIJ5b0aWAuZeYaDP",
-      "name": "Magic Resistance",
-      "type": "feat",
-      "_id": "cDXgxRU1hqerOD12",
-      "img": "icons/magic/nature/leaf-glow-maple-teal.webp",
+      "name": "Devil's Sight",
       "system": {
         "description": {
-          "value": "<p>The [[lookup @name]] has advantage on saving throws against spells and other magical effects.</p>",
+          "value": "<p> Magical Darkness doesn't impede the spirit's Darkvision.</p>",
           "chat": ""
         },
-        "source": {
-          "custom": ""
-        },
-        "activation": {
-          "type": "",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": "",
-          "width": null,
-          "units": "",
-          "type": "",
-          "prompt": true
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
+        "activities": {},
         "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": null,
-        "actionType": "",
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "type": {
-          "value": "monster",
-          "subtype": ""
-        },
-        "properties": [],
-        "requirements": "",
-        "recharge": {
-          "value": null,
-          "charged": false
-        },
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "enchantment": null,
-        "summons": null,
-        "prerequisites": {
-          "level": null
-        }
-      },
-      "effects": [],
-      "sort": 0,
-      "ownership": {
-        "default": 0
-      },
-      "flags": {},
-      "_stats": {
-        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.03Jh0f7LdhUzm661",
-        "duplicateSource": null,
-        "coreVersion": "12.327",
-        "systemId": "dnd5e",
-        "systemVersion": "3.2.1",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null
-      },
-      "_key": "!actors.items!d1CxQyDY3HwdM7JB.cDXgxRU1hqerOD12"
-    },
-    {
-      "folder": "EyT6wN4Hl33u5SG9",
-      "name": "Multiattack",
-      "type": "feat",
-      "_id": "GtFmopfT0F1Qg4Zr",
-      "img": "icons/skills/melee/blade-tips-triple-steel.webp",
-      "system": {
-        "description": {
-          "value": "<p>The [[lookup @name]] makes a number of attacks equal to half this spell's level (rounded down).</p>",
-          "chat": ""
+          "spent": 0,
+          "recovery": [],
+          "max": ""
         },
         "source": {
-          "custom": ""
+          "rules": "2024",
+          "revision": 1
         },
-        "activation": {
-          "type": "action",
-          "cost": 1,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": "",
-          "width": null,
-          "units": "",
-          "type": "",
-          "prompt": true
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": null,
-        "actionType": "",
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "type": {
-          "value": "monster",
-          "subtype": ""
-        },
-        "properties": [],
-        "requirements": "",
-        "recharge": {
-          "value": null,
-          "charged": false
-        },
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "enchantment": null,
-        "summons": null,
-        "prerequisites": {
-          "level": null
-        }
-      },
-      "effects": [],
-      "flags": {},
-      "_stats": {
-        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.UWiAfJBbkP2sct4e",
-        "duplicateSource": null,
-        "coreVersion": "12.327",
-        "systemId": "dnd5e",
-        "systemVersion": "3.2.1",
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null
-      },
-      "sort": 2700000,
-      "ownership": {
-        "default": 0
-      },
-      "_key": "!actors.items!d1CxQyDY3HwdM7JB.GtFmopfT0F1Qg4Zr"
-    },
-    {
-      "name": "Hurl Flame",
-      "type": "feat",
-      "system": {
-        "activation": {
-          "type": "action",
-          "cost": 1,
-          "condition": ""
-        },
-        "description": {
-          "value": "<p><em>Ranged Spell Attack:</em> your spell attack modifier to hit, range 150 ft., one target. Hit: 2d6 + 3 + the spell's level fire damage. If the target is a flammable object that isn't being worn or carried, it also catches fire.</p>",
-          "chat": ""
-        },
-        "source": {
-          "custom": ""
-        },
-        "duration": {
-          "value": "",
-          "units": "inst"
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": "1",
-          "width": null,
-          "units": "",
-          "type": "creatureOrObject",
-          "prompt": true
-        },
-        "range": {
-          "value": 150,
-          "long": null,
-          "units": "ft"
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": "",
-        "actionType": "rsak",
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [
-            [
-              "2d6 + 3",
-              "fire"
-            ]
-          ],
-          "versatile": ""
-        },
-        "enchantment": null,
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "summons": null,
+        "enchant": {},
         "type": {
           "value": "monster",
           "subtype": ""
         },
         "prerequisites": {
-          "level": null
+          "level": null,
+          "repeatable": false
         },
         "properties": [],
         "requirements": "",
-        "recharge": {
-          "value": null,
-          "charged": false
-        }
+        "identifier": "devils-sight",
+        "advancement": [],
+        "cover": null,
+        "crewed": false
       },
-      "_id": "5evEKsvcIzB6hLVm",
-      "img": "icons/magic/fire/projectile-fireball-smoke-orange.webp",
+      "_id": "phbaoiDevilsSigh",
+      "type": "feat",
+      "img": "icons/magic/perception/eye-winged-pink.webp",
       "effects": [],
       "folder": null,
       "sort": 0,
@@ -918,136 +679,460 @@
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.327",
+        "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "3.2.1",
-        "createdTime": 1718793802593,
-        "modifiedTime": 1718794735640,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!actors.items!d1CxQyDY3HwdM7JB.5evEKsvcIzB6hLVm"
+      "_key": "!actors.items!matNpcDevilSpiri.phbaoiDevilsSigh"
     },
     {
-      "folder": "PIJ5b0aWAuZeYaDP",
-      "name": "Devil's Sight",
-      "type": "feat",
-      "_id": "biL9RtKWQzjmpWVG",
-      "img": "icons/magic/perception/eye-ringed-glow-angry-small-teal.webp",
+      "name": "Magic Resistance",
       "system": {
         "description": {
-          "value": "<p>Magical darkness doesn't impede the [[lookup @name]]'s darkvision.</p>",
+          "value": "<p> The spirit has Advantage on saving throws against spells and other magical effects.</p>",
           "chat": ""
         },
-        "source": {
-          "custom": ""
-        },
-        "activation": {
-          "type": "",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": "",
-          "width": null,
-          "units": "",
-          "type": "",
-          "prompt": true
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
+        "activities": {},
         "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
+          "spent": 0,
+          "recovery": [],
+          "max": ""
         },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
+        "source": {
+          "rules": "2024",
+          "revision": 1
         },
-        "ability": null,
-        "actionType": "",
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "enchantment": null,
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "summons": null,
+        "enchant": {},
         "type": {
           "value": "monster",
           "subtype": ""
         },
         "prerequisites": {
-          "level": null
+          "level": null,
+          "repeatable": false
         },
         "properties": [],
         "requirements": "",
-        "recharge": {
-          "value": null,
-          "charged": false
-        }
+        "identifier": "magic-resistance",
+        "advancement": [],
+        "cover": null,
+        "crewed": false
       },
+      "_id": "phbaoiMagicResis",
+      "type": "feat",
+      "img": "icons/magic/defensive/shield-barrier-blue.webp",
       "effects": [],
+      "folder": null,
       "sort": 0,
       "ownership": {
         "default": 0
       },
       "flags": {},
       "_stats": {
-        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.k3llG8l0ewzaMsOP",
+        "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.327",
+        "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "3.2.1",
-        "createdTime": 1718793938227,
-        "modifiedTime": 1718793938227,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!actors.items!d1CxQyDY3HwdM7JB.biL9RtKWQzjmpWVG"
+      "_key": "!actors.items!matNpcDevilSpiri.phbaoiMagicResis"
+    },
+    {
+      "name": "Multiattack",
+      "system": {
+        "description": {
+          "value": "<p>The spirit makes a number of attacks equal to half this spell's level (round down).</p><p>[[floor(@flags.dnd5e.summon.level / 2)]]{Number of attacks}</p>",
+          "chat": ""
+        },
+        "activities": {
+          "S2yhMyf7IjJMnReS": {
+            "type": "utility",
+            "name": "Activate",
+            "_id": "S2yhMyf7IjJMnReS",
+            "sort": 0,
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": true,
+              "targets": []
+            },
+            "description": {},
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "override": false
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft"
+              },
+              "affects": {
+                "choice": false
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": []
+            },
+            "roll": {
+              "prompt": false,
+              "visible": false
+            }
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "source": {
+          "rules": "2024",
+          "revision": 1
+        },
+        "enchant": {},
+        "type": {
+          "value": "monster",
+          "subtype": ""
+        },
+        "prerequisites": {
+          "level": null,
+          "repeatable": false
+        },
+        "properties": [],
+        "requirements": "",
+        "identifier": "multiattack",
+        "advancement": [],
+        "cover": null,
+        "crewed": false
+      },
+      "_id": "phbaoiMultiattac",
+      "type": "feat",
+      "img": "icons/skills/melee/strike-weapons-orange.webp",
+      "effects": [],
+      "folder": null,
+      "sort": 0,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "activity": [],
+            "effect": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!actors.items!matNpcDevilSpiri.phbaoiMultiattac"
+    },
+    {
+      "name": "Fiery Strike",
+      "system": {
+        "description": {
+          "value": "<p><em>Melee or Ranged Attack Roll:</em> Bonus equals your spell attack modifier, reach 5 ft. or range 150 ft. <em>Hit:</em> 2d6 + 3 + the spell's level Fire damage.</p>",
+          "chat": ""
+        },
+        "activities": {
+          "xdcogr1uA9zWo07B": {
+            "type": "attack",
+            "_id": "xdcogr1uA9zWo07B",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false,
+              "condition": ""
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": true,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "override": true,
+              "units": "ft",
+              "special": "",
+              "value": "5"
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft",
+                "type": ""
+              },
+              "affects": {
+                "choice": false,
+                "count": "",
+                "type": ""
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "sort": 0,
+            "attack": {
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              },
+              "ability": "",
+              "bonus": ""
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": []
+            },
+            "name": "Melee Attack"
+          },
+          "3Stz6gEyRG6FhpQD": {
+            "type": "attack",
+            "activation": {
+              "type": "action",
+              "value": null,
+              "override": false,
+              "condition": ""
+            },
+            "consumption": {
+              "scaling": {
+                "allowed": false
+              },
+              "spellSlot": true,
+              "targets": []
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "units": "inst",
+              "concentration": false,
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "override": true,
+              "value": "150",
+              "units": "ft",
+              "special": ""
+            },
+            "target": {
+              "template": {
+                "contiguous": false,
+                "units": "ft",
+                "type": ""
+              },
+              "affects": {
+                "choice": false,
+                "count": "",
+                "type": ""
+              },
+              "override": false,
+              "prompt": true
+            },
+            "uses": {
+              "spent": 0,
+              "recovery": [],
+              "max": ""
+            },
+            "sort": 0,
+            "attack": {
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "ranged",
+                "classification": "weapon"
+              },
+              "ability": "",
+              "bonus": ""
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": []
+            },
+            "name": "Ranged Attack",
+            "_id": "3Stz6gEyRG6FhpQD",
+            "img": "systems/dnd5e/icons/svg/damage/force.svg"
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "source": {
+          "rules": "2024",
+          "revision": 1
+        },
+        "type": {
+          "value": "natural",
+          "baseItem": ""
+        },
+        "properties": [
+          "fin"
+        ],
+        "identified": true,
+        "unidentified": {
+          "description": ""
+        },
+        "container": null,
+        "quantity": 1,
+        "weight": {
+          "value": 0,
+          "units": "lb"
+        },
+        "price": {
+          "value": 0,
+          "denomination": "gp"
+        },
+        "rarity": "",
+        "attunement": "",
+        "attuned": false,
+        "equipped": true,
+        "armor": {
+          "value": null
+        },
+        "cover": null,
+        "crewed": false,
+        "hp": {
+          "value": null,
+          "max": null,
+          "dt": null,
+          "conditions": ""
+        },
+        "ammunition": {},
+        "damage": {
+          "base": {
+            "number": 2,
+            "denomination": 6,
+            "bonus": "",
+            "types": [
+              "fire"
+            ],
+            "custom": {
+              "enabled": false
+            },
+            "scaling": {
+              "number": 1
+            }
+          },
+          "versatile": {
+            "number": null,
+            "denomination": null,
+            "types": [],
+            "custom": {
+              "enabled": false
+            },
+            "scaling": {
+              "number": 1
+            }
+          }
+        },
+        "magicalBonus": null,
+        "mastery": "",
+        "proficient": null,
+        "range": {
+          "value": 150,
+          "long": null,
+          "reach": 5,
+          "units": "ft"
+        },
+        "identifier": "fiery-strike"
+      },
+      "_id": "phbaoiFieryStrik",
+      "type": "weapon",
+      "img": "icons/magic/fire/beam-strike-whip-red.webp",
+      "effects": [],
+      "folder": null,
+      "sort": 100000,
+      "ownership": {
+        "default": 0
+      },
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!actors.items!matNpcDevilSpiri.phbaoiFieryStrik"
     }
   ],
   "effects": [],
+  "folder": "s0JhktUcnydnx0f8",
+  "flags": {
+    "dnd5e": {
+      "showTokenPortrait": false
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739406621303,
+    "modifiedTime": 1739406760832,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
   "ownership": {
     "default": 0
   },
-  "flags": {},
-  "_stats": {
-    "duplicateSource": null,
-    "coreVersion": "12.327",
-    "systemId": "dnd5e",
-    "systemVersion": "3.2.1",
-    "createdTime": 1718793658878,
-    "modifiedTime": 1718793695140,
-    "lastModifiedBy": "dnd5mbuilder0000"
-  },
-  "_id": "d1CxQyDY3HwdM7JB",
-  "sort": 300000,
-  "_key": "!actors!d1CxQyDY3HwdM7JB"
+  "sort": 0,
+  "_key": "!actors!matNpcDevilSpiri"
 }
