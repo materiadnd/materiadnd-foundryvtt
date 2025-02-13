@@ -1,85 +1,57 @@
 {
   "name": "Weird",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplWeird00000",
   "system": {
     "description": {
-      "value": "<p>Drawing on the deepest fears of a group of creatures, you create illusory creatures in their minds, visible only to them. Each creature of your choice in a 30-foot-radius sphere centered on a point of your choice within range must make a Wisdom saving throw. On a failed save, a creature becomes <em>frightened</em> and <em>paralyzed</em> with fear for the duration. The illusion calls on the creature's deepest fears, manifesting its worst nightmares as an implacable threat. At the end of each of the <em>paralyzed</em> creature's turns, it must succeed on a Wisdom saving throw or take [[/r 5d10]] psychic damage. On a successful save, the creature are no longer <em>paralyzed</em> (but still <em>frightened</em>).</p>",
+      "value": "<p>You try to create illusory terrors in others' minds. Each creature of your choice in a 30-foot-radius Sphere centered on a point within range makes a Wisdom saving throw. On a failed save, a target takes 10d10 Psychic damage and has the &amp;Reference[Frightened apply=false] condition for the duration. On a successful save, a target takes half as much damage only.</p><p>A Frightened target makes a Wisdom saving throw at the end of each of its turns. On a failed save, it takes [[/damage 5d10 type=psychic]] damage. On a successful save, the spell ends on that target.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 30,
-      "width": null,
-      "units": "ft",
-      "type": "sphere",
-      "prompt": true,
       "affects": {
+        "choice": true,
         "count": "",
-        "type": ""
+        "type": "creature",
+        "special": ""
       },
       "template": {
+        "units": "ft",
+        "contiguous": false,
+        "type": "sphere",
+        "size": "30",
         "count": ""
       }
     },
     "range": {
-      "value": 120,
-      "long": null,
       "units": "ft",
-      "special": ""
+      "special": "",
+      "value": "120"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "4d10",
-          "psychic"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "wis",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 9,
     "school": "ill",
+    "properties": [
+      "vocal",
+      "somatic",
+      "concentration"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -90,42 +62,97 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "concentration"
-    ],
-    "crewed": false,
     "activities": {
-      "dnd5eactivity000": {
+      "jkeV3qQGtdK21eBm": {
+        "type": "save",
+        "_id": "jkeV3qQGtdK21eBm",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
         "effects": [
           {
-            "_id": "bmxJ5gNXfX1WNL5M",
+            "_id": "6bCIQhmzYmSR5Ck1",
             "onSave": false
           }
         ],
-        "damage": {
-          "parts": []
+        "range": {
+          "override": false
         },
-        "name": "Cast",
-        "img": "",
-        "appliedEffects": [
-          "bmxJ5gNXfX1WNL5M"
-        ]
-      },
-      "6WSRI0FbT9UjLLOY": {
-        "type": "save",
-        "_id": "6WSRI0FbT9UjLLOY",
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
         "sort": 0,
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 10,
+              "denomination": 10,
+              "bonus": "",
+              "types": [
+                "psychic"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Cast"
+      },
+      "nuStSySOEkwOUnXf": {
+        "type": "save",
+        "name": "End of Turn Save",
+        "_id": "nuStSySOEkwOUnXf",
         "activation": {
           "type": "",
           "value": null,
           "override": true,
-          "condition": ""
+          "condition": "at the end of each affected creature's turn"
         },
         "consumption": {
           "scaling": {
@@ -142,19 +169,10 @@
           "concentration": false,
           "override": true
         },
-        "effects": [
-          {
-            "_id": "FkcKtsxT2uPsu0qt",
-            "onSave": false
-          },
-          {
-            "_id": "PgwMBOQejgnnfjS4",
-            "onSave": false
-          }
-        ],
+        "effects": [],
         "range": {
           "override": true,
-          "units": "spec",
+          "units": "any",
           "special": ""
         },
         "target": {
@@ -165,7 +183,7 @@
           },
           "affects": {
             "choice": false,
-            "count": "",
+            "count": "1",
             "type": "creature",
             "special": ""
           },
@@ -177,6 +195,7 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "damage": {
           "parts": [
             {
@@ -199,46 +218,27 @@
           "onSave": "none"
         },
         "save": {
-          "ability": "wis",
+          "ability": [
+            "wis"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
-        },
-        "name": "End of Turn Save",
-        "img": "",
-        "appliedEffects": []
-      }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.R52QxbpxxZVWrY4r",
-      "spell-lists": "warlock,wizard"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
+        }
       }
     },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
-      }
-    }
+    "identifier": "weird"
   },
-  "img": "icons/magic/control/fear-fright-monster-grin-green.webp",
+  "type": "spell",
+  "img": "icons/magic/control/fear-fright-jackolantern-yellow.webp",
   "effects": [
     {
-      "name": "Frightened",
+      "name": "Frightening Terrors",
       "img": "systems/dnd5e/icons/svg/statuses/frightened.svg",
-      "origin": "Compendium.materia-dnd.spells.Item.R52QxbpxxZVWrY4r",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplWeird00000",
       "transfer": false,
-      "_id": "bmxJ5gNXfX1WNL5M",
+      "_id": "6bCIQhmzYmSR5Ck1",
       "type": "base",
       "system": {},
       "changes": [],
@@ -252,7 +252,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>At the end of each of the Frightened creature's turns, it must succeed on a Wisdom saving throw or take 4d10 psychic damage. On a successful save, the spell ends for that creature.</p>",
+      "description": "<p>A &amp;Reference[Frightened apply=false] target makes a [[/save ability=wis format=long]] at the end of each of its turns. On a failed save, it takes [[/damage 5d10 type=psychic]] damage. On a successful save, the spell ends on that target.</p>",
       "tint": "#ffffff",
       "statuses": [
         "frightened"
@@ -264,101 +264,33 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728944242200,
-        "modifiedTime": 1728944470671,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!R52QxbpxxZVWrY4r.bmxJ5gNXfX1WNL5M"
-    },
-    {
-      "name": "Frightened",
-      "img": "systems/dnd5e/icons/svg/statuses/frightened.svg",
-      "origin": "Compendium.materia-dnd.spells.Item.R52QxbpxxZVWrY4r",
-      "transfer": false,
-      "_id": "FkcKtsxT2uPsu0qt",
-      "type": "base",
-      "system": {},
-      "changes": [],
-      "disabled": false,
-      "duration": {
-        "startTime": null,
-        "seconds": 60,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "description": "",
-      "tint": "#ffffff",
-      "statuses": [
-        "frightened"
-      ],
-      "sort": 0,
-      "flags": {},
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "dnd5e",
-        "systemVersion": "4.1.2",
-        "createdTime": 1732722196480,
-        "modifiedTime": 1732722222307,
-        "lastModifiedBy": "dnd5mbuilder0000"
-      },
-      "_key": "!items.effects!R52QxbpxxZVWrY4r.FkcKtsxT2uPsu0qt"
-    },
-    {
-      "name": "Paralyzed",
-      "img": "systems/dnd5e/icons/svg/statuses/paralyzed.svg",
-      "origin": "Compendium.materia-dnd.spells.Item.R52QxbpxxZVWrY4r",
-      "transfer": false,
-      "_id": "PgwMBOQejgnnfjS4",
-      "type": "base",
-      "system": {},
-      "changes": [],
-      "disabled": false,
-      "duration": {
-        "startTime": null,
-        "seconds": 60,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "description": "",
-      "tint": "#ffffff",
-      "statuses": [
-        "paralyzed"
-      ],
-      "sort": 0,
-      "flags": {},
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "dnd5e",
-        "systemVersion": "4.1.2",
-        "createdTime": 1732722197284,
-        "modifiedTime": 1732722237346,
-        "lastModifiedBy": "dnd5mbuilder0000"
-      },
-      "_key": "!items.effects!R52QxbpxxZVWrY4r.PgwMBOQejgnnfjS4"
+      "_key": "!items.effects!matSplWeird00000.6bCIQhmzYmSR5Ck1"
     }
   ],
   "folder": "89VDZRAxJ1IDvEOP",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.1.2",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234153,
-    "modifiedTime": 1732722197324,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "R52QxbpxxZVWrY4r",
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplWeird00000",
+      "spell-lists": "warlock,wizard"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739436016600,
+    "modifiedTime": 1739436075663,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
   "sort": 0,
-  "_key": "!items!R52QxbpxxZVWrY4r"
+  "_key": "!items!matSplWeird00000"
 }

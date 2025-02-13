@@ -1,85 +1,54 @@
 {
   "name": "Mass Heal",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplMassHeal00",
   "system": {
     "description": {
-      "value": "<p>A flood of Healing energy flows from you into injured creatures around you. You restore up to 700 Hit Points, divided as you choose among any number of creatures that you can see within range. Creatures healed by this spell are also cured of all Diseases and any effect making them Blinded or Deafened. This spell has no effect on Undead or constructs.</p>",
+      "value": "<p>A flood of healing energy flows from you into creatures around you. You restore up to 700 Hit Points, divided as you choose among any number of creatures that you can see within range. Creatures healed by this spell also have the &amp;Reference[Blinded], &amp;Reference[Deafened], and &amp;Reference[Poisoned] conditions removed from them.</p><section id=\"secret-B4SsHM2Uk0rl4qtz\" class=\"secret\"><p>Foundry Note</p><p>The <strong>Heal</strong> activity is configured to restore 700 Hit Points to the selected creature. This spell's healing pool should be divided among the target creatures manually.</p></section>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "",
-      "prompt": true,
       "affects": {
+        "choice": false,
         "count": "",
-        "type": ""
+        "type": "creature",
+        "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 60,
-      "long": null,
       "units": "ft",
-      "special": ""
+      "special": "",
+      "value": "60"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "heal",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "700",
-          "healing"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 9,
-    "school": "evo",
+    "school": "abj",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -90,20 +59,10 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic"
-    ],
-    "crewed": false,
     "activities": {
-      "skt02gYDt5RUwHKN": {
+      "eCa5jzMXR0Pgp3ZV": {
         "type": "heal",
-        "_id": "skt02gYDt5RUwHKN",
-        "sort": 0,
+        "_id": "eCa5jzMXR0Pgp3ZV",
         "activation": {
           "type": "action",
           "value": null,
@@ -144,13 +103,15 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "healing": {
           "number": null,
-          "denomination": "",
-          "types": [],
+          "denomination": 0,
+          "types": [
+            "healing"
+          ],
           "custom": {
-            "enabled": true,
-            "formula": "700"
+            "enabled": false
           },
           "scaling": {
             "number": 1,
@@ -158,21 +119,22 @@
           },
           "bonus": "700"
         },
-        "name": "",
-        "img": "",
-        "appliedEffects": []
+        "name": ""
       }
-    }
+    },
+    "identifier": "mass-heal"
+  },
+  "type": "spell",
+  "img": "icons/magic/life/heart-shadow-red.webp",
+  "effects": [],
+  "folder": "89VDZRAxJ1IDvEOP",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.NEi3Z84bOX5bgXsv",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplMassHeal00",
       "spell-lists": "cleric"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
     },
     "dnd5e": {
       "riders": {
@@ -181,19 +143,15 @@
       }
     }
   },
-  "img": "icons/magic/life/heart-cross-strong-flame-green.webp",
-  "effects": [],
-  "folder": "89VDZRAxJ1IDvEOP",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1661787234160,
-    "modifiedTime": 1730359766107,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739435067543,
+    "modifiedTime": 1739435067543,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "NEi3Z84bOX5bgXsv",
-  "sort": 1500000,
-  "_key": "!items!NEi3Z84bOX5bgXsv"
+  "sort": 0,
+  "_key": "!items!matSplMassHeal00"
 }

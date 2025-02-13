@@ -1,79 +1,53 @@
 {
   "name": "Mind Blank",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplMindBlank0",
   "system": {
     "description": {
-      "value": "<p>Until the spell ends, one willing creature you touch is immune to psychic damage, any effect that would sense its emotions or read its thoughts, Divination Spells, and the Charmed condition. The spell even foils Wish spells and Spells or Effects of similar power used to affect the target's mind or to gain information about the target.</p>",
+      "value": "<p>Until the spell ends, one willing creature you touch has Immunity to Psychic damage and the Charmed condition. The target is also unaffected by anything that would sense its emotions or alignment, read its thoughts, or magically detect its location, and no spell - not even <em>@UUID[Compendium.materia-dnd.spells.Item.matSplWish000000]{Wish}</em> - can gather information about the target, observe it remotely, or control its mind.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "24",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "willing",
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "touch",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 8,
     "school": "abj",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -84,50 +58,75 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic"
-    ],
-    "crewed": false,
     "activities": {
-      "dnd5eactivity000": {
+      "8KFEULolKHXsiv2u": {
+        "type": "utility",
+        "_id": "8KFEULolKHXsiv2u",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
         "effects": [
           {
-            "_id": "25tumIk8q1O9qIMJ"
+            "_id": "po9iJIqq4OqhvMw0"
           }
-        ]
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast"
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.7QyoyVudW1wLkgAM",
-      "spell-lists": "bard,wizard"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    }
+    "identifier": "mind-blank"
   },
-  "img": "icons/magic/air/air-burst-spiral-large-blue.webp",
+  "type": "spell",
+  "img": "icons/sundries/books/book-open-purple.webp",
   "effects": [
     {
       "name": "Mind Blanked",
-      "img": "icons/magic/air/air-burst-spiral-large-blue.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.7QyoyVudW1wLkgAM",
+      "img": "icons/sundries/documents/paper-plain-white.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplMindBlank0",
       "transfer": false,
-      "_id": "25tumIk8q1O9qIMJ",
+      "_id": "po9iJIqq4OqhvMw0",
       "type": "base",
       "system": {},
       "changes": [
@@ -154,7 +153,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>The target is immune to psychic damage, any effect that would sense its emotions or read its thoughts, Divination Spells, and the Charmed condition. The spell even foils Wish spells and Spells or Effects of similar power used to affect the target's mind or to gain information about the target.</p>",
+      "description": "",
       "tint": "#ffffff",
       "statuses": [],
       "sort": 0,
@@ -164,25 +163,33 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728921746066,
-        "modifiedTime": 1728921824062,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!7QyoyVudW1wLkgAM.25tumIk8q1O9qIMJ"
+      "_key": "!items.effects!matSplMindBlank0.po9iJIqq4OqhvMw0"
     }
   ],
   "folder": "IeD7MeayeQqIoNnW",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234171,
-    "modifiedTime": 1728921845227,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "7QyoyVudW1wLkgAM",
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplMindBlank0",
+      "spell-lists": "bard,wizard"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739434419663,
+    "modifiedTime": 1739434419663,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
   "sort": 0,
-  "_key": "!items!7QyoyVudW1wLkgAM"
+  "_key": "!items!matSplMindBlank0"
 }

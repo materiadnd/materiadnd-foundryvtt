@@ -1,18 +1,51 @@
 {
   "name": "Telepathy",
-  "type": "spell",
+  "_id": "matSplTelepathy0",
   "system": {
-    "source": {
-      "book": "Materia"
-    },
     "description": {
-      "value": "<p>You create a telepathic link between yourself and a willing creature with which you are familiar.</p><p>Until the spell ends, you and the target can instantaneously share words, images, sounds, and other sensory messages with one another through the link, and the target recognizes you as the creature it is communicating with. The spell enables a creature with an Intelligence score of at least 1 to understand the meaning of your words and take in the scope of any sensory messages you send to it.</p>",
+      "value": "<p>You create a telepathic link between yourself and a willing creature with which you are familiar.</p><p>Until the spell ends, you and the target can instantly share words, images, sounds, and other sensory messages with each other through the link, and the target recognizes you as the creature it is communicating with. The spell enables a creature to understand the meaning of your words and any sensory messages you send to it.</p>",
       "chat": ""
     },
-    "actionType": "util",
+    "source": {
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
+    },
+    "activation": {
+      "type": "action",
+      "condition": "",
+      "value": null
+    },
+    "duration": {
+      "value": "24",
+      "units": "hour"
+    },
+    "target": {
+      "affects": {
+        "choice": false,
+        "count": "2",
+        "type": "willing",
+        "special": "yourself and another willing creature"
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
+    },
+    "range": {
+      "units": "any",
+      "special": ""
+    },
+    "uses": {
+      "max": "",
+      "spent": 0,
+      "recovery": []
+    },
     "level": 8,
     "school": "div",
     "properties": [
+      "vocal",
       "somatic",
       "material"
     ],
@@ -22,120 +55,80 @@
       "cost": 0,
       "supply": 0
     },
-    "target": {
-      "value": null,
-      "units": "spec",
-      "type": "",
-      "prompt": true,
-      "width": null,
-      "affects": {
-        "count": "1",
-        "type": "willing",
-        "special": ""
-      },
-      "template": {
-        "type": ""
-      }
-    },
-    "range": {
-      "value": null,
-      "units": "spec",
-      "long": null,
-      "special": ""
-    },
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": "24",
-      "units": "hour"
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "save": {
-      "dc": null,
-      "scaling": "spell",
-      "ability": ""
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "formula": "",
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "cover": null,
-    "crewed": false,
-    "ability": "",
     "activities": {
-      "dnd5eactivity000": {
+      "o7oramJbu2883MsT": {
+        "type": "utility",
+        "_id": "o7oramJbu2883MsT",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
         "effects": [
           {
-            "_id": "SSbH9xp2tA4qXxlF"
+            "_id": "IPBTCBz3RnIvDfI5"
           }
-        ]
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Create Telepathic Link",
+        "img": "systems/dnd5e/icons/svg/activity/utility.svg"
       }
-    }
-  },
-  "img": "icons/magic/control/energy-stream-link-spiral-blue.webp",
-  "ownership": {
-    "default": 0
-  },
-  "flags": {
-    "plutonium": {
-      "page": "spells.html",
-      "source": "PHB",
-      "hash": "telepathy_phb",
-      "propDroppable": "spell"
     },
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.z6TWICOzgpJnV7DE",
-      "spell-lists": "wizard"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    }
+    "identifier": "telepathy"
   },
+  "type": "spell",
+  "img": "icons/commodities/metal/chain-silver.webp",
   "effects": [
     {
       "name": "Telepathically Linked",
-      "img": "icons/magic/control/energy-stream-link-spiral-blue.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.z6TWICOzgpJnV7DE",
+      "img": "icons/commodities/metal/chain-silver.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplTelepathy0",
       "transfer": false,
-      "_id": "SSbH9xp2tA4qXxlF",
+      "_id": "IPBTCBz3RnIvDfI5",
       "type": "base",
       "system": {},
       "changes": [],
@@ -159,25 +152,33 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728922396512,
-        "modifiedTime": 1728922409956,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!z6TWICOzgpJnV7DE.SSbH9xp2tA4qXxlF"
+      "_key": "!items.effects!matSplTelepathy0.IPBTCBz3RnIvDfI5"
     }
   ],
   "folder": "IeD7MeayeQqIoNnW",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1709231476591,
-    "modifiedTime": 1728922419919,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "z6TWICOzgpJnV7DE",
-  "sort": 300000,
-  "_key": "!items!z6TWICOzgpJnV7DE"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplTelepathy0",
+      "spell-lists": "wizard"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739434601311,
+    "modifiedTime": 1739434609220,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplTelepathy0"
 }

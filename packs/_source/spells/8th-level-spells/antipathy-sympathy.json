@@ -1,82 +1,57 @@
 {
   "name": "Antipathy/Sympathy",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplAntipathyS",
   "system": {
     "description": {
-      "value": "<p>This spell attracts or repels creatures of your choice. You target something within range, either a Huge or smaller object or creature or an area that is no larger than a 200-foot cube. Then specify a kind of intelligent creature, such as red dragons, goblins, or vampires. You invest the target with an aura that either attracts or repels the specified creatures for the duration. Choose antipathy or sympathy as the aura's effect.</p><p><strong>Antipathy.</strong> The enchantment causes creatures of the kind you designated to feel an intense urge to leave the area and avoid the target. When such a creature can see the target or comes within 60 feet of it, the creature must succeed on a Wisdom saving throw or become frightened. The creature remains frightened while it can see the target or is within 60 feet of it. While frightened by the target, the creature must use its movement to move to the nearest safe spot from which it can't see the target. If the creature moves more than 60 feet from the target and can't see it, the creature is no longer frightened, but the creature becomes frightened again if it regains sight of the target or moves within 60 feet of it.</p><p><strong>Sympathy.</strong> The enchantment causes the specified creatures to feel an intense urge to approach the target while within 60 feet of it or able to see it. When such a creature can see the target or comes within 60 feet of it, the creature must succeed on a Wisdom saving throw or use its movement on each of its turns to enter the area or move within reach of the target. When the creature has done so, it can't willingly move away from the target.</p><p>If the target damages or otherwise harms an affected creature, the affected creature can make a Wisdom saving throw to end the effect, as described below.</p><p><strong>Ending the Effect.</strong> If an affected creature ends its turn while not within 60 feet of the target or able to see it, the creature makes a Wisdom saving throw. On a successful save, the creature is no longer affected by the target and recognizes the feeling of repugnance or attraction as magical. In addition, a creature affected by the spell is allowed another Wisdom saving throw every 24 hours while the spell persists.</p><p>A creature that successfully saves against this effect is immune to it for 1 minute, after which time it can be affected again.</p>",
+      "value": "<p>As you cast the spell, choose whether it creates antipathy or sympathy, and target one creature or object that is Huge or smaller. Then specify a kind of creature, such as red dragons, goblins, or vampires. A creature of the chosen kind makes a Wisdom saving throw when it comes within 120 feet of the target. Your choice of antipathy or sympathy determines what happens to a creature when it fails that save:</p><p><strong>Antipathy.</strong> The creature has the &amp;Reference[Frightened apply=false] condition. The Frightened creature must use its movement on its turns to get as far away as possible from the target, moving by the safest route.</p><p><strong>Sympathy.</strong> The creature has the &amp;Reference[Charmed apply=false] condition. The Charmed creature must use its movement on its turns to get as close as possible to the target, moving by the safest route. If the creature is within 5 feet of the target, the creature can't willingly move away. If the target damages the Charmed creature, that creature can make a Wisdom saving throw to end the effect, as described below.</p><p><strong>Ending the Effect.</strong> If the Frightened or Charmed creature ends its turn more than 120 feet away from the target, the creature makes a Wisdom saving throw. On a successful save, the creature is no longer affected by the target. A creature that successfully saves against this effect is immune to it for 1 minute, after which it can be affected again.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "hour",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": 1
     },
     "duration": {
       "value": "10",
       "units": "day"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "choice": false,
+        "count": "1",
         "type": "creatureOrObject",
-        "special": ""
+        "special": "huge or smaller"
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 60,
-      "long": null,
       "units": "ft",
-      "special": ""
+      "special": "",
+      "value": "60"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "wis",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 8,
     "school": "enc",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "Either a lump of alum soaked in vinegar for the antipathy effect or a drop of honey for the sympathy effect.",
+      "value": "a mix of vinegar and honey",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -85,22 +60,10 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "mgc"
-    ],
-    "crewed": false,
     "activities": {
-      "b0zOZbSAQBsIYToe": {
+      "BcL0t9o1WyOIZ5El": {
         "type": "utility",
-        "_id": "b0zOZbSAQBsIYToe",
-        "sort": -100000,
+        "_id": "BcL0t9o1WyOIZ5El",
         "activation": {
           "type": "action",
           "value": null,
@@ -123,10 +86,10 @@
         },
         "effects": [
           {
-            "_id": "Tlk7gONdVYVQiZcH"
+            "_id": "bW6xZzK4dmulRmUT"
           },
           {
-            "_id": "cwrEaddjo961o5ed"
+            "_id": "Cz9yMSQmtWRnz81Z"
           }
         ],
         "range": {
@@ -148,60 +111,18 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "roll": {
           "prompt": false,
           "visible": false,
           "name": "",
           "formula": ""
         },
-        "name": "Cast",
-        "img": "",
-        "appliedEffects": []
+        "name": "Cast"
       },
-      "dnd5eactivity000": {
-        "sort": 200000,
-        "name": "Antipathy Save",
-        "img": "icons/magic/symbols/rune-sigil-horned-white-purple.webp",
-        "appliedEffects": [
-          "Cz824xQ2Z4BYuSa9"
-        ],
-        "activation": {
-          "override": true,
-          "type": "",
-          "condition": ""
-        },
-        "duration": {
-          "override": true
-        },
-        "consumption": {
-          "spellSlot": false
-        },
-        "range": {
-          "override": true,
-          "units": "self",
-          "special": ""
-        },
-        "target": {
-          "override": true,
-          "affects": {
-            "count": "",
-            "type": "creature"
-          },
-          "template": {
-            "type": ""
-          }
-        },
-        "effects": [
-          {
-            "_id": "oPjjXaTbrELukBS4",
-            "onSave": false
-          }
-        ]
-      },
-      "tu0iddQvr758RONH": {
+      "VlGQ41g1j0LeL8QY": {
         "type": "save",
-        "_id": "tu0iddQvr758RONH",
-        "sort": 0,
+        "_id": "VlGQ41g1j0LeL8QY",
         "activation": {
           "type": "",
           "value": null,
@@ -219,20 +140,22 @@
           "chatFlavor": ""
         },
         "duration": {
-          "units": "inst",
+          "units": "day",
           "concentration": false,
-          "override": true
+          "override": true,
+          "value": "10"
         },
         "effects": [
           {
-            "_id": "B6FyegJohUwN8F0R",
+            "_id": "aNztI08V5rN4s5mF",
             "onSave": false
           }
         ],
         "range": {
           "override": true,
-          "units": "spec",
-          "special": ""
+          "units": "ft",
+          "special": "",
+          "value": "120"
         },
         "target": {
           "template": {
@@ -242,7 +165,7 @@
           },
           "affects": {
             "choice": false,
-            "count": "",
+            "count": "1",
             "type": "creature",
             "special": ""
           },
@@ -254,122 +177,109 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "damage": {
           "parts": [],
           "onSave": "half"
         },
         "save": {
-          "ability": "wis",
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Antipathy Save",
+        "img": "icons/magic/control/modfiy-luck-fortune-red.webp"
+      },
+      "J6kTEeQc2cCyfppj": {
+        "type": "save",
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "day",
+          "concentration": false,
+          "override": true,
+          "value": "10"
+        },
+        "effects": [
+          {
+            "_id": "pkTbvXvccMakDjyU",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": true,
+          "value": "120",
+          "units": "ft",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
         },
         "name": "Sympathy Save",
-        "img": "icons/magic/symbols/clover-luck-white-green.webp",
-        "appliedEffects": []
-      },
-      "sxXxlH2YWStUEKpo": {
-        "type": "save",
-        "_id": "sxXxlH2YWStUEKpo",
-        "sort": 300000,
-        "activation": {
-          "type": "",
-          "value": null,
-          "override": true,
-          "condition": ""
-        },
-        "consumption": {
-          "scaling": {
-            "allowed": false
-          },
-          "spellSlot": false,
-          "targets": []
-        },
-        "description": {
-          "chatFlavor": ""
-        },
-        "duration": {
-          "units": "inst",
-          "concentration": false,
-          "override": true
-        },
-        "effects": [
-          {
-            "_id": "j8Iycz9zH8053ECu",
-            "onSave": false
-          }
-        ],
-        "range": {
-          "override": true,
-          "units": "spec",
-          "special": ""
-        },
-        "target": {
-          "template": {
-            "contiguous": false,
-            "units": "ft",
-            "type": ""
-          },
-          "affects": {
-            "choice": false,
-            "count": "",
-            "type": "creature",
-            "special": ""
-          },
-          "override": true,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
-        },
-        "damage": {
-          "parts": [],
-          "onSave": "half"
-        },
-        "save": {
-          "ability": "wis",
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
-          }
-        },
-        "name": "Out of Range Save",
-        "img": "",
-        "appliedEffects": []
-      }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.pYdcGfawQ7yFalVC",
-      "spell-lists": "bard,druid,wizard"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
+        "_id": "J6kTEeQc2cCyfppj",
+        "img": "icons/magic/control/modfiy-luck-fortune-gray.webp"
       }
     },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
-      }
-    }
+    "identifier": "antipathy-sympathy"
   },
-  "img": "icons/magic/control/fear-fright-monster-grin-green.webp",
+  "type": "spell",
+  "img": "icons/magic/control/control-influence-rally-purple.webp",
   "effects": [
     {
       "name": "Antipathy",
-      "img": "icons/magic/symbols/rune-sigil-horned-white-purple.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.pYdcGfawQ7yFalVC",
+      "img": "icons/magic/control/modfiy-luck-fortune-red.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplAntipathyS",
       "transfer": false,
-      "_id": "Tlk7gONdVYVQiZcH",
+      "_id": "bW6xZzK4dmulRmUT",
       "type": "base",
       "system": {},
       "changes": [],
@@ -383,7 +293,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>The enchantment causes creatures of the kind you designated to feel an intense urge to leave the area and avoid the target. When such a creature can see the target or comes within 60 feet of it, the creature must succeed on a Wisdom saving throw or become frightened. The creature remains frightened while it can see the target or is within 60 feet of it. While frightened by the target, the creature must use its movement to move to the nearest safe spot from which it can't see the target. If the creature moves more than 60 feet from the target and can't see it, the creature is no longer frightened, but the creature becomes frightened again if it regains sight of the target or moves within 60 feet of it.</p>",
+      "description": "",
       "tint": "#ffffff",
       "statuses": [],
       "sort": 0,
@@ -393,19 +303,19 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728914419248,
-        "modifiedTime": 1728914475126,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!pYdcGfawQ7yFalVC.Tlk7gONdVYVQiZcH"
+      "_key": "!items.effects!matSplAntipathyS.bW6xZzK4dmulRmUT"
     },
     {
       "name": "Sympathy",
-      "img": "icons/magic/symbols/clover-luck-white-green.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.pYdcGfawQ7yFalVC",
+      "img": "icons/magic/control/modfiy-luck-fortune-gray.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplAntipathyS",
       "transfer": false,
-      "_id": "cwrEaddjo961o5ed",
+      "_id": "Cz9yMSQmtWRnz81Z",
       "type": "base",
       "system": {},
       "changes": [],
@@ -419,7 +329,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>The enchantment causes the specified creatures to feel an intense urge to approach the target while within 60 feet of it or able to see it. When such a creature can see the target or comes within 60 feet of it, the creature must succeed on a Wisdom saving throw or use its movement on each of its turns to enter the area or move within reach of the target. When the creature has done so, it can't willingly move away from the target.</p><p>If the target damages or otherwise harms an affected creature, the affected creature can make a Wisdom saving throw to end the effect, as described below</p>",
+      "description": "",
       "tint": "#ffffff",
       "statuses": [],
       "sort": 0,
@@ -429,33 +339,33 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728914478068,
-        "modifiedTime": 1728914511831,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!pYdcGfawQ7yFalVC.cwrEaddjo961o5ed"
+      "_key": "!items.effects!matSplAntipathyS.Cz9yMSQmtWRnz81Z"
     },
     {
       "name": "Frightened",
       "img": "systems/dnd5e/icons/svg/statuses/frightened.svg",
-      "origin": "Compendium.materia-dnd.spells.Item.pYdcGfawQ7yFalVC",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplAntipathyS",
       "transfer": false,
-      "_id": "oPjjXaTbrELukBS4",
+      "_id": "aNztI08V5rN4s5mF",
       "type": "base",
       "system": {},
       "changes": [],
       "disabled": false,
       "duration": {
         "startTime": null,
-        "seconds": null,
+        "seconds": 864000,
         "combat": null,
         "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>he creature remains frightened while it can see the target or is within 60 feet of it. While frightened by the target, the creature must use its movement to move to the nearest safe spot from which it can't see the target. If the creature moves more than 60 feet from the target and can't see it, the creature is no longer frightened, but the creature becomes frightened again if it regains sight of the target or moves within 60 feet of it.</p>",
+      "description": "<p>The creature has the &amp;Reference[Frightened apply=false] condition. The Frightened creature must use its movement on its turns to get as far away as possible from the target, moving by the safest route.</p><p><strong>Ending the Effect.</strong> If the Frightened or Charmed creature ends its turn more than 120 feet away from the target, the creature makes a [[/save ability=wis format=long]]. On a successful save, the creature is no longer affected by the target. A creature that successfully saves against this effect is immune to it for 1 minute, after which it can be affected again.</p>",
       "tint": "#ffffff",
       "statuses": [
         "frightened"
@@ -467,35 +377,36 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728914559482,
-        "modifiedTime": 1728914595794,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!pYdcGfawQ7yFalVC.oPjjXaTbrELukBS4"
+      "_key": "!items.effects!matSplAntipathyS.aNztI08V5rN4s5mF"
     },
     {
-      "name": "Attracted",
-      "img": "icons/magic/control/debuff-energy-hold-blue-yellow.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.pYdcGfawQ7yFalVC",
+      "name": "Charmed",
+      "img": "systems/dnd5e/icons/svg/statuses/charmed.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplAntipathyS",
       "transfer": false,
-      "_id": "B6FyegJohUwN8F0R",
       "type": "base",
       "system": {},
       "changes": [],
       "disabled": false,
       "duration": {
         "startTime": null,
-        "seconds": null,
+        "seconds": 864000,
         "combat": null,
         "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>The creature must use its movement on each of its turns to enter the area or move within reach of the target. When the creature has done so, it can't willingly move away from the target.</p><p>If the target damages or otherwise harms an affected creature, the affected creature can make a Wisdom saving throw to end the effect, as described below.</p>",
+      "description": "<p>The creature has the &amp;Reference[Charmed apply=false] condition. The Charmed creature must use its movement on its turns to get as close as possible to the target, moving by the safest route. If the creature is within 5 feet of the target, the creature can't willingly move away. If the target damages the Charmed creature, that creature can make a Wisdom saving throw to end the effect, as described below.</p><p><strong>Ending the Effect.</strong> If the Frightened or Charmed creature ends its turn more than 120 feet away from the target, the creature makes a Wisdom saving throw. On a successful save, the creature is no longer affected by the target. A creature that successfully saves against this effect is immune to it for 1 minute, after which it can be affected again.</p>",
       "tint": "#ffffff",
-      "statuses": [],
+      "statuses": [
+        "charmed"
+      ],
       "sort": 0,
       "flags": {},
       "_stats": {
@@ -503,61 +414,34 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728914644252,
-        "modifiedTime": 1728914753862,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!pYdcGfawQ7yFalVC.B6FyegJohUwN8F0R"
-    },
-    {
-      "name": "Immune to Effect",
-      "img": "icons/magic/control/fear-fright-monster-grin-green.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.pYdcGfawQ7yFalVC",
-      "transfer": false,
-      "_id": "j8Iycz9zH8053ECu",
-      "type": "base",
-      "system": {},
-      "changes": [],
-      "disabled": false,
-      "duration": {
-        "startTime": null,
-        "seconds": 60,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "description": "<p>The creature is immune to this effect for 1 minute, after which time it can be affected again.</p>",
-      "tint": "#ffffff",
-      "statuses": [],
-      "sort": 0,
-      "flags": {},
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728914805016,
-        "modifiedTime": 1728914840809,
-        "lastModifiedBy": "dnd5mbuilder0000"
-      },
-      "_key": "!items.effects!pYdcGfawQ7yFalVC.j8Iycz9zH8053ECu"
+      "_id": "pkTbvXvccMakDjyU",
+      "_key": "!items.effects!matSplAntipathyS.pkTbvXvccMakDjyU"
     }
   ],
   "folder": "IeD7MeayeQqIoNnW",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234104,
-    "modifiedTime": 1728914805052,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "pYdcGfawQ7yFalVC",
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplAntipathyS",
+      "spell-lists": "bard,druid,wizard"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739432857078,
+    "modifiedTime": 1739432857078,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
   "sort": 0,
-  "_key": "!items!pYdcGfawQ7yFalVC"
+  "_key": "!items!matSplAntipathyS"
 }

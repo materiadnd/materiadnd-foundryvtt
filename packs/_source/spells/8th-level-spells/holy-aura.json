@@ -1,195 +1,223 @@
 {
   "name": "Holy Aura",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplHolyAura00",
   "system": {
     "description": {
-      "value": "<p>Divine light washes out from you and coalesces in a soft radiance in a 30-foot radius around you. Creatures of your choice in that radius when you cast this spell shed dim light in a 5-foot radius and have advantage on all Saving Throws, and other creatures have disadvantage on Attack rolls against them until the spell ends. In addition, when a fiend or an Undead hits an affected creature with a melee attack, the aura flashes with brilliant light. The attacker must succeed on a Constitution saving throw or be Blinded until the spell ends.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 9th level or higher, grants a duration that does not require concentration.</p>",
+      "value": "<p>For the duration, you emit an aura in a 30-foot Emanation. While in the aura, creatures of your choice have Advantage on all saving throws, and other creatures have Disadvantage on attack rolls against them. In addition, when a Fiend or an Undead hits an affected creature with a melee attack roll, the attacker must succeed on a Constitution saving throw or have the &amp;Reference[Blinded apply=false] condition until the end of its next turn.</p><p><strong>Using a Higher-Level Spell Slot.</strong> If you use a slot of level 9+, this does not require your Concentration..</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "10",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 30,
-      "width": null,
-      "units": "ft",
-      "type": "radius",
-      "prompt": true,
       "affects": {
+        "choice": true,
         "count": "",
-        "type": ""
+        "type": "creature",
+        "special": ""
       },
       "template": {
+        "units": "ft",
+        "contiguous": false,
+        "type": "radius",
+        "size": "30",
         "count": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "self",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "con",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 8,
     "school": "abj",
-    "materials": {
-      "value": "A tiny reliquary worth at least 1,000 gp containing a sacred relic, such as a scrap of cloth from a saint's robe or a piece of parchment from a religious text",
-      "consumed": false,
-      "cost": 1000,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
     "properties": [
       "vocal",
       "somatic",
       "material",
       "concentration"
     ],
-    "crewed": false,
+    "materials": {
+      "value": "a reliquary worth 1,000+ GP",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
     "activities": {
-      "dnd5eactivity000": {
-        "effects": [
-          {
-            "_id": "TLkiJsTqFy9RTVGl"
-          }
-        ],
-        "name": "Cast",
-        "img": "",
-        "appliedEffects": [
-          "TLkiJsTqFy9RTVGl"
-        ]
-      },
-      "dnd5eactivity100": {
-        "name": "Fiend or Undead Save",
-        "img": "",
-        "appliedEffects": [],
+      "jbvvkjZ7szK9wjeA": {
+        "type": "utility",
+        "_id": "jbvvkjZ7szK9wjeA",
         "activation": {
-          "override": true,
-          "type": "",
-          "condition": ""
-        },
-        "duration": {
-          "override": true
+          "type": "action",
+          "value": null,
+          "override": false
         },
         "consumption": {
-          "spellSlot": false
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
         },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "csA26qg5YSsji1ZZ"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Create Aura",
+        "img": "systems/dnd5e/icons/svg/trait-damage-immunities.svg"
+      },
+      "0kylpwRauH0WgW0G": {
+        "type": "save",
+        "_id": "0kylpwRauH0WgW0G",
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "round",
+          "concentration": false,
+          "override": true,
+          "value": "1"
+        },
+        "effects": [
+          {
+            "_id": "wqBjgsd2xRnmSm8Z",
+            "onSave": false
+          }
+        ],
         "range": {
           "override": true,
-          "units": "self",
+          "units": "any",
           "special": ""
         },
         "target": {
-          "override": true,
-          "affects": {
-            "count": "",
-            "type": "creature"
-          },
           "template": {
+            "contiguous": false,
+            "units": "ft",
             "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
           }
         },
-        "effects": [
-          {
-            "_id": "oFKHt8HOXkQdjuto",
-            "onSave": false
-          }
-        ]
-      }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.zCOyDUSbS9nj0D9S",
-      "spell-lists": "cleric"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
+        "name": "Fiend/Undead Save"
       }
     },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
-      }
-    }
+    "identifier": "holy-aura"
   },
-  "img": "icons/magic/control/buff-flight-wings-runes-blue-white.webp",
+  "type": "spell",
+  "img": "icons/magic/life/ankh-shadow-green.webp",
   "effects": [
     {
-      "name": "Holy Aura",
-      "img": "icons/magic/control/buff-flight-wings-runes-blue-white.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.zCOyDUSbS9nj0D9S",
+      "name": "Holy Protection",
+      "img": "icons/svg/mage-shield.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplHolyAura00",
       "transfer": false,
-      "_id": "TLkiJsTqFy9RTVGl",
+      "_id": "csA26qg5YSsji1ZZ",
       "type": "base",
       "system": {},
       "changes": [],
       "disabled": false,
       "duration": {
         "startTime": null,
-        "seconds": 600,
+        "seconds": 60,
         "combat": null,
         "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>Creatures of your choice in that radius when you cast this spell shed dim light in a 5-foot radius and have advantage on all Saving Throws, and other creatures have disadvantage on Attack rolls against them until the spell ends. In addition, when a fiend or an Undead hits an affected creature with a melee attack, the aura flashes with brilliant light. The attacker must succeed on a Constitution saving throw or be Blinded until the spell ends.</p>",
+      "description": "",
       "tint": "#ffffff",
       "statuses": [],
       "sort": 0,
@@ -199,33 +227,33 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728916484889,
-        "modifiedTime": 1728916517479,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!zCOyDUSbS9nj0D9S.TLkiJsTqFy9RTVGl"
+      "_key": "!items.effects!matSplHolyAura00.csA26qg5YSsji1ZZ"
     },
     {
       "name": "Blinded",
       "img": "systems/dnd5e/icons/svg/statuses/blinded.svg",
-      "origin": "Compendium.materia-dnd.spells.Item.zCOyDUSbS9nj0D9S",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplHolyAura00",
       "transfer": false,
-      "_id": "oFKHt8HOXkQdjuto",
+      "_id": "wqBjgsd2xRnmSm8Z",
       "type": "base",
       "system": {},
       "changes": [],
       "disabled": false,
       "duration": {
         "startTime": null,
-        "seconds": 600,
+        "seconds": null,
         "combat": null,
-        "rounds": null,
+        "rounds": 1,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "description": "",
+      "description": "<p>The attacker has the &amp;Reference[Blinded apply=false] condition until the end of its next turn.</p>",
       "tint": "#ffffff",
       "statuses": [
         "blinded"
@@ -237,25 +265,33 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728916571842,
-        "modifiedTime": 1728916591823,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!zCOyDUSbS9nj0D9S.oFKHt8HOXkQdjuto"
+      "_key": "!items.effects!matSplHolyAura00.wqBjgsd2xRnmSm8Z"
     }
   ],
   "folder": "IeD7MeayeQqIoNnW",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234212,
-    "modifiedTime": 1728916599959,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "zCOyDUSbS9nj0D9S",
-  "sort": 800000,
-  "_key": "!items!zCOyDUSbS9nj0D9S"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplHolyAura00",
+      "spell-lists": "cleric"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739433598252,
+    "modifiedTime": 1739433622017,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplHolyAura00"
 }

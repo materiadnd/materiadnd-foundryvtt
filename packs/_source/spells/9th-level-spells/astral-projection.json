@@ -1,142 +1,129 @@
 {
   "name": "Astral Projection",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplAstralProj",
   "system": {
     "description": {
-      "value": "<p>You and up to eight willing creatures within range project your astral bodies into the Astral Plane (the spell fails and the casting is wasted if you are already on that plane). The material body you leave behind is unconscious and in a state of suspended animation, it doesn't need food or air and doesn't age.</p><p>Your astral body resembles your mortal form in almost every way, replicating your game statistics and possessions. The principal difference is the addition of a silvery cord that extends from between your shoulder blades and trails behind you, fading to invisibility after 1 foot. This cord is your tether to your material body. As long as the tether remains intact, you can find your way home. If the cord is cut-something that can happen only when an effect specifically states that it does-your soul and body are separated, killing you instantly.</p><p>Your astral form can freely travel through the Astral Plane and can pass through portals there leading to any other plane. If you enter a new plane or return to the plane you were on when casting this spell, your body and possessions are transported along the silver cord, allowing you to re-enter your body as you enter the new plane. Your astral form is a separate incarnation. Any damage or other effects that apply to it have no effect on your physical body, nor do they persist when you return to it.</p><p>The spell ends for you and your companions when you use your action to dismiss it. When the spell ends, the affected creature returns to its physical body, and it awakens.</p><p>The spell might also end early for you or one of your companions. A successful dispel magic spell used against an astral or physical body ends the spell for that creature. If a creature's original body or its astral form drops to 0 hit points, the spell ends for that creature. If the spell ends and the silver cord is intact, the cord pulls the creature's astral form back to its body, ending its state of suspended animation.</p><p>If you are returned to your body prematurely, your companions remain in their astral forms and must find their own way back to their bodies, usually by dropping to 0 hit points.</p>",
+      "value": "<p>You and up to eight willing creatures within range project your astral bodies into the Astral Plane (the spell ends instantly if you are already on that plane). Each target's body is left behind in a state of suspended animation; it has the &amp;Reference[Unconscious apply=false] condition, doesn't need food or air, and doesn't age.</p><p>A target's astral form resembles its body in almost every way, replicating its game statistics and possessions. The principal difference is the addition of a silvery cord that trails from between the shoulder blades of the astral form. The cord fades from view after 1 foot. If the cord is cut - which happens only when an effect states that it does so - the target's body and astral form both die.</p><p>A target's astral form can travel through the Astral Plane. The moment an astral form leaves that plane, the target's body and possessions travel along the silver cord, causing the target to re-enter its body on the new plane.</p><p>Any damage or other effects that apply to an astral form have no effect on the target's body and vice versa. If a target's body or astral form drops to 0 Hit Points, the spell ends for that target. The spell ends for all the targets if you take a Magic action to dismiss it.</p><p>When the spell ends for a target who isn't dead, the target reappears in its body and exits the state of suspended animation.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "hour",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": 1
     },
     "duration": {
       "value": "",
-      "units": "spec",
-      "special": ""
+      "units": "disp"
     },
-    "cover": null,
     "target": {
-      "value": 9,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "choice": false,
+        "count": "9",
         "type": "willing",
-        "special": ""
+        "special": "you and up to eight willing creatures"
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": 10,
-      "long": null,
       "units": "ft",
-      "special": ""
+      "special": "",
+      "value": "10"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 9,
     "school": "nec",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "For each creature you affect with this spell, you must provide one jacinth worth at least 1,000 gp and one ornately carved bar of silver worth at least 100 gp, all of which the spell consumes",
+      "value": "for each of the spell's targets, one jacinth worth 1,000+ GP and one silver bar worth 100+ GP, all of which the spell consumes",
       "consumed": true,
-      "cost": 1100,
+      "cost": 0,
       "supply": 0
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material"
-    ],
-    "crewed": false,
     "activities": {
-      "dnd5eactivity000": {
+      "YQhPsh74ZwPvYrWU": {
+        "type": "utility",
+        "name": "Cast",
+        "_id": "YQhPsh74ZwPvYrWU",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {},
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
         "effects": [
           {
-            "_id": "KQZ4Lqf53p8JM5iX"
+            "_id": "SRez59EeCZRy66QS"
           }
         ],
-        "name": "Cast",
-        "img": "",
-        "appliedEffects": [
-          "KQZ4Lqf53p8JM5iX"
-        ]
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "tele-flag": "true",
-      "sourceId": "Compendium.materia-dnd.spells.Item.H4qkdYX42rGhIEl5",
-      "spell-lists": "cleric,warlock,wizard"
     },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
+    "identifier": "astral-projection"
   },
-  "img": "icons/magic/control/debuff-energy-hold-levitate-teal-blue.webp",
+  "type": "spell",
+  "img": "icons/magic/light/orbs-hand-gray.webp",
   "effects": [
     {
-      "name": "Unconscious",
-      "img": "systems/dnd5e/icons/svg/statuses/unconscious.svg",
-      "origin": "Compendium.materia-dnd.spells.Item.H4qkdYX42rGhIEl5",
+      "name": "Suspended Animation",
+      "img": "icons/magic/time/hourglass-brown-orange.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplAstralProj",
       "transfer": false,
-      "_id": "KQZ4Lqf53p8JM5iX",
+      "_id": "SRez59EeCZRy66QS",
       "type": "base",
       "system": {},
       "changes": [],
@@ -150,7 +137,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "description": "",
+      "description": "<p>Each target's body is left behind in a state of suspended animation; it has the &amp;Reference[Unconscious apply=false] condition, doesn't need food or air, and doesn't age.</p>",
       "tint": "#ffffff",
       "statuses": [
         "unconscious"
@@ -162,25 +149,34 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728940634413,
-        "modifiedTime": 1728940659466,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!H4qkdYX42rGhIEl5.KQZ4Lqf53p8JM5iX"
+      "_key": "!items.effects!matSplAstralProj.SRez59EeCZRy66QS"
     }
   ],
   "folder": "89VDZRAxJ1IDvEOP",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234144,
-    "modifiedTime": 1728940676506,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "H4qkdYX42rGhIEl5",
-  "sort": 1700000,
-  "_key": "!items!H4qkdYX42rGhIEl5"
+  "flags": {
+    "materia-dnd": {
+      "tele-flag": "true",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplAstralProj",
+      "spell-lists": "cleric,warlock,wizard"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739434728184,
+    "modifiedTime": 1739434728184,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplAstralProj"
 }
