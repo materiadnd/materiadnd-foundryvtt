@@ -1,85 +1,55 @@
 {
   "name": "Prismatic Spray",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplPrismaticS",
   "system": {
     "description": {
-      "value": "<p>Eight multicolored rays of light flash from your hand. Each ray is a different color and has a different power and purpose. Each creature in a 60-foot cone must make a Dexterity saving throw. For each target, roll two d8's to determine which color rays affect it. If you roll the same effect twice, the creature is affected twice by the same color.</p><ol><li><strong>Red</strong>. The target takes [[/r 10d6]] fire damage on a failed save, or half as much damage on a successful one.</li><li><strong>Orange</strong>. The target takes [[/r 10d6]] acid damage on a failed save, or half as much damage on a successful one.</li><li><strong>Yellow</strong>. The target takes [[/r 10d6]] lightning damage on a failed save, or half as much damage on a successful one.</li><li><strong>Green</strong>. The target takes [[/r 10d6]] poison damage on a failed save, or half as much damage on a successful one.</li><li><strong>Blue</strong>. The target takes [[/r 10d6]] cold damage on a failed save, or half as much damage on a successful one.</li><li><strong>Indigo</strong>. On a failed save, the target is Restrained. It must then make a Constitution saving throw at the end of each of its turns. If it successfully saves three times, the spell ends. If it fails its save three times, it permanently turns to stone and is subjected to the Petrified condition. The successes and failures don't need to be consecutive; keep track of both until the target collects three of a kind.</li><li><strong>Violet</strong>. On a failed save, the target is Blinded. It must then make a Charisma saving throw at the start of your next turn. A successful save ends the blindness. If it fails that save, the creature is transported to another plane of existence of the DM's choosing and is no longer Blinded. (Typically, a creature that is on a plane that isn't its home plane is banished home, while other creatures are usually cast into the Astral or Ethereal planes.)</li><li><strong>Special</strong>. The target is struck by two rays. Roll twice more, rerolling any 8.</li></ol><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 8th level or higher, increase the number of rays that affect creatures by 1 for each slot level above 7th.</p>",
+      "value": "<p>Eight rays of light flash from you in a 60-foot Cone. Each creature in the Cone makes a Dexterity saving throw. For each target, roll 2d8 to determine which color rays affect it, consulting the Prismatic Rays table.  If you roll the same effect twice, the creature is affected twice by the same color.</p><p>@Embed[Compendium.materia-dnd.rollable-tables.RollTable.matRolPrismaticR rollable=true caption=false]{Prismatic Rays}</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 60,
-      "width": null,
-      "units": "ft",
-      "type": "cone",
-      "prompt": true,
       "affects": {
+        "choice": false,
         "count": "",
-        "type": ""
+        "type": "creature",
+        "special": ""
       },
       "template": {
+        "units": "ft",
+        "contiguous": false,
+        "type": "cone",
+        "size": "60",
         "count": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "self",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "10d6",
-          ""
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 7,
     "school": "evo",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -90,38 +60,20 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "mgc"
-    ],
-    "crewed": false,
     "activities": {
-      "dnd5eactivity000": {
-        "damage": {
-          "parts": []
-        },
-        "effects": []
-      },
-      "JXmi6BcWh8DTlrqo": {
-        "type": "damage",
-        "_id": "JXmi6BcWh8DTlrqo",
-        "sort": 0,
+      "jsiTqb3Jhwz0bIDS": {
+        "type": "save",
+        "_id": "jsiTqb3Jhwz0bIDS",
         "activation": {
-          "type": "",
+          "type": "action",
           "value": null,
-          "override": true,
-          "condition": ""
+          "override": false
         },
         "consumption": {
           "scaling": {
             "allowed": false
           },
-          "spellSlot": false,
+          "spellSlot": true,
           "targets": []
         },
         "description": {
@@ -130,26 +82,30 @@
         "duration": {
           "units": "inst",
           "concentration": false,
-          "override": true
+          "override": false
         },
-        "effects": [],
+        "effects": [
+          {
+            "_id": "cCQh7iXKnT8PKmc1",
+            "onSave": false
+          },
+          {
+            "_id": "jFAGct9YCYvLJodW",
+            "onSave": false
+          }
+        ],
         "range": {
-          "override": true,
-          "units": "spec",
-          "special": ""
+          "override": false
         },
         "target": {
           "template": {
             "contiguous": false,
-            "units": "ft",
-            "type": ""
+            "units": "ft"
           },
           "affects": {
-            "choice": false,
-            "count": "",
-            "type": ""
+            "choice": false
           },
-          "override": true,
+          "override": false,
           "prompt": true
         },
         "uses": {
@@ -157,40 +113,50 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "damage": {
-          "critical": {
-            "allow": false
-          },
           "parts": [
             {
               "custom": {
                 "enabled": false,
                 "formula": ""
               },
-              "number": 10,
+              "number": 12,
               "denomination": 6,
               "bonus": "",
-              "types": [],
+              "types": [
+                "acid",
+                "cold",
+                "fire",
+                "lightning",
+                "poison"
+              ],
               "scaling": {
                 "mode": "",
                 "number": 1
               }
             }
-          ]
+          ],
+          "onSave": "half"
         },
-        "name": "Color Damage",
-        "img": "",
-        "appliedEffects": []
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Cast"
       },
-      "zTxNXPOw1mEwcvt5": {
+      "hEE5tqet1GwtXI0h": {
         "type": "save",
-        "_id": "zTxNXPOw1mEwcvt5",
-        "sort": 0,
+        "_id": "hEE5tqet1GwtXI0h",
         "activation": {
-          "type": "",
+          "type": "action",
           "value": null,
-          "override": true,
-          "condition": ""
+          "override": false
         },
         "consumption": {
           "scaling": {
@@ -205,12 +171,12 @@
         "duration": {
           "units": "inst",
           "concentration": false,
-          "override": true
+          "override": false
         },
         "effects": [],
         "range": {
           "override": true,
-          "units": "self",
+          "units": "any",
           "special": ""
         },
         "target": {
@@ -221,8 +187,9 @@
           },
           "affects": {
             "choice": false,
-            "count": "",
-            "type": ""
+            "count": "1",
+            "type": "creature",
+            "special": ""
           },
           "override": true,
           "prompt": true
@@ -232,30 +199,29 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "damage": {
           "parts": [],
-          "onSave": "none"
+          "onSave": "half"
         },
         "save": {
-          "ability": "con",
+          "ability": [
+            "con"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
         },
-        "name": "Indigo Save",
-        "img": "",
-        "appliedEffects": []
+        "name": "Indigo Save (Con)",
+        "img": "systems/dnd5e/icons/svg/abilities/constitution.svg"
       },
-      "sKSY12g4ZhB8HM2a": {
+      "aVMkONwxZ9IGOjZs": {
         "type": "save",
-        "_id": "sKSY12g4ZhB8HM2a",
-        "sort": 0,
         "activation": {
-          "type": "",
+          "type": "action",
           "value": null,
-          "override": true,
-          "condition": ""
+          "override": false
         },
         "consumption": {
           "scaling": {
@@ -270,12 +236,12 @@
         "duration": {
           "units": "inst",
           "concentration": false,
-          "override": true
+          "override": false
         },
         "effects": [],
         "range": {
           "override": true,
-          "units": "spec",
+          "units": "any",
           "special": ""
         },
         "target": {
@@ -286,8 +252,9 @@
           },
           "affects": {
             "choice": false,
-            "count": "",
-            "type": ""
+            "count": "1",
+            "type": "creature",
+            "special": ""
           },
           "override": true,
           "prompt": true
@@ -297,53 +264,40 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "damage": {
           "parts": [],
-          "onSave": "none"
+          "onSave": "half"
         },
         "save": {
-          "ability": "cha",
+          "ability": [
+            "wis"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
         },
-        "name": "Violet Save",
-        "img": "",
-        "appliedEffects": []
-      }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.OiflGpSfE6mqIGOe",
-      "spell-lists": "bard,sorcerer,wizard"
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
+        "name": "Violet Save (Wis)",
+        "img": "systems/dnd5e/icons/svg/abilities/wisdom.svg",
+        "_id": "aVMkONwxZ9IGOjZs"
       }
     },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
-        }
-      }
-    }
+    "identifier": "prismatic-spray"
   },
-  "img": "icons/magic/light/projectile-beams-salvo-yellow.webp",
+  "type": "spell",
+  "img": "icons/magic/light/beams-strike-blue.webp",
   "effects": [
     {
-      "name": "Prismatic Spray (indigo)",
-      "origin": "Compendium.dnd5e.spells.Item.eGMhwmuleAM46C6L",
+      "name": "Petrifying (Indigo)",
+      "img": "icons/magic/defensive/armor-stone-skin.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplPrismaticS",
+      "transfer": false,
+      "_id": "cCQh7iXKnT8PKmc1",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
       "duration": {
         "startTime": null,
         "seconds": null,
@@ -353,35 +307,35 @@
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "6bNxvdxYMSZK9N0A",
-      "changes": [],
-      "description": "<p>The target is Restrained. It must then make a Constitution saving throw at the end of each of its turns. If it successfully saves three times, the spell ends. If it fails its save three times, it permanently turns to stone and is subjected to the Petrified condition.</p>",
-      "transfer": false,
+      "description": "<p>The target has the &amp;Reference[Restrained apply=false] condition and makes a [[/save ability=con format=long]] at the end of each of its turns. If it successfully saves three times, the condition ends. If it fails three times, it has the &amp;Reference[Petrified] condition until it is freed by an effect like the <em>@UUID[Compendium.materia-dnd.spells.Item.matSplGreaterRes]{Greater Restoration}</em> spell. The successes and failures needn't be consecutive; keep track of both until the target collects three of a kind.</p>",
+      "tint": "#ffffff",
       "statuses": [
         "restrained"
       ],
+      "sort": 0,
       "flags": {},
-      "tint": "#ffffff",
       "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
+        "lastModifiedBy": null
       },
-      "img": "icons/magic/light/projectile-beams-salvo-yellow.webp",
-      "type": "base",
-      "system": {},
-      "sort": 0,
-      "_key": "!items.effects!OiflGpSfE6mqIGOe.6bNxvdxYMSZK9N0A"
+      "_key": "!items.effects!matSplPrismaticS.cCQh7iXKnT8PKmc1"
     },
     {
-      "name": "Prismatic Spray (violet)",
-      "origin": "Compendium.dnd5e.spells.Item.eGMhwmuleAM46C6L",
+      "name": "Teleporting (Violet)",
+      "img": "icons/magic/control/silhouette-grow-shrink-blue.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplPrismaticS",
+      "transfer": false,
+      "_id": "jFAGct9YCYvLJodW",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
       "duration": {
         "startTime": null,
         "seconds": null,
@@ -391,44 +345,45 @@
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "Y5OA9lzI3tMHA3KF",
-      "changes": [],
-      "description": "<p>The target is Blinded. It must then make a Wisdom saving throw at the start of the caster's next turn. A successful save ends the blindness. If it fails that save, the creature is transported to another plane of existence and is no longer Blinded.</p>",
-      "transfer": false,
+      "description": "<p>The target has the &amp;Reference[Blinded apply=false] condition and makes a [[/save ability=wis format=long]] at the start of your next turn. On a successful save, the condition ends. On a failed save, the condition ends, and the creature teleports to another plane of existence (DM's choice).</p>",
+      "tint": "#ffffff",
       "statuses": [
         "blinded"
       ],
+      "sort": 0,
       "flags": {},
-      "tint": "#ffffff",
       "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
+        "lastModifiedBy": null
       },
-      "img": "icons/magic/light/projectile-beams-salvo-yellow.webp",
-      "type": "base",
-      "system": {},
-      "sort": 0,
-      "_key": "!items.effects!OiflGpSfE6mqIGOe.Y5OA9lzI3tMHA3KF"
+      "_key": "!items.effects!matSplPrismaticS.jFAGct9YCYvLJodW"
     }
   ],
   "folder": "0whxxbO5gmG63mDV",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234184,
-    "modifiedTime": 1734531060540,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "OiflGpSfE6mqIGOe",
-  "sort": 1700000,
-  "_key": "!items!OiflGpSfE6mqIGOe"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplPrismaticS",
+      "spell-lists": "bard,sorcerer,wizard"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739423988642,
+    "modifiedTime": 1739424222444,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplPrismaticS"
 }

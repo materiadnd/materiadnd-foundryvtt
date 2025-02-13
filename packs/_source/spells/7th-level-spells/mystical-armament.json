@@ -1,9 +1,9 @@
 {
-  "name": "Reverse Gravity",
-  "_id": "matSplReverseGra",
+  "name": "Mystical Armament",
+  "_id": "matSplMysticalAr",
   "system": {
     "description": {
-      "value": "<p>This spell reverses gravity in a 50-foot-radius, 100-foot high Cylinder centered on a point within range. All creatures and objects in that area that aren't anchored to the ground fall upward and reach the top of the Cylinder. A creature can make a Dexterity saving throw to grab a fixed object it can reach, thus avoiding the fall upward.</p><p>If a ceiling or an anchored object is encountered in this upward fall, creatures and objects strike it just as they would during a downward fall. If an affected creature or object reaches the Cylinder's top without striking anything, it hovers there for the duration. When the spell ends, affected objects and creatures fall downward.</p>",
+      "value": "<p>You create a spectral weapon that hovers within range. It lasts for the duration.</p><p>When the weapon appears, you make a melee spell attack against a target within 5 feet of the weapon. On a hit, the target takes Force damage equal to 4d12 plus your spellcasting ability modifier.</p><p>On your later turns, you can take a Bonus Action to move the weapon up to 30 feet to a spot you can see and repeat the attack against the same target or a different one.</p>",
       "chat": ""
     },
     "source": {
@@ -24,22 +24,19 @@
       "affects": {
         "choice": false,
         "count": "",
-        "type": "creatureOrObject",
+        "type": "space",
         "special": ""
       },
       "template": {
-        "units": "ft",
+        "units": "",
         "contiguous": false,
-        "type": "cylinder",
-        "size": "50",
-        "height": "100",
-        "count": ""
+        "type": ""
       }
     },
     "range": {
       "units": "ft",
       "special": "",
-      "value": "100"
+      "value": "90"
     },
     "uses": {
       "max": "",
@@ -47,7 +44,7 @@
       "recovery": []
     },
     "level": 7,
-    "school": "trs",
+    "school": "evo",
     "properties": [
       "vocal",
       "somatic",
@@ -55,7 +52,7 @@
       "concentration"
     ],
     "materials": {
-      "value": "a lodestone and iron filings",
+      "value": "a miniature sword worth 250+ GP",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -65,9 +62,9 @@
       "prepared": false
     },
     "activities": {
-      "2he175P3mz8KeBYo": {
-        "type": "save",
-        "_id": "2he175P3mz8KeBYo",
+      "WkeioBGpPAaUZ66H": {
+        "type": "summon",
+        "_id": "WkeioBGpPAaUZ66H",
         "activation": {
           "type": "action",
           "value": null,
@@ -88,7 +85,6 @@
           "concentration": false,
           "override": false
         },
-        "effects": [],
         "range": {
           "override": false
         },
@@ -109,26 +105,48 @@
           "max": ""
         },
         "sort": 0,
-        "damage": {
-          "parts": [],
-          "onSave": "none"
+        "bonuses": {
+          "ac": "",
+          "hd": "",
+          "hp": "",
+          "attackDamage": "@attributes.spellmod",
+          "saveDamage": "",
+          "healing": ""
         },
-        "save": {
-          "ability": [
-            "dex"
-          ],
-          "dc": {
-            "calculation": "spellcasting",
-            "formula": ""
+        "creatureSizes": [],
+        "creatureTypes": [],
+        "match": {
+          "attacks": true,
+          "proficiency": true,
+          "saves": false
+        },
+        "profiles": [
+          {
+            "count": "",
+            "name": "",
+            "_id": "cfMwwH4dggymzi99",
+            "uuid": "Compendium.dnd-players-handbook.actors.Actor.phbsplMordSword0",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": []
           }
+        ],
+        "summon": {
+          "prompt": true,
+          "mode": "",
+          "identifier": ""
         },
-        "name": ""
+        "name": "Create Spectral Sword",
+        "img": "systems/dnd5e/icons/svg/properties/magical.svg",
+        "effects": []
       }
     },
-    "identifier": "reverse-gravity"
+    "identifier": "mordenkainens-sword"
   },
   "type": "spell",
-  "img": "icons/magic/control/sihouette-hold-beam-green.webp",
+  "img": "icons/weapons/swords/sword-flanged-lightning.webp",
   "effects": [],
   "folder": "0whxxbO5gmG63mDV",
   "ownership": {
@@ -136,8 +154,8 @@
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.matSplReverseGra",
-      "spell-lists": "druid,sorcerer,wizard"
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplMysticalAr",
+      "spell-lists": "bard,wizard"
     }
   },
   "_stats": {
@@ -145,10 +163,10 @@
     "coreVersion": "12.331",
     "systemId": "dnd5e",
     "systemVersion": "4.2.2",
-    "createdTime": 1739424566591,
-    "modifiedTime": 1739424566591,
+    "createdTime": 1739423734712,
+    "modifiedTime": 1739423779877,
     "lastModifiedBy": "dnd5mbuilder0000"
   },
   "sort": 0,
-  "_key": "!items!matSplReverseGra"
+  "_key": "!items!matSplMysticalAr"
 }

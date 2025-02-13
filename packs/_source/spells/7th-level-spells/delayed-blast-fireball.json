@@ -1,89 +1,64 @@
 {
   "name": "Delayed Blast Fireball",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplDelayedBla",
   "system": {
     "description": {
-      "value": "<p>A beam of yellow light flashes from your pointing finger, then condenses to linger at a chosen point within range as a glowing bead for the duration. When the spell ends, either because your concentration is broken or because you decide to end it, the bead blossoms with a low roar into an explosion of flame that spreads around corners. Each creature in a 20-foot-radius sphere centered on that point must make a Dexterity saving throw. A creature takes fire damage equal to the total accumulated damage on a failed save, or half as much damage on a successful one.</p><p>The spell's base damage is [[/r 12d6]]. If at the end of your turn the bead has not yet detonated, the damage increases by [[/r 2d6]].</p><p>If the glowing bead is touched before the interval has expired, the creature touching it must make a Dexterity saving throw. On a failed save, the spell ends immediately, causing the bead to erupt in flame. On a successful save, the creature can throw the bead up to 40 feet. When it strikes a creature or a solid object, the spell ends, and the bead explodes.</p><p>The fire damages objects in the area and ignites flammable objects that aren't being worn or carried.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 8th level or higher, the damage increase each round increases by [[/r 1d6]] for each slot level above 7th.</p><section id=\"secret-sHc61Qd3CcTXYETH\" class=\"secret\"><p><span style=\"font-family:'Roboto Condensed', sans-serif\"><strong style=\"box-sizing:border-box;user-select:text;scrollbar-width:thin;scrollbar-color:var(--color-scrollbar) var(--color-scrollbar-track)\">Foundry Note</strong></span></p><p style=\"box-sizing:border-box;user-select:text;scrollbar-width:thin;scrollbar-color:var(--color-scrollbar) var(--color-scrollbar-track);margin:0.5em 0px;color:rgb(207, 210, 218);font-family:'Roboto Condensed', sans-serif;font-size:13px;font-style:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:2;text-indent:0px;text-transform:none;widows:2;word-spacing:0px;-webkit-text-stroke-width:0px;white-space:normal;text-decoration-thickness:initial;text-decoration-style:initial;text-decoration-color:initial;text-align:start\"><span style=\"font-family:'Roboto Condensed', sans-serif\">The limited uses value of this spell tracks the number of rounds that have passed since the initial casting and starts at 0.</span></p><p style=\"box-sizing:border-box;user-select:text;scrollbar-width:thin;scrollbar-color:var(--color-scrollbar) var(--color-scrollbar-track);margin:0.5em 0px;color:rgb(207, 210, 218);font-family:'Roboto Condensed', sans-serif;font-size:13px;font-style:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:2;text-indent:0px;text-transform:none;widows:2;word-spacing:0px;-webkit-text-stroke-width:0px;white-space:normal;text-decoration-thickness:initial;text-decoration-style:initial;text-decoration-color:initial;text-align:start\"><span style=\"font-family:'Roboto Condensed', sans-serif\">The <strong style=\"box-sizing:border-box;user-select:text;scrollbar-width:thin;scrollbar-color:var(--color-scrollbar) var(--color-scrollbar-track)\">Turn End Damage Increase</strong> activity will increase that value by 1.</span></p><p style=\"box-sizing:border-box;user-select:text;scrollbar-width:thin;scrollbar-color:var(--color-scrollbar) var(--color-scrollbar-track);margin:0.5em 0px;color:rgb(207, 210, 218);font-family:'Roboto Condensed', sans-serif;font-size:13px;font-style:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:2;text-indent:0px;text-transform:none;widows:2;word-spacing:0px;-webkit-text-stroke-width:0px;white-space:normal;text-decoration-thickness:initial;text-decoration-style:initial;text-decoration-color:initial;text-align:start\"><span style=\"font-family:'Roboto Condensed', sans-serif\">The <strong style=\"box-sizing:border-box;user-select:text;scrollbar-width:thin;scrollbar-color:var(--color-scrollbar) var(--color-scrollbar-track)\">Trigger Explosion</strong> activity calculates the total damage based on the limited uses.</span></p><p style=\"box-sizing:border-box;user-select:text;scrollbar-width:thin;scrollbar-color:var(--color-scrollbar) var(--color-scrollbar-track);margin:0.5em 0px;color:rgb(207, 210, 218);font-family:'Roboto Condensed', sans-serif;font-size:13px;font-style:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:2;text-indent:0px;text-transform:none;widows:2;word-spacing:0px;-webkit-text-stroke-width:0px;white-space:normal;text-decoration-thickness:initial;text-decoration-style:initial;text-decoration-color:initial;text-align:start\"><span style=\"font-family:'Roboto Condensed', sans-serif\">If you would prefer manual tracking, you can use <strong style=\"box-sizing:border-box;user-select:text;scrollbar-width:thin;scrollbar-color:var(--color-scrollbar) var(--color-scrollbar-track)\">Trigger Explosion's</strong> Situational Bonus dialog to add the extra d6s and ignore the <strong style=\"box-sizing:border-box;user-select:text;scrollbar-width:thin;scrollbar-color:var(--color-scrollbar) var(--color-scrollbar-track)\">Turn End Damage</strong> Increase activity.</span></p></section>",
+      "value": "<p>A beam of yellow light flashes from you, then condenses at a chosen point within range as a glowing bead for the duration. When the spell ends, the bead explodes, and each creature in a 20-foot-radius Sphere centered on that point makes a Dexterity saving throw. A creature takes Fire damage equal to the total accumulated damage on a failed save or half as much damage on a successful one.</p><p>The spell's base damage is 12d6, and the damage increases by 2d6 whenever your turn ends and the spell hasn't ended.</p><p>If a creature touches the glowing bead before the spell ends, that creature makes a Dexterity saving throw. On a failed save, the spell ends, causing the bead to explode. On a successful save, the creature can throw the bead up to 40 feet. If the thrown bead enters a creature's space or collides with a solid object, the spell ends, and the bead explodes.</p><p>When the bead explodes, flammable objects in the explosion that aren't being worn or carried start burning.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The base damage increases by 1d6 for each spell slot level above 7.</p><section class=\"secret\" id=\"secret-8FSRYhwywI2O3Qgb\"><p><strong>Foundry Note</strong></p><p>The limited uses value of this spell tracks the number of rounds that have passed since the initial casting and starts at 0.</p><p>The <strong>Turn End Damage Increase</strong> activity will increase that value by 1.</p><p>The <strong>Trigger Explosion</strong> activity calculates the total damage based on the limited uses.</p><p>If you would prefer manual tracking, you can use <strong>Trigger Explosion's</strong> Situational Bonus dialog to add the extra d6s and ignore the <strong>Turn End Damage</strong> Increase activity.</p></section>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 20,
-      "width": null,
-      "units": "ft",
-      "type": "sphere",
-      "prompt": true,
       "affects": {
-        "count": "1",
-        "type": "space",
-        "special": ""
+        "choice": false,
+        "count": "",
+        "type": ""
       },
       "template": {
-        "count": "",
-        "size": "1"
+        "units": "ft",
+        "contiguous": false,
+        "type": "sphere",
+        "size": "1",
+        "count": ""
       }
     },
     "range": {
-      "value": 150,
-      "long": null,
       "units": "ft",
-      "special": ""
+      "special": "",
+      "value": "150"
     },
     "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "12d6",
-          "fire"
-        ]
-      ],
-      "versatile": "1d6"
-    },
-    "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": null,
-      "scaling": "spell"
+      "max": "10",
+      "spent": 10,
+      "recovery": [
+        {
+          "period": "sr",
+          "type": "loseAll"
+        }
+      ]
     },
     "level": 7,
     "school": "evo",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
     "materials": {
-      "value": "A tiny ball of bat guano and sulfur",
+      "value": "a ball of bat guano and sulfur",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -92,22 +67,9 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "1d6"
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "concentration"
-    ],
-    "crewed": false,
     "activities": {
-      "AANCwqGIIfUGq1nH": {
+      "9yLyrnGNwM8EL6Uy": {
         "type": "utility",
-        "_id": "AANCwqGIIfUGq1nH",
-        "sort": -100000,
         "activation": {
           "type": "action",
           "value": null,
@@ -144,12 +106,18 @@
         "target": {
           "template": {
             "contiguous": false,
-            "units": "ft"
+            "units": "ft",
+            "count": "",
+            "type": "sphere",
+            "size": "1"
           },
           "affects": {
-            "choice": false
+            "choice": false,
+            "count": "1",
+            "type": "space",
+            "special": ""
           },
-          "override": false,
+          "override": true,
           "prompt": true
         },
         "uses": {
@@ -157,68 +125,30 @@
           "recovery": [],
           "max": ""
         },
+        "sort": -100000,
         "roll": {
           "prompt": false,
           "visible": false,
-          "name": "",
-          "formula": ""
+          "formula": "",
+          "name": ""
         },
         "name": "Create Bead",
-        "img": "",
-        "appliedEffects": []
+        "img": "systems/dnd5e/icons/svg/damage/force.svg",
+        "_id": "9yLyrnGNwM8EL6Uy"
       },
-      "dnd5eactivity000": {
-        "sort": -75000,
-        "damage": {
-          "parts": [],
-          "onSave": "none"
-        },
-        "name": "Touch Bead",
-        "img": "",
-        "appliedEffects": [],
-        "duration": {
-          "override": true
-        },
-        "activation": {
-          "override": true,
-          "type": "",
-          "condition": ""
-        },
-        "consumption": {
-          "spellSlot": false
-        },
-        "range": {
-          "override": true,
-          "units": "any",
-          "special": ""
-        },
-        "target": {
-          "override": true,
-          "affects": {
-            "count": "1",
-            "type": "creature",
-            "special": ""
-          },
-          "template": {
-            "type": ""
-          }
-        }
-      },
-      "hQJ3zRWNB7miekG8": {
+      "iWd7zKpQIgWofJAp": {
         "type": "save",
-        "_id": "hQJ3zRWNB7miekG8",
-        "sort": 100000,
         "activation": {
           "type": "",
           "value": null,
           "override": true,
-          "condition": ""
+          "condition": "a creature touches the glowing bead before the spell ends"
         },
         "consumption": {
           "scaling": {
             "allowed": false
           },
-          "spellSlot": true,
+          "spellSlot": false,
           "targets": []
         },
         "description": {
@@ -239,13 +169,11 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "sphere",
-            "size": "20",
-            "count": ""
+            "type": ""
           },
           "affects": {
             "choice": false,
-            "count": "",
+            "count": "1",
             "type": "creature",
             "special": ""
           },
@@ -257,47 +185,31 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "damage": {
-          "parts": [
-            {
-              "custom": {
-                "enabled": false,
-                "formula": ""
-              },
-              "number": 12,
-              "denomination": 6,
-              "bonus": "(@item.users.value)d6",
-              "types": [
-                "fire"
-              ],
-              "scaling": {
-                "mode": "whole",
-                "number": 1
-              }
-            }
-          ],
-          "onSave": "half"
+          "parts": [],
+          "onSave": "none"
         },
         "save": {
-          "ability": "dex",
+          "ability": [
+            "dex"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
         },
-        "name": "Trigger Explosion",
-        "img": "",
-        "appliedEffects": []
+        "name": "Touch Bead",
+        "img": "systems/dnd5e/icons/svg/trait-skills.svg",
+        "_id": "iWd7zKpQIgWofJAp"
       },
-      "n8aArlCVqwb2zAIw": {
+      "9i14Jmun9em69EnX": {
         "type": "utility",
-        "_id": "n8aArlCVqwb2zAIw",
-        "sort": 0,
         "activation": {
           "type": "",
           "value": null,
           "override": true,
-          "condition": ""
+          "condition": "whenever your turn ends"
         },
         "consumption": {
           "scaling": {
@@ -341,6 +253,69 @@
             "type": ""
           },
           "override": true,
+          "prompt": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 225000,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "formula": "",
+          "name": ""
+        },
+        "name": "Turn End Damage Increase",
+        "img": "systems/dnd5e/icons/svg/scale-value.svg",
+        "_id": "9i14Jmun9em69EnX",
+        "appliedEffects": []
+      },
+      "M15GlfjeWy7Cdiqn": {
+        "type": "save",
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": "when the spell ends"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true,
+          "units": "any",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "count": "",
+            "type": "sphere",
+            "size": "20"
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true,
           "prompt": true
         },
         "uses": {
@@ -348,21 +323,54 @@
           "recovery": [],
           "max": ""
         },
-        "roll": {
-          "prompt": false,
-          "visible": false,
-          "name": "",
-          "formula": ""
+        "sort": 250000,
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 12,
+              "denomination": 6,
+              "bonus": "(@item.uses.value)d6",
+              "types": [
+                "fire"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ],
+          "onSave": "half"
         },
-        "name": "Turn End Damage Increase",
-        "img": "",
-        "appliedEffects": []
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Trigger Explosion",
+        "_id": "M15GlfjeWy7Cdiqn"
       }
-    }
+    },
+    "identifier": "delayed-blast-fireball"
+  },
+  "type": "spell",
+  "img": "icons/magic/fire/explosion-flame-blue.webp",
+  "effects": [],
+  "folder": "0whxxbO5gmG63mDV",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.iWV2LYdVDKKVgm2y",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplDelayedBla",
       "spell-lists": "sorcerer,wizard"
     },
     "dnd5e": {
@@ -370,34 +378,17 @@
         "activity": [],
         "effect": []
       }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
-        }
-      }
     }
   },
-  "img": "icons/magic/fire/projectile-fireball-smoke-strong-orange.webp",
-  "effects": [],
-  "folder": "0whxxbO5gmG63mDV",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1661787234089,
-    "modifiedTime": 1734531060540,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739422736568,
+    "modifiedTime": 1739422797046,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "iWV2LYdVDKKVgm2y",
-  "sort": 2700000,
-  "_key": "!items!iWV2LYdVDKKVgm2y"
+  "sort": 0,
+  "_key": "!items!matSplDelayedBla"
 }

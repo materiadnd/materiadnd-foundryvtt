@@ -1,86 +1,56 @@
 {
   "name": "Fire Storm",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplFireStorm0",
   "system": {
     "description": {
-      "value": "<p>A storm made up of sheets of roaring flame appears in a location you choose within range. The area of the storm consists of up to ten 10-foot cubes, which you can arrange as you wish. Each cube must have at least one face adjacent to the face of another cube. Each creature in the area must make a Dexterity saving throw. It takes [[/r 10d12]] fire damage on a failed save, or half as much damage on a successful one.</p><p>The fire damages Objects in the area and ignites flammable Objects that aren't being worn or carried. If you choose, plant life in the area is unaffected by this spell.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 8th level or higher, increase the 10-foot cubes available by 3 for each slot level above 7th.</p>",
+      "value": "<p>A storm of fire appears within range. The area of the storm consists of up to ten 10-foot Cubes, which you arrange as you like. Each Cube must be contiguous with at least one other Cube. Each creature in the area makes a Dexterity saving throw, taking 10d12 Fire damage on a failed save or half as much damage on a successful one.</p><p>Flammable objects in the area that aren't being worn or carried start burning.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The number of cubes increases by 3 for each spell slot level above 7.</p><p>If you cast this with a level 9+ slot, the cubes no longer need to be contiguous with each other.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 10,
-      "width": null,
-      "units": "ft",
-      "type": "cube",
-      "prompt": true,
       "affects": {
+        "choice": false,
         "count": "",
-        "type": ""
+        "type": "creatureOrObject",
+        "special": ""
       },
       "template": {
-        "count": "10",
-        "contiguous": true
+        "units": "ft",
+        "contiguous": true,
+        "type": "cube",
+        "size": "10",
+        "count": "10 + (@item.level - 7) * 3"
       }
     },
     "range": {
-      "value": 150,
-      "long": null,
       "units": "ft",
-      "special": ""
+      "special": "",
+      "value": "150"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "10d12",
-          "fire"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 7,
     "school": "evo",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -91,20 +61,11 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic"
-    ],
-    "crewed": false,
     "activities": {
-      "87I7yYmoKDIQJvzD": {
+      "H6SfndICBTe2AsDg": {
         "type": "save",
-        "_id": "87I7yYmoKDIQJvzD",
-        "sort": 0,
+        "name": "Create Storm",
+        "_id": "H6SfndICBTe2AsDg",
         "activation": {
           "type": "action",
           "value": null,
@@ -145,6 +106,7 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "damage": {
           "parts": [
             {
@@ -153,49 +115,44 @@
                 "formula": ""
               },
               "number": 10,
-              "denomination": 12,
+              "denomination": "12",
               "bonus": "",
               "types": [
                 "fire"
               ],
               "scaling": {
-                "mode": "",
-                "number": 1
+                "mode": ""
               }
             }
           ],
           "onSave": "half"
         },
         "save": {
-          "ability": "dex",
+          "ability": [
+            "dex"
+          ],
           "dc": {
             "calculation": "spellcasting",
             "formula": ""
           }
         },
-        "name": "",
         "img": "",
         "appliedEffects": []
       }
-    }
+    },
+    "identifier": "fire-storm"
+  },
+  "type": "spell",
+  "img": "icons/magic/fire/projectile-wave-yellow.webp",
+  "effects": [],
+  "folder": "0whxxbO5gmG63mDV",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.Sg67akSBBUqI5kzE",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplFireStorm0",
       "spell-lists": "cleric,druid,sorcerer"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      },
-      "quickSave": {
-        "value": true
-      },
-      "quickDamage": {
-        "value": {
-          "0": true
-        }
-      }
     },
     "dnd5e": {
       "riders": {
@@ -204,19 +161,15 @@
       }
     }
   },
-  "img": "icons/magic/fire/projectile-meteor-salvo-heavy-red.webp",
-  "effects": [],
-  "folder": "0whxxbO5gmG63mDV",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1661787234111,
-    "modifiedTime": 1734531060540,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739423326748,
+    "modifiedTime": 1739423419052,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "Sg67akSBBUqI5kzE",
-  "sort": 2400000,
-  "_key": "!items!Sg67akSBBUqI5kzE"
+  "sort": 0,
+  "_key": "!items!matSplFireStorm0"
 }

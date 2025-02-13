@@ -1,104 +1,67 @@
 {
   "name": "Resurrection",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplResurrecti",
   "system": {
     "description": {
-      "value": "<p>You touch a dead creature that has been dead for no more than a century, that didn't die of old age, and that isn't undead. If its soul is free and willing, the target returns to life with all its hit points.</p><p>This spell neutralizes any poisons and cures normal diseases afflicting the creature when it died. It doesn't, however, remove magical diseases, curses, and the like; if such effects aren't removed prior to casting the spell, they afflict the target on its return to life.</p><p>This spell closes all mortal wounds and restores any missing body parts.</p><p>Coming back from the dead is an ordeal. The target takes a -4 penalty to all attack rolls, saving throws, and ability checks. Every time the target finishes a long rest, the penalty is reduced by 1 until it disappears.</p><p>Casting this spell to restore life to a creature that has been dead for one year or longer taxes you greatly. Until you finish a long rest, you can't cast spells again, and you have disadvantage on all attack rolls, ability checks, and saving throws.</p>",
+      "value": "<p>With a touch, you revive a dead creature that has been dead for no more than a century, didn't die of old age, and wasn't Undead when it died.</p><p>The creature returns to life with all its Hit Points. This spell also neutralizes any poisons that affected the creature at the time of death. This spell closes all mortal wounds and restores any missing body parts.</p><p>Coming back from the dead is an ordeal. The target takes a -4 penalty to D20 Tests. Every time the target finishes a Long Rest, the penalty is reduced by 1 until it becomes 0.</p><p>Casting this spell to revive a creature that has been dead for a year or longer taxes you. Until you finish a Long Rest, you can't cast spells again, and you have Disadvantage on D20 Tests.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "hour",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": 1
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "spec",
-      "type": "creature",
-      "prompt": true,
       "affects": {
-        "special": ""
+        "choice": false,
+        "count": "",
+        "type": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "touch",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 7,
     "school": "nec",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "A diamond worth at least 1,000 gp, which the spell consumes",
+      "value": "a diamond worth 1,000+ GP, which the spell consumes",
       "consumed": true,
-      "cost": 1000,
+      "cost": 0,
       "supply": 0
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material"
-    ],
-    "crewed": false,
     "activities": {
-      "YzQgVDvV9yhI6CRv": {
+      "IEI29s99C2llhqEo": {
         "type": "utility",
-        "_id": "YzQgVDvV9yhI6CRv",
-        "sort": 0,
+        "_id": "IEI29s99C2llhqEo",
         "activation": {
           "type": "action",
           "value": null,
@@ -121,16 +84,16 @@
         },
         "effects": [
           {
-            "_id": "aP3S2JEOTZrK2zrT"
+            "_id": "yC37XvN0jzIDyHTr"
           },
           {
-            "_id": "WHFgDIegshcvUzVw"
+            "_id": "NvAysJa5PCR83GRb"
           },
           {
-            "_id": "dCjXudjbfJHS2S4g"
+            "_id": "PO5KOrBEorm2xGGz"
           },
           {
-            "_id": "kJSK806Z8hKaaAmk"
+            "_id": "xHPAupRPOI8N2VkA"
           }
         ],
         "range": {
@@ -152,25 +115,17 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "roll": {
           "prompt": false,
           "visible": false,
           "name": "",
           "formula": ""
         },
-        "name": "Cast",
-        "img": "",
-        "appliedEffects": [
-          "aP3S2JEOTZrK2zrT",
-          "WHFgDIegshcvUzVw",
-          "dCjXudjbfJHS2S4g",
-          "kJSK806Z8hKaaAmk"
-        ]
+        "name": "Cast"
       },
-      "cQ6UrPWOElh2ofUO": {
+      "EMbtn8GwrximmlvQ": {
         "type": "utility",
-        "_id": "cQ6UrPWOElh2ofUO",
-        "sort": 0,
         "activation": {
           "type": "action",
           "value": null,
@@ -193,19 +148,19 @@
         },
         "effects": [
           {
-            "_id": "aP3S2JEOTZrK2zrT"
+            "_id": "yC37XvN0jzIDyHTr"
           },
           {
-            "_id": "WHFgDIegshcvUzVw"
+            "_id": "NvAysJa5PCR83GRb"
           },
           {
-            "_id": "dCjXudjbfJHS2S4g"
+            "_id": "PO5KOrBEorm2xGGz"
           },
           {
-            "_id": "kJSK806Z8hKaaAmk"
+            "_id": "xHPAupRPOI8N2VkA"
           },
           {
-            "_id": "skcv7etqmXXVJWa1"
+            "_id": "gkSKFjp3O7UrdJ2i"
           }
         ],
         "range": {
@@ -227,48 +182,26 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "roll": {
           "prompt": false,
           "visible": false,
-          "name": "",
-          "formula": ""
+          "formula": "",
+          "name": ""
         },
         "name": "Taxing Cast",
-        "img": "",
-        "appliedEffects": [
-          "aP3S2JEOTZrK2zrT",
-          "WHFgDIegshcvUzVw",
-          "dCjXudjbfJHS2S4g",
-          "kJSK806Z8hKaaAmk"
-        ]
-      }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.tn2OIsFYRQR0Sp1B",
-      "spell-lists": "bard,cleric"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
+        "_id": "EMbtn8GwrximmlvQ"
       }
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    }
+    "identifier": "resurrection"
   },
-  "img": "icons/magic/life/heart-cross-strong-flame-blue.webp",
+  "type": "spell",
+  "img": "icons/magic/death/skeleton-skull-soul-blue.webp",
   "effects": [
     {
       "name": "Resurrection Sickness (Day 1)",
-      "img": "icons/magic/life/heart-cross-strong-flame-blue.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.tn2OIsFYRQR0Sp1B",
-      "transfer": false,
-      "_id": "aP3S2JEOTZrK2zrT",
+      "img": "icons/svg/stoned.svg",
+      "_id": "yC37XvN0jzIDyHTr",
       "type": "base",
       "system": {},
       "changes": [
@@ -325,28 +258,27 @@
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>Coming back from the dead is an ordeal. The target takes a -4 penalty to all attack rolls, saving throws, and ability checks. Every time the target finishes a Long Rest, the penalty is reduced by 1 until it becomes 0.</p>",
+      "description": "<p>Coming back from the dead is an ordeal. The target takes a -4 penalty to D20 Tests. Every time the target finishes a Long Rest, the penalty is reduced by 1 until it becomes 0.</p>",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplResurrecti",
       "tint": "#ffffff",
+      "transfer": false,
       "statuses": [],
       "sort": 0,
       "flags": {},
       "_stats": {
-        "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1730358587026,
-        "modifiedTime": 1730358751610,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!tn2OIsFYRQR0Sp1B.aP3S2JEOTZrK2zrT"
+      "_key": "!items.effects!matSplResurrecti.yC37XvN0jzIDyHTr"
     },
     {
       "name": "Resurrection Sickness (Day 2)",
-      "img": "icons/magic/life/heart-cross-strong-flame-blue.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.tn2OIsFYRQR0Sp1B",
-      "transfer": false,
+      "img": "icons/svg/stoned.svg",
       "type": "base",
       "system": {},
       "changes": [
@@ -403,29 +335,28 @@
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>Coming back from the dead is an ordeal. The target takes a -4 penalty to all attack rolls, saving throws, and ability checks. Every time the target finishes a Long Rest, the penalty is reduced by 1 until it becomes 0.</p>",
+      "description": "<p>Coming back from the dead is an ordeal. The target takes a -4 penalty to D20 Tests. Every time the target finishes a Long Rest, the penalty is reduced by 1 until it becomes 0.</p>",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplResurrecti",
       "tint": "#ffffff",
+      "transfer": false,
       "statuses": [],
       "sort": 0,
       "flags": {},
       "_stats": {
-        "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1730358656152,
-        "modifiedTime": 1730358755400,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_id": "WHFgDIegshcvUzVw",
-      "_key": "!items.effects!tn2OIsFYRQR0Sp1B.WHFgDIegshcvUzVw"
+      "_id": "NvAysJa5PCR83GRb",
+      "_key": "!items.effects!matSplResurrecti.NvAysJa5PCR83GRb"
     },
     {
       "name": "Resurrection Sickness (Day 3)",
-      "img": "icons/magic/life/heart-cross-strong-flame-blue.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.tn2OIsFYRQR0Sp1B",
-      "transfer": false,
+      "img": "icons/svg/stoned.svg",
       "type": "base",
       "system": {},
       "changes": [
@@ -482,29 +413,28 @@
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>Coming back from the dead is an ordeal. The target takes a -4 penalty to all attack rolls, saving throws, and ability checks. Every time the target finishes a Long Rest, the penalty is reduced by 1 until it becomes 0.</p>",
+      "description": "<p>Coming back from the dead is an ordeal. The target takes a -4 penalty to D20 Tests. Every time the target finishes a Long Rest, the penalty is reduced by 1 until it becomes 0.</p>",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplResurrecti",
       "tint": "#ffffff",
+      "transfer": false,
       "statuses": [],
       "sort": 0,
       "flags": {},
       "_stats": {
-        "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1730358657764,
-        "modifiedTime": 1730358758372,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_id": "dCjXudjbfJHS2S4g",
-      "_key": "!items.effects!tn2OIsFYRQR0Sp1B.dCjXudjbfJHS2S4g"
+      "_id": "PO5KOrBEorm2xGGz",
+      "_key": "!items.effects!matSplResurrecti.PO5KOrBEorm2xGGz"
     },
     {
       "name": "Resurrection Sickness (Day 4)",
-      "img": "icons/magic/life/heart-cross-strong-flame-blue.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.tn2OIsFYRQR0Sp1B",
-      "transfer": false,
+      "img": "icons/svg/stoned.svg",
       "type": "base",
       "system": {},
       "changes": [
@@ -561,70 +491,34 @@
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>Coming back from the dead is an ordeal. The target takes a -4 penalty to all attack rolls, saving throws, and ability checks. Every time the target finishes a Long Rest, the penalty is reduced by 1 until it becomes 0.</p>",
+      "description": "<p>Coming back from the dead is an ordeal. The target takes a -4 penalty to D20 Tests. Every time the target finishes a Long Rest, the penalty is reduced by 1 until it becomes 0.</p>",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplResurrecti",
       "tint": "#ffffff",
+      "transfer": false,
       "statuses": [],
       "sort": 0,
       "flags": {},
       "_stats": {
-        "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1730358658789,
-        "modifiedTime": 1730358761019,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_id": "kJSK806Z8hKaaAmk",
-      "_key": "!items.effects!tn2OIsFYRQR0Sp1B.kJSK806Z8hKaaAmk"
+      "_id": "xHPAupRPOI8N2VkA",
+      "_key": "!items.effects!matSplResurrecti.xHPAupRPOI8N2VkA"
     },
     {
       "name": "Spell Taxed",
-      "img": "icons/magic/life/heart-cross-strong-flame-blue.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.tn2OIsFYRQR0Sp1B",
+      "img": "systems/dnd5e/icons/svg/break-concentration.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplResurrecti",
       "transfer": false,
-      "_id": "skcv7etqmXXVJWa1",
+      "_id": "gkSKFjp3O7UrdJ2i",
       "type": "base",
       "system": {},
-      "changes": [
-        {
-          "key": "system.bonuses.abilities.skill",
-          "mode": 2,
-          "value": "-4",
-          "priority": null
-        },
-        {
-          "key": "system.bonuses.abilities.save",
-          "mode": 2,
-          "value": "-4",
-          "priority": null
-        },
-        {
-          "key": "system.bonuses.mwak.attack",
-          "mode": 2,
-          "value": "-4",
-          "priority": null
-        },
-        {
-          "key": "system.bonuses.msak.attack",
-          "mode": 2,
-          "value": "-4",
-          "priority": null
-        },
-        {
-          "key": "system.bonuses.rwak.attack",
-          "mode": 2,
-          "value": "-4",
-          "priority": null
-        },
-        {
-          "key": "system.bonuses.rsak.attack",
-          "mode": 2,
-          "value": "-4",
-          "priority": null
-        }
-      ],
+      "changes": [],
       "disabled": false,
       "duration": {
         "startTime": null,
@@ -635,7 +529,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>Until you finish a long rest, you can't cast spells again, and you have disadvantage on all attack rolls, ability checks, and saving throws.</p>",
+      "description": "<p>Until you finish a Long Rest, you can't cast spells again, and you have Disadvantage on D20 Tests.</p>",
       "tint": "#ffffff",
       "statuses": [],
       "sort": 0,
@@ -645,25 +539,33 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1730358709713,
-        "modifiedTime": 1730358919003,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!tn2OIsFYRQR0Sp1B.skcv7etqmXXVJWa1"
+      "_key": "!items.effects!matSplResurrecti.gkSKFjp3O7UrdJ2i"
     }
   ],
   "folder": "0whxxbO5gmG63mDV",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234213,
-    "modifiedTime": 1734531060540,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "tn2OIsFYRQR0Sp1B",
-  "sort": 500000,
-  "_key": "!items!tn2OIsFYRQR0Sp1B"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplResurrecti",
+      "spell-lists": "bard,cleric"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739424497204,
+    "modifiedTime": 1739424518452,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplResurrecti"
 }

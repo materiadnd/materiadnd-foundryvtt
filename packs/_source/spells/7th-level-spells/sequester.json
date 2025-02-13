@@ -1,134 +1,133 @@
 {
   "name": "Sequester",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplSequester0",
   "system": {
     "description": {
-      "value": "<p>By means of this spell, a willing creature or an object can be hidden away, safe from detection for the Duration. When you cast the spell and touch the target, it becomes Invisible and can't be targeted by divination spells or perceived through Scrying sensors created by Divination Spells.</p><p>If the target is a creature, it falls into a state of suspended animation. Time ceases to flow for it, and it doesn't grow older.</p><p>You can set a condition for the spell to end early. The condition can be anything you choose, but it must occur or be visible within 1 mile of the target. Examples include \"after 1,000 years\" or \"when the Tarrasque awakens.\" This spell also ends if the target takes any damage.</p>",
+      "value": "<p>With a touch, you magically sequester an object or a willing creature. For the duration, the target has the Invisible condition and can't be targeted by Divination spells, detected by magic, or viewed remotely with magic.</p><p>If the target is a creature, it enters a state of suspended animation; it has the Unconscious condition, doesn't age, and doesn't need food, water, or air.</p><p>You can set a condition for the spell to end early. The condition can be anything you choose, but it must occur or be visible within 1 mile of the target. Examples include \"after 1,000 years\" or \"when the tarrasque awakens.\" This spell also ends if the target takes any damage.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "disp"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
       "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creatureOrObject",
         "special": ""
       },
       "template": {
+        "units": "",
+        "contiguous": false,
         "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "touch",
       "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 7,
     "school": "trs",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "A powder composed of precious gems worth at least 500 gp, which the spell consumes",
-      "consumed": true,
-      "cost": 500,
+      "value": "gem dust worth 5,000+ GP, which the spell consumes",
+      "consumed": false,
+      "cost": 0,
       "supply": 0
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material"
-    ],
-    "crewed": false,
     "activities": {
-      "dnd5eactivity000": {
+      "mDRkoRyY7Fj5Wwvu": {
+        "type": "utility",
+        "_id": "mDRkoRyY7Fj5Wwvu",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
         "effects": [
           {
-            "_id": "8o1sKfaTSFeppLre"
+            "_id": "DWu3UoqOICFFQA1W"
           }
-        ]
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast"
       }
-    }
-  },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.Sc8gjQ67Q5LPPuNw",
-      "spell-lists": "wizard"
     },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    }
+    "identifier": "sequester"
   },
-  "img": "icons/magic/control/debuff-chains-ropes-purple.webp",
+  "type": "spell",
+  "img": "icons/containers/chest/chest-reinforced-box-brown.webp",
   "effects": [
     {
-      "name": "Sequester",
-      "img": "icons/magic/control/debuff-chains-ropes-purple.webp",
-      "origin": "Compendium.materia-dnd.spells.Item.Sc8gjQ67Q5LPPuNw",
+      "name": "Sequestered",
+      "img": "icons/magic/control/debuff-chains-orb-movement-blue.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplSequester0",
       "transfer": false,
-      "_id": "8o1sKfaTSFeppLre",
+      "_id": "DWu3UoqOICFFQA1W",
       "type": "base",
       "system": {},
       "changes": [],
@@ -142,9 +141,12 @@
         "startRound": null,
         "startTurn": null
       },
-      "description": "",
+      "description": "<p>If the target is a creature, it enters a state of suspended animation; it has the &amp;Reference[Unconscious apply=false] condition, doesn't age, and doesn't need food, water, or air. This spell also ends if the target takes any damage.</p>",
       "tint": "#ffffff",
-      "statuses": [],
+      "statuses": [
+        "invisible",
+        "unconscious"
+      ],
       "sort": 0,
       "flags": {},
       "_stats": {
@@ -152,25 +154,33 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.0.4",
-        "createdTime": 1728831184806,
-        "modifiedTime": 1728831184806,
-        "lastModifiedBy": "dnd5mbuilder0000"
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!items.effects!Sc8gjQ67Q5LPPuNw.8o1sKfaTSFeppLre"
+      "_key": "!items.effects!matSplSequester0.DWu3UoqOICFFQA1W"
     }
   ],
   "folder": "0whxxbO5gmG63mDV",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
-    "coreVersion": "12.331",
-    "createdTime": 1661787234239,
-    "modifiedTime": 1734531060540,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "Sc8gjQ67Q5LPPuNw",
-  "sort": 1600000,
-  "_key": "!items!Sc8gjQ67Q5LPPuNw"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplSequester0",
+      "spell-lists": "wizard"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739424618467,
+    "modifiedTime": 1739424618467,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplSequester0"
 }

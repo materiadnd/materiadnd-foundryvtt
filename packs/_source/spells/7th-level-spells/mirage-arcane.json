@@ -1,80 +1,54 @@
 {
   "name": "Mirage Arcane",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplMirageArca",
   "system": {
     "description": {
-      "value": "<p>You make terrain in an area up to 1 mile square look, sound, smell, and even feel like some other sort of terrain. The terrain's general shape remains the same, however. Open fields or a road could be made to resemble a swamp, hill, crevasse, or some other difficult or impassable terrain. A pond can be made to seem like a grassy meadow, a precipice like a gentle slope, or a rock-strewn gully like a wide and smooth road.</p><p>Similarly, you can alter the appearance of structures, or add them where none are present. The spell doesn't disguise, conceal, or add creatures.</p><p>The Illusion includes audible, visual, tactile, and olfactory elements, so it can turn clear ground into difficult terrain (or vice versa) or otherwise impede Movement through the area. Any piece of the illusory terrain (such as a rock or stick) that is removed from the spell's area disappears immediately.</p><p>Creatures with Truesight can see through the Illusion to the terrain's true form; however, all other elements of the illusion remain, so while the creature is aware of the illusion's presence, the creature can still physically interact with the illusion.</p>",
+      "value": "<p>You make terrain in an area up to 1 mile square look, sound, smell, and even feel like some other sort of terrain. Open fields or a road could be made to resemble a swamp, hill, crevasse, or some other rough or impassable terrain. A pond can be made to seem like a grassy meadow, a precipice like a gentle slope, or a rock-strewn gully like a wide and smooth road.</p><p>Similarly, you can alter the appearance of structures or add them where none are present. The spell doesn't disguise, conceal, or add creatures.</p><p>The illusion includes audible, visual, tactile, and olfactory elements, so it can turn clear ground into Difficult Terrain (or vice versa) or otherwise impede movement through the area. Any piece of the illusory terrain (such as a rock or stick) that is removed from the spell's area disappears immediately.</p><p>Creatures with &amp;Reference[Truesight] can see through the illusion to the terrain's true form; however, all other elements of the illusion remain, so while the creature is aware of the illusion's presence, the creature can still physically interact with the illusion.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia"
+      "custom": "",
+      "rules": "2024",
+      "revision": 1
     },
     "activation": {
       "type": "minute",
-      "cost": 10,
-      "condition": ""
+      "condition": "",
+      "value": 10
     },
     "duration": {
       "value": "10",
       "units": "day"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "mi",
-      "type": "square",
-      "prompt": true,
       "affects": {
+        "choice": false,
         "count": "",
-        "type": ""
+        "type": "space",
+        "special": "up to 1 square mile"
       },
       "template": {
-        "count": ""
+        "units": "",
+        "contiguous": false,
+        "type": ""
       }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "spec",
-      "special": ""
+      "units": "any",
+      "special": "within sight",
+      "value": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 7,
     "school": "ill",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -85,20 +59,10 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "properties": [
-      "vocal",
-      "somatic"
-    ],
-    "crewed": false,
     "activities": {
-      "Sj0EeavxwSVs6dRJ": {
+      "KaRjDCTLQy7DYIhS": {
         "type": "utility",
-        "_id": "Sj0EeavxwSVs6dRJ",
-        "sort": 0,
+        "_id": "KaRjDCTLQy7DYIhS",
         "activation": {
           "type": "action",
           "value": null,
@@ -139,48 +103,41 @@
           "recovery": [],
           "max": ""
         },
+        "sort": 0,
         "roll": {
           "prompt": false,
           "visible": false,
           "name": "",
           "formula": ""
         },
-        "name": "Cast",
-        "img": "",
-        "appliedEffects": []
+        "name": "Alter Terrain",
+        "img": "systems/dnd5e/icons/svg/damage/slashing.svg"
       }
-    }
+    },
+    "identifier": "mirage-arcane"
+  },
+  "type": "spell",
+  "img": "icons/environment/wilderness/terrain-forest-gray.webp",
+  "effects": [],
+  "folder": "0whxxbO5gmG63mDV",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.TJiG2eQft4tMwytT",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplMirageArca",
       "spell-lists": "bard,druid,wizard"
-    },
-    "rsr5e": {
-      "quickFooter": {
-        "value": true
-      }
-    },
-    "dnd5e": {
-      "riders": {
-        "activity": [],
-        "effect": []
-      }
     }
   },
-  "img": "icons/magic/air/fog-gas-smoke-swirling-blue.webp",
-  "effects": [],
-  "folder": "0whxxbO5gmG63mDV",
   "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.0.4",
+    "duplicateSource": null,
     "coreVersion": "12.331",
-    "createdTime": 1661787234188,
-    "modifiedTime": 1734531060540,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739423656670,
+    "modifiedTime": 1739423656670,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "TJiG2eQft4tMwytT",
-  "sort": 900000,
-  "_key": "!items!TJiG2eQft4tMwytT"
+  "sort": 0,
+  "_key": "!items!matSplMirageArca"
 }
