@@ -1,12 +1,12 @@
 {
   "folder": "3rC3qr5FIlZymxFD",
-  "name": "Snilloc's Snowball Swarm",
+  "name": "Evoker's Scorcher",
   "type": "spell",
-  "_id": "matSplSnowballSw",
-  "img": "icons/magic/light/projectile-smoke-blue-white.webp",
+  "_id": "matSplScorcher00",
+  "img": "icons/magic/fire/projectile-bolt-zigzag-orange.webp",
   "system": {
     "description": {
-      "value": "<p>A flurry of magic snowballs erupts from a point you choose within range. Each creature in a 5-foot-radius sphere centered on that point must make a Dexterity saving throw. If there is only one creature in the area then they make the saving throw at disadvantage. A creature takes [[/damage 3d8 cold]] damage on a failed save, or half as much damage on a successful one.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d8 for each spell slot level above 2.</p>",
+      "value": "<p>A line of roaring flame 30 feet long and 5 feet wide emanates from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes [[/damage 3d8]] plus your spellcasting modifier fire damage on a failed save, or half as much damage on a successful one.</p><p>The fire ignites any flammable objects in the area that are not being worn or carried.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d8 for each spell slot level above 2.</p>",
       "chat": ""
     },
     "source": {
@@ -26,10 +26,10 @@
     "cover": null,
     "crewed": false,
     "target": {
-      "value": 5,
-      "width": null,
+      "value": 30,
+      "width": 5,
       "units": "ft",
-      "type": "sphere",
+      "type": "line",
       "prompt": true,
       "affects": {
         "count": "",
@@ -40,7 +40,7 @@
       }
     },
     "range": {
-      "value": 90,
+      "value": 30,
       "long": null,
       "units": "ft",
       "special": ""
@@ -69,8 +69,8 @@
     "damage": {
       "parts": [
         [
-          "3d8",
-          "cold"
+          "3d8 + @mod",
+          "fire"
         ]
       ],
       "versatile": ""
@@ -89,7 +89,7 @@
       "material"
     ],
     "materials": {
-      "value": "a piece of ice or a small white rock chip",
+      "value": "a red dragon's scale",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -103,9 +103,9 @@
       "formula": "1d8"
     },
     "activities": {
-      "lXJpGX9PY9WpmM52": {
+      "zhGDJT74pbCMVitE": {
         "type": "save",
-        "_id": "lXJpGX9PY9WpmM52",
+        "_id": "zhGDJT74pbCMVitE",
         "sort": 0,
         "activation": {
           "type": "action",
@@ -156,9 +156,9 @@
               },
               "number": 3,
               "denomination": 8,
-              "bonus": "",
+              "bonus": "@mod",
               "types": [
-                "cold"
+                "fire"
               ],
               "scaling": {
                 "mode": "whole",
@@ -175,7 +175,7 @@
             "formula": ""
           }
         },
-        "name": "",
+        "name": "Cast",
         "img": "",
         "appliedEffects": []
       }
@@ -183,14 +183,8 @@
   },
   "effects": [],
   "flags": {
-    "plutonium": {
-      "page": "spells.html",
-      "source": "XGE",
-      "hash": "snilloc's%20snowball%20swarm_xge",
-      "propDroppable": "spell"
-    },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.matSplSnowballSw",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplScorcher00",
       "spell-lists": "sorcerer,wizard"
     },
     "rsr5e": {
@@ -217,14 +211,14 @@
     "systemId": "dnd5e",
     "systemVersion": "4.2.2",
     "coreVersion": "12.331",
-    "createdTime": 1708312544247,
-    "modifiedTime": 1738217065413,
+    "createdTime": 1708309844854,
+    "modifiedTime": 1739431921500,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "sort": 4800000,
+  "sort": 5200000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!matSplSnowballSw"
+  "_key": "!items!matSplScorcher00"
 }
