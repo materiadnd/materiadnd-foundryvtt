@@ -6,7 +6,7 @@
   "img": "icons/tools/hand/hammer-and-nail.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 2nd level, you can add half your proficiency bonus, rounded down, to any ability check you make that does not already include your proficiency bonus.</p>",
+      "value": "<p>You can add half your Proficiency Bonus (round down) to any ability check you make that uses a skill proficiency you lack and that doesn't otherwise use your Proficiency Bonus.</p><p>For example, if you make a Strength (Athletics) check and lack Athletics proficiency, you can add half your Proficiency Bonus to the check.</p><section id=\"secret-7iniYroHT8X0QL5c\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes an Active Effect which will automatically grant you half proficiency for all skills which you aren't currently proficient in.</p></section>",
       "chat": ""
     },
     "source": {
@@ -75,12 +75,28 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 2
     }
   },
   "effects": [
     {
       "name": "Jack of All Trades",
-      "origin": "Item.OXKBtIVH1wfrsCja",
+      "img": "icons/tools/hand/hammer-and-nail.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.OXKBtIVH1wfrsCja",
+      "_id": "YminkP78z0vYmiYP",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "flags.dnd5e.jackOfAllTrades",
+          "mode": 5,
+          "value": "true",
+          "priority": null
+        }
+      ],
+      "disabled": false,
       "duration": {
         "startTime": null,
         "seconds": null,
@@ -90,45 +106,32 @@
         "startRound": null,
         "startTurn": null
       },
-      "disabled": false,
-      "_id": "GWLfa6OBFuMxhgrR",
-      "changes": [
-        {
-          "key": "flags.dnd5e.jackOfAllTrades",
-          "mode": 5,
-          "value": "true",
-          "priority": null
-        }
-      ],
       "description": "",
+      "tint": "#ffffff",
       "transfer": true,
       "statuses": [],
-      "flags": {},
-      "tint": "#ffffff",
-      "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "icons/tools/hand/hammer-and-nail.webp",
-      "type": "base",
-      "system": {},
       "sort": 0,
-      "_key": "!items.effects!OXKBtIVH1wfrsCja.GWLfa6OBFuMxhgrR"
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": 1739479996883,
+        "modifiedTime": 1739480012707,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!OXKBtIVH1wfrsCja.YminkP78z0vYmiYP"
     }
   ],
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
+    "systemVersion": "4.2.2",
     "coreVersion": "12.331",
     "createdTime": 1707230658971,
-    "modifiedTime": 1731556645475,
+    "modifiedTime": 1739481423926,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
