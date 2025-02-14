@@ -2,11 +2,11 @@
   "folder": "flNjIH13DTI79OMB",
   "name": "Relentless Rage",
   "type": "feat",
-  "_id": "PCiIr2yivJGd3y0O",
+  "_id": "matBrbRelentless",
   "img": "icons/skills/wounds/injury-pain-body-orange.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 11th level, your rage can keep you fighting despite grievous wounds. If you drop to 0 hit points while you are raging and do not die outright, you can make a DC 5 Constitution saving throw. If you succeed, you drop to 1 hit point instead.</p><p>Each time you use this feature after the first, the DC increases by 5. When you rage again, the DC resets to 5.</p>",
+      "value": "<p>Your Rage can keep you fighting despite grievous wounds. If you drop to 0 Hit Points while your Rage is active and don't die outright, you can make a DC 10 Constitution saving throw. If you succeed, your Hit Points instead change to a number equal to twice your Barbarian level.</p><p>Each time you use this feature after the first, the DC increases by 5. When you finish a Short or Long Rest, the DC resets to 10.</p><section class=\"secret\" id=\"secret-GTpuSHXh1ZobcQYd\"><p><strong>Foundry Note</strong></p><p>This feature will automatically increase the DC by 5 if you consume the resource when activating it. It will also automatically reset to 10 after a Short or Long Rest.</p></section>",
       "chat": ""
     },
     "source": {
@@ -37,9 +37,14 @@
     },
     "uses": {
       "value": null,
-      "max": "",
+      "max": "20",
       "per": null,
-      "recovery": "",
+      "recovery": [
+        {
+          "period": "sr",
+          "type": "recoverAll"
+        }
+      ],
       "prompt": true
     },
     "consume": {
@@ -75,16 +80,168 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 11
+    },
+    "activities": {
+      "p0pdXpZD3v07nhjI": {
+        "type": "save",
+        "_id": "p0pdXpZD3v07nhjI",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [],
+          "dc": {
+            "calculation": "",
+            "formula": "10 + (@item.uses.spent * 5)"
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      },
+      "SvegjpahsctgfXQN": {
+        "type": "heal",
+        "_id": "SvegjpahsctgfXQN",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "@classes.barbarian.levels * 2"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1708295398838,
-    "modifiedTime": 1712724000783,
+    "modifiedTime": 1739566044760,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
@@ -92,5 +249,5 @@
   "ownership": {
     "default": 0
   },
-  "_key": "!items!PCiIr2yivJGd3y0O"
+  "_key": "!items!matBrbRelentless"
 }
