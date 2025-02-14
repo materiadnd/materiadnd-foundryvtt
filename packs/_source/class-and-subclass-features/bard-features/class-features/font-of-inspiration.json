@@ -2,11 +2,11 @@
   "folder": "c63cvV4Yc2q6NRqC",
   "name": "Font of Inspiration",
   "type": "feat",
-  "_id": "G64vHACXtDK5YuvT",
+  "_id": "matBrdFontOfInsp",
   "img": "icons/magic/water/tendrils-ice-growth.webp",
   "system": {
     "description": {
-      "value": "<p>Beginning when you reach 5th level, you regain all of your expended uses of Bardic Inspiration when you finish a short or long rest.</p>",
+      "value": "<p>You now regain all your expended uses of Bardic Inspiration when you finish a Short or Long Rest.</p><p>In addition, you can expend a spell slot (no action required) to regain one expended use of Bardic Inspiration.</p><section id=\"secret-QyqksWfy6CWWWUU7\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>You must update the Bardic Inspiration feature on your sheet to refresh on Short Rest as it defaults to Long rest.</p><p>The <strong>Recharge with Spell Slot</strong> activity will expend a spell slot and grant another use of Bardic Inspiration.</p></section>",
       "chat": ""
     },
     "source": {
@@ -75,16 +75,98 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 5
+    },
+    "activities": {
+      "9JA6GSeCzi7xw2fF": {
+        "type": "utility",
+        "_id": "9JA6GSeCzi7xw2fF",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.matBrdBardicInsp"
+            },
+            {
+              "type": "spellSlots",
+              "value": "1",
+              "target": "1"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Recharge with Spell Slot",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
+    "systemVersion": "4.2.2",
     "coreVersion": "12.331",
     "createdTime": 1707231408361,
-    "modifiedTime": 1731556645475,
+    "modifiedTime": 1739493264952,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
@@ -92,5 +174,5 @@
   "ownership": {
     "default": 0
   },
-  "_key": "!items!G64vHACXtDK5YuvT"
+  "_key": "!items!matBrdFontOfInsp"
 }

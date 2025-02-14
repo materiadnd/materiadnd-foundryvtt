@@ -2,11 +2,11 @@
   "folder": "c63cvV4Yc2q6NRqC",
   "name": "Superior Inspiration",
   "type": "feat",
-  "_id": "BXA24py2g5rfCRoJ",
+  "_id": "matBrdSuperiorIn",
   "img": "icons/skills/social/diplomacy-handshake.webp",
   "system": {
     "description": {
-      "value": "<p>At 20th level, when you roll initiative, regain one use of your bardic inspiration up to your maximum. When a creature uses a bardic inspiration die provided by you, they may roll the die twice and take the better result.</p>",
+      "value": "<p>When you roll initiative, y<span style=\"font-family:'Roboto Condensed', sans-serif\">ou regain expended uses of Bardic Inspiration until you have two if you have fewer than that.</span></p><p>When a creature uses your Bardic Inspiration, they may roll the die twice and take the better result.</p>",
       "chat": ""
     },
     "source": {
@@ -71,20 +71,46 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Bard 20",
+    "requirements": "Bard 18",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 18
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-2",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.matBrdBardicInsp"
+            }
+          ]
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
+    "systemVersion": "4.2.2",
     "coreVersion": "12.331",
     "createdTime": 1707231859858,
-    "modifiedTime": 1731556645475,
+    "modifiedTime": 1739493602955,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
@@ -92,5 +118,5 @@
   "ownership": {
     "default": 0
   },
-  "_key": "!items!BXA24py2g5rfCRoJ"
+  "_key": "!items!matBrdSuperiorIn"
 }
