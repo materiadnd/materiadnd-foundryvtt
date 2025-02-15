@@ -1,9 +1,10 @@
 {
   "name": "Divine Intervention",
+  "_id": "matClrDivineInte",
   "type": "feat",
   "system": {
     "description": {
-      "value": "<p>Beginning at 10th level, you can call on your deity to intervene on your behalf when your need is great.</p><p>Imploring your deity's aid requires you to use your bonus action. Describe the assistance you seek, and roll percentile dice. If you roll a number equal to or lower than your cleric level plus your Wisdom modifier (minimum of 0), your deity intervenes. You may choose to have your DM choose the effect, alternately, you can choose the effect of any cleric spell or spell available to your Domain of any level.</p><p>If your deity intervenes, you cannot use this feature again for 7 days. Otherwise, you can use it again after you finish a long rest.</p><p>At 20th level, your call for intervention succeeds automatically, no roll required.</p>",
+      "value": "<p>You can call on your deity or pantheon to intervene on your behalf. As a Magic action, you can choose either <strong>Extend Magic</strong> or <strong>Beseech Divinity</strong> for its effect.</p><p><strong>Extend Magic.</strong> Choose any @UUID[Compendium.dnd-players-handbook.content.JournalEntry.phbSpells0000000.JournalEntryPage.SkHptN2PTzFGDaEj]{Cleric spell} of level 5 or lower that doesn't require a Reaction to cast. As part of the same action, you cast that spell without expending a spell slot or needing Material components. You can't use this feature again until you finish a Long Rest.</p><p><strong>Beseech Divinity.</strong> Describe the assistance you seek, and roll percentile dice. If you roll a number equal to or lower than your cleric level plus your Wisdom modifier (minimum of 0), your deity intervenes. Your DM chooses the effect.</p><p>If your deity intervenes, you cannot use the <strong>Beseech Divinity </strong>feature again for 7 days. Otherwise, you can use it again after you finish a long rest.</p><section class=\"secret\" id=\"secret-LP7yqqobTjOqeswv\"><p><strong>Foundry Note</strong></p><p>Uncheck the \"Consumption\" box when casting the spell for the free use. This feature can be used to track available uses.</p></section>",
       "chat": ""
     },
     "source": {
@@ -72,25 +73,124 @@
       "charged": false
     },
     "crewed": false,
-    "properties": []
+    "properties": [],
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Extend Magic",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "roll": {
+          "formula": ""
+        }
+      },
+      "MTBfwyijBhAUU7jf": {
+        "type": "utility",
+        "_id": "MTBfwyijBhAUU7jf",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": "d100"
+        },
+        "name": "Beseech Divinity",
+        "img": "",
+        "appliedEffects": []
+      }
+    },
+    "prerequisites": {
+      "level": 10
+    }
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "img": "icons/magic/light/explosion-star-glow-blue-purple.webp",
   "effects": [],
   "folder": "ddQ4xdJ8F9FGarTY",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1661787234401,
-    "modifiedTime": 1710764622562,
+    "modifiedTime": 1739591324284,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "_id": "bMW4IupKgypNIAg2",
   "sort": 500000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!bMW4IupKgypNIAg2"
+  "_key": "!items!matClrDivineInte"
 }
