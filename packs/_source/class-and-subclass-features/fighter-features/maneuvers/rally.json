@@ -6,7 +6,7 @@
   "img": "icons/sundries/flags/banner-flag-pink.webp",
   "system": {
     "description": {
-      "value": "<p>On your turn, you can use a bonus action and expend one superiority die to bolster the resolve of one of your companions. When you do so, choose a friendly creature who can see or hear you. That creature gains temporary hit points equal to the superiority die roll + your Strength modifier or Dexterity modifier (your choice).</p>",
+      "value": "<p>As a Bonus Action, you can expend one Superiority Die to bolster the resolve of a companion. Choose an ally of yours within 30 feet of yourself who can see or hear you. That creature gains Temporary Hit Points equal to the Superiority Die roll plus half your Fighter level (round down).</p>",
       "chat": ""
     },
     "source": {
@@ -80,20 +80,59 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 2
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.GT5M3hT8Bj34TRH0"
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "target": {
+          "affects": {
+            "type": "ally",
+            "special": "Can see or hear you"
+          }
+        },
+        "healing": {
+          "custom": {
+            "formula": "(floor((@scale.fighter.superiority.die + @classes.fighter.levels) / 2))"
+          }
+        }
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
       "item-use-source": "superiority-dice"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707152818750,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1741393445707,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
