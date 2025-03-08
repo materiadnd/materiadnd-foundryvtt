@@ -6,7 +6,7 @@
   "img": "icons/magic/life/heart-cross-strong-green.webp",
   "system": {
     "description": {
-      "value": "<p>Once you reach 4th level, as an action, you can spend 1 ki points to be able to expend a Hit Die to recovery health. You also roll a Martial Arts die and add the result to your Hit Die roll. You regain hit points equal to the total.</p>",
+      "value": "<p>As an action, you can spend 1 Focus Point to be able to expend a Hit Die to recover health. You also roll a Martial Arts die and add the result to your Hit Die roll. You regain hit points equal to the total.</p>",
       "chat": ""
     },
     "source": {
@@ -73,13 +73,32 @@
     },
     "type": {
       "value": "class",
-      "subtype": "ki"
+      "subtype": ""
     },
     "properties": [],
     "requirements": "Monk 4",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 4
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.6PTV2WXjnNhwvYef"
+            }
+          ]
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -90,14 +109,20 @@
   "flags": {
     "materia-dnd": {
       "item-use-source": "ki"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1708912779379,
-    "modifiedTime": 1714021145856,
+    "modifiedTime": 1741468593645,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
