@@ -6,7 +6,7 @@
   "img": "icons/magic/death/projectile-skull-fire-purple.webp",
   "system": {
     "description": {
-      "value": "<p>At 20th level, you can draw on your inner reserve of mystical power while entreating your patron to regain expended spell slots. You can spend 1 minute entreating your patron for aid to regain all your expended spell slots from your Pact Magic feature and restore your level 6 and 7 Mystic Arcanum if they are expended. Once you regain spell slots with this feature, you must finish a long rest before you can do so again.</p>",
+      "value": "<p>When you use your Magical Cunning feature, you regain all your expended Pact Magic spell slots and your level 6 and 7 Mystic Arcanum if they are expended.</p>",
       "chat": ""
     },
     "source": {
@@ -75,6 +75,40 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Eldritch Master",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.VYtAf7A0Taj0WJuz"
+            },
+            {
+              "type": "attribute",
+              "value": "-(@spells.pact.max)",
+              "target": "spells.pact.value"
+            },
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.CGtByovNKy6Dn8rr"
+            },
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.kcHjwHxcb9PrXjbn"
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "activation": {
+          "type": ""
+        }
+      }
     }
   },
   "effects": [],
@@ -82,13 +116,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1709274251863,
-    "modifiedTime": 1709274312004,
+    "modifiedTime": 1741645127764,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
