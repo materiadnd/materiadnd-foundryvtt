@@ -6,7 +6,7 @@
   "img": "icons/skills/targeting/crosshair-pointed-orange.webp",
   "system": {
     "description": {
-      "value": "<p>Begining at 3rd level, as a bonus action, you give yourself advantage on your next attack roll on the current turn. You can use this bonus action only if you have not moved during this turn, and after you use the bonus action, your speed is 0 until the end of the current turn.</p>",
+      "value": "<p>As a bonus action, you give yourself Advantage on your next attack roll on the current turn. You can use this feature only if you haven't moved during this turn, and after you use it, your Speed is 0 until the end of the current turn.</p>",
       "chat": ""
     },
     "source": {
@@ -75,16 +75,85 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Steady Aim",
+        "img": "",
+        "appliedEffects": [],
+        "effects": [
+          {
+            "_id": "zp5TpnogHhsH6gHP"
+          }
+        ]
+      }
     }
   },
-  "effects": [],
-  "flags": {},
+  "effects": [
+    {
+      "name": "Aiming",
+      "img": "icons/skills/targeting/crosshair-pointed-orange.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.FwjXhZGj0BZmkSDG",
+      "transfer": false,
+      "_id": "zp5TpnogHhsH6gHP",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.movement.walk",
+          "mode": 5,
+          "value": "0",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1741626725594,
+        "modifiedTime": 1741626759782,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!FwjXhZGj0BZmkSDG.zp5TpnogHhsH6gHP"
+    }
+  ],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707148348314,
-    "modifiedTime": 1710402656468,
+    "modifiedTime": 1741626725640,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
