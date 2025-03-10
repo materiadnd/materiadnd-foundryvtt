@@ -6,7 +6,7 @@
   "img": "icons/magic/nature/cornucopia-orange.webp",
   "system": {
     "description": {
-      "value": "<p>Beginning at 8th level, if you have no more than half of your hit points left you can use Action to expend a Hit Die to regain hit points. If the target of your hunter's mark spell is within range of your weapon or unarmed strike then you can make one attack with that weapon or unarmed strike as part of the same action.</p><p>You can use this feature a number of times equal to your Wisdom modifier (minimum of 1), and you regain all expended uses when you finish a long rest.</p>",
+      "value": "<p>If you have no more than half of your Hit Points left you can take a magic Action to expend a Hit Die to regain Hit Points. If the target of your Hunter's Mark spell is within range of a weapon you are wielding or your Unarmed Strike then you can make one attack with that weapon or Unarmed Strike as part of the same action.</p><p>You can use this feature a number of times equal to your Wisdom modifier (minimum of 1), and you regain all expended uses when you finish a long rest.</p>",
       "chat": ""
     },
     "source": {
@@ -75,20 +75,43 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Invigorate",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707936433719,
-    "modifiedTime": 1712149455398,
+    "modifiedTime": 1741617437991,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "sort": 199903,
+  "sort": 1000000,
   "ownership": {
     "default": 0
   },
