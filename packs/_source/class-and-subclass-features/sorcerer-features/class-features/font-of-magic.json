@@ -6,7 +6,7 @@
   "img": "icons/magic/light/projectiles-pink-purple.webp",
   "system": {
     "description": {
-      "value": "<p>At 2nd level, you tap into a deep wellspring of magic within yourself. This wellspring is represented by sorcery points, which allow you to create a variety of magical effects.</p><h5>Sorcery Points</h5><p>@UUID[Compendium.materia-dnd.class-and-subclass-features.Item.zfygYPRU7z3lKrYJ]{Sorcery Points}</p><h5>Flexible Casting</h5><p>You can use your sorcery points to gain additional spell slots, or sacrifice spell slots to gain additional sorcery points. You learn other ways to use your sorcery points as you reach higher levels.</p><p><strong>Creating Spell Slots</strong>. You can transform unexpended sorcery points into one spell slot as a bonus action on your turn. The Creating Spell Slots table shows the cost of creating a spell slot of a given level. You can create spell slots no higher in level than 5th.</p><p>Any spell slot you create with this feature vanishes when you finish a long rest.</p><div><h5>Creating Spell Slots</h5><table><thead><tr><th>Spell Slot Level</th><th>Sorcery Point Cost</th></tr></thead><tbody><tr><td>1st</td><td>2</td></tr><tr><td>2nd</td><td>3</td></tr><tr><td>3rd</td><td>5</td></tr><tr><td>4th</td><td>6</td></tr><tr><td>5th</td><td>7</td></tr></tbody></table></div><p></p><p><strong>Converting a Spell Slot to Sorcery Points.</strong> As a bonus action on your turn, you can expend one spell slot and gain a number of sorcery points equal to the slot's level.</p>",
+      "value": "<p>You can tap into the wellspring of magic within yourself. This wellspring is represented by Sorcery Points, which allow you to create a variety of magical effects.</p><p>You have 2 Sorcery Points, and you gain more as you reach higher levels, as shown in the Sorcery Points column of the Sorcerer Features table. You can't have more Sorcery Points than the number shown in the table for your level. You regain all expended Sorcery Points when you finish a Long Rest.</p><p>You can use your Sorcery Points to fuel the options below, along with other features, such as Metamagic, that use those points.</p><p><strong>Converting Spell Slots to Sorcery Points.</strong> You can expend a spell slot to gain a number of Sorcery Points equal to the slot's level (no action required).</p><p><strong>Creating Spell Slots.</strong> As a Bonus Action, you can transform unexpended Sorcery Points into one spell slot. The Creating Spell Slots table shows the cost of creating a spell slot of a given level, and it lists the minimum Sorcerer level you must be to create a slot. You can create a spell slot no higher than level 5.</p><p>Any spell slot you create with this feature vanishes when you finish a Long Rest.</p><table><caption>Creating Spell Slots</caption><thead><tr><th>Spell Slot Level</th><th>Sorcery Point Cost</th><th>Min. Sorcerer Level</th></tr></thead><tbody><tr><td>1st</td><td>2</td><td>2</td></tr><tr><td>2nd</td><td>3</td><td>3</td></tr><tr><td>3rd</td><td>5</td><td>5</td></tr><tr><td>4th</td><td>6</td><td>7</td></tr><tr><td>5th</td><td>7</td><td>9</td></tr></tbody></table><section class=\"secret\" id=\"secret-y8TxgB5gIjPX9URU\"><p><strong>Foundry Note</strong></p><p>The <strong>Regain Spell Slot</strong> activity will convert your Sorcery Points into spell slots.</p><p>The <strong>Regain Sorcery Points</strong> activity will convert your chosen spell slot into Sorcery Points.</p></section>",
       "chat": ""
     },
     "source": {
@@ -37,7 +37,7 @@
     },
     "uses": {
       "value": 1,
-      "max": "@classes.sorcerer.levels",
+      "max": "@scale.sorcerer.points",
       "per": "lr",
       "recovery": "",
       "prompt": true
@@ -75,16 +75,185 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 2
+    },
+    "activities": {
+      "1I0eYIyslMgMR5Bl": {
+        "type": "utility",
+        "_id": "1I0eYIyslMgMR5Bl",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true,
+            "max": "5"
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1 + @scaling + floor(@scaling / 3)",
+              "target": "",
+              "scaling": {
+                "mode": ""
+              }
+            },
+            {
+              "type": "spellSlots",
+              "value": "-1",
+              "target": "1",
+              "scaling": {
+                "mode": "level",
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Regain Spell Slot",
+        "img": "systems/dnd5e/icons/svg/damage/force.svg",
+        "appliedEffects": []
+      },
+      "ntx7QwIvmzEimpyJ": {
+        "type": "utility",
+        "name": "Regain Sorcery Points",
+        "_id": "ntx7QwIvmzEimpyJ",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true,
+            "max": "9"
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "spellSlots",
+              "value": "1",
+              "target": "1",
+              "scaling": {
+                "mode": "level",
+                "formula": ""
+              }
+            },
+            {
+              "type": "itemUses",
+              "value": "0 - @scaling",
+              "target": "",
+              "scaling": {
+                "mode": "amount",
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "img": "systems/dnd5e/icons/svg/activity/heal.svg",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.2.1",
-    "coreVersion": "12.327",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1708286059770,
-    "modifiedTime": 1719266770022,
+    "modifiedTime": 1741631788055,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
