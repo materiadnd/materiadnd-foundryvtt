@@ -6,7 +6,7 @@
   "img": "icons/magic/perception/eye-ringed-glow-angry-small-red.webp",
   "system": {
     "description": {
-      "value": "<p>At 1st level, you are able to recognize the quality of being particularly good or worthy of those around you. You have a pool of Merit dice represented by a number of d6s equal to your warlord level. Certain warlord features require you to expend these Merit dice. You regain your expended Merit dice when you finish a long rest.</p><p>Your Merit die changes when you reach certain levels in this class. The die becomes a d8 at 5th level, a d10 at 10th level, and a d12 at 15th level.</p>",
+      "value": "<p>You are able to recognize the quality of being particularly good or worthy of those around you. You have a pool of Merit dice represented by a number of d6s equal to your Warlord level. Certain Warlord features require you to expend these Merit dice. You regain your expended Merit dice when you finish a Long Rest.</p><p>Your Merit die changes when you reach certain levels in this class. The die becomes a d8 at 5th level, a d10 at 10th level, and a d12 at 15th level.</p>",
       "chat": ""
     },
     "source": {
@@ -75,16 +75,51 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 1
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Expend Merit Die",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "activation": {
+          "type": ""
+        }
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1706848031417,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1741715273331,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

@@ -6,7 +6,7 @@
   "img": "icons/creatures/eyes/lizard-single-slit-blue.webp",
   "system": {
     "description": {
-      "value": "<p>Once you reach 11th level, when you roll initiative you can regain a number of Merit dice equal to your Charisma modifier (minimum of 1), but you cannot exceed your maximum number based on your warlord level.</p><p>You cannot use this feature again until you finish a long rest.</p>",
+      "value": "<p>When you roll initiative you can regain a number of Merit dice equal to your Charisma modifier (minimum of 1), but you cannot exceed your maximum number based on your Warlord level.</p><p>You cannot use this feature again until you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -75,16 +75,47 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 11
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Regain Merit Dice",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            },
+            {
+              "type": "itemUses",
+              "value": "-@abilities.cha.mod",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.twXKFJkxqdT8PO2m"
+            }
+          ]
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1706888743559,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1741716253414,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

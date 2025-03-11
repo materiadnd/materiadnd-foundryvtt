@@ -6,7 +6,7 @@
   "img": "icons/creatures/mammals/wolf-howl-moon-forest-blue.webp",
   "system": {
     "description": {
-      "value": "<p>At 20th level, your favor can break limitations. When you take a Respite it takes 1 minute to complete and, a number of creatures of your choice up to your Charisma modifier (minimum of 1) benefiting from this Respite may regain the use of a feature of their choice which would normally require completing a long rest. This feature may not be applied to regain Warlord's Favor or spell slots of any kind.</p><p>You cannot use this feature again until you finish a long rest.</p>",
+      "value": "<p>When you take a Respite it takes 1 minute to complete and, a number of creatures of your choice up to your Charisma modifier (minimum of 1) benefiting from this Respite may regain the use of a feature of their choice which would normally require completing a long rest. This feature may not be applied to regain Warlord's Favor or spell slots of any kind.</p><p>You cannot use this feature again until you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -75,16 +75,49 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 20
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Warlord's Favor",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "activation": {
+          "type": "minute",
+          "value": 1
+        },
+        "duration": {
+          "units": "inst"
+        }
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707202256314,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1741716562555,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

@@ -6,7 +6,7 @@
   "img": "icons/skills/social/trading-justice-scale-gold.webp",
   "system": {
     "description": {
-      "value": "<p>Beginning at 4th level, rest does not interfere with your desire to achieve your goals. You and any allies that can see or hear you within 60 feet are able to take a short rest, needing only 10 minutes to do so. At the end of this rest, any creature that benefits from this rest can reduce their exhaustion by one level.</p><p>Additionally, you can restore a number of spent Hit Dice equal to twice your proficiency bonus, divided as you choose among any number of creatures that took part in this rest. Hit Dice gained as a result of your Respite can be spent immediately at the end of this short rest.</p><p>You cannot use this feature again until you finish a long rest.</p>",
+      "value": "<p>Rest does not interfere with your desire to achieve your goals. You and any allies that can see or hear you within 60 feet are able to take a Short Rest, needing only 10 minutes to do so. At the end of this rest, any creature that benefits from this rest can reduce their Exhaustion by one level.</p><p>Additionally, you can restore a number of spent Hit Dice equal to twice your proficiency bonus, divided as you choose among any number of creatures that took part in this rest. Hit Dice gained as a result of your Respite can be spent immediately at the end of this Short Rest.</p><p>You cannot use this feature again until you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -75,16 +75,45 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 4
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Respite",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1706849486652,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1741716054505,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

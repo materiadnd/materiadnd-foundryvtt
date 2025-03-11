@@ -6,7 +6,7 @@
   "img": "icons/magic/symbols/mask-metal-silver-white.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 15th level, you care little about the odds. When you use your Moment of Courage you can affect a number of creatures of your choice up to your Charisma modifier (minimum of 1) as long as they are within 60 feet and you can see them.</p><p>Roll a number of Merit dice up to your Charisma modifier (minimum of 1) and add them together. This total represents an amount of hit points that can be divided as you choose among any number of your affected targets. Each affected target can spend a Hit Die for each Merit die spent.</p><p>You cannot use this feature again until you finish a long rest or a Respite.</p>",
+      "value": "<p>When you use your Moment of Courage you can affect a number of creatures of your choice up to your Charisma modifier (minimum of 1) as long as they are within 60 feet and you can see them.</p><p>Roll a number of Merit dice up to your Charisma modifier (minimum of 1) and add them together. This total represents an amount of Hit Points that can be divided as you choose among any number of your affected targets. Each affected target can spend a Hit Die for each Merit die spent.</p><p>You cannot use this feature again until you finish a Long Rest or a Respite.</p>",
       "chat": ""
     },
     "source": {
@@ -75,16 +75,117 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 15
+    },
+    "activities": {
+      "MTdXtiga9xWjHicb": {
+        "type": "heal",
+        "_id": "MTdXtiga9xWjHicb",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true,
+            "max": ""
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "",
+              "scaling": {
+                "mode": ""
+              }
+            },
+            {
+              "type": "itemUses",
+              "value": "@scaling",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.twXKFJkxqdT8PO2m",
+              "scaling": {
+                "mode": "amount",
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "60"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [],
+          "custom": {
+            "enabled": true,
+            "formula": "@scaling@scale.warlord.merit-dice.die"
+          },
+          "scaling": {
+            "number": 1,
+            "mode": ""
+          },
+          "bonus": ""
+        },
+        "name": "Overwhelming Odds",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1706888909845,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1741716440829,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

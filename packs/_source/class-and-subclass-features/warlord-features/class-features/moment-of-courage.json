@@ -6,7 +6,7 @@
   "img": "icons/magic/holy/prayer-hands-glowing-yellow-green.webp",
   "system": {
     "description": {
-      "value": "<p>Starting 2nd level, you can inspire allies to fight on courageously. As a bonus action, you can choose one creature that you can see within 60 feet of you and spend a number of Merit dice up to your Charisma modifier (minimum of 1). Roll the spent Merit dice and add them together. The target regains hit points equal to the total. The target can also spend a Hit Die for each Merit die spent to further increase the health restored to them.</p><p>For each Hit Die spent in this way, the player does not add their Constitution modifer to the health restored.</p>",
+      "value": "<p>You can inspire allies to fight on courageously. As a Bonus Action, you can choose one creature that you can see within 60 feet of you and spend a number of Merit dice up to your Charisma modifier (minimum of 1). Roll the spent Merit dice and add them together. The target regains Hit Points equal to the total. The target can also spend a Hit Die for each Merit die spent to further increase the health restored to them.</p><p>For each Hit Die spent in this way, the player does not add their Constitution modifer to the health restored.</p>",
       "chat": ""
     },
     "source": {
@@ -75,16 +75,109 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 2
+    },
+    "activities": {
+      "jX4b0hVzcFbnr0SN": {
+        "type": "heal",
+        "_id": "jX4b0hVzcFbnr0SN",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true,
+            "max": "@abilities.cha.mod"
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "@scaling",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.twXKFJkxqdT8PO2m",
+              "scaling": {
+                "mode": "amount",
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "60"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [],
+          "custom": {
+            "enabled": true,
+            "formula": "@scaling@scale.warlord.merit-dice.die"
+          },
+          "scaling": {
+            "number": 1,
+            "mode": ""
+          },
+          "bonus": ""
+        },
+        "name": "Moment of Courage",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1706849166950,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1741715845729,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
