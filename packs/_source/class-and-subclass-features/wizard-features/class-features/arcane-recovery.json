@@ -3,7 +3,7 @@
   "type": "feat",
   "system": {
     "description": {
-      "value": "<p>You have learned to regain some of your magical energy by studying your spellbook. Once per day when you finish a short rest, you can choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your wizard level (rounded up), and none of the slots can be 6th level or higher.</p><p>For example, if you're a 4th-level wizard, you can recover up to two levels worth of spell slots. You can recover either a 2nd-level spell slot or two 1st-level spell slots.</p>",
+      "value": "<p>You can regain some of your magical energy by studying your spellbook. When you finish a Short Rest, you can choose expended spell slots to recover. The spell slots can have a combined level equal to no more than half your Wizard level (round up), and none of the slots can be level 6 or higher. For example, if you're a level 4 Wizard, you can recover up to two levels worth of spell slots, regaining either a 2nd-level spell slot or two 1st-level spell slots.</p><p>Once you use this feature, you can't do so again until you finish a Long Rest.</p><p><strong>Combined Level Available:</strong> [[(@classes.wizard.levels / 2)]]</p><section id=\"secret-UsE3RRg4TcAPoy2d\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>Since you can select the slots you will have to manually adjust your available slots. This feature can be used to track the one-time use though.</p></section>",
       "chat": ""
     },
     "source": {
@@ -72,18 +72,53 @@
       "charged": false
     },
     "crewed": false,
-    "properties": []
+    "properties": [],
+    "prerequisites": {
+      "level": 1
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Recover Slots",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "activation": {
+          "type": ""
+        },
+        "roll": {
+          "name": "Total Levels Worth"
+        }
+      }
+    }
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "img": "icons/magic/earth/explosion-lava-stone-green.webp",
   "effects": [],
   "folder": "p7LSHcrwyYcR7M1a",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1661787234399,
-    "modifiedTime": 1710743950846,
+    "modifiedTime": 1741656468759,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
