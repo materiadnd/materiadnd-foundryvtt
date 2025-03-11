@@ -6,7 +6,7 @@
   "img": "icons/creatures/eyes/slime-single-red.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 3rd level, when you roll a hemocraft die to deal damage to yourself, as per your Blood Curse amplification into a Blood Malidect, activating your Crimson Rite, or a similar Blood Hunter feature, you gain clarity and focus. You gain an amount of focus equal to your Intelligence modifier (minimum of 1), and cannot have more at any given time. When you take certain actions you can expend one focus to gain an additional benefit:</p><ul><li>When you take the Attack action you can make one additional weapon attack or unarmed strike as part of that same action.</li><li><em>(Requires 8th level in this class)</em> When a creature that you can see succeeds it's saving throw against your Blood Curse or Blood Maledict you can use your reaction to roll a hemocraft die. The creature must subtract the number rolled from their saving throw potentially turning it into a failure.</li><li><em>(Requires 12th level in this class)</em> When you roll initiative, you can roll one hemocraft die and add the result to your total.</li><li><em>(Requires 16th level in this class)</em> When you miss with an weapon attack or unarmed strike while you have an active crimson rite on it, you can use your reaction to roll a hemocraft die. You can add the number rolled to your attack roll potentially turning the miss into a hit.</li></ul><p>Your unused focus lasts until you complete a long rest, after which it is lost.</p>",
+      "value": "<p>When you roll a hemocraft die to deal damage to yourself, as per your Blood Curse amplification into a Blood Maledict, activating your Crimson Rite, or a similar Blood Hunter feature, you gain clarity and focus. You gain an amount of focus equal to your Intelligence modifier (minimum of 1), and cannot have more at any given time. When you take certain actions you can expend one focus to gain an additional benefit:</p><ul><li>When you take the Attack action you can make one additional weapon attack or Unarmed Strike as part of that same action.</li><li><em>(Requires 8th level in this class)</em> When a creature that you can see succeeds it's saving throw against your Blood Curse or Blood Maledict you can use your Reaction to roll a hemocraft die. The creature must subtract the number rolled from their saving throw potentially turning it into a failure.</li><li><em>(Requires 12th level in this class)</em> When you roll initiative, you can roll one hemocraft die and add the result to your total.</li><li><em>(Requires 16th level in this class)</em> When you miss with an weapon attack or Unarmed Strike while you have an active crimson rite on it, you can use your Reaction to roll a hemocraft die. You can add the number rolled to your attack roll potentially turning the miss into a hit.</li></ul><p>Your unused focus lasts until you complete a Long Rest, after which it is lost.</p><section id=\"secret-X088WrQ9zo7VNXbt\" class=\"secret\"><p><strong>Foundry Notes</strong></p><p>Each of the actions above has an activity which will spend the focus accordingly.</p><p>The <strong>Reset Focus</strong> activity consumes all of the available focus you have and can be used when you complete a Long Rest to reset it.</p></section>",
       "chat": ""
     },
     "source": {
@@ -39,7 +39,7 @@
       "value": null,
       "max": "@abilities.int.mod",
       "per": "lr",
-      "recovery": "",
+      "recovery": [],
       "prompt": true
     },
     "consume": {
@@ -75,16 +75,357 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "Ob5UhLIEG5NghmO2": {
+        "type": "utility",
+        "_id": "Ob5UhLIEG5NghmO2",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Additional Attack",
+        "img": "",
+        "appliedEffects": []
+      },
+      "RmbB1G6JdczocQqK": {
+        "type": "utility",
+        "name": "Hamper Foe",
+        "_id": "RmbB1G6JdczocQqK",
+        "sort": 0,
+        "activation": {
+          "type": "reaction",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "Saving Throw Penalty",
+          "formula": "@scale.blood-hunter.hemocraft-die"
+        },
+        "img": "",
+        "appliedEffects": []
+      },
+      "KBvhdb6JqrK2VOjy": {
+        "type": "utility",
+        "name": "Initiative Bonus",
+        "_id": "KBvhdb6JqrK2VOjy",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "Initiative Bonus",
+          "formula": "@scale.blood-hunter.hemocraft-die"
+        },
+        "img": "",
+        "appliedEffects": []
+      },
+      "fGFolivJH2P9gdjn": {
+        "type": "utility",
+        "_id": "fGFolivJH2P9gdjn",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "Attack Roll Bonus",
+          "formula": "@scale.blood-hunter.hemocraft-die"
+        },
+        "name": "Attack Bonus",
+        "img": "",
+        "appliedEffects": []
+      },
+      "PdXJIzQyHpUYsIGG": {
+        "type": "utility",
+        "_id": "PdXJIzQyHpUYsIGG",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "@abilities.int.mod",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Reset Focus",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.1.1",
+    "systemVersion": "4.3.6",
     "coreVersion": "12.331",
     "createdTime": 1707886477449,
-    "modifiedTime": 1731557586792,
+    "modifiedTime": 1741723379773,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

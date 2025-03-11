@@ -80,66 +80,150 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "on85mkYdowXjytNr": {
+        "type": "enchant",
+        "_id": "on85mkYdowXjytNr",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "Ap879TSOsrat0pLz"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "enchant": {
+          "identifier": ""
+        },
+        "restrictions": {
+          "allowMagical": false,
+          "categories": [],
+          "properties": [],
+          "type": "weapon"
+        },
+        "name": "Invoke Rite",
+        "img": "",
+        "appliedEffects": []
+      }
+    },
+    "prerequisites": {
+      "level": 2
     }
   },
   "effects": [
     {
+      "type": "enchantment",
       "name": "Rite of the Flame",
-      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.YLEMZ8Ru8IrB4Hed",
+      "img": "icons/magic/fire/projectile-arrow-fire-orange.webp",
+      "disabled": true,
+      "_id": "Ap879TSOsrat0pLz",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "value": "{}, Infused",
+          "priority": null
+        },
+        {
+          "key": "system.damage.parts",
+          "mode": 2,
+          "value": "[[\"@scale.blood-hunter.hemocraft-die\", \"fire\"]]",
+          "priority": null
+        }
+      ],
       "duration": {
-        "rounds": null,
         "startTime": null,
         "seconds": null,
         "combat": null,
+        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "flags": {},
-      "img": "icons/magic/fire/projectile-arrow-fire-orange.webp",
-      "_id": "jAaMuUmRg98VmEJa",
-      "type": "base",
-      "system": {},
-      "changes": [
-        {
-          "key": "system.bonuses.mwak.damage",
-          "mode": 2,
-          "value": "@scale.blood-hunter.hemocraft-die[fire]",
-          "priority": null
-        },
-        {
-          "key": "system.bonuses.rwak.damage",
-          "mode": 2,
-          "value": "@scale.blood-hunter.hemocraft-die[fire]",
-          "priority": null
-        }
-      ],
       "description": "",
+      "origin": null,
       "tint": "#ffffff",
       "transfer": true,
       "statuses": [],
       "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.327",
+        "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "3.2.1",
-        "createdTime": 1719004292865,
-        "modifiedTime": 1719004329483,
+        "systemVersion": "4.3.6",
+        "createdTime": 1741735550976,
+        "modifiedTime": 1741735659441,
         "lastModifiedBy": "dnd5mbuilder0000"
       },
-      "_key": "!items.effects!YLEMZ8Ru8IrB4Hed.jAaMuUmRg98VmEJa"
+      "_key": "!items.effects!YLEMZ8Ru8IrB4Hed.Ap879TSOsrat0pLz"
     }
   ],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.2.1",
-    "coreVersion": "12.327",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707885644751,
-    "modifiedTime": 1719003186335,
+    "modifiedTime": 1741735551026,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

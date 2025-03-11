@@ -80,66 +80,152 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 14
+    },
+    "activities": {
+      "UqPlFhpW6KwxzmoP": {
+        "type": "enchant",
+        "_id": "UqPlFhpW6KwxzmoP",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "JHdO0YT6PnNHxgCz"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "enchant": {
+          "identifier": ""
+        },
+        "restrictions": {
+          "allowMagical": false,
+          "categories": [],
+          "properties": [],
+          "type": "weapon"
+        },
+        "name": "Invoke Rite",
+        "img": "",
+        "appliedEffects": [
+          "JHdO0YT6PnNHxgCz"
+        ]
+      }
     }
   },
   "effects": [
     {
+      "type": "enchantment",
       "name": "Rite of the Roar",
-      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.RjusJyoLnU0A1sFW",
+      "img": "icons/magic/air/air-pressure-shield-blue.webp",
+      "disabled": true,
+      "_id": "JHdO0YT6PnNHxgCz",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "value": "{}, Infused",
+          "priority": null
+        },
+        {
+          "key": "system.damage.parts",
+          "mode": 2,
+          "value": "[[\"@scale.blood-hunter.hemocraft-die\", \"thunder\"]]",
+          "priority": null
+        }
+      ],
       "duration": {
-        "rounds": null,
         "startTime": null,
         "seconds": null,
         "combat": null,
+        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "flags": {},
-      "img": "icons/magic/air/air-pressure-shield-blue.webp",
-      "_id": "btJWth2jFDsWo3oV",
-      "type": "base",
-      "system": {},
-      "changes": [
-        {
-          "key": "system.bonuses.mwak.damage",
-          "mode": 2,
-          "value": "@scale.blood-hunter.hemocraft-die[thunder]",
-          "priority": null
-        },
-        {
-          "key": "system.bonuses.rwak.damage",
-          "mode": 2,
-          "value": "@scale.blood-hunter.hemocraft-die[thunder]",
-          "priority": null
-        }
-      ],
       "description": "",
+      "origin": null,
       "tint": "#ffffff",
       "transfer": true,
       "statuses": [],
       "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
-        "coreVersion": "12.327",
+        "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "3.2.1",
-        "createdTime": 1719004403387,
-        "modifiedTime": 1719004424702,
+        "systemVersion": "4.3.6",
+        "createdTime": 1741735883801,
+        "modifiedTime": 1741735904467,
         "lastModifiedBy": "dnd5mbuilder0000"
       },
-      "_key": "!items.effects!RjusJyoLnU0A1sFW.btJWth2jFDsWo3oV"
+      "_key": "!items.effects!RjusJyoLnU0A1sFW.JHdO0YT6PnNHxgCz"
     }
   ],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.2.1",
-    "coreVersion": "12.327",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707885903759,
-    "modifiedTime": 1719003193853,
+    "modifiedTime": 1741735886426,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

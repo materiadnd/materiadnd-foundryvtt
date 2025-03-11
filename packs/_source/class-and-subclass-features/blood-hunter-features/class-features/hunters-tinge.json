@@ -6,7 +6,7 @@
   "img": "icons/creatures/eyes/lizard-single-slit-pink.webp",
   "system": {
     "description": {
-      "value": "<p>By 6th level, your ability to harness the darkness has granted you supernatural sense. As an action, you can open your awareness to magically detect aberrations, fey, fiends, and undead. Until the end of your next turn, you are able to see invisible aberrations, fey, fiends, and undead and you know the location of any these creature within 60 feet of you even through total cover. This sense does not tell you anything about a creature's capabilities or identity. </p><p>Additionally, you can choose to take necrotic damage equal to one roll of your hemocraft die (this damage cannot be reduced in any way) and this will extend the duration to one minute.</p><p>If the creature's true form is concealed by an illusion, shapeshifting, or other effect, that form is revealed to you while you see it.</p><p>You can use this feature a number of times equal to your Intelligence modifier (minimum of once). You regain all expended uses when you finish a long rest.</p>",
+      "value": "<p>Your ability to harness the darkness has granted you supernatural sense. As a Magic action, you can open your awareness to magically detect aberrations, fey, fiends, and undead. Until the end of your next turn, you are able to see invisible aberrations, fey, fiends, and undead and you know the location of any these creature within 60 feet of you even through &amp;Reference[total cover]. This sense does not tell you anything about a creature's capabilities or identity.</p><p>Additionally, you can choose to take necrotic damage equal to one roll of your hemocraft die (this damage cannot be reduced in any way) and this will extend the duration to one minute.</p><p>If the creature's true form is concealed by an illusion, shapeshifting, or other effect, that form is revealed to you while you see it.</p><p>You can use this feature a number of times equal to your Intelligence modifier (minimum of once). You regain all expended uses when you finish a Long Rest.</p><section class=\"secret\" id=\"secret-QcxwNWA5O9HUjwXI\"><p><strong>Foundry Note</strong></p><p>The <strong>Detect Creatures</strong> activity can be used to apply an emanation to yourself.</p><p>The <strong>Detect Creatures (Damage Self)</strong> activity can be used to activate the extended version of this feature.  The damage from this activity is the damage you take.</p></section>",
       "chat": ""
     },
     "source": {
@@ -75,16 +75,134 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Detect Creatures",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "target": {
+          "affects": {
+            "type": "self"
+          }
+        }
+      },
+      "m3hDTTR7XlL8SdgR": {
+        "type": "damage",
+        "_id": "m3hDTTR7XlL8SdgR",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            },
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.YX4oh7xzBnc27HRK"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "minute",
+          "concentration": false,
+          "override": false,
+          "value": "1"
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "radius",
+            "size": "60",
+            "count": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "@scale.blood-hunter.hemocraft-die"
+              },
+              "number": null,
+              "denomination": 0,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ]
+            }
+          ]
+        },
+        "name": "Detect Creatures (Damage Self)",
+        "img": "",
+        "appliedEffects": []
+      }
+    },
+    "prerequisites": {
+      "level": 6
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707886762162,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1741724990577,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

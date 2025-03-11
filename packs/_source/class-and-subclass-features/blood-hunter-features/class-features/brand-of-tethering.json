@@ -6,7 +6,7 @@
   "img": "icons/magic/control/debuff-chains-shackles-movement-purple.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 13th level, the psychic damage from your Brand of Castigation increases to twice your Intelligence modifier (minimum of 2). Additionally, a branded creature cannot take the Dash action, and if it attempts to teleport or to leave its current plane by any means, it takes a number of hemocraft die equal to your Intelligence modifier (minimum of 1) as psychic damage and must make a Charisma saving throw. On a failure, the attempt to teleport or leave the plane fails.</p>",
+      "value": "<p>The psychic damage from your Brand of Castigation increases to twice your Intelligence modifier (minimum of 2). Additionally, a branded creature cannot take the Dash action, and if it attempts to teleport or to leave its current plane by any means, it takes a number of hemocraft die equal to your Intelligence modifier (minimum of 1) as psychic damage and must make a Charisma saving throw. On a failure, the attempt to teleport or leave the plane fails.</p>",
       "chat": ""
     },
     "source": {
@@ -75,16 +75,114 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Teleport Save",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1"
+          }
+        }
+      },
+      "SU0OCLM1mGblQzAl": {
+        "type": "damage",
+        "_id": "SU0OCLM1mGblQzAl",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "@abilities.int.mod@scale.blood-hunter.hemocraft-die.die"
+              },
+              "number": null,
+              "denomination": 0,
+              "bonus": "",
+              "types": []
+            }
+          ]
+        },
+        "name": "Teleport Damage",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707891500679,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1741726399072,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
