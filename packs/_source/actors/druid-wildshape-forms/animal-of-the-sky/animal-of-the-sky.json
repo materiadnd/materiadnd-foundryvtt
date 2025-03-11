@@ -1,9 +1,9 @@
 {
-  "folder": "8E1v07nzjqA6uCjD",
-  "name": "Animal of the Sea",
+  "folder": "IDk07cRJgFjnAA8r",
+  "name": "Animal of the Sky",
   "type": "npc",
-  "_id": "6cPeFNo4xZghButY",
-  "img": "icons/creatures/amphibians/frog-water-teal.webp",
+  "_id": "ej9s9VpXGEcGN13F",
+  "img": "icons/creatures/birds/raptor-owl-flying-moon.webp",
   "system": {
     "currency": {
       "pp": 0,
@@ -386,8 +386,8 @@
       "movement": {
         "burrow": null,
         "climb": null,
-        "fly": null,
-        "swim": 40,
+        "fly": 40,
+        "swim": null,
         "walk": 20,
         "units": null,
         "hover": false
@@ -396,7 +396,7 @@
         "max": 3
       },
       "senses": {
-        "darkvision": 90,
+        "darkvision": 120,
         "blindsight": null,
         "tremorsense": null,
         "truesight": null,
@@ -424,8 +424,8 @@
       "hp": {
         "value": 10,
         "max": 10,
-        "temp": 0,
-        "tempmax": 0,
+        "temp": null,
+        "tempmax": null,
         "formula": ""
       },
       "death": {
@@ -501,13 +501,13 @@
     }
   },
   "prototypeToken": {
-    "name": "Animal of the Sea",
+    "name": "Animal of the Sky",
     "displayName": 0,
     "actorLink": false,
     "appendNumber": false,
     "prependAdjective": false,
     "texture": {
-      "src": "icons/creatures/amphibians/frog-water-teal.webp",
+      "src": "icons/creatures/birds/raptor-owl-flying-moon.webp",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,
@@ -591,13 +591,13 @@
   "items": [
     {
       "folder": "PIJ5b0aWAuZeYaDP",
-      "name": "Amphibious",
+      "name": "Flyby",
       "type": "feat",
-      "_id": "RZRT9VcddMhmrMXJ",
-      "img": "icons/magic/water/orb-water-bubbles-blue.webp",
+      "_id": "58rMIEBEL0HlVSRY",
+      "img": "icons/creatures/birds/dove-pigeon-flying-white.webp",
       "system": {
         "description": {
-          "value": "<p>The [[lookup @name]] can breathe air and water.</p>",
+          "value": "<p>The [[lookup @name]] does not provoke opportunity attacks when it flies out of an enemy's reach.</p>",
           "chat": ""
         },
         "source": {},
@@ -673,31 +673,34 @@
       "effects": [],
       "flags": {
         "core": {
-          "sourceId": "Compendium.materia-dnd.monster-features.Item.n4xEhu8fIBgEOeeF"
+          "sourceId": "Compendium.materia-dnd.monster-features.Item.OLSovOpvXIKWCJtv"
         }
       },
       "_stats": {
         "systemId": "dnd5e",
         "systemVersion": "3.1.1",
         "coreVersion": "12.325",
-        "createdTime": 1707611771174,
-        "modifiedTime": 1712620603592,
+        "createdTime": 1707611939037,
+        "modifiedTime": 1712620979338,
         "lastModifiedBy": "dnd5mbuilder0000",
-        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.n4xEhu8fIBgEOeeF",
+        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.OLSovOpvXIKWCJtv",
         "duplicateSource": null
       },
-      "sort": 1200000,
+      "sort": 800000,
       "ownership": {
         "default": 0
       },
-      "_key": "!actors.items!6cPeFNo4xZghButY.RZRT9VcddMhmrMXJ"
+      "_key": "!actors.items!ej9s9VpXGEcGN13F.58rMIEBEL0HlVSRY"
     },
     {
-      "name": "Aquatic Senses",
+      "folder": "PIJ5b0aWAuZeYaDP",
+      "name": "Keen Senses",
       "type": "feat",
+      "_id": "ZE20FT0Jl5XAa4gx",
+      "img": "icons/creatures/eyes/humanoid-single-red-brown.webp",
       "system": {
         "description": {
-          "value": "<p>You have advantage on all Wisdom (Perception) checks while underwater.</p>",
+          "value": "<p>The [[lookup @name]] has advantage on all Wisdom (Perception) checks.</p>",
           "chat": ""
         },
         "source": {},
@@ -739,10 +742,6 @@
         },
         "ability": null,
         "actionType": "",
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
         "chatFlavor": "",
         "critical": {
           "threshold": null,
@@ -758,7 +757,6 @@
           "dc": null,
           "scaling": "spell"
         },
-        "summons": null,
         "type": {
           "value": "monster",
           "subtype": ""
@@ -768,34 +766,84 @@
         "recharge": {
           "value": null,
           "charged": false
+        },
+        "attack": {
+          "bonus": "",
+          "flat": false
+        },
+        "summons": null
+      },
+      "effects": [
+        {
+          "name": "Keen Senses",
+          "origin": "Item.Cx5OHcWDvLDt8FV0",
+          "duration": {
+            "startTime": 294,
+            "seconds": null,
+            "combat": null,
+            "rounds": null,
+            "turns": null,
+            "startRound": null,
+            "startTurn": null
+          },
+          "disabled": false,
+          "_id": "c24mVQdrNKPBA8JI",
+          "changes": [
+            {
+              "key": "flags.midi-qol.disadvantage.skill.prc",
+              "mode": 0,
+              "value": "1",
+              "priority": null
+            }
+          ],
+          "description": "",
+          "transfer": true,
+          "statuses": [],
+          "flags": {},
+          "tint": "#ffffff",
+          "_stats": {
+            "coreVersion": "12.325",
+            "systemId": null,
+            "systemVersion": null,
+            "createdTime": null,
+            "modifiedTime": null,
+            "lastModifiedBy": null,
+            "compendiumSource": null,
+            "duplicateSource": null
+          },
+          "img": "icons/creatures/eyes/humanoid-single-red-brown.webp",
+          "type": "base",
+          "system": {},
+          "sort": 0,
+          "_key": "!actors.items.effects!ej9s9VpXGEcGN13F.ZE20FT0Jl5XAa4gx.c24mVQdrNKPBA8JI"
+        }
+      ],
+      "flags": {
+        "core": {
+          "sourceId": "Compendium.materia-dnd.monster-features.Item.Cx5OHcWDvLDt8FV0"
         }
       },
-      "_id": "VzK5EtNjZ1QtfHMq",
-      "img": "icons/creatures/eyes/humanoid-single-purple-blue.webp",
-      "effects": [],
-      "folder": null,
-      "sort": 0,
-      "ownership": {
-        "default": 0
-      },
-      "flags": {},
       "_stats": {
         "systemId": "dnd5e",
         "systemVersion": "3.1.1",
         "coreVersion": "12.325",
-        "createdTime": 1712620612798,
-        "modifiedTime": 1712620653874,
+        "createdTime": 1707611986839,
+        "modifiedTime": 1712620984695,
         "lastModifiedBy": "dnd5mbuilder0000",
-        "compendiumSource": null,
+        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.Cx5OHcWDvLDt8FV0",
         "duplicateSource": null
       },
-      "_key": "!actors.items!6cPeFNo4xZghButY.VzK5EtNjZ1QtfHMq"
+      "sort": 500000,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!ej9s9VpXGEcGN13F.ZE20FT0Jl5XAa4gx"
     },
     {
       "folder": "EyT6wN4Hl33u5SG9",
       "name": "Multiattack",
       "type": "feat",
-      "_id": "X3edMAxFPVJtZme3",
+      "_id": "364cKSnS3S8MJNCC",
       "img": "icons/skills/melee/blade-tips-triple-steel.webp",
       "system": {
         "description": {
@@ -883,7 +931,7 @@
         "systemVersion": "3.1.1",
         "coreVersion": "12.325",
         "createdTime": 1708315022641,
-        "modifiedTime": 1712620751857,
+        "modifiedTime": 1712621004861,
         "lastModifiedBy": "dnd5mbuilder0000",
         "compendiumSource": "Compendium.materia-dnd.monster-features.Item.UWiAfJBbkP2sct4e",
         "duplicateSource": null
@@ -892,17 +940,17 @@
       "ownership": {
         "default": 0
       },
-      "_key": "!actors.items!6cPeFNo4xZghButY.X3edMAxFPVJtZme3"
+      "_key": "!actors.items!ej9s9VpXGEcGN13F.364cKSnS3S8MJNCC"
     },
     {
       "folder": "EyT6wN4Hl33u5SG9",
       "name": "Bestial Strike",
       "type": "weapon",
-      "_id": "MwQM37UWSRUYcgQD",
+      "_id": "CdCjF2G0wDrU2zcq",
       "img": "icons/creatures/claws/claw-bear-paw-swipe-red.webp",
       "system": {
         "description": {
-          "value": "<p><em>Melee Weapon Attack</em>: your spell attack modifier to hit, reach 5ft., one target. <em>Hit</em> 1d8 + Wisdom modifier bludgeoning, piercing or slashing damage (your choice per attack).</p>",
+          "value": "<p><em>Melee Weapon Attack</em>: your spell attack modifier to hit, reach 5ft., one target. <em>Hit</em> 1d4 + Wisdom modifier bludgeoning, piercing or slashing damage (your choice per attack).</p>",
           "chat": ""
         },
         "source": {},
@@ -969,7 +1017,7 @@
         "damage": {
           "parts": [
             [
-              "1d8 + @mod",
+              "1d4 + @mod",
               "bludgeoning"
             ]
           ],
@@ -1015,158 +1063,15 @@
         "systemVersion": "3.1.1",
         "coreVersion": "12.325",
         "createdTime": 1712617760639,
-        "modifiedTime": 1712620761242,
+        "modifiedTime": 1712621030545,
         "lastModifiedBy": "dnd5mbuilder0000",
         "compendiumSource": "Compendium.materia-dnd.monster-features.Item.6AZVdXKHZiAVuuBs",
         "duplicateSource": null
       },
-      "_key": "!actors.items!6cPeFNo4xZghButY.MwQM37UWSRUYcgQD"
-    },
-    {
-      "name": "Marine Defense",
-      "type": "feat",
-      "system": {
-        "description": {
-          "value": "<p>While you are in water, as if swimming, you gain a bonus to your AC equal to your Proficiency Bonus.</p>",
-          "chat": ""
-        },
-        "source": {},
-        "activation": {
-          "type": "",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": null,
-          "width": null,
-          "units": "",
-          "type": "",
-          "prompt": true
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": null,
-        "actionType": "",
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "summons": null,
-        "type": {
-          "value": "monster",
-          "subtype": ""
-        },
-        "properties": [],
-        "requirements": "",
-        "recharge": {
-          "value": null,
-          "charged": false
-        }
-      },
-      "_id": "xjUl8nMkz1huNwYW",
-      "img": "icons/magic/defensive/shield-barrier-flaming-diamond-blue.webp",
-      "effects": [],
-      "folder": null,
-      "sort": 0,
-      "ownership": {
-        "default": 0
-      },
-      "flags": {},
-      "_stats": {
-        "systemId": "dnd5e",
-        "systemVersion": "3.1.1",
-        "coreVersion": "12.325",
-        "createdTime": 1712620780180,
-        "modifiedTime": 1712620796795,
-        "lastModifiedBy": "dnd5mbuilder0000",
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "_key": "!actors.items!6cPeFNo4xZghButY.xjUl8nMkz1huNwYW"
+      "_key": "!actors.items!ej9s9VpXGEcGN13F.CdCjF2G0wDrU2zcq"
     }
   ],
-  "effects": [
-    {
-      "name": "Marine Defense",
-      "origin": "Compendium.materia-dnd.actors.Actor.6cPeFNo4xZghButY",
-      "duration": {
-        "startTime": 294,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": true,
-      "_id": "g2ksGag5yqBETTXY",
-      "changes": [
-        {
-          "key": "system.attributes.ac.bonus",
-          "mode": 2,
-          "value": "@prof",
-          "priority": null
-        }
-      ],
-      "description": "",
-      "transfer": false,
-      "statuses": [],
-      "flags": {},
-      "tint": "#ffffff",
-      "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "icons/magic/defensive/shield-barrier-flaming-diamond-blue.webp",
-      "type": "base",
-      "system": {},
-      "sort": 0,
-      "_key": "!actors.effects!6cPeFNo4xZghButY.g2ksGag5yqBETTXY"
-    }
-  ],
+  "effects": [],
   "sort": 100000,
   "ownership": {
     "default": 0
@@ -1174,12 +1079,12 @@
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
-    "createdTime": 1712620559722,
-    "modifiedTime": 1712620905638,
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
+    "createdTime": 1712620919507,
+    "modifiedTime": 1741707774990,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "_key": "!actors!6cPeFNo4xZghButY"
+  "_key": "!actors!ej9s9VpXGEcGN13F"
 }

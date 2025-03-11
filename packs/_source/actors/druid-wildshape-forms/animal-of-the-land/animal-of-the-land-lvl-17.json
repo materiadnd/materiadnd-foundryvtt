@@ -1,9 +1,8 @@
 {
-  "folder": "8E1v07nzjqA6uCjD",
-  "name": "Animal of the Sky",
+  "folder": "nb2aFb170IzACOSQ",
+  "name": "Animal of the Land, Lvl 17+",
   "type": "npc",
-  "_id": "ej9s9VpXGEcGN13F",
-  "img": "icons/creatures/birds/raptor-owl-flying-moon.webp",
+  "img": "icons/creatures/mammals/humanoid-wolf-dog-blue.webp",
   "system": {
     "currency": {
       "pp": 0,
@@ -20,6 +19,20 @@
         "bonuses": {
           "check": "",
           "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
         }
       },
       "dex": {
@@ -29,6 +42,20 @@
         "bonuses": {
           "check": "",
           "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
         }
       },
       "con": {
@@ -38,6 +65,20 @@
         "bonuses": {
           "check": "",
           "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
         }
       },
       "int": {
@@ -47,6 +88,20 @@
         "bonuses": {
           "check": "",
           "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
         }
       },
       "wis": {
@@ -56,6 +111,20 @@
         "bonuses": {
           "check": "",
           "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
         }
       },
       "cha": {
@@ -65,6 +134,20 @@
         "bonuses": {
           "check": "",
           "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
         }
       }
     },
@@ -385,18 +468,18 @@
       },
       "movement": {
         "burrow": null,
-        "climb": null,
-        "fly": 40,
+        "climb": 60,
+        "fly": null,
         "swim": null,
-        "walk": 20,
-        "units": null,
+        "walk": 60,
+        "units": "ft",
         "hover": false
       },
       "attunement": {
         "max": 3
       },
       "senses": {
-        "darkvision": 120,
+        "darkvision": 60,
         "blindsight": null,
         "tremorsense": null,
         "truesight": null,
@@ -418,25 +501,36 @@
         "limit": 1
       },
       "ac": {
-        "flat": 10,
-        "calc": "natural"
+        "flat": null,
+        "calc": "default"
       },
       "hp": {
         "value": 10,
         "max": 10,
-        "temp": 0,
-        "tempmax": 0,
+        "temp": null,
+        "tempmax": null,
         "formula": ""
       },
       "death": {
-        "ability": "",
         "roll": {
           "min": null,
           "max": null,
           "mode": 0
         },
         "success": 0,
-        "failure": 0
+        "failure": 0,
+        "bonuses": {
+          "save": ""
+        }
+      },
+      "spell": {
+        "level": 0
+      },
+      "loyalty": {
+        "value": null
+      },
+      "hd": {
+        "spent": 0
       }
     },
     "details": {
@@ -447,10 +541,17 @@
       "alignment": "",
       "race": null,
       "type": {},
-      "environment": "",
       "cr": 1,
-      "spellLevel": 0,
-      "source": {}
+      "habitat": {
+        "custom": "",
+        "value": []
+      },
+      "ideal": "",
+      "bond": "",
+      "flaw": "",
+      "treasure": {
+        "value": []
+      }
     },
     "resources": {
       "legact": {
@@ -463,7 +564,8 @@
       },
       "lair": {
         "value": false,
-        "initiative": null
+        "initiative": null,
+        "inside": false
       }
     },
     "traits": {
@@ -493,30 +595,34 @@
       },
       "languages": {
         "value": [],
-        "custom": ""
-      }
+        "custom": "",
+        "communication": {}
+      },
+      "important": false
     },
     "source": {
-      "book": "Materia"
+      "book": "Materia",
+      "revision": 1,
+      "rules": "2024"
     }
   },
   "prototypeToken": {
-    "name": "Animal of the Sky",
-    "displayName": 0,
+    "name": "Animal of the Land",
+    "displayName": 40,
     "actorLink": false,
     "appendNumber": false,
     "prependAdjective": false,
     "texture": {
-      "src": "icons/creatures/birds/raptor-owl-flying-moon.webp",
+      "src": "icons/creatures/mammals/humanoid-wolf-dog-blue.webp",
       "scaleX": 1,
       "scaleY": 1,
       "offsetX": 0,
       "offsetY": 0,
       "rotation": 0,
+      "tint": "#ffffff",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "fit": "contain",
-      "tint": "#ffffff",
       "alphaThreshold": 0.75
     },
     "width": 1,
@@ -524,8 +630,8 @@
     "lockRotation": false,
     "rotation": 0,
     "alpha": 1,
-    "disposition": -1,
-    "displayBars": 0,
+    "disposition": 1,
+    "displayBars": 40,
     "bar1": {
       "attribute": "attributes.hp"
     },
@@ -553,9 +659,9 @@
         "min": 0,
         "max": 1
       },
+      "color": null,
       "negative": false,
-      "priority": 0,
-      "color": null
+      "priority": 0
     },
     "sight": {
       "enabled": false,
@@ -569,193 +675,49 @@
       "color": null
     },
     "detectionModes": [],
-    "flags": {},
-    "randomImg": false,
-    "hexagonalShape": 0,
-    "occludable": {
-      "radius": 0
+    "flags": {
+      "dnd5e": {}
     },
+    "randomImg": false,
     "ring": {
       "enabled": false,
       "colors": {
         "ring": null,
         "background": null
       },
-      "effects": 1,
+      "effects": 0,
       "subject": {
-        "scale": 1,
-        "texture": null
+        "texture": null,
+        "scale": 1
       }
+    },
+    "hexagonalShape": 0,
+    "occludable": {
+      "radius": 0
     }
   },
   "items": [
     {
       "folder": "PIJ5b0aWAuZeYaDP",
-      "name": "Flyby",
-      "type": "feat",
-      "_id": "58rMIEBEL0HlVSRY",
-      "img": "icons/creatures/birds/dove-pigeon-flying-white.webp",
-      "system": {
-        "description": {
-          "value": "<p>The [[lookup @name]] does not provoke opportunity attacks when it flies out of an enemy's reach.</p>",
-          "chat": ""
-        },
-        "source": {},
-        "activation": {
-          "type": "",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": null,
-          "width": null,
-          "units": "",
-          "type": "",
-          "prompt": true
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": null,
-        "actionType": "",
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "type": {
-          "value": "monster",
-          "subtype": ""
-        },
-        "properties": [],
-        "requirements": "",
-        "recharge": {
-          "value": null,
-          "charged": false
-        },
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "summons": null
-      },
-      "effects": [],
-      "flags": {
-        "core": {
-          "sourceId": "Compendium.materia-dnd.monster-features.Item.OLSovOpvXIKWCJtv"
-        }
-      },
-      "_stats": {
-        "systemId": "dnd5e",
-        "systemVersion": "3.1.1",
-        "coreVersion": "12.325",
-        "createdTime": 1707611939037,
-        "modifiedTime": 1712620979338,
-        "lastModifiedBy": "dnd5mbuilder0000",
-        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.OLSovOpvXIKWCJtv",
-        "duplicateSource": null
-      },
-      "sort": 800000,
-      "ownership": {
-        "default": 0
-      },
-      "_key": "!actors.items!ej9s9VpXGEcGN13F.58rMIEBEL0HlVSRY"
-    },
-    {
-      "folder": "PIJ5b0aWAuZeYaDP",
       "name": "Keen Senses",
       "type": "feat",
-      "_id": "ZE20FT0Jl5XAa4gx",
+      "_id": "MNeY6gzhD81o3VKo",
       "img": "icons/creatures/eyes/humanoid-single-red-brown.webp",
       "system": {
         "description": {
           "value": "<p>The [[lookup @name]] has advantage on all Wisdom (Perception) checks.</p>",
           "chat": ""
         },
-        "source": {},
-        "activation": {
-          "type": "",
-          "cost": null,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": ""
+        "source": {
+          "revision": 1,
+          "rules": "2024"
         },
         "cover": null,
         "crewed": false,
-        "target": {
-          "value": null,
-          "width": null,
-          "units": "",
-          "type": "",
-          "prompt": true
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
         "uses": {
-          "value": null,
           "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": null,
-        "actionType": "",
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
+          "spent": 0,
+          "recovery": []
         },
         "type": {
           "value": "monster",
@@ -763,15 +725,14 @@
         },
         "properties": [],
         "requirements": "",
-        "recharge": {
-          "value": null,
-          "charged": false
-        },
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "summons": null
+        "activities": {},
+        "identifier": "",
+        "advancement": [],
+        "enchant": {},
+        "prerequisites": {
+          "level": null,
+          "repeatable": false
+        }
       },
       "effects": [
         {
@@ -802,20 +763,20 @@
           "flags": {},
           "tint": "#ffffff",
           "_stats": {
-            "coreVersion": "12.325",
-            "systemId": null,
-            "systemVersion": null,
+            "compendiumSource": null,
+            "duplicateSource": null,
+            "coreVersion": "12.331",
+            "systemId": "dnd5e",
+            "systemVersion": "4.3.6",
             "createdTime": null,
             "modifiedTime": null,
-            "lastModifiedBy": null,
-            "compendiumSource": null,
-            "duplicateSource": null
+            "lastModifiedBy": null
           },
           "img": "icons/creatures/eyes/humanoid-single-red-brown.webp",
           "type": "base",
           "system": {},
           "sort": 0,
-          "_key": "!actors.items.effects!ej9s9VpXGEcGN13F.ZE20FT0Jl5XAa4gx.c24mVQdrNKPBA8JI"
+          "_key": "!actors.items.effects!BVp6oBvQhzPKhtcY.MNeY6gzhD81o3VKo.c24mVQdrNKPBA8JI"
         }
       ],
       "flags": {
@@ -824,212 +785,99 @@
         }
       },
       "_stats": {
-        "systemId": "dnd5e",
-        "systemVersion": "3.1.1",
-        "coreVersion": "12.325",
-        "createdTime": 1707611986839,
-        "modifiedTime": 1712620984695,
-        "lastModifiedBy": "dnd5mbuilder0000",
         "compendiumSource": "Compendium.materia-dnd.monster-features.Item.Cx5OHcWDvLDt8FV0",
-        "duplicateSource": null
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
       "sort": 500000,
       "ownership": {
         "default": 0
       },
-      "_key": "!actors.items!ej9s9VpXGEcGN13F.ZE20FT0Jl5XAa4gx"
-    },
-    {
-      "folder": "EyT6wN4Hl33u5SG9",
-      "name": "Multiattack",
-      "type": "feat",
-      "_id": "364cKSnS3S8MJNCC",
-      "img": "icons/skills/melee/blade-tips-triple-steel.webp",
-      "system": {
-        "description": {
-          "value": "<p>You make two Bestial Strike attacks.</p>",
-          "chat": ""
-        },
-        "source": {},
-        "activation": {
-          "type": "action",
-          "cost": 1,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": null,
-          "width": null,
-          "units": "",
-          "type": "",
-          "prompt": true
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": ""
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": null,
-        "actionType": "",
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "type": {
-          "value": "monster",
-          "subtype": ""
-        },
-        "properties": [],
-        "requirements": "",
-        "recharge": {
-          "value": null,
-          "charged": false
-        },
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "summons": null
-      },
-      "effects": [],
-      "flags": {
-        "core": {
-          "sourceId": "Compendium.materia-dnd.monster-features.Item.UWiAfJBbkP2sct4e"
-        }
-      },
-      "_stats": {
-        "systemId": "dnd5e",
-        "systemVersion": "3.1.1",
-        "coreVersion": "12.325",
-        "createdTime": 1708315022641,
-        "modifiedTime": 1712621004861,
-        "lastModifiedBy": "dnd5mbuilder0000",
-        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.UWiAfJBbkP2sct4e",
-        "duplicateSource": null
-      },
-      "sort": 2700000,
-      "ownership": {
-        "default": 0
-      },
-      "_key": "!actors.items!ej9s9VpXGEcGN13F.364cKSnS3S8MJNCC"
+      "_key": "!actors.items!BVp6oBvQhzPKhtcY.MNeY6gzhD81o3VKo"
     },
     {
       "folder": "EyT6wN4Hl33u5SG9",
       "name": "Bestial Strike",
       "type": "weapon",
-      "_id": "CdCjF2G0wDrU2zcq",
+      "_id": "6yE2SxXxC3wVPc2Y",
       "img": "icons/creatures/claws/claw-bear-paw-swipe-red.webp",
       "system": {
         "description": {
-          "value": "<p><em>Melee Weapon Attack</em>: your spell attack modifier to hit, reach 5ft., one target. <em>Hit</em> 1d4 + Wisdom modifier bludgeoning, piercing or slashing damage (your choice per attack).</p>",
+          "value": "<p><em>Melee Weapon Attack</em>: your spell attack modifier to hit, reach 5ft., one target. <em>Hit</em> 1d8 + Wisdom modifier bludgeoning, piercing or slashing damage (your choice per attack).</p>",
           "chat": ""
         },
-        "source": {},
+        "source": {
+          "revision": 1,
+          "rules": "2024"
+        },
         "identified": true,
         "unidentified": {
           "description": ""
         },
         "container": null,
         "quantity": 1,
-        "weight": 0,
+        "weight": {
+          "value": 0,
+          "units": "lb"
+        },
         "price": {
           "value": 0,
           "denomination": "gp"
         },
         "rarity": "",
-        "attunement": 0,
-        "activation": {
-          "type": "action",
-          "cost": 1,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": "inst"
-        },
+        "attunement": "",
         "cover": null,
         "crewed": false,
-        "target": {
-          "value": 1,
-          "width": null,
-          "units": "",
-          "type": "creature",
-          "prompt": true
-        },
         "range": {
           "value": 5,
           "long": null,
-          "units": "ft"
+          "units": "ft",
+          "reach": null
         },
         "uses": {
-          "value": null,
           "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": "wis",
-        "actionType": "mwak",
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
+          "spent": 0,
+          "recovery": []
         },
         "damage": {
-          "parts": [
-            [
-              "1d4 + @mod",
+          "versatile": {
+            "number": null,
+            "denomination": null,
+            "bonus": "",
+            "types": [],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          },
+          "base": {
+            "number": 1,
+            "denomination": 8,
+            "bonus": "",
+            "types": [
               "bludgeoning"
-            ]
-          ],
-          "versatile": ""
+            ],
+            "custom": {
+              "enabled": false,
+              "formula": ""
+            },
+            "scaling": {
+              "mode": "",
+              "number": null,
+              "formula": ""
+            }
+          }
         },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "summons": null,
         "armor": {
           "value": null
         },
@@ -1046,7 +894,91 @@
         "magicalBonus": null,
         "properties": [],
         "equipped": true,
-        "proficient": null
+        "proficient": null,
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "attack",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "inst",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "value": "5",
+              "units": "ft",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "1",
+                "type": "creature",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "uses": {
+              "spent": 0,
+              "max": "",
+              "recovery": []
+            },
+            "attack": {
+              "ability": "wis",
+              "bonus": "",
+              "critical": {
+                "threshold": null
+              },
+              "flat": false,
+              "type": {
+                "value": "melee",
+                "classification": "weapon"
+              }
+            },
+            "damage": {
+              "critical": {
+                "bonus": ""
+              },
+              "includeBase": true,
+              "parts": []
+            },
+            "sort": 0
+          }
+        },
+        "identifier": "",
+        "attuned": false,
+        "ammunition": {}
       },
       "effects": [],
       "sort": 0,
@@ -1056,35 +988,167 @@
       "flags": {
         "core": {
           "sourceId": "Compendium.materia-dnd.monster-features.Item.6AZVdXKHZiAVuuBs"
+        },
+        "dnd5e": {
+          "persistSourceMigration": true
         }
       },
       "_stats": {
-        "systemId": "dnd5e",
-        "systemVersion": "3.1.1",
-        "coreVersion": "12.325",
-        "createdTime": 1712617760639,
-        "modifiedTime": 1712621030545,
-        "lastModifiedBy": "dnd5mbuilder0000",
         "compendiumSource": "Compendium.materia-dnd.monster-features.Item.6AZVdXKHZiAVuuBs",
-        "duplicateSource": null
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
       },
-      "_key": "!actors.items!ej9s9VpXGEcGN13F.CdCjF2G0wDrU2zcq"
+      "_key": "!actors.items!BVp6oBvQhzPKhtcY.6yE2SxXxC3wVPc2Y"
+    },
+    {
+      "folder": "EyT6wN4Hl33u5SG9",
+      "name": "Multiattack",
+      "type": "feat",
+      "_id": "KgDYeIoA9PZBTmxZ",
+      "img": "icons/skills/melee/blade-tips-triple-steel.webp",
+      "system": {
+        "description": {
+          "value": "<p>You make three Bestial Strike attacks.</p>",
+          "chat": ""
+        },
+        "source": {
+          "revision": 1,
+          "rules": "2024"
+        },
+        "cover": null,
+        "crewed": false,
+        "uses": {
+          "max": "",
+          "spent": 0,
+          "recovery": []
+        },
+        "type": {
+          "value": "monster",
+          "subtype": ""
+        },
+        "properties": [],
+        "requirements": "",
+        "activities": {
+          "dnd5eactivity000": {
+            "_id": "dnd5eactivity000",
+            "type": "utility",
+            "activation": {
+              "type": "action",
+              "value": 1,
+              "condition": "",
+              "override": false
+            },
+            "consumption": {
+              "targets": [],
+              "scaling": {
+                "allowed": false,
+                "max": ""
+              },
+              "spellSlot": true
+            },
+            "description": {
+              "chatFlavor": ""
+            },
+            "duration": {
+              "concentration": false,
+              "value": "",
+              "units": "",
+              "special": "",
+              "override": false
+            },
+            "effects": [],
+            "range": {
+              "units": "",
+              "special": "",
+              "override": false
+            },
+            "target": {
+              "template": {
+                "count": "",
+                "contiguous": false,
+                "type": "",
+                "size": "",
+                "width": "",
+                "height": "",
+                "units": ""
+              },
+              "affects": {
+                "count": "",
+                "type": "",
+                "choice": false,
+                "special": ""
+              },
+              "prompt": true,
+              "override": false
+            },
+            "uses": {
+              "spent": 0,
+              "max": "",
+              "recovery": []
+            },
+            "roll": {
+              "formula": "",
+              "name": "",
+              "prompt": false,
+              "visible": false
+            },
+            "sort": 0
+          }
+        },
+        "identifier": "",
+        "advancement": [],
+        "enchant": {},
+        "prerequisites": {
+          "level": null,
+          "repeatable": false
+        }
+      },
+      "effects": [],
+      "flags": {
+        "core": {
+          "sourceId": "Compendium.materia-dnd.monster-features.Item.UWiAfJBbkP2sct4e"
+        },
+        "dnd5e": {
+          "persistSourceMigration": true
+        }
+      },
+      "_stats": {
+        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.UWiAfJBbkP2sct4e",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "sort": 2700000,
+      "ownership": {
+        "default": 0
+      },
+      "_key": "!actors.items!BVp6oBvQhzPKhtcY.KgDYeIoA9PZBTmxZ"
     }
   ],
   "effects": [],
-  "sort": 0,
   "ownership": {
     "default": 0
   },
   "flags": {},
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
-    "createdTime": 1712620919507,
-    "modifiedTime": 1712621030545,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "systemVersion": "4.3.6",
+    "createdTime": 1741707679509,
+    "modifiedTime": 1741707711568,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_key": "!actors!ej9s9VpXGEcGN13F"
+  "_id": "BVp6oBvQhzPKhtcY",
+  "sort": 200000,
+  "_key": "!actors!BVp6oBvQhzPKhtcY"
 }

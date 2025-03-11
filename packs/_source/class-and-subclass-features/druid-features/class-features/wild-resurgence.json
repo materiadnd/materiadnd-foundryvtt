@@ -6,7 +6,7 @@
   "img": "icons/magic/nature/elemental-plant-humanoid.webp",
   "system": {
     "description": {
-      "value": "<p>Also at 3rd level, you regain one expended use of your Wild Shape when you complete a short rest.</p>",
+      "value": "<p>You regain one expended use of your Wild Shape when you complete a Short Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -75,6 +75,76 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "4ebikxtdPp0vTNcU": {
+        "type": "utility",
+        "_id": "4ebikxtdPp0vTNcU",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.51CTtXjg284mHaIj"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Regain Wild Shape Use",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -82,13 +152,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.1.1",
+    "systemVersion": "4.3.6",
     "coreVersion": "12.331",
     "createdTime": 1708905239790,
-    "modifiedTime": 1731558360337,
+    "modifiedTime": 1741707098310,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

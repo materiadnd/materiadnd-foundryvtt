@@ -6,7 +6,7 @@
   "img": "icons/magic/nature/root-vine-spiral-thorns-teal.webp",
   "system": {
     "description": {
-      "value": "<p>By 9th level, whenever you roll initiative, you regain one expended use of your Wild Shape. You cannot use this feature again until you finish a long rest.</p>",
+      "value": "<p>Whenever you roll initiative, you regain one expended use of your Wild Shape. You cannot use this feature again until you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -75,6 +75,108 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Regain Wild Shape Use",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "target": "",
+              "value": "1",
+              "scaling": {
+                "mode": "",
+                "formula": ""
+              }
+            },
+            {
+              "type": "activityUses"
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": []
+      },
+      "i771YEv5VaXbL0zD": {
+        "type": "utility",
+        "_id": "i771YEv5VaXbL0zD",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            },
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.51CTtXjg284mHaIj"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Regain Wild Shape Use",
+        "img": "",
+        "appliedEffects": []
+      }
+    },
+    "prerequisites": {
+      "level": 9
     }
   },
   "effects": [],
@@ -82,13 +184,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1708905526034,
-    "modifiedTime": 1708905686549,
+    "modifiedTime": 1741707348421,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
