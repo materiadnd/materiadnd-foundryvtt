@@ -6,7 +6,7 @@
   "img": "icons/commodities/gems/gem-rough-round-pink.webp",
   "system": {
     "description": {
-      "value": "<p>At 14th level, your skill with magic items deepens more:</p><ul><li>You can attune to up to five magic items at once.</li><li>You ignore all class, race, spell, and level requirements on attuning to or using a magic item.</li></ul>",
+      "value": "<p>Your skill with magic items deepens, granting you the following benefits:</p><p><strong>Additional Attunement.</strong> You can attune to up to five magic items at once rather than three.</p><p><strong>Expanded Replication.</strong> When you learn a plan for your [[/item Replicate Magic Item]] feature, you can now also choose from the <em>Magic Item Palsn (Artificer Level 14+)</em> table. You can have no more than three Rare items created by Replicate Magic Item at a time.</p>",
       "chat": ""
     },
     "source": {
@@ -75,9 +75,62 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 14
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Magic Item Savant - Attunement",
+      "img": "icons/commodities/gems/gem-rough-round-pink.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.EhSoWjnd3ho0f3Sn",
+      "_id": "fm2G3ISjaq2czYp8",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.attunement.max",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1741703242055,
+        "modifiedTime": 1741703251315,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!EhSoWjnd3ho0f3Sn.fm2G3ISjaq2czYp8"
+    }
+  ],
   "sort": 1050000,
   "ownership": {
     "default": 0
@@ -85,10 +138,10 @@
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1708890197568,
-    "modifiedTime": 1709695529072,
+    "modifiedTime": 1741703265900,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
