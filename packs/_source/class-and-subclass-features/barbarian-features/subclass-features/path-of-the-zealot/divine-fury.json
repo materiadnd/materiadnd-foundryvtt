@@ -6,7 +6,7 @@
   "img": "icons/magic/light/beam-strike-village-yellow.webp",
   "system": {
     "description": {
-      "value": "<p>Starting when you choose this path at 3rd level, you can channel divine fury into your weapon strikes. While you are raging, the first creature you hit on each of your turns with a weapon attack takes extra damage equal to 1d6 + half your barbarian level. The extra damage is necrotic or radiant; you choose the type of damage when you enter your rage.</p><p>When you reach certain levels in this class, the extra damage dice changes to: by 1d8 by 5th level, 1d10 by 11th level, and 1d12 by 17th level.</p>",
+      "value": "<p>You can channel divine power into your strikes. On each of your turns while your Rage is active, the first creature you hit with a weapon or an Unarmed Strike takes extra damage equal to 1d6 plus half your Barbarian level (round down). The extra damage is Necrotic or Radiant; you choose the type each time you deal the damage.</p><section id=\"secret-mA9DNIpWfOontmlO\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes an activity for each type of damage.</p></section>",
       "chat": ""
     },
     "source": {
@@ -80,6 +80,119 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Necrotic Divine Fury",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "self"
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": "@scale.path-of-the-zealot.divine-fury + floor(@classes.barbarian.levels / 2)"
+              },
+              "number": 1,
+              "denomination": "6",
+              "bonus": "(floor(@classes.barbarian.levels / 2))",
+              "types": [
+                "necrotic"
+              ]
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1",
+            "special": "First creature you hit with a weapon or an Unarmed Strike"
+          }
+        }
+      },
+      "njyrcu8BxbUuM6kB": {
+        "type": "damage",
+        "_id": "njyrcu8BxbUuM6kB",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "",
+            "special": "First creature you hit with a weapon or an Unarmed Strike"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": "6",
+              "bonus": "(floor(@classes.barbarian.levels / 2))",
+              "types": [
+                "radiant"
+              ]
+            }
+          ]
+        },
+        "name": "Radiant Divine Fury",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -87,13 +200,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1710729779095,
-    "modifiedTime": 1710730017292,
+    "modifiedTime": 1741754056489,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

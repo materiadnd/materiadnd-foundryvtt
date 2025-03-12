@@ -6,7 +6,7 @@
   "img": "icons/skills/melee/maneuver-greatsword-yellow.webp",
   "system": {
     "description": {
-      "value": "<p>Beginning at 10th level, you can use your action to frighten a creature within your menacing presence. Moreover, if you are raging you can attempt to frighten a creature in place of one of your attacks when you take the Attack action.</p><p>When you do so, choose one creature that you can see within 30 feet of you. If the creature can see or hear you, it must succeed on a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Strength modifier) or be frightened of you until the end of your next turn. On subsequent turns, you can use your action or substitute one of your attacks when you take the Attack action while raging to extend the duration of this effect on the frightened creature until the end of your next turn. If the frightened creature deals damage to you on their turn they can attempt to make repeat the Wisdom saving throw once on that turn.</p><p>This effect ends if the creature ends its turn out of line of sight or more than 60 feet away from you.</p>",
+      "value": "<p>As a Bonus Action, you can strike terror into others with your menacing presence and primal power. When you do so, each creature of your choice in a 30-foot Emanation originating from you must make a Wisdom saving throw (DC 8 plus your Strength modifier and Proficiency Bonus). On a failed save, a creature has the Frightened condition for 1 minute. At the end of each of the &amp;Reference[Frightened] creature's turns, the creature repeats the save, ending the effect on itself on a success.</p><p>Once you use this feature, you can't use it again until you finish a Long Rest unless you expend  use of your Rage (no action required) to restore your use of it.</p><section id=\"secret-DacU5LeehkXOGdyK\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Save</strong> activity includes an Active Effect which adds the Frightened condition.</p><p>The <strong>Recharge</strong> activity consumes a use of Rage and recharges your use of Intimidating Presence.</p></section>",
       "chat": ""
     },
     "source": {
@@ -37,9 +37,14 @@
     },
     "uses": {
       "value": null,
-      "max": "",
+      "max": "1",
       "per": null,
-      "recovery": "",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll"
+        }
+      ],
       "prompt": true
     },
     "consume": {
@@ -71,24 +76,196 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Path of the Berserker 10",
+    "requirements": "Path of the Berserker 14",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 14
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "activation": {
+          "type": "bonus"
+        },
+        "appliedEffects": [
+          "696D9juTv38uZKaR"
+        ],
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "target": {
+          "affects": {
+            "count": ""
+          },
+          "template": {
+            "type": "radius",
+            "size": "30"
+          }
+        },
+        "save": {
+          "dc": {
+            "calculation": "",
+            "formula": "8 + @mod + @prof"
+          }
+        },
+        "effects": [
+          {
+            "_id": "696D9juTv38uZKaR"
+          }
+        ],
+        "duration": {
+          "units": "inst"
+        }
+      },
+      "KiVW4HqfqZmxqEer": {
+        "type": "utility",
+        "_id": "KiVW4HqfqZmxqEer",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.matBrbRage000000"
+            },
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Recharge with Rage",
+        "img": "systems/dnd5e/icons/svg/trait-damage-immunities.svg",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Intimidated",
+      "img": "icons/skills/melee/maneuver-greatsword-yellow.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.TrRGPNBeVCl0VZLg",
+      "transfer": false,
+      "_id": "696D9juTv38uZKaR",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": 1,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "frightened"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1741737496538,
+        "modifiedTime": 1741737523122,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!TrRGPNBeVCl0VZLg.696D9juTv38uZKaR"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1710304165394,
-    "modifiedTime": 1710304354609,
+    "modifiedTime": 1741737615550,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

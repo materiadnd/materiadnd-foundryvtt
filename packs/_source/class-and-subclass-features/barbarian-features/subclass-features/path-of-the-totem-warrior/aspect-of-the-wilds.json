@@ -1,25 +1,25 @@
 {
-  "folder": "MN7sIUWxe8py6abD",
-  "name": "Zealous Presence",
+  "folder": "pyIaLwtdftY3v6dJ",
+  "name": "Aspect of the Wilds",
   "type": "feat",
-  "_id": "ZlOfKL7rgQuivxsx",
-  "img": "icons/skills/melee/weapons-crossed-swords-pink.webp",
+  "_id": "s4UllphvBCUmmf51",
+  "img": "icons/magic/nature/tree-animated-squint.webp",
   "system": {
     "description": {
-      "value": "<p>As a Bonus Action, you unleash a battle cry infused with divine energy. Up to ten other creatures of your choice within 60 feet of you gain Advantage on attack rolls and saving throws until the start of your next turn.</p><p>Once you use this feature, you can't use it again until you finish a Long Rest unless you expend a use of your Rage (no action required) to restore your use of it.</p><section id=\"secret-wNpNUmovptQUA3jD\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This <strong>Battle Cry</strong> activity includes an Active Effect for tracking impacted creatures but does not automate the advantage on attack rolls and saving throws.</p><p>The <strong>Recharge with Rage</strong> expends a Rage and restores a use of this feature.</p></section>",
+      "value": "<p>You gain one of the following options of your choice. Whenever you finish a Long Rest, you can change your choice.</p><p><strong>Owl.</strong> You have Darkvision with a range of 60 feet. If you already have Darkvision, its range increases by 60 feet.</p><p><strong>Panther.</strong> You have a Climb Speed equal to your Speed.</p><p><strong>Salmon.</strong> You have a Swim Speed equal to your Speed.</p><section id=\"secret-1pZVDy0Z6cpSEhCK\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes an activity with an Active Effect which automates the Darkvision changes from the <strong>Owl</strong> option. The Speed changes are not automatically applied.</p></section>",
       "chat": ""
     },
     "source": {
       "book": "Materia"
     },
     "activation": {
-      "type": "bonus",
-      "cost": 1,
+      "type": "",
+      "cost": null,
       "condition": ""
     },
     "duration": {
-      "value": "1",
-      "units": "round"
+      "value": "",
+      "units": ""
     },
     "cover": null,
     "crewed": false,
@@ -27,19 +27,24 @@
       "value": null,
       "width": null,
       "units": "",
-      "type": "ally",
+      "type": "",
       "prompt": true
     },
     "range": {
-      "value": 60,
+      "value": null,
       "long": null,
-      "units": "ft"
+      "units": ""
     },
     "uses": {
-      "value": 1,
+      "value": null,
       "max": "1",
-      "per": "lr",
-      "recovery": "",
+      "per": null,
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll"
+        }
+      ],
       "prompt": true
     },
     "consume": {
@@ -77,15 +82,15 @@
       "charged": false
     },
     "prerequisites": {
-      "level": 10
+      "level": 6
     },
     "activities": {
-      "SI7meARHQMrsdc7U": {
+      "A19RrhEspMqfWqLL": {
         "type": "utility",
-        "_id": "SI7meARHQMrsdc7U",
+        "_id": "A19RrhEspMqfWqLL",
         "sort": 0,
         "activation": {
-          "type": "bonus",
+          "type": "",
           "value": null,
           "override": false,
           "condition": ""
@@ -113,14 +118,13 @@
         },
         "effects": [
           {
-            "_id": "VgtlZw2ebgSdinH7"
+            "_id": "UKr4W1lk6YzBQmlf"
           }
         ],
         "range": {
           "override": false,
-          "units": "ft",
-          "special": "",
-          "value": "60"
+          "units": "self",
+          "special": ""
         },
         "target": {
           "template": {
@@ -130,9 +134,7 @@
           },
           "affects": {
             "choice": false,
-            "type": "creature",
-            "count": "10",
-            "special": ""
+            "type": "self"
           },
           "override": false,
           "prompt": true
@@ -148,14 +150,13 @@
           "name": "",
           "formula": ""
         },
-        "name": "Battle Cry",
-        "img": "systems/dnd5e/icons/svg/damage/psychic.svg",
+        "name": "Owl",
+        "img": "",
         "appliedEffects": []
       },
-      "7LvhTfx6vZkRGz50": {
+      "2hVf4t2jOXiOhJpB": {
         "type": "utility",
-        "name": "Recharge with Rage",
-        "_id": "7LvhTfx6vZkRGz50",
+        "_id": "2hVf4t2jOXiOhJpB",
         "sort": 0,
         "activation": {
           "type": "",
@@ -172,11 +173,6 @@
             {
               "type": "itemUses",
               "value": "1",
-              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.matBrbRage000000"
-            },
-            {
-              "type": "itemUses",
-              "value": "-1",
               "target": ""
             }
           ]
@@ -203,7 +199,7 @@
           },
           "affects": {
             "choice": false,
-            "type": ""
+            "type": "self"
           },
           "override": false,
           "prompt": true
@@ -219,6 +215,72 @@
           "name": "",
           "formula": ""
         },
+        "name": "Panther",
+        "img": "",
+        "appliedEffects": []
+      },
+      "Na8tM29ktveKsqSQ": {
+        "type": "utility",
+        "_id": "Na8tM29ktveKsqSQ",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Salmon",
         "img": "",
         "appliedEffects": []
       }
@@ -226,25 +288,32 @@
   },
   "effects": [
     {
-      "name": "Zealous Presence",
-      "img": "icons/skills/melee/weapons-crossed-swords-pink.webp",
-      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.ZlOfKL7rgQuivxsx",
+      "name": "Aspect of the Owl",
+      "img": "icons/magic/nature/tree-animated-squint.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.s4UllphvBCUmmf51",
       "transfer": false,
-      "_id": "VgtlZw2ebgSdinH7",
+      "_id": "UKr4W1lk6YzBQmlf",
       "type": "base",
       "system": {},
-      "changes": [],
+      "changes": [
+        {
+          "key": "attributes.senses.darkvision",
+          "mode": 2,
+          "value": "60",
+          "priority": null
+        }
+      ],
       "disabled": false,
       "duration": {
         "startTime": null,
         "seconds": null,
         "combat": null,
         "rounds": null,
-        "turns": 1,
+        "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>You gain Advantage on attack rolls and saving throws until the start of Zealots next turn.</p>",
+      "description": "",
       "tint": "#ffffff",
       "statuses": [],
       "sort": 0,
@@ -261,14 +330,14 @@
         "coreVersion": "12.331",
         "systemId": "dnd5e",
         "systemVersion": "4.3.6",
-        "createdTime": 1741754679208,
-        "modifiedTime": 1741754702619,
+        "createdTime": 1741753055521,
+        "modifiedTime": 1741753073261,
         "lastModifiedBy": "dnd5mbuilder0000"
       },
-      "_key": "!items.effects!ZlOfKL7rgQuivxsx.VgtlZw2ebgSdinH7"
+      "_key": "!items.effects!s4UllphvBCUmmf51.UKr4W1lk6YzBQmlf"
     }
   ],
-  "sort": 0,
+  "sort": 600000,
   "ownership": {
     "default": 0
   },
@@ -284,10 +353,10 @@
     "systemId": "dnd5e",
     "systemVersion": "4.3.6",
     "coreVersion": "12.331",
-    "createdTime": 1710730434621,
-    "modifiedTime": 1741754759685,
+    "createdTime": 1710720068350,
+    "modifiedTime": 1741753167933,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "_key": "!items!ZlOfKL7rgQuivxsx"
+  "_key": "!items!s4UllphvBCUmmf51"
 }

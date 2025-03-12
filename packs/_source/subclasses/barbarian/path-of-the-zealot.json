@@ -6,54 +6,28 @@
   "img": "icons/weapons/maces/mace-spiked-skull.webp",
   "system": {
     "description": {
-      "value": "<p>Some deities inspire their followers to pitch themselves into a ferocious battle fury. These barbarians are zealots - warriors who channel their rage into powerful displays of divine power.</p><p>A variety of gods across the worlds of D&amp;D inspire their followers to embrace this path. Tempus from the Forgotten Realms and Hextor and Erythnul of Greyhawk are all prime examples. In general, the gods who inspire zealots are deities of combat, destruction, and violence. Not all are evil, but few are good.</p>",
+      "value": "<blockquote><p>Rage in Ecstatic Union with a God</p></blockquote><p>Barbarians who walk the Path of the Zealot receive boons from a god or pantheon. These Barbarians experience their Rage as an ecstatic episode of divine union that infuses them with power. They are often allies to the priests and other followers of their god or pantheon.</p>",
       "chat": ""
     },
     "source": {
       "book": "Materia"
     },
-    "identifier": "path-of-the-zealot",
+    "identifier": "zealot",
     "classIdentifier": "barbarian",
     "advancement": [
-      {
-        "_id": "sKv3WFRR89d6AckK",
-        "type": "ScaleValue",
-        "configuration": {
-          "identifier": "",
-          "type": "dice",
-          "distance": {
-            "units": ""
-          },
-          "scale": {
-            "3": {
-              "number": null,
-              "faces": 6
-            },
-            "5": {
-              "number": null,
-              "faces": 8
-            },
-            "11": {
-              "number": null,
-              "faces": 10
-            },
-            "17": {
-              "number": null,
-              "faces": 12
-            }
-          }
-        },
-        "value": {},
-        "title": "Divine Fury",
-        "icon": null
-      },
       {
         "_id": "lEeSEoV9hSOP6X3z",
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.YKDWiRnKJ4VARBC3",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.imn3HIv0ng06d74y"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.YKDWiRnKJ4VARBC3",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.imn3HIv0ng06d74y",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -68,7 +42,10 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.uJgqobI8bkP0mMWw"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.uJgqobI8bkP0mMWw",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -83,7 +60,10 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.ZlOfKL7rgQuivxsx"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.ZlOfKL7rgQuivxsx",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -98,7 +78,10 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.u4bKy1wGWHR8ecjm"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.u4bKy1wGWHR8ecjm",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -107,11 +90,50 @@
         "level": 14,
         "title": "Features",
         "icon": null
+      },
+      {
+        "_id": "G7YbSDO0Y9HoUY2O",
+        "type": "ScaleValue",
+        "configuration": {
+          "identifier": "pool",
+          "type": "dice",
+          "distance": {
+            "units": ""
+          },
+          "scale": {
+            "3": {
+              "number": 4,
+              "faces": 12,
+              "modifiers": []
+            },
+            "6": {
+              "number": 5,
+              "faces": 12,
+              "modifiers": []
+            },
+            "12": {
+              "number": 6,
+              "faces": 12,
+              "modifiers": []
+            },
+            "17": {
+              "number": 7,
+              "faces": 12,
+              "modifiers": []
+            }
+          }
+        },
+        "value": {},
+        "title": "Warrior of the Gods: Pool Size",
+        "hint": ""
       }
     ],
     "spellcasting": {
       "progression": "none",
-      "ability": ""
+      "ability": "",
+      "preparation": {
+        "formula": ""
+      }
     }
   },
   "effects": [],
@@ -122,10 +144,10 @@
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1710729716235,
-    "modifiedTime": 1710730795701,
+    "modifiedTime": 1741754440602,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

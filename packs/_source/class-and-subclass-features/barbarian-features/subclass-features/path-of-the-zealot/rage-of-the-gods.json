@@ -1,25 +1,25 @@
 {
   "folder": "MN7sIUWxe8py6abD",
-  "name": "Zealous Presence",
+  "name": "Rage of the Gods",
   "type": "feat",
-  "_id": "ZlOfKL7rgQuivxsx",
-  "img": "icons/skills/melee/weapons-crossed-swords-pink.webp",
+  "_id": "u4bKy1wGWHR8ecjm",
+  "img": "icons/magic/death/skeleton-glow-yellow-black.webp",
   "system": {
     "description": {
-      "value": "<p>As a Bonus Action, you unleash a battle cry infused with divine energy. Up to ten other creatures of your choice within 60 feet of you gain Advantage on attack rolls and saving throws until the start of your next turn.</p><p>Once you use this feature, you can't use it again until you finish a Long Rest unless you expend a use of your Rage (no action required) to restore your use of it.</p><section id=\"secret-wNpNUmovptQUA3jD\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This <strong>Battle Cry</strong> activity includes an Active Effect for tracking impacted creatures but does not automate the advantage on attack rolls and saving throws.</p><p>The <strong>Recharge with Rage</strong> expends a Rage and restores a use of this feature.</p></section>",
+      "value": "<p>When you activate your Rage, you can assume the form of a divine warrior. This form lasts for 1 minute or until you drop to 0 Hit Points. Once you use this feature, you can't do so again until you finish a Long Rest.</p><p>While in this form, you gain the benefits below.</p><p><strong>Flight.</strong> You have a Fly Speed equal to your Speed and can hover.</p><p><strong>Resistance.</strong> You have Resistance to Necrotic, Psychic, and Radiant damage.</p><p><strong>Revivification.</strong> When a creature within 30 feet of you would drop to 0 Hit Points, you can take a Reaction to expend a use of your Rage to instead change the target's Hit Points to a number equal to your Barbarian level (currently @classes.barbarian.levels).</p><section id=\"secret-ApyWwLM47HlpMLei\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Rage of the Gods</strong> activity includes an Active Effect for automatically adding the resistances and hover but does not provide the fly speed.</p><p>The <strong>Revivification</strong> activity includes a healing roll of your Barbarian level.</p></section>",
       "chat": ""
     },
     "source": {
       "book": "Materia"
     },
     "activation": {
-      "type": "bonus",
-      "cost": 1,
+      "type": "",
+      "cost": null,
       "condition": ""
     },
     "duration": {
-      "value": "1",
-      "units": "round"
+      "value": "",
+      "units": ""
     },
     "cover": null,
     "crewed": false,
@@ -27,18 +27,18 @@
       "value": null,
       "width": null,
       "units": "",
-      "type": "ally",
+      "type": "",
       "prompt": true
     },
     "range": {
-      "value": 60,
+      "value": null,
       "long": null,
-      "units": "ft"
+      "units": ""
     },
     "uses": {
-      "value": 1,
-      "max": "1",
-      "per": "lr",
+      "value": null,
+      "max": "",
+      "per": null,
       "recovery": "",
       "prompt": true
     },
@@ -77,15 +77,15 @@
       "charged": false
     },
     "prerequisites": {
-      "level": 10
+      "level": 14
     },
     "activities": {
-      "SI7meARHQMrsdc7U": {
+      "4etcSoSy7eIWJPbP": {
         "type": "utility",
-        "_id": "SI7meARHQMrsdc7U",
+        "_id": "4etcSoSy7eIWJPbP",
         "sort": 0,
         "activation": {
-          "type": "bonus",
+          "type": "",
           "value": null,
           "override": false,
           "condition": ""
@@ -95,32 +95,26 @@
             "allowed": false
           },
           "spellSlot": true,
-          "targets": [
-            {
-              "type": "itemUses",
-              "value": "1",
-              "target": ""
-            }
-          ]
+          "targets": []
         },
         "description": {
           "chatFlavor": ""
         },
         "duration": {
-          "units": "inst",
+          "units": "minute",
           "concentration": false,
-          "override": false
+          "override": false,
+          "value": "1"
         },
         "effects": [
           {
-            "_id": "VgtlZw2ebgSdinH7"
+            "_id": "gCNmup2I3Iue17Eq"
           }
         ],
         "range": {
           "override": false,
-          "units": "ft",
-          "special": "",
-          "value": "60"
+          "units": "self",
+          "special": ""
         },
         "target": {
           "template": {
@@ -130,9 +124,7 @@
           },
           "affects": {
             "choice": false,
-            "type": "creature",
-            "count": "10",
-            "special": ""
+            "type": "self"
           },
           "override": false,
           "prompt": true
@@ -148,20 +140,19 @@
           "name": "",
           "formula": ""
         },
-        "name": "Battle Cry",
-        "img": "systems/dnd5e/icons/svg/damage/psychic.svg",
+        "name": "Rage of the Gods",
+        "img": "",
         "appliedEffects": []
       },
-      "7LvhTfx6vZkRGz50": {
-        "type": "utility",
-        "name": "Recharge with Rage",
-        "_id": "7LvhTfx6vZkRGz50",
+      "9XN2eYOG0Ns93R43": {
+        "type": "heal",
+        "_id": "9XN2eYOG0Ns93R43",
         "sort": 0,
         "activation": {
-          "type": "",
+          "type": "reaction",
           "value": null,
           "override": false,
-          "condition": ""
+          "condition": "When a creature within 30 feet of you would drop to 0 Hit Points"
         },
         "consumption": {
           "scaling": {
@@ -173,11 +164,6 @@
               "type": "itemUses",
               "value": "1",
               "target": "Compendium.materia-dnd.class-and-subclass-features.Item.matBrbRage000000"
-            },
-            {
-              "type": "itemUses",
-              "value": "-1",
-              "target": ""
             }
           ]
         },
@@ -192,8 +178,9 @@
         "effects": [],
         "range": {
           "override": false,
-          "units": "self",
-          "special": ""
+          "units": "ft",
+          "special": "",
+          "value": "30"
         },
         "target": {
           "template": {
@@ -203,7 +190,9 @@
           },
           "affects": {
             "choice": false,
-            "type": ""
+            "type": "creature",
+            "count": "1",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -213,12 +202,22 @@
           "recovery": [],
           "max": ""
         },
-        "roll": {
-          "prompt": false,
-          "visible": false,
-          "name": "",
-          "formula": ""
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "@classes.barbarian.levels"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
         },
+        "name": "Revivification",
         "img": "",
         "appliedEffects": []
       }
@@ -226,25 +225,50 @@
   },
   "effects": [
     {
-      "name": "Zealous Presence",
-      "img": "icons/skills/melee/weapons-crossed-swords-pink.webp",
-      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.ZlOfKL7rgQuivxsx",
+      "name": "Rage of the Gods",
+      "img": "icons/magic/death/skeleton-glow-yellow-black.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.u4bKy1wGWHR8ecjm",
       "transfer": false,
-      "_id": "VgtlZw2ebgSdinH7",
+      "_id": "gCNmup2I3Iue17Eq",
       "type": "base",
       "system": {},
-      "changes": [],
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "necrotic",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "psychic",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "radiant",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.hover",
+          "mode": 5,
+          "value": "true",
+          "priority": null
+        }
+      ],
       "disabled": false,
       "duration": {
         "startTime": null,
-        "seconds": null,
+        "seconds": 60,
         "combat": null,
         "rounds": null,
-        "turns": 1,
+        "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "description": "<p>You gain Advantage on attack rolls and saving throws until the start of Zealots next turn.</p>",
+      "description": "<p>While in this form, you gain the benefits below.</p><p>Flight. You have a Fly Speed equal to your Speed and can hover.</p><p>Resistance. You have Resistance to Necrotic, Psychic, and Radiant damage.</p><p>Revivification. When a creature within 30 feet of you would drop to 0 Hit Points, you can take a Reaction to expend a use of your Rage to instead change the target's Hit Points to a number equal to your Barbarian level (currently @classes.barbarian.levels).</p>",
       "tint": "#ffffff",
       "statuses": [],
       "sort": 0,
@@ -261,11 +285,11 @@
         "coreVersion": "12.331",
         "systemId": "dnd5e",
         "systemVersion": "4.3.6",
-        "createdTime": 1741754679208,
-        "modifiedTime": 1741754702619,
+        "createdTime": 1741754988372,
+        "modifiedTime": 1741755028447,
         "lastModifiedBy": "dnd5mbuilder0000"
       },
-      "_key": "!items.effects!ZlOfKL7rgQuivxsx.VgtlZw2ebgSdinH7"
+      "_key": "!items.effects!u4bKy1wGWHR8ecjm.gCNmup2I3Iue17Eq"
     }
   ],
   "sort": 0,
@@ -284,10 +308,10 @@
     "systemId": "dnd5e",
     "systemVersion": "4.3.6",
     "coreVersion": "12.331",
-    "createdTime": 1710730434621,
-    "modifiedTime": 1741754759685,
+    "createdTime": 1710730575560,
+    "modifiedTime": 1741755111300,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "_key": "!items!ZlOfKL7rgQuivxsx"
+  "_key": "!items!u4bKy1wGWHR8ecjm"
 }
