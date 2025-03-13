@@ -6,7 +6,7 @@
   "img": "icons/creatures/abilities/bear-roar-bite-brown.webp",
   "system": {
     "description": {
-      "value": "<p>By 10th level, when you hit a creature with your natural weapons while you are raging, the beast within you can curse your target with rabid fury. The target must succeed on a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Constituion modifier) or suffer one of the following effects (your choice):</p><ul><li>The target must use its reaction to make a melee attack against another creature of your choice that you can see.</li><li>The target takes a number of d12 equal to your Rage Damage plus your Rage Damage, as shown on the Rage Damage column of the Barbarian table psychic damage.</li></ul><p>You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>",
+      "value": "<p>When you hit a creature with your natural weapons while your Rage is active, the beast within you can curse your target with rabid fury. The target must succeed on a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Constituion modifier) or suffer one of the following effects (your choice):</p><p><strong>Misdirected Rage.</strong> The target must use its reaction to make a melee attack against another creature of your choice that you can see.</p><p><strong>Punishing Fury.</strong> The target takes psychic damage equal to your Rage Damage plus a number of d12s equal to your Rage Damage as shown on the Barbarian Features table.</p><p>You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p><section id=\"secret-dgzap20ymsOIUyOP\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Infectious Fury</strong> activity consumes one of this feature's uses and provokes the appropriate saving throw.</p><p>The <strong>Punishing Fury</strong> activity rolls the appropriate damage roll if this effect is chosen.</p></section>",
       "chat": ""
     },
     "source": {
@@ -71,20 +71,180 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Path of the Beast 10",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 10
+    },
+    "activities": {
+      "jL3kIBDYGdAZhJAz": {
+        "type": "damage",
+        "_id": "jL3kIBDYGdAZhJAz",
+        "sort": 200000,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "(@scale.barbarian.rage-damage)d12 + @scale.barbarian.rage-damage"
+              },
+              "number": null,
+              "denomination": 0,
+              "bonus": "",
+              "types": [
+                "psychic"
+              ]
+            }
+          ]
+        },
+        "name": "Punishing Fury",
+        "img": "",
+        "appliedEffects": []
+      },
+      "xigrgDahQghDeXNf": {
+        "type": "save",
+        "_id": "xigrgDahQghDeXNf",
+        "sort": 100000,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": "You hit a creature with your natural weapons while your Rage is active"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "con",
+            "formula": ""
+          }
+        },
+        "name": "Infectious Fury",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1708298525878,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1741791807987,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

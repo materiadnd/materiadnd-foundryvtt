@@ -6,7 +6,7 @@
   "img": "icons/magic/air/wind-tornado-wall-blue.webp",
   "system": {
     "description": {
-      "value": "<p>Starting when you choose this path at 3rd level, you emanate a stormy, magical aura while you rage. The aura extends 10 feet from you in every direction, but not through total cover.</p><p>Your aura has an effect that activates when you enter your rage, and you can activate the effect again on each of your turns as a bonus action. The aura whips up strong winds (20 miles per hour) in the aura that moves with you, remaining centered on you. The winds have the following effects:</p><ul><li>It deafens you and other creatures in its area.</li><li>It extinguishes unprotected flames in its area that are torch-sized or smaller.</li><li>It hedges out vapor, gas, and fog that can be dispersed by strong wind.</li><li>The area is difficult terrain for creatures other than you.</li><li>The attack rolls of ranged weapon attacks have disadvantage if the attacks pass in or out of the wind.</li><li>Additional effect based on the environment you select below.</li></ul><p>When you rage choose @UUID[Compendium.materia-dnd.class-and-subclass-features.Item.eBWMMh9KIap4nxMo]{Storm Aura: Desert}, @UUID[Compendium.materia-dnd.class-and-subclass-features.Item.OusvQpQ2NhxYecoF]{Storm Aura: Sea}, or @UUID[Compendium.materia-dnd.class-and-subclass-features.Item.dbpmLgFI9lzObTIf]{Storm Aura: Tundra}.</p><p>If your aura's effects require a saving throw, the <strong>DC equals 8 + your proficiency bonus + your Constitution modifier.</strong></p>",
+      "value": "<p>While your Rage is active you have a stormy 10-foot Emanation originating from you.</p><p>This emanation has an effect that activates when it appears, and you can activate the effect again on each of your turns as a Bonus Action. The emanation whips up strong winds (20 miles per hour) in the area. The winds have the following effects:</p><ul><li>It deafens you and other creatures in its area.</li><li>It extinguishes unprotected flames in its area that are torch-sized or smaller.</li><li>It hedges out vapor, gas, and fog that can be dispersed by strong wind.</li><li>The area is &amp;Reference[difficult terrain] for creatures other than you.</li><li>The attack rolls of ranged weapon attacks have Disadvantage if the attacks pass in or out of the wind.</li><li>Additional effect based on the environment you select below.</li></ul><p>Additionally, choose one of the following additional effects that applies to your Storm Aura.  You can choose a different effect each time you enter your Rage.</p><p><strong>Desert.</strong> When a creature enters the area for the first time on a turn or starts its turn there, it must make a Constitution saving throw. On a failed save, they lose their Reaction and their AC is reduced by an amount equal to your Rage Damage, as shown on the Barbarian Features table, until the start of their next turn.</p><p><strong>Sea.</strong> When a creature enters the area for the first time on a turn or starts its turn there, it must make a Strength saving throw. On a failed save, the creature is pulled up to 10 feet towards you and any Strength or Dexteriy ability check or Constitution check to maintain Concentration on a spell are reduced by an amount equal to your Rage Damage, as shown on the Barbarian Features table, until the start of their next turn.</p><p><strong>Tundra.</strong> When any creature of your choice enters the area for the first time on a turn or starts its turn in your aura the creature gains Temporary Hit Points of an amount equal to your Rage Damage, as shown on the Barbarian Features table.</p><p>If your aura's effects require a saving throw, the <strong>DC equals 8 + your proficiency bonus + your Constitution modifier.</strong></p><section class=\"secret\" id=\"secret-v0hRyr3CxJVOwC8d\"><p><strong>Foundry Notes</strong></p><p>The <strong>Activate Aura</strong> effect applies the Emanation to yourself.</p><p>The <strong>Save (Desert)</strong> activity applies an effect to targets that fail their save which reduces the target's AC, but it cannot automate losing their reaction.</p><p>The <strong>Save (Sea)</strong> activity applies an effect to targets that fail their save, but does not automate the reduction to the specified checks.</p><p>The <strong>Heal (Tundra)</strong> activity applies the appropriate amount of temporary hit points.</p></section>",
       "chat": ""
     },
     "source": {
@@ -71,24 +71,351 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Path of the Storm Herald 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Activate Aura",
+        "img": "",
+        "appliedEffects": [],
+        "activation": {
+          "type": ""
+        },
+        "duration": {
+          "units": "inst"
+        }
+      },
+      "wEpFg592jBm1Wj3F": {
+        "type": "save",
+        "_id": "wEpFg592jBm1Wj3F",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "yhs63E8kHyBLpqlt"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "con",
+            "formula": ""
+          }
+        },
+        "name": "Save (Desert)",
+        "img": "",
+        "appliedEffects": []
+      },
+      "RSOelXDjXcuOG8vt": {
+        "type": "save",
+        "_id": "RSOelXDjXcuOG8vt",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "VyL4CpttYUnN3IEO"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "str"
+          ],
+          "dc": {
+            "calculation": "con",
+            "formula": ""
+          }
+        },
+        "name": "Save (Sea)",
+        "img": "",
+        "appliedEffects": []
+      },
+      "le0niNLM7V9US5AQ": {
+        "type": "heal",
+        "_id": "le0niNLM7V9US5AQ",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "temphp"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "@scale.barbarian.rage-damage"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "Heal (Tundra)",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Harried (Desert Aura)",
+      "img": "icons/magic/air/wind-tornado-wall-blue.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.3YyyU6IeQB5vdnNp",
+      "transfer": false,
+      "_id": "yhs63E8kHyBLpqlt",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.ac.bonus",
+          "mode": 2,
+          "value": "-@scale.barbarian.rage-damage",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>On a failed save, they lose their Reaction and their AC is reduced by an amount equal to your Rage Damage, as shown on the Barbarian Features table, until the start of their next turn.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1741839257932,
+        "modifiedTime": 1741839325308,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!3YyyU6IeQB5vdnNp.yhs63E8kHyBLpqlt"
+    },
+    {
+      "name": "Whelmed (Sea Aura)",
+      "img": "icons/magic/air/wind-tornado-wall-blue.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.3YyyU6IeQB5vdnNp",
+      "transfer": false,
+      "_id": "VyL4CpttYUnN3IEO",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>On a failed save, the creature is pulled up to 10 feet towards you and any Strength or Dexteriy ability check or Constitution check to maintain Concentration on a spell are reduced by an amount equal to your Rage Damage, as shown on the Barbarian Features table, until the start of their next turn.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1741839374856,
+        "modifiedTime": 1741839401240,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!3YyyU6IeQB5vdnNp.VyL4CpttYUnN3IEO"
+    }
+  ],
   "sort": 200000,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1710700855255,
-    "modifiedTime": 1710710178546,
+    "modifiedTime": 1741904129383,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

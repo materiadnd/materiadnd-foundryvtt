@@ -6,7 +6,7 @@
   "img": "icons/magic/fire/dagger-rune-enchant-flame-strong-purple.webp",
   "system": {
     "description": {
-      "value": "<p>Beginning at 6th level, your bond with the elemental might of giants grows, and you learn to infuse weapons with primordial energy.</p><p>When you enter your rage, you can choose one weapon that you are holding -and infuse it with one of the following damage types: acid, cold, fire, thunder, or lightning. While you wield the infused weapon during your rage, the weapon's damage type changes to the chosen type, it deals an extra 1d6 damage of the chosen type when it hits, and it gains the thrown property, with a normal range of 20 feet and a long range of 60 feet. If you throw the weapon, it reappears in your hand the instant after it hits or misses a target. The infused weapon's benefits are suppressed while a creature other than you wields it.</p><p>While raging and holding the infused weapon, you can use a bonus action to change the infused weapon's current damage type to another one from the damage type options above.</p>",
+      "value": "<p>Your bond with the elemental might of giants grows, and you learn to infuse weapons with primordial energy.</p><p>When you enter your Rage, you can choose one weapon that you are holding -and infuse it with one of the following damage types: acid, cold, fire, thunder, or lightning. While you wield the infused weapon during your Rage, the weapon's damage type changes to the chosen type, it deals an extra 1d6 damage of the chosen type when it hits, and it gains the Thrown property, with a normal range of 20 feet and a long range of 60 feet. If you throw the weapon, it reappears in your hand the instant after it hits or misses a target. The infused weapon's benefits are suppressed while a creature other than you wields it.</p><p>While your Rage is active and you are holding the infused weapon, you can use a Bonus Action to change the infused weapon's current damage type to another one from the damage type options above.</p><section id=\"secret-BIKUPABZhddaHHq0\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Infuse Weapon</strong> activity can be used for the initial and subsequant infusions of your weapon.  Select the appropriate enchantment for the damage type.  You should remove any existing enchantment from the weapon prior to applying this one.</p><p>The <strong>Change Infusion</strong> activity is simply there to specify it takes a Bonus Action to do so.  You will still need to use the <strong>Infuse Weapon</strong> activity to change it.</p></section>",
       "chat": ""
     },
     "source": {
@@ -75,24 +75,575 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Path of the Giant 6",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "7XYamset7LA12vlK": {
+        "type": "enchant",
+        "_id": "7XYamset7LA12vlK",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "LDbOeyNKEe1LPImd",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "riders": {
+              "activity": [],
+              "effect": [],
+              "item": []
+            }
+          },
+          {
+            "_id": "VDfgvREjhqn4hMUf",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "riders": {
+              "activity": [],
+              "effect": [],
+              "item": []
+            }
+          },
+          {
+            "_id": "1ctENPCHiDqWqXmx",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "riders": {
+              "activity": [],
+              "effect": [],
+              "item": []
+            }
+          },
+          {
+            "_id": "yvhWBdNQHnz5mGFG",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "riders": {
+              "activity": [],
+              "effect": [],
+              "item": []
+            }
+          },
+          {
+            "_id": "kSdqQGZ7GJmpPO9Q"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "enchant": {
+          "identifier": ""
+        },
+        "restrictions": {
+          "allowMagical": false,
+          "categories": [],
+          "properties": [],
+          "type": "weapon"
+        },
+        "name": "Infuse Weapon",
+        "img": "",
+        "appliedEffects": []
+      },
+      "jctf1kURYXWHOw2f": {
+        "type": "utility",
+        "_id": "jctf1kURYXWHOw2f",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Change Infusion",
+        "img": "",
+        "appliedEffects": []
+      }
+    },
+    "prerequisites": {
+      "level": 6
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "type": "enchantment",
+      "name": "Elemental Cleaver - Acid",
+      "img": "icons/magic/fire/dagger-rune-enchant-flame-strong-purple.webp",
+      "disabled": true,
+      "_id": "LDbOeyNKEe1LPImd",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "value": "{}, Acid",
+          "priority": null
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "value": "thr",
+          "priority": null
+        },
+        {
+          "key": "system.range.long",
+          "mode": 4,
+          "value": "@scale.giant.infusion-long",
+          "priority": null
+        },
+        {
+          "key": "system.range.value",
+          "mode": 4,
+          "value": "@scale.giant.infusion-range",
+          "priority": null
+        },
+        {
+          "key": "system.damage.parts",
+          "mode": 2,
+          "value": "[[\"@scale.giant.infusion-damage\", \"acid\"]]",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1741802501817,
+        "modifiedTime": 1741803416119,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!d5rP5I2hFQQ9wiKO.LDbOeyNKEe1LPImd"
+    },
+    {
+      "type": "enchantment",
+      "name": "Elemental Cleaver - Cold",
+      "img": "icons/magic/fire/dagger-rune-enchant-flame-strong-purple.webp",
+      "disabled": true,
+      "_id": "VDfgvREjhqn4hMUf",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "value": "{}, Cold",
+          "priority": null
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "value": "thr",
+          "priority": null
+        },
+        {
+          "key": "system.range.long",
+          "mode": 4,
+          "value": "@scale.giant.infusion-long",
+          "priority": null
+        },
+        {
+          "key": "system.range.value",
+          "mode": 4,
+          "value": "@scale.giant.infusion-range",
+          "priority": null
+        },
+        {
+          "key": "system.damage.parts",
+          "mode": 2,
+          "value": "[[\"@scale.giant.infusion-damage\", \"cold\"]]",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1741802686832,
+        "modifiedTime": 1741803422084,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!d5rP5I2hFQQ9wiKO.VDfgvREjhqn4hMUf"
+    },
+    {
+      "type": "enchantment",
+      "name": "Elemental Cleaver - Fire",
+      "img": "icons/magic/fire/dagger-rune-enchant-flame-strong-purple.webp",
+      "disabled": true,
+      "_id": "1ctENPCHiDqWqXmx",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "value": "{}, Fire",
+          "priority": null
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "value": "thr",
+          "priority": null
+        },
+        {
+          "key": "system.range.long",
+          "mode": 4,
+          "value": "@scale.giant.infusion-long",
+          "priority": null
+        },
+        {
+          "key": "system.range.value",
+          "mode": 4,
+          "value": "@scale.giant.infusion-range",
+          "priority": null
+        },
+        {
+          "key": "system.damage.parts",
+          "mode": 2,
+          "value": "[[\"@scale.giant.infusion-damage\", \"fire\"]]",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1741802730690,
+        "modifiedTime": 1741803424605,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!d5rP5I2hFQQ9wiKO.1ctENPCHiDqWqXmx"
+    },
+    {
+      "type": "enchantment",
+      "name": "Elemental Cleaver - Thunder",
+      "img": "icons/magic/fire/dagger-rune-enchant-flame-strong-purple.webp",
+      "disabled": true,
+      "_id": "yvhWBdNQHnz5mGFG",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "value": "{}, Thunder",
+          "priority": null
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "value": "thr",
+          "priority": null
+        },
+        {
+          "key": "system.range.long",
+          "mode": 4,
+          "value": "@scale.giant.infusion-long",
+          "priority": null
+        },
+        {
+          "key": "system.range.value",
+          "mode": 4,
+          "value": "@scale.giant.infusion-range",
+          "priority": null
+        },
+        {
+          "key": "system.damage.parts",
+          "mode": 2,
+          "value": "[[\"@scale.giant.infusion-damage\", \"thunder\"]]",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1741802773900,
+        "modifiedTime": 1741803432119,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!d5rP5I2hFQQ9wiKO.yvhWBdNQHnz5mGFG"
+    },
+    {
+      "type": "enchantment",
+      "name": "Elemental Cleaver - Lightning",
+      "img": "icons/magic/fire/dagger-rune-enchant-flame-strong-purple.webp",
+      "disabled": true,
+      "_id": "kSdqQGZ7GJmpPO9Q",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "value": "{}, Acid",
+          "priority": null
+        },
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "value": "thr",
+          "priority": null
+        },
+        {
+          "key": "system.range.long",
+          "mode": 4,
+          "value": "@scale.giant.infusion-long",
+          "priority": null
+        },
+        {
+          "key": "system.range.value",
+          "mode": 4,
+          "value": "@scale.giant.infusion-range",
+          "priority": null
+        },
+        {
+          "key": "system.damage.parts",
+          "mode": 2,
+          "value": "[[\"@scale.giant.infusion-damage\", \"lightning\"]]",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1741802854543,
+        "modifiedTime": 1741803427209,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!d5rP5I2hFQQ9wiKO.kSdqQGZ7GJmpPO9Q"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1712806024329,
-    "modifiedTime": 1712806379886,
+    "modifiedTime": 1741803084522,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

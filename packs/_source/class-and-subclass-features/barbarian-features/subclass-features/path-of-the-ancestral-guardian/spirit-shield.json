@@ -6,7 +6,7 @@
   "img": "icons/magic/unholy/beams-impact-pink.webp",
   "system": {
     "description": {
-      "value": "<p>Beginning at 6th level, the guardian spirits that aid you can provide supernatural protection to those you defend. If you are raging and another creature you can see within 30 feet of you takes damage, you can use your reaction to reduce that damage by 2d6 + an amount equal to your Rage Damage, as shown on the Rage Damage column of the Barbarian table.</p><p>When you reach certain levels in this class, you can reduce the damage by more: by 3d6 at 10th level and by 4d6 at 14th level.</p>",
+      "value": "<p>The guardian spirits that aid you can provide supernatural protection to those you defend. If your Rage is active and another creature you can see within 30 feet of you takes damage, you can take a Reaction to reduce that damage by 2d6 + an amount equal to your Rage Damage, as shown on the Rage Damage column of the Barbarian Features table.</p><p>When you reach certain levels in this class, you can reduce the damage by more: by 3d6 at 10th level and by 4d6 at 14th level.</p><section id=\"secret-a1xsvfOlJLrjZ7gk\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Reduce Damage</strong> activity provides a healing roll that can be applied to reduce damage before or after it is taken.</p></section>",
       "chat": ""
     },
     "source": {
@@ -84,7 +84,77 @@
           "condition": "you are raging and another creature you can see within 30 feet of you takes damage"
         },
         "appliedEffects": []
+      },
+      "cXqb4hIublO1ZPMm": {
+        "type": "heal",
+        "_id": "cXqb4hIublO1ZPMm",
+        "sort": 0,
+        "activation": {
+          "type": "reaction",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [],
+          "custom": {
+            "enabled": true,
+            "formula": "@scale.ancestral-guardian.spirit-shield + @scale.barbarian.rage-damage"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "Reduce Damage",
+        "img": "",
+        "appliedEffects": []
       }
+    },
+    "prerequisites": {
+      "level": 6
     }
   },
   "effects": [],
@@ -102,10 +172,10 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.1.1",
+    "systemVersion": "4.3.6",
     "coreVersion": "12.331",
     "createdTime": 1710700176766,
-    "modifiedTime": 1731610070124,
+    "modifiedTime": 1741789134739,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

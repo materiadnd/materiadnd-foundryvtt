@@ -12,7 +12,7 @@
     "source": {
       "book": "Materia"
     },
-    "identifier": "path-of-wild-magic",
+    "identifier": "wild-magic",
     "classIdentifier": "barbarian",
     "advancement": [
       {
@@ -27,11 +27,13 @@
           "scale": {
             "6": {
               "number": null,
-              "faces": 4
+              "faces": 4,
+              "modifiers": []
             },
             "14": {
               "number": null,
-              "faces": 6
+              "faces": 6,
+              "modifiers": []
             }
           }
         },
@@ -44,8 +46,14 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.f1kSvUe1BuFR0glb",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.jJSN6OxztrxmQWqd"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.f1kSvUe1BuFR0glb",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.jJSN6OxztrxmQWqd",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -60,7 +68,10 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.g3DOMfNnFZZdSKl7"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.g3DOMfNnFZZdSKl7",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -75,7 +86,10 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.8DquNgnOjQ3IH7LJ"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.8DquNgnOjQ3IH7LJ",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -90,7 +104,10 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.a3nY1V9Zp8hxbx53"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.a3nY1V9Zp8hxbx53",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -99,11 +116,42 @@
         "level": 14,
         "title": "Features",
         "icon": null
+      },
+      {
+        "_id": "EeYAXVDjQmmCy2AB",
+        "type": "ItemGrant",
+        "configuration": {
+          "items": [
+            {
+              "optional": false,
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplDetectMagi"
+            }
+          ],
+          "optional": false,
+          "spell": {
+            "ability": [
+              "con"
+            ],
+            "preparation": "innate",
+            "uses": {
+              "max": "@prof",
+              "per": "lr",
+              "requireSlot": false
+            }
+          }
+        },
+        "value": {},
+        "level": 3,
+        "title": "Lingering Magic",
+        "hint": "You can cast the Detect Magic spell without using a spell slot or components. Constitution is your spellcasting ability for this spell. You faintly glow a color corresponding to the school of magic you detect (you choose the colors).\n                    \n                    You can use this feature a number of times equal to your Proficiency modifier. You regain all expended uses when you finish a Long Rest."
       }
     ],
     "spellcasting": {
       "progression": "none",
-      "ability": ""
+      "ability": "",
+      "preparation": {
+        "formula": ""
+      }
     }
   },
   "effects": [],
@@ -114,10 +162,10 @@
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1710731683052,
-    "modifiedTime": 1710732814330,
+    "modifiedTime": 1741905023136,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
