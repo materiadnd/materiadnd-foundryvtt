@@ -5,7 +5,7 @@
   "img": "icons/magic/fire/orb-vortex.webp",
   "system": {
     "description": {
-      "value": "<p>Upon reaching 14th level, your appearance permanently gains an otherworldly aspect that makes you look more lovely and fierce.</p><p>In addition, as a bonus action, you can assume a magically majestic presence for 1 minute or until you are incapacitated. For the duration, whenever any creature tries to attack or target you with a spell or spell-like effect for the first time on a turn, the creature must make a Charisma saving throw against your spell save DC. On a failed save, it cannot attack or target you you on this turn, and it must choose a new target for its attack or the attack is wasted. On a successful save, it can attack or target you you on this turn, but it has disadvantage on any saving throw it makes against your spells on your next turn.</p><p>You can use this feature a number of times equal to your Charisma modifier (minimum of 1), and you regain all expended uses when you finish a long rest.</p>",
+      "value": "<p>As a Bonus Action, you can assume a magically majestic presence for 1 minute or until you have the &amp;Reference[Incapacitated] condition. For the duration, whenever any creature hits you with an attack roll for the first time on a turn, the attacker must succeed on a Charisma saving throw against your spell save DC, or the attack misses instead, as the creature recoils from your majesty.</p><p>You can use this feature a number of times equal to your Charisma modifier (minimum of 1), and you regain all expended uses when you finish a Long Rest.</p><section id=\"secret-Nm1DiagPrZFY4GOO\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Majestic Presence</strong> activity includes an Active Effect for tracking your presence and a Saving Throw.</p><p>The <strong>Save</strong> activity includes a saving throw for simply sending the save to chat if you need to post it again without expending a use of this feature.</p></section>",
       "chat": ""
     },
     "source": {
@@ -36,7 +36,7 @@
     },
     "uses": {
       "value": 1,
-      "max": "",
+      "max": "@abilities.cha.mod",
       "per": "lr",
       "recovery": "",
       "prompt": true
@@ -74,16 +74,167 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 14
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Majestic Presence",
+        "img": "",
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1"
+          }
+        },
+        "effects": [
+          {
+            "_id": "WLXFS6ne9fyB7Oai"
+          }
+        ]
+      },
+      "4iIOvI14BZPZTqFV": {
+        "type": "save",
+        "_id": "4iIOvI14BZPZTqFV",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "cha"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
-  "flags": {},
+  "effects": [
+    {
+      "name": "Majestic Presence",
+      "img": "icons/magic/fire/orb-vortex.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.wPpkBhUVC1RDgGDa",
+      "transfer": false,
+      "_id": "WLXFS6ne9fyB7Oai",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1742086126948,
+        "modifiedTime": 1742086143160,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!wPpkBhUVC1RDgGDa.WLXFS6ne9fyB7Oai"
+    }
+  ],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707598099373,
-    "modifiedTime": 1710839633448,
+    "modifiedTime": 1742090738205,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
