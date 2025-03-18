@@ -6,7 +6,7 @@
   "img": "icons/equipment/back/cloak-layered-tattered-purple.webp",
   "system": {
     "description": {
-      "value": "<div><div><p>Beginning at 6th level, you gain the ability to adopt a humanoid's persona. When a humanoid dies within 30 feet of you, you can magically capture its shadow using your reaction. You retain this shadow until you use it or you finish a long rest.</p><p>You can use the shadow as an action. When you do so, it vanishes, magically transforming into a disguise that appears on you. You now look like the dead person, but healthy and alive. This disguise lasts for a number of hours equal to your Charisma modifier (minimum of 1) or until you end it as a bonus action.</p><p>While you are in the disguise, you gain access to all information that the humanoid would freely share with a casual acquaintance. Such information includes general details on its background and personal life, but does not include secrets. The information is enough that you can pass yourself off as the person by drawing on its memories.</p><p>Another creature can see through this disguise by succeeding on a Wisdom (Insight) check that they make at disadvantage contested by your Charisma (Deception) check that you make at advantage. </p></div></div><div><div><p>Once you use this feature, you cannot use it again until you finish a long rest, unless you expend a spell slot of 2nd level or higher to use it again.</p></div></div>",
+      "value": "<div><div><p>You gain the ability to adopt a humanoid's persona. When a humanoid dies within 30 feet of you, you can take a Reaction to magically capture its shadow. You retain this shadow until you use it or you finish a Long Rest.</p><p>You can use the shadow as an action. When you do so, it vanishes, magically transforming into a disguise that appears on you. You now look like the dead person, but healthy and alive. This disguise lasts for a number of hours equal to your Charisma modifier (minimum of 1) or until you end it as a Bonus Action.</p><p>While you are in the disguise, you gain access to all information that the humanoid would freely share with a casual acquaintance. Such information includes general details on its background and personal life, but does not include secrets. The information is enough that you can pass yourself off as the person by drawing on its memories.</p><p>Another creature can see through this disguise by succeeding on a Wisdom (Insight) check that they make at Disadvantage contested by your Charisma (Deception) check that you make at Advantage.</p></div></div><div><div><p>Once you use this feature, you cannot use it again until you finish a Long Rest, unless you expend a level 2+ spell slot to use it again.</p></div></div>",
       "chat": ""
     },
     "source": {
@@ -71,20 +71,229 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "College of Whispers 6",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 6
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Capture Shadow",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": []
+        },
+        "appliedEffects": [],
+        "activation": {
+          "condition": "When a humanoid dies within 30 feet of you"
+        },
+        "effects": [
+          {
+            "_id": "6w2UU6RLDHnjt3Hb"
+          }
+        ]
+      },
+      "XFnreeysG9hFso7a": {
+        "type": "utility",
+        "name": "Use Shadow",
+        "_id": "XFnreeysG9hFso7a",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "img": "",
+        "appliedEffects": []
+      },
+      "3VN0w6SrsOyeV2q6": {
+        "type": "utility",
+        "_id": "3VN0w6SrsOyeV2q6",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": ""
+            },
+            {
+              "type": "spellSlots",
+              "value": "1",
+              "target": "2"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Recharge with spell Slot",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
-  "flags": {},
+  "effects": [
+    {
+      "name": "Mantle of Whispers",
+      "img": "icons/equipment/back/cloak-layered-tattered-purple.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.10O7eb3hSjiBKXUM",
+      "transfer": false,
+      "_id": "6w2UU6RLDHnjt3Hb",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>You have captured a shadow that you may use.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1742277896236,
+        "modifiedTime": 1742277926242,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!10O7eb3hSjiBKXUM.6w2UU6RLDHnjt3Hb"
+    }
+  ],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707606477672,
-    "modifiedTime": 1710839917931,
+    "modifiedTime": 1742278212308,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

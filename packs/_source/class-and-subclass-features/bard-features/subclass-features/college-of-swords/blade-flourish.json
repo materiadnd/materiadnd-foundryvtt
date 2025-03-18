@@ -6,7 +6,7 @@
   "img": "icons/weapons/swords/scimitar-blue.webp",
   "system": {
     "description": {
-      "value": "<p>When you join this college at 3rd level, you learn to perform impressive displays of martial prowess and speed.</p><p>Whenever you take the Attack action on your turn, your walking speed increases by 10 feet until the end of the turn, and if a weapon attack that you make as part of this action hits a creature, you can use one of the following Blade Flourish options of your choice. You can use only one Blade Flourish option per turn.</p><p>@UUID[Compendium.materia-dnd.class-and-subclass-features.Item.72JOCTJUlAFi2iJa]{Defensive Flourish}</p><p>@UUID[Compendium.materia-dnd.class-and-subclass-features.Item.cQvh2F3C6iPLbLlz]{Mobile Flourish}</p><p>@UUID[Compendium.materia-dnd.class-and-subclass-features.Item.ML1rCGuNu5Oygbkf]{Slashing Flourish}</p>",
+      "value": "<p>You learn to perform impressive displays of martial prowess and speed.</p><p>Whenever you take the Attack action on your turn, your Speed increases by 10 feet until the end of the turn, and if a weapon attack that you make as part of this action hits a creature, you can use one of the following Blade Flourish options of your choice. You can use only one Blade Flourish option per turn.</p><p>@UUID[Compendium.materia-dnd.class-and-subclass-features.Item.72JOCTJUlAFi2iJa]{Defensive Flourish}</p><p>@UUID[Compendium.materia-dnd.class-and-subclass-features.Item.cQvh2F3C6iPLbLlz]{Mobile Flourish}</p><p>@UUID[Compendium.materia-dnd.class-and-subclass-features.Item.ML1rCGuNu5Oygbkf]{Slashing Flourish}</p>",
       "chat": ""
     },
     "source": {
@@ -75,16 +75,90 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "UealCPoRxvJwfflK": {
+        "type": "utility",
+        "_id": "UealCPoRxvJwfflK",
+        "sort": 0,
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.matBrdBardicInsp"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Blade Flourish (Bardic)",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.1.1",
+    "systemVersion": "4.3.6",
     "coreVersion": "12.331",
     "createdTime": 1707602899411,
-    "modifiedTime": 1731557485163,
+    "modifiedTime": 1742277337747,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

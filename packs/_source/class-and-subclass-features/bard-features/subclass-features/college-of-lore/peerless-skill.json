@@ -6,7 +6,7 @@
   "img": "icons/skills/trades/textiles-cloth-dye-red.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 14th level, you do not make any ability checks at disadvantage, and when you make an ability check, you can expend one use of Bardic Inspiration. Roll a Bardic Inspiration die and add the number rolled to your ability check. You can choose to do so after you roll the die for the ability check, but before the DM tells you whether you succeed or fail.</p>",
+      "value": "<p>When you make an ability check or attack roll and fail, you can expend one use of Bardic Inspiration; roll the Bardic Inspiration die, and add the number rolled to the d20, potentially turning a failure into a success. On a failure, the Bardic Inspiration isn't expended.</p>",
       "chat": ""
     },
     "source": {
@@ -71,20 +71,98 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "College of Lore 14",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 14
+    },
+    "activities": {
+      "D5b9PZvwa38oObPm": {
+        "type": "utility",
+        "_id": "D5b9PZvwa38oObPm",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.matBrdBardicInsp"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "Bardic Inspiration",
+          "formula": "@scale.bard.inspiration"
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707599504778,
-    "modifiedTime": 1710839658642,
+    "modifiedTime": 1742274315756,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

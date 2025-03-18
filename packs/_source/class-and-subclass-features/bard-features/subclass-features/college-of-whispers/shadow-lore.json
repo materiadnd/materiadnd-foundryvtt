@@ -6,7 +6,7 @@
   "img": "icons/magic/unholy/hand-marked-pink.webp",
   "system": {
     "description": {
-      "value": "<p>Upon reaching 14th level, you gain the ability to weave dark magic into your words and tap into a creature's deepest fears.</p><p>As a bonus action, you magically whisper a phrase that only one creature of your choice within 30 feet of you can hear. The target must make a Wisdom saving throw against your spell save DC. It automatically succeeds if it does not know at least one language or if it cannot hear you. On a successful saving throw, your whisper sounds like unintelligible mumbling and has no effect.</p><p>On a failed saving throw, the target is charmed by you for a number of hours equal to twice your Charisma modifier (minimum of 2) or until you or your allies attack it, damage it, or force it to make a saving throw. It interprets the whispers as a description of its most mortifying secret. You gain no knowledge of this secret, but the target is convinced you know it.</p><p>The charmed creature obeys your commands for fear that you will reveal its secret. It will not risk its life for you or fight for you, unless it was already inclined to do so. It grants you favors and gifts it would offer to a close friend.</p><p>When the effect ends, the creature has no understanding of why it held you in such fear.</p><p>Once you use this feature, you cannot use it again until you finish a long rest, unless you expend a spell slot of 4th level or higher to use this again.</p>",
+      "value": "<p>You gain the ability to weave dark magic into your words and tap into a creature's deepest fears.</p><p>As a Bonus Action, you magically whisper a phrase that only one creature of your choice within 30 feet of you can hear. The target must make a Wisdom saving throw against your spell save DC. It automatically succeeds if it does not know at least one language or if it cannot hear you. On a successful saving throw, your whisper sounds like unintelligible mumbling and has no effect.</p><p>On a failed saving throw, the target is &amp;Reference[charmed] by you for a number of hours equal to twice your Charisma modifier (minimum of 2) or until you or your allies attack it, damage it, or force it to make a saving throw. It interprets the whispers as a description of its most mortifying secret. You gain no knowledge of this secret, but the target is convinced you know it.</p><p>The charmed creature obeys your commands for fear that you will reveal its secret. It will not risk its life for you or fight for you, unless it was already inclined to do so. It grants you favors and gifts it would offer to a close friend.</p><p>When the effect ends, the creature has no understanding of why it held you in such fear.</p><p>Once you use this feature, you cannot use it again until you finish a Long Rest, unless you expend a spell slot of 4th level or higher to use this again.</p>",
       "chat": ""
     },
     "source": {
@@ -71,20 +71,166 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "College of Whispers 14",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 14
+    },
+    "activities": {
+      "nm6xcN8D1YncMMr8": {
+        "type": "utility",
+        "name": "Recharge with Spell Slot",
+        "_id": "nm6xcN8D1YncMMr8",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": ""
+            },
+            {
+              "type": "spellSlots",
+              "value": "1",
+              "target": "4"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "img": "",
+        "appliedEffects": []
+      },
+      "dnd5eactivity000": {
+        "name": "Shadow Lore",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "effects": [
+          {
+            "_id": "SlbkNwfbkgaygEaz"
+          }
+        ]
+      }
     }
   },
-  "effects": [],
-  "flags": {},
+  "effects": [
+    {
+      "name": "Charmed",
+      "img": "systems/dnd5e/icons/svg/statuses/charmed.svg",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.JTjZ6SLDwYF7FcwC",
+      "transfer": false,
+      "_id": "SlbkNwfbkgaygEaz",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "charmed"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1742278431065,
+        "modifiedTime": 1742278452623,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!JTjZ6SLDwYF7FcwC.SlbkNwfbkgaygEaz"
+    }
+  ],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707606632893,
-    "modifiedTime": 1710839917931,
+    "modifiedTime": 1742278431115,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

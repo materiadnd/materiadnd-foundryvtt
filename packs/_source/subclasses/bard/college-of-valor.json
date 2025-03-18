@@ -6,13 +6,13 @@
   "img": "icons/equipment/chest/breastplate-layered-gilded-orange.webp",
   "system": {
     "description": {
-      "value": "<p>Bards of the College of Valor are daring skalds whose tales keep alive the memory of the great heroes of the past, and thereby inspire a new generation of heroes. These bards gather in mead halls or around great bonfires to sing the deeds of the mighty, both past and present. They travel the land to witness great events firsthand and to ensure that the memory of those events doesn't pass from the world. With their songs, they inspire others to reach the same heights of accomplishment as the heroes of old.</p>",
+      "value": "<blockquote><p>Sing the Deeds of Ancient Heroes</p></blockquote><p>Bards of the College of Valor are daring storytellers whose tales preserve the memory of the great heroes of the past. These Bards sing the deeds of the mighty in vaulted halls or to crowds gathered around great bonfires. They travel to witness great events firsthand and to ensure that the memory of these events doesn't pass away. With their songs, they inspire new generations to reach the same heights of accomplishment as the heroes of old.</p>",
       "chat": ""
     },
     "source": {
       "book": "Materia"
     },
-    "identifier": "college-of-valor",
+    "identifier": "valor",
     "classIdentifier": "bard",
     "advancement": [
       {
@@ -20,7 +20,10 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.rjiOXJplEhxhjoyl"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.rjiOXJplEhxhjoyl",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -35,7 +38,10 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.v5ZWGXyDTEzbCKsV"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.v5ZWGXyDTEzbCKsV",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -50,10 +56,22 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.spells.Item.matSplCompelledD",
-            "Compendium.dnd5e.spells.Item.z1mx84ONwkXKUZd7",
-            "Compendium.dnd5e.spells.Item.UDUnlfPsOAbq2RSE",
-            "Compendium.dnd5e.spells.Item.Sgjrf8qqv97CCWM4"
+            {
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplCompelledD",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.dnd5e.spells.Item.z1mx84ONwkXKUZd7",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.dnd5e.spells.Item.UDUnlfPsOAbq2RSE",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.dnd5e.spells.Item.Sgjrf8qqv97CCWM4",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -68,8 +86,14 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.spells.Item.matSplDeathWard0",
-            "Compendium.dnd5e.spells.Item.avD5XUtkBPQQR97c"
+            {
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplDeathWard0",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.dnd5e.spells.Item.avD5XUtkBPQQR97c",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -84,8 +108,14 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.spells.Item.matSplSwiftQuive",
-            "Compendium.materia-dnd.spells.Item.matSplDestructiv"
+            {
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplSwiftQuive",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplDestructiv",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -100,16 +130,25 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.spells.Item.matSplConjureBar",
-            "Compendium.dnd5e.spells.Item.Szvk5FEVQW3uhJi5"
+            {
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplConjureBar",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.dnd5e.spells.Item.Szvk5FEVQW3uhJi5",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "",
             "uses": {
               "max": "",
-              "per": ""
+              "per": "",
+              "requireSlot": false
             }
           }
         },
@@ -125,43 +164,37 @@
           "mode": "default",
           "allowReplacements": false,
           "grants": [
-            "armor:lgt",
+            "weapon:mar",
             "armor:med",
-            "armor:hvy",
             "armor:shl"
           ],
-          "choices": [],
-          "hint": "When you join this college at 3rd level, you gain proficiency with all armor."
+          "choices": []
         },
         "level": 3,
-        "title": "Bonus Proficiencies - Armor",
+        "title": "Martial Training",
         "icon": "icons/equipment/chest/breastplate-sculpted-green.webp",
-        "value": {}
-      },
-      {
-        "_id": "oSV2m7d8RuxIBNZz",
-        "type": "Trait",
-        "configuration": {
-          "mode": "default",
-          "allowReplacements": false,
-          "grants": [
-            "weapon:mar"
-          ],
-          "choices": [],
-          "hint": "When you join this college at 3rd level, you gain proficiency with martial weapons."
+        "value": {
+          "chosen": []
         },
-        "level": 3,
-        "title": "Bonus Proficiencies - Weapons",
-        "icon": "icons/weapons/axes/axe-double-engraved-black.webp",
-        "value": {}
+        "hint": ""
       },
       {
         "_id": "C0UiCNuZ4xjC6qga",
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.aCgkMu6zG5iMZOcC",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.6hTri4qGtFHmleIi"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.aCgkMu6zG5iMZOcC",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.6hTri4qGtFHmleIi",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.xsTXYUUnyvEliXHP",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -174,17 +207,20 @@
     ],
     "spellcasting": {
       "progression": "none",
-      "ability": ""
+      "ability": "",
+      "preparation": {
+        "formula": ""
+      }
     }
   },
   "effects": [],
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707232200630,
-    "modifiedTime": 1710839899916,
+    "modifiedTime": 1742274777399,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

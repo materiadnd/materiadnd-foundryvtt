@@ -6,7 +6,7 @@
   "img": "icons/sundries/books/book-symbol-triangle-silver-purple.webp",
   "system": {
     "description": {
-      "value": "<p>Also at 3rd level, you reach out to spirits who tell their tales through you. While you are holding your Spiritual Focus, you can use a bonus action to expend one use of your Bardic Inspiration and roll on the Spirit Tales table using your Bardic Inspiration die to determine the tale the spirits direct you to tell. You retain the tale in mind until you bestow the tale's effect or you finish a short or long rest.</p><p>You can use an action to choose one creature you can see within 30 feet of you (this can be you) to be the target of the tale's effect. Once you do so, you cannot bestow the tale's effect again until you roll it again.</p><p>You can retain only one of these tales in mind at a time, and rolling on the @UUID[Compendium.materia-dnd.rollable-tables.RollTable.v7LAv8Vsj1FuTByG]{Spirit Tales} table immediately ends the effect of the previous tale. If the tale requires a saving throw, the DC equals your spell save DC.</p>",
+      "value": "<p>You reach out to spirits who tell their tales through you. While you are holding your Spiritual Focus, you can use a Bonus Action to expend one use of your Bardic Inspiration and roll on the @UUID[Compendium.materia-dnd.rollable-tables.RollTable.v7LAv8Vsj1FuTByG]{Spirit Tales} table using your Bardic Inspiration die to determine the tale the spirits direct you to tell. You retain the tale in mind until you bestow the tale's effect or you finish a Short or Long Rest.</p><p>You can use an action to choose one creature you can see within 30 feet of you (this can be you) to be the target of the tale's effect. Once you do so, you cannot bestow the tale's effect again until you roll it again.</p><p>You can retain only one of these tales in mind at a time, and rolling on the @UUID[Compendium.materia-dnd.rollable-tables.RollTable.v7LAv8Vsj1FuTByG]{Spirit Tales} table immediately ends the effect of the previous tale. If the tale requires a saving throw, the DC equals your spell save DC.</p>",
       "chat": ""
     },
     "source": {
@@ -71,24 +71,162 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "College of Spirits 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "jNKfMYrP00eClmBZ": {
+        "type": "utility",
+        "_id": "jNKfMYrP00eClmBZ",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.matBrdBardicInsp"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Recall Tale",
+        "img": "",
+        "appliedEffects": []
+      },
+      "TZZQEE1M0AQdzvZV": {
+        "type": "utility",
+        "_id": "TZZQEE1M0AQdzvZV",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Bestow Tale Effect",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
       "item-use-source": "bardic-inspiration"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.1.1",
+    "systemVersion": "4.3.6",
     "coreVersion": "12.331",
     "createdTime": 1707601754513,
-    "modifiedTime": 1731557404067,
+    "modifiedTime": 1742276439998,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
