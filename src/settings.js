@@ -17,6 +17,7 @@ export class Settings {
         SPELL_SEARCH_PACK_NAME: 'spell-search-pack-name',
         SHOW_STARTING_STAT_ROLLER: 'show-starting-stat-roller',
         ADD_TOOLS: 'add-tools',
+        DISPLAY_HANDBOOK: 'display-handbook',
     }
 
     static initialize() {
@@ -159,6 +160,16 @@ export class Settings {
         game.settings.register(Constants.MODULE_ID, this.SETTINGS.ADD_TOOLS, {
             name: `${Constants.MODULE_ID}.settings.${this.SETTINGS.ADD_TOOLS}.Name`,
             hint: `${Constants.MODULE_ID}.settings.${this.SETTINGS.ADD_TOOLS}.Hint`,
+            config: true,
+            scope: 'world',
+            default: true,
+            type: Boolean,
+            onChange: () => {},
+            requiresReload: true,
+        });
+        game.settings.register(Constants.MODULE_ID, this.SETTINGS.DISPLAY_HANDBOOK, {
+            name: `${Constants.MODULE_ID}.settings.${this.SETTINGS.DISPLAY_HANDBOOK}.Name`,
+            hint: `${Constants.MODULE_ID}.settings.${this.SETTINGS.DISPLAY_HANDBOOK}.Hint`,
             config: true,
             scope: 'world',
             default: true,

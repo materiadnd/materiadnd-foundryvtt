@@ -6,7 +6,7 @@
   "img": "icons/magic/air/fog-gas-smoke-brown.webp",
   "system": {
     "description": {
-      "value": "<p>Starting when you choose this domain at 1st level, you can use your action to touch a willing creature other than yourself to give it advantage on Dexterity (Stealth) checks. This blessing lasts for 1 hour or until you use this feature again.</p><p>At 8th level in cleric, you can now target yourself with this feature.</p>",
+      "value": "<p>As a Magic action, you can choose yourself or a willing creature within 30 feet of yourself to have Advantage on Dexterity (Stealth) checks. This blessing lasts until you finish a Long Rest or you use this feature again.</p><section id=\"secret-qas9XYsffN7z7t2C\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes an Active Effect for tracking the blessing but it does not automate the advantage on Stealth checks or automatically end when you use this feature again.</p></section>",
       "chat": ""
     },
     "source": {
@@ -71,24 +71,101 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Trickery Domain 1",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Blessing",
+        "img": "systems/dnd5e/icons/svg/trait-damage-immunities.svg",
+        "appliedEffects": [],
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "ft",
+          "value": "30"
+        },
+        "target": {
+          "affects": {
+            "type": "willing"
+          }
+        },
+        "effects": [
+          {
+            "_id": "gQd0H3R1dP0M63mV"
+          }
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Blessing of the Trickster",
+      "img": "icons/magic/air/fog-gas-smoke-brown.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.oWGYkcGvhEqSLhOp",
+      "transfer": false,
+      "_id": "gQd0H3R1dP0M63mV",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p><span style=\"font-family:Signika, sans-serif\">You have Advantage on Dexterity (Stealth) checks. This blessing lasts until the caster finishes a Long Rest or they use this feature again.</span></p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1742337672652,
+        "modifiedTime": 1742337680545,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!oWGYkcGvhEqSLhOp.gQd0H3R1dP0M63mV"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1710769851801,
-    "modifiedTime": 1710769960018,
+    "modifiedTime": 1742337672696,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

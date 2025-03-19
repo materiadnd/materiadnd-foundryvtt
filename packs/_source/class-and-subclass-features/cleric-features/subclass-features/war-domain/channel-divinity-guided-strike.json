@@ -6,7 +6,7 @@
   "img": "icons/skills/melee/blade-tips-double-blue.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 2nd level, you can use your Channel Divinity to strike with supernatural accuracy. When a creature (including yourself) within 30 feet of you makes an attack roll, you can use your reaction to grant that creature a +10 bonus to the roll, using your Channel Divinity. You make this choice after you see the roll, but before the DM says whether the attack hits or misses</p>",
+      "value": "<p>When you or a creature within 30 feet of you misses with an attack roll, you can expend one use of your Channel Divinity and give that roll a +10 bonus, potentially causing it to hit. When you use this feature to benefit another creature's attack roll, you must take a Reaction to do so.</p><section id=\"secret-ilLLV2VXBSl6Hwtl\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Guide Yourself</strong> activity doesn't consume a reaction.</p><p>The <strong>Guide Another Creature</strong> activity does.</p></section>",
       "chat": ""
     },
     "source": {
@@ -71,24 +71,117 @@
       "subtype": "channelDivinity"
     },
     "properties": [],
-    "requirements": "War Domain 2",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Guide Another Creature",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.matClrChannelDiv"
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "activation": {
+          "condition": "When a creature within 30 feet of you misses with an attack roll"
+        }
+      },
+      "clrtkexSgtBqcp3S": {
+        "type": "utility",
+        "_id": "clrtkexSgtBqcp3S",
+        "sort": -100000,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.matClrChannelDiv"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Guide Yourself",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
       "item-use-source": "channel-divinity"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707235665305,
-    "modifiedTime": 1710765738943,
+    "modifiedTime": 1742342920750,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

@@ -6,7 +6,7 @@
   "img": "icons/magic/light/beam-rays-yellow.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 2nd level, you can use your Channel Divinity to harness sunlight, banishing darkness and dealing radiant damage to your foes.</p><p>As an action, you present your holy symbol, and any magical darkness within 30 feet of you is dispelled. Additionally, each hostile creature within 30 feet of you must make a Constitution saving throw. A creature takes radiant damage equal to 1d10 damage plus your Wisdom modifier, on a failed saving throw, and half as much damage on a successful one. A creature that has total cover from you is not affected. The damage increases with level, with the number of d10's equaling one half your Cleric level (rounded up).</p>",
+      "value": "<p>As a Magic action, you present your Holy Symbol and expend a use of your Channel Divinity to emit a flash of light in a 30-foot Emanation originating from yourself. Any magical &amp;Reference[Darkness] - such as that created by the @UUID[Compendium.materia-dnd.spells.Item.matSplDarkness00]{Darkness} spell - in that area are dispelled. Additionally, each creature of your choice in that area must make a Constitution saving throw, taking Radiant damage equal to 2d10 plus your Cleric level on a failed save or half as much damage on a successful one.</p>",
       "chat": ""
     },
     "source": {
@@ -76,24 +76,73 @@
       "subtype": "channelDivinity"
     },
     "properties": [],
-    "requirements": "Light Domain 2",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.matClrChannelDiv"
+            }
+          ]
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": "10",
+              "bonus": "@classes.cleric.levels",
+              "types": [
+                "radiant"
+              ]
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "target": {
+          "affects": {
+            "type": "creature"
+          }
+        }
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
       "item-use-source": "channel-divinity"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707685061176,
-    "modifiedTime": 1710765479464,
+    "modifiedTime": 1742336657028,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
