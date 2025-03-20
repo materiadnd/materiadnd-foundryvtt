@@ -6,7 +6,7 @@
   "img": "icons/magic/perception/eye-ringed-glow-angry-small-teal.webp",
   "system": {
     "description": {
-      "value": "<p>Starting when you choose this domain at 1st level, you can see through the deepest gloom. You have darkvision out to a range of your Wisdom modifier (minimum of 1) times 30 feet. In that radius, you can see in dim light as if it were bright light and in darkness as if it were dim light.</p><p>As an action, you can magically share the darkvision of this feature with willing creatures you can see within 10 feet of you, up to a number of creatures equal to your Wisdom modifier (minimum of one creature). The shared darkvision lasts for 1 hour. Once you share it, you cannot do so again until you finish a long rest.</p><p>Starting at 3rd level, you can expend a spell slot of 2nd level or higher to share it again.</p>",
+      "value": "<p>You can see through the deepest gloom. You have &amp;Reference[Darkvision] out to a range of your Wisdom modifier (minimum of 1) times 30 feet. In that radius, you can see in &amp;Reference[Dim Light] as if it were bright light and in &amp;Reference[Darkness] as if it were dim light.</p><p>As a Magic action, you can magically share the darkvision of this feature with willing creatures you can see within 10 feet of you, up to a number of creatures equal to your Wisdom modifier (minimum of one creature). The shared darkvision lasts for 1 hour. Once you share it, you cannot do so again until you finish a Long Rest.</p><p>Starting at 3rd level, you can expend a level 2+ spell slot to share it again.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,131 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Twilight Domain 1",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Share Darkvision",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [
+          "rdkTpcxoZUujSqyo"
+        ],
+        "range": {
+          "units": "self"
+        },
+        "target": {
+          "template": {
+            "type": "radius",
+            "size": "10",
+            "units": "ft"
+          },
+          "affects": {
+            "choice": true,
+            "type": "willing"
+          }
+        },
+        "effects": [
+          {
+            "_id": "rdkTpcxoZUujSqyo"
+          }
+        ]
+      },
+      "OzSyeKgKUNnpX9Fl": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "spellSlots",
+              "value": "1",
+              "target": "2"
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "concentration": false,
+          "value": "1",
+          "units": "hour",
+          "special": "",
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "rdkTpcxoZUujSqyo"
+          }
+        ],
+        "range": {
+          "value": "10",
+          "units": "self",
+          "special": "",
+          "override": false
+        },
+        "target": {
+          "template": {
+            "count": "",
+            "contiguous": false,
+            "type": "radius",
+            "size": "10",
+            "width": "",
+            "height": "",
+            "units": "ft"
+          },
+          "affects": {
+            "count": "",
+            "type": "willing",
+            "choice": true,
+            "special": ""
+          },
+          "prompt": true,
+          "override": false
+        },
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "name": "Share Darkvision (Spell Slot)",
+        "sort": 0,
+        "_id": "OzSyeKgKUNnpX9Fl",
+        "img": "",
+        "appliedEffects": [
+          "rdkTpcxoZUujSqyo"
+        ]
+      }
     }
   },
   "effects": [
@@ -145,13 +266,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1710770729562,
-    "modifiedTime": 1710770884745,
+    "modifiedTime": 1742448325481,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

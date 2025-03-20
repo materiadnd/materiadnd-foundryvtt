@@ -6,7 +6,7 @@
   "img": "icons/magic/death/hand-undead-skeleton-fire-green.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 2nd level, you can use Channel Divinity to destroy another creature's life force by touch.</p><p>When you hit a creature with a melee attack or a necromancy cantrip, you can use Channel Divinity to deal extra necrotic damage to one the target. The damage is a number of d10s eqaul to your Wisdom modifier + your cleric level.</p>",
+      "value": "<p>You can use Channel Divinity to destroy another creature's life force by touch.</p><p>When you hit a creature with a melee attack or a Necromancy cantrip, you can use Channel Divinity to deal extra Necrotic damage to one target. The damage is a number of d10s eqaul to your Wisdom modifier + your Cleric level.</p>",
       "chat": ""
     },
     "source": {
@@ -78,24 +78,80 @@
       "subtype": "channelDivinity"
     },
     "properties": [],
-    "requirements": "Death Domain 2",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "activation": {
+          "type": ""
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "self"
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "(@abilities.wis.mod)d10 + @classes.cleric.levels"
+              },
+              "number": null,
+              "denomination": null,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ]
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.matClrChannelDiv"
+            }
+          ]
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1"
+          }
+        }
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
       "item-use-source": "channel-divinity"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707670164349,
-    "modifiedTime": 1710764999282,
+    "modifiedTime": 1742422607107,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

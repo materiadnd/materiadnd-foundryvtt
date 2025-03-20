@@ -6,7 +6,7 @@
   "img": "icons/magic/lightning/bolt-strike-clouds-blue.webp",
   "system": {
     "description": {
-      "value": "<p>Also at 1st level, you can thunderously rebuke attackers. When a creature within 5 feet of you that you can see hits you with an attack, you can use your reaction to cause the creature to make a Dexterity saving throw. The creature takes 2d8 lightning or thunder damage (your choice) on a failed saving throw, and half as much damage on a successful one.</p><p>You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest.</p>",
+      "value": "<p>You can thunderously rebuke attackers. When a creature within 5 feet of you that you can see hits you with an attack, you can take a Reaction to cause the creature to make a Dexterity saving throw. The creature takes 2d8 Lightning or Thunder damage (your choice) on a failed saving throw, and half as much damage on a successful one.</p><p>You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -78,10 +78,46 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Tempest Domain 1",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": "8",
+              "bonus": "",
+              "types": [
+                "lightning",
+                "thunder"
+              ]
+            }
+          ]
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -89,13 +125,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1710768791475,
-    "modifiedTime": 1710768907301,
+    "modifiedTime": 1742447638518,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

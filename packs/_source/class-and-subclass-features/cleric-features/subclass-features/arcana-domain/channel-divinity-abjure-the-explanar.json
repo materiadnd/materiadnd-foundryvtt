@@ -6,7 +6,7 @@
   "img": "icons/magic/defensive/shield-barrier-blades-teal.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 2nd level, you can use your Channel Divinity to abjure otherworldly creatures.</p><p>As an action, you present your holy symbol and each aberration, celestial, elemental, fey, or fiend within 30 feet of you that can hear you must make a Wisdom saving throw. On a failed save, the creature is turned for 1 minute or until it takes damage. A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly end its move in a space within 30 feet of you. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can take the Dodge action.</p><p>Furthermore, after you reach 5th level, when a creature fails its saving throw against your Abjure the Explanar feature, the creature is banished for 1 minute (as in the banishment spell, no concentration required) if it isn't on its plane of origin and its challenge rating is at or below a certain threshold, as shown on the Arcane Banishment table.</p><table><thead><tr><th>Cleric Level</th><th>Banishes Creatures of CR</th></tr></thead><tbody><tr><td>5th</td><td>1/2 or lower</td></tr><tr><td>8th</td><td>1 or lower</td></tr><tr><td>11th</td><td>2 or lower</td></tr><tr><td>14th</td><td>3 or lower</td></tr><tr><td>17th</td><td>4 or lower</td></tr></tbody></table>",
+      "value": "<p>As a Magic action, you present your holy symbol and each Aberration, Celestial, Elemental, Fey, or Fiend within 30 feet of you must make a Wisdom saving throw. On a failed save, the creature is turned for 1 minute or until it takes damage. A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly end its move in a space within 30 feet of you. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can take the Dodge action.</p><p>Furthermore, after you reach 5th level, when a creature fails its saving throw against your Abjure the Explanar feature, the creature is banished for 1 minute (as in the @UUID[Compendium.materia-dnd.spells.Item.matSplBanishment]{Banishment} spell, no Concentration required) if it isn't on its plane of origin and its challenge rating is at or below a certain threshold, as shown on the Arcane Banishment table.</p><table><caption>Arcane Banishment</caption><thead><tr><th>Cleric Level</th><th>Banishes Creatures of CR</th></tr></thead><tbody><tr><td>5th</td><td>1/2 or lower</td></tr><tr><td>8th</td><td>1 or lower</td></tr><tr><td>11th</td><td>2 or lower</td></tr><tr><td>14th</td><td>3 or lower</td></tr><tr><td>17th</td><td>4 or lower</td></tr></tbody></table>",
       "chat": ""
     },
     "source": {
@@ -73,24 +73,158 @@
       "subtype": "channelDivinity"
     },
     "properties": [],
-    "requirements": "Arcana Domain 2",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "zJIHYWUsw4E7ujZA": {
+        "type": "save",
+        "_id": "zJIHYWUsw4E7ujZA",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.matClrChannelDiv"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "zBWZLMeNoR6um7uB"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "radius",
+            "size": "30",
+            "count": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Abjure",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Abjured",
+      "img": "icons/magic/defensive/shield-barrier-blades-teal.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.MQLxmy2q54OfhkEi",
+      "transfer": false,
+      "_id": "zBWZLMeNoR6um7uB",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The creature is turned for 1 minute or until it takes damage. A turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly end its move in a space within 30 feet of you. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can take the Dodge action.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1742422075923,
+        "modifiedTime": 1742422114150,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!MQLxmy2q54OfhkEi.zBWZLMeNoR6um7uB"
+    }
+  ],
   "flags": {
     "materia-dnd": {
       "item-use-source": "channel-divinity"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707668037964,
-    "modifiedTime": 1710764858731,
+    "modifiedTime": 1742422075967,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

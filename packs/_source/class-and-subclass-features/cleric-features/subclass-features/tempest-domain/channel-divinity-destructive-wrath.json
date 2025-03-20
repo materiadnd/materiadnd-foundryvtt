@@ -6,7 +6,7 @@
   "img": "icons/magic/light/beam-rays-blue.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 2nd level, you can use your Channel Divinity to wield the power of the storm with unchecked ferocity.</p><p>When you roll lightning or thunder damage, you can use your Channel Divinity to deal maximum damage, instead of rolling.</p>",
+      "value": "<p>You can use your Channel Divinity to wield the power of the storm with unchecked ferocity.</p><p>When you roll Lightning or Thunder damage, you can use your Channel Divinity to deal maximum damage, instead of rolling.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,40 @@
       "subtype": "channelDivinity"
     },
     "properties": [],
-    "requirements": "Tempest Domain 2",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Maximize Damage",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.matClrChannelDiv"
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "target": {
+          "affects": {
+            "type": "self"
+          }
+        }
+      }
     }
   },
   "effects": [],
@@ -87,14 +117,20 @@
   "flags": {
     "materia-dnd": {
       "item-use-source": "channel-divinity"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1710768923646,
-    "modifiedTime": 1710768965707,
+    "modifiedTime": 1742447693184,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
