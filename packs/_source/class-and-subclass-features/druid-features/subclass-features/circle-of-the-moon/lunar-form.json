@@ -1,12 +1,12 @@
 {
   "folder": "FqysDCySbx7aRFwx",
-  "name": "Durable Forms",
+  "name": "Lunar Form",
   "type": "feat",
-  "_id": "wHMWzjXZCBTXIvcW",
-  "img": "icons/creatures/mammals/beast-horned-scaled-glowing-orange.webp",
+  "_id": "7kXfaOw5ZGze3ZEo",
+  "img": "icons/creatures/magical/spirit-undead-horned-blue.webp",
   "system": {
     "description": {
-      "value": "<p>The rites of your circle grant you the ability to transform into more dangerous animal forms. When you use your Wild Shape to transform into a beast the form gains additional Temporary Hit Points equal to three times your Druid level (instead of one).</p><p>Additionally, while you are transformed by Wild Shape, you can use a Bonus Action to expend a level 1+ spell slot to gain 1d10 Temporary Hit Points per slot level expended.</p>",
+      "value": "<p>The power of the moon suffuses you, granting you the following benefits.</p><p><strong>Improved Forceful Strikes.</strong> Once per turn, you can deal an extra 2d10 Force damage to a target you hit with a Wild Shape form's attack.</p><p><strong>Shared Moonlight.</strong> Whenever you use Moonlight Step, you can also teleport one willing creature. That creature must be within 10 feet of you, and you teleport it to an unoccupied space you can see within 10 feet of your destination space.</p><section id=\"secret-GpKkr35hxyByhaM6\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes an activity for dealing the Force damage.</p></section>",
       "chat": ""
     },
     "source": {
@@ -15,13 +15,13 @@
       "book": "Materia"
     },
     "activation": {
-      "type": "bonus",
-      "cost": 1,
+      "type": "",
+      "cost": null,
       "condition": ""
     },
     "duration": {
       "value": "",
-      "units": "inst"
+      "units": ""
     },
     "cover": null,
     "crewed": false,
@@ -35,7 +35,7 @@
     "range": {
       "value": null,
       "long": null,
-      "units": "self"
+      "units": ""
     },
     "uses": {
       "value": null,
@@ -83,36 +83,25 @@
       "charged": false
     },
     "prerequisites": {
-      "level": 3
+      "level": 14
     },
     "activities": {
-      "PrIzLrlLqDglXSXe": {
-        "type": "heal",
-        "_id": "PrIzLrlLqDglXSXe",
+      "JMgwVoqlUhJeDmy5": {
+        "type": "damage",
+        "_id": "JMgwVoqlUhJeDmy5",
         "sort": 0,
         "activation": {
-          "type": "bonus",
+          "type": "",
           "value": null,
           "override": false,
           "condition": ""
         },
         "consumption": {
           "scaling": {
-            "allowed": true,
-            "max": ""
+            "allowed": false
           },
           "spellSlot": true,
-          "targets": [
-            {
-              "type": "spellSlots",
-              "value": "1",
-              "target": "1",
-              "scaling": {
-                "mode": "level",
-                "formula": ""
-              }
-            }
-          ]
+          "targets": []
         },
         "description": {
           "chatFlavor": ""
@@ -136,7 +125,8 @@
           },
           "affects": {
             "choice": false,
-            "type": "self",
+            "type": "creature",
+            "count": "1",
             "special": ""
           },
           "override": false,
@@ -147,21 +137,24 @@
           "recovery": [],
           "max": ""
         },
-        "healing": {
-          "number": null,
-          "denomination": "8",
-          "types": [
-            "temphp"
-          ],
-          "custom": {
-            "enabled": true,
-            "formula": "(@scaling)d10"
+        "damage": {
+          "critical": {
+            "allow": false
           },
-          "scaling": {
-            "number": 1,
-            "mode": ""
-          },
-          "bonus": ""
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": "10",
+              "bonus": "",
+              "types": [
+                "force"
+              ]
+            }
+          ]
         },
         "name": "",
         "img": "",
@@ -186,10 +179,10 @@
     "systemId": "dnd5e",
     "systemVersion": "4.3.6",
     "coreVersion": "12.331",
-    "createdTime": 1712331841053,
-    "modifiedTime": 1742827981853,
+    "createdTime": 1712332096499,
+    "modifiedTime": 1742834132486,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "_key": "!items!wHMWzjXZCBTXIvcW"
+  "_key": "!items!7kXfaOw5ZGze3ZEo"
 }

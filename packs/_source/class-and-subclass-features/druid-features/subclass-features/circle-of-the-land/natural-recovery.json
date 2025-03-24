@@ -2,101 +2,198 @@
   "folder": "PNgWNBtfk7w5E3yW",
   "name": "Natural Recovery",
   "type": "feat",
-  "_id": "Q5bsdUyhd31J04z7",
-  "img": "icons/magic/nature/plant-seed-hands-glow-yellow.webp",
+  "_id": "P4n6Iiu6zQxAzJJk",
+  "img": "icons/magic/control/sihouette-hold-beam-green.webp",
   "system": {
-    "description": {
-      "value": "<p>Starting at 2nd level, you can regain some of your magical energy by sitting in meditation and communing with nature. During a short rest, you choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your druid level (rounded up), and none of the slots can be 6th level or higher. You cannot use this feature again until you finish a long rest.</p><p>For example, when you are a 4th-level druid, you can recover up to two levels worth of spell slots. You can recover either a 2nd-level slot or two 1st-level slots.</p>",
-      "chat": ""
-    },
-    "source": {
-      "rules": "2024",
-      "revision": 1,
-      "book": "Materia"
-    },
-    "activation": {
-      "type": "special",
-      "cost": null,
-      "condition": ""
-    },
-    "duration": {
-      "value": "",
-      "units": ""
-    },
-    "cover": null,
-    "crewed": false,
-    "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "",
-      "prompt": true
-    },
-    "range": {
-      "value": null,
-      "long": null,
-      "units": "self"
+    "activities": {
+      "kt11KT4t00MmGUwF": {
+        "type": "utility",
+        "_id": "kt11KT4t00MmGUwF",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "activityUses",
+              "value": "1"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [
+            {
+              "period": "lr"
+            }
+          ],
+          "max": "1"
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast Spell",
+        "img": "",
+        "appliedEffects": []
+      },
+      "jedBsgad3ZCE3mAV": {
+        "type": "utility",
+        "_id": "jedBsgad3ZCE3mAV",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "activityUses",
+              "value": "1"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll"
+            }
+          ],
+          "max": "1"
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Recover Spell Slots",
+        "img": "",
+        "appliedEffects": []
+      }
     },
     "uses": {
-      "value": 1,
-      "max": "1",
-      "per": "lr",
-      "recovery": "",
-      "prompt": true
+      "spent": 0,
+      "recovery": [],
+      "max": ""
     },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
+    "description": {
+      "value": "<p>You can cast one of the level 1+ spells that you have prepared from your Circle Spells feature without expending a slot, and you must finish a Long Rest before you do so again.</p><p>In addition, when you finish a Short Rest, you can choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your Druid level (round up, currently @classes.druid.levels), and none of them can be level 6+. For example, if you're a level 6 Druid, you can recover up to three levels' worth of spell slots. You can recover a level 3 spell slot, a level 2 and a level 1 spell slot, or three level 1 spell slots. Once you recover spell slots with this feature, you can't do so again until you finish a Long Rest.</p><section id=\"secret-FVm2mRX5prwqdb7y\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Cast Spell</strong> activity can be used to track its single free use.</p><p>The <strong>Recover Spell Slot</strong> activity does not automate the restoration of spell slots but can be used for tracking its own single use.</p></section>",
+      "chat": ""
     },
-    "ability": null,
-    "actionType": "",
-    "attack": {
-      "bonus": "",
-      "flat": false
+    "identifier": "natural-recovery",
+    "source": {
+      "revision": 1,
+      "rules": "2024"
     },
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
+    "advancement": [],
+    "cover": null,
+    "crewed": false,
+    "enchant": {},
+    "prerequisites": {
+      "level": 6,
+      "repeatable": false
     },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
-    },
-    "summons": null,
+    "properties": [],
+    "requirements": "",
     "type": {
       "value": "class",
       "subtype": ""
-    },
-    "properties": [],
-    "requirements": "Circle of the Land 2",
-    "recharge": {
-      "value": null,
-      "charged": false
     }
   },
   "effects": [],
-  "sort": -50000,
+  "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
-    "createdTime": 1712507805613,
-    "modifiedTime": 1712509873749,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
   },
-  "_key": "!items!Q5bsdUyhd31J04z7"
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.6",
+    "createdTime": 1742617367185,
+    "modifiedTime": 1742617628639,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_key": "!items!P4n6Iiu6zQxAzJJk"
 }

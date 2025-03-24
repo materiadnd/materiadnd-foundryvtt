@@ -6,7 +6,7 @@
   "img": "icons/magic/nature/root-vine-entangled-hands.webp",
   "system": {
     "description": {
-      "value": "<p>Upon reaching 14th level, your connection to nature hinder their aggression toward you. When a creature within plants or difficult terrain you created with a druid spell, targets you with an attack or a harmful spell it must first make a Wisdom saving throw against your druid spell save DC. On a failed save, the attack automatically misses or they cannot target you with the spell.</p><p>Additionally, if the creature is a beast or plant and fails the saving throw, it is charmed by you until a remove curse spell is cast on it, or one hour has passed. On a successful save, the creature is immune to this effect for 24 hours.</p><p>The creature is aware of this effect before it makes its attack against you.</p>",
+      "value": "<p>As a Magic action, you can expend a use of your Wild Shape and cause spectral trees and vines appear in a 15-foot Cube on the ground within 120 feet of yourself. They last there for 1 minute or until you have the &amp;Reference[Incapacitated apply=false] condition or die. You and your allies have &amp;Reference[Half Cover] while in that area, and your allies gain the current Resistance of your Nature's Ward while there.</p><p>As a Bonus Action, you can move the Cube up to 60 feet to ground within 120 feet of yourself.</p><section id=\"secret-7RzbVQJ8MqL8Qkjf\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes Active Effects for each Nature's Ward land type and adds the Half Cover status effect which automatically applies the relevant bonuses. Apply the relevant effect to your allies.</p><p>These Active Effects are not automatically added/removed to/from Actors in the designated area however.</p><p>It also includes an activity which can be used for tracking your Bonus Action usage when moving the spectral trees and vines.</p></section>",
       "chat": ""
     },
     "source": {
@@ -77,24 +77,610 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Circle of the Land 14",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 14
+    },
+    "activities": {
+      "bsfAjsqgqHTek26O": {
+        "type": "utility",
+        "_id": "bsfAjsqgqHTek26O",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.51CTtXjg284mHaIj"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "minute",
+          "concentration": false,
+          "override": false,
+          "value": "1"
+        },
+        "effects": [
+          {
+            "_id": "dJNrHg6z3qQmxEzH"
+          },
+          {
+            "_id": "a5E0pxbrQQOesfgQ"
+          },
+          {
+            "_id": "oapUzsmoidLRbWjA"
+          },
+          {
+            "_id": "ereFoLnLZvn8MVZX"
+          },
+          {
+            "_id": "g2CQ9VIH1hh7Tgkx"
+          },
+          {
+            "_id": "bSDqmg4YDxkrCm8c"
+          },
+          {
+            "_id": "6accrmU2Ph2gvQ1A"
+          },
+          {
+            "_id": "i0TovzLriaALqnRm"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "120"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "cube",
+            "size": "15",
+            "count": ""
+          },
+          "affects": {
+            "choice": true,
+            "type": "ally",
+            "count": "",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Spectral Trees and Vines",
+        "img": "",
+        "appliedEffects": [
+          "dJNrHg6z3qQmxEzH",
+          "a5E0pxbrQQOesfgQ",
+          "oapUzsmoidLRbWjA",
+          "ereFoLnLZvn8MVZX",
+          "g2CQ9VIH1hh7Tgkx",
+          "bSDqmg4YDxkrCm8c",
+          "6accrmU2Ph2gvQ1A",
+          "i0TovzLriaALqnRm"
+        ]
+      },
+      "XYyztVuhFHjzYvtx": {
+        "type": "utility",
+        "_id": "XYyztVuhFHjzYvtx",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "120"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Move",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Nature's Ward: Arctic",
+      "img": "icons/magic/nature/root-vine-entangled-hands.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.vS46vf9GUjBAgUUT",
+      "transfer": false,
+      "_id": "dJNrHg6z3qQmxEzH",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "cold",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "coverHalf"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1742618647990,
+        "modifiedTime": 1742618886722,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!vS46vf9GUjBAgUUT.dJNrHg6z3qQmxEzH"
+    },
+    {
+      "name": "Nature's Ward: Coast",
+      "img": "icons/magic/nature/root-vine-entangled-hands.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.vS46vf9GUjBAgUUT",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "lightning",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "coverHalf"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1742618706711,
+        "modifiedTime": 1742618894168,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "a5E0pxbrQQOesfgQ",
+      "_key": "!items.effects!vS46vf9GUjBAgUUT.a5E0pxbrQQOesfgQ"
+    },
+    {
+      "name": "Nature's Ward: Desert",
+      "img": "icons/magic/nature/root-vine-entangled-hands.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.vS46vf9GUjBAgUUT",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "radiant",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "coverHalf"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1742618709796,
+        "modifiedTime": 1742618899184,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "oapUzsmoidLRbWjA",
+      "_key": "!items.effects!vS46vf9GUjBAgUUT.oapUzsmoidLRbWjA"
+    },
+    {
+      "name": "Nature's Ward: Forest",
+      "img": "icons/magic/nature/root-vine-entangled-hands.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.vS46vf9GUjBAgUUT",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "fire",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "coverHalf"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1742618710905,
+        "modifiedTime": 1742618903957,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "ereFoLnLZvn8MVZX",
+      "_key": "!items.effects!vS46vf9GUjBAgUUT.ereFoLnLZvn8MVZX"
+    },
+    {
+      "name": "Nature's Ward: Grassland",
+      "img": "icons/magic/nature/root-vine-entangled-hands.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.vS46vf9GUjBAgUUT",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "poison",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "coverHalf"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1742618711973,
+        "modifiedTime": 1742618908160,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "g2CQ9VIH1hh7Tgkx",
+      "_key": "!items.effects!vS46vf9GUjBAgUUT.g2CQ9VIH1hh7Tgkx"
+    },
+    {
+      "name": "Nature's Ward: Mountain",
+      "img": "icons/magic/nature/root-vine-entangled-hands.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.vS46vf9GUjBAgUUT",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "thunder",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "coverHalf"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1742618713029,
+        "modifiedTime": 1742618912062,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "bSDqmg4YDxkrCm8c",
+      "_key": "!items.effects!vS46vf9GUjBAgUUT.bSDqmg4YDxkrCm8c"
+    },
+    {
+      "name": "Nature's Ward: Swamp",
+      "img": "icons/magic/nature/root-vine-entangled-hands.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.vS46vf9GUjBAgUUT",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "acid",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "coverHalf"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1742618714083,
+        "modifiedTime": 1742618916249,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "6accrmU2Ph2gvQ1A",
+      "_key": "!items.effects!vS46vf9GUjBAgUUT.6accrmU2Ph2gvQ1A"
+    },
+    {
+      "name": "Nature's Ward: Underdark",
+      "img": "icons/magic/nature/root-vine-entangled-hands.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.vS46vf9GUjBAgUUT",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "necrotic",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "coverHalf"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1742618715224,
+        "modifiedTime": 1742618920635,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_id": "i0TovzLriaALqnRm",
+      "_key": "!items.effects!vS46vf9GUjBAgUUT.i0TovzLriaALqnRm"
+    }
+  ],
   "sort": 700000,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1712510028535,
-    "modifiedTime": 1712510202885,
+    "modifiedTime": 1742618860772,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
