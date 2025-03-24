@@ -1,18 +1,49 @@
 {
   "name": "Vitriolic Sphere",
-  "type": "spell",
+  "_id": "matSplVitriolicS",
   "system": {
-    "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
-    },
     "description": {
-      "value": "<div class=\"rd__b  rd__b--3\"><p>You point at a location within range, and a glowing 1-foot-diameter ball of emerald acid streaks there and explodes in a 20-foot-radius sphere. Each creature in that area must make a Dexterity saving throw. On a failed save, a creature takes [[/r 10d4]] acid damage and another [[/r 5d4]] acid damage at the end of its next turn. On a successful save, a creature takes half the initial damage and no damage at the end of its next turn.</p></div><div class=\"rd__b  rd__b--3\"><div class=\"rd__b  rd__b--3\"><p><span class=\"entry-title-inner\"><strong>At Higher Levels.</strong> </span>When you cast this spell using a spell slot of 5th level or higher, both the initial damage and end of turn damage increases by [[/r 2d4]] for each slot level above 4th.</p><div class=\"rd__spc-inline-post\"><p></p></div></div><div class=\"rd__spc-inline-post\"><p></p></div></div>",
+      "value": "<p>You point at a location within range, and a glowing, 1-foot-diameter ball of acid streaks there and explodes in a 20-foot-radius Sphere. Each creature in that area makes a Dexterity saving throw. On a failed save, a creature takes 10d4 Acid damage and another [[/damage 5d4 type=acid]] damage at the end of its next turn. On a successful save, a creature takes half the initial damage only.</p><p><strong>Using a Higher-Level Spell Slot. </strong>The initial damage increases by 2d4 for each spell slot level above 4.</p>",
       "chat": ""
     },
-    "actionType": "save",
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "action",
+      "condition": "",
+      "value": null
+    },
+    "duration": {
+      "value": "",
+      "units": "inst"
+    },
+    "target": {
+      "affects": {
+        "choice": false,
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "units": "ft",
+        "type": "sphere",
+        "size": "20",
+        "contiguous": false,
+        "count": ""
+      }
+    },
+    "range": {
+      "value": "150",
+      "units": "ft",
+      "special": ""
+    },
+    "uses": {
+      "max": "",
+      "recovery": [],
+      "spent": 0
+    },
     "level": 4,
     "school": "evo",
     "properties": [
@@ -21,107 +52,245 @@
       "material"
     ],
     "materials": {
-      "value": "a drop of giant slug bile",
+      "value": "a drop of bile",
       "consumed": false,
       "cost": 0,
       "supply": 0
     },
-    "target": {
-      "value": 20,
-      "units": "ft",
-      "type": "sphere",
-      "prompt": true,
-      "width": null
-    },
-    "range": {
-      "value": 150,
-      "units": "ft",
-      "long": null
-    },
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": "",
-      "units": "inst"
-    },
-    "damage": {
-      "parts": [
-        [
-          "10d4",
-          "acid"
-        ]
-      ],
-      "versatile": ""
-    },
-    "scaling": {
-      "mode": "level",
-      "formula": "2d4"
-    },
-    "save": {
-      "ability": "dex",
-      "dc": null,
-      "scaling": "spell"
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "formula": "5d4[acid]",
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "WHhf4PFHQBDkCAyb",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": "(2 * @item.level + 2)d4"
+              },
+              "number": 10,
+              "denomination": 4,
+              "bonus": "",
+              "types": [
+                "acid"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 2,
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "name": ""
+      },
+      "dnd5eactivity200": {
+        "_id": "dnd5eactivity200",
+        "type": "damage",
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": false
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": true,
+          "concentration": false
+        },
+        "effects": [],
+        "range": {
+          "override": true,
+          "units": "any",
+          "special": ""
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true
+        },
+        "damage": {
+          "critical": {
+            "allow": false,
+            "bonus": ""
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 5,
+              "denomination": 4,
+              "bonus": "",
+              "types": [
+                "acid"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "name": "End of Turn Damage"
+      }
     },
-    "cover": null,
-    "crewed": false,
-    "ability": ""
+    "identifier": "vitriolic-sphere"
   },
-  "img": "icons/magic/acid/projectile-smoke-glowing.webp",
+  "type": "spell",
+  "img": "icons/magic/acid/orb-bubble-smoke-drip.webp",
+  "effects": [
+    {
+      "name": "Lingering Acid",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplVitriolicS",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "icons/magic/acid/dissolve-drip-droplet-smoke.webp",
+      "_id": "WHhf4PFHQBDkCAyb",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>The creature takes [[/damage <span style=\"font-family:Signika, sans-serif\">5d4 type=acid]] damage at the end of its next turn</span></p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplVitriolicS.WHhf4PFHQBDkCAyb"
+    }
+  ],
+  "folder": "PrScRYl7JdLxwH3K",
   "ownership": {
     "default": 0
   },
   "flags": {
-    "plutonium": {
-      "page": "spells.html",
-      "source": "XGE",
-      "hash": "vitriolic%20sphere_xge",
-      "propDroppable": "spell"
-    },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.1Lw0vEjgLUYwIkUL",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplVitriolicS",
       "spell-lists": "sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
-  "effects": [],
-  "folder": "PrScRYl7JdLxwH3K",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1709152065251,
-    "modifiedTime": 1709226592285,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738719865767,
+    "modifiedTime": 1738719865767,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "1Lw0vEjgLUYwIkUL",
-  "sort": 2200000,
-  "_key": "!items!1Lw0vEjgLUYwIkUL"
+  "sort": 0,
+  "_key": "!items!matSplVitriolicS"
 }

@@ -6,10 +6,14 @@
   "img": "icons/skills/melee/weapons-crossed-swords-pink.webp",
   "system": {
     "description": {
-      "value": "<p>At 10th level, you learn to channel divine power to inspire zealotry in others. As a bonus action, you unleash a battle cry infused with divine energy. Up to twice your proficiency bonus other creatures of your choice within 60 feet of you that can hear you gain advantage on attack rolls and saving throws until the end of your next turn.</p><p>Furthermore your bonus damage from Divine Fury is dealt on every weapon attack you make until the end of your next turn.</p><p>Once you use this feature, you can't use it again until you finish a long rest.</p>",
+      "value": "<p>As a Bonus Action, you unleash a battle cry infused with divine energy. Up to ten other creatures of your choice within 60 feet of you gain Advantage on attack rolls and saving throws until the start of your next turn.</p><p>Once you use this feature, you can't use it again until you finish a Long Rest unless you expend a use of your Rage (no action required) to restore your use of it.</p><section id=\"secret-wNpNUmovptQUA3jD\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This <strong>Battle Cry</strong> activity includes an Active Effect for tracking impacted creatures but does not automate the advantage on attack rolls and saving throws.</p><p>The <strong>Recharge with Rage</strong> expends a Rage and restores a use of this feature.</p></section>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "bonus",
       "cost": 1,
@@ -69,26 +73,222 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Path of the Zealot 10",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 10
+    },
+    "activities": {
+      "SI7meARHQMrsdc7U": {
+        "type": "utility",
+        "_id": "SI7meARHQMrsdc7U",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "VgtlZw2ebgSdinH7"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "60"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "10",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Battle Cry",
+        "img": "systems/dnd5e/icons/svg/damage/psychic.svg",
+        "appliedEffects": []
+      },
+      "7LvhTfx6vZkRGz50": {
+        "type": "utility",
+        "name": "Recharge with Rage",
+        "_id": "7LvhTfx6vZkRGz50",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.matBrbRage000000"
+            },
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Zealous Presence",
+      "img": "icons/skills/melee/weapons-crossed-swords-pink.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.ZlOfKL7rgQuivxsx",
+      "transfer": false,
+      "_id": "VgtlZw2ebgSdinH7",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>You gain Advantage on attack rolls and saving throws until the start of Zealots next turn.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1741754679208,
+        "modifiedTime": 1741754702619,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!ZlOfKL7rgQuivxsx.VgtlZw2ebgSdinH7"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1710730434621,
-    "modifiedTime": 1710730565514,
+    "modifiedTime": 1741754759685,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_key": "!items!ZlOfKL7rgQuivxsx"

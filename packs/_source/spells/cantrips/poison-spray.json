@@ -1,77 +1,54 @@
 {
   "name": "Poison Spray",
-  "type": "spell",
+  "_id": "matSplPoisonSpra",
   "system": {
     "description": {
-      "value": "<p>You extend your hand toward a creature you can see within range and project a puff of noxious gas from your palm. The creature must succeed on a Constitution saving throw or take 1d10 poison damage and suffer the poisoned condition until the beginning of your next turn.</p><p>This spell's damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).</p>",
+      "value": "<p>You spray toxic mist at a creature within range. Make a ranged spell attack against the target. On a hit, the target takes [[/damage 1d12 poison]] damage.</p><p><strong>Cantrip Upgrade.</strong> The damage increases by 1d12 when you reach levels 5 ([[/damage 2d12 poison]]), 11 ([[/damage 3d12 poison]]), and 17 ([[/damage 4d12 poison]]).</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "Materia Source of Truth",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": 10,
-      "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": "",
+      "value": "30"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "1d10",
-          "poison"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "con",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 0,
-    "school": "evo",
+    "school": "nec",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -79,42 +56,118 @@
       "supply": 0
     },
     "preparation": {
-      "mode": "prepared",
+      "mode": "always",
       "prepared": false
     },
-    "scaling": {
-      "mode": "cantrip",
-      "formula": "1d10"
+    "activities": {
+      "UbLJ36AaSvIMQ2dy": {
+        "type": "attack",
+        "_id": "UbLJ36AaSvIMQ2dy",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "attack": {
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": ""
+          },
+          "ability": "",
+          "bonus": ""
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": true,
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 12,
+              "bonus": "",
+              "types": [
+                "poison"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "name": ""
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic"
-    ],
-    "crewed": false
+    "identifier": "poison-spray"
   },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.xJ1b0lry7GAWf3sJ",
-      "spell-lists": "artificer,druid,sorcerer,warlock,wizard"
-    }
-  },
-  "img": "icons/magic/fire/projectile-fireball-smoke-large-green.webp",
+  "type": "spell",
+  "img": "icons/magic/acid/pouring-gas-smoke-liquid.webp",
   "effects": [],
   "folder": "WtBByem45tjsGx6Z",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234190,
-    "modifiedTime": 1708927608467,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
-  },
-  "_id": "xJ1b0lry7GAWf3sJ",
-  "sort": 4500000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!xJ1b0lry7GAWf3sJ"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplPoisonSpra",
+      "spell-lists": "artificer,druid,sorcerer,warlock,wizard"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1737925877691,
+    "modifiedTime": 1737929621057,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 1000000,
+  "_key": "!items!matSplPoisonSpra"
 }

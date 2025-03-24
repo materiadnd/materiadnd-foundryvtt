@@ -6,10 +6,14 @@
   "img": "icons/magic/light/orbs-hand-gray.webp",
   "system": {
     "description": {
-      "value": "<p>Also at 3rd level, you can spin words laced with magic that unsettle a creature and cause it to doubt itself. As a bonus action, you can expend one use of your Bardic Inspiration and choose one creature you can see within 60 feet of you. Roll the Bardic Inspiration die. The creature must subtract the number rolled from the next saving throw it makes before the start of your next turn.</p>",
+      "value": "<p>You can spin words laced with magic that unsettle a creature and cause it to doubt itself. As a Bonus Action, you can expend one use of your Bardic Inspiration and choose one creature you can see within 60 feet of you. Roll the Bardic Inspiration die. The creature must subtract the number rolled from the next saving throw it makes before the start of your next turn.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "bonus",
       "cost": 1,
@@ -69,26 +73,104 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "College of Eloquence 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.matBrdBardicInsp"
+            }
+          ]
+        },
+        "appliedEffects": [
+          "navQJaLNyk9u6oej"
+        ],
+        "effects": [
+          {
+            "_id": "navQJaLNyk9u6oej"
+          }
+        ],
+        "roll": {
+          "name": "Bardic Inspiration",
+          "formula": "@scale.bard.inspiration-die"
+        }
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Unsettled",
+      "img": "icons/magic/light/orbs-hand-gray.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.WLdwzTDKoQoVf7Qs",
+      "transfer": false,
+      "_id": "navQJaLNyk9u6oej",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": 1,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1742096520920,
+        "modifiedTime": 1742096549673,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!WLdwzTDKoQoVf7Qs.navQJaLNyk9u6oej"
+    }
+  ],
   "flags": {
     "materia-dnd": {
       "item-use-source": "bardic-inspiration"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707595471627,
-    "modifiedTime": 1710839615202,
+    "modifiedTime": 1742096546852,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 250000,

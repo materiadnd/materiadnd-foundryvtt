@@ -1,77 +1,57 @@
 {
   "name": "Wall of Force",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplWallOfForc",
   "system": {
     "description": {
-      "value": "<p>An invisible wall of force springs into existence at a point you choose within range. The wall appears in any orientation you choose, as a horizontal or vertical barrier or at an angle. It can be free floating or resting on a solid surface. You can form it into a hemispherical dome or a sphere with a radius of up to 10 feet, or you can shape a flat surface made up of ten 10-foot-by-10-foot panels. Each panel must be contiguous with another panel. In any form, the wall is 1/4 inch thick. It lasts for the Duration. If the wall cuts through a creature's space when it appears, the creature is pushed to one side of the wall (your choice which side).</p><p>Nothing can physically pass through the wall. It is immune to all damage and can't be dispelled by Dispel Magic. A Disintegrate spell destroys the wall instantly, however. The wall also extends into the Ethereal Plane, blocking ethereal travel through the wall.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 9th level or higher, grants a duration that does not require concentration.</p>",
+      "value": "<p>An Invisible wall of force springs into existence at a point you choose within range. The wall appears in any orientation you choose, as a horizontal or vertical barrier or at an angle. It can be free floating or resting on a solid surface. You can form it into a hemispherical dome or a globe with a radius of up to 10 feet, or you can shape a flat surface made up of ten 10-foot-by-10-foot panels. Each panel must be contiguous with another panel. In any form, the wall is 1/4 inch thick and lasts for the duration. If the wall cuts through a creature's space when it appears, the creature is pushed to one side of the wall (you choose which side).</p><p>Nothing can physically pass through the wall. It is immune to all damage and can't be dispelled by <em>@UUID[Compendium.materia-dnd.spells.Item.matSplDispelMagi]{Dispel Magic}.</em> A <em>@UUID[Compendium.materia-dnd.spells.Item.matSplDisintegra]{Disintegrate} </em>spell destroys the wall instantly, however. The wall also extends into the Ethereal Plane and blocks ethereal travel through the wall.</p><p><strong>Using a Higher-Level Spell Slot.</strong> If you use a spell slot level of 9+, the spell does not require your Concentration.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "10",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 100,
-      "width": null,
-      "units": "ft",
-      "type": "wall",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": 120,
-      "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": "",
+      "value": "120"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 5,
     "school": "evo",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
     "materials": {
-      "value": "A pinch of powder made by crushing clear gemstone",
+      "value": "a shard of glass",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -80,38 +60,155 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "obcyQX0IlwinXINV": {
+        "type": "utility",
+        "_id": "obcyQX0IlwinXINV",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "sphere",
+            "size": "10",
+            "count": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Sphere or Globe"
+      },
+      "O3uhE0OLzsAhHoAg": {
+        "type": "utility",
+        "_id": "O3uhE0OLzsAhHoAg",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": true,
+            "units": "ft",
+            "type": "wall",
+            "size": "10",
+            "count": "10",
+            "width": "1/12",
+            "height": "10"
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": "",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Panels"
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "concentration"
-    ],
-    "crewed": false
+    "identifier": "wall-of-force"
+  },
+  "type": "spell",
+  "img": "icons/magic/defensive/barrier-shield-dome-deflect-blue.webp",
+  "effects": [],
+  "folder": "slWnSXtwvwnA9EXJ",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.Lzbo2yPRBHUI7RQ1",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplWallOfForc",
       "spell-lists": "wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
-  "img": "icons/magic/light/beam-rays-magenta-large.webp",
-  "effects": [],
-  "folder": "slWnSXtwvwnA9EXJ",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234223,
-    "modifiedTime": 1709186114418,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1739233650768,
+    "modifiedTime": 1739253130520,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "Lzbo2yPRBHUI7RQ1",
-  "sort": 800000,
-  "_key": "!items!Lzbo2yPRBHUI7RQ1"
+  "sort": 0,
+  "_key": "!items!matSplWallOfForc"
 }

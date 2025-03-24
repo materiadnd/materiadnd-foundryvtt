@@ -6,10 +6,14 @@
   "img": "icons/magic/life/cross-area-circle-green-white.webp",
   "system": {
     "description": {
-      "value": "<p>Also starting at 1st level, your healing spells are more effective. Whenever you use a spell of 1st level or higher to restore hit points to a creature, the creature regains additional hit points equal to your proficiency bonus + the spell's level on the turn you cast the spell.</p><p>The additional hit points to each creature cannot exceed your level in cleric.</p>",
+      "value": "<p>When a spell you cast with a spell slot restores Hit Points to a creature, that creature regains additional Hit Points on the turn you cast the spell. The additional Hit Points equal your Proficiency Bonus plus the spell slot's level.</p><section id=\"secret-dMqh0eAUTZVEM8eU\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes a healing activity. Set the scale to the spell slot level you cast and it will provide a healing roll for you.</p></section>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "",
       "cost": null,
@@ -69,22 +73,105 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Life Domain 1",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "Vt8BJi0YBGLROz8j": {
+        "type": "heal",
+        "_id": "Vt8BJi0YBGLROz8j",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true,
+            "max": "9"
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": "Creature you cast a healing spell on"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "@scaling + @prof"
+          },
+          "scaling": {
+            "number": 1,
+            "mode": ""
+          },
+          "bonus": ""
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707677829790,
-    "modifiedTime": 1710765436070,
+    "modifiedTime": 1742335557986,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 200000,

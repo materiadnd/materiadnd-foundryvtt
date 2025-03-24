@@ -1,79 +1,55 @@
 {
   "name": "Goodberry",
-  "type": "spell",
+  "_id": "matSplGoodberry0",
   "system": {
     "description": {
-      "value": "<p>Up to ten berries appear in your hand and are infused with magic for the duration. A creature can use its action to eat one berry. Eating a berry restores 1 hit point, and the berry provides enough nourishment to sustain a creature for one day.</p><p>The berries lose their potency if they have not been consumed within 24 hours of the casting of this spell.</p>",
+      "value": "<p>@UUID[Compendium.materia-dnd.spells.Item.kOEN85BINSohIl3v]{Ten berries} appear in your hand and are infused with magic for the duration. A creature can take a Bonus Action to eat one berry. Eating a berry restores 1 Hit Point, and the berry provides enough nourishment to sustain a creature for one day.</p><p>Uneaten berries disappear when the spell ends.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "Materia Source of Truth",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
-      "value": "",
-      "units": "inst"
+      "value": "24",
+      "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "touch"
+      "units": "self",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "heal",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "1",
-          "healing"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 1,
-    "school": "trs",
+    "school": "con",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "A spring of mistletoe or other berry plant, which the spell consumes",
+      "value": "a sprig of mistletoe",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -82,40 +58,86 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "name": "Create Berries",
+        "img": "icons/consumables/fruit/lingonberry-cluster-red.webp"
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material"
-    ],
-    "crewed": false
+    "identifier": "goodberry"
   },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.shJM2PbzNyFy02wZ",
-      "spell-lists": "druid,ranger"
-    }
-  },
-  "img": "icons/magic/nature/leaf-glow-green.webp",
+  "type": "spell",
+  "img": "icons/consumables/fruit/berries-hanging-red.webp",
   "effects": [],
   "folder": "JMRA2elEdmr5pgX7",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234136,
-    "modifiedTime": 1708928830321,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
-  },
-  "_id": "shJM2PbzNyFy02wZ",
-  "sort": 7100000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!shJM2PbzNyFy02wZ"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplGoodberry0",
+      "spell-lists": "druid,ranger"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738039309171,
+    "modifiedTime": 1739602743112,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplGoodberry0"
 }

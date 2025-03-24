@@ -1,75 +1,51 @@
 {
   "name": "Blink",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplBlink00000",
   "system": {
     "description": {
-      "value": "<p>Roll a d20 at the end of each of your turns for the duration of the spell. On a roll of 11 or higher, you vanish from your current plane of existence and appear in the Ethereal Plane (the spell fails and the casting is wasted if you were already on that plane). At the start of your next turn, and when the spell ends if you are on the Ethereal Plane, you return to an unoccupied space of your choice that you can see within 10 feet of the space you vanished from. If no unoccupied space is available within that range, you appear in the nearest unoccupied space (chosen at random if more than one space is equally near). You can dismiss this spell as an action.</p><p>While on the Ethereal Plane, you can see and hear the plane you originated from, which is cast in shades of gray, and you can't see anything there more than 60 feet away. You can only affect and be affected by other creatures on the Ethereal Plane. Creatures that aren't there can't perceive you or interact with you, unless they have the ability to do so.</p>",
+      "value": "<p>[[/r 1d6]]{Roll 1d6} at the end of each of your turns for the duration. On a roll of 4-6, you vanish from your current plane of existence and appear in the Ethereal Plane (the spell ends instantly if you are already on that plane). While on the Ethereal Plane, you can perceive the plane you left, which is cast in shades of gray, but you can't see anything there more than 60 feet away. You can affect and be affected only by other creatures on the Ethereal Plane, and creatures on the other plane can't perceive you unless they have a special ability that lets them perceive things on the Ethereal Plane. You can dismiss this spell as an action.</p><p>You return to the other plane at the start of your next turn and when the spell ends if you are on the Ethereal Plane. You return to an unoccupied space of your choice that you can see within 10 feet of the space you left. If no unoccupied space is available within that range, you appear in the nearest unoccupied space.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "self",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "type": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "self"
+      "units": "self",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "1d20",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 3,
     "school": "trs",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -80,38 +56,127 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "La5ofK0TnPSTL3iq"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "1d6cs>3",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "mgc"
-    ],
-    "crewed": false
+    "identifier": "blink"
+  },
+  "type": "spell",
+  "img": "icons/magic/unholy/hand-marked-pink.webp",
+  "effects": [
+    {
+      "name": "Ethereal",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplBlink00000",
+      "duration": {
+        "rounds": 1,
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "systems/dnd5e/icons/svg/statuses/ethereal.svg",
+      "_id": "La5ofK0TnPSTL3iq",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "ethereal"
+      ],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplBlink00000.La5ofK0TnPSTL3iq"
+    }
+  ],
+  "folder": "CxgAwElQGTbcnuvc",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
       "tele-flag": "true",
-      "sourceId": "Compendium.materia-dnd.spells.Item.frJFZlAXfU5arQj3",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplBlink00000",
       "spell-lists": "artificer,sorcerer,wizard"
     }
   },
-  "img": "icons/magic/control/debuff-energy-hold-pink.webp",
-  "effects": [],
-  "folder": "CxgAwElQGTbcnuvc",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234105,
-    "modifiedTime": 1713584796371,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738511033688,
+    "modifiedTime": 1738511054975,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "frJFZlAXfU5arQj3",
-  "sort": 3500000,
-  "_key": "!items!frJFZlAXfU5arQj3"
+  "sort": 0,
+  "_key": "!items!matSplBlink00000"
 }

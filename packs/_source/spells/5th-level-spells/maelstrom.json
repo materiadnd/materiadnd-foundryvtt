@@ -1,15 +1,15 @@
 {
   "name": "Maelstrom",
+  "_id": "matSplMaelstrom0",
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "description": {
-      "value": "<p>A swirling mass of 5-foot-deep water appears in a 30-foot radius centered on a point you can see within range. The point must be on the ground or in a body of water. Until the spell ends, that area is difficult terrain, and any creature that starts its turn there must succeed on a Strength saving throw. On a failed save, a creature takes [[/r 6d6]] magical bludgeoning damage and is pulled 10 feet toward the center. On a successful save, the creature takes half as much damage and is not pulled.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 6th level or higher, the damage increases by [[/r 1d6]] for each slot level above 5th.</p>",
+      "value": "<p>A swirling mass of 5-foot-deep water appears in a 30-foot radius centered on a point you can see within range. The point must be on the ground or in a body of water. Until the spell ends, that area is &amp;Reference[Difficult Terrain], and any creature that starts its turn there must succeed on a [[/save Strength]] saving throw. On a failed save, a creature takes [[/r 6d6]] magical bludgeoning damage and is pulled 10 feet toward the center. On a successful save, the creature takes half as much damage and is not pulled.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d6 for each slot level above 5th.</p>",
       "chat": ""
     },
     "actionType": "save",
@@ -32,12 +32,22 @@
       "units": "ft",
       "type": "radius",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "type": "cylinder",
+        "count": "",
+        "height": "5"
+      }
     },
     "range": {
       "value": 120,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -92,7 +102,85 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "BzAMV1njhoJoBm2K": {
+        "type": "save",
+        "_id": "BzAMV1njhoJoBm2K",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 6,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "bludgeoning"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "str",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "img": "icons/magic/air/wind-tornado-cyclone-purple-blue.webp",
   "ownership": {
@@ -106,23 +194,40 @@
       "propDroppable": "spell"
     },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.z26qhWQpcR0xlBmF",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplMaelstrom0",
       "spell-lists": "druid"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "effects": [],
   "folder": "slWnSXtwvwnA9EXJ",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1709184767072,
-    "modifiedTime": 1709186114418,
+    "modifiedTime": 1739246244484,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "z26qhWQpcR0xlBmF",
-  "sort": 2800000,
-  "_key": "!items!z26qhWQpcR0xlBmF"
+  "sort": 3300000,
+  "_key": "!items!matSplMaelstrom0"
 }

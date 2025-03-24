@@ -1,15 +1,15 @@
 {
   "name": "Enervation",
+  "_id": "matSplEnervation",
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "description": {
-      "value": "<div><p>Tendrils of inky darkness reaches out from you, touching creatures you can see within range to drain life from them. A creature of your choice within range must make a Dexterity saving throw. On a failed save, the target takes 4d8 plus your spellcasting modifier, or half as much on a successful one. Until the spell ends, you can target a creature within range on each of your turns as an action. The spell ends early if you use your action to do anything else.</p><p>Whenever the spell deals damage to a target, you regain hit points equal to half the amount of necrotic damage the target takes. Alternatively, if you can reduce the hit points regain by 20 to reduce your current exhaustion by 1 instead.</p></div><div><div><p><strong>At Higher Levels.</strong>  When you cast this spell using a spell slot of 6th level or higher, the damage increases by [[/r 1d8]] for each slot level above 5th.</p></div></div>",
+      "value": "<p>Tendrils of inky darkness reaches out from you, touching creatures you can see within range to drain life from them. A creature of your choice within range must make a Dexterity saving throw. On a failed save, the target takes [[/r 4d8]] plus your spellcasting modifier necrotic damage, or half as much on a successful one. Until the spell ends, you can target a creature within range on each of your turns as an action. The spell ends early if you use your action to do anything else.</p><p>Whenever the spell deals damage to a target, you regain hit points equal to half the amount of necrotic damage the target takes. Alternatively, you can reduce the hit points regained by 20 to reduce your current exhaustion level by 1 instead.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d8 for each spell slot level above 5.</p>",
       "chat": ""
     },
     "actionType": "save",
@@ -31,12 +31,21 @@
       "units": "",
       "type": "",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 60,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -103,7 +112,112 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "dnd5eactivity000": {
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 4,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": []
+      },
+      "GLX11JGbM82OgnLT": {
+        "type": "save",
+        "_id": "GLX11JGbM82OgnLT",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 4,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "dex",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Target Another",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "img": "icons/magic/unholy/strike-body-life-soul-green.webp",
   "ownership": {
@@ -117,23 +231,40 @@
       "propDroppable": "spell"
     },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.S49Td7fCoys98QTr",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplEnervation",
       "spell-lists": "sorcerer,warlock,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
     }
   },
   "effects": [],
   "folder": "slWnSXtwvwnA9EXJ",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1709184297435,
-    "modifiedTime": 1709186114418,
+    "modifiedTime": 1739244515375,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "S49Td7fCoys98QTr",
-  "sort": 3000000,
-  "_key": "!items!S49Td7fCoys98QTr"
+  "sort": 3500000,
+  "_key": "!items!matSplEnervation"
 }

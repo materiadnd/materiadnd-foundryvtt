@@ -1,75 +1,55 @@
 {
   "name": "Dominate Monster",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplDominateMo",
   "system": {
     "description": {
-      "value": "<p>You attempt to beguile a creature that you can see within range. It must succeed on a Wisdom saving throw or be charmed by you for the duration. If you or creatures that are friendly to you are fighting it, it has advantage on the saving throw.</p><p>While the creature is charmed, you have a telepathic link with it as long as the two of you are on the same plane of existence. You can use this telepathic link to issue commands to the creature while you are conscious (no action required), which it does its best to obey. You can specify a simple and general course of action, such as \"Attack that creature,\" \"Run over there,\" or \"Fetch that object.\" If the creature completes the order and doesn't receive further direction from you, it defends and preserves itself to the best of its ability.</p><p>You can use your action to take total and precise control of the target. Until the end of your next turn, the creature takes only the actions you choose, and doesn't do anything that you don't allow it to do. During this time, you can also cause the creature to use a reaction, but this requires you to use your own reaction as well.</p><p>If the target takes damage, it makes a new Wisdom saving throw against the spell. If the saving throw succeeds, the spell ends. The target cannot receive another saving throw this way until the beginning of its next turn.</p><p><strong>At Higher Levels.</strong> When you cast this spell with a 9th-level spell slot, the duration is concentration, up to 8 hours.</p>",
+      "value": "<p>One creature you can see within range must succeed on a Wisdom saving throw or have the &amp;Reference[Charmed apply=false] condition for the duration. The target has Advantage on the save if you or your allies are fighting it. Whenever the target takes damage, it repeats the save, ending the spell on itself on a success.</p><p>You have a telepathic link with the Charmed target while the two of you are on the same plane of existence. On your turn, you can use this link to issue commands to the target (no action required), such as \"Attack that creature,\" \"Move over there,\" or \"Fetch that object.\" The target does its best to obey on its turn. If it completes an order and doesn't receive further direction from you, it acts and moves as it likes, focusing on protecting itself.</p><p>If the Charmed target takes damage, it makes a new Wisdom saving throw against the spell. If the saving throw succeeds, the spell ends. The target cannot make another saving throw this way until the beginning of its next turn.</p><p>You can command the target to take a Reaction but must take your own Reaction to do so.</p><p><strong>Using a Higher-Level Spell Slot.</strong> Your Concentration can last longer with a level 9 spell slot (up to 8 hours).</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
-      "value": "1",
+      "value": "1 + (@item.level - 8) * 7",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": 60,
-      "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": "",
+      "value": "60"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "wis",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 8,
     "school": "enc",
+    "properties": [
+      "vocal",
+      "somatic",
+      "concentration"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -80,77 +60,135 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": ""
+    "activities": {
+      "b1s2oESIl76fHcqA": {
+        "type": "save",
+        "_id": "b1s2oESIl76fHcqA",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "aAbTb2vkRQiBp9Oz",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": ""
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "concentration",
-      "mgc"
-    ],
-    "crewed": false
+    "identifier": "dominate-monster"
   },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.B8UosOiNbkE3FJvr",
-      "spell-lists": "bard,sorcerer,warlock,wizard"
-    }
-  },
-  "img": "icons/magic/air/air-burst-spiral-large-pink.webp",
+  "type": "spell",
+  "img": "icons/magic/control/hypnosis-mesmerism-watch.webp",
   "effects": [
     {
-      "name": "Dominate Monster",
-      "origin": "Compendium.dnd5e.spells.Item.eEpy1ONlXumKS1mp",
+      "name": "Dominated",
+      "img": "systems/dnd5e/icons/svg/statuses/charmed.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplDominateMo",
+      "transfer": false,
+      "_id": "aAbTb2vkRQiBp9Oz",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
       "duration": {
         "startTime": null,
-        "seconds": null,
+        "seconds": 3600,
         "combat": null,
         "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "fBMLyF7ftAaWmv1s",
-      "changes": [],
-      "description": "<p>The target is Charmed and must do its best to obey any commands sent by the caster.</p>",
-      "transfer": false,
+      "description": "<p>Whenever the target takes damage, it repeats the [[/save ability=wis]] save, ending the spell on itself on a success.</p>",
+      "tint": "#ffffff",
       "statuses": [
         "charmed"
       ],
+      "sort": 0,
       "flags": {},
-      "tint": "#ffffff",
       "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
+        "lastModifiedBy": null
       },
-      "img": "icons/magic/air/air-burst-spiral-large-pink.webp",
-      "type": "base",
-      "system": {},
-      "sort": 0,
-      "_key": "!items.effects!B8UosOiNbkE3FJvr.fBMLyF7ftAaWmv1s"
+      "_key": "!items.effects!matSplDominateMo.aAbTb2vkRQiBp9Oz"
     }
   ],
   "folder": "IeD7MeayeQqIoNnW",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234184,
-    "modifiedTime": 1711345130365,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "B8UosOiNbkE3FJvr",
-  "sort": 1200000,
-  "_key": "!items!B8UosOiNbkE3FJvr"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplDominateMo",
+      "spell-lists": "bard,sorcerer,warlock,wizard"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739433075884,
+    "modifiedTime": 1739433137190,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplDominateMo"
 }

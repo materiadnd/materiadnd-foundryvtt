@@ -1,18 +1,46 @@
 {
   "name": "Ensnaring Strike",
-  "type": "spell",
+  "_id": "matSplEnsnaringS",
   "system": {
-    "source": {
-      "custom": "",
-      "book": "PHB",
-      "page": "237",
-      "license": ""
-    },
     "description": {
-      "value": "<div class=\"rd__b  rd__b--3\"><p>The next time you hit a creature with a weapon attack before this spell ends, a writhing mass of thorny vines appears at the point of impact, and the target must succeed on a Strength saving throw or be @condition[restrained] by the magical vines until the spell ends. A Large or larger creature has advantage on this saving throw. If the target succeeds on the save, the vines shrivel away.</p><div class=\"rd__spc-inline-post\"></div><p>While @condition[restrained] by this spell, the target takes [[/r 1d6]] piercing damage at the start of each of its turns. A creature @condition[restrained] by the vines or one that can touch the creature can use its action to make a Strength check against your spell save DC. On a success, the target is freed.</p></div><div class=\"rd__b  rd__b--3\"><div class=\"rd__b  rd__b--3\"><span class=\"rd__h rd__h--3\" data-title-index=\"1\"> <span class=\"entry-title-inner\">At Higher Levels.</span></span> <p>If you cast this spell using a spell slot of 2nd level or higher, the damage increases by [[/r 1d6]] for each slot level above 1st.</p><div class=\"rd__spc-inline-post\"></div></div><div class=\"rd__spc-inline-post\"></div></div>",
+      "value": "<p>As you hit the target, grasping vines appear on it, and it makes a Strength saving throw. A Large or larger creature has Advantage on this save. On a failed save, the target has the &amp;Reference[restrained apply=false] condition until the spell ends. On a successful save, the vines shrivel away, and the spell ends.</p><p>While Restrained, the target takes [[/damage 1d6 piercing]] damage at the start of each of its turns. The target or a creature within reach of it can take an action to make a [[/check ability=str skill=ath dc=@attributes.spelldc]] check against your spell save DC. On a success, the spell ends.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d6 for each spell slot level above 1.</p>",
       "chat": ""
     },
-    "actionType": "save",
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "bonus",
+      "condition": "Immediately after hitting a creature with a weapon",
+      "value": null
+    },
+    "duration": {
+      "value": "1",
+      "units": "minute"
+    },
+    "target": {
+      "affects": {
+        "choice": false,
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
+    },
+    "range": {
+      "units": "self",
+      "special": ""
+    },
+    "uses": {
+      "max": "",
+      "recovery": [],
+      "spent": 0
+    },
     "level": 1,
     "school": "con",
     "properties": [
@@ -25,102 +53,233 @@
       "cost": 0,
       "supply": 0
     },
-    "target": {
-      "value": null,
-      "units": "self",
-      "type": "self",
-      "prompt": true,
-      "width": null
-    },
-    "range": {
-      "value": null,
-      "units": "self",
-      "long": null
-    },
-    "activation": {
-      "type": "bonus",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": "1",
-      "units": "minute"
-    },
-    "damage": {
-      "parts": [
-        [
-          "1d6",
-          "piercing"
-        ]
-      ],
-      "versatile": ""
-    },
-    "scaling": {
-      "mode": "level",
-      "formula": "1d6"
-    },
-    "save": {
-      "ability": "str",
-      "dc": null,
-      "scaling": "spell"
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "formula": "",
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "tFGMG3cjQTEeAhv2",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "number": 1,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "piercing"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "save": {
+          "ability": [
+            "str"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      },
+      "ZWId9mbOE9zFnP6f": {
+        "type": "damage",
+        "_id": "ZWId9mbOE9zFnP6f",
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true,
+          "units": "any",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "piercing"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "name": "Start of Turn Damage"
+      }
     },
-    "cover": null,
-    "crewed": false,
-    "ability": null
+    "identifier": "ensnaring-strike"
   },
-  "img": "icons/magic/nature/root-vine-hand-strike.webp",
+  "type": "spell",
+  "img": "icons/magic/nature/root-vines-grow-brown.webp",
+  "effects": [
+    {
+      "name": "Ensnared",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplEnsnaringS",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "icons/magic/nature/root-vine-entangled-hand.webp",
+      "_id": "tFGMG3cjQTEeAhv2",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p><span style=\"font-family:Signika, sans-serif\">The target has the &amp;Reference[restrained apply=false] condition until the spell ends.</span></p><p><span style=\"font-family:Signika, sans-serif\">While Restrained, the target takes [[/damage 1d6 type=piercing]] (plus 1d6 per spell slot level above 1) damage at the start of each of its turns. The target or a creature within reach of it can take an action to make a [[/check ability=str skill=ath]] check against your spell save DC. On a success, the spell ends.</span></p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "restrained"
+      ],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplEnsnaringS.tFGMG3cjQTEeAhv2"
+    }
+  ],
+  "folder": "JMRA2elEdmr5pgX7",
   "ownership": {
     "default": 0
   },
   "flags": {
-    "plutonium": {
-      "page": "spells.html",
-      "source": "PHB",
-      "hash": "ensnaring%20strike_phb",
-      "propDroppable": "spell"
-    },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.w1Xzht9xtZZISnep",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplEnsnaringS",
       "spell-lists": "ranger"
     }
   },
-  "effects": [],
-  "folder": "JMRA2elEdmr5pgX7",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1708928824789,
-    "modifiedTime": 1708928833027,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738031819804,
+    "modifiedTime": 1738031843826,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "w1Xzht9xtZZISnep",
   "sort": 0,
-  "_key": "!items!w1Xzht9xtZZISnep"
+  "_key": "!items!matSplEnsnaringS"
 }

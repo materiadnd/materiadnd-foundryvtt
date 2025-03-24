@@ -1,74 +1,53 @@
 {
-  "folder": "WtBByem45tjsGx6Z",
   "name": "Blade Ward",
-  "type": "spell",
-  "_id": "BAGEUPexA80kyKKo",
-  "img": "icons/skills/melee/shield-damaged-broken-blue.webp",
+  "_id": "matSplBladeWard0",
   "system": {
     "description": {
-      "value": "<p>You extend your hand and trace a sigil of warding in the air. Until the end of your next turn, you have resistance against bludgeoning, piercing, and slashing damage dealt by weapon attacks.</p>",
+      "value": "<p>Whenever a creature makes an attack roll against you before the spell ends, the attacker subtracts [[/r 1d4]] from the attack roll.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
-      "units": "round"
+      "units": "minute"
     },
-    "cover": null,
-    "crewed": false,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "self",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "",
+        "type": "creature",
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "self"
+      "units": "self",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": null,
-    "actionType": "",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 0,
     "school": "abj",
     "properties": [
       "vocal",
-      "somatic"
+      "somatic",
+      "concentration"
     ],
     "materials": {
       "value": "",
@@ -77,34 +56,87 @@
       "supply": 0
     },
     "preparation": {
-      "mode": "prepared",
+      "mode": "always",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    }
+    "activities": {
+      "1wca3rjsdb0agWqk": {
+        "type": "utility",
+        "_id": "1wca3rjsdb0agWqk",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": true,
+          "name": "Attack Penalty",
+          "formula": "1d4"
+        },
+        "name": "Cast"
+      }
+    },
+    "identifier": "blade-ward"
   },
+  "type": "spell",
+  "img": "icons/skills/melee/weapons-crossed-swords-purple.webp",
   "effects": [],
+  "folder": "WtBByem45tjsGx6Z",
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.BAGEUPexA80kyKKo",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplBladeWard0",
       "spell-lists": "bard,sorcerer,warlock,wizard"
     }
   },
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1706861869026,
-    "modifiedTime": 1708927608467,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1737924768589,
+    "modifiedTime": 1737927161858,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "sort": 2500000,
-  "ownership": {
-    "default": 0
-  },
-  "_key": "!items!BAGEUPexA80kyKKo"
+  "sort": 1800000,
+  "_key": "!items!matSplBladeWard0"
 }

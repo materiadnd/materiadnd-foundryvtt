@@ -2,14 +2,18 @@
   "folder": "JMRA2elEdmr5pgX7",
   "name": "Thunderous Smite",
   "type": "spell",
-  "_id": "buMuZ5R92ULstmnE",
+  "_id": "matSplThunderous",
   "img": "icons/magic/air/air-pressure-shield-blue.webp",
   "system": {
     "description": {
-      "value": "<p>As you hit with a weapon attack or unarmed strike, your strike rings with thunder that is audible within 300 feet of you, and the attack deals an extra 1d8 plus your spellcasting ability modifier thunder damage to the target. Additionally, if the target is a creature, it must succeed on a Strength saving throw or be knocked prone, and if you choose, is knocked 10 feet away from you.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 2nd level or higher, the extra damage dealt by the attack increases by 1d8 for each slot.</p>",
+      "value": "<p>Your strike rings with thunder that is audible within 300 feet of you, and the target takes an extra [[/damage 1d8]] plus your spellcasting ability modifier thunder damage from the attack. Additionally, if the target is a creature, it must succeed on a Strength saving throw or be knocked &amp;Reference[Prone], and if you choose, is knocked 10 feet away from you.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d8 for each spell slot level above 1.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "bonus",
       "cost": 1,
@@ -26,12 +30,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "self"
+      "units": "self",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -87,28 +98,212 @@
     "scaling": {
       "mode": "level",
       "formula": "1d8"
+    },
+    "activities": {
+      "m2uC2cIKYfeI761F": {
+        "type": "damage",
+        "_id": "m2uC2cIKYfeI761F",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 8,
+              "bonus": "@mod",
+              "types": [
+                "thunder"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "name": "Extra Damage",
+        "img": "",
+        "appliedEffects": []
+      },
+      "Rk9Lg8dbnwlmSbSI": {
+        "type": "save",
+        "_id": "Rk9Lg8dbnwlmSbSI",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "64EdBmZK9TkUcVvX",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": true,
+          "units": "spec",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "str",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Prone Save",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Prone",
+      "img": "systems/dnd5e/icons/svg/statuses/prone.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplThunderous",
+      "transfer": false,
+      "_id": "64EdBmZK9TkUcVvX",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "prone"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730091119674,
+        "modifiedTime": 1730091138228,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplThunderous.64EdBmZK9TkUcVvX"
+    }
+  ],
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.buMuZ5R92ULstmnE",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplThunderous",
       "spell-lists": "paladin"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1707664719529,
-    "modifiedTime": 1708928830321,
+    "modifiedTime": 1738041851971,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 6100000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!buMuZ5R92ULstmnE"
+  "_key": "!items!matSplThunderous"
 }

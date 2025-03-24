@@ -4,14 +4,13 @@
   "img": "icons/magic/fire/dagger-rune-enchant-flame-orange.webp",
   "system": {
     "description": {
-      "value": "<p>You evoke a fiery blade in your free hand. The blade is similar in size and shape to a Scimitar, and it lasts for the Duration. If you let go of the blade, it disappears, but you can evoke the blade again as a Bonus Action.</p><p>You can use your action to make a melee spell Attack with the fiery blade. On a hit, the target takes 3d6 fire damage.</p><p>The flaming blade sheds bright light in a 10-foot radius and dim light for an additional 10 feet.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 4th level through 7th level, you may attack twice with the blade using your action on your turn. When you cast this spell using a spell slot of 8th level or higher, you may attack three times with the blade suing your action on your turn.</p>",
+      "value": "<p>You evoke a fiery blade in your free hand. The blade is similar in size and shape to a Scimitar, and it lasts for the Duration. If you let go of the blade, it disappears, but you can evoke the blade again as a Bonus Action.</p><p>You can use your action to make a melee spell Attack with the fiery blade. On a hit, the target takes [[/r 3d6]] fire damage.</p><p>The flaming blade sheds bright light in a 10-foot radius and dim light for an additional 10 feet.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 4th level through 7th level, you may attack twice with the blade using your action on your turn. When you cast this spell using a spell slot of 8th level or higher, you may attack three times with the blade suing your action on your turn.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "Materia Source of Truth",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "bonus",
@@ -28,12 +27,19 @@
       "width": null,
       "units": "",
       "type": "self",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "self"
+      "units": "self",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -69,7 +75,7 @@
     "save": {
       "ability": "",
       "dc": null,
-      "scaling": "spell"
+      "scaling": "cha"
     },
     "level": 2,
     "school": "evo",
@@ -91,7 +97,116 @@
       "vocal",
       "somatic"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "2DNuL4OdSj0Jqtva": {
+        "type": "utility",
+        "_id": "2DNuL4OdSj0Jqtva",
+        "sort": 100000,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Evoke Blade",
+        "img": "",
+        "appliedEffects": []
+      },
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": "floor(2 + @item.level / 2)d6"
+              },
+              "number": 3,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "fire"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "activation": {
+          "override": true,
+          "condition": ""
+        },
+        "duration": {
+          "override": true
+        },
+        "consumption": {
+          "spellSlot": false
+        },
+        "range": {
+          "override": true,
+          "units": "ft",
+          "special": "",
+          "value": "5"
+        },
+        "target": {
+          "override": true,
+          "affects": {
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "template": {
+            "type": ""
+          }
+        },
+        "sort": 200000
+      }
+    }
   },
   "effects": [],
   "folder": "eqg4afacZ1CBwMfZ",
@@ -102,12 +217,11 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "3.2.1",
+    "coreVersion": "12.328",
     "createdTime": 1661787234089,
-    "modifiedTime": 1710459771549,
+    "modifiedTime": 1720057885236,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "ownership": {

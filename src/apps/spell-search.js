@@ -2,6 +2,8 @@ import { Constants } from "../constants.js";
 import { Settings } from "../settings.js";
 
 const TOGGLE_STATES = ["ignore", "yes", "no"];
+const SPELL_COMPONENT_TYPES = ["material", "somatic", "vocal"];
+const SPELL_TAG_TYPES = ["concentration", "ritual"]
 
 function toggleState(currentState) {
     var currIdx = TOGGLE_STATES.findIndex(x => x == currentState);
@@ -25,9 +27,9 @@ function getMaxLevelForClass(actor, className) {
 
 function getComponentString(spell) {
     let componentList = [];
-    if (spell.system.properties.has('vocal')) { componentList.push(CONFIG.DND5E.spellComponents['vocal'].abbr); }
-    if (spell.system.properties.has('somatic')) { componentList.push(CONFIG.DND5E.spellComponents['somatic'].abbr); }
-    if (spell.system.properties.has('material')) { componentList.push(CONFIG.DND5E.spellComponents['material'].abbr); }
+    if (spell.system.properties.has('vocal')) { componentList.push(CONFIG.DND5E.itemProperties['vocal'].abbreviation); } 
+    if (spell.system.properties.has('somatic')) { componentList.push(CONFIG.DND5E.itemProperties['somatic'].abbreviation); }
+    if (spell.system.properties.has('material')) { componentList.push(CONFIG.DND5E.itemProperties['material'].abbreviation); }
     return componentList.join('/');
 }
 
@@ -115,10 +117,10 @@ function renderSpellCastTime(spellData) {
     } else if (spellData.castTime?.type == 'bonus') {
         return `${spellData.castTime?.type} action`;
     } else {
-        if (spellData.castTime?.cost > 1) {
-            return `${spellData.castTime?.cost} ${spellData.castTime?.type}s`;
+        if (spellData.castTime?.value > 1) {
+            return `${spellData.castTime?.value} ${spellData.castTime?.type}s`;
         } else {
-            return `${spellData.castTime?.cost} ${spellData.castTime?.type}`;
+            return `${spellData.castTime?.value} ${spellData.castTime?.type}`;
         }
     }
 }
@@ -129,7 +131,7 @@ function renderSpellSchool(spellData) {
 
 function renderSpellConcentration(spellData) {
     if (spellData.concentration) {
-        return `<dnd5e-icon class="search-results-body-icon" src="${CONFIG.DND5E.spellTags['concentration'].icon}"></dnd5e-icon>`
+        return `<dnd5e-icon class="search-results-body-icon" src="${CONFIG.DND5E.itemProperties['concentration'].icon}"></dnd5e-icon>`
     } else {
         return '';
     }
@@ -137,7 +139,7 @@ function renderSpellConcentration(spellData) {
 
 function renderSpellRitual(spellData) {
     if (spellData.ritual) {
-        return `<dnd5e-icon class="search-results-body-icon" src="${CONFIG.DND5E.spellTags['ritual'].icon}"></dnd5e-icon>`
+        return `<dnd5e-icon class="search-results-body-icon" src="${CONFIG.DND5E.itemProperties['ritual'].icon}"></dnd5e-icon>`
     } else {
         return '';
     }
@@ -523,11 +525,11 @@ export class SpellSearchApp extends Application {
     }
 
     _initializeComponentFilters() {
-        this.componentFilters = Object.entries(CONFIG.DND5E.spellComponents).map(
-            x => { return { key: x[0], name: x[1].label, state: 'ignore' } }
+        this.componentFilters = SPELL_COMPONENT_TYPES.map(
+            x => { return { key: x, name: CONFIG.DND5E.itemProperties[x].label, state: 'ignore' } }
         );
-        this.otherFilters = Object.entries(CONFIG.DND5E.spellTags).map(
-            x => { return { key: x[0], name: x[1].label, state: 'ignore' } }
+        this.otherFilters = SPELL_TAG_TYPES.map(
+            x => { return { key: x, name: CONFIG.DND5E.itemProperties[x].label, state: 'ignore' } }
         );
     }
 
@@ -790,6 +792,8 @@ export function SpellSearchRenderActorSheetHandler(html, actor) {
         let searchElt = $(`<span>&nbsp;&nbsp;<i class="fa-solid fa-magnifying-glass"></i> Spells</span>`);
         let className = header.innerHTML.replace(' Spellcasting', '').toLowerCase();
         let maxLevel = getMaxLevelForClass(actor, className);
+        className = className.replace(/\s*\(\w+\)\s*/i, '');    // for Warlock (INT) variant, and if we ever
+                                                                // do any other variant class
         let searchApp = new SpellSearchApp(className, maxLevel);
         searchElt.on("click", (evt) => {
             searchApp.render(true);

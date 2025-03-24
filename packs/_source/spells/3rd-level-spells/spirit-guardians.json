@@ -1,82 +1,59 @@
 {
   "name": "Spirit Guardians",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplSpiritGuar",
   "system": {
     "description": {
-      "value": "<p>You call forth spirits to protect you. They flit around you to a distance of 15 feet for the duration. If you are good or neutral, their spectral form appears angelic or fey (your choice). If you are evil, they appear fiendish.</p><p>When you cast this spell, you can designate any number of creatures you can see to be unaffected by it. An affected creature's speed is halved in the area, and when the creature enters the area for the first time on a turn or starts its turn there, it must make a Wisdom saving throw. On a failed save, the creature takes 3d8 radiant damage (if you are good or neutral) or 3d8 necrotic damage (if you are evil). On a successful save, the creature takes half as much damage.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d8 for each slot level above 3rd.</p>",
+      "value": "<p>Protective spirits flit around you in a 15-foot Emanation for the duration. If you are good or neutral, their spectral form appears angelic or fey (your choice). If you are evil, they appear fiendish.</p><p>When you cast this spell, you can designate creatures to be unaffected by it. Any other creature's Speed is halved in the Emanation, and whenever the Emanation enters a creature's space and whenever a creature enters the Emanation or ends its turn there, the creature must make a Wisdom saving throw. On a failed save, the creature takes 3d8 Radiant damage (if you are good or neutral) or 3d8 Necrotic damage (if you are evil). On a successful save, the creature takes half as much damage. A creature makes this save only once per turn.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d8 for each spell slot level above 3.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "10",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 15,
-      "width": null,
-      "units": "ft",
-      "type": "radius",
-      "prompt": true
+      "affects": {
+        "choice": true,
+        "count": "",
+        "type": "creature",
+        "special": ""
+      },
+      "template": {
+        "units": "ft",
+        "type": "radius",
+        "size": "15",
+        "contiguous": false,
+        "count": ""
+      }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "self"
+      "units": "self",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "3d8",
-          "radiant"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "wis",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 3,
     "school": "con",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
     "materials": {
-      "value": "A holy symbol",
+      "value": "a prayer scroll",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -85,38 +62,245 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "1d8"
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": false
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": true,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "Q3CLqX7crfusAxkj",
+            "onSave": true
+          }
+        ],
+        "range": {
+          "override": true,
+          "units": "ft",
+          "special": "",
+          "value": "15"
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 3,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "necrotic",
+                "radiant"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 200000,
+        "name": "Emanation Save"
+      },
+      "Rw9xP3RWH9K4eDya": {
+        "type": "utility",
+        "name": "Cast",
+        "_id": "Rw9xP3RWH9K4eDya",
+        "sort": 100000,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {},
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "concentration"
-    ],
-    "crewed": false
+    "identifier": "spirit-guardians"
+  },
+  "type": "spell",
+  "img": "icons/magic/light/orb-hands-humanoid-yellow.webp",
+  "effects": [
+    {
+      "name": "Half Speed",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplSpiritGuar",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "icons/magic/movement/abstract-ribbons-red-orange.webp",
+      "_id": "Q3CLqX7crfusAxkj",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.movement.walk",
+          "mode": 1,
+          "value": "0.5",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.fly",
+          "mode": 1,
+          "value": "0.5",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.climb",
+          "mode": 1,
+          "value": "0.5",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.swim",
+          "mode": 1,
+          "value": "0.5",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.burrow",
+          "mode": 1,
+          "value": "0.5",
+          "priority": null
+        }
+      ],
+      "description": "<p>The creature's speed is halved while within the Emanation.</p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplSpiritGuar.Q3CLqX7crfusAxkj"
+    }
+  ],
+  "folder": "CxgAwElQGTbcnuvc",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.bc6l5LTzaQlTNpxN",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplSpiritGuar",
       "spell-lists": "cleric"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
-  "img": "icons/magic/light/projectile-bolts-salvo-white.webp",
-  "effects": [],
-  "folder": "CxgAwElQGTbcnuvc",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234235,
-    "modifiedTime": 1713584796371,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738514589478,
+    "modifiedTime": 1738514589478,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "bc6l5LTzaQlTNpxN",
-  "sort": 1900000,
-  "_key": "!items!bc6l5LTzaQlTNpxN"
+  "sort": 0,
+  "_key": "!items!matSplSpiritGuar"
 }

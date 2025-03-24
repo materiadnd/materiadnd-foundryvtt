@@ -1,15 +1,15 @@
 {
   "name": "Far Step",
+  "_id": "matSplFarStep000",
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "description": {
-      "value": "<div><p>You teleport up to 60 feet to an unoccupied space you can see. On each of your turns before the spell ends, you can use a bonus action to teleport in this way again.</p><div><p>Additionally, while under the effects of this spell, you can use your reaction to teleport 10 feet to an unoccupied space you can see if a creature makes an attack roll against you. If you are still in reach or range of the attack then it is made at disadvantage against you.</p><p><strong>At Higher Levels.</strong> Using a spell slot of 9th level or higher grants a duration that does not require concentration.</p></div></div>",
+      "value": "<div><p>You teleport up to 60 feet to an unoccupied space you can see. On each of your turns before the spell ends, you can use a bonus action to teleport in this way again.</p><div><p>Additionally, while under the effects of this spell, you can use your reaction to teleport 10 feet to an unoccupied space you can see if a creature makes an attack roll against you. If you are still in reach or range of the attack then it is made at disadvantage against you.</p><p><strong>Using a Higher-Level Spell Slot.</strong> If you cast this spell using a level 9+ spell slot, the spell does not require your Concentration.</p></div></div>",
       "chat": ""
     },
     "actionType": "util",
@@ -30,12 +30,19 @@
       "units": "self",
       "type": "self",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "units": "self",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "bonus",
@@ -85,7 +92,68 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": []
+      },
+      "i4uBBnAu4Q0hf9LP": {
+        "type": "utility",
+        "_id": "i4uBBnAu4Q0hf9LP",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Additional Step",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "img": "icons/skills/movement/feet-spurred-boots-brown.webp",
   "ownership": {
@@ -100,23 +168,32 @@
     },
     "materia-dnd": {
       "tele-flag": "true",
-      "sourceId": "Compendium.materia-dnd.spells.Item.1KIEafxpO18jVneb",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplFarStep000",
       "spell-lists": "sorcerer,warlock,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
     }
   },
   "effects": [],
   "folder": "slWnSXtwvwnA9EXJ",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1709184356086,
-    "modifiedTime": 1709186114418,
+    "modifiedTime": 1739245219477,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "1KIEafxpO18jVneb",
-  "sort": 3100000,
-  "_key": "!items!1KIEafxpO18jVneb"
+  "sort": 3600000,
+  "_key": "!items!matSplFarStep000"
 }

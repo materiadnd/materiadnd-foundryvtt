@@ -9,7 +9,11 @@
       "value": "<p>The extra damage dealt by your rite is acid damage</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "",
       "cost": 1,
@@ -78,21 +82,156 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 2
+    },
+    "activities": {
+      "wWcMmm7Yi5eLbX5e": {
+        "type": "enchant",
+        "_id": "wWcMmm7Yi5eLbX5e",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "MVt2TDvrWqk7RbRb"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "enchant": {
+          "identifier": ""
+        },
+        "restrictions": {
+          "allowMagical": true,
+          "categories": [],
+          "properties": [],
+          "type": "weapon"
+        },
+        "name": "Invoke Rite",
+        "img": "",
+        "appliedEffects": [
+          "MVt2TDvrWqk7RbRb"
+        ]
+      }
     }
   },
-  "effects": [],
-  "flags": {},
+  "effects": [
+    {
+      "type": "enchantment",
+      "name": "Rite of the Devourer",
+      "img": "icons/skills/melee/blade-tip-smoke-green.webp",
+      "disabled": true,
+      "_id": "MVt2TDvrWqk7RbRb",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "value": "{}, Infused",
+          "priority": null
+        },
+        {
+          "key": "system.damage.parts",
+          "mode": 2,
+          "value": "[[\"@scale.blood-hunter.hemocraft-die\", \"acid\"]]",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1741734730362,
+        "modifiedTime": 1741735139460,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!UQjsA1Xzq147ccli.MVt2TDvrWqk7RbRb"
+    }
+  ],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707885524397,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1741735155437,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 0,
+  "sort": 400000,
   "ownership": {
     "default": 0
   },

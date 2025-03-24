@@ -1,18 +1,47 @@
 {
   "name": "Dragon's Breath",
-  "type": "spell",
+  "_id": "matSplDragonsBre",
   "system": {
-    "source": {
-      "custom": "",
-      "book": "XGE",
-      "page": "154",
-      "license": ""
-    },
     "description": {
-      "value": "<div class=\"rd__b  rd__b--3\"><p>You touch one willing creature and imbue it with the power to spew magical energy from its mouth, provided it has one. Choose acid, cold, fire, lightning, or poison. Until the spell ends, the creature can use an action to exhale energy of the chosen type in a 15-foot cone. Each creature in that area must make a Dexterity saving throw, taking [[/r 3d6]] damage of the chosen type on a failed save, or half as much damage on a successful one.</p><div class=\"rd__spc-inline-post\"></div></div><div class=\"rd__b  rd__b--3\"><div class=\"rd__b  rd__b--3\"><span class=\"rd__h rd__h--3\" data-title-index=\"1\"> <span class=\"entry-title-inner\">At Higher Levels.</span></span> <p>When you cast this spell using a spell slot of 3rd level or higher, the damage increases by [[/r 1d6]] for each slot level above 2nd.</p><div class=\"rd__spc-inline-post\"></div></div><div class=\"rd__spc-inline-post\"></div></div>",
+      "value": "<p>You touch one willing creature, and choose Acid, Cold, Fire, Lightning, or Poison. Until the spell ends, the target can take a Magic action to exhale a 15-foot Cone. Each creature in that area makes a Dexterity saving throw, taking [[/damage 3d6]] damage of the chosen type on a failed save or half as much damage on a successful one.</p><p><strong>Using a Higher-Level Spell Slot. </strong>The damage increases by 1d6 for each spell slot level above 2.</p>",
       "chat": ""
     },
-    "actionType": "save",
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "bonus",
+      "condition": "",
+      "value": null
+    },
+    "duration": {
+      "value": "1",
+      "units": "minute"
+    },
+    "target": {
+      "affects": {
+        "type": "willing",
+        "count": "1",
+        "choice": false,
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
+    },
+    "range": {
+      "units": "touch",
+      "special": ""
+    },
+    "uses": {
+      "max": "",
+      "recovery": [],
+      "spent": 0
+    },
     "level": 2,
     "school": "trs",
     "properties": [
@@ -22,107 +51,191 @@
       "concentration"
     ],
     "materials": {
-      "value": "a hot pepper",
+      "value": "",
       "consumed": false,
       "cost": 0,
       "supply": 0
     },
-    "target": {
-      "value": null,
-      "units": "touch",
-      "type": "",
-      "prompt": true,
-      "width": null
-    },
-    "range": {
-      "value": null,
-      "units": "touch",
-      "long": null
-    },
-    "activation": {
-      "type": "bonus",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": "1",
-      "units": "minute"
-    },
-    "damage": {
-      "parts": [
-        [
-          "3d6",
-          ""
-        ]
-      ],
-      "versatile": ""
-    },
-    "scaling": {
-      "mode": "level",
-      "formula": "1d6"
-    },
-    "save": {
-      "ability": "dex",
-      "dc": null,
-      "scaling": "spell"
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "formula": "",
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "name": "Cast"
+      },
+      "61nfYLT1M7MOTibf": {
+        "type": "save",
+        "name": "Exhale",
+        "_id": "61nfYLT1M7MOTibf",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "cone",
+            "size": "15",
+            "count": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 3,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "acid",
+                "cold",
+                "fire",
+                "lightning",
+                "poison"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "img": "systems/dnd5e/icons/svg/statuses/concentrating.svg"
+      }
     },
-    "cover": null,
-    "crewed": false,
-    "ability": ""
+    "identifier": "dragons-breath"
   },
+  "type": "spell",
   "img": "icons/creatures/abilities/dragon-fire-breath-orange.webp",
+  "effects": [],
+  "folder": "3rC3qr5FIlZymxFD",
   "ownership": {
     "default": 0
   },
   "flags": {
-    "plutonium": {
-      "page": "spells.html",
-      "source": "XGE",
-      "hash": "dragon's%20breath_xge",
-      "propDroppable": "spell"
-    },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.QkiYuSG9P9yVT7zb",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplDragonsBre",
       "spell-lists": "sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
-  "effects": [],
-  "folder": "3rC3qr5FIlZymxFD",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1708312543214,
-    "modifiedTime": 1709239806771,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738212496937,
+    "modifiedTime": 1738212513816,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "QkiYuSG9P9yVT7zb",
-  "sort": 7200000,
-  "_key": "!items!QkiYuSG9P9yVT7zb"
+  "sort": 0,
+  "_key": "!items!matSplDragonsBre"
 }

@@ -1,77 +1,59 @@
 {
   "name": "Antimagic Field",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplAntimagicF",
   "system": {
     "description": {
-      "value": "<p>A 10-foot-radius invisible sphere of antimagic surrounds you. This area is divorced from the magical energy that suffuses the multiverse. Within the sphere, spells cannot be cast, summoned creatures disappear, and even magic items become mundane. Until the spell ends, the sphere moves with you, centered on you.</p><p>Spells and other magical effects, except those created by an artifact or a deity, are suppressed in the sphere and cannot protrude into it. A slot expended to cast a suppressed spell is consumed. While an effect is suppressed, it does not function, but the time it spends suppressed counts against its duration.</p><p>While the field is active, suspend it for up to 1 minute at a time (no action required). If the time suspended is less than 1 minute, the duration is still reduced in increments of 1 minute.</p><p><strong>Targeted Effects.</strong> Spells and other magical effects, such as magic missile and charm person, that target a creature or an object in the sphere have no effect on that target.</p><p><strong>Areas of Magic.</strong> The area of another spell or magical effect, such as fireball, cannot extend into the sphere. If the sphere overlaps an area of magic, the part of the area that is covered by the sphere is suppressed. For example, the flames created by a wall of fire are suppressed within the sphere, creating a gap in the wall if the overlap is large enough.</p><p><strong>Spells.</strong> Any active spell or other magical effect on a creature or an object in the sphere is suppressed while the creature or object is in it.</p><p><strong>Magic Items.</strong> The properties and powers of magic items are suppressed in the sphere. For example, a longsword, +1 in the sphere functions as a nonmagical longsword.</p><p>A magic weapon's properties and powers are suppressed if it is used against a target in the sphere or wielded by an attacker in the sphere. If a magic weapon or a piece of magic ammunition fully leaves the sphere (for example, if you fire a magic arrow or throw a magic spear at a target outside the sphere), the magic of the item ceases to be suppressed as soon as it exits.</p><p><strong>Magical Travel.</strong> Teleportation and planar travel fail to work in the sphere, whether the sphere is the destination or the departure point for such magical travel. A portal to another location, world, or plane of existence, as well as an opening to an extradimensional space such as that created by the rope trick spell, temporarily closes while in the sphere.</p><p><strong>Creatures and Objects.</strong> A creature or object summoned or created by magic temporarily winks out of existence in the sphere. Such a creature instantly reappears once the space the creature occupied is no longer within the sphere.</p><p><strong>Dispel Magic</strong>. Spells and magical effects such as dispel magic have no effect on the sphere. Likewise, the spheres created by different antimagic field spells don't nullify each other.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 9th level or higher, grants a duration that does not require concentration.</p>",
+      "value": "<p>An aura of antimagic surrounds you in 10-foot Emanation. No one can cast spells, take Magic actions, or create other magical effects inside the aura, and those things can't target or otherwise affect anything inside it. Magical properties of magic items don't work inside the aura or on anything inside it.</p><p>Areas of effect created by spells or other magic can't extend into the aura, and no one can teleport into or out of it or use planar travel there. Portals close temporarily while in the aura.</p><p>Ongoing spells, except those cast by an Artifact or a deity, are suppressed in the area. While an effect is suppressed, it doesn't function, but the time it spends suppressed counts against its duration.</p><p>While the field is active, you can suspend it for up to 1 minute at a time. If the time suspended is less than 1 minute, the duration is still reduced in increments of 1 minute.</p><p><em>@UUID[Compendium.materia-dnd.spells.Item.matSplDispelMagi]{Dispel Magic}</em> has no effect on the aura, and the auras created by different <em>Antimagic Field</em> spells don't nullify each other.</p><p><strong>Using a Higher-Level Spell Slot.</strong> If you use a slot of level 9+, this does not require your Concentration..</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": 10,
-      "width": null,
-      "units": "",
-      "type": "sphere",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "",
+        "type": "any",
+        "special": ""
+      },
+      "template": {
+        "units": "ft",
+        "contiguous": false,
+        "type": "radius",
+        "size": "10",
+        "count": ""
+      }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "self"
+      "units": "self",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 8,
     "school": "abj",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
     "materials": {
-      "value": "A pinch of powdered iron or iron filings",
+      "value": "iron filings",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -80,38 +62,84 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "OxII9yaa3KpRduWZ": {
+        "type": "utility",
+        "_id": "OxII9yaa3KpRduWZ",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast"
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "concentration"
-    ],
-    "crewed": false
+    "identifier": "antimagic-field"
+  },
+  "type": "spell",
+  "img": "icons/magic/light/orb-container-orange.webp",
+  "effects": [],
+  "folder": "IeD7MeayeQqIoNnW",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.TYZYQdPnClSXdi34",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplAntimagicF",
       "spell-lists": "cleric,wizard"
     }
   },
-  "img": "icons/magic/control/debuff-chains-ropes-net-purple-blue.webp",
-  "effects": [],
-  "folder": "IeD7MeayeQqIoNnW",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234102,
-    "modifiedTime": 1709231578595,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1739432627677,
+    "modifiedTime": 1739439345527,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "TYZYQdPnClSXdi34",
-  "sort": 1500000,
-  "_key": "!items!TYZYQdPnClSXdi34"
+  "sort": 0,
+  "_key": "!items!matSplAntimagicF"
 }

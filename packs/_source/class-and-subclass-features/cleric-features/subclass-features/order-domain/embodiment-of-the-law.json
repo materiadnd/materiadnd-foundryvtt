@@ -6,10 +6,14 @@
   "img": "icons/skills/social/trading-justice-scale-yellow.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 6th level, you have become remarkably adept at channeling magical energy to compel others.</p><p>If you cast a spell of the enchantment school using a spell slot of 1st level or higher, you can change the spell's casting time to 1 bonus action for this casting, provided the spell's casting time is normally 1 action.</p><p>After casting a spell like this, your next melee or ranged attack, or cleric cantrip deals bonus damage equal to half your cleric level until the start of your next turn.</p><p>You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses of it when you finish a long rest, or you can expend a use of your Harness Divine Power to regain all expended uses of this feature.</p>",
+      "value": "<p>You have become remarkably adept at channeling magical energy to compel others.</p><p>If you cast a level 1+ Enchantment spell, you can change the spell's casting time to 1 Bonus Action for this casting, provided the spell's casting time is normally 1 action.</p><p>After casting a spell like this, your next melee or ranged attack, or Cleric cantrip deals bonus damage equal to half your Cleric level until the start of your next turn.</p><p>You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses of it when you finish a Long Rest, or you can expend a use of your Harness Divine Power to regain all expended uses of this feature.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "none",
       "cost": null,
@@ -69,10 +73,104 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Order Domain 6",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 6
+    },
+    "activities": {
+      "Y70H1mSCZymENrNy": {
+        "type": "utility",
+        "_id": "Y70H1mSCZymENrNy",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-@abilities.wis.mod",
+              "target": ""
+            },
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.matClrHarnessDiv"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Recharge with Harness Divine Power",
+        "img": "",
+        "appliedEffects": []
+      },
+      "dnd5eactivity000": {
+        "name": "Boost Enchantment",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "target": {
+          "affects": {
+            "type": "self"
+          }
+        }
+      }
     }
   },
   "effects": [],
@@ -80,15 +178,21 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1710766739058,
-    "modifiedTime": 1710766928726,
+    "modifiedTime": 1742441958150,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_key": "!items!9YpX2SXmJ3i1ZQHH"

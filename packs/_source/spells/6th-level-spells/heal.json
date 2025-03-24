@@ -1,80 +1,54 @@
 {
   "name": "Heal",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplHeal000000",
   "system": {
     "description": {
-      "value": "<p>Choose a creature that you can see within range. A surge of positive energy washes through the creature, causing it to regain 70 Hit Points. This spell also ends blindness, deafness, and any Diseases affecting the target. This spell has no effect on constructs or Undead.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 7th level or higher, the amount of Healing increases by 10 for each slot level above 6th.</p>",
+      "value": "<p>Choose a creature that you can see within range. Positive energy washes through the target, restoring 70 Hit Points. This spell also ends the &amp;Reference[Blinded], &amp;Reference[Deafened], and &amp;Reference[Poisoned] conditions on the target.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The healing increases by 10 for each spell slot level above 6.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": 60,
-      "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": "",
+      "value": "60"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "heal",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "70",
-          "healing"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 6,
-    "school": "evo",
+    "school": "abj",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -85,36 +59,95 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "10"
+    "activities": {
+      "YLzHNhuuaaJvKZDa": {
+        "type": "heal",
+        "_id": "YLzHNhuuaaJvKZDa",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "healing": {
+          "number": null,
+          "denomination": 0,
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": false,
+            "formula": ""
+          },
+          "scaling": {
+            "number": null,
+            "mode": "whole",
+            "formula": "10"
+          },
+          "bonus": "70"
+        },
+        "name": ""
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic"
-    ],
-    "crewed": false
+    "identifier": "heal"
+  },
+  "type": "spell",
+  "img": "icons/magic/life/heart-glowing-red.webp",
+  "effects": [],
+  "folder": "UjV13fGRtZfpmOAS",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.6zkM0gNcl589FcWq",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplHeal000000",
       "spell-lists": "cleric,druid"
     }
   },
-  "img": "icons/magic/life/heart-cross-strong-flame-green.webp",
-  "effects": [],
-  "folder": "UjV13fGRtZfpmOAS",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234231,
-    "modifiedTime": 1709222420345,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1739395008602,
+    "modifiedTime": 1739395008602,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "6zkM0gNcl589FcWq",
-  "sort": 300000,
-  "_key": "!items!6zkM0gNcl589FcWq"
+  "sort": 0,
+  "_key": "!items!matSplHeal000000"
 }

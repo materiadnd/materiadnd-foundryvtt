@@ -10,10 +10,9 @@
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
@@ -30,12 +29,20 @@
       "width": null,
       "units": "ft",
       "type": "cube",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "count": ""
+      }
     },
     "range": {
       "value": 60,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -66,7 +73,7 @@
     "save": {
       "ability": "dex",
       "dc": null,
-      "scaling": "spell"
+      "scaling": "int"
     },
     "level": 1,
     "school": "evo",
@@ -88,7 +95,73 @@
       "vocal",
       "concentration"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "deRJVmfTV5F0nDZA": {
+        "type": "save",
+        "_id": "deRJVmfTV5F0nDZA",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "7M1Bj0bupBXSM0bg",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "dex",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
@@ -96,16 +169,59 @@
     }
   },
   "img": "icons/magic/fire/projectile-meteor-salvo-strong-teal.webp",
-  "effects": [],
+  "effects": [
+    {
+      "name": "Outlined",
+      "img": "icons/magic/control/silhouette-hold-change-green.webp",
+      "origin": "Compendium.materia-dnd.species.Item.sCswhgakD6ghvYrh",
+      "transfer": false,
+      "_id": "7M1Bj0bupBXSM0bg",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "flags.midi-qol.grants.advantage.attack.all",
+          "mode": 0,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target is outlined in blue, green, or violet light (your choice)</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730054984650,
+        "modifiedTime": 1730055054369,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!sCswhgakD6ghvYrh.7M1Bj0bupBXSM0bg"
+    }
+  ],
   "folder": "WYAQNR6JWwlPogWn",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "3.2.1",
+    "coreVersion": "12.328",
     "createdTime": 1661787234222,
-    "modifiedTime": 1709568967238,
+    "modifiedTime": 1720057858007,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "sCswhgakD6ghvYrh",

@@ -1,75 +1,56 @@
 {
   "name": "Plant Growth",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplPlantGrowt",
   "system": {
     "description": {
-      "value": "<p>This spell channels vitality into plants within a specific area. There are two possible uses for the spell, granting either immediate or long-term benefits.</p><p>If you cast this spell using 1 action, choose a point within range. All normal plants in a 100-foot radius centered on that point become thick and overgrown. A creature moving through the area must spend 4 feet of movement for every 1 foot it moves.</p><p>You can exclude one or more areas of any size within the spell's area from being affected.</p><p>If you cast this spell over 8 hours, you enrich the land. All plants in a half-mile radius centered on a point within range become enriched for 1 year. The plants yield twice the normal amount of food when harvested.</p>",
+      "value": "<p><strong>Casting Time:</strong> Action (Overgrowth) or 8 hours (Enrichment)</p><p>This spell channels vitality into plants. The casting time you use determines whether the spell has the Overgrowth or the Enrichment effect below.</p><p><strong>Overgrowth.</strong> Choose a point within range. All normal plants in a 100-foot-radius Sphere centered on that point become thick and overgrown. A creature moving through that area must spend 4 feet of movement for every 1 foot it moves. You can exclude one or more areas of any size within the spell's area from being affected.</p><p><strong>Enrichment. </strong>All plants in a half-mile radius centered on a point within range become enriched for 1 year. The plants yield twice the normal amount of food when harvested. They can benefit from only one <em>Plant Growth</em> per year.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
+      "type": "special",
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 100,
-      "width": null,
-      "units": "ft",
-      "type": "radius",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "",
+        "type": "space",
+        "special": ""
+      },
+      "template": {
+        "units": "ft",
+        "type": "",
+        "size": "100",
+        "contiguous": false,
+        "count": ""
+      }
     },
     "range": {
-      "value": 150,
-      "long": null,
-      "units": "ft"
+      "value": "150",
+      "units": "ft",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 3,
     "school": "trs",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -80,36 +61,146 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "sphere",
+            "size": "100",
+            "count": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": "space",
+            "special": ""
+          },
+          "override": true
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "name": "Overgrowth",
+        "img": "icons/magic/nature/plant-undersea-glow-green.webp"
+      },
+      "IrJvud8Qz62PeeIQ": {
+        "type": "utility",
+        "_id": "IrJvud8Qz62PeeIQ",
+        "activation": {
+          "type": "hour",
+          "value": 8,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Enrichment",
+        "img": "icons/skills/trades/farming-wheat-circle-yellow.webp"
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic"
-    ],
-    "crewed": false
+    "identifier": "plant-growth"
+  },
+  "type": "spell",
+  "img": "icons/magic/nature/plant-sproud-hands-dirt-green.webp",
+  "effects": [],
+  "folder": "CxgAwElQGTbcnuvc",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.XlGyjqqQFUNuKCGb",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplPlantGrowt",
       "spell-lists": "bard,druid,ranger"
     }
   },
-  "img": "icons/magic/nature/leaf-glow-triple-green.webp",
-  "effects": [],
-  "folder": "CxgAwElQGTbcnuvc",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234162,
-    "modifiedTime": 1713584796371,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738514433888,
+    "modifiedTime": 1738514448784,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "XlGyjqqQFUNuKCGb",
-  "sort": 1100000,
-  "_key": "!items!XlGyjqqQFUNuKCGb"
+  "sort": 0,
+  "_key": "!items!matSplPlantGrowt"
 }

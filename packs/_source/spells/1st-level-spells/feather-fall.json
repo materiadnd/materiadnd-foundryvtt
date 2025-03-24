@@ -1,77 +1,56 @@
 {
   "name": "Feather Fall",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplFeatherFal",
   "system": {
     "description": {
-      "value": "<p>Choose up to five falling creatures within range. A falling creature's rate of descent slows to 60 feet per round until the spell ends. If the creature lands before the spell ends, it takes no falling damage and can land on its feet, and the spell ends for that creature.</p>",
+      "value": "<p>Choose up to five falling creatures within range. A falling creature's rate of descent slows to 60 feet per round until the spell ends. If a creature lands before the spell ends, the creature takes no damage from the fall, and the spell ends for that creature.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "reaction",
-      "cost": 1,
-      "condition": "which you take when you or a creature within 60 feet of you falls"
+      "condition": "when you or a creature you can see within 60 feet of you falls",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 5,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "type": "creature",
+        "count": "5",
+        "choice": false,
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": 60,
-      "long": null,
-      "units": "ft"
+      "value": "60",
+      "units": "ft",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 1,
     "school": "trs",
+    "properties": [
+      "vocal",
+      "material"
+    ],
     "materials": {
-      "value": "A small feather or piece of down",
+      "value": "a small feather or piece of down",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -80,36 +59,83 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      }
     },
-    "properties": [
-      "vocal",
-      "material"
-    ],
-    "crewed": false
+    "identifier": "feather-fall"
+  },
+  "type": "spell",
+  "img": "icons/commodities/materials/feather-blue-glowing.webp",
+  "effects": [],
+  "folder": "JMRA2elEdmr5pgX7",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.n5VyKMuilCXJRuXw",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplFeatherFal",
       "spell-lists": "artificer,bard,sorcerer,wizard"
     }
   },
-  "img": "icons/magic/air/wind-swirl-pink-purple.webp",
-  "effects": [],
-  "folder": "JMRA2elEdmr5pgX7",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234229,
-    "modifiedTime": 1708928830321,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738033274357,
+    "modifiedTime": 1738033281169,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "n5VyKMuilCXJRuXw",
-  "sort": 1900000,
-  "_key": "!items!n5VyKMuilCXJRuXw"
+  "sort": 0,
+  "_key": "!items!matSplFeatherFal"
 }

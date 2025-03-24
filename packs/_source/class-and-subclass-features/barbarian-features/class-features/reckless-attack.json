@@ -2,14 +2,18 @@
   "folder": "flNjIH13DTI79OMB",
   "name": "Reckless Attack",
   "type": "feat",
-  "_id": "g5TlqXfTzm1moS4P",
+  "_id": "matBrbRecklessAt",
   "img": "icons/weapons/axes/axe-battle-broad-stone.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 2nd level, you can throw aside all concern for defense to attack with fierce desperation. When you make your first attack on your turn, you can decide to attack recklessly. Doing so gives you advantage on attack rolls using Strength during this turn, but attack rolls against you have advantage until your next turn.</p>",
+      "value": "<p>You can throw aside all concern for defense to attack with increased ferocity. When you make your first attack roll on your turn, you can decide to attack recklessly. Doing so gives you Advantage on attack rolls using Strength until the start of your next turn, but attack rolls against you have Advantage during that time.</p><section id=\"secret-5CXUiZvPNoam0zA9\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes an Active Effect for tracking whether you are reckless or not but it does not automate Advantage on your attacks or attacks against you.</p></section>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "",
       "cost": null,
@@ -73,23 +77,69 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 2
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Reckless Attack",
+      "img": "icons/weapons/axes/axe-battle-broad-stone.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.matBrbRecklessAt",
+      "_id": "JCrFd0XUnZh6Z6AZ",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "flags.midi-qol.advantage.attack.str",
+          "mode": 0,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": 1,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": 1739510823249,
+        "modifiedTime": 1739510859975,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matBrbRecklessAt.JCrFd0XUnZh6Z6AZ"
+    }
+  ],
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1708294860323,
-    "modifiedTime": 1712723961338,
+    "modifiedTime": 1739510818889,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 275000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!g5TlqXfTzm1moS4P"
+  "_key": "!items!matBrbRecklessAt"
 }

@@ -9,7 +9,11 @@
       "value": "<p>The extra damage dealt by your rite is lightning damage.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "",
       "cost": 1,
@@ -78,21 +82,154 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 2
+    },
+    "activities": {
+      "r5zjXwMJD7fLj187": {
+        "type": "enchant",
+        "_id": "r5zjXwMJD7fLj187",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "0MEtXlavEclXpGEO"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "enchant": {
+          "identifier": ""
+        },
+        "restrictions": {
+          "allowMagical": false,
+          "categories": [],
+          "properties": [],
+          "type": "weapon"
+        },
+        "name": "Invoke Rite",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
-  "flags": {},
+  "effects": [
+    {
+      "type": "enchantment",
+      "name": "Rite of the Storm",
+      "img": "icons/magic/lightning/bolts-strike-salvo-blue.webp",
+      "disabled": true,
+      "_id": "0MEtXlavEclXpGEO",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "value": "{}, Infused",
+          "priority": null
+        },
+        {
+          "key": "system.damage.parts",
+          "mode": 2,
+          "value": "[[\"@scale.blood-hunter.hemocraft-die\", \"lightning\"]]",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1741735701325,
+        "modifiedTime": 1741735722423,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!c46uvOVV1ImXEd14.0MEtXlavEclXpGEO"
+    }
+  ],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707885754925,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1741735701385,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 0,
+  "sort": 700000,
   "ownership": {
     "default": 0
   },

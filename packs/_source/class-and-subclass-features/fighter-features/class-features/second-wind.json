@@ -6,10 +6,14 @@
   "img": "icons/magic/life/heart-cross-strong-purple-orange.webp",
   "system": {
     "description": {
-      "value": "<p>You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level. Once you use this feature, you must finish a short or long rest before you can use it again.</p><p>The hit points recovered with this feature improves to 2d10 + your fighter level at level 5, 3d10 + your fighter level at level 11 and 4d10 + your fighter level at level 17.</p>",
+      "value": "<p>You have a limited well of stamina that you can draw on to protect yourself from harm. As a Bonus Action, you can use it to regain Hit Points equal to 1d10 + your Fighter level.</p><p>You can use this feature twice. You regain one expended use when you finish a Short Rest, and you regain all expended uses when you finish a Long Rest.</p><p>The hit points recovered with this feature improves to 2d10 + your fighter level at level 5, 3d10 + your fighter level at level 11 and 4d10 + your fighter level at level 17.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "bonus",
       "cost": 1,
@@ -35,9 +39,19 @@
     },
     "uses": {
       "value": 1,
-      "max": "1",
+      "max": "2",
       "per": "sr",
-      "recovery": "",
+      "recovery": [
+        {
+          "period": "sr",
+          "type": "formula",
+          "formula": "1"
+        },
+        {
+          "period": "lr",
+          "type": "recoverAll"
+        }
+      ],
       "prompt": true
     },
     "consume": {
@@ -78,21 +92,23 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 1
     }
   },
   "effects": [],
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707149480594,
-    "modifiedTime": 1710306936105,
+    "modifiedTime": 1741204405148,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 100000,
+  "sort": -100000,
   "ownership": {
     "default": 0
   },

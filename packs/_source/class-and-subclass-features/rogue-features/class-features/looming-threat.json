@@ -6,10 +6,14 @@
   "img": "icons/magic/life/heart-area-circle-red-green.webp",
   "system": {
     "description": {
-      "value": "<p>When you reach 12th level, when you start your turn and you have no more than half of your hit points left you can use your Cunning Action to expend one Hit Die to regain hit points. You can roll an additional Hit Die to regain more hit points, but doing so reduces the number of Sneak Attack dice you roll on your next successful Sneak Attack is by half (rounded down). This reduction lasts until you complete a short or long rest.</p><p>You can regain hit points with this feature a number of times equal to your proficiency bonus. You regain all expended uses when you finish a long rest.</p>",
+      "value": "<p>When you start your turn and you have no more than half of your Hit Points left you can use your Cunning Action to expend one Hit Die to regain Hit Points. You can roll an additional Hit Die to regain more hit points, but doing so reduces the number of Sneak Attack dice you roll on your next successful Sneak Attack by half (rounded down). This reduction lasts until you complete a Short or Long Rest.</p><p>You can regain Hit Points with this feature a number of times equal to your proficiency bonus. You regain all expended uses when you finish a Long Rest.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "bonus",
       "cost": 1,
@@ -73,18 +77,46 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Recover Health",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": []
+      }
+    },
+    "prerequisites": {
+      "level": 12
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707237496890,
-    "modifiedTime": 1710402677313,
+    "modifiedTime": 1741628138123,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 199805,

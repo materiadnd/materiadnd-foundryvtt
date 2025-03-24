@@ -1,75 +1,53 @@
 {
   "name": "Protection from Poison",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplProtFromPo",
   "system": {
     "description": {
-      "value": "<p>You touch a creature. If it is poisoned, you neutralize the poison. If more than one poison afflicts the target, you neutralize one poison that you know is present, or you neutralize one at random.</p><p>For the duration, the target has advantage on saving throws against being poisoned, and it has resistance to poison damage.</p>",
+      "value": "<p>You touch a creature and end the &amp;Reference[poisoned] condition on it. For the duration, the target has Advantage on saving throws to avoid or end the Poisoned condition, and it has Resistance to Poison damage.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "type": "creature",
+        "count": "1",
+        "choice": false,
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "touch"
+      "units": "touch",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 2,
     "school": "abj",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -80,39 +58,86 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "zTci2V6Iij0r0IIg"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "mgc"
-    ],
-    "crewed": false
+    "identifier": "protection-from-poison"
   },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.e9iImqqLlLvDKCdW",
-      "spell-lists": "artificer,cleric,druid,paladin,ranger"
-    }
-  },
-  "img": "icons/magic/defensive/shield-barrier-glowing-triangle-green.webp",
+  "type": "spell",
+  "img": "icons/skills/toxins/cup-glass-poisoned-held.webp",
   "effects": [
     {
-      "name": "Protection from Poison",
-      "origin": "Compendium.dnd5e.spells.Item.MAxM77CDUu8dgIRQ",
+      "name": "Poison Protection",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplProtFromPo",
       "duration": {
+        "rounds": null,
         "startTime": null,
         "seconds": 3600,
         "combat": null,
-        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "dNSELIYDQMBopj0Z",
+      "disabled": false,
+      "flags": {},
+      "img": "icons/equipment/head/mask-plague-leather-brown.webp",
+      "_id": "zTci2V6Iij0r0IIg",
+      "type": "base",
+      "system": {},
       "changes": [
         {
           "key": "system.traits.dr.value",
@@ -121,40 +146,43 @@
           "priority": null
         }
       ],
-      "description": "<p>The target has advantage on saving throws against being poisoned, and it has resistance to poison damage.</p>",
-      "transfer": true,
-      "statuses": [],
-      "flags": {},
+      "description": "<p><span style=\"font-family:Signika, sans-serif\">For the duration, the target has Advantage on saving throws to avoid or end the Poisoned condition, and it has Resistance to Poison damage.</span></p>",
       "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
       "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
+        "lastModifiedBy": null
       },
-      "img": "icons/magic/defensive/shield-barrier-glowing-triangle-green.webp",
-      "type": "base",
-      "system": {},
-      "sort": 0,
-      "_key": "!items.effects!e9iImqqLlLvDKCdW.dNSELIYDQMBopj0Z"
+      "_key": "!items.effects!matSplProtFromPo.zTci2V6Iij0r0IIg"
     }
   ],
   "folder": "3rC3qr5FIlZymxFD",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234123,
-    "modifiedTime": 1711345393716,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "e9iImqqLlLvDKCdW",
-  "sort": 1100000,
-  "_key": "!items!e9iImqqLlLvDKCdW"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplProtFromPo",
+      "spell-lists": "artificer,cleric,druid,paladin,ranger"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738216147967,
+    "modifiedTime": 1738216161826,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplProtFromPo"
 }

@@ -1,102 +1,56 @@
 {
-  "folder": "JMRA2elEdmr5pgX7",
   "name": "Chromatic Orb",
-  "type": "spell",
-  "_id": "aDtq5NPTYyVeR1lb",
-  "img": "icons/magic/fire/projectile-fireball-smoke-teal.webp",
+  "_id": "matSplChromaticO",
   "system": {
     "description": {
-      "value": "<p>You hurl a 4-inch-diameter sphere of energy at a creature that you can see within range. You choose acid, cold, fire, lightning, poison, or thunder for the type of orb you create, and then make a ranged spell attack against the target. If the attack hits, the creature takes 2d12 + your spellcasting ability modifier damage of the type you chose.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d12 for each slot level above 1st.</p>",
+      "value": "<p>You hurl an orb of energy at a target within range. Choose Acid, Cold, Fire, Lightning, Poison, or Thunder for the type of orb you create, and then make a ranged spell attack against the target. On a hit, the target takes [[/damage 2d12]] + your spellcasting ability modifier damage of the chosen type.</p><p>If you roll the same number on two or more of the d8s, the orb leaps to a different target of your choice within 30 feet of the target. Make an attack roll against the new target, and make a new damage roll. The orb can't leap again unless you cast the spell with a level 2+ spell slot. [[@item.level]]{Number of leaps}</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d12 for each spell slot level above 1. The orb can leap a maximum number of times equal to the level of the slot expended, and a creature can be targeted only once by each casting of this spell.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
-    "crewed": false,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": 90,
-      "long": null,
-      "units": "ft"
+      "value": "90",
+      "units": "ft",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "rsak",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "2d12 + @mod",
-          "acid"
-        ],
-        [
-          "2d12 + @mod",
-          "cold"
-        ],
-        [
-          "2d12 + @mod",
-          "fire"
-        ],
-        [
-          "2d12 + @mod",
-          "lightning"
-        ],
-        [
-          "2d12 + @mod",
-          "poison"
-        ],
-        [
-          "2d12 + @mod",
-          "thunder"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 1,
     "school": "evo",
     "properties": [
       "vocal",
-      "somatic"
+      "somatic",
+      "material"
     ],
     "materials": {
-      "value": "",
+      "value": "a diamond worth 50+ GP",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -105,31 +59,129 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "1d12"
-    }
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "attack",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "attack": {
+          "ability": "",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "spell"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": true,
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": "12",
+              "bonus": "@mod",
+              "types": [
+                "acid",
+                "cold",
+                "fire",
+                "lightning",
+                "poison",
+                "thunder"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
+    },
+    "identifier": "chromatic-orb"
   },
+  "type": "spell",
+  "img": "icons/magic/light/explosion-star-small-teal-purple.webp",
   "effects": [],
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.aDtq5NPTYyVeR1lb",
-      "spell-lists": "sorcerer,wizard"
-    }
-  },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1707629120050,
-    "modifiedTime": 1708928830321,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
-  },
-  "sort": 5900000,
+  "folder": "JMRA2elEdmr5pgX7",
   "ownership": {
     "default": 0
   },
-  "_key": "!items!aDtq5NPTYyVeR1lb"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplChromaticO",
+      "spell-lists": "sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738030117687,
+    "modifiedTime": 1738030189625,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplChromaticO"
 }

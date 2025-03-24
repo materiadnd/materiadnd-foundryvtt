@@ -1,116 +1,136 @@
 {
   "name": "True Resurrection",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplTrueResurr",
   "system": {
     "description": {
-      "value": "<p>You touch a creature that has been dead for no longer than 200 years and that died for any reason except old age. If the creature's soul is free and willing, the creature is restored to life with all its hit points.</p><p>This spell closes all wounds, neutralizes any poison, cures all diseases, and lifts any curses affecting the creature when it died. The spell replaces damaged or missing organs and limbs. If the creature was undead, it is restored to its non-undead form.</p><p>The spell can even provide a new body if the original no longer exists, in which case you must speak the creature's name. The creature then appears in an unoccupied space you choose within 10 feet of you.</p>",
+      "value": "<p>You touch a creature that has been dead for no longer than 200 years and that died for any reason except old age. The creature is revived with all its Hit Points.</p><p>This spell closes all wounds, neutralizes any poison, cures all magical contagions, and lifts any curses affecting the creature when it died. The spell replaces damaged or missing organs and limbs. If the creature was Undead, it is restored to its non-Undead form.</p><p>The spell can provide a new body if the original no longer exists, in which case you must speak the creature's name. The creature then appears in an unoccupied space you choose within 10 feet of you.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
-      "type": "hour",
-      "cost": 1,
-      "condition": ""
+      "type": "action",
+      "condition": "",
+      "value": 1
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": "creature that has been dead for no longer than 200 years and that died for any reason except old age."
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "touch"
+      "units": "touch",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 9,
     "school": "nec",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
-      "value": "A sprinkle of holy water and diamonds worth at least 25,000 gp, which the spell consumes",
-      "consumed": true,
-      "cost": 25000,
+      "value": "",
+      "consumed": false,
+      "cost": 0,
       "supply": 0
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "Y511fgJNIyHXQPOK": {
+        "type": "utility",
+        "name": "Cast",
+        "_id": "Y511fgJNIyHXQPOK",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {},
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material"
-    ],
-    "crewed": false
+    "identifier": "true-resurrection"
+  },
+  "type": "spell",
+  "img": "icons/magic/life/ankh-gold-blue.webp",
+  "effects": [],
+  "folder": "89VDZRAxJ1IDvEOP",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.3I6vqVZVY2zphtmO",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplTrueResurr",
       "spell-lists": "cleric,druid"
     }
   },
-  "img": "icons/magic/life/heart-cross-strong-flame-blue.webp",
-  "effects": [],
-  "folder": "89VDZRAxJ1IDvEOP",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234231,
-    "modifiedTime": 1709232345375,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1739435961630,
+    "modifiedTime": 1739435980018,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "3I6vqVZVY2zphtmO",
   "sort": 0,
-  "_key": "!items!3I6vqVZVY2zphtmO"
+  "_key": "!items!matSplTrueResurr"
 }

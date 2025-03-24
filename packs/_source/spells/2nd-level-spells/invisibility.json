@@ -1,77 +1,57 @@
 {
   "name": "Invisibility",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplInvisibili",
   "system": {
     "description": {
-      "value": "<p>A creature you touch becomes invisible until the spell ends. Anything the target is wearing or carrying is invisible as long as it is on the target's person. The spell ends for a target that attacks or casts a spell.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.</p>",
+      "value": "<p>A creature you touch has the &amp;Reference[invisible apply=false] condition until the spell ends. The spell ends early immediately after the target makes an attack roll, deals damage, or casts a spell.</p><p><strong>Using a Higher-Level Spell Slot.</strong> You can target one additional creature for each spell slot level above 2.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": 1
     },
     "duration": {
       "value": "1",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "type": "creature",
+        "count": "@item.level - 1",
+        "choice": false,
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "touch"
+      "units": "touch",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 2,
     "school": "ill",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
     "materials": {
-      "value": "An eyelash encased in gum arabic",
+      "value": "an eyelash in gum arabic",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -80,77 +60,126 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "9svfDetqjhsFP3ey"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "concentration"
-    ],
-    "crewed": false
+    "identifier": "invisibility"
   },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.5N4WSDlJs070kOZB",
-      "spell-lists": "artificer,bard,sorcerer,warlock,wizard"
-    }
-  },
-  "img": "icons/magic/air/fog-gas-smoke-dense-gray.webp",
+  "type": "spell",
+  "img": "icons/creatures/magical/spirit-undead-ghost-purple.webp",
   "effects": [
     {
-      "name": "Invisibility",
-      "origin": "Compendium.dnd5e.spells.Item.1N8dDMMgZ1h1YJ3B",
+      "name": "Invisible",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplInvisibili",
       "duration": {
+        "rounds": null,
         "startTime": null,
         "seconds": 3600,
         "combat": null,
-        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "TeFxBRKYKIXtg6pS",
+      "disabled": false,
+      "flags": {},
+      "img": "systems/dnd5e/icons/svg/statuses/invisible.svg",
+      "_id": "9svfDetqjhsFP3ey",
+      "type": "base",
+      "system": {},
       "changes": [],
-      "description": "<p>The target becomes Invisible until the spell ends. Anything the target is wearing or carrying is invisible as long as it is on the target's person. The spell ends for a target that attacks or casts a spell.</p>",
-      "transfer": true,
+      "description": "<p>The spell ends early immediately after the target makes an attack roll, deals damage, or casts a spell.</p>",
+      "tint": "#ffffff",
+      "transfer": false,
       "statuses": [
         "invisible"
       ],
-      "flags": {},
-      "tint": "#ffffff",
+      "sort": 0,
       "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
+        "lastModifiedBy": null
       },
-      "img": "icons/magic/air/fog-gas-smoke-dense-gray.webp",
-      "type": "base",
-      "system": {},
-      "sort": 0,
-      "_key": "!items.effects!5N4WSDlJs070kOZB.TeFxBRKYKIXtg6pS"
+      "_key": "!items.effects!matSplInvisibili.9svfDetqjhsFP3ey"
     }
   ],
   "folder": "3rC3qr5FIlZymxFD",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234056,
-    "modifiedTime": 1708930454014,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "5N4WSDlJs070kOZB",
-  "sort": 100000,
-  "_key": "!items!5N4WSDlJs070kOZB"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplInvisibili",
+      "spell-lists": "artificer,bard,sorcerer,warlock,wizard"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738214840832,
+    "modifiedTime": 1738214846542,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplInvisibili"
 }

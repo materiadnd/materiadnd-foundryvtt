@@ -2,18 +2,17 @@
   "folder": "JMRA2elEdmr5pgX7",
   "name": "Protection from Evil and Good",
   "type": "spell",
-  "_id": "9e94l4tOJY3Ubaix",
+  "_id": "matSplProtEvilAn",
   "img": "icons/magic/lightning/orb-ball-purple.webp",
   "system": {
     "description": {
-      "value": "<p>Until the spell ends, one willing creature you touch is protected against certain types of creatures: aberrations, celestials, elementals, fey, fiends, and undead.</p><p>The protection grants several benefits. Creatures of those types have disadvantage on attack rolls against the target. The target also cannot be charmed, frightened, or possessed by them. If the target is already charmed, frightened, or possessed by such a creature, the target has advantage on any new saving throw against the relevant effect.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 5th level or higher, if the creature you target with this spell is yourself, you emit an aura with a 30-foot radius. Until the spell ends, the aura moves with you, centered on you. Each nonhostile creature in the aura (including you) gains the spell's benefits.</p>",
+      "value": "<p>Until the spell ends, one willing creature you touch is protected against certain types of creatures: Aberrations, Celestials, Elementals, Fey, Fiends, and Undead.</p><p>The protection grants several benefits. Creatures of those types have Disadvantage on attack rolls against the target. The target also cannot be &amp;Reference[Charmed apply=false], &amp;Reference[Frightened apply=false], or &amp;Reference[Possessed apply=false] by them. If the target is already charmed, frightened, or possessed by such a creature, the target has advantage on any new saving throw against the relevant effect.</p><p><strong>Using a Higher-Level Spell Slot.</strong> At 5th level or higher, if the creature you target with this spell is yourself, the protection becomes a 30-foot Emanation centered on you. Allies in the emanation also gain the spell's benefits.</p>",
       "chat": ""
     },
     "source": {
-      "book": "Materia Source of Truth",
-      "page": "",
-      "custom": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
@@ -31,12 +30,20 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": "",
+        "type": "willing"
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "touch"
+      "units": "touch",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -91,28 +98,130 @@
     "scaling": {
       "mode": "none",
       "formula": ""
+    },
+    "activities": {
+      "v9nhMwFecUvozjjV": {
+        "type": "utility",
+        "_id": "v9nhMwFecUvozjjV",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "9rJhM2LXhDyuf8WF"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Protected",
+      "img": "icons/magic/lightning/orb-ball-purple.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplProtEvilAn",
+      "transfer": false,
+      "_id": "9rJhM2LXhDyuf8WF",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730089337159,
+        "modifiedTime": 1730089373158,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplProtEvilAn.9rJhM2LXhDyuf8WF"
+    }
+  ],
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.9e94l4tOJY3Ubaix",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplProtEvilAn",
       "spell-lists": "cleric,druid,paladin,warlock,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1707157184525,
-    "modifiedTime": 1712471657280,
+    "modifiedTime": 1738943264389,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 4200000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!9e94l4tOJY3Ubaix"
+  "_key": "!items!matSplProtEvilAn"
 }

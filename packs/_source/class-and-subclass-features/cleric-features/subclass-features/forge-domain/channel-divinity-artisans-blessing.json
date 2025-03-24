@@ -6,10 +6,14 @@
   "img": "icons/magic/fire/flame-burning-hand-white.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 2nd level, you can use your Channel Divinity to create simple items.</p><p>You conduct an hour-long ritual that crafts a nonmagical item that must include some metal: a simple or martial weapon, a suit of armor, ten pieces of ammunition, a set of tools, or another metal object (see chapter 5, \"Equipment,\" in the Player's Handbook for examples of these items). The creation is completed at the end of the hour, coalescing in an unoccupied space of your choice on a surface within 5 feet of you.</p><p>The thing you create can be something that is worth no more than 100 gp. As part of this ritual, you must lay out metal, which can include coins, with a value equal to the creation. The metal irretrievably coalesces and transforms into the creation at the ritual's end, magically forming even nonmetal parts of the creation.</p><p>The ritual can create a duplicate of a nonmagical item that contains metal, such as a key, if you possess the original during the ritual.</p>",
+      "value": "<p>You can use your Channel Divinity to create simple items.</p><p>You conduct an hour-long ritual that crafts a nonmagical item that must include some metal: a simple or martial weapon, a suit of armor, ten pieces of ammunition, a set of tools, or another metal object (see chapter 5, \"Equipment,\" in the Player's Handbook for examples of these items). The creation is completed at the end of the hour, coalescing in an unoccupied space of your choice on a surface within 5 feet of you.</p><p>The thing you create can be something that is worth no more than 100 gp. As part of this ritual, you must lay out metal, which can include coins, with a value equal to the creation. The metal irretrievably coalesces and transforms into the creation at the ritual's end, magically forming even nonmetal parts of the creation.</p><p>The ritual can create a duplicate of a nonmagical item that contains metal, such as a key, if you possess the original during the ritual.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "hour",
       "cost": 1,
@@ -69,26 +73,62 @@
       "subtype": "channelDivinity"
     },
     "properties": [],
-    "requirements": "Forge Domain 2",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Create Item",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.matClrChannelDiv"
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "target": {
+          "affects": {
+            "type": "space",
+            "count": "1"
+          }
+        }
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
       "item-use-source": "channel-divinity"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707671953336,
-    "modifiedTime": 1710765126781,
+    "modifiedTime": 1742423474273,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 250000,

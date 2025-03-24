@@ -1,0 +1,264 @@
+{
+  "name": "Improved Brutal Strike",
+  "_id": "matBrbImpBrutStr",
+  "type": "feat",
+  "img": "icons/skills/melee/strike-axe-blood-red.webp",
+  "system": {
+    "description": {
+      "value": "<p>You have honed new ways to attack furiously. The following effects are now among your Brutal Strike options.</p><p><strong>Staggering Blow.</strong> The target has Disadvantage on the next saving throw it makes, and it can't make Opportunity Attacks until the start of your next turn.</p><p><strong>Sundering Blow.</strong> Before the start of your next turn, the next attack roll made by another creature against the target gains a +5 bonus to the roll. An attack roll can gain only one Sundering Blow bonus.</p><section class=\"secret\" id=\"secret-5KFPx8fyh5NldmJp\"><p><strong>Foundry Note</strong></p><p>This feature includes an activity for each option which includes an Active Effect for tracking the Staggering and Sundering Blows but does not automate their effects.</p></section>",
+      "chat": ""
+    },
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "uses": {
+      "max": "",
+      "spent": 0,
+      "recovery": []
+    },
+    "type": {
+      "value": "class",
+      "subtype": ""
+    },
+    "prerequisites": {
+      "level": 13,
+      "repeatable": false
+    },
+    "properties": [],
+    "requirements": "Barbarian",
+    "activities": {
+      "UmRlsf4QWW98I4FS": {
+        "type": "utility",
+        "_id": "UmRlsf4QWW98I4FS",
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "tUyuyTQGmpUqMcFe"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Sundering Blow",
+        "img": "systems/dnd5e/icons/svg/properties/magical.svg"
+      },
+      "I30qGlPDcyKwz65H": {
+        "type": "utility",
+        "name": "Staggering Blow",
+        "_id": "I30qGlPDcyKwz65H",
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "L9N4evZo1jt46dap"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "override": false,
+          "prompt": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": -100000,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "img": "systems/dnd5e/icons/svg/damage/bludgeoning.svg"
+      }
+    },
+    "enchant": {},
+    "identifier": "improved-brutal-strike",
+    "advancement": [],
+    "cover": null,
+    "crewed": false
+  },
+  "effects": [
+    {
+      "name": "Staggered",
+      "origin": "Compendium.materia-dnd.classes.Item.matBrbImpBrutStr",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "systems/dnd5e/icons/svg/items/feature.svg",
+      "_id": "L9N4evZo1jt46dap",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>Hit by a staggering blow, this character has Disadvantage on the next Saving Throw it makes, and it can't make Opportunity Attacks until the start of the attacker's next turn.</p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matBrbImpBrutStr.L9N4evZo1jt46dap"
+    },
+    {
+      "name": "Sundered",
+      "origin": "Compendium.materia-dnd.classes.Item.matBrbImpBrutStr",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "systems/dnd5e/icons/svg/items/feature.svg",
+      "_id": "tUyuyTQGmpUqMcFe",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>Hit by a sundering blow, the next attack roll made by another creature against the target gains a +5 bonus to the roll.</p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matBrbImpBrutStr.tUyuyTQGmpUqMcFe"
+    }
+  ],
+  "folder": "flNjIH13DTI79OMB",
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739567376402,
+    "modifiedTime": 1739567389658,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "ownership": {
+    "default": 0
+  },
+  "sort": 398829,
+  "_key": "!items!matBrbImpBrutStr"
+}

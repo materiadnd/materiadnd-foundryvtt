@@ -9,7 +9,11 @@
       "value": "<p>Rune Knights enhance their martial prowess using the supernatural power of runes, an ancient practice that originated with giants. Rune cutters can be found among any family of giants, and you likely learned your methods first or second hand from such a mystical artisan. Whether you found the giant's work carved into a hill or cave, learned of the runes from a sage, or met the giant in person, you studied the giant's craft and learned how to apply magic runes to empower your equipment.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "identifier": "rune-knight",
     "classIdentifier": "fighter",
     "advancement": [
@@ -18,9 +22,18 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.AEl8j2CKQZno3i5R",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.TfHCix9VO8TuJtYf",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.UHTEJoe51CjYr6yJ"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.AEl8j2CKQZno3i5R",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.TfHCix9VO8TuJtYf",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.UHTEJoe51CjYr6yJ",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -39,13 +52,14 @@
           "grants": [
             "tool:art:smith"
           ],
-          "choices": [],
-          "hint": ""
+          "choices": []
         },
         "level": 3,
         "title": "",
         "icon": null,
-        "value": {}
+        "value": {
+          "chosen": []
+        }
       },
       {
         "_id": "g1aU6MSjEAaK8YII",
@@ -56,77 +70,129 @@
           "grants": [
             "languages:standard:giant"
           ],
-          "choices": [],
-          "hint": ""
+          "choices": []
         },
         "level": 3,
         "title": "",
-        "icon": null,
-        "value": {}
+        "value": {
+          "chosen": []
+        },
+        "hint": "You learn to speak, read, and write Giant. If you already know this language, you can learn one other language of your choice."
       },
       {
         "_id": "5demLKqi7bmoDXWX",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "7": 1,
-            "10": 1,
-            "15": 1,
-            "18": 1
+            "7": {
+              "count": 1,
+              "replacement": false
+            },
+            "10": {
+              "count": 1,
+              "replacement": false
+            },
+            "15": {
+              "count": 1,
+              "replacement": false
+            },
+            "18": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": "feat",
           "pool": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.BtxUtMT1Fx7bhWFS",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.cVqF0pKRmtgqCz2E",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.R0Pg43o60v2Ly8GU",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.L8fK7RiNfaHiossv",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.AhxqKhZbsddpjOpM",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.ZSRgwnL39z4CxMLi",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.YhWamEOiU3Ysex2R",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.zNOrOyPDBU8a2K7K"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.BtxUtMT1Fx7bhWFS"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.cVqF0pKRmtgqCz2E"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.R0Pg43o60v2Ly8GU"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.L8fK7RiNfaHiossv"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.AhxqKhZbsddpjOpM"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.ZSRgwnL39z4CxMLi"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.YhWamEOiU3Ysex2R"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.zNOrOyPDBU8a2K7K"
+            }
           ],
           "spell": null,
-          "hint": "",
           "restriction": {
             "type": "class",
             "subtype": "rune"
           }
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Runes",
-        "icon": null
+        "hint": "At 7th level, you have mastered even the most powerful of runes and can nowchoose any rune to enhance your gear.  Each time you gain a level in this class, you can replace one rune you know with a different one from this feature."
       },
       {
         "_id": "g5K967nzfKc1cHp4",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "3": 2
+            "3": {
+              "count": 2,
+              "replacement": false
+            }
           },
           "allowDrops": true,
-          "type": null,
+          "type": "feat",
           "pool": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.BtxUtMT1Fx7bhWFS",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.cVqF0pKRmtgqCz2E",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.R0Pg43o60v2Ly8GU",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.L8fK7RiNfaHiossv",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.AhxqKhZbsddpjOpM"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.BtxUtMT1Fx7bhWFS"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.cVqF0pKRmtgqCz2E"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.R0Pg43o60v2Ly8GU"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.L8fK7RiNfaHiossv"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.AhxqKhZbsddpjOpM"
+            }
           ],
           "spell": null,
-          "hint": "At 3rd level, you can use magic runes to enhance your gear. You learn two runes of your choice, from among the runes described below, and each time you gain a level in this class, you can replace one rune you know with a different one from this feature.",
-          "restriction": {}
+          "restriction": {
+            "type": "class",
+            "subtype": "rune"
+          }
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Rune Carver",
-        "icon": null
+        "hint": "At 3rd level, you can use magic runes to enhance your gear. You learn two runes of your choice, from among the runes described below, and each time you gain a level in this class, you can replace one rune you know with a different one from this feature."
       },
       {
         "_id": "VxyvoaCQ7aGdqocT",
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.ccjTfSVSGlGuF7q5"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.ccjTfSVSGlGuF7q5",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -141,7 +207,10 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.rtB7OnTmGH0veacu"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.rtB7OnTmGH0veacu",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -156,7 +225,10 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.nAGZfa6s6cKY59RT"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.nAGZfa6s6cKY59RT",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -171,7 +243,10 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.9Z9UzGu9qTbXqs6o"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.9Z9UzGu9qTbXqs6o",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -184,19 +259,21 @@
     ],
     "spellcasting": {
       "progression": "none",
-      "ability": ""
+      "ability": "",
+      "preparation": {
+        "formula": ""
+      }
     }
   },
   "effects": [],
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.1.2",
+    "coreVersion": "12.331",
     "createdTime": 1707154422591,
-    "modifiedTime": 1710309947964,
+    "modifiedTime": 1733025357200,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 0,

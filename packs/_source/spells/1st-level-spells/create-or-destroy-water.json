@@ -1,77 +1,57 @@
 {
   "name": "Create or Destroy Water",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplCreateOrDe",
   "system": {
     "description": {
-      "value": "<p>You either create or destroy water.</p><p><strong>Create Water.</strong> You create up to 10 gallons of clean water within range in an open container. Alternatively, the water falls as rain in a 30-foot cube within range.</p><p><strong>Destroy Water.</strong> You destroy up to 10 gallons of water in an open container within range. Alternatively, you destroy fog in a 30-foot cube within range.</p><p><strong>Higher Levels. </strong>When you cast this spell using a spell slot of 2nd level or higher, you create or destroy 10 additional gallons of water, or the size of the cube increases by 5 feet, for each slot level above 1st.</p>",
+      "value": "<p>You do one of the following:</p><p><strong>Create Water.</strong> You create up to 10 gallons of clean water within range in an open container. Alternatively, the water falls as rain in a 30-foot Cube within range, extinguishing exposed flames there.</p><p><strong>Destroy Water.</strong> You destroy up to 10 gallons of water in an open container within range. Alternatively, you destroy fog in a 30-foot Cube within range.</p><p><strong>Using a Higher-Level Spell Slot.</strong> You create or destroy 10 additional gallons of water, or the size of the Cube increases by 5 feet, for each spell slot level above 1.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 30,
-      "width": null,
-      "units": "ft",
-      "type": "cube",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "type": ""
+      },
+      "template": {
+        "units": "ft",
+        "type": "cube",
+        "size": "25 + 5 * @item.level",
+        "contiguous": false,
+        "count": ""
+      }
     },
     "range": {
-      "value": 30,
-      "long": null,
-      "units": "ft"
+      "value": "30",
+      "units": "ft",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 1,
     "school": "trs",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "A drop of water if creating water or a few grains of sand if destroying it.",
+      "value": "a mix of water and sand",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -80,38 +60,83 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "10 * @item.level",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "mgc"
-    ],
-    "crewed": false
+    "identifier": "create-or-destroy-water"
+  },
+  "type": "spell",
+  "img": "icons/magic/water/water-hand.webp",
+  "effects": [],
+  "folder": "JMRA2elEdmr5pgX7",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.BneebFDSlqEE11Q4",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplCreateOrDe",
       "spell-lists": "cleric,druid"
     }
   },
-  "img": "icons/magic/air/wind-swirl-purple-blue.webp",
-  "effects": [],
-  "folder": "JMRA2elEdmr5pgX7",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234167,
-    "modifiedTime": 1712471620812,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738030315584,
+    "modifiedTime": 1738031600743,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "BneebFDSlqEE11Q4",
-  "sort": 2500000,
-  "_key": "!items!BneebFDSlqEE11Q4"
+  "sort": 0,
+  "_key": "!items!matSplCreateOrDe"
 }

@@ -2,14 +2,18 @@
   "folder": "0jbyhDbsSp8KTsvC",
   "name": "Double-Bladed Scimitar",
   "type": "weapon",
-  "_id": "wTC7m1DDYmMSdcd9",
+  "_id": "matIteDBScimitar",
   "img": "icons/weapons/swords/sword-broad-worn.webp",
   "system": {
     "description": {
       "value": "<p>If you attack with a double-bladed scimitar as part of the Attack action on your turn, you can use a bonus action immediately after to make a melee attack with it. This attack deals 1d4 slashing damage on a hit, instead of 2d4.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "identified": true,
     "unidentified": {
       "description": ""
@@ -45,7 +49,7 @@
     "range": {
       "value": null,
       "long": null,
-      "units": ""
+      "units": "ft"
     },
     "uses": {
       "value": null,
@@ -99,27 +103,177 @@
     "properties": [
       "two"
     ],
-    "proficient": null
+    "proficient": null,
+    "activities": {
+      "zVexAvqTFE7p9Trm": {
+        "type": "attack",
+        "_id": "zVexAvqTFE7p9Trm",
+        "sort": 200000,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "attack": {
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "",
+            "classification": ""
+          },
+          "ability": "",
+          "bonus": ""
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": false,
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 4,
+              "bonus": "",
+              "types": [
+                "slashing"
+              ],
+              "scaling": {
+                "number": 1
+              }
+            }
+          ]
+        },
+        "name": "Bonus Action Attack",
+        "img": "",
+        "appliedEffects": []
+      },
+      "eoceadbz8sJ5bQbP": {
+        "type": "attack",
+        "_id": "eoceadbz8sJ5bQbP",
+        "sort": 100000,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {},
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "attack": {
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {}
+        },
+        "damage": {
+          "critical": {},
+          "includeBase": true,
+          "parts": []
+        }
+      }
+    },
+    "mastery": "graze"
   },
   "effects": [],
-  "sort": 0,
+  "sort": 2000000,
   "ownership": {
     "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.items.Item.wTC7m1DDYmMSdcd9"
+      "sourceId": "Compendium.materia-dnd.items.Item.matIteDBScimitar"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1708539741411,
-    "modifiedTime": 1712605687025,
+    "modifiedTime": 1739511931799,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_key": "!items!wTC7m1DDYmMSdcd9"
+  "_key": "!items!matIteDBScimitar"
 }

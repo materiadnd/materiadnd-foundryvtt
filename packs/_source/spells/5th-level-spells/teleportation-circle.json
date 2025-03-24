@@ -1,116 +1,147 @@
 {
   "name": "Teleportation Circle",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplTeleportat",
   "system": {
     "description": {
-      "value": "<p>As you cast the spell, you draw a 10-foot-diameter circle on the ground inscribed with sigils that link your location to a permanent teleportation circle of your choice whose sigil sequence you know and that is on the same plane of existence as you. A shimmering portal opens within the circle you drew and remains open until the end of your next turn. Any creature that enters the portal instantly appears within 5 feet of the destination circle or in the nearest unoccupied space if that space is occupied.</p><p>Many major temples, guilds, and other important places have permanent teleportation circles inscribed somewhere within their confines. Each such circle includes a unique sigil sequence - a string of magical runes arranged in a particular pattern. When you first gain the ability to cast this spell, you learn the sigil sequences for two destinations on The Material Plane, determined by the DM. You can learn additional sigil sequences during your adventures. You can commit a new sigil sequence to memory after studying it for 1 minute.</p><p>You can create a permanent teleportation circle by casting this spell in the same location every day for one year (363 days in Materia). You need not use the circle to Teleport when you cast the spell in this way.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 8th level, it counts as 10 days for the purpose making this effect permanent.</p><p>When you cast this spell using a spell slot of 9th level or higher, it counts as 30 days for the purpose making this effect permanent.</p>",
+      "value": "<p>As you cast the spell, you draw a 5-foot-radius circle on the ground inscribed with sigils that link your location to a permanent teleportation circle of your choice whose sigil sequence you know and that is on the same plane of existence as you. A shimmering portal opens within the circle you drew and remains open until the end of your next turn. Any creature that enters the portal instantly appears within 5 feet of the destination circle or in the nearest unoccupied space if that space is occupied.</p><p>Many major temples, guildhalls, and other important places have permanent teleportation circles. Each circle includes a unique sigil sequence - a string of runes arranged in a particular pattern.</p><p>When you first gain the ability to cast this spell, you learn the sigil sequences for two destinations on the Material Plane, determined by the DM. You might learn additional sigil sequences during your adventures. You can commit a new sigil sequence to memory after studying it for 1 minute.</p><p>You can create a permanent teleportation circle by casting this spell in the same location every day for 365 days.</p><p><strong>Using a Higher-Level Spell Slot.</strong> If you use a spell slot level of 8, it counts as 10 days for the purpose making this effect permanent.</p><p>If you use a spell slot level of 9+, it counts as 30 days for the purpose making this effect permanent.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "minute",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": 1
     },
     "duration": {
       "value": "1",
       "units": "round"
     },
-    "cover": null,
     "target": {
-      "value": 5,
-      "width": null,
-      "units": "ft",
-      "type": "radius",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "",
+        "type": "space",
+        "special": ""
+      },
+      "template": {
+        "units": "ft",
+        "contiguous": false,
+        "type": "circle",
+        "size": "5",
+        "count": "",
+        "height": ""
+      }
     },
     "range": {
-      "value": 10,
-      "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": "",
+      "value": "10"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 5,
     "school": "con",
+    "properties": [
+      "vocal",
+      "material"
+    ],
     "materials": {
-      "value": "Rare chalks and inks infused with precious gems with 50 gp, which the spell consumes",
+      "value": "rare inks worth 50+ GP, which the spell consumes",
       "consumed": true,
-      "cost": 50,
+      "cost": 0,
       "supply": 0
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "naWXNn0rMcVvKOi2": {
+        "type": "utility",
+        "name": "Cast",
+        "_id": "naWXNn0rMcVvKOi2",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {},
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
     },
-    "properties": [
-      "vocal",
-      "material"
-    ],
-    "crewed": false
+    "identifier": "teleportation-circle"
+  },
+  "type": "spell",
+  "img": "icons/magic/symbols/runes-carved-stone-yellow.webp",
+  "effects": [],
+  "folder": "slWnSXtwvwnA9EXJ",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
       "tele-flag": "true",
-      "sourceId": "Compendium.materia-dnd.spells.Item.LTRO4oWxrCnWzyIn",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplTeleportat",
       "spell-lists": "bard,sorcerer,warlock,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
-  "img": "icons/magic/symbols/runes-star-pentagon-magenta.webp",
-  "effects": [],
-  "folder": "slWnSXtwvwnA9EXJ",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234080,
-    "modifiedTime": 1709186114418,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1739233462644,
+    "modifiedTime": 1739233527761,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "LTRO4oWxrCnWzyIn",
-  "sort": 1100000,
-  "_key": "!items!LTRO4oWxrCnWzyIn"
+  "sort": 0,
+  "_key": "!items!matSplTeleportat"
 }

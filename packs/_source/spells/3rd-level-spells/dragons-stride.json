@@ -1,0 +1,330 @@
+{
+  "name": "Dragon's Stride",
+  "_id": "matSplAshardalon",
+  "type": "spell",
+  "system": {
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "description": {
+      "value": "<p>The billowing flames of a dragon blast from your feet, granting you explosive speed. For the duration, your speed increases by 20 feet and moving doesn't provoke opportunity attacks.</p><p>When you move within 5 feet of a creature or an object that isn't being worn or carried, it takes [[/damage 1d6 fire]] damage from your trail of heat. A creature or object can take this damage only once during a turn.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d6 and the speed boost increases by 5 feet for each spell slot level above 3.</p>",
+      "chat": ""
+    },
+    "actionType": "util",
+    "level": 3,
+    "school": "trs",
+    "properties": [
+      "vocal",
+      "somatic",
+      "concentration"
+    ],
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "target": {
+      "value": null,
+      "units": "self",
+      "type": "self",
+      "prompt": true,
+      "width": null,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
+    },
+    "range": {
+      "value": null,
+      "units": "self",
+      "long": null,
+      "special": ""
+    },
+    "activation": {
+      "type": "bonus",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": "1",
+      "units": "minute"
+    },
+    "damage": {
+      "parts": [
+        [
+          "1d6",
+          "fire"
+        ]
+      ],
+      "versatile": ""
+    },
+    "scaling": {
+      "mode": "level",
+      "formula": "1d6"
+    },
+    "save": {
+      "dc": null,
+      "scaling": "spell",
+      "ability": ""
+    },
+    "uses": {
+      "value": null,
+      "max": "",
+      "per": null,
+      "recovery": "",
+      "prompt": true
+    },
+    "attackBonus": "",
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "formula": "",
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "consume": {
+      "type": "",
+      "target": null,
+      "amount": null,
+      "scale": false
+    },
+    "cover": null,
+    "crewed": false,
+    "ability": null,
+    "activities": {
+      "1bxqOq9J7fodMNYM": {
+        "type": "utility",
+        "_id": "1bxqOq9J7fodMNYM",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "1jzFySheQW8D19Lc"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": []
+      },
+      "eG7mxl7nnEH8RbjF": {
+        "type": "damage",
+        "_id": "eG7mxl7nnEH8RbjF",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true,
+          "units": "spec",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "fire"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "name": "Proximity Damage",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
+  },
+  "img": "icons/magic/fire/projectile-bolt-zigzag-orange.webp",
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "plutonium": {
+      "page": "spells.html",
+      "source": "FTD",
+      "hash": "ashardalon's%20stride_ftd",
+      "propDroppable": "spell"
+    },
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplAshardalon",
+      "spell-lists": "artificer,ranger,sorcerer,wizard"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "effects": [
+    {
+      "name": "Fiery Stride",
+      "img": "icons/magic/fire/projectile-bolt-zigzag-orange.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplAshardalon",
+      "transfer": false,
+      "_id": "1jzFySheQW8D19Lc",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.movement.walk",
+          "mode": 2,
+          "value": "20",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The billowing flames of a dragon blast from your feet, granting you explosive speed. For the duration, your speed increases by 20 feet and moving doesn't provoke opportunity attacks.</p><p>When you move within 5 feet of a creature or an object that isn't being worn or carried, it takes 1d6 fire damage from your trail of heat. A creature or object can take this damage only once during a turn.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728172156977,
+        "modifiedTime": 1728179496717,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplAshardalon.1jzFySheQW8D19Lc"
+    }
+  ],
+  "folder": "CxgAwElQGTbcnuvc",
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
+    "createdTime": 1708312535951,
+    "modifiedTime": 1739431974589,
+    "lastModifiedBy": "dnd5mbuilder0000",
+    "duplicateSource": null
+  },
+  "sort": 6500000,
+  "_key": "!items!matSplAshardalon"
+}

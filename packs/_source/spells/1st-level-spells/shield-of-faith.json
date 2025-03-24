@@ -1,77 +1,58 @@
 {
   "name": "Shield of Faith",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplShieldOfFa",
   "system": {
     "description": {
-      "value": "<p>A shimmering field appears and surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration.</p>",
+      "value": "<p>A shimmering field surrounds a creature of your choice within range, granting it a +2 bonus to AC for the duration.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "bonus",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "10",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "type": "creature",
+        "count": "1",
+        "choice": false,
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": 60,
-      "long": null,
-      "units": "ft"
+      "value": "60",
+      "units": "ft",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 1,
     "school": "abj",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
     "materials": {
-      "value": "A small parchment with a bit of holy text written on it.",
+      "value": "a prayer scroll",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -80,29 +61,71 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "LObm7lj1VH4fF1Al"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "concentration"
-    ],
-    "crewed": false
+    "identifier": "shield-of-faith"
   },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.fFYfJ2Foz7FuGUr7",
-      "spell-lists": "cleric,paladin"
-    }
-  },
-  "img": "icons/magic/defensive/shield-barrier-flaming-diamond-blue-yellow.webp",
+  "type": "spell",
+  "img": "icons/magic/holy/barrier-shield-winged-cross.webp",
   "effects": [
     {
-      "name": "Shield of Faith",
-      "origin": "Compendium.dnd5e.spells.Item.jZ6JNykRtdQ90MOo",
+      "name": "Shimmering Field",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplShieldOfFa",
       "duration": {
         "startTime": null,
         "seconds": 600,
@@ -112,8 +135,8 @@
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "FKDbXBUs6VJlf8ZY",
+      "disabled": false,
+      "_id": "LObm7lj1VH4fF1Al",
       "changes": [
         {
           "key": "system.attributes.ac.bonus",
@@ -122,40 +145,47 @@
           "priority": null
         }
       ],
-      "description": "<p>The target gains it a +2 bonus to AC for the duration.</p>",
-      "transfer": true,
+      "description": "<p>The target gains a +2 bonus to AC for the duration.</p>",
+      "transfer": false,
       "statuses": [],
       "flags": {},
       "tint": "#ffffff",
       "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
+        "compendiumSource": "Compendium.dnd5e.spells.Item.jZ6JNykRtdQ90MOo.ActiveEffect.FKDbXBUs6VJlf8ZY",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
+        "lastModifiedBy": null
       },
-      "img": "icons/magic/defensive/shield-barrier-flaming-diamond-blue-yellow.webp",
+      "img": "icons/magic/defensive/shield-barrier-blue.webp",
       "type": "base",
       "system": {},
       "sort": 0,
-      "_key": "!items.effects!fFYfJ2Foz7FuGUr7.FKDbXBUs6VJlf8ZY"
+      "_key": "!items.effects!matSplShieldOfFa.LObm7lj1VH4fF1Al"
     }
   ],
   "folder": "JMRA2elEdmr5pgX7",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234212,
-    "modifiedTime": 1708928830321,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "fFYfJ2Foz7FuGUr7",
-  "sort": 1000000,
-  "_key": "!items!fFYfJ2Foz7FuGUr7"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplShieldOfFa",
+      "spell-lists": "cleric,paladin"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738040968573,
+    "modifiedTime": 1738040968573,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplShieldOfFa"
 }

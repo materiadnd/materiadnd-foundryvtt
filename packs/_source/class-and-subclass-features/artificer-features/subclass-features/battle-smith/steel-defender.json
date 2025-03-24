@@ -9,7 +9,11 @@
       "value": "<div><div><p>Also at 3rd level, your tinkering has borne you a faithful companion, a steel defender. It is friendly to you and your companions, and it obeys your commands. See this creature's game statistics in the @UUID[Compendium.materia-dnd.actors.Actor.gLkSI5FF9NLnZUQB]{Steel Defender} stat block, which uses your proficiency bonus (PB) in several places. You determine the creature's appearance and whether it has two legs or four; your choice has no effect on its game statistics.</p><div><p>In combat, the beast acts during your turn. It can move and use its reaction on its own, but the only action it takes is the Dash, Disengage, Dodge Help, or Hide action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. You can also sacrifice one of your attacks when you take the Attack action to command the beast to take the Attack action. If you are incapacitated, the beast can take any action of its choice.</p></div><p>If the mending cantrip is cast on it, it regains 2d6 + your proficiency bonus hit points. If it has died within the last hour, you can use your smith's tools as an action to revive it, provided you are within 5 feet of it and you expend a spell slot of 1st level or higher. The steel defender returns to life after 1 minute with all its hit points restored.</p><p>At the end of a long rest, you can create a new steel defender if you have your smith's tools with you. If you already have a steel defender from this feature, the first one immediately perishes. The defender also perishes if you die.</p></div></div>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "special",
       "cost": null,
@@ -97,6 +101,135 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "self"
+        },
+        "profiles": [
+          {
+            "count": "",
+            "name": "",
+            "_id": "pYCWTY9trmrxYdho",
+            "uuid": "Compendium.materia-dnd.actors.Actor.gLkSI5FF9NLnZUQB",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": []
+          }
+        ],
+        "bonuses": {
+          "hd": "",
+          "attackDamage": "@prof"
+        },
+        "appliedEffects": []
+      },
+      "MAnKEHstjbNkpkqZ": {
+        "type": "summon",
+        "_id": "MAnKEHstjbNkpkqZ",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "bonuses": {
+          "ac": "",
+          "hd": "",
+          "hp": "@abilities.int.mod + (5 * @classes.artificer.levels)",
+          "attackDamage": "",
+          "saveDamage": "",
+          "healing": ""
+        },
+        "creatureSizes": [],
+        "creatureTypes": [],
+        "match": {
+          "attacks": true,
+          "proficiency": true,
+          "saves": true,
+          "ability": ""
+        },
+        "profiles": [
+          {
+            "count": "",
+            "name": "",
+            "_id": "q9pLbEbRr2M8ehmM",
+            "uuid": "Compendium.materia-dnd.actors.Actor.gLkSI5FF9NLnZUQB",
+            "level": {
+              "min": 3,
+              "max": 14
+            },
+            "types": []
+          },
+          {
+            "count": "",
+            "name": "",
+            "_id": "151wRORv4vR9a3sQ",
+            "uuid": "Compendium.materia-dnd.actors.Actor.j3xLKQ1UeY6bcPI3",
+            "level": {
+              "min": 15,
+              "max": null
+            },
+            "types": []
+          }
+        ],
+        "summon": {
+          "prompt": true,
+          "mode": "",
+          "identifier": ""
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -104,15 +237,21 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.1.1",
+    "coreVersion": "12.331",
     "createdTime": 1711376260297,
-    "modifiedTime": 1711376845804,
+    "modifiedTime": 1731592659483,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_key": "!items!9QTYX8xHoYDdBt0x"

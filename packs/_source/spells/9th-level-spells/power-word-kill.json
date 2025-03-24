@@ -1,75 +1,53 @@
 {
   "name": "Power Word Kill",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplPowerWordK",
   "system": {
     "description": {
-      "value": "<p>You utter a word of power that can compel one creature you can see within range to die instantly. If the creature you choose has 100 hit points or fewer, it dies. Otherwise, the spell has no effect.</p>",
+      "value": "<p>You compel one creature you can see within range to die. If the target has 100 Hit Points or fewer, it dies. Otherwise, it takes 12d12 Psychic damage that cannot be reduced in any way and its hit point maximum is reduced by the same amount.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": 60,
-      "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": "",
+      "value": "60"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 9,
     "school": "enc",
+    "properties": [
+      "vocal"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -80,35 +58,102 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "rf6TC1mN2miOf1Pc": {
+        "type": "damage",
+        "name": "Compel to Die",
+        "_id": "rf6TC1mN2miOf1Pc",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 12,
+              "denomination": 12,
+              "bonus": "",
+              "types": [
+                "psychic"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "img": "systems/dnd5e/icons/svg/damage/necrotic.svg"
+      }
     },
-    "properties": [
-      "vocal"
-    ],
-    "crewed": false
+    "identifier": "power-word-kill"
+  },
+  "type": "spell",
+  "img": "icons/magic/death/projectile-skull-flaming-yellow.webp",
+  "effects": [],
+  "folder": "89VDZRAxJ1IDvEOP",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.zuk9c5xEx70AYMow",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplPowerWordK",
       "spell-lists": "bard,sorcerer,warlock,wizard"
     }
   },
-  "img": "icons/magic/unholy/strike-beam-blood-large-red-teal.webp",
-  "effects": [],
-  "folder": "89VDZRAxJ1IDvEOP",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234182,
-    "modifiedTime": 1709232343876,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1739435436923,
+    "modifiedTime": 1739435470901,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "zuk9c5xEx70AYMow",
-  "sort": 1000000,
-  "_key": "!items!zuk9c5xEx70AYMow"
+  "sort": 0,
+  "_key": "!items!matSplPowerWordK"
 }

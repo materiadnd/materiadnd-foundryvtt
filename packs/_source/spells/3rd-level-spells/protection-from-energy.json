@@ -1,72 +1,56 @@
 {
   "name": "Protection from Energy",
+  "_id": "matSplProtFromEn",
   "type": "spell",
+  "img": "icons/magic/symbols/cog-shield-white-blue.webp",
   "system": {
     "description": {
-      "value": "<div><p>For the duration, the willing creature you touch has resistance to one damage type of your choice: acid, cold, fire, lightning, or thunder.</p></div><div><div><p><strong>At Higher Levels.</strong>  When you cast this spell using a spell slot of 5th or 6th level, you can target one additional creature. When you use a spell slot of 7th or 8th level, you can target yet another one additional creature. When you use a spell slot of 9th level, you can target yet another one additional creature.</p></div></div>",
+      "value": "<div><p>For the duration, the willing creature you touch has Resistance to one damage type of your choice: Acid, Cold, Fire, Lightning, or Thunder.</p></div>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "Materia Source of Truth",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "willing",
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "touch"
+      "units": "touch",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 3,
     "school": "abj",
+    "properties": [
+      "vocal",
+      "somatic",
+      "concentration"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -77,41 +61,320 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "rIHvDrlENxFLbUQw": {
+        "type": "utility",
+        "_id": "rIHvDrlENxFLbUQw",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "RrJ5b1A9TghFe5QK"
+          },
+          {
+            "_id": "xDm8bqlMGiPq7nlt"
+          },
+          {
+            "_id": "DsflUNYKqETaLgxG"
+          },
+          {
+            "_id": "0ODEqmz3M45lwd8q"
+          },
+          {
+            "_id": "M13rFIPjAIMwKzQp"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast"
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "concentration",
-      "mgc"
-    ],
-    "crewed": false
+    "identifier": "protection-from-energy"
   },
+  "effects": [
+    {
+      "name": "Acid Protection",
+      "img": "icons/magic/acid/dissolve-drip-droplet-smoke.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplProtFromEn",
+      "transfer": false,
+      "_id": "RrJ5b1A9TghFe5QK",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "acid",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplProtFromEn.RrJ5b1A9TghFe5QK"
+    },
+    {
+      "name": "Cold Protection",
+      "img": "icons/magic/water/snowflake-ice-snow-white.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplProtFromEn",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "cold",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "xDm8bqlMGiPq7nlt",
+      "_key": "!items.effects!matSplProtFromEn.xDm8bqlMGiPq7nlt"
+    },
+    {
+      "name": "Fire Protection",
+      "img": "icons/magic/fire/flame-burning-skull-orange.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplProtFromEn",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "fire",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "DsflUNYKqETaLgxG",
+      "_key": "!items.effects!matSplProtFromEn.DsflUNYKqETaLgxG"
+    },
+    {
+      "name": "Lightning Protection",
+      "img": "icons/magic/lightning/bolt-strike-blue-white.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplProtFromEn",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "lightning",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "0ODEqmz3M45lwd8q",
+      "_key": "!items.effects!matSplProtFromEn.0ODEqmz3M45lwd8q"
+    },
+    {
+      "name": "Thunder Protection",
+      "img": "icons/magic/sonic/explosion-shock-wave-teal.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplProtFromEn",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "thunder",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "M13rFIPjAIMwKzQp",
+      "_key": "!items.effects!matSplProtFromEn.M13rFIPjAIMwKzQp"
+    }
+  ],
+  "folder": "CxgAwElQGTbcnuvc",
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.MDbAnl6BDevq2FQV",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplProtFromEn",
       "spell-lists": "artificer,cleric,druid,ranger,sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
-  "img": "icons/magic/defensive/shield-barrier-flaming-diamond-teal.webp",
-  "effects": [],
-  "folder": "CxgAwElQGTbcnuvc",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234210,
-    "modifiedTime": 1713584796371,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738514470971,
+    "modifiedTime": 1738514470971,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "MDbAnl6BDevq2FQV",
-  "sort": 6200000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!MDbAnl6BDevq2FQV"
+  "sort": 0,
+  "_key": "!items!matSplProtFromEn"
 }

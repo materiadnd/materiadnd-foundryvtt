@@ -9,7 +9,11 @@
       "value": "<p>The process of undertaking the Hunter's Bane ritual is a painful, scarring, and sometimes fatal experience. Those who survive are irrevocably changed - and not always for the better. Over generations of experimentation, a splinter order of blood hunters honed the way in which hemocraft alters the body, using corrupted alchemy and toxic elixirs to alter their blood even further. Over time, they have modified their capabilities in battle, becoming something beyond what they once were. Calling themselves the Order of the Mutant, these blood hunters now specialize in assessing the strengths and weaknesses of their foes, altering their biology to be best prepared for any conflict.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "identifier": "order-of-the-mutant",
     "classIdentifier": "blood-hunter",
     "advancement": [
@@ -18,8 +22,14 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.t26PlzJMX16y3WzI",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.aAFoQSc9wNIvSevM"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.t26PlzJMX16y3WzI",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.aAFoQSc9wNIvSevM",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -34,62 +44,143 @@
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "3": 4,
-            "7": 1,
-            "11": 1,
-            "15": 1,
-            "18": 1
+            "3": {
+              "count": 4,
+              "replacement": false
+            },
+            "7": {
+              "count": 1,
+              "replacement": false
+            },
+            "11": {
+              "count": 1,
+              "replacement": true
+            },
+            "15": {
+              "count": 1,
+              "replacement": true
+            },
+            "18": {
+              "count": 1,
+              "replacement": true
+            }
           },
           "allowDrops": true,
           "type": "feat",
           "pool": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.Ed7FALp9dyCrzWzH",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.ADoadx74OwXRbGYl",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.nJsCNpNtamCDXVgy",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.ic4RPhAHbN1CRecW",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.y2S0AXPDYBJQd1BY",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.vuTMdiMU3OZDqgOG",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.pdktsCKxUFZmWluN",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.R3gPAWGsTBMUePNJ",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.QYSey3aQHfMjd6kr",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.YQORphA2Cr6JNopM",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.Dj8fIbHcBV78xLoB",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.PlZg9UNg3Q6dZR3g",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.rxOXBFcZWL7iLTne",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.1ASP83RhzwL5oNky",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.Cd4keNCkNGmSCge6",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.DwAKzjMv3Qs4JOYq",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.NlBl3GhTmLDz32EV",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.Jz6gog9ngp2B0uWk",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.f9TdnlG4Nro3zc6k",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.bP9qYtofmMCStTeh",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.3hmypsRroYSr96Xg",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.c0tK7MR7M9O7DUZw",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.A3UTmq6up3a2YPXD",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.5HJKM1b8iwL72IVa",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.k9TP44NPsPwh8k3E",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.xhX9DooYHBycvwvt",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.htB6OCphXP0P5jfr",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.PZ2elABiTolrSmDJ",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.aFTplK8edHncambL",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.nxqcsMOJgyVMl7ay"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.Ed7FALp9dyCrzWzH"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.ADoadx74OwXRbGYl"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.nJsCNpNtamCDXVgy"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.ic4RPhAHbN1CRecW"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.y2S0AXPDYBJQd1BY"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.vuTMdiMU3OZDqgOG"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.pdktsCKxUFZmWluN"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.R3gPAWGsTBMUePNJ"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.QYSey3aQHfMjd6kr"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.YQORphA2Cr6JNopM"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.Dj8fIbHcBV78xLoB"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.PlZg9UNg3Q6dZR3g"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.rxOXBFcZWL7iLTne"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.1ASP83RhzwL5oNky"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.Cd4keNCkNGmSCge6"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.DwAKzjMv3Qs4JOYq"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.NlBl3GhTmLDz32EV"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.Jz6gog9ngp2B0uWk"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.f9TdnlG4Nro3zc6k"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.bP9qYtofmMCStTeh"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.3hmypsRroYSr96Xg"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.c0tK7MR7M9O7DUZw"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.A3UTmq6up3a2YPXD"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.5HJKM1b8iwL72IVa"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.k9TP44NPsPwh8k3E"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.xhX9DooYHBycvwvt"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.htB6OCphXP0P5jfr"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.PZ2elABiTolrSmDJ"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.aFTplK8edHncambL"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.nxqcsMOJgyVMl7ay"
+            }
           ],
           "spell": null,
-          "hint": "",
           "restriction": {
-            "type": "class"
+            "type": "class",
+            "subtype": ""
           }
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Mutagen Formulas",
-        "icon": null
+        "hint": "You choose four mutagen formulas to learn from the options detailed at the end of this subclass description, and you can concoct one mutagen when you finish a short or long rest.  You gain additional formulas at 7th, 11th, 15th, and 18th level."
       },
       {
         "_id": "OAPfFanmOg2IxmvG",
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.fyN9Pf2DtgKVdHmZ"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.fyN9Pf2DtgKVdHmZ",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -104,7 +195,10 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.tsSXjnwanCrr4CPZ"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.tsSXjnwanCrr4CPZ",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -119,7 +213,10 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.3XB098N6vOHSGP7L"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.3XB098N6vOHSGP7L",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -134,7 +231,10 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.bW73hI70O6Wfwaed"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.bW73hI70O6Wfwaed",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -147,19 +247,21 @@
     ],
     "spellcasting": {
       "progression": "none",
-      "ability": ""
+      "ability": "",
+      "preparation": {
+        "formula": ""
+      }
     }
   },
   "effects": [],
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.1.2",
+    "coreVersion": "12.331",
     "createdTime": 1707921822165,
-    "modifiedTime": 1708472993652,
+    "modifiedTime": 1733024732798,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 0,

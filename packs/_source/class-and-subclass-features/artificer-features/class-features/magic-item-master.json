@@ -6,10 +6,14 @@
   "img": "icons/tools/laboratory/vials-blue-pink.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 18th level, you can attune to up to six magic items at once.</p>",
+      "value": "<p>You can now attune to up to six magic items at once rather than three.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "",
       "cost": null,
@@ -73,9 +77,62 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 18
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Magic Item Master - Attunement",
+      "img": "icons/tools/laboratory/vials-blue-pink.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.xpB37iEWIesD0ZYZ",
+      "_id": "Ugsu3SADy3oiuPXj",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.attunement.max",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1741703352966,
+        "modifiedTime": 1741703360082,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!xpB37iEWIesD0ZYZ.Ugsu3SADy3oiuPXj"
+    }
+  ],
   "sort": 1068750,
   "ownership": {
     "default": 0
@@ -83,12 +140,11 @@
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1708890326186,
-    "modifiedTime": 1709695543127,
+    "modifiedTime": 1741703366954,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_key": "!items!xpB37iEWIesD0ZYZ"

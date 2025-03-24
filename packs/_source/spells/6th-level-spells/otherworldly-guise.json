@@ -1,0 +1,346 @@
+{
+  "folder": "UjV13fGRtZfpmOAS",
+  "name": "Otherworldly Guise",
+  "type": "spell",
+  "_id": "matSplOtherwGuis",
+  "img": "icons/creatures/magical/spirit-undead-ghost-purple.webp",
+  "system": {
+    "activities": {
+      "7WPec4UcTJjn0oja": {
+        "type": "utility",
+        "_id": "7WPec4UcTJjn0oja",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "MDiw7JpWMAqpMjAd"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Transform (Lower Planes)",
+        "img": "",
+        "appliedEffects": []
+      },
+      "A7F9JfZo9SD86DFi": {
+        "type": "utility",
+        "_id": "A7F9JfZo9SD86DFi",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "vjUjA5KX2wubyzsy"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Transform (Upper Planes)",
+        "img": "",
+        "appliedEffects": []
+      }
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": [],
+      "max": ""
+    },
+    "description": {
+      "value": "<p>Uttering an incantation, you draw on the magic of the Lower Planes or Upper Planes (your choice) to transform yourself. You gain the following benefits until the spell ends:</p><ul><li>You are immune to fire and poison damage (Lower Planes) or radiant and necrotic damage (Upper Planes).</li><li>You are immune to the &amp;Reference[poisoned] condition (Lower Planes) or the &amp;Reference[charmed] condition (Upper Planes).</li><li>Spectral wings appear on your back, giving you a flying speed of 40 feet.</li><li>You have a +2 bonus to AC.</li><li>All your weapon attacks are magical, and when you make a weapon attack, you can use your spellcasting ability modifier, instead of Strength or Dexterity, for the attack and damage rolls.</li><li>You can attack twice, instead of once, when you take the Attack action on your turn. You ignore this benefit if you already have a feature, like Extra Attack, that lets you attack more than once when you take the Attack action on your turn.</li></ul>",
+      "chat": ""
+    },
+    "identifier": "new-item",
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "bonus",
+      "value": null,
+      "condition": ""
+    },
+    "duration": {
+      "units": "minute",
+      "value": "1"
+    },
+    "level": 6,
+    "materials": {
+      "value": "an object engraved with a symbol of the Outer Planes, worth at least 500gp",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
+    "range": {
+      "units": "self",
+      "special": ""
+    },
+    "school": "trs",
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+      },
+      "affects": {
+        "choice": false,
+        "type": ""
+      }
+    }
+  },
+  "effects": [
+    {
+      "name": "Otherworldly Form (Lower Planes)",
+      "img": "icons/creatures/magical/spirit-undead-ghost-purple.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplOtherwGuis",
+      "transfer": false,
+      "_id": "MDiw7JpWMAqpMjAd",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.ac.bonus",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        },
+        {
+          "key": "system.traits.di.value",
+          "mode": 2,
+          "value": "fire",
+          "priority": null
+        },
+        {
+          "key": "system.traits.di.value",
+          "mode": 2,
+          "value": "poison",
+          "priority": null
+        },
+        {
+          "key": "system.traits.ci.value",
+          "mode": 2,
+          "value": "poisoned",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.fly",
+          "mode": 5,
+          "value": "40",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>Uttering an incantation, you draw on the magic of the Lower Planes to transform yourself. You gain the following benefits until the spell ends:</p><ul><li>You are immune to fire and poison damage.</li><li>You are immune to the poisoned condition.</li><li>Spectral wings appear on your back, giving you a flying speed of 40 feet.</li><li>You have a +2 bonus to AC.</li><li>All your weapon attacks are magical, and when you make a weapon attack, you can use your spellcasting ability modifier, instead of Strength or Dexterity, for the attack and damage rolls.</li><li>You can attack twice, instead of once, when you take the Attack action on your turn. You ignore this benefit if you already have a feature, like Extra Attack, that lets you attack more than once when you take the Attack action on your turn.</li></ul>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": 1739472212780,
+        "modifiedTime": 1739472360090,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplOtherwGuis.MDiw7JpWMAqpMjAd"
+    },
+    {
+      "name": "Otherworldly Form (Upper Planes)",
+      "img": "icons/creatures/magical/spirit-undead-ghost-purple.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplOtherwGuis",
+      "transfer": false,
+      "_id": "vjUjA5KX2wubyzsy",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.ac.bonus",
+          "mode": 2,
+          "value": "2",
+          "priority": null
+        },
+        {
+          "key": "system.traits.di.value",
+          "mode": 2,
+          "value": "radiant",
+          "priority": null
+        },
+        {
+          "key": "system.traits.di.value",
+          "mode": 2,
+          "value": "necrotic",
+          "priority": null
+        },
+        {
+          "key": "system.traits.ci.value",
+          "mode": 2,
+          "value": "charmed",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.fly",
+          "mode": 2,
+          "value": "40",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>Uttering an incantation, you draw on the magic of the Upper Planes to transform yourself. You gain the following benefits until the spell ends:</p><ul><li>You are immune to radiant and necrotic damage (Upper Planes).</li><li>You are immune to the charmed condition (Upper Planes).</li><li>Spectral wings appear on your back, giving you a flying speed of 40 feet.</li><li>You have a +2 bonus to AC.</li><li>All your weapon attacks are magical, and when you make a weapon attack, you can use your spellcasting ability modifier, instead of Strength or Dexterity, for the attack and damage rolls.</li><li>You can attack twice, instead of once, when you take the Attack action on your turn. You ignore this benefit if you already have a feature, like Extra Attack, that lets you attack more than once when you take the Attack action on your turn.</li></ul>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": 1739472384202,
+        "modifiedTime": 1739472454176,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplOtherwGuis.vjUjA5KX2wubyzsy"
+    }
+  ],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplOtherwGuis",
+      "spell-lists": "sorcerer,warlock,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739472055240,
+    "modifiedTime": 1739472384244,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_key": "!items!matSplOtherwGuis"
+}

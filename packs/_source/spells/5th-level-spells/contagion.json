@@ -1,75 +1,53 @@
 {
   "name": "Contagion",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplContagion0",
   "system": {
     "description": {
-      "value": "<div><div><p>Your touch inflicts disease. Make a melee spell attack against a creature within your reach. On a hit, the target is poisoned.</p><p>Whether poisoned or not, if you hit your target it most make a Constitution saving throw the end of each of the it's turns. If the target took damage or failed a saving throw in the round, it makes the Constitution saving throw at disadvantage. If the target succeeds on three of these saves, it is no longer poisoned (if it ever was), and the spell ends. If the target fails three of these saving throws, the target is no longer poisoned (if it was at all), but choose one of the diseases below. The target is subjected to the chosen disease for the spell's duration.</p><p>While this spell induces a normally natural disease in the target, the diseases are considered magical in nature. Lesser Restoration cast at 5th level or higher, 25 hit points expended by a paladin's Lay on Hands, or similar effects can cure the disease.</p><p><strong>Blinding Sickness</strong>. Pain grips the creature's mind, and its eyes turn milky white. The creature has disadvantage on Wisdom checks and Wisdom saving throws and is blinded.</p><p><strong>Filth Fever.</strong> A raging fever sweeps through the creature's body. The creature has disadvantage on Strength checks, Strength saving throws, and attack rolls that use Strength. Additionally, if they move more than 10 feet in a turn they much succeed a Strength saving throw against your spell DC or they fall prone.</p><p><strong>Flesh Rot.</strong> The creature's flesh decays. The creature has disadvantage on Charisma checks and vulnerability to all damage.</p><p><strong>Mindfire.</strong> The creature's mind becomes feverish. The creature has disadvantage on Intelligence checks and Intelligence saving throws, and the creature behaves as if under the effects of the confusion spell during combat.</p><p><strong>Seizure.</strong> The creature is overcome with shaking. The creature has disadvantage on Dexterity checks, Dexterity saving throws, and attack rolls that use Dexterity. Additionally, the target cannot take the dash, disengage, or dodge action, or take reactions.</p><p><strong>Slimy Doom.</strong> The creature begins to bleed uncontrollably. The creature has disadvantage on Constitution checks and Constitution saving throws. In addition, whenever the creature takes damage, it must succed a Constitution saving throw against your spell DC or it is stunned until the end of its next turn.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 7th level or higher, the range is increased to 30 feet.</p></div></div>",
+      "value": "<p>Your touch inflicts a magical contagion. The target must succeed on a Constitution saving throw or take 11d8 Necrotic damage and have the &amp;Reference[Poisoned apply=false] condition. Also, choose one ability when you cast the spell. While Poisoned, the target has Disadvantage on saving throws made with the chosen ability.</p><p>The target must repeat the saving throw at the end of each of its turns until it gets three successes or failures. If the target succeeds on three of these saves, the spell ends on the target. If the target fails three of the saves, the spell lasts for 7 days on it.</p><p>Whenever the Poisoned target receives an effect that would end the Poisoned condition, the target must succeed on a [[/save ability=con dc=@attributes.spelldc format=long]], or the Poisoned condition doesn't end on it.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
-      "value": "",
-      "units": "spec"
+      "value": "7",
+      "units": "day"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "type": "any",
+        "count": "",
+        "choice": false,
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "touch"
+      "units": "touch",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "msak",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "con",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 5,
     "school": "nec",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -80,37 +58,362 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "S8jxTZQbT8KKSg5V",
+            "onSave": false
+          },
+          {
+            "_id": "pqGQCk5wZx196HuY",
+            "onSave": false
+          },
+          {
+            "_id": "5aPQT5DlL6Igaxh4",
+            "onSave": false
+          },
+          {
+            "_id": "EruTLG8AjsLULgHj",
+            "onSave": false
+          },
+          {
+            "_id": "J77AMHW5tROddZQg",
+            "onSave": false
+          },
+          {
+            "_id": "xewLYmHBxPTEKPlU",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "number": 11,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "",
+                "number": null,
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "mgc"
-    ],
-    "crewed": false
+    "identifier": "contagion"
+  },
+  "type": "spell",
+  "img": "icons/magic/acid/dissolve-vomit-green-brown.webp",
+  "effects": [
+    {
+      "name": "Infected (Strength)",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplContagion0",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 604800,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "systems/dnd5e/icons/svg/abilities/strength.svg",
+      "_id": "S8jxTZQbT8KKSg5V",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<ul><li><p>While &amp;Reference[Poisoned apply=false], the target has Disadvantage on saving throws made with the chosen ability.</p></li><li><p><span style=\"font-family:Signika, sans-serif\">The target must repeat the [[/save ability=con format=long]] at the end of each of its turns until it gets three successes or failures.</span></p></li><li><p>Whenever the target receives an effect that would end the Poisoned condition, the target must succeed on a [[/save ability=con format=long]], or the condition doesn't end on it.</p></li></ul>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "poisoned"
+      ],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplContagion0.S8jxTZQbT8KKSg5V"
+    },
+    {
+      "name": "Infected (Dexterity)",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplContagion0",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 604800,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "systems/dnd5e/icons/svg/abilities/dexterity.svg",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<ul><li><p>While &amp;Reference[Poisoned apply=false], the target has Disadvantage on saving throws made with the chosen ability.</p></li><li><p><span style=\"font-family:Signika, sans-serif\">The target must repeat the [[/save ability=con format=long]] at the end of each of its turns until it gets three successes or failures.</span></p></li><li><p>Whenever the target receives an effect that would end the Poisoned condition, the target must succeed on a [[/save ability=con format=long]], or the condition doesn't end on it.</p></li></ul>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "poisoned"
+      ],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": "Compendium.materia-dnd.spells.Item.matSplContagion0.ActiveEffect.S8jxTZQbT8KKSg5V",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "pqGQCk5wZx196HuY",
+      "_key": "!items.effects!matSplContagion0.pqGQCk5wZx196HuY"
+    },
+    {
+      "name": "Infected (Constitution)",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplContagion0",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 604800,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "systems/dnd5e/icons/svg/abilities/constitution.svg",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<ul><li><p>While &amp;Reference[Poisoned apply=false], the target has Disadvantage on saving throws made with the chosen ability.</p></li><li><p><span style=\"font-family:Signika, sans-serif\">The target must repeat the [[/save ability=con format=long]] at the end of each of its turns until it gets three successes or failures.</span></p></li><li><p>Whenever the target receives an effect that would end the Poisoned condition, the target must succeed on a [[/save ability=con format=long]], or the condition doesn't end on it.</p></li></ul>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "poisoned"
+      ],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": "Compendium.materia-dnd.spells.Item.matSplContagion0.ActiveEffect.S8jxTZQbT8KKSg5V",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "5aPQT5DlL6Igaxh4",
+      "_key": "!items.effects!matSplContagion0.5aPQT5DlL6Igaxh4"
+    },
+    {
+      "name": "Infected (Intelligence)",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplContagion0",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 604800,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "systems/dnd5e/icons/svg/abilities/intelligence.svg",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<ul><li><p>While &amp;Reference[Poisoned apply=false], the target has Disadvantage on saving throws made with the chosen ability.</p></li><li><p><span style=\"font-family:Signika, sans-serif\">The target must repeat the [[/save ability=con format=long]] at the end of each of its turns until it gets three successes or failures.</span></p></li><li><p>Whenever the target receives an effect that would end the Poisoned condition, the target must succeed on a [[/save ability=con format=long]], or the condition doesn't end on it.</p></li></ul>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "poisoned"
+      ],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": "Compendium.materia-dnd.spells.Item.matSplContagion0.ActiveEffect.S8jxTZQbT8KKSg5V",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "EruTLG8AjsLULgHj",
+      "_key": "!items.effects!matSplContagion0.EruTLG8AjsLULgHj"
+    },
+    {
+      "name": "Infected (Wisdom)",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplContagion0",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 604800,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "systems/dnd5e/icons/svg/abilities/wisdom.svg",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<ul><li><p>While &amp;Reference[Poisoned apply=false], the target has Disadvantage on saving throws made with the chosen ability.</p></li><li><p><span style=\"font-family:Signika, sans-serif\">The target must repeat the [[/save ability=con format=long]] at the end of each of its turns until it gets three successes or failures.</span></p></li><li><p>Whenever the target receives an effect that would end the Poisoned condition, the target must succeed on a [[/save ability=con format=long]], or the condition doesn't end on it.</p></li></ul>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "poisoned"
+      ],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": "Compendium.materia-dnd.spells.Item.matSplContagion0.ActiveEffect.S8jxTZQbT8KKSg5V",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "J77AMHW5tROddZQg",
+      "_key": "!items.effects!matSplContagion0.J77AMHW5tROddZQg"
+    },
+    {
+      "name": "Infected (Charisma)",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplContagion0",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 604800,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "systems/dnd5e/icons/svg/abilities/charisma.svg",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<ul><li><p>While &amp;Reference[Poisoned apply=false], the target has Disadvantage on saving throws made with the chosen ability.</p></li><li><p><span style=\"font-family:Signika, sans-serif\">The target must repeat the [[/save ability=con format=long]] at the end of each of its turns until it gets three successes or failures.</span></p></li><li><p>Whenever the target receives an effect that would end the Poisoned condition, the target must succeed on a [[/save ability=con format=long]], or the condition doesn't end on it.</p></li></ul>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "poisoned"
+      ],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": "Compendium.materia-dnd.spells.Item.matSplContagion0.ActiveEffect.S8jxTZQbT8KKSg5V",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "xewLYmHBxPTEKPlU",
+      "_key": "!items.effects!matSplContagion0.xewLYmHBxPTEKPlU"
+    }
+  ],
+  "folder": "slWnSXtwvwnA9EXJ",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.4FaXMyU2b5DXqnFv",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplContagion0",
       "spell-lists": "cleric,druid"
     }
   },
-  "img": "icons/magic/unholy/strike-beam-blood-large-red-purple.webp",
-  "effects": [],
-  "folder": "slWnSXtwvwnA9EXJ",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234097,
-    "modifiedTime": 1712471803073,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1739231938614,
+    "modifiedTime": 1739392832186,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "4FaXMyU2b5DXqnFv",
-  "sort": 3700000,
-  "_key": "!items!4FaXMyU2b5DXqnFv"
+  "sort": 0,
+  "_key": "!items!matSplContagion0"
 }

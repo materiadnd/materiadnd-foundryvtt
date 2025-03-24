@@ -1,73 +1,47 @@
 {
-  "folder": "WtBByem45tjsGx6Z",
   "name": "Toll the Dead",
-  "type": "spell",
-  "_id": "HgNtwayu8u1AtbCI",
-  "img": "icons/magic/unholy/strike-body-life-soul-green.webp",
+  "_id": "matSplTollTheDea",
   "system": {
     "description": {
-      "value": "<p>You point at one creature you can see within range, and the sound of a dolorous bell fills the air around it for a moment. The target must succeed on a Wisdom saving throw or take 1d8 necrotic damage. If the target is missing any of its hit points, it instead takes 1d12 necrotic damage.</p><p>The spell's damage increases by one die when you reach 5th level (2d8 or 2d12), 11th level (3d8 or 3d12), and 17th level (4d8 or 4d12).</p>",
+      "value": "<p>You point at one creature you can see within range, and the single chime of a dolorous bell is audible within 10 feet of the target. The target must succeed on a Wisdom saving throw or take [[/damage 1d8 necrotic]] damage. If the target is missing any of its Hit Points, it instead takes [[/damage 1d12 necrotic]] damage.</p><p><strong>Cantrip Upgrade.</strong> The damage increases by one die when you reach levels 5 ([[/damage 2d8 necrotic]] or [[/damage 2d12 necrotic]]), 11 ([[/damage 3d8  necrotic]] or [[/damage 3d12 necrotic]]), and 17 ([[/damage 4d8 necrotic]] or [[/damage 4d12 necrotic]]).</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
-    "crewed": false,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": 60,
-      "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": "",
+      "value": "60"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "1d8",
-          "necrotic"
-        ]
-      ],
-      "versatile": "1d12"
-    },
-    "formula": "",
-    "save": {
-      "ability": "wis",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 0,
     "school": "nec",
@@ -82,34 +56,205 @@
       "supply": 0
     },
     "preparation": {
-      "mode": "prepared",
+      "mode": "always",
       "prepared": false
     },
-    "scaling": {
-      "mode": "cantrip",
-      "formula": ""
-    }
+    "activities": {
+      "LFXYm5sLg6D3ZilN": {
+        "type": "save",
+        "name": "Healthy Target",
+        "_id": "LFXYm5sLg6D3ZilN",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": "undamaged creature"
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ],
+          "onSave": "none"
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "img": "systems/dnd5e/icons/svg/hit-points.svg"
+      },
+      "w9KUTNVoj3K8XSlv": {
+        "type": "save",
+        "name": "Damaged Target",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": "creature missing any of its Hit Points"
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 12,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ],
+          "onSave": "none"
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "_id": "w9KUTNVoj3K8XSlv",
+        "img": "systems/dnd5e/icons/svg/trait-damage-vulnerabilities.svg"
+      }
+    },
+    "identifier": "toll-the-dead"
   },
+  "type": "spell",
+  "img": "icons/magic/sonic/bell-alarm-red-purple.webp",
   "effects": [],
+  "folder": "WtBByem45tjsGx6Z",
+  "ownership": {
+    "default": 0
+  },
   "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.HgNtwayu8u1AtbCI",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplTollTheDea",
       "spell-lists": "cleric,warlock,wizard"
     }
   },
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1706863926580,
-    "modifiedTime": 1708927608467,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1737926753491,
+    "modifiedTime": 1737930955062,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "sort": 2900000,
-  "ownership": {
-    "default": 0
-  },
-  "_key": "!items!HgNtwayu8u1AtbCI"
+  "sort": 0,
+  "_key": "!items!matSplTollTheDea"
 }

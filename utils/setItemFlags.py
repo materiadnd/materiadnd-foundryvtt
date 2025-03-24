@@ -4,7 +4,7 @@ import copy
 import json
 import itertools
 
-DIR_ROOT = 'packs\\_source'
+DIR_ROOT = 'packs\\_source\\spells\\cantrips'
 FILES_TO_IGNORE = [ '_folder.json' ]
 
 FLAGS_TO_ADD = [

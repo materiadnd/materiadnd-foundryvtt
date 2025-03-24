@@ -1,118 +1,220 @@
 {
   "name": "Forbiddance",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplForbiddanc",
   "system": {
     "description": {
-      "value": "<p>You create a ward against magical travel that protects up to 40,000 square feet of floor space to a height of 30 feet above the floor. For the Duration, creatures can't teleport into the area or use portals, such as those created by the gate spell, to enter the area. The spell proofs the area against Planar Travel, and therefore prevents creatures from accessing the area by way of the Astral Plane, Ethereal Plane, Feywild, Shadowfell, or the Plane Shift spell.</p><p>In addition, the spell damages types of creatures that you choose when you cast it. Choose one or more of the following: Aberrations, Celestials, Elementals, fey, Fiends, and Undead. When a chosen creature enters the spell's area for the first time on a turn or starts its turn there, the creature takes 5d10 radiant or necrotic damage (your choice when you cast this spell).</p><p>When you cast this spell, you can designate a password. A creature that speaks the password as it enters the area takes no damage from the spell.</p><p>The spell's area can't overlap with the area of another forbiddance spell. If you cast forbiddance every day for 30 days in the same location, the spell lasts until it is dispelled, and the material Components are consumed on the last casting.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 7th level, it counts as 5 days for the purpose making the spell last until it is dispelled.</p><p>When you cast this spell using a spell slot of 8th level, it counts as 10 days for the purpose making the spell last until it is dispelled.</p><p>When you cast this spell using a spell slot of 9th level or higher, it counts as 30 days for the purpose making the spell last until it is dispelled.</p>",
+      "value": "<p>You create a ward against magical travel that protects up to 40,000 square feet of floor space to a height of 30 feet above the floor. For the duration, creatures can't teleport into the area or use portals, such as those created by the <em>Gate</em> spell, to enter the area. The spell proofs the area against planar travel, and therefore prevents creatures from accessing the area by way of the Astral Plane, the Ethereal Plane, the Feywild, the Shadowfell, or the <em>@UUID[Compendium.materia-dnd.spells.Item.matSplPlaneShift]{Plane Shift}</em> spell.</p><p>In addition, the spell damages types of creatures that you choose when you cast it. Choose one or more of the following: Aberrations, Celestials, Elementals, Fey, Fiends, and Undead. When a creature of a chosen type enters the spell's area for the first time on a turn or ends its turn there, the creature takes 5d10 Radiant or Necrotic damage (your choice when you cast this spell).</p><p>You can designate a password when you cast the spell. A creature that speaks the password as it enters the area takes no damage from the spell.</p><p>The spell's area can't overlap with the area of another <em>Forbiddance</em> spell. If you cast <em>Forbiddance</em> every day for 30 days in the same location, the spell lasts until it is dispelled, and the Material components are consumed on the last casting.</p><p><strong>Using a Higher-Level Spell Slot.</strong> If you use a spell slot of level 7, it counts as 5 days for the purpose of making the spell last until it is dispelled.</p><p>If you use a spell slot of level 8, it counts as 10 days for the purpose of making the spell last until it is dispelled.</p><p>If you use a spell slot of level 9+, it counts as 30 days for the purpose of making the spell last until it is dispelled.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "minute",
-      "cost": 10,
-      "condition": ""
+      "condition": "",
+      "value": 10
     },
     "duration": {
       "value": "1",
       "units": "day"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "",
+        "type": "space",
+        "special": "40,000 square feet to a height of 30 feet"
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "touch"
+      "units": "touch",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 6,
     "school": "abj",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "A sprinkle of holy water, rare incense, and powdered ruby worth at least 1000gp",
+      "value": "ruby dust worth 1,000+ GP",
       "consumed": false,
-      "cost": 1000,
+      "cost": 0,
       "supply": 0
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "T2XK004SAb09LvvP": {
+        "type": "utility",
+        "_id": "T2XK004SAb09LvvP",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Create Ward",
+        "img": "systems/dnd5e/icons/svg/rosa-shield.svg"
+      },
+      "9IBiOeIf2PC1wcLp": {
+        "type": "damage",
+        "_id": "9IBiOeIf2PC1wcLp",
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": "creature of a chosen type enters the spell's area for the first time on a turn or ends its turn there"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true,
+          "units": "any",
+          "special": "within the spell's area"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 5,
+              "denomination": 10,
+              "bonus": "",
+              "types": [
+                "radiant",
+                "necrotic"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "name": "Damage Forbidden Creature"
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "ritual",
-      "mgc"
-    ],
-    "crewed": false
+    "identifier": "forbiddance"
+  },
+  "type": "spell",
+  "img": "icons/magic/symbols/squares-3d-green.webp",
+  "effects": [],
+  "folder": "UjV13fGRtZfpmOAS",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.uNYPhcwbewNNQTgs",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplForbiddanc",
       "spell-lists": "cleric"
     }
   },
-  "img": "icons/magic/symbols/runes-star-pentagon-orange.webp",
-  "effects": [],
-  "folder": "UjV13fGRtZfpmOAS",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234071,
-    "modifiedTime": 1712723646821,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1739393748743,
+    "modifiedTime": 1739393894029,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "uNYPhcwbewNNQTgs",
-  "sort": 3300000,
-  "_key": "!items!uNYPhcwbewNNQTgs"
+  "sort": 0,
+  "_key": "!items!matSplForbiddanc"
 }

@@ -2,21 +2,25 @@
   "folder": "JMRA2elEdmr5pgX7",
   "name": "Searing Smite",
   "type": "spell",
-  "_id": "kfZk8xY1mm95bj3I",
+  "_id": "matSplSearingSmi",
   "img": "icons/magic/fire/projectile-feathers-embers-gold.webp",
   "system": {
     "description": {
-      "value": "<p>As you hit a creature with a weapon attack or unarmed strike, your strike flares with white-hot intensity, exploding in searing heat, and the attack deals an extra 1d8 plus your spellcasting ability modifier in fire damage to the target, and the searing heat erupts to creatures of your choice that you can see within 5 feet of it inflicting your spellcasting ability modifier in fire damage.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 2nd level or higher, the extra damage dealt to the initial target by the attack increases by 1d8 for each slot.</p>",
+      "value": "<p>As you hit the target, your strike flares with white-hot intensity, exploding in searing heat, and the attack deals an extra [[/damage 1d8]] plus your spellcasting ability modifier in fire damage to the target, and the searing heat erupts to creatures of your choice that you can see within 5 feet of it inflicting your spellcasting ability modifier in fire damage.</p><p><strong>At Higher Levels.</strong> The extra damage dealt to the initial target by the attack increases by 1d8 for each spell slot level above 1.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "bonus",
       "cost": 1,
       "condition": "which you take immediately after hitting a target with a weapon or an unarmed strike"
     },
     "duration": {
-      "value": "",
+      "value": "1",
       "units": "inst"
     },
     "cover": null,
@@ -26,12 +30,20 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": "",
+        "type": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "self"
+      "units": "self",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -87,28 +99,184 @@
     "scaling": {
       "mode": "level",
       "formula": "1d8"
+    },
+    "activities": {
+      "LP4TRv94fS2zFoiW": {
+        "type": "damage",
+        "_id": "LP4TRv94fS2zFoiW",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 8,
+              "bonus": "@mod",
+              "types": [
+                "fire"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "name": "Extra Attack Damage",
+        "img": "",
+        "appliedEffects": []
+      },
+      "1ET8JCr1fmYBxhFv": {
+        "type": "damage",
+        "_id": "1ET8JCr1fmYBxhFv",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": true,
+          "units": "any",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "sphere",
+            "size": "5",
+            "count": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 8,
+              "bonus": "@mod",
+              "types": [],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "name": "Burst Damage",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.kfZk8xY1mm95bj3I",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplSearingSmi",
       "spell-lists": "paladin,ranger"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1707664403787,
-    "modifiedTime": 1708928830321,
+    "modifiedTime": 1738943338262,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 6500000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!kfZk8xY1mm95bj3I"
+  "_key": "!items!matSplSearingSmi"
 }

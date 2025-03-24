@@ -1,81 +1,50 @@
 {
-  "folder": "JMRA2elEdmr5pgX7",
   "name": "Wrathful Smite",
-  "type": "spell",
-  "_id": "t33zxWPLeHVg2IY0",
-  "img": "icons/magic/light/projectile-flare-expliosion-yellow.webp",
+  "_id": "matSplWrathfulSm",
   "system": {
     "description": {
-      "value": "<p>As you hit with a weapon attack or unarmed strike, the attack deals an extra 1d6 plus your spellcasting ability modifier psychic damage, and the target must succeed on a Wisdom saving throw or be frightened of you until the end of your next turn or until the spell ends if you choose to maintain concentration on this spell. The frightened target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 2nd level or higher, the extra damage dealt by the attack increases by 1d6 for each slot.</p>",
+      "value": "<p>The target takes an extra [[/damage 1d6 radiant]] damage from the attack, and it must succeed on a Wisdom saving throw or have the &amp;Reference[frightened apply=false] condition until the spell ends. At the end of each of its turns, the Frightened target repeats the save, ending the spell on itself on a success.</p><p><strong>Using a Higher-Level Spell Slot. </strong>The damage increases by 1d6 for each spell slot level above 1.</p>",
       "chat": ""
     },
     "source": {
-      "custom": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "bonus",
-      "cost": 1,
-      "condition": "which you take immediately after hitting a target with a weapon or an unarmed strike"
+      "condition": "immediately after hitting a creature with a Melee weapon or an Unarmed Strike",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
-    "crewed": false,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "self"
+      "units": "self",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "other",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "1d6 + @mod",
-          "psychic"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 1,
-    "school": "enc",
+    "school": "nec",
     "properties": [
-      "vocal",
-      "concentration"
+      "vocal"
     ],
     "materials": {
       "value": "",
@@ -87,31 +56,164 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "1d6"
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "AGxThnIAskdh5Nqr",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "damage": {
+          "onSave": "full",
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": "6",
+              "bonus": "",
+              "types": [
+                "radiant"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "name": "",
+        "img": "",
+        "appliedEffects": [
+          "AGxThnIAskdh5Nqr"
+        ]
+      }
+    },
+    "identifier": "wrathful-smite"
+  },
+  "type": "spell",
+  "img": "icons/magic/death/weapon-sword-skull-purple.webp",
+  "effects": [
+    {
+      "name": "Frightened",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplWrathfulSm",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "systems/dnd5e/icons/svg/statuses/frightened.svg",
+      "_id": "AGxThnIAskdh5Nqr",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>The target has the &amp;Reference[frightened apply=false] condition until the spell ends. At the end of each of its turns, the Frightened target repeats the [[/save ability=wis]] save, ending the spell on itself on a success.</p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "frightened"
+      ],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplWrathfulSm.AGxThnIAskdh5Nqr"
     }
-  },
-  "effects": [],
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.t33zxWPLeHVg2IY0",
-      "spell-lists": "paladin"
-    }
-  },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "3.2.1",
-    "coreVersion": "12.327",
-    "createdTime": 1707664838851,
-    "modifiedTime": 1718792657692,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
-  },
-  "sort": 7200000,
+  ],
+  "folder": "JMRA2elEdmr5pgX7",
   "ownership": {
     "default": 0
   },
-  "_key": "!items!t33zxWPLeHVg2IY0"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplWrathfulSm",
+      "spell-lists": "paladin"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738042336424,
+    "modifiedTime": 1738042359984,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplWrathfulSm"
 }

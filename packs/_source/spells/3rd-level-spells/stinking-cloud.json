@@ -1,77 +1,60 @@
 {
   "name": "Stinking Cloud",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplStinkingCl",
   "system": {
     "description": {
-      "value": "<p>You create a 20-foot-radius sphere of yellow, nauseating gas centered on a point within range. The cloud spreads around corners, and its area is heavily obscured. The cloud lingers in the air for the duration.</p><p>Each creature that is completely within the cloud at the start of its turn must make a Constitution saving throw against poison. On a failed save, the creature spends its action that turn retching and reeling. Creatures that don't need to breathe or are immune to poison automatically succeed on this saving throw.</p><p>A moderate wind (at least 10 miles per hour) disperses the cloud after 4 rounds. A strong wind (at least 20 miles per hour) disperses it after 1 round.</p>",
+      "value": "<p>You create a 20-foot-radius Sphere of yellow, nauseating gas centered on a point within range. The cloud is &amp;Reference[heavilyobscured]. The cloud lingers in the air for the duration or until a strong wind (such as the one created by <em>@UUID[Compendium.materia-dnd.spells.Item.matSplGustOfWind]{Gust of Wind}</em>) disperses it.</p><p>Each creature that starts its turn in the Sphere must succeed on a Constitution saving throw or have the &amp;Reference[poisoned apply=false] condition until the end of the current turn.  Creatures that don't need to breathe or are immune to poison automatically succeed on this saving throw.  While Poisoned in this way, the creature can't take an action or a Bonus Action.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 20,
-      "width": null,
-      "units": "ft",
-      "type": "sphere",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "",
+        "type": "creature",
+        "special": ""
+      },
+      "template": {
+        "units": "ft",
+        "type": "sphere",
+        "size": "20",
+        "contiguous": false,
+        "count": ""
+      }
     },
     "range": {
-      "value": 90,
-      "long": null,
-      "units": "ft"
+      "value": "90",
+      "units": "ft",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "con",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 3,
     "school": "con",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
     "materials": {
-      "value": "A rotten egg or several skunk cabbage leaves",
+      "value": "a rotten egg",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -80,38 +63,201 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": false
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": true,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "gFid0DG5HydORpr3",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": true,
+          "units": "any",
+          "special": ""
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true
+        },
+        "damage": {
+          "onSave": "none",
+          "parts": []
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 200000,
+        "name": "Start of Turn Save"
+      },
+      "b4WUwQ8fDL83FwYC": {
+        "type": "utility",
+        "_id": "b4WUwQ8fDL83FwYC",
+        "sort": 100000,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Create Cloud"
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "concentration"
-    ],
-    "crewed": false
+    "identifier": "stinking-cloud"
+  },
+  "type": "spell",
+  "img": "icons/magic/air/fog-gas-smoke-dense-green.webp",
+  "effects": [
+    {
+      "name": "Stinking Poison",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplStinkingCl",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "icons/magic/acid/dissolve-vomit-green-brown.webp",
+      "_id": "gFid0DG5HydORpr3",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>While &amp;Reference[poisoned apply=false] in this way, the creature can't take an action or a Bonus Action.</p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "poisoned"
+      ],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplStinkingCl.gFid0DG5HydORpr3"
+    }
+  ],
+  "folder": "CxgAwElQGTbcnuvc",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.3qKA9Ojxpr2u04kO",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplStinkingCl",
       "spell-lists": "bard,sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
-  "img": "icons/magic/air/fog-gas-smoke-dense-green.webp",
-  "effects": [],
-  "folder": "CxgAwElQGTbcnuvc",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234146,
-    "modifiedTime": 1713584796371,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738514603854,
+    "modifiedTime": 1738514626793,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "3qKA9Ojxpr2u04kO",
-  "sort": 2000000,
-  "_key": "!items!3qKA9Ojxpr2u04kO"
+  "sort": 0,
+  "_key": "!items!matSplStinkingCl"
 }

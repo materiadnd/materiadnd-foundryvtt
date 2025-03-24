@@ -1,0 +1,17 @@
+<html>
+<body>
+    <div>
+        {% for spell in spells %}
+        <h3>{{ spell.name }}</h3>
+        <p><em>Level {{ spell.level }} {{ spell.school }}</em></p>
+        <p><strong>Casting Time:</strong> {{ spell.castingTime }}</p>
+        <p><strong>Range:</strong> {{ spell.range }}</p>
+        <p><strong>Components:</strong> {{ spell.components }}</p>
+        <p><strong>Duration:</strong> {{ spell.duration }}</p>
+        <div>
+            {{ spell.description }}
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

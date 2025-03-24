@@ -1,19 +1,19 @@
 {
   "name": "Incendiary Cloud",
+  "_id": "matSplIncendiary",
   "ownership": {
     "default": 0
   },
   "type": "spell",
   "system": {
     "description": {
-      "value": "<p>A swirling cloud of smoke shot through with white-hot embers appears in a 20-foot-radius sphere centered on a point within range. The cloud spreads around corners and is heavily obscured. It lasts for the duration or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.</p><p>When the cloud appears, each creature in it must make a Dexterity saving throw. A creature takes 10d8 fire damage on a failed save, or half as much damage on a successful one. A creature must also make this saving throw when it enters the spell's area for the first time on a turn or ends its turn there.</p><p>Each creature that is completely within the cloud at the start of its turn must make a Constitution saving throw due to the thick smoke and ash in the area. On a failed save, the creature spends its action that turn choking and gasping for breath. Creatures that do not need to breathe automatically succeed on this saving throw.</p><p>The cloud moves up to 10 feet in a direction that you choose at the start of each of your turns.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 9th level or higher, grants a duration that does not require concentration.</p>",
+      "value": "<p>A swirling cloud of smoke shot through with white-hot embers appears in a 20-foot-radius sphere centered on a point within range. The cloud spreads around corners and is heavily obscured. It lasts for the duration or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.</p><p>When the cloud appears, each creature in it must make a Dexterity saving throw. A creature takes [[/r 10d8]] fire damage on a failed save, or half as much damage on a successful one. A creature must also make this saving throw when it enters the spell's area for the first time on a turn or ends its turn there.</p><p>Each creature that is completely within the cloud at the start of its turn must make a Constitution saving throw due to the thick smoke and ash in the area. On a failed save, the creature spends its action that turn choking and gasping for breath. Creatures that do not need to breathe automatically succeed on this saving throw.</p><p>The cloud moves up to 10 feet in a direction that you choose at the start of each of your turns.</p><p><strong>Using a Higher-Level Spell Slot.</strong> If you use a slot of level 9+, this does not require your Concentration..</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
@@ -30,12 +30,20 @@
       "width": null,
       "units": "ft",
       "type": "sphere",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "count": ""
+      }
     },
     "range": {
       "value": 150,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -94,28 +102,231 @@
       "somatic",
       "concentration"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "WEiovtkamjz9ts4m": {
+        "type": "save",
+        "_id": "WEiovtkamjz9ts4m",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 10,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "fire"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "dex",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Create Cloud",
+        "img": "",
+        "appliedEffects": []
+      },
+      "CbG18XzqlL4HYYdp": {
+        "type": "save",
+        "_id": "CbG18XzqlL4HYYdp",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [
+          {
+            "_id": "nYx4SRLTtyGoSkpz",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": true,
+          "units": "spec",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "con",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Smoke Save",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.FRJ8RWRTPqXkMfjF",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplIncendiary",
       "spell-lists": "druid,sorcerer,wizard"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "img": "icons/magic/air/fog-gas-smoke-swirling-orange.webp",
-  "effects": [],
+  "effects": [
+    {
+      "name": "Choked by Ash",
+      "img": "icons/magic/air/fog-gas-smoke-swirling-orange.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplIncendiary",
+      "transfer": false,
+      "_id": "nYx4SRLTtyGoSkpz",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The creature spends its action that turn choking and gasping for breath. Creatures that do not need to breathe automatically succeed on this saving throw.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728921297058,
+        "modifiedTime": 1728921323276,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplIncendiary.nYx4SRLTtyGoSkpz"
+    }
+  ],
   "folder": "IeD7MeayeQqIoNnW",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1661787234228,
-    "modifiedTime": 1709231943745,
+    "modifiedTime": 1739439341024,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "FRJ8RWRTPqXkMfjF",
   "sort": 500000,
-  "_key": "!items!FRJ8RWRTPqXkMfjF"
+  "_key": "!items!matSplIncendiary"
 }

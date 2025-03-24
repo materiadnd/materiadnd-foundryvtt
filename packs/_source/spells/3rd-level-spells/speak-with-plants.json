@@ -1,75 +1,50 @@
 {
   "name": "Speak with Plants",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplSpeakWithP",
   "system": {
     "description": {
-      "value": "<p>You imbue Plants within 30 feet of you with limited sentience and animation, giving them the ability to communicate with you and follow your simple commands. You can question plants about events in the spell's area within the past day, gaining information about creatures that have passed, weather, and other circumstances.</p><p>You can also turn difficult terrain caused by Plant Growth (such as thickets and undergrowth) into ordinary terrain that lasts for the Duration. Or you can turn ordinary terrain where Plants are present into difficult terrain that lasts for the duration, causing vines and branches to hinder pursuers, for example.</p><p>Plants might be able to perform other tasks on your behalf, at the DM's discretion. The spell doesn't enable Plants to uproot themselves and move about, but they can freely move branches, tendrils, and stalks.</p><p>If a plant creature is in the area, you can communicate with it as if you shared a Common language, but you gain no magical ability to influence it.</p><p>This spell can cause the plants created by the Entangle spell to release a Restrained creature.</p>",
+      "value": "<p>You imbue plants in an immobile 30-foot Emanation with limited sentience and animation, giving them the ability to communicate with you and follow your simple commands. You can question plants about events in the spell's area within the past day, gaining information about creatures that have passed, weather, and other circumstances.</p><p>You can also turn &amp;Reference[difficultterrain] caused by plant growth (such as thickets and undergrowth) into ordinary terrain that lasts for the duration. Or you can turn ordinary terrain where plants are present into Difficult Terrain that lasts for the duration.</p><p>The spell doesn't enable plants to uproot themselves and move about, but they can move their branches, tendrils, and stalks for you.</p><p>If a Plant creature is in the area, you can communicate with it as if you shared a common language.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "10",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 30,
-      "width": null,
-      "units": "ft",
-      "type": "radius",
-      "prompt": true
+      "affects": {
+        "choice": false
+      },
+      "template": {
+        "units": "ft",
+        "type": "radius",
+        "size": "30",
+        "contiguous": false
+      }
     },
     "range": {
-      "value": null,
-      "long": null,
       "units": "self"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 3,
     "school": "trs",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -80,36 +55,124 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "cByepuCx1dcWTEa7"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic"
-    ],
-    "crewed": false
+    "identifier": "speak-with-plants"
+  },
+  "type": "spell",
+  "img": "icons/magic/nature/tree-animated-smile.webp",
+  "effects": [
+    {
+      "name": "Speaking with Plants",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplSpeakWithP",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "icons/magic/nature/tree-animated-squint.webp",
+      "_id": "cByepuCx1dcWTEa7",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplSpeakWithP.cByepuCx1dcWTEa7"
+    }
+  ],
+  "folder": "CxgAwElQGTbcnuvc",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.w7dp81BTqLVjcclf",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplSpeakWithP",
       "spell-lists": "bard,druid,ranger"
     }
   },
-  "img": "icons/magic/nature/leaf-glow-teal.webp",
-  "effects": [],
-  "folder": "CxgAwElQGTbcnuvc",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234060,
-    "modifiedTime": 1713584796371,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738514574266,
+    "modifiedTime": 1738514574266,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "w7dp81BTqLVjcclf",
-  "sort": 1800000,
-  "_key": "!items!w7dp81BTqLVjcclf"
+  "sort": 0,
+  "_key": "!items!matSplSpeakWithP"
 }

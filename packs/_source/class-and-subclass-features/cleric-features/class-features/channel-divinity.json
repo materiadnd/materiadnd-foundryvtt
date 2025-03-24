@@ -2,14 +2,18 @@
   "folder": "ddQ4xdJ8F9FGarTY",
   "name": "Channel Divinity",
   "type": "feat",
-  "_id": "EbCGoC9rtu47pZBn",
+  "_id": "matClrChannelDiv",
   "img": "icons/magic/holy/prayer-hands-glowing-yellow.webp",
   "system": {
     "description": {
-      "value": "<p>At 2nd level, you gain the ability to channel divine energy directly from your deity, using that energy to fuel magical effects. You start with two such effects: Turn Undead and an effect determined by your domain. Some domains grant you additional effects as you advance in levels, as noted in the domain description.</p><p>When you use your Channel Divinity, you choose which effect to create. You must then finish a short or long rest to use your Channel Divinity again.</p><p>Some Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your cleric spell save DC.</p><p>Beginning at 6th level, you can use your Channel Divinity twice between rests, and beginning at 18th level, you can use it three times between rests. When you finish a short or long rest, you regain your expended uses.</p>",
+      "value": "<p>You can channel divine energy directly from the Outer Planes to fuel magical effects. You start with two such effects: Divine Spark and Turn Undead, each of which is described below. Each time you use this class's Channel Divinity, choose which Channel Divinity effect from this class to create. You gain additional effect options at higher Cleric levels.</p><p>You can use this class's Channel Divinity twice. You regain one of its expended uses when you finish a Short Rest, and you regain all expended uses when you finish a Long Rest. You gain additional uses when you reach certain Cleric levels, as shown in the Channel Divinity column of the Cleric Features table.</p><p>If a Channel Divinity effect requires a saving throw, the DC equals the spell save DC from this class's Spellcasting feature.</p><p><strong>Divine Spark.</strong> As a Magic action, you point your Holy Symbol at another creature you can see within 30 feet of yourself and focus divine energy at it. Roll 1d8 and add your Wisdom modifier. You either restore Hit Points to the creature equal to that total or force the creature to make a Constitution saving throw. On a failed save, the creature takes Necrotic or Radiant damage (your choice) equal to that total. On a successful save, the creature takes half as much damage (round down).</p><p>You roll an additional d8 when you reach Cleric levels 7 (2d8), 13 (3d8), and 18 (4d8).</p><p><strong>Turn Undead.</strong> As a Magic action, you present your Holy Symbol and censure Undead creatures. Each Undead of your choice within 30 feet of you must make a Wisdom saving throw. If the creature fails its save, it has the Frightened and Incapacitated conditions for 1 minute. For that duration, it tries to move as far from you as it can on its turns. This effect ends early on the creature if it takes any damage, if you have the Incapacitated condition, or if you die.</p><section class=\"secret\" id=\"secret-1ECtJAnUinEegKtL\"><p><strong>Foundry Note</strong></p><p>This feature will automatically restore 1 use on a Short Rest and all on a Long Rest. The uses scale automatically as you level up.</p><p>The <strong>Divine Spark: Heal</strong> activity includes the healing effect.</p><p>The <strong>Divine Spark: Save</strong> activity includes the saving throw.</p><p>The <strong>Turn Undead</strong> activity includes an Active Effect that applies the Frightened and Incapacitated conditions.</p></section>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "special",
       "cost": null,
@@ -37,7 +41,17 @@
       "value": 1,
       "max": "@scale.cleric.channel-divinity",
       "per": "sr",
-      "recovery": "",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll"
+        },
+        {
+          "period": "sr",
+          "type": "formula",
+          "formula": "1"
+        }
+      ],
       "prompt": true
     },
     "consume": {
@@ -69,31 +83,311 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Cleric 2",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 2
+    },
+    "activities": {
+      "19axB8XctrnmWdy0": {
+        "type": "heal",
+        "_id": "19axB8XctrnmWdy0",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": 1,
+          "denomination": "8",
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": "@abilities.wis.mod"
+        },
+        "name": "Divine Spark: Heal",
+        "img": "",
+        "appliedEffects": []
+      },
+      "YN76jPVyy5UMIdl5": {
+        "type": "save",
+        "_id": "YN76jPVyy5UMIdl5",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": "8",
+              "bonus": "@abilities.wis.mod",
+              "types": [
+                "necrotic",
+                "radiant"
+              ]
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Divine Spark: Save",
+        "img": "",
+        "appliedEffects": []
+      },
+      "G5DFhPvYumNOSfxZ": {
+        "type": "utility",
+        "_id": "G5DFhPvYumNOSfxZ",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "bk7oadWIQroVI5eN"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Turn Undead",
+        "img": "systems/dnd5e/icons/svg/trait-damage-immunities.svg",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Turned",
+      "img": "icons/magic/holy/prayer-hands-glowing-yellow.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.matClrChannelDiv",
+      "transfer": false,
+      "_id": "bk7oadWIQroVI5eN",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": 1739589220883,
+        "modifiedTime": 1739589235552,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matClrChannelDiv.bk7oadWIQroVI5eN"
+    }
+  ],
   "flags": {
     "materia-dnd": {
       "item-use-target": "channel-divinity"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707233999263,
-    "modifiedTime": 1710764622562,
+    "modifiedTime": 1742440519780,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 300000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!EbCGoC9rtu47pZBn"
+  "_key": "!items!matClrChannelDiv"
 }

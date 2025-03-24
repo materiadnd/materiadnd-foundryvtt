@@ -2,14 +2,18 @@
   "folder": "flNjIH13DTI79OMB",
   "name": "Persistent Rage",
   "type": "feat",
-  "_id": "JhuLVaWV22QTkREc",
+  "_id": "matBrbPersistent",
   "img": "icons/skills/melee/strike-flail-spiked-pink.webp",
   "system": {
     "description": {
-      "value": "<p>Beginning at 15th level, your rage is so fierce that after a rage would end after one minute, you can attempt to extend the rage. You can make a DC 10 Constitution saving throw. If you succeed, the rage lasts an additional minute or until you fall unconscious.</p><p>Each time you use this feature after the first, the DC increases by 5. The DC resets to 5 when you begin a new rage.</p>",
+      "value": "<p>When you roll Initiative, you can regain all expended uses of Rage. After you regain uses of Rage in this way, you can't do so again until you finish a Long Rest.</p><p>In addition, your Rage is so fierce that it now lasts for 10 minutes without you needing to do anything to extend it from round to round. Your Rage ends early if you have the &amp;Reference[Unconscious] condition (not just the &amp;Reference[Incapacitated] condition) or don Heavy armor.</p><section class=\"secret\" id=\"secret-3IS0iUbWZ04tp74k\"><p><strong>Foundry Note</strong></p><p>This feature includes an activity which can be used when you roll Initiative which will recharge all of your Rage uses.</p></section>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "",
       "cost": null,
@@ -35,9 +39,14 @@
     },
     "uses": {
       "value": null,
-      "max": "",
+      "max": "1",
       "per": null,
-      "recovery": "",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll"
+        }
+      ],
       "prompt": true
     },
     "consume": {
@@ -73,23 +82,109 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 15
+    },
+    "activities": {
+      "KE7VOyOSHVMh1dRh": {
+        "type": "utility",
+        "_id": "KE7VOyOSHVMh1dRh",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            },
+            {
+              "type": "itemUses",
+              "value": "-@scale.barbarian.rage",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.matBrbRage000000"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll"
+            }
+          ],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Recharge Rage on Initiative",
+        "img": "systems/dnd5e/icons/svg/trait-damage-immunities.svg",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1708295606362,
-    "modifiedTime": 1712724007855,
+    "modifiedTime": 1739567825683,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 399219,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!JhuLVaWV22QTkREc"
+  "_key": "!items!matBrbPersistent"
 }

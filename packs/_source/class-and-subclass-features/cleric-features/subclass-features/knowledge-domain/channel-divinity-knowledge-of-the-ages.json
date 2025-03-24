@@ -6,10 +6,14 @@
   "img": "icons/magic/light/explosion-star-glow-orange.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 2nd level, you can use your Channel Divinity to tap into a divine well of knowledge. As an action, you choose one skill or tool. You have proficiency with the chosen skill or tool until you complete a short or long rest or you use this ability again.</p>",
+      "value": "<p>You can use your Channel Divinity to tap into a divine well of knowledge. As a Magic action, you choose one skill or tool. You have proficiency with the chosen skill or tool until you complete a Short or Long Rest or you use this ability again.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -69,26 +73,61 @@
       "subtype": "channelDivinity"
     },
     "properties": [],
-    "requirements": "Knowledge Domain 2",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.matClrChannelDiv"
+            }
+          ]
+        },
+        "name": "",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "target": {
+          "affects": {
+            "type": "self"
+          }
+        }
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
       "item-use-source": "channel-divinity"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707262221510,
-    "modifiedTime": 1710765242174,
+    "modifiedTime": 1742425566386,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 250000,

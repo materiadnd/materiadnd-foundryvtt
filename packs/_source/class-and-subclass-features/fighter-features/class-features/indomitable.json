@@ -6,10 +6,14 @@
   "img": "icons/weapons/hammers/hammer-double-engraved-ruby.webp",
   "system": {
     "description": {
-      "value": "<p>Beginning at 9th level, you can reroll a saving throw that you fail. If you do so, you must use the new roll, and you cannot use this feature again until you finish a long rest. When you use this feature to reroll a saving throw for which you are not proficient, add your proficiency modifier to the result of the new roll.</p><p>You can use this feature twice between long rests starting at 13th level and three times between long rests starting at 17th level.</p>",
+      "value": "<p>If you fail a saving throw, you can reroll it with a bonus equal to your Fighter level (currently, @classes.fighter.levels).  You mut use the new roll, and you can't use this feature again until you finish a Long Rest.</p><p>You can use this feature twice between Long Rests starting at 13th level and three times between Long Rests starting at 17th level.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "special",
       "cost": null,
@@ -68,23 +72,54 @@
       "value": "class",
       "subtype": ""
     },
-    "properties": [],
+    "properties": [
+      "trait"
+    ],
     "requirements": "Fighter 9",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 9
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "roll": {
+          "name": "Bonus",
+          "formula": "@classes.fighter.levels"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707198339219,
-    "modifiedTime": 1710307035811,
+    "modifiedTime": 1741204765879,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 450000,

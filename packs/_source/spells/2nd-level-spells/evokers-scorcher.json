@@ -1,0 +1,224 @@
+{
+  "folder": "3rC3qr5FIlZymxFD",
+  "name": "Evoker's Scorcher",
+  "type": "spell",
+  "_id": "matSplScorcher00",
+  "img": "icons/magic/fire/projectile-bolt-zigzag-orange.webp",
+  "system": {
+    "description": {
+      "value": "<p>A line of roaring flame 30 feet long and 5 feet wide emanates from you in a direction you choose. Each creature in the line must make a Dexterity saving throw. A creature takes [[/damage 3d8]] plus your spellcasting modifier fire damage on a failed save, or half as much damage on a successful one.</p><p>The fire ignites any flammable objects in the area that are not being worn or carried.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d8 for each spell slot level above 2.</p>",
+      "chat": ""
+    },
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "action",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": "",
+      "units": "inst"
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": 30,
+      "width": 5,
+      "units": "ft",
+      "type": "line",
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "count": ""
+      }
+    },
+    "range": {
+      "value": 30,
+      "long": null,
+      "units": "ft",
+      "special": ""
+    },
+    "uses": {
+      "value": null,
+      "max": "",
+      "per": null,
+      "recovery": "",
+      "prompt": true
+    },
+    "consume": {
+      "type": "",
+      "target": null,
+      "amount": null,
+      "scale": false
+    },
+    "ability": "",
+    "actionType": "save",
+    "attackBonus": "",
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [
+        [
+          "3d8 + @mod",
+          "fire"
+        ]
+      ],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "dex",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "level": 2,
+    "school": "evo",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
+    "materials": {
+      "value": "a red dragon's scale",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "scaling": {
+      "mode": "level",
+      "formula": "1d8"
+    },
+    "activities": {
+      "zhGDJT74pbCMVitE": {
+        "type": "save",
+        "_id": "zhGDJT74pbCMVitE",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 3,
+              "denomination": 8,
+              "bonus": "@mod",
+              "types": [
+                "fire"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "dex",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
+  },
+  "effects": [],
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplScorcher00",
+      "spell-lists": "sorcerer,wizard"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
+    "createdTime": 1708309844854,
+    "modifiedTime": 1739431921500,
+    "lastModifiedBy": "dnd5mbuilder0000",
+    "duplicateSource": null
+  },
+  "sort": 5200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!matSplScorcher00"
+}

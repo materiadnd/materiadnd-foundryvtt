@@ -9,7 +9,11 @@
       "value": "<p>Any creature that takes damage from your Flux Launcher glimmers with magical light until the start of your next turn. The glimmering creature sheds dim light in a 5-foot radius, and it has disadvantage on attack rolls against you, as the energy jolts it if it attacks you. In addition, the next attack roll against it has advantage, and if that attack hits, the target takes an extra die of damage based on the attack.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "",
       "cost": null,
@@ -73,22 +77,132 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "GlCtasaJvC3NwgRr": {
+        "type": "utility",
+        "_id": "GlCtasaJvC3NwgRr",
+        "sort": 0,
+        "activation": {
+          "type": "special",
+          "value": null,
+          "override": false,
+          "condition": "When a creature takes damage from your Flux Launcher"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "9q3PzGNXFF8t6vOG"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "spec",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": "creature",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Fluxed",
+      "img": "icons/magic/light/explosion-star-glow-blue.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.npVfe6umxdBvOFZa",
+      "transfer": false,
+      "_id": "9q3PzGNXFF8t6vOG",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": 1,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p><span style=\"font-family:'Roboto Condensed', sans-serif\">Any creature that takes damage from your Flux Launcher glimmers with magical light until the start of your next turn. The glimmering creature sheds dim light in a 5-foot radius, and it has disadvantage on attack rolls against you, as the energy jolts it if it attacks you. In addition, the next attack roll against it has advantage, and if that attack hits, the target takes an extra die of damage based on the attack.</span></p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.1.1",
+        "createdTime": 1731568650792,
+        "modifiedTime": 1731568716620,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!npVfe6umxdBvOFZa.9q3PzGNXFF8t6vOG"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.1.1",
+    "coreVersion": "12.331",
     "createdTime": 1709596899941,
-    "modifiedTime": 1709596932350,
+    "modifiedTime": 1731568650831,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_key": "!items!npVfe6umxdBvOFZa"

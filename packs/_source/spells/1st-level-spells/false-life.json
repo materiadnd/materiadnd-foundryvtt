@@ -1,82 +1,55 @@
 {
   "name": "False Life",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplFalseLife0",
   "system": {
     "description": {
-      "value": "<p>Bolstering yourself with a necromantic facsimile of life, you gain 1d4 + 4 Temporary Hit Points for the Duration.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 2nd level or higher, you gain 5 additional Temporary Hit Points for each slot level above 1st.</p>",
+      "value": "<p>You gain 2d4 + 4 Temporary Hit Points.</p><p><strong>Using a Higher-Level Spell Slot.</strong> You gain 5 additional Temporary Hit Points for each spell slot level above 1.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
-      "value": "1",
-      "units": "hour"
+      "value": "",
+      "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "self",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "self"
+      "units": "self",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "heal",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "1d4 + 4",
-          "temphp"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 1,
     "school": "nec",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "A small amount of alcohol or distilled spirits",
+      "value": "a drop of alcohol",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -85,37 +58,96 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "(@item.level - 1) * 5"
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "heal",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "healing": {
+          "number": 2,
+          "denomination": 4,
+          "bonus": "4",
+          "types": [
+            "temphp"
+          ],
+          "custom": {
+            "enabled": false,
+            "formula": ""
+          },
+          "scaling": {
+            "mode": "whole",
+            "number": null,
+            "formula": "5"
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "name": "Temporary Health"
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material"
-    ],
-    "crewed": false
+    "identifier": "false-life"
+  },
+  "type": "spell",
+  "img": "icons/skills/wounds/injury-stapled-flesh-tan.webp",
+  "effects": [],
+  "folder": "JMRA2elEdmr5pgX7",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.AWWE0kSMyeqkSFtB",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplFalseLife0",
       "spell-lists": "artificer,sorcerer,wizard"
     }
   },
-  "img": "icons/magic/life/heart-cross-purple-orange.webp",
-  "effects": [],
-  "folder": "JMRA2elEdmr5pgX7",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234075,
-    "modifiedTime": 1708928830321,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738033251836,
+    "modifiedTime": 1738033251836,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "AWWE0kSMyeqkSFtB",
-  "sort": 1800000,
-  "_key": "!items!AWWE0kSMyeqkSFtB"
+  "sort": 0,
+  "_key": "!items!matSplFalseLife0"
 }

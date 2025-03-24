@@ -9,7 +9,11 @@
       "value": "<p>The extra damage dealt by your rite is fire damage.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "",
       "cost": 1,
@@ -78,21 +82,154 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "on85mkYdowXjytNr": {
+        "type": "enchant",
+        "_id": "on85mkYdowXjytNr",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "Ap879TSOsrat0pLz"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "enchant": {
+          "identifier": ""
+        },
+        "restrictions": {
+          "allowMagical": false,
+          "categories": [],
+          "properties": [],
+          "type": "weapon"
+        },
+        "name": "Invoke Rite",
+        "img": "",
+        "appliedEffects": []
+      }
+    },
+    "prerequisites": {
+      "level": 2
     }
   },
-  "effects": [],
-  "flags": {},
+  "effects": [
+    {
+      "type": "enchantment",
+      "name": "Rite of the Flame",
+      "img": "icons/magic/fire/projectile-arrow-fire-orange.webp",
+      "disabled": true,
+      "_id": "Ap879TSOsrat0pLz",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "value": "{}, Infused",
+          "priority": null
+        },
+        {
+          "key": "system.damage.parts",
+          "mode": 2,
+          "value": "[[\"@scale.blood-hunter.hemocraft-die\", \"fire\"]]",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1741735550976,
+        "modifiedTime": 1741735659441,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!YLEMZ8Ru8IrB4Hed.Ap879TSOsrat0pLz"
+    }
+  ],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707885644751,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1741735551026,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 0,
+  "sort": 500000,
   "ownership": {
     "default": 0
   },

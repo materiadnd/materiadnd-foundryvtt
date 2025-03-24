@@ -2,14 +2,18 @@
   "folder": "WtBByem45tjsGx6Z",
   "name": "Word of Radiance",
   "type": "spell",
-  "_id": "R2PFqxXx8e5sRR0v",
+  "_id": "matSplWordOfRadi",
   "img": "icons/magic/fire/flame-burning-embers-orange.webp",
   "system": {
     "description": {
-      "value": "<p>You utter a divine word, and burning radiance erupts from you. Each creature of your choice that you can see within range must succeed on a Constitution saving throw or take 1d6 radiant damage.</p><p>Starting at 5th level, you cannot choose more than your proficiency modifier number of creatures beyond 5 feet.</p><p>The spell's range is increased by an additional 5 feet and damage increases by 1d6 when you reach 5th level (2d6). The range is increased by an additional 5 feet and 11th level (3d6), and the range is increased by an additional 5 feet and 17th level (4d6).</p>",
+      "value": "<p>You utter a divine word, and burning radiance erupts from you. Each creature of your choice that you can see within range must succeed on a Constitution saving throw or take [[/damage 1d6 radiant]] damage.</p><p>Starting at 5th level, you cannot choose more than your proficiency modifier number of creatures beyond 5 feet.</p><p><strong>Cantrip Upgrade.</strong> </span>The size of the emanation is increased by an additional 5 feet and damage increases by 1d6 when you reach levels 5 (10 feet, [[/damage 2d6]]), 11 (15 feet, [[/damage 3d6 radiant]]), and 17 (20 feet, [[/damage 4d6 radiant]]).</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -26,12 +30,23 @@
       "width": null,
       "units": "ft",
       "type": "radius",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "type": "creature",
+        "choice": true,
+        "special": ""
+      },
+      "template": {
+        "count": "",
+        "size": "5 * @item.level"
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "self"
+      "units": "self",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -88,28 +103,128 @@
     "scaling": {
       "mode": "cantrip",
       "formula": "1d6"
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "target": {
+          "override": false,
+          "affects": {
+            "count": "",
+            "type": "creature",
+            "special": ""
+          },
+          "template": {
+            "type": ""
+          }
+        },
+        "appliedEffects": []
+      },
+      "5feNkCRjwxeESaOG": {
+        "type": "save",
+        "_id": "5feNkCRjwxeESaOG",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "radiant"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ],
+          "onSave": "none"
+        },
+        "save": {
+          "ability": "con",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.R2PFqxXx8e5sRR0v",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplWordOfRadi",
       "spell-lists": "cleric"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1707667019935,
-    "modifiedTime": 1708927608467,
+    "modifiedTime": 1737931273094,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 3200000,
+  "sort": 3700000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!R2PFqxXx8e5sRR0v"
+  "_key": "!items!matSplWordOfRadi"
 }

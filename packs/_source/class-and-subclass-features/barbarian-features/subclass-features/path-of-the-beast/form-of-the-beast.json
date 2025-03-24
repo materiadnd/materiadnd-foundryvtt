@@ -6,10 +6,14 @@
   "img": "icons/creatures/mammals/humanoid-fox-cat-archer.webp",
   "system": {
     "description": {
-      "value": "<p>Starting when you choose this path at 3rd level, when you enter your rage, you can transform, revealing the bestial power within you. Until the rage ends, you manifest a natural weapon. It counts as a simple melee weapon for you, and you add your Strength modifier to the attack and damage rolls when you attack with it, as normal.</p><p>You choose one weapon's form each time you rage. When you reach certain levels in this class you can choose an additional weapon's form:, one additional at 8th and one additional at 14th.</p><p>@UUID[Compendium.materia-dnd.class-and-subclass-features.Item.XbVgMdpV7BI9Tv9C]{Form of the Beast: Bite}</p><p>@UUID[Compendium.materia-dnd.class-and-subclass-features.Item.YkYKiArTqb4GpIMB]{Form of the Beast: Claws}</p><p>@UUID[Compendium.materia-dnd.class-and-subclass-features.Item.1A87B3sfi6EZCylE]{Form of the Beast: Tail}</p>",
+      "value": "<p>When you enter your Rage, you can transform, revealing the bestial power within you. Until the Rage ends, you manifest a natural weapon. It counts as a simple melee weapon for you, and you add your Strength modifier to the attack and damage rolls when you attack with it, as normal.</p><p>You choose one weapon's form each time you rage. When you reach certain levels in this class you can choose an additional weapon's form:, one additional at 8th and one additional at 14th.</p><p><strong>Bite.</strong> Your mouth transforms into a bestial muzzle, great mandibles or something similar (your choice). It deals 1d8 piercing damage on a hit. Once on each of your turns when you damage a creature with this bite, you regain a number of Hit Points equal to your Proficiency Bonus, provided you have less than half your Hit Points when you hit.</p><p><strong>Claws.</strong> Each of your hands transforms into a claw, which you can use as a weapon if it is empty. It deals 1d6 slashing damage on a hit. Once on each of your turns when you attack with a claw using the Attack action, you can make one additional claw attack as part of the same action.</p><p><strong>Tail.</strong> You grow a lashing spiny tail, which deals 1d8 bludgeoning or piercing damage on a hit and has the Reach property. If a creature you can see within 10 feet of you hits you with an attack roll, you can take a Reaction to swipe your tail and roll a d8, applying a bonus to your AC equal to the number rolled, potentially causing the attack to miss you.</p><section id=\"secret-T9f0N0tY3EtCjXA7\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Bite Attack</strong>, <strong>Claw Attack</strong>, and <strong>Tail Attack</strong> activities can be used for the attack and damage rolls of your beast form.</p><p>The <strong>Bite Heal</strong> activity provides a healing roll to use when you hit with your Bite Attack and are below half your Hit Points.</p><p>The <strong>Tail Defense</strong> activity rolls the amount you can add to your AC when you take a Reaction to defend with it.</p></section>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "",
       "cost": null,
@@ -69,22 +73,425 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Path of the Beast 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "DcpQw9JWqFa9YOqY": {
+        "type": "attack",
+        "_id": "DcpQw9JWqFa9YOqY",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "5"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "attack": {
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "weapon"
+          },
+          "ability": "",
+          "bonus": "@mod + @prof"
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": true,
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": "8",
+              "bonus": "@mod",
+              "types": [
+                "piercing"
+              ]
+            }
+          ]
+        },
+        "name": "Bite Attack",
+        "img": "",
+        "appliedEffects": []
+      },
+      "MVRSB0AgNDAm4fxP": {
+        "type": "heal",
+        "_id": "MVRSB0AgNDAm4fxP",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": "You have less than your Hit Points when you hit a creature with your Bite Attack"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [],
+          "custom": {
+            "enabled": true,
+            "formula": "@prof"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "Bite Heal",
+        "img": "",
+        "appliedEffects": []
+      },
+      "C1vPltfrB7Ge45Jo": {
+        "type": "attack",
+        "name": "Claw Attack",
+        "_id": "C1vPltfrB7Ge45Jo",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "5"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "attack": {
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "weapon"
+          },
+          "ability": "",
+          "bonus": "@mod + @prof"
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": true,
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": "6",
+              "bonus": "@mod",
+              "types": [
+                "slashing"
+              ]
+            }
+          ]
+        },
+        "img": "",
+        "appliedEffects": []
+      },
+      "WyLEvtyVcTTn5xPm": {
+        "type": "attack",
+        "_id": "WyLEvtyVcTTn5xPm",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "10"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "attack": {
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "weapon"
+          },
+          "ability": "",
+          "bonus": "@mod + @prof"
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": true,
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": "8",
+              "bonus": "@mod",
+              "types": [
+                "bludgeoning",
+                "piercing"
+              ]
+            }
+          ]
+        },
+        "name": "Tail Attack",
+        "img": "",
+        "appliedEffects": []
+      },
+      "Bpd1yWPfShmNbJM6": {
+        "type": "utility",
+        "name": "Tail Defense",
+        "_id": "Bpd1yWPfShmNbJM6",
+        "sort": 0,
+        "activation": {
+          "type": "reaction",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "Bonus AC",
+          "formula": "d8"
+        },
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1708297141786,
-    "modifiedTime": 1708398131372,
+    "modifiedTime": 1741791815146,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 0,

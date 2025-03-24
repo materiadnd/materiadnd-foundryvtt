@@ -6,10 +6,14 @@
   "img": "icons/magic/light/beam-rays-yellow-blue-large.webp",
   "system": {
     "description": {
-      "value": "<p>Beginning at 2nd level, you can use your Channel Divinity to refresh your allies with soothing twilight.</p><p>As an action, you present your holy symbol, and a sphere of twilight emanates from you. The sphere is centered on you, has a 30-foot radius, and is filled with dim light. The sphere moves with you, and it lasts for 1 minute, or until you lose your concentration (as if you were concentrating on a spell). Whenever a creature (including you) ends its turn in the sphere, you can grant that creature one of these benefits:</p><ul><li>You grant it temporary hit points equal to 1d6 plus your cleric level.</li><li>You end one effect on it causing it to be charmed, dazed or frightened.</li></ul>",
+      "value": "<p>You can refresh your allies with soothing twilight.</p><p>As a Magic action, you present your holy symbol and use your Channel Divinity. A sphere of twilight emanates from you. The sphere is centered on you, has a 30-foot radius, and is filled with &amp;Reference[Dim Light]. The sphere moves with you, and it lasts for 1 minute, or until you lose your Concentration. Whenever a creature ends its turn in the sphere, you can grant that creature one of these benefits:</p><p><strong>Health.</strong> The creature gets Temporary Hit Points equal to 1d6 plus your Cleric level.</p><p><strong>Cleansing.</strong> The creature ends one effect on it causing it to be &amp;Reference[Charmed apply=false], &amp;Reference[Dazed apply=false], &amp;Reference[Frightened apply=false].</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -74,13 +78,152 @@
       "subtype": "channelDivinity"
     },
     "properties": [],
-    "requirements": "Twilight Domain 2",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "activation": {
+          "type": ""
+        },
+        "healing": {
+          "denomination": "6"
+        },
+        "appliedEffects": [],
+        "duration": {
+          "units": "inst"
+        },
+        "sort": 200000
+      },
+      "x2Guib0gBzGftOnp": {
+        "type": "utility",
+        "_id": "x2Guib0gBzGftOnp",
+        "sort": 100000,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.matClrChannelDiv"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "vqURrVytfHZf15jO"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "radius",
+            "size": "30",
+            "count": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Summon Sanctuary",
+        "img": "",
+        "appliedEffects": [
+          "vqURrVytfHZf15jO"
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Twilight Sanctuary",
+      "img": "icons/magic/light/beam-rays-yellow-blue-large.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.BictieDbpjfdzMYW",
+      "transfer": false,
+      "_id": "vqURrVytfHZf15jO",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "concentrating"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1742448985324,
+        "modifiedTime": 1742449017007,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!BictieDbpjfdzMYW.vqURrVytfHZf15jO"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
@@ -88,16 +231,21 @@
   "flags": {
     "materia-dnd": {
       "item-use-source": "channel-divinity"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1710770972892,
-    "modifiedTime": 1710771059798,
+    "modifiedTime": 1742449041228,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_key": "!items!BictieDbpjfdzMYW"

@@ -1,75 +1,58 @@
 {
   "name": "Bless",
-  "type": "spell",
-  "img": "icons/magic/control/buff-flight-wings-blue.webp",
+  "_id": "matSplBless00000",
   "system": {
     "description": {
-      "value": "<p>You bless up to three creatures of your choice within range. Whenever a target makes an attack roll or a saving throw before the spell ends, the target can roll 1d4 and add the number rolled to the attack roll or saving throw.</p>\n<p><strong>Higher Levels.</strong> When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st.</p>",
+      "value": "<p>You bless up to three creatures within range. Whenever a target makes an attack roll or a saving throw before the spell ends, the target adds [[/r 1d4]] to the attack roll or save.</p><p><strong>Using a Higher-Level Spell Slot.</strong> You can target one additional creature for each spell slot level above 1.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 3,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "type": "creature",
+        "count": "2 + @item.level",
+        "choice": false,
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": 30,
-      "long": null,
-      "units": "ft"
+      "value": "30",
+      "units": "ft",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "1d4",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 1,
     "school": "enc",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
     "materials": {
-      "value": "A sprinkling of holy water",
+      "value": "a Holy Symbol worth 5+ GP",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -78,21 +61,70 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "1dzvDffEh8wZ0oQy"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "concentration"
-    ],
-    "crewed": false
+    "identifier": "bless"
   },
+  "type": "spell",
+  "img": "icons/magic/holy/prayer-hands-glowing-yellow-white.webp",
   "effects": [
     {
-      "_id": "8rP3gwmXVTgZqYZE",
+      "_id": "1dzvDffEh8wZ0oQy",
       "flags": {},
       "changes": [
         {
@@ -126,7 +158,7 @@
           "priority": null
         }
       ],
-      "disabled": true,
+      "disabled": false,
       "duration": {
         "startTime": null,
         "seconds": 60,
@@ -136,27 +168,27 @@
         "startRound": null,
         "startTurn": null
       },
-      "origin": "Item.kZZAZ6kp9YzgPQEe",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplBless00000",
       "tint": "#ffffff",
-      "transfer": true,
-      "name": "Bless",
-      "description": "",
+      "transfer": false,
+      "name": "Blessed",
+      "description": "<p>Whenever a target makes an attack roll or a saving throw before the spell ends, the target adds 1d4 to the attack roll or save.</p>",
       "statuses": [],
       "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
+        "compendiumSource": "Compendium.dnd5e.spells.Item.8dzaICjGy6mTUaUr.ActiveEffect.8rP3gwmXVTgZqYZE",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
+        "lastModifiedBy": null
       },
-      "img": "icons/magic/control/buff-flight-wings-blue.webp",
+      "img": "icons/magic/holy/chalice-glowing-gold-water.webp",
       "type": "base",
       "system": {},
       "sort": 0,
-      "_key": "!items.effects!i8NZwdFEXPIS7D8N.8rP3gwmXVTgZqYZE"
+      "_key": "!items.effects!matSplBless00000.1dzvDffEh8wZ0oQy"
     }
   ],
   "folder": "JMRA2elEdmr5pgX7",
@@ -165,21 +197,19 @@
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.i8NZwdFEXPIS7D8N",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplBless00000",
       "spell-lists": "cleric,paladin"
     }
   },
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234081,
-    "modifiedTime": 1708928830321,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738029953281,
+    "modifiedTime": 1738031030070,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "i8NZwdFEXPIS7D8N",
-  "sort": 2800000,
-  "_key": "!items!i8NZwdFEXPIS7D8N"
+  "sort": 0,
+  "_key": "!items!matSplBless00000"
 }

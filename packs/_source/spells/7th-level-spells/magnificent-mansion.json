@@ -1,118 +1,150 @@
 {
   "name": "Magnificent Mansion",
-  "ownership": {
-    "default": 0
-  },
+  "_id": "matSplMagnificen",
   "type": "spell",
+  "img": "icons/environment/settlement/house-manor.webp",
   "system": {
     "description": {
-      "value": "<p>You conjure an extradimensional dwelling in range that lasts for the Duration. You choose where its one entrance is located. The entrance shimmers faintly and is 5 feet wide and 10 feet tall. You and any creature you designate when you cast the spell can enter the extradimensional dwelling as long as the portal remains open. You can open or close the portal if you are within 30 feet of it. While closed, the portal is Invisible.</p><p>Beyond the portal is a magnificent foyer with numerous chambers beyond. The atmosphere is clean, fresh, and warm.</p><p>You can create any floor plan you like, but the space can't exceed 50 cubes, each cube being 10 feet on each side. The place is furnished and decorated as you choose. It contains sufficient food to serve a nine-course banquet for up to 100 people. A staff of 100 near-transparent Servants attends all who enter. You decide the visual appearance of these Servants and their attire. They are completely obedient to your orders. Each servant can perform any task a normal human servant could perform, but they can't Attack or take any action that would directly harm another creature. Thus the Servants can fetch things, clean, mend, fold clothes, light fires, serve food, pour wine, and so on. The Servants can go anywhere in the mansion but can't leave it. Furnishings and other Objects created by this spell dissipate into smoke if removed from the mansion. When the spell ends, any creatures inside the extradimensional space are expelled into the open spaces nearest to the entrance.</p><p>If you cast this spell again while a previous dwelling is in existence, the previous spell ends.</p>",
+      "value": "<div><p>You conjure a shimmering door in range that lasts for the duration. The door leads to an extradimensional dwelling and is 5 feet wide and 10 feet tall. You and any creature you designate when you cast the spell can enter the extradimensional dwelling as long as the door remains open. You can open or close it (no action required) if you are within 30 feet of it. While closed, the door is imperceptible.</p><p>Beyond the door is a magnificent foyer with numerous chambers beyond. The dwelling's atmosphere is clean, fresh, and warm.</p><p>You can create any floor plan you like for the dwelling, but it can't exceed 50 contiguous 10-foot Cubes. The place is furnished and decorated as you choose. It contains sufficient food to serve a nine-course banquet for up to 100 people. Furnishings and other objects created by this spell dissipate into smoke if removed from it.</p><p>A staff of 100 near-transparent servants attends all who enter. You determine the appearance of these servants and their attire. They are invulnerable and obey your commands. Each servant can perform tasks that a human could perform, but they can't attack or take any action that would directly harm another creature. Thus the servants can fetch things, clean, mend, fold clothes, light fires, serve food, pour wine, and so on. The servants can't leave the dwelling.</p><p>When the spell ends, any creatures or objects left inside the extradimensional space are expelled into the unoccupied spaces nearest to the entrance.</p><p>If you cast this spell again while a previous dwelling is in existence, the previous spell ends.</p></div>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "minute",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": 1
     },
     "duration": {
       "value": "24",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "space",
+        "special": ""
+      },
+      "template": {
+        "units": "ft",
+        "contiguous": false,
+        "type": "wall",
+        "size": "5",
+        "width": "1",
+        "height": "10",
+        "count": ""
+      }
     },
     "range": {
-      "value": 300,
-      "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": "",
+      "value": "300"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 7,
     "school": "con",
-    "materials": {
-      "value": "A miniature portal carved from ivory, a small piece of polished marble, and a tiny silver spoon, each item worth at least 5gp",
-      "consumed": false,
-      "cost": 15,
-      "supply": 0
-    },
-    "preparation": {
-      "mode": "prepared",
-      "prepared": false
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
     "properties": [
       "vocal",
       "somatic",
       "material",
       "ritual"
     ],
-    "crewed": false
+    "materials": {
+      "value": "a miniature door worth 15+ GP",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "N0agqO0OhJMU6cEB": {
+        "type": "utility",
+        "name": "Create Door",
+        "_id": "N0agqO0OhJMU6cEB",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "img": "systems/dnd5e/icons/svg/trait-condition-immunities.svg"
+      }
+    },
+    "identifier": "mordenkainens-magnificent-mansion"
   },
+  "effects": [],
+  "folder": "0whxxbO5gmG63mDV",
   "flags": {
     "materia-dnd": {
       "tele-flag": "true",
-      "sourceId": "Compendium.materia-dnd.spells.Item.5hRd9F8VTKfYN2ct",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplMagnificen",
       "spell-lists": "bard,wizard"
     }
   },
-  "img": "icons/magic/symbols/runes-star-pentagon-orange-purple.webp",
-  "effects": [],
-  "folder": "0whxxbO5gmG63mDV",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234228,
-    "modifiedTime": 1709231295849,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1739423547662,
+    "modifiedTime": 1739423617259,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "5hRd9F8VTKfYN2ct",
-  "sort": 1400000,
-  "_key": "!items!5hRd9F8VTKfYN2ct"
+  "ownership": {
+    "default": 0
+  },
+  "sort": 0,
+  "_key": "!items!matSplMagnificen"
 }

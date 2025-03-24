@@ -2,14 +2,18 @@
   "folder": "CxgAwElQGTbcnuvc",
   "name": "Cripple",
   "type": "spell",
-  "_id": "ibN5H8g15wcFXj2T",
+  "_id": "matSplCripple000",
   "img": "icons/skills/wounds/bone-broken-marrow-red.webp",
   "system": {
     "description": {
-      "value": "<p>Choose a creature that you can see within range. The target must succeed on a Charisma saving throw or be weakened for the duration. At the end of each of its turns, the target can make another Charisma saving throw. On a success, the spell ends on the target.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 4th level or higher, you can target one additional creature for each slot level above 3rd. The targets must be within range of the spell.</p><p><br /></p>",
+      "value": "<p>Choose a creature that you can see within range. The target must succeed on a Charisma saving throw or be &amp;Reference[Weakened] for the duration. At the end of each of its turns, the target can make another Charisma saving throw. On a success, the spell ends on the target.</p><p><strong>Using a Higher-Level Spell Slot.</strong> You can target one additional creature for each spell slot level above 3. The targets must be within range of the spell.</p><p><br /></p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -26,12 +30,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 90,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -85,28 +96,90 @@
     "scaling": {
       "mode": "none",
       "formula": ""
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "effects": [
+          {
+            "_id": "3h4ykYE0cenDfwKM",
+            "onSave": false
+          }
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Crippled",
+      "img": "icons/skills/wounds/bone-broken-marrow-red.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplCripple000",
+      "transfer": false,
+      "_id": "3h4ykYE0cenDfwKM",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target is weakened for the duration.</p>",
+      "tint": "#ffffff",
+      "statuses": [
+        "weakened"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728196085632,
+        "modifiedTime": 1728196118358,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplCripple000.3h4ykYE0cenDfwKM"
+    }
+  ],
   "sort": 7400000,
   "ownership": {
     "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.ibN5H8g15wcFXj2T",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplCripple000",
       "spell-lists": "druid,ranger,warlock,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1708817699833,
-    "modifiedTime": 1713584796371,
+    "modifiedTime": 1738512284076,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_key": "!items!ibN5H8g15wcFXj2T"
+  "_key": "!items!matSplCripple000"
 }

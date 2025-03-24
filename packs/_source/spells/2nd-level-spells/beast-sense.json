@@ -1,25 +1,53 @@
 {
   "name": "Beast Sense",
-  "type": "spell",
+  "_id": "matSplBeastSense",
   "system": {
-    "source": {
-      "custom": "",
-      "book": "PHB",
-      "page": "217",
-      "license": ""
-    },
     "description": {
-      "value": "<div class=\"rd__b  rd__b--3\"><p>You touch a willing beast. For the duration of the spell, you can use your action to see through the beast's eyes and hear what it hears, and continue to do so until you use your action to return to your normal senses. While perceiving through the beast's senses, you gain the benefits of any special senses possessed by that creature, though you are blinded and deafened to your own surroundings.</p><div class=\"rd__spc-inline-post\"><p></p></div></div>",
+      "value": "<p>You touch a willing Beast. For the duration, you can perceive through the Beast's senses as well as your own. When perceiving through the Beast's senses, you benefit from any special senses it has.</p>",
       "chat": ""
     },
-    "actionType": "util",
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "action",
+      "condition": "",
+      "value": null
+    },
+    "duration": {
+      "value": "1",
+      "units": "hour"
+    },
+    "target": {
+      "affects": {
+        "type": "willing",
+        "count": "1",
+        "choice": false,
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
+    },
+    "range": {
+      "units": "touch",
+      "special": ""
+    },
+    "uses": {
+      "max": "",
+      "recovery": [],
+      "spent": 0
+    },
     "level": 2,
     "school": "div",
     "properties": [
       "somatic",
       "concentration",
-      "ritual",
-      "mgc"
+      "ritual"
     ],
     "materials": {
       "value": "",
@@ -27,97 +55,87 @@
       "cost": 0,
       "supply": 0
     },
-    "target": {
-      "value": null,
-      "units": "touch",
-      "type": "",
-      "prompt": true,
-      "width": null
-    },
-    "range": {
-      "value": null,
-      "units": "touch",
-      "long": null
-    },
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": "1",
-      "units": "hour"
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "save": {
-      "dc": null,
-      "scaling": "spell",
-      "ability": ""
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "formula": "",
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      }
     },
-    "cover": null,
-    "crewed": false,
-    "ability": ""
+    "identifier": "beast-sense"
   },
-  "img": "icons/magic/fire/flame-burning-eye.webp",
+  "type": "spell",
+  "img": "icons/magic/perception/eye-slit-red-orange.webp",
+  "effects": [],
+  "folder": "3rC3qr5FIlZymxFD",
   "ownership": {
     "default": 0
   },
   "flags": {
-    "plutonium": {
-      "page": "spells.html",
-      "source": "PHB",
-      "hash": "beast%20sense_phb",
-      "propDroppable": "spell"
-    },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.27xIP3ivHfpKkUop",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplBeastSense",
       "spell-lists": "druid,ranger"
     }
   },
-  "effects": [],
-  "folder": "3rC3qr5FIlZymxFD",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
-    "createdTime": 1708312536804,
-    "modifiedTime": 1711345323820,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738211475476,
+    "modifiedTime": 1738211483264,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "27xIP3ivHfpKkUop",
-  "sort": 3700000,
-  "_key": "!items!27xIP3ivHfpKkUop"
+  "sort": 0,
+  "_key": "!items!matSplBeastSense"
 }

@@ -6,10 +6,14 @@
   "img": "icons/magic/lightning/bolts-salvo-clouds-sky.webp",
   "system": {
     "description": {
-      "value": "<p>At 14th level, the power of the storm you channel grows mightier, any Storm Herald features that would target all creatures now targets creature of your choice in your aura instead (including the difficult terrain your aura creates). Furthermore, you can change the environment of your Storm Aura as a bonus action while raging.</p><p>The effect is based on the environment you chose for your Storm Aura.</p><p><strong>Desert</strong>. When this effect is activated, friendly creatures of your choice that start their turn within your aura can use their bonus actions to Dash and when moving their AC is increased by an amount equal to your Rage Damage, as shown on the Rage Damage column of the Barbarian table</p><p><strong>Sea</strong>. When you hit a creature in your aura with an attack, you can use your reaction to force that creature to make a Strength saving throw. On a failed save, the creature is knocked prone, as if struck by a wave.</p><p><strong>Tundra</strong>. When this effect is activated, the temporary hit points granted by this aura is doubled. Furthermore, you can choose once creature you can see in the aura. That creature must succeed on a Strength saving throw, or be unable to Dash, teleport or leave its current plane by any means.</p>",
+      "value": "<p>The power of the storm you channel grows mightier, your Storm Aura Emanation now only affects creatures of your choice. Furthermore, you can change the environment of your Storm Aura as a Bonus Action while your Rage is active.</p><p>Furthermore, your Storm Aura gains additional effects based on the environment chosen:</p><p><strong>Desert</strong>. Friendly creatures of your choice that start their turn within your Storm Aura can use their Bonus Actions to Dash and when moving their AC is increased by an amount equal to your Rage Damage, as shown on the Barbarian Features table.</p><p><strong>Sea</strong>. When you hit a creature in your aura with an attack, you can use take a Reaction to force that creature to make a Strength saving throw. On a failed save, the creature is knocked &amp;Reference[Prone], as if struck by a wave.</p><p><strong>Tundra</strong>. The Temporary Hit Points granted by this aura is doubled. Furthermore, when you actiavte your Storm Aura, you can choose one creature you can see in the aura. That creature must succeed on a Strength saving throw, or be unable to Dash, teleport or leave its current plane by any means.</p><section id=\"secret-oOzfbSLlLGRJ6NpG\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Save (Sea)</strong> activity can be used for the reaction to force the saving throw against an enemy and to apply the appropriate status.</p><p>The <strong>Temporary Hit Points (Tundra)</strong> activity can be used for the improved buff.</p></section>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "",
       "cost": null,
@@ -69,26 +73,221 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Path of the Storm Herald 14",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "QU3J7kTd5vpOMKXY": {
+        "type": "save",
+        "_id": "QU3J7kTd5vpOMKXY",
+        "sort": 0,
+        "activation": {
+          "type": "reaction",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "xvbIvLJJQICyi6Q1"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "str"
+          ],
+          "dc": {
+            "calculation": "con",
+            "formula": ""
+          }
+        },
+        "name": "Save (Sea)",
+        "img": "",
+        "appliedEffects": []
+      },
+      "TH6bC9e9faDFWrL1": {
+        "type": "heal",
+        "_id": "TH6bC9e9faDFWrL1",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "temphp"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "2 * @scale.barbarian.rage-damage"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "Temporary Hit Points (Tundra)",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Prone",
+      "img": "systems/dnd5e/icons/svg/statuses/prone.svg",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.nEubgESDeVH9XiZ4",
+      "transfer": false,
+      "_id": "xvbIvLJJQICyi6Q1",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "prone"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1741904736075,
+        "modifiedTime": 1741904749919,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!nEubgESDeVH9XiZ4.xvbIvLJJQICyi6Q1"
+    }
+  ],
   "sort": 500000,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1710710185398,
-    "modifiedTime": 1710710755256,
+    "modifiedTime": 1741904871908,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_key": "!items!nEubgESDeVH9XiZ4"

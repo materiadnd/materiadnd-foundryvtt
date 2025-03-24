@@ -1,19 +1,19 @@
 {
   "name": "Hallow",
+  "_id": "matSplHallow0000",
   "ownership": {
     "default": 0
   },
   "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You touch a point and infuse an area around it with holy (or unholy) power. The area can have a radius up to 60 feet, and the spell fails if the radius includes an area already under the effect a hallow spell. The affected area is subject to the following Effects.</p><p>First, Aberrations, Celestials, Elementals, fey, Fiends, and Undead can't enter the area, nor can such creatures charm, frighten, or possess creatures within it. Any creature Charmed, Frightened, or possessed by such a creature is no longer charmed, frightened, or possessed upon entering the area. You can exclude one or more of those types of creatures from this effect.</p><p>Second, you can bind an extra effect to the area. Choose the effect from the following list, or choose an effect offered by the DM. Some of these Effects apply to creatures in the area; you can designate whether the effect applies to all creatures, creatures that follow a specific deity or leader, or creatures of a specific sort, such as orcs or Trolls. When a creature that would be affected enters the spell's area for the first time on a turn or starts its turn there, it can make a Charisma saving throw. On a success, the creature ignores the extra effect until it leaves the area.</p><ul><li><strong>Courage.</strong> Affected creatures can't be Frightened while in the area.</li><li><strong>Darkness.</strong> Darkness fills the area. Normal light, as well as magical light created by Spells of a lower level than the slot you used to cast this spell, can't illuminate the area. You cannot select the <strong>Daylight</strong> effect with this effect.</li><li><strong>Daylight.</strong> Bright light fills the area. Magical darkness created by Spells of a lower level than the slot you used to cast this spell can't extinguish the light. You cannot select the <strong>Darkness</strong> effect with this effect.</li><li><strong>Energy Protection.</strong> Affected creatures in the area have Resistance to one damage type of your choice, except for bludgeoning, piercing, or slashing.</li><li><strong>Energy Vulnerability.</strong> Affected creatures in the area have vulnerability to one damage type of your choice, except for bludgeoning, piercing, or slashing.</li><li><strong>Everlasting Rest.</strong> Dead bodies interred in the area can't be turned into Undead.</li><li><strong>Extradimensional Interference.</strong> Affected creatures can't move or travel using teleportation or by extradimensional or interplanar means.</li><li><strong>Fear.</strong> Affected creatures are Frightened while in the area.</li><li><strong>Silence.</strong> No sound can emanate from within the area, and no sound can reach into it.</li><li><strong>Tongues.</strong> Affected creatures can communicate with any other creature in the area, even if they don't share a Common language.</li></ul><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 7th or 8th level, you can include one additional effect for a total of two. When you cast this spell using a spell slot of 9th level, you can include one more additional effect for a total of three.</p>",
+      "value": "<p>You touch a point and infuse an area around it with holy (or unholy) power. The area can have a radius up to 60 feet, and the spell fails if the radius includes an area already under the effect a hallow spell. The affected area is subject to the following Effects.</p><p>First, Aberrations, Celestials, Elementals, fey, Fiends, and Undead can't enter the area, nor can such creatures charm, frighten, or possess creatures within it. Any creature &amp;Reference[Charmed apply=false], &amp;Reference[Frightened apply=false], or &amp;Reference[Possessed apply=false] by such a creature is no longer charmed, frightened, or possessed upon entering the area. You can exclude one or more of those types of creatures from this effect.</p><p>Second, you can bind an extra effect to the area. Choose the effect from the following list, or choose an effect offered by the DM. Some of these Effects apply to creatures in the area; you can designate whether the effect applies to all creatures, creatures that follow a specific deity or leader, or creatures of a specific sort, such as orcs or Trolls. When a creature that would be affected enters the spell's area for the first time on a turn or starts its turn there, it can make a Charisma saving throw. On a success, the creature ignores the extra effect until it leaves the area.</p><ul><li><strong>Courage.</strong> Affected creatures can't be Frightened while in the area.</li><li><strong>Darkness.</strong> Darkness fills the area. Normal light, as well as magical light created by Spells of a lower level than the slot you used to cast this spell, can't illuminate the area. You cannot select the <strong>Daylight</strong> effect with this effect.</li><li><strong>Daylight.</strong> Bright light fills the area. Magical darkness created by Spells of a lower level than the slot you used to cast this spell can't extinguish the light. You cannot select the <strong>Darkness</strong> effect with this effect.</li><li><strong>Energy Protection.</strong> Affected creatures in the area have Resistance to one damage type of your choice, except for bludgeoning, piercing, or slashing.</li><li><strong>Energy Vulnerability.</strong> Affected creatures in the area have vulnerability to one damage type of your choice, except for bludgeoning, piercing, or slashing.</li><li><strong>Everlasting Rest.</strong> Dead bodies interred in the area can't be turned into Undead.</li><li><strong>Extradimensional Interference.</strong> Affected creatures can't move or travel using teleportation or by extradimensional or interplanar means.</li><li><strong>Fear.</strong> Affected creatures are &amp;Reference[Frightened apply=false] while in the area.</li><li><strong>Silence.</strong> No sound can emanate from within the area, and no sound can reach into it.</li><li><strong>Tongues.</strong> Affected creatures can communicate with any other creature in the area, even if they don't share a common language.</li></ul><p><strong>Using a Higher-Level Spell Slot.</strong> You can apply more effects with a spell slot of level 7-8 (two effects), or 9+ (three effects).</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "hour",
@@ -30,12 +30,21 @@
       "width": null,
       "units": "ft",
       "type": "radius",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "type": "sphere",
+        "count": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "touch"
+      "units": "touch",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -69,7 +78,7 @@
       "scaling": "spell"
     },
     "level": 5,
-    "school": "evo",
+    "school": "abj",
     "materials": {
       "value": "Herbs, oils, and incense worth at least 1000gp, which the spell consumes",
       "consumed": true,
@@ -90,12 +99,24 @@
       "material",
       "mgc"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {}
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.TUJG2NGoN4upKbkR",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplHallow0000",
       "spell-lists": "cleric"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
     }
   },
   "img": "icons/magic/light/explosion-star-large-teal.webp",
@@ -103,15 +124,13 @@
   "folder": "slWnSXtwvwnA9EXJ",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1661787234140,
-    "modifiedTime": 1711483612069,
+    "modifiedTime": 1739392174217,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "TUJG2NGoN4upKbkR",
-  "sort": 3300000,
-  "_key": "!items!TUJG2NGoN4upKbkR"
+  "sort": 3800000,
+  "_key": "!items!matSplHallow0000"
 }

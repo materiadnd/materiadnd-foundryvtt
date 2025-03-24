@@ -2,14 +2,18 @@
   "folder": "CxgAwElQGTbcnuvc",
   "name": "Overwhelming Smite",
   "type": "spell",
-  "_id": "MRWc4tLLpA2Y8dpW",
+  "_id": "matSplOverwhelmi",
   "img": "icons/magic/lightning/bolt-strike-explosion-blue.webp",
   "system": {
     "description": {
-      "value": "<p>As you hit with a weapon attack or unarmed strike, your strike delivers immense force, and the attack deals an extra 3d8 plus your spellcasting ability modifier force damage to the target. The damage dealt is considered siege damage for the purpose of damaging objects.</p><p>Additionally, the target must succeed on a Constitution saving throw or be dazed until the end of its next turn.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 4th level or higher, the extra damage dealt by the attack increases by 1d8 for each slot.</p>",
+      "value": "<p>As you hit with a weapon attack or unarmed strike, your strike delivers immense force, and the attack deals an extra [[/r 3d8]] plus your spellcasting ability modifier force damage to the target. The damage dealt is considered siege damage for the purpose of damaging objects.</p><p>Additionally, the target must succeed on a Constitution saving throw or be dazed until the end of its next turn.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The extra damage dealt by the attack increases by 1d8 for each spell slot level above 3.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "bonus",
       "cost": 1,
@@ -26,12 +30,19 @@
       "width": null,
       "units": "",
       "type": "self",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "self"
+      "units": "self",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -87,28 +98,158 @@
     "scaling": {
       "mode": "level",
       "formula": "1d8"
+    },
+    "activities": {
+      "aWK5cQxSxvMoNiG7": {
+        "type": "save",
+        "_id": "aWK5cQxSxvMoNiG7",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [
+          {
+            "_id": "wkY4obnO2K2Thnqe",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": true,
+          "units": "spec",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "con",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Dazed",
+      "img": "modules/materia-dnd/icons/statuses/dazed.png",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplOverwhelmi",
+      "transfer": false,
+      "_id": "wkY4obnO2K2Thnqe",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "dazed"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728283384587,
+        "modifiedTime": 1728283469776,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplOverwhelmi.wkY4obnO2K2Thnqe"
+    }
+  ],
   "sort": 5400000,
   "ownership": {
     "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.MRWc4tLLpA2Y8dpW",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplOverwhelmi",
       "spell-lists": "paladin"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1708931015498,
-    "modifiedTime": 1713584796371,
+    "modifiedTime": 1738556608100,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_key": "!items!MRWc4tLLpA2Y8dpW"
+  "_key": "!items!matSplOverwhelmi"
 }

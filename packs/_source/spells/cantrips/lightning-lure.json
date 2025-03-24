@@ -2,14 +2,18 @@
   "folder": "WtBByem45tjsGx6Z",
   "name": "Lightning Lure",
   "type": "spell",
-  "_id": "XduWRBkKPPuqgPf3",
+  "_id": "matSplLightningL",
   "img": "icons/magic/lightning/bolt-strike-sparks-teal.webp",
   "system": {
     "description": {
-      "value": "<p>You create a lash of lightning energy that strikes at one creature of your choice that you can see within 15 feet of you. The target must succeed on a Strength saving throw or be pulled up to 10 feet in a straight line toward you and then take 1d8 lightning damage if it is within 5 feet of you.</p><p>This spell's range and pull distance are increased by an additional 5 feet and damage increases by 1d8 when you reach 5th level (2d8), range and pull distance are increased by an additional 5 feet and 11th level (3d8), range and pull distance are increased by an additional 5 feet and and 17th level (4d8).</p>",
+      "value": "<p>You create a lash of lightning energy that strikes at one creature of your choice that you can see within 15 feet of you. The target must succeed on a Strength saving throw or be pulled up to 10 feet in a straight line toward you and then take [[/damage 1d8 lightning]] damage if it is within 5 feet of you.</p><p><strong>Cantrip Upgrade.</strong> </span>This spell's range and pull distance are increased by an additional 5 feet and damage increases by 1d8 when you reach levels 5 ([[/damage 2d8 lightning]], 20 foot range, 15 foot pull), 11 ([[/damage 3d8 lightning]], 25 foot range, 20 foot pull), and 17 ([[/damage 4d8 lightning]], 30 foot range, 25 foot pull).</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -26,12 +30,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
-      "value": 15,
+      "value": "15 + (5 * @item.level)",
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -87,28 +98,112 @@
     "scaling": {
       "mode": "cantrip",
       "formula": "1d8"
+    },
+    "activities": {
+      "TVWeNPqTZiMsIFjE": {
+        "type": "save",
+        "_id": "TVWeNPqTZiMsIFjE",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "lightning"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ],
+          "onSave": "none"
+        },
+        "save": {
+          "ability": "str",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.XduWRBkKPPuqgPf3",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplLightningL",
       "spell-lists": "artificer,sorcerer,warlock,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1707665626507,
-    "modifiedTime": 1708927608467,
+    "modifiedTime": 1737929071464,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 3400000,
+  "sort": 3900000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!XduWRBkKPPuqgPf3"
+  "_key": "!items!matSplLightningL"
 }

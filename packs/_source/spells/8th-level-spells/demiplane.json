@@ -1,75 +1,57 @@
 {
   "name": "Demiplane",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplDemiplane0",
   "system": {
     "description": {
-      "value": "<p>You create a shadowy door on a flat solid surface that you can see within range. The door is large enough to allow Medium creatures to pass through unhindered. When opened, the door leads to a demiplane that appears to be an empty room 30 feet in each dimension, made of wood or stone. When the spell ends, the door disappears, and any creatures or objects inside the demiplane remain trapped there, as the door also disappears from the other side.</p><p>Each time you cast this spell, you can create a new demiplane, or have the shadowy door connect to a demiplane you created with a previous casting of this spell reappear. Additionally, if you know the nature and contents of a demiplane created by a casting of this spell by another creature, you can have the shadowy door connect to its demiplane instead.</p>",
+      "value": "<p>You create a shadowy Medium door on a flat solid surface that you can see within range. This door can be opened and closed, and it leads to a demiplane that is an empty room 30 feet in each dimension, made of wood or stone (your choice).</p><p>When the spell ends, the door vanishes, and any objects inside the demiplane remain there. Any creatures inside also remain unless they opt to be shunted through the door as it vanishes, landing with the &amp;Reference[Prone] condition in the unoccupied spaces closest to the door's former space.</p><p>Each time you cast this spell, you can create a new demiplane or connect the shadowy door to a demiplane you created with a previous casting of this spell. Additionally, if you know the nature and contents of a demiplane created by a casting of this spell by another creature, you can connect the shadowy door to that demiplane instead.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "space",
+        "special": "flat surface"
+      },
+      "template": {
+        "units": "ft",
+        "contiguous": false,
+        "type": "wall",
+        "size": "5",
+        "width": "1",
+        "height": "5",
+        "count": ""
+      }
     },
     "range": {
-      "value": 60,
-      "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": "",
+      "value": "60"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 8,
     "school": "con",
+    "properties": [
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -80,35 +62,85 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "BBwiQVm4TEsGq2HG": {
+        "type": "utility",
+        "_id": "BBwiQVm4TEsGq2HG",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast",
+        "img": "systems/dnd5e/icons/svg/activity/summon.svg"
+      }
     },
-    "properties": [
-      "somatic"
-    ],
-    "crewed": false
+    "identifier": "demiplane"
+  },
+  "type": "spell",
+  "img": "icons/environment/wilderness/mine-interior-dungeon-door.webp",
+  "effects": [],
+  "folder": "IeD7MeayeQqIoNnW",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.ehaxnPqwSrYSgnJO",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplDemiplane0",
       "spell-lists": "sorcerer,warlock,wizard"
     }
   },
-  "img": "icons/magic/symbols/runes-star-pentagon-blue.webp",
-  "effects": [],
-  "folder": "IeD7MeayeQqIoNnW",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234240,
-    "modifiedTime": 1709231679839,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1739432999720,
+    "modifiedTime": 1739432999720,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "ehaxnPqwSrYSgnJO",
-  "sort": 1100000,
-  "_key": "!items!ehaxnPqwSrYSgnJO"
+  "sort": 0,
+  "_key": "!items!matSplDemiplane0"
 }

@@ -1,80 +1,57 @@
 {
   "name": "Flame Blade",
-  "type": "spell",
-  "img": "icons/magic/fire/dagger-rune-enchant-flame-orange.webp",
+  "_id": "matSplFlameBlade",
   "system": {
     "description": {
-      "value": "<p>You evoke a fiery blade in your free hand. The blade is similar in size and shape to a Scimitar, and it lasts for the Duration. If you let go of the blade, it disappears, but you can evoke the blade again as a Bonus Action.</p><p>You can use your action to make a melee spell Attack with the fiery blade. On a hit, the target takes 3d6 fire damage.</p><p>The flaming blade sheds bright light in a 10-foot radius and dim light for an additional 10 feet.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 4th level through 7th level, you may attack twice with the blade using your action on your turn. When you cast this spell using a spell slot of 8th level or higher, you may attack three times with the blade suing your action on your turn.</p>",
+      "value": "<p>You evoke a fiery blade in your free hand. The blade is similar in size and shape to a scimitar, and it lasts for the duration. If you let go of the blade, it disappears, but you can evoke it again as a Bonus Action.</p><p>As a Magic action, you can make a melee spell attack with the fiery blade. On a hit, the target takes Fire damage equal to [[/damage 3d6]] plus your spellcasting ability modifier.</p><p>The flaming blade sheds Bright Light in a 10-foot radius and Dim Light for an additional 10 feet.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d6 for each spell slot level above 2.</p><p>The number of attacks you can make with your Magic action increases when using a spell slot level of 4-7 (2 attacks), or 8+ (3 attacks).</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "Materia Source of Truth",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "bonus",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "10",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "self",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "",
+        "type": "self",
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "self"
+      "units": "self",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "msak",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "floor(2 + @item.level / 2)d6",
-          "fire"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 2,
     "school": "evo",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
     "materials": {
-      "value": "Leaf of sumac",
+      "value": "a sumac leaf",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -83,39 +60,181 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "attack",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": false
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": true,
+          "concentration": false
+        },
+        "effects": [],
+        "range": {
+          "override": true,
+          "units": "touch",
+          "special": ""
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": "any",
+            "special": ""
+          },
+          "override": true
+        },
+        "attack": {
+          "ability": "",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "spell"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": true,
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 3,
+              "denomination": 6,
+              "bonus": "@mod",
+              "types": [
+                "fire"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 200000,
+        "name": ""
+      },
+      "OIU1htXAoSF0cU3U": {
+        "type": "utility",
+        "_id": "OIU1htXAoSF0cU3U",
+        "sort": 100000,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Evoke Blade"
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material"
-    ],
-    "crewed": false
+    "identifier": "flame-blade"
   },
+  "type": "spell",
+  "img": "icons/weapons/daggers/dagger-glowing-white.webp",
   "effects": [],
   "folder": "3rC3qr5FIlZymxFD",
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.V526DHIlZB9JUPUO",
-      "spell-lists": "druid,sorcerer"
-    }
-  },
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234089,
-    "modifiedTime": 1708930454014,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
-  },
-  "_id": "V526DHIlZB9JUPUO",
-  "sort": 6200000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!V526DHIlZB9JUPUO"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplFlameBlade",
+      "spell-lists": "druid,sorcerer"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738213900970,
+    "modifiedTime": 1738214003869,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplFlameBlade"
 }

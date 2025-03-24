@@ -1,15 +1,15 @@
 {
   "name": "Gust",
   "type": "spell",
+  "_id": "matSplGust000000",
   "system": {
     "source": {
-      "custom": "",
-      "book": "XGE",
-      "page": "157",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "description": {
-      "value": "<div class=\"rd__b  rd__b--3\"><p>You seize the air and compel it to create one of the following effects at a point you can see within range:</p><div class=\"rd__spc-inline-post\"></div><ul class=\"rd__list\"><li class=\"rd__li \">One Medium or smaller creature that you choose must succeed on a Strength saving throw or be pushed up to 5 feet away from you.</li><li class=\"rd__li \">You create a small blast of air capable of moving one object that is neither held nor carried and that weighs no more than 5 pounds. The object is pushed up to 10 feet away from you. It isn't pushed with enough force to cause damage.</li><li class=\"rd__li \">You create a harmless sensory effect using air, such as causing leaves to rustle, wind to slam shutters closed, or your clothing to ripple in a breeze.</li></ul></div>",
+      "value": "<p>You seize the air and compel it to create one of the following effects at a point you can see within range:</p><ul><li><strong>Push Creature.</strong>  One Medium or smaller creature that you choose must succeed on a Strength saving throw or be pushed up to 5 feet away from you.</li><li><strong>Move Object.</strong>  You create a small blast of air capable of moving one object that is neither held nor carried and that weighs no more than 5 pounds. The object is pushed up to 10 feet away from you. It isn't pushed with enough force to cause damage.</li><li><strong>Sensory Effect.</strong>  You create a harmless sensory effect using air, such as causing leaves to rustle, wind to slam shutters closed, or your clothing to ripple in a breeze.</li></ul>",
       "chat": ""
     },
     "actionType": "save",
@@ -30,12 +30,20 @@
       "units": "",
       "type": "creature",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "type": "creatureOrObject",
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 30,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -85,7 +93,195 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Push Creature",
+        "img": "",
+        "appliedEffects": [],
+        "target": {
+          "override": true,
+          "affects": {
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "template": {
+            "type": ""
+          }
+        }
+      },
+      "CTkTAuWbkoXgJriG": {
+        "type": "utility",
+        "_id": "CTkTAuWbkoXgJriG",
+        "sort": 100000,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "object",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Move Object",
+        "img": "",
+        "appliedEffects": []
+      },
+      "WI6y8wKoWzwJCwue": {
+        "type": "utility",
+        "_id": "WI6y8wKoWzwJCwue",
+        "sort": 300000,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": "any",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Sensory Effect",
+        "img": "",
+        "appliedEffects": []
+      },
+      "iQcgYnw8plR07D2v": {
+        "type": "utility",
+        "_id": "iQcgYnw8plR07D2v",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Push Creature",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "img": "icons/magic/air/wind-stream-blue-gray.webp",
   "ownership": {
@@ -99,23 +295,27 @@
       "propDroppable": "spell"
     },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.lCEjgAoju5S1cTEO",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplGust000000",
       "spell-lists": "druid,sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "effects": [],
   "folder": "WtBByem45tjsGx6Z",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1708312543488,
-    "modifiedTime": 1710192509775,
+    "modifiedTime": 1737928091031,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "lCEjgAoju5S1cTEO",
-  "sort": 2000000,
-  "_key": "!items!lCEjgAoju5S1cTEO"
+  "sort": 2700000,
+  "_key": "!items!matSplGust000000"
 }

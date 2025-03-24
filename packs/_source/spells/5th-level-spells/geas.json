@@ -1,80 +1,53 @@
 {
   "name": "Geas",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplGeas000000",
   "system": {
     "description": {
-      "value": "<p>You place a magical command on a creature that you can see within range, forcing it to carry out some service or refrain from some action or course of activity as you decide. If the creature can understand you, it must succeed on a Wisdom saving throw or become charmed by you for the duration. While the creature is charmed by you, it must make a Wisdom saving throw each time it attempts to act in a manner directly counter to your instructions, on a failed saving throw, it corrects its actions to follow your instructions. A creature that cannot understand you is unaffected by the spell.</p><p>You can issue any command you choose, short of an activity that would result in certain death. Should you issue a suicidal command, the spell ends.</p><p>You can end the spell early by using an action to dismiss it. A remove curse, greater restoration, or wish spell also ends it.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 7th or 8th level, the Duration is 1 year. When you cast this spell using a spell slot of 9th level, the spell lasts until it is ended by one of the Spells mentioned above.</p>",
+      "value": "<p>You give a verbal command to a creature that you can see within range, ordering it to carry out some service or refrain from an action or a course of activity as you decide. The target must succeed on a Wisdom saving throw or have the &amp;Reference[Charmed apply=false] condition for the duration. The target automatically succeeds if it can't understand your command.</p><p>While Charmed, the creature corrects its actions to follow your instructions if it acts in a manner directly counter to your command.</p><p>You can issue any command you choose, short of an activity that would result in certain death. Should you issue a suicidal command, the spell ends.</p><p>A <em>@UUID[Compendium.materia-dnd.spells.Item.matSplRemoveCurs]{Remove Curse}</em>, <em>@UUID[Compendium.materia-dnd.spells.Item.matSplGreaterRes]{Greater Restoration}</em>, or <em>@UUID[Compendium.materia-dnd.spells.Item.matSplWish000000]{Wish}</em> spell ends this spell.</p><p><strong>Using a Higher-Level Spell Slot.</strong> If you use a level 7 or 8 spell slot, the duration is 1 year. If you use a level 9 spell slot, the spell lasts until it is ended by one of the spells mentioned above.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "minute",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": 1
     },
     "duration": {
       "value": "30",
       "units": "day"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "type": "creature",
+        "count": "1",
+        "choice": false,
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": 60,
-      "long": null,
-      "units": "ft"
+      "value": "60",
+      "units": "ft",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "5d10",
-          "psychic"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "wis",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 5,
     "school": "enc",
+    "properties": [
+      "vocal"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -85,74 +58,142 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "TXwfzpj9bERo0X1r",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "damage": {
+          "onSave": "none",
+          "parts": []
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "name": ""
+      }
     },
-    "properties": [
-      "vocal"
-    ],
-    "crewed": false
+    "identifier": "geas"
   },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.D4y2EhovZTUf1eKW",
-      "spell-lists": "bard,cleric,druid,paladin,wizard"
-    }
-  },
-  "img": "icons/magic/air/air-burst-spiral-large-yellow.webp",
+  "type": "spell",
+  "img": "icons/equipment/head/hat-pointed-leather-black-glowing.webp",
   "effects": [
     {
-      "name": "Geas",
-      "origin": "Compendium.dnd5e.spells.Item.JQyigMNPiDnGI18b",
+      "name": "Under Orders",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplGeas000000",
       "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
         "rounds": null,
+        "startTime": null,
+        "seconds": 2592000,
+        "combat": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "zSoZHHi7BA6IAeoj",
+      "disabled": false,
+      "flags": {},
+      "img": "icons/skills/wounds/anatomy-organ-brain-pink-red.webp",
+      "_id": "TXwfzpj9bERo0X1r",
+      "type": "base",
+      "system": {},
       "changes": [],
-      "description": "<p>The creature is Charmed for the Duration. While the creature is charmed by the caster, it takes psychic damage each time it acts in a manner directly counter to their instructions, but no more than once each day.</p>",
+      "description": "<p>While &amp;Reference[Charmed apply=false], the creature takes [[/damage 5d10 type=psyhic]] damage if it acts in a manner directly counter to your command. It takes this damage no more than once each day.</p>",
+      "tint": "#ffffff",
       "transfer": false,
       "statuses": [
         "charmed"
       ],
-      "flags": {},
-      "tint": "#ffffff",
+      "sort": 0,
       "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
+        "lastModifiedBy": null
       },
-      "img": "icons/magic/air/air-burst-spiral-large-yellow.webp",
-      "type": "base",
-      "system": {},
-      "sort": 0,
-      "_key": "!items.effects!D4y2EhovZTUf1eKW.zSoZHHi7BA6IAeoj"
+      "_key": "!items.effects!matSplGeas000000.TXwfzpj9bERo0X1r"
     }
   ],
   "folder": "slWnSXtwvwnA9EXJ",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234114,
-    "modifiedTime": 1709186114418,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "D4y2EhovZTUf1eKW",
-  "sort": 3200000,
-  "_key": "!items!D4y2EhovZTUf1eKW"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplGeas000000",
+      "spell-lists": "bard,cleric,druid,paladin,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739232061294,
+    "modifiedTime": 1739246470711,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplGeas000000"
 }

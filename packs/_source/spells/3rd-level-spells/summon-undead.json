@@ -1,15 +1,15 @@
 {
   "name": "Summon Undead",
+  "_id": "matSplSummonUnde",
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "description": {
-      "value": "<div class=\"rd__b  rd__b--3\"><p>You call forth an undead spirit. It manifests in an unoccupied space that you can see within range. This corporeal form uses the Undead Spirit stat block. When you cast the spell, choose the creature's form: Ghostly, Putrid, or Skeletal. The spirit resembles an undead creature with the chosen form, which determines certain traits in its stat block. The creature disappears when it drops to 0 hit points or when the spell ends.</p><div class=\"rd__spc-inline-post\"><p>The creature is an ally to you and your companions. In combat, the creature acts during your turn. It obeys your verbal commands (no action required by you). If you don't issue any, it takes the @action[Dodge] action and uses its move to avoid danger.</p></div></div><div class=\"rd__b  rd__b--3\"><div class=\"rd__b  rd__b--3\"><p><span class=\"entry-title-inner\"><strong>At Higher Levels</strong> </span>When you cast this spell using a spell slot of 4th level or higher, use the higher level wherever the spell's level appears in the stat block.</p></div></div>",
+      "value": "<p>You call forth an undead spirit. It manifests in an unoccupied space that you can see within range. This corporeal form uses the Undead Spirit stat block. When you cast the spell, choose the creature's form: Ghostly, Putrid, or Skeletal. The spirit resembles an undead creature with the chosen form, which determines certain traits in its stat block. The creature disappears when it drops to 0 hit points or when the spell ends.</p><p>The creature is an ally to you and your companions. In combat, the creature acts during your turn. It obeys your verbal commands (no action required by you). If you don't issue any, it takes the @action[Dodge] action and uses its move to avoid danger.</p><p><strong>Using a Higher-Level Spell Slot.</strong> If you cast this spell using a level 4+ spell slot, use the higher level wherever the spell's level appears in the stat block.</p><p>If you cast this spell using a level 9+ spell slot, the spell does not require your Concentration.</p>",
       "chat": ""
     },
     "actionType": "summ",
@@ -33,12 +33,20 @@
       "units": "",
       "type": "",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 90,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -119,6 +127,110 @@
           "uuid": "Compendium.materia-dnd.actors.Actor.Ij1c3Tgd88GXhQuS"
         }
       ]
+    },
+    "activities": {
+      "5RKzD7ZT4hV8CMAB": {
+        "type": "summon",
+        "_id": "5RKzD7ZT4hV8CMAB",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "bonuses": {
+          "ac": "@item.level",
+          "hd": "",
+          "hp": "@item.level * 10",
+          "attackDamage": "@item.level",
+          "saveDamage": "@item.level",
+          "healing": "@item.level"
+        },
+        "creatureSizes": [],
+        "creatureTypes": [],
+        "match": {
+          "attacks": true,
+          "proficiency": true,
+          "saves": true
+        },
+        "profiles": [
+          {
+            "count": "",
+            "name": "",
+            "_id": "8WJHNY9WHFIpPwiY",
+            "uuid": "Compendium.materia-dnd.actors.Actor.vpQp32Q0xemuy2lz",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": []
+          },
+          {
+            "count": "",
+            "name": "",
+            "_id": "Zq0jUC9C8NkI1pTL",
+            "uuid": "Compendium.materia-dnd.actors.Actor.Npa2qJ8YesOppTCB",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": []
+          },
+          {
+            "count": "",
+            "name": "",
+            "_id": "9PyYUl1czTI6KGhW",
+            "uuid": "Compendium.materia-dnd.actors.Actor.Ij1c3Tgd88GXhQuS",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": []
+          }
+        ],
+        "summon": {
+          "prompt": true,
+          "mode": ""
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "img": "icons/magic/death/undead-skeleton-deformed-red.webp",
@@ -151,23 +263,32 @@
       "effectCondition": ""
     },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.E6XcqKIsCXOT4fPc",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplSummonUnde",
       "spell-lists": "warlock,wizard"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "effects": [],
   "folder": "CxgAwElQGTbcnuvc",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1708931924235,
-    "modifiedTime": 1713584796371,
+    "modifiedTime": 1738515081520,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "E6XcqKIsCXOT4fPc",
   "sort": 4600000,
-  "_key": "!items!E6XcqKIsCXOT4fPc"
+  "_key": "!items!matSplSummonUnde"
 }

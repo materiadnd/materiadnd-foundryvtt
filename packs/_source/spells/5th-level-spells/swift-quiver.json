@@ -2,14 +2,18 @@
   "folder": "slWnSXtwvwnA9EXJ",
   "name": "Swift Quiver",
   "type": "spell",
-  "_id": "rXGzAcIDebMCO02x",
+  "_id": "matSplSwiftQuive",
   "img": "icons/weapons/ammunition/arrows-fletching.webp",
   "system": {
     "description": {
-      "value": "<p>You transmute your quiver so it produces an endless supply of magical ammunition, which seems to leap into your hand when you reach for it.</p><p>When you cast the spell, and as a bonus action on each of your subsequent turns, you may make two attacks with a weapon that uses ammunition from the quiver. Each time you make such a ranged attack, your quiver magically replaces the piece of ammunition you used with a similar piece of magical ammunition. Any pieces of ammunition created by this spell disintegrate when the spell ends. If the quiver leaves your possession, the spell ends.</p>",
+      "value": "<p>You transmute your quiver so it produces an endless supply of magical ammunition, which seems to leap into your hand when you reach for it.</p><p>When you cast the spell, and as a Bonus Action on each of your subsequent turns, you may make two attacks with a weapon that uses ammunition from the quiver. Each time you make such a ranged attack, your quiver magically replaces the piece of ammunition you used with a similar piece of magical ammunition. Any pieces of ammunition created by this spell disintegrate when the spell ends. If the quiver leaves your possession, the spell ends.</p><section class=\"secret\" id=\"secret-xkRyIEM8pUBzcwUK\"><p><strong>Foundry Note</strong></p><p>The <strong>Cast and Enchant</strong> activity is configured to also apply an enchantment to a given weapon (not quiver) which removes its ammunition consumption.</p></section>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "bonus",
       "cost": 1,
@@ -26,12 +30,19 @@
       "width": null,
       "units": "",
       "type": "self",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "touch"
+      "units": "touch",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -84,28 +95,165 @@
     "scaling": {
       "mode": "none",
       "formula": ""
+    },
+    "activities": {
+      "l0WBMFBLSTllWjFa": {
+        "type": "enchant",
+        "_id": "l0WBMFBLSTllWjFa",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "gVPzY2glrYWDmJga",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "riders": {
+              "activity": [],
+              "effect": [],
+              "item": []
+            }
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "enchant": {},
+        "restrictions": {
+          "allowMagical": false,
+          "categories": [
+            "simpleR",
+            "martialR"
+          ],
+          "properties": [
+            "amm"
+          ],
+          "type": "weapon"
+        },
+        "name": "Cast and Enchant",
+        "img": "",
+        "appliedEffects": [
+          "gVPzY2glrYWDmJga"
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "type": "enchantment",
+      "name": "Endless Ammunition",
+      "img": "icons/weapons/ammunition/arrows-fletching.webp",
+      "disabled": true,
+      "_id": "gVPzY2glrYWDmJga",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "value": "-amm",
+          "priority": null
+        },
+        {
+          "key": "name",
+          "mode": 5,
+          "value": "Swift {}",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The quiver produces an endless supply of magical ammunition, which seems to leap into your hand when you reach for it.</p>",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728565653542,
+        "modifiedTime": 1728565709379,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplSwiftQuive.gVPzY2glrYWDmJga"
+    }
+  ],
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.rXGzAcIDebMCO02x",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplSwiftQuive",
       "spell-lists": "ranger"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1707233314831,
-    "modifiedTime": 1709186114418,
+    "modifiedTime": 1739247892443,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 5400000,
+  "sort": 5900000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!rXGzAcIDebMCO02x"
+  "_key": "!items!matSplSwiftQuive"
 }

@@ -1,82 +1,57 @@
 {
   "name": "Chain Lightning",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplChainLight",
   "system": {
     "description": {
-      "value": "<p>You create a bolt of lightning that arcs toward a target of your choice that you can see within range. Three bolts then leap from that target to as many as three other targets, each of which must be within 30 feet of the first target. A target can be a creature or an object and can be targeted by only one of the bolts.</p><p>A target must make a Dexterity saving throw. The target takes 10d8 lightning damage on a failed save, or half as much damage on a successful one.</p><p><strong>Higher Levels. </strong>When you cast this spell using a spell slot of 7th level or higher, one additional bolt leaps from the first target to another target for each slot level above 6th.</p>",
+      "value": "<p>You launch a lightning bolt toward a target you can see within range. Three bolts then leap from that target to as many as three other targets of your choice, each of which must be within 30 feet of the first target. A target can be a creature or an object and can be targeted by only one of the bolts.</p><p>Each target makes a Dexterity saving throw, taking 10d8 Lightning damage on a failed save or half as much damage on a successful one.</p><p><strong>Using a Higher-Level Spell Slot.</strong> One additional bolt leaps from the first target to another target for each spell slot level above 6.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "@item.level - 2",
+        "type": "creatureOrObject",
+        "special": "secondary targets must be within 30 feet of initial target"
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": 150,
-      "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": "",
+      "value": "150"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "10d8",
-          "lightning"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 6,
     "school": "evo",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "A bit of fur; a piece of amber, glass, or a crystal rod; and three silver pins",
+      "value": "three silver pins",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -85,38 +60,108 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": ""
+    "activities": {
+      "3bSNutM8zsXK1UgP": {
+        "type": "save",
+        "_id": "3bSNutM8zsXK1UgP",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 10,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "lightning"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": ""
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "mgc"
-    ],
-    "crewed": false
+    "identifier": "chain-lightning"
+  },
+  "type": "spell",
+  "img": "icons/magic/lightning/bolt-strike-sparks-teal.webp",
+  "effects": [],
+  "folder": "UjV13fGRtZfpmOAS",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.4AmlKnfD7mZvM74y",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplChainLight",
       "spell-lists": "sorcerer,wizard"
     }
   },
-  "img": "icons/magic/lightning/bolt-forked-blue.webp",
-  "effects": [],
-  "folder": "UjV13fGRtZfpmOAS",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234136,
-    "modifiedTime": 1712471949426,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1739392637465,
+    "modifiedTime": 1739392637465,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "4AmlKnfD7mZvM74y",
-  "sort": 1300000,
-  "_key": "!items!4AmlKnfD7mZvM74y"
+  "sort": 0,
+  "_key": "!items!matSplChainLight"
 }

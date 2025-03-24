@@ -6,10 +6,14 @@
   "img": "icons/weapons/swords/scimitar-blue.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 6th level, you can use your Blade Flourishes without expending a use of your Bardic Inspiration a number of times equal to your proficiency bonus and regain any expended uses at the end of a long rest. At any point when you are out of uses of this feature, you can instead expend one of your uses of Bardic Inspiration per usual.</p>",
+      "value": "<p>You can use your Blade Flourishes without expending a use of your Bardic Inspiration a number of times equal to your Proficiency Bonus and regain any expended uses at the end of a long rest. At any point when you are out of uses of this feature, you can instead expend one of your uses of Bardic Inspiration per usual.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "none",
       "cost": null,
@@ -69,10 +73,40 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "College of Swords 6",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 6
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Blade Flourish (no Bardic)",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "target": {
+          "affects": {
+            "type": "self"
+          }
+        }
+      }
     }
   },
   "effects": [],
@@ -80,15 +114,21 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1710191688861,
-    "modifiedTime": 1710839731618,
+    "modifiedTime": 1742277286861,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_key": "!items!l8yblYBoia72Ius5"

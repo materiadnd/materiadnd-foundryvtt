@@ -12,19 +12,37 @@ import { UpdateTeleBonusFlag } from "./tele.js";
 import { WildShapeTransformActorHandler } from "./wild-shape.js";
 import { SpellSearchIndex, SpellSearchApp, SpellSearchRenderActorSheetHandler } from "./apps/spell-search.js";
 import { LocusManagerApp } from "./apps/locus.js";
+import { StatRollerRenderActorSheetHandler } from "./apps/stat-roller.js";
+import { AddMateriaTools } from "./tools.js";
+import { MateriaTableOfContentsCompendium } from "./apps/table-of-contents.js";
+import { EnhancedJournalClassPageSheet } from "./apps/enhanced-class-page-sheet.js"
+
+Hooks.once("init", () => {
+    CONFIG.DND5E.sourceBooks["Materia"] = "Materia D&D 5.M";
+
+    DocumentSheetConfig.registerSheet(JournalEntryPage, "dnd5e", EnhancedJournalClassPageSheet, {
+        label: "Enhanced Class Page",
+        types: ["class", "subclass"]
+    });
+})
+
+Hooks.once("init", () => {
+    CONFIG.DND5E.sourceBooks["Materia"] = "Materia D&D 5.M";
+})
 
 Hooks.once('init', () => {
     Settings.initialize();
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_THIRD_PACT_CASTER)) {
         SpellcastingAddThirdPactProgression();
     }
+    if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_MATERIA_CONDITIONS)) { AddMateriaConditions(); }
 });
 
 Hooks.once("ready", () => {
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_ARMOR_TYPES)) { AddMateriaArmor(); }
-    if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_MATERIA_CONDITIONS)) { AddMateriaConditions(); }
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_THIRD_PACT_CASTER)) { AddThirdPactCaster(); }
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_WEAPONS_AND_WEAPON_PROPS)) { AddMateriaWeapons(); }
+    if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_TOOLS)) { AddMateriaTools(); }
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.REPLACE_SOURCE_PACKS)) { Replace5eSourcePacks(); }
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ENABLE_SPELL_SEARCH)) { 
         let searchButtonHtml = $(`<div class="header-actions action-buttons flexrow">
@@ -45,6 +63,13 @@ Hooks.once("ready", () => {
         });
     }
 })
+
+Hooks.once("setup", () => {
+    if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.DISPLAY_HANDBOOK)) {
+        // change the appropriately flagged compendiums to use the ToC compendium application
+        game.packs.get("materia-dnd.rules").applicationClass = MateriaTableOfContentsCompendium;
+    }
+});
 
 Hooks.on("dnd5e.damageActor", async (actor, heal, diff, id) => {
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_EXHAUSTION_HANDLING)) {
@@ -83,6 +108,9 @@ Hooks.on("renderActorSheet5eCharacter2", (app, html, actor) => {
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ENABLE_SPELL_SEARCH)) {
         SpellSearchRenderActorSheetHandler(html, actor);
     }
+    if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.SHOW_STARTING_STAT_ROLLER)) {
+        StatRollerRenderActorSheetHandler(app, html, actor);
+    }
 });
 
 Hooks.on("dnd5e.transformActor", (actor, target, d, txOptions, options) => {
@@ -102,7 +130,7 @@ Hooks.on("renderItemSheet5e", async (app, html, item) => {
         if(item.item?.actor != null && item.item?.actor?.type == "character" && item.item?.isOwner) {
             var origItemId = await item.item?.getFlag('materia-dnd', 'sourceId');
             if (origItemId == null) { return; }
-            const buttonText = game.i18n.localize('MATERIA-DND.ui.item-restore.itemsheet-titlebar-button');
+            const buttonText = game.i18n.localize(`${Constants.MODULE_ID}.ui.item-restore.itemsheet-titlebar-button`);
             let openButton = $(`<a class="open-item-restore"><i class="fas fa-layer-group"></i> ${buttonText}</a>`);
             openButton.click(async (event) => {
                 var itemRestoreApp = new ItemRestoreApp();
@@ -132,8 +160,10 @@ Hooks.on("renderItemSheet5e", async (app, html, item) => {
     }
 });
 
+// Hide the ability scores (ASI) for the Level 1 feat,
+// the only valid option is to add a feat.
 Hooks.on("renderApplication", async (flow, html, app) => {
     if (app?.title == "Level 1 Feat") {
-        html.find('.ability-scores').css("display", "none");
+        html.find('div.feat-section :first-child').css("display", "none")
     }
 });

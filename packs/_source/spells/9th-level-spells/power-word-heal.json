@@ -1,23 +1,52 @@
 {
   "name": "Power Word Heal",
-  "type": "spell",
+  "_id": "matSplPowerWordH",
   "system": {
-    "source": {
-      "custom": "",
-      "book": "PHB",
-      "page": "266",
-      "license": ""
-    },
     "description": {
-      "value": "<div class=\"rd__b  rd__b--3\"><p>A wave of healing energy washes over the creature you touch. The target regains all its hit points. If the creature is @condition[charmed], @condition[frightened], @condition[paralyzed], or @condition[stunned], the condition ends. If the creature is @condition[prone], it can use its reaction to stand up. This spell has no effect on undead or constructs.</p><div class=\"rd__spc-inline-post\"></div></div>",
+      "value": "<p>A wave of healing energy washes over one creature you can see within range. The target regains all its Hit Points. If the creature has any of the &amp;Reference[Blinded apply=false], &amp;Reference[Charmed apply=false], &amp;Reference[Dazed apply=false], &amp;Reference[Deafened apply=false], &amp;Reference[Frightened apply=false], &amp;Reference[Incapacitated apply=false], &amp;Reference[Paralyzed apply=false], &amp;Reference[Petrified apply=false], &amp;Reference[Poisoned apply=false], &amp;Reference[Possessed apply=false], &amp;Reference[Stunned apply=false], &amp;Reference[Unconscious apply=false], or &amp;Reference[Weakened apply=false] conditions, the conditions end. All levels of &amp;Reference[exhaustion apply=false] are removed, and all expended hit dice are restored. If the creature has the &amp;Reference[Prone apply=false] condition, it can use its Reaction to stand up.</p><section class=\"secret\" id=\"secret-TZTRxIEOucKFdjFi\"><p>Foundry Note</p><p>The <strong>Heal Fully</strong> activity is configured to heal 1,000 Hit Points such that any single creature can be healed fully.</p></section>",
       "chat": ""
     },
-    "actionType": "heal",
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "action",
+      "condition": "",
+      "value": null
+    },
+    "duration": {
+      "value": "",
+      "units": "inst"
+    },
+    "target": {
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
+    },
+    "range": {
+      "units": "ft",
+      "special": "",
+      "value": "60"
+    },
+    "uses": {
+      "max": "",
+      "spent": 0,
+      "recovery": []
+    },
     "level": 9,
-    "school": "evo",
+    "school": "enc",
     "properties": [
-      "vocal",
-      "somatic"
+      "vocal"
     ],
     "materials": {
       "value": "",
@@ -25,102 +54,103 @@
       "cost": 0,
       "supply": 0
     },
-    "target": {
-      "value": null,
-      "units": "touch",
-      "type": "",
-      "prompt": true,
-      "width": null
-    },
-    "range": {
-      "value": null,
-      "units": "touch",
-      "long": null
-    },
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": "",
-      "units": "inst"
-    },
-    "damage": {
-      "parts": [
-        [
-          "",
-          "healing"
-        ]
-      ],
-      "versatile": ""
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "save": {
-      "dc": null,
-      "scaling": "spell",
-      "ability": ""
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "formula": "",
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
+    "activities": {
+      "hgPz3Fyf88JPxDwp": {
+        "type": "heal",
+        "_id": "hgPz3Fyf88JPxDwp",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "healing": {
+          "number": null,
+          "denomination": 0,
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1,
+            "mode": ""
+          },
+          "bonus": "1000"
+        },
+        "name": "Heal Fully"
+      }
     },
-    "cover": null,
-    "crewed": false,
-    "ability": null
+    "identifier": "power-word-heal"
   },
-  "img": "icons/magic/life/heart-cross-strong-flame-blue.webp",
+  "type": "spell",
+  "img": "icons/magic/life/heart-red-blue.webp",
+  "effects": [],
+  "folder": "89VDZRAxJ1IDvEOP",
   "ownership": {
     "default": 0
   },
   "flags": {
-    "plutonium": {
-      "page": "spells.html",
-      "source": "PHB",
-      "hash": "power%20word%20heal_phb",
-      "propDroppable": "spell"
-    },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.h6ingUPdJgenuXqC",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplPowerWordH",
       "spell-lists": "bard,cleric"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
-  "effects": [],
-  "folder": "89VDZRAxJ1IDvEOP",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1709232605658,
-    "modifiedTime": 1709232611684,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1739435147475,
+    "modifiedTime": 1739435375813,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "h6ingUPdJgenuXqC",
   "sort": 0,
-  "_key": "!items!h6ingUPdJgenuXqC"
+  "_key": "!items!matSplPowerWordH"
 }

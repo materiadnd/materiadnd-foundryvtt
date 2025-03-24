@@ -1,5 +1,6 @@
 {
   "name": "Power Word Stun",
+  "_id": "matSplPowerWordS",
   "ownership": {
     "default": 0
   },
@@ -10,10 +11,9 @@
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
@@ -30,12 +30,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 60,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -87,18 +94,154 @@
     "properties": [
       "vocal"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "9U3pZapmGBNWsemT": {
+        "type": "utility",
+        "_id": "9U3pZapmGBNWsemT",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "eOpfRpng1Ax253IN"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": []
+      },
+      "Tq4TBEQDdYVg92dR": {
+        "type": "save",
+        "_id": "Tq4TBEQDdYVg92dR",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": true,
+          "units": "spec",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "none"
+        },
+        "save": {
+          "ability": "con",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.PDs9ihMN1K93XU1h",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplPowerWordS",
       "spell-lists": "bard,sorcerer,warlock,wizard"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "img": "icons/magic/control/debuff-chains-ropes-red.webp",
   "effects": [
     {
-      "name": "Power Word Stun",
+      "name": "Stunned",
       "origin": "Compendium.dnd5e.spells.Item.35j2QIMmIk6aEdxj",
       "duration": {
         "startTime": null,
@@ -115,40 +258,75 @@
       "description": "<p>The target is Stunned. The stunned target must make a Constitution saving throw at the end of each of its turns. On a successful save, this stunning effect ends.</p>",
       "transfer": false,
       "statuses": [
-        "stunned",
-        "incapacitated"
+        "stunned"
       ],
       "flags": {},
       "tint": "#ffffff",
       "_stats": {
-        "coreVersion": "12.325",
+        "coreVersion": "12.331",
         "systemId": null,
         "systemVersion": null,
         "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "modifiedTime": 1728921903129,
+        "lastModifiedBy": "dnd5mbuilder0000",
         "compendiumSource": null,
         "duplicateSource": null
       },
-      "img": "icons/magic/control/debuff-chains-ropes-red.webp",
+      "img": "systems/dnd5e/icons/svg/statuses/stunned.svg",
       "type": "base",
       "system": {},
       "sort": 0,
-      "_key": "!items.effects!PDs9ihMN1K93XU1h.XUk41wJR26neJaic"
+      "_key": "!items.effects!matSplPowerWordS.XUk41wJR26neJaic"
+    },
+    {
+      "name": "Stunned",
+      "img": "systems/dnd5e/icons/svg/statuses/stunned.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplPowerWordS",
+      "transfer": false,
+      "_id": "eOpfRpng1Ax253IN",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "stunned"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730359560803,
+        "modifiedTime": 1730359587449,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplPowerWordS.eOpfRpng1Ax253IN"
     }
   ],
   "folder": "IeD7MeayeQqIoNnW",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1661787234062,
-    "modifiedTime": 1709232029755,
+    "modifiedTime": 1730359630282,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "PDs9ihMN1K93XU1h",
   "sort": 400000,
-  "_key": "!items!PDs9ihMN1K93XU1h"
+  "_key": "!items!matSplPowerWordS"
 }

@@ -1,15 +1,15 @@
 {
   "name": "Spirit Shroud",
+  "_id": "matSplSpiritShro",
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "description": {
-      "value": "<div class=\"rd__b  rd__b--3\"><p>You call forth spirits of the dead, which flit around you for the spell's duration. The spirits are intangible and invulnerable.</p><p>Until the spell ends, any attack you make deals [[/r 1d8]] extra damage when you hit a creature within 10 feet of you. This damage is radiant, necrotic, or cold (your choice when you cast the spell). Any creature that takes this damage can't regain hit points until the start of your next turn.</p><p>In addition, any creature of your choice that you can see that starts its turn within 10 feet of you has its speed reduced by 10 feet until the start of your next turn.</p></div><div class=\"rd__b  rd__b--3\"><div class=\"rd__b  rd__b--3\"><p><span class=\"entry-title-inner\"><strong>At Higher Levels. </strong></span>When you cast this spell using a spell slot of 4th level or higher, the damage increases by [[/r 1d8]] for every two slot levels above 3rd.</p><p>When you cast this spell using a spell slot of 7th level or higher, the duration does not require concentration.</p></div></div>",
+      "value": "<p>You call forth spirits of the dead, which flit around you for the spell's duration. The spirits are intangible and invulnerable.</p><p>Until the spell ends, any attack you make deals [[/damage 1d8]] extra damage when you hit a creature within 10 feet of you. This damage is radiant, necrotic, or cold (your choice when you cast the spell). Any creature that takes this damage can't regain hit points until the start of your next turn.</p><p>In addition, any creature of your choice that you can see that starts its turn within 10 feet of you has its speed reduced by 10 feet until the start of your next turn.</p><p><strong>Using a Higher-Level Spell Slot.</strong> Tthe damage increases by 1d8 for every <strong>two</strong> spell slot levels above 3.</p><p>If you cast this spell using a level 7+ spell slot, the spell doesn't require your Concentration.</p>",
       "chat": ""
     },
     "actionType": "util",
@@ -31,12 +31,19 @@
       "units": "self",
       "type": "self",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "units": "self",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "bonus",
@@ -86,7 +93,22 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Invoke Shroud",
+        "img": "",
+        "appliedEffects": [],
+        "roll": {
+          "formula": ""
+        },
+        "effects": [
+          {
+            "_id": "WoH4oyrVrSJKJZLk"
+          }
+        ]
+      }
+    }
   },
   "img": "icons/magic/death/projectile-skull-fire-purple.webp",
   "ownership": {
@@ -100,23 +122,94 @@
       "propDroppable": "spell"
     },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.dXzcOLJXbNOeN3uJ",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplSpiritShro",
       "spell-lists": "cleric,paladin,warlock,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Shroud of Death",
+      "img": "icons/magic/death/projectile-skull-fire-purple.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplSpiritShro",
+      "transfer": false,
+      "_id": "WoH4oyrVrSJKJZLk",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.bonuses.mwak.damage",
+          "mode": 2,
+          "value": "(floor(((@item.level) - 1) / 2))d8",
+          "priority": null
+        },
+        {
+          "key": "system.bonuses.msak.damage",
+          "mode": 2,
+          "value": "(floor(((@item.level) - 1) / 2))d8",
+          "priority": null
+        },
+        {
+          "key": "system.bonuses.rwak.damage",
+          "mode": 2,
+          "value": "(floor(((@item.level) - 1) / 2))d8",
+          "priority": null
+        },
+        {
+          "key": "system.bonuses.rsak.damage",
+          "mode": 2,
+          "value": "(floor(((@item.level) - 1) / 2))d8",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728309791156,
+        "modifiedTime": 1728310011150,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplSpiritShro.WoH4oyrVrSJKJZLk"
+    }
+  ],
   "folder": "CxgAwElQGTbcnuvc",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1708931508173,
-    "modifiedTime": 1713584796371,
+    "modifiedTime": 1738514952014,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "dXzcOLJXbNOeN3uJ",
   "sort": 4200000,
-  "_key": "!items!dXzcOLJXbNOeN3uJ"
+  "_key": "!items!matSplSpiritShro"
 }

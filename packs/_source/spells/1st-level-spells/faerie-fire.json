@@ -1,75 +1,54 @@
 {
   "name": "Faerie Fire",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplFaerieFire",
   "system": {
     "description": {
-      "value": "<p>Each object in a 20-foot cube within range is outlined in blue, green, or violet light (your choice). Any creature in the area when the spell is cast is also outlined in light if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed dim light in a 10-foot radius.</p><p>Any attack roll against an affected creature or object has advantage if the attacker can see it, and the affected creature or object can't benefit from being invisible.</p>",
+      "value": "<p>Objects in a 20-foot Cube within range are outlined in blue, green, or violet light (your choice). Each creature in the Cube is also outlined if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed &amp;Reference[dimlight] in a 10-foot radius and can't benefit from the Invisible condition.</p><p>Attack rolls against an affected creature or object have Advantage if the attacker can see it.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 20,
-      "width": null,
-      "units": "ft",
-      "type": "cube",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "type": ""
+      },
+      "template": {
+        "units": "ft",
+        "type": "cube",
+        "size": "20",
+        "contiguous": false,
+        "count": ""
+      }
     },
     "range": {
-      "value": 60,
-      "long": null,
-      "units": "ft"
+      "value": "60",
+      "units": "ft",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 1,
     "school": "evo",
+    "properties": [
+      "vocal",
+      "concentration"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -80,36 +59,132 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "Y2i0OvwOixxag0ed",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": []
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      }
     },
-    "properties": [
-      "vocal",
-      "concentration"
-    ],
-    "crewed": false
+    "identifier": "faerie-fire"
+  },
+  "type": "spell",
+  "img": "icons/magic/fire/projectile-meteor-salvo-strong-pink.webp",
+  "effects": [
+    {
+      "name": "Outlined",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplFaerieFire",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "icons/magic/control/silhouette-hold-change-green.webp",
+      "_id": "Y2i0OvwOixxag0ed",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>For the duration, objects and affected creatures shed &amp;Reference[dimlight] in a 10-foot radius and can't benefit from the Invisible condition.</p><p>Attack rolls against an affected creature or object have Advantage if the attacker can see it.</p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplFaerieFire.Y2i0OvwOixxag0ed"
+    }
+  ],
+  "folder": "JMRA2elEdmr5pgX7",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.q9dRmKVVPACexAmk",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplFaerieFire",
       "spell-lists": "artificer,bard,druid"
     }
   },
-  "img": "icons/magic/fire/projectile-meteor-salvo-strong-teal.webp",
-  "effects": [],
-  "folder": "JMRA2elEdmr5pgX7",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234222,
-    "modifiedTime": 1708928830321,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738033181110,
+    "modifiedTime": 1738033230854,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "q9dRmKVVPACexAmk",
-  "sort": 1700000,
-  "_key": "!items!q9dRmKVVPACexAmk"
+  "sort": 0,
+  "_key": "!items!matSplFaerieFire"
 }

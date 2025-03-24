@@ -9,7 +9,11 @@
       "value": "<p>The extra damage dealt by your rite is necrotic damage.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "",
       "cost": 1,
@@ -78,21 +82,186 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "consumption": {
+          "targets": []
+        },
+        "name": "",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "self"
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "@scale.blood-hunter.hemocraft-die"
+              },
+              "number": null,
+              "denomination": null,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ]
+            }
+          ]
+        },
+        "appliedEffects": []
+      },
+      "xEOFfYZFbelj57Tq": {
+        "type": "enchant",
+        "_id": "xEOFfYZFbelj57Tq",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "Y3DP7nwlmQezYCem"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "enchant": {
+          "identifier": ""
+        },
+        "restrictions": {
+          "allowMagical": false,
+          "categories": [],
+          "properties": [],
+          "type": "weapon"
+        },
+        "name": "Invoke Rite",
+        "img": "",
+        "appliedEffects": [
+          "Y3DP7nwlmQezYCem"
+        ]
+      }
+    },
+    "prerequisites": {
+      "level": 14
     }
   },
-  "effects": [],
-  "flags": {},
+  "effects": [
+    {
+      "type": "enchantment",
+      "name": "Rite of the Dead",
+      "img": "icons/magic/death/projectile-skull-fire-green.webp",
+      "disabled": true,
+      "_id": "Y3DP7nwlmQezYCem",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 5,
+          "value": "{}, Infused",
+          "priority": null
+        },
+        {
+          "key": "system.damage.parts",
+          "mode": 2,
+          "value": "[[\"@scale.blood-hunter.hemocraft-die\", \"necrotic\"]]",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1741735774380,
+        "modifiedTime": 1741735797269,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!40JPBzngQtUvVv38.Y3DP7nwlmQezYCem"
+    }
+  ],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707885791204,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1741735777232,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 0,
+  "sort": 200000,
   "ownership": {
     "default": 0
   },

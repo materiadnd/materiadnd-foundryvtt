@@ -1,18 +1,48 @@
 {
   "name": "Thorn Whip",
-  "type": "spell",
+  "_id": "matSplThornWhip0",
   "system": {
-    "source": {
-      "custom": "",
-      "book": "PHB",
-      "page": "282",
-      "license": ""
-    },
     "description": {
-      "value": "<div class=\"rd__b  rd__b--3\"><p>You create a long, vine-like whip covered in thorns that lashes out at your command toward a creature in range. Make a melee spell attack against the target. If the attack hits, the creature takes [[/r 1d6]] piercing damage, and if the creature is Large or smaller, you pull the creature up to 10 feet closer to you.</p><div class=\"rd__spc-inline-post\"></div><p>This spell's damage increases by [[/r 1d6]] when you reach 5th level ([[/r 2d6]]), 11th level ([[/r 3d6]]), and 17th level ([[/r 4d6]]).</p></div>",
+      "value": "<p>You create a vine-like whip covered in thorns that lashes out at your command toward a creature in range. Make a melee spell attack against the target. On a hit, the target takes [[/damage 1d6 piercing]] damage, and if it is Large or smaller, you can pull it up to 10 feet closer to you.</p><p><strong>Cantrip Upgrade.</strong> The damage increases by 1d6 when you reach levels 5 ([[/damage 2d6 piercing]]), 11 ([[/damage 3d6 piercing]]), and 17 ([[/damage 4d6 piercing]]).</p>",
       "chat": ""
     },
-    "actionType": "msak",
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "action",
+      "condition": "",
+      "value": null
+    },
+    "duration": {
+      "value": "",
+      "units": "inst"
+    },
+    "target": {
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
+    },
+    "range": {
+      "units": "ft",
+      "special": "",
+      "value": "30"
+    },
+    "uses": {
+      "max": "",
+      "spent": 0,
+      "recovery": []
+    },
     "level": 0,
     "school": "trs",
     "properties": [
@@ -21,107 +51,130 @@
       "material"
     ],
     "materials": {
-      "value": "the stem of a plant with thorns",
+      "value": "the stem of a thorny plant",
       "consumed": false,
       "cost": 0,
       "supply": 0
     },
-    "target": {
-      "value": 1,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
-      "width": null
-    },
-    "range": {
-      "value": 30,
-      "units": "ft",
-      "long": null
-    },
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": "",
-      "units": "inst"
-    },
-    "damage": {
-      "parts": [
-        [
-          "1d6",
-          "piercing"
-        ]
-      ],
-      "versatile": ""
-    },
-    "scaling": {
-      "mode": "cantrip",
-      "formula": "1d6"
-    },
-    "save": {
-      "dc": null,
-      "scaling": "spell",
-      "ability": ""
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "formula": "",
     "preparation": {
       "mode": "always",
       "prepared": false
     },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
+    "activities": {
+      "B9qItxRUVxoUGst3": {
+        "type": "attack",
+        "_id": "B9qItxRUVxoUGst3",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "attack": {
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": ""
+          },
+          "ability": "",
+          "bonus": ""
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": true,
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "piercing"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "name": "Attack and Pull"
+      }
     },
-    "cover": null,
-    "crewed": false,
-    "ability": ""
+    "identifier": "thorn-whip"
   },
-  "img": "icons/magic/nature/vines-thorned-glow-green.webp",
+  "type": "spell",
+  "img": "icons/magic/nature/root-vine-thorns-poison-green.webp",
+  "effects": [],
+  "folder": "WtBByem45tjsGx6Z",
   "ownership": {
     "default": 0
   },
   "flags": {
-    "plutonium": {
-      "page": "spells.html",
-      "source": "PHB",
-      "hash": "thorn%20whip_phb",
-      "propDroppable": "spell"
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.IDBUZY6JvK1uy7jq",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplThornWhip0",
       "spell-lists": "artificer,druid"
     }
   },
-  "effects": [],
-  "folder": "WtBByem45tjsGx6Z",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
-    "createdTime": 1708312541674,
-    "modifiedTime": 1710192556523,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1737926670634,
+    "modifiedTime": 1737930408221,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "IDBUZY6JvK1uy7jq",
-  "sort": 1500000,
-  "_key": "!items!IDBUZY6JvK1uy7jq"
+  "sort": 0,
+  "_key": "!items!matSplThornWhip0"
 }

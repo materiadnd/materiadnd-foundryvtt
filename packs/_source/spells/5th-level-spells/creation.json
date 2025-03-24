@@ -1,19 +1,19 @@
 {
   "name": "Creation",
+  "_id": "matSplCreation00",
   "ownership": {
     "default": 0
   },
   "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You pull wisps of shadow material from the Shadowfell (or in Materia, the Unformed Maze) to create a nonliving object of vegetable matter within range: soft goods, rope, wood, or something similar. You can also use this spell to create mineral objects such as stone, crystal, or metal. The object created must be no larger than a 10-foot cube, and the object must be of a form and material that you have seen before.</p><p>The duration depends on the object's material. If the object is composed of multiple materials, use the shortest duration.</p><ul><li>Vegetable matter - 1 week</li><li>Stone or crystal - 1 day</li><li>Precious metals - 12 hours</li><li>Gems - 1 hour</li><li>Adamantine or mithral - 10 minutes</li></ul><p>Using any material created by this spell as another spell's material component causes that spell to fail.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 6th level or higher, the cube increases by 10 feet for each slot level above 5th.</p>",
+      "value": "<p>You pull wisps of shadow material from the Unformed Maze to create a nonliving object of vegetable matter within range: soft goods, rope, wood, or something similar. You can also use this spell to create mineral objects such as stone, crystal, or metal. The object created must be no larger than a 10-foot cube, and the object must be of a form and material that you have seen before.</p><p>The duration depends on the object's material. If the object is composed of multiple materials, use the shortest duration.</p><ul><li>Vegetable matter - 1 week</li><li>Stone or crystal - 1 day</li><li>Precious metals - 12 hours</li><li>Gems - 1 hour</li><li>Adamantine or mithral - 10 minutes</li></ul><p>Using any material created by this spell as another spell's material component causes that spell to fail.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The cube increases by 10 feet for each spell slot level above 5.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "minute",
@@ -22,7 +22,8 @@
     },
     "duration": {
       "value": "",
-      "units": "spec"
+      "units": "spec",
+      "special": ""
     },
     "cover": null,
     "target": {
@@ -30,12 +31,21 @@
       "width": null,
       "units": "ft",
       "type": "cube",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "count": "",
+        "size": "10"
+      }
     },
     "range": {
       "value": 30,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -90,12 +100,79 @@
       "material",
       "mgc"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "MZiSspxjKoYHySjM": {
+        "type": "utility",
+        "_id": "MZiSspxjKoYHySjM",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.HHxZPSfb1SC0OHGi",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplCreation00",
       "spell-lists": "artificer,sorcerer,wizard"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "img": "icons/magic/nature/vines-thorned-entwined-glow-teal-purple.webp",
@@ -103,15 +180,13 @@
   "folder": "slWnSXtwvwnA9EXJ",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1661787234217,
-    "modifiedTime": 1712471822482,
+    "modifiedTime": 1739244136862,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "HHxZPSfb1SC0OHGi",
-  "sort": 4200000,
-  "_key": "!items!HHxZPSfb1SC0OHGi"
+  "sort": 4700000,
+  "_key": "!items!matSplCreation00"
 }

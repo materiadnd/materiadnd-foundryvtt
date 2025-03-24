@@ -1,116 +1,191 @@
 {
   "name": "True Seeing",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplTrueSeeing",
   "system": {
     "description": {
-      "value": "<p>This spell gives the willing creature you touch the ability to see things as they actually are. For the duration, the creature has truesight, notices secret doors hidden by magic, and can see into the Ethereal Plane, all out to a range of 120 feet.</p>",
+      "value": "<p>For the duration, the willing creature you touch has Truesight with a range of 120 feet.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "willing",
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "touch"
+      "units": "touch",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 6,
     "school": "div",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "An ointment for the eyes that costs 25gp; is made from mushroom powder, saffron, and fat; and is consumed by the spell",
+      "value": "mushroom powder worth 25+ GP, which the spell consumes",
       "consumed": true,
-      "cost": 25,
+      "cost": 0,
       "supply": 0
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "qY4ZK8MVwX9xLnV9": {
+        "type": "utility",
+        "_id": "qY4ZK8MVwX9xLnV9",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "nW7Dh0S9wT7QHWCj"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Grant Truesight",
+        "img": "systems/dnd5e/icons/svg/trait-damage-immunities.svg"
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material"
-    ],
-    "crewed": false
+    "identifier": "true-seeing"
+  },
+  "type": "spell",
+  "img": "icons/magic/perception/eye-slit-orange.webp",
+  "effects": [
+    {
+      "name": "Truesight",
+      "img": "icons/magic/perception/eye-slit-orange.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplTrueSeeing",
+      "transfer": false,
+      "_id": "nW7Dh0S9wT7QHWCj",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.senses.truesight",
+          "mode": 4,
+          "value": "120",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplTrueSeeing.nW7Dh0S9wT7QHWCj"
+    }
+  ],
+  "folder": "UjV13fGRtZfpmOAS",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.C1FW1e2USauH3oZq",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplTrueSeeing",
       "spell-lists": "bard,cleric,sorcerer,warlock,wizard"
     }
   },
-  "img": "icons/magic/perception/eye-ringed-glow-angry-large-teal.webp",
-  "effects": [],
-  "folder": "UjV13fGRtZfpmOAS",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234160,
-    "modifiedTime": 1709222420345,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1739401281940,
+    "modifiedTime": 1739401281940,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "C1FW1e2USauH3oZq",
-  "sort": 800000,
-  "_key": "!items!C1FW1e2USauH3oZq"
+  "sort": 0,
+  "_key": "!items!matSplTrueSeeing"
 }

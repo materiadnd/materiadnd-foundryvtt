@@ -1,77 +1,57 @@
 {
   "name": "Control Weather",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplControlWea",
   "system": {
     "description": {
-      "value": "<p>You take control of the weather within 5 miles of you for the duration. You must be outdoors to cast this spell. Moving to a place where you don't have a clear path to the sky ends the spell early.</p><p>When you cast the spell, you change the current weather conditions, which are determined by the DM based on the climate and season. You can change precipitation, temperature, and wind. It takes 1d4 minutes for the new conditions to take effect. Once they do so, you can change the conditions again. When the spell ends, the weather gradually returns to normal.</p><p>When you change the weather conditions, find a current condition on the following tables and change its stage by one, up or down. When changing the wind, you can change its direction.</p><p><strong>Conditions</strong></p><ol><li>Clear</li><li>Light clouds</li><li>Overcast or ground fog</li><li>Rain, hail, or snow</li><li>Torrential rain, driving hail, or blizzard</li></ol><p><strong>Temperature</strong></p><ol><li>Unbearable heat</li><li>Hot</li><li>Warm</li><li>Cool</li><li>Cold</li><li>Arctic cold</li></ol><p><strong>Wind</strong></p><ol><li>Calm</li><li>Moderate wind</li><li>Strong wind</li><li>Gale</li><li>Storm</li></ol>",
+      "value": "<p>You take control of the weather within 5 miles of you for the duration. You must be outdoors to cast this spell, and it ends early if you go indoors.</p><p>When you cast the spell, you change the current weather conditions, which are determined by the DM. You can change precipitation, temperature, and wind. It takes 1d4 minutes for the new conditions to take effect. Once they do so, you can change the conditions again. When the spell ends, the weather gradually returns to normal.</p><p>When you change the weather conditions, find a current condition on the following tables and change its stage by one, up or down. When changing the wind, you can change its direction.</p><details><summary><strong>Precipitation</strong></summary><table><thead><tr><td>Stage</td><td>Condition</td></tr></thead><tbody><tr><td>1</td><td>Clear</td></tr><tr><td>2</td><td>Light clouds</td></tr><tr><td>3</td><td>Overcast or ground fog</td></tr><tr><td>4</td><td>Rain, hail, or snow</td></tr><tr><td>5</td><td>Torrential rain, driving hail, or blizzard</td></tr></tbody></table></details><details><summary><strong>Temperature</strong></summary><table><thead><tr><td>Stage</td><td>Condition</td></tr></thead><tbody><tr><td>1</td><td>Heat wave</td></tr><tr><td>2</td><td>Hot</td></tr><tr><td>3</td><td>Warm</td></tr><tr><td>4</td><td>Cool</td></tr><tr><td>5</td><td>Cold</td></tr><tr><td>6</td><td>Freezing</td></tr></tbody></table></details><details><summary><strong>Wind</strong></summary><table><thead><tr><td>Stage</td><td>Condition</td></tr></thead><tbody><tr><td>1</td><td>Calm</td></tr><tr><td>2</td><td>Moderate wind</td></tr><tr><td>3</td><td>Strong wind</td></tr><tr><td>4</td><td>Gale</td></tr><tr><td>5</td><td>Storm</td></tr></tbody></table></details>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "minute",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": 1
     },
     "duration": {
       "value": "24",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": 5,
-      "width": null,
-      "units": "mi",
-      "type": "radius",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "",
+        "type": "space",
+        "special": "weather within 5 miles"
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "self"
+      "units": "self",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 8,
     "school": "trs",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
     "materials": {
-      "value": "Burning incense and bits of earth and wood mixed in water.",
+      "value": "burning incense",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -80,38 +60,139 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "VFttNSDq3q1qOwDJ": {
+        "type": "utility",
+        "_id": "VFttNSDq3q1qOwDJ",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "Weather Change Delay",
+          "formula": "10 * 1d4[minutes]"
+        },
+        "name": "Cast and Control"
+      },
+      "ucJPCYAaXqiukPF9": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "hour",
+          "concentration": false,
+          "override": true,
+          "value": "8"
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "formula": "10 * 1d4[minutes]",
+          "name": "Weather Change Delay"
+        },
+        "name": "Change Conditions",
+        "_id": "ucJPCYAaXqiukPF9",
+        "img": "systems/dnd5e/icons/svg/statuses/concentrating.svg"
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "concentration"
-    ],
-    "crewed": false
+    "identifier": "control-weather"
+  },
+  "type": "spell",
+  "img": "icons/magic/air/weather-clouds-rainbow.webp",
+  "effects": [],
+  "folder": "IeD7MeayeQqIoNnW",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.pSUFiyNrHoQ9Gsmp",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplControlWea",
       "spell-lists": "cleric,druid,wizard"
     }
   },
-  "img": "icons/magic/air/wind-tornado-cyclone-white.webp",
-  "effects": [],
-  "folder": "IeD7MeayeQqIoNnW",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234163,
-    "modifiedTime": 1709231615634,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1739432900722,
+    "modifiedTime": 1739432916854,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "pSUFiyNrHoQ9Gsmp",
-  "sort": 1300000,
-  "_key": "!items!pSUFiyNrHoQ9Gsmp"
+  "sort": 0,
+  "_key": "!items!matSplControlWea"
 }

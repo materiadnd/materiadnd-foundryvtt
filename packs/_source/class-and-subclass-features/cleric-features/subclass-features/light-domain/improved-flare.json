@@ -6,10 +6,14 @@
   "img": "icons/magic/fire/explosion-fireball-large-orange.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 6th level, you can also use your Warding Flare feature when a creature that you can see within 30 feet of you attacks a creature other than you.</p><p>Additionally, you can expend a use of your Harness Divine Power to regain all expended uses of your Warding Flare.</p>",
+      "value": "<p>You regain all expended uses of your Warding Flare when you finish a Short or Long Rest.</p><p>In addition, whenever you use Warding Flare, you can give the target of the triggering attack a number of Temporary Hit Points equal to 2d6 plus your Wisdom modifier.</p><section id=\"secret-xBxLPTshU52n2KQ7\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature does not automatically update Warding Flare to refresh on a Short Rest. You must edit the item and set the Recovery period to Short Rest.</p><p>The <strong>Heal</strong> activity includes the Temporary Hit Point healing.</p></section>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "reaction",
       "cost": 1,
@@ -69,26 +73,105 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Light Domain 6",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 6
+    },
+    "activities": {
+      "7yGqEMOICh4SPCsO": {
+        "type": "heal",
+        "_id": "7yGqEMOICh4SPCsO",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": "Target of the triggering attack"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": 2,
+          "denomination": "6",
+          "types": [
+            "temphp"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": "@abilities.wis.mod"
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
       "item-use-source": "harness-divine-power"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707685295651,
-    "modifiedTime": 1710765482657,
+    "modifiedTime": 1742336823691,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 193750,

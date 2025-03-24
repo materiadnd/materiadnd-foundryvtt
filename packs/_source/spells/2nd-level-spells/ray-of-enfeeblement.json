@@ -1,72 +1,55 @@
 {
   "name": "Ray of Enfeeblement",
-  "type": "spell",
+  "_id": "matSplRayOfEnfee",
   "system": {
     "description": {
-      "value": "<p>A black beam of enervating energy springs from your finger toward a creature within range. Make a ranged spell attack against the target. On a hit, the target deals only half damage with weapon attacks and unarmed strikes until the spell ends.</p><p>At the end of each of the target's turns, it can make a Constitution saving throw against the spell. On a success, the spell ends.</p>",
+      "value": "<p>A beam of enervating energy shoots from you toward a creature within range. The target must make a Constitution saving throw. On a successful save, the target has Disadvantage on the next attack roll it makes until the start of your next turn.</p><p>On a failed save, the target has Disadvantage on Strength-based &amp;Reference[D20 Test]{D20 Tests} for the duration. During that time, it also subtracts [[/r 1d8]] from all its damage rolls. The target repeats the save at the end of each of its turns, ending the spell on a success.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "Materia Source of Truth",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "type": "creature",
+        "count": "1",
+        "choice": false,
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": 60,
-      "long": null,
-      "units": "ft"
+      "value": "60",
+      "units": "ft",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "rsak",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "con",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 2,
     "school": "nec",
+    "properties": [
+      "vocal",
+      "somatic",
+      "concentration"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -77,40 +60,197 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "yril8uhQgO1dR507",
+            "onSave": false
+          },
+          {
+            "_id": "uaHZaHEalgWa6eoC",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": []
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "concentration"
-    ],
-    "crewed": false
+    "identifier": "ray-of-enfeeblement"
   },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.QNEyw39f3gMwVwjN",
-      "spell-lists": "warlock,wizard"
+  "type": "spell",
+  "img": "icons/magic/lightning/bolt-strike-beam-purple.webp",
+  "effects": [
+    {
+      "name": "Brief Enfeeblement",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplRayOfEnfee",
+      "duration": {
+        "rounds": 1,
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "icons/skills/melee/sword-damaged-broken-glow-red.webp",
+      "_id": "yril8uhQgO1dR507",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>The target has Disadvantage on the next attack roll it makes until the start of your next turn.</p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplRayOfEnfee.yril8uhQgO1dR507"
+    },
+    {
+      "name": "Enervated",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplRayOfEnfee",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "icons/skills/wounds/blood-cells-disease-green.webp",
+      "_id": "uaHZaHEalgWa6eoC",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.bonuses.mwak.damage",
+          "mode": 2,
+          "value": "- 1d8",
+          "priority": null
+        },
+        {
+          "key": "system.bonuses.rwak.damage",
+          "mode": 2,
+          "value": "- 1d8",
+          "priority": null
+        },
+        {
+          "key": "system.bonuses.msak.damage",
+          "mode": 2,
+          "value": "- 1d8",
+          "priority": null
+        },
+        {
+          "key": "system.bonuses.rsak.damage",
+          "mode": 2,
+          "value": "- 1d8",
+          "priority": null
+        }
+      ],
+      "description": "<p>The target has Disadvantage on Strength-based D20 Tests for the duration. During that time, it also subtracts 1d8 from all its damage rolls. The target repeats the [[/save ability=con]] save at the end of each of its turns, ending the spell on a success.</p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplRayOfEnfee.uaHZaHEalgWa6eoC"
     }
-  },
-  "img": "icons/magic/light/beam-rays-teal.webp",
-  "effects": [],
+  ],
   "folder": "3rC3qr5FIlZymxFD",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234130,
-    "modifiedTime": 1708930454014,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
-  },
-  "_id": "QNEyw39f3gMwVwjN",
-  "sort": 5800000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!QNEyw39f3gMwVwjN"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplRayOfEnfee",
+      "spell-lists": "warlock,wizard"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738216170618,
+    "modifiedTime": 1738216216731,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplRayOfEnfee"
 }

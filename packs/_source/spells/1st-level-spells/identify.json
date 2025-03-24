@@ -2,7 +2,7 @@
   "folder": "JMRA2elEdmr5pgX7",
   "name": "Identify",
   "type": "spell",
-  "_id": "8EpFs6Vdj7MPbfTw",
+  "_id": "matSplIdentify00",
   "img": "icons/magic/light/explosion-star-small-teal-purple.webp",
   "system": {
     "description": {
@@ -10,10 +10,9 @@
       "chat": ""
     },
     "source": {
-      "book": "Materia Source of Truth",
-      "page": "",
-      "custom": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "minute",
@@ -31,12 +30,20 @@
       "width": null,
       "units": "",
       "type": "object",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": "",
+        "type": "creatureOrObject"
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "touch"
+      "units": "touch",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -91,28 +98,81 @@
     "scaling": {
       "mode": "none",
       "formula": ""
+    },
+    "activities": {
+      "BNiqJsGFhNmd5Dwv": {
+        "type": "utility",
+        "_id": "BNiqJsGFhNmd5Dwv",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {},
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.8EpFs6Vdj7MPbfTw",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplIdentify00",
       "spell-lists": "artificer,bard,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1706864111955,
-    "modifiedTime": 1712206602292,
+    "modifiedTime": 1738943167241,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 4100000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!8EpFs6Vdj7MPbfTw"
+  "_key": "!items!matSplIdentify00"
 }

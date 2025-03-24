@@ -1,16 +1,16 @@
 {
   "name": "Expeditious Retreat",
+  "_id": "matSplExpeditiou",
   "type": "spell",
   "system": {
     "description": {
-      "value": "<p>This spell allows you to move at an incredible pace. When you cast this spell, and then as a bonus action on each of your turns until the spell ends, you can take the Dash action. On the turn you cast this spell, your movement does not provoke attacks of opportunity.</p>",
+      "value": "<p>You take the Dash action, and until the spell ends, you can take that action again as a Bonus Action.  On the turn you cast this spell, your movement does not provoke attacks of opportunity.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "Materia Source of Truth",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "bonus",
@@ -27,12 +27,19 @@
       "width": null,
       "units": "",
       "type": "self",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "self"
+      "units": "self",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -86,12 +93,66 @@
       "somatic",
       "concentration"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "2jXVePHYeLjaM1jM": {
+        "type": "utility",
+        "_id": "2jXVePHYeLjaM1jM",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {},
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.OyveKhAV7g2XV5hg",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplExpeditiou",
       "spell-lists": "artificer,sorcerer,warlock,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "img": "icons/magic/air/wind-stream-blue-gray.webp",
@@ -99,18 +160,16 @@
   "folder": "JMRA2elEdmr5pgX7",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1661787234246,
-    "modifiedTime": 1708928830321,
+    "modifiedTime": 1738033158597,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "OyveKhAV7g2XV5hg",
   "sort": 5200000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!OyveKhAV7g2XV5hg"
+  "_key": "!items!matSplExpeditiou"
 }

@@ -1,75 +1,55 @@
 {
   "name": "Fog Cloud",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplFogCloud00",
   "system": {
     "description": {
-      "value": "<p>You create a 20-foot-radius Sphere of fog centered on a point within range. The sphere spreads around corners, and its area is heavily obscured. It lasts for the Duration or until a wind of moderate or greater speed (at least 10 miles per hour) disperses it.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 2nd level or higher, the radius of the fog increases by 20 feet for each slot level above 1st.</p>",
+      "value": "<p>You create a 20-foot-radius Sphere of fog centered on a point within range. The Sphere is &amp;Reference[heavilyobscured]. It lasts for the duration or until a strong wind (such as one created by <em>@UUID[Compendium.materia-dnd.spells.Item.matSplGustOfWind]{Gust of Wind}</em>) disperses it.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The fog's radius increases by 20 feet for each spell slot level above 1.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": 20,
-      "width": null,
-      "units": "ft",
-      "type": "sphere",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "type": ""
+      },
+      "template": {
+        "units": "ft",
+        "type": "sphere",
+        "size": "20 * @item.level",
+        "contiguous": false,
+        "count": ""
+      }
     },
     "range": {
-      "value": 120,
-      "long": null,
-      "units": "ft"
+      "value": "120",
+      "units": "ft",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 1,
     "school": "con",
+    "properties": [
+      "vocal",
+      "somatic",
+      "concentration"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -80,37 +60,83 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "concentration"
-    ],
-    "crewed": false
+    "identifier": "fog-cloud"
+  },
+  "type": "spell",
+  "img": "icons/magic/air/fog-gas-smoke-dense-white.webp",
+  "effects": [],
+  "folder": "JMRA2elEdmr5pgX7",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.jyYhD2zbDZZ1tPxp",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplFogCloud00",
       "spell-lists": "druid,ranger,sorcerer,wizard"
     }
   },
-  "img": "icons/magic/air/fog-gas-smoke-dense-gray.webp",
-  "effects": [],
-  "folder": "JMRA2elEdmr5pgX7",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234109,
-    "modifiedTime": 1708928830321,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738039293389,
+    "modifiedTime": 1738039299619,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "jyYhD2zbDZZ1tPxp",
-  "sort": 2000000,
-  "_key": "!items!jyYhD2zbDZZ1tPxp"
+  "sort": 0,
+  "_key": "!items!matSplFogCloud00"
 }

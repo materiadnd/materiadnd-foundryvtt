@@ -1,20 +1,51 @@
 {
   "name": "Aura of Vitality",
-  "type": "spell",
+  "_id": "matSplAuraOfVita",
   "system": {
-    "source": {
-      "custom": "",
-      "book": "PHB",
-      "page": "216",
-      "license": ""
-    },
     "description": {
-      "value": "<div class=\"rd__b  rd__b--3\"><p>Healing energy radiates from you in an aura with a 30-foot radius. Until the spell ends, the aura moves with you, centered on you. You can use a bonus action to cause one creature in the aura (including you) to regain [[/r 2d6]] hit points.</p><div class=\"rd__spc-inline-post\"></div></div>",
+      "value": "<p>An aura radiates from you in a 30-foot Emanation for the duration. When you create the aura and at the start of each of your turns while it persists, you can restore [[/heal 2d6]] Hit Points to one creature in it.</p>",
       "chat": ""
     },
-    "actionType": "heal",
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "action",
+      "condition": "",
+      "value": null
+    },
+    "duration": {
+      "value": "1",
+      "units": "minute"
+    },
+    "target": {
+      "affects": {
+        "type": "creature",
+        "count": "",
+        "choice": false,
+        "special": ""
+      },
+      "template": {
+        "units": "ft",
+        "contiguous": false,
+        "type": "radius",
+        "size": "30",
+        "count": ""
+      }
+    },
+    "range": {
+      "units": "self",
+      "special": ""
+    },
+    "uses": {
+      "max": "",
+      "recovery": [],
+      "spent": 0
+    },
     "level": 3,
-    "school": "evo",
+    "school": "abj",
     "properties": [
       "vocal",
       "concentration"
@@ -25,102 +56,171 @@
       "cost": 0,
       "supply": 0
     },
-    "target": {
-      "value": 30,
-      "units": "ft",
-      "type": "radius",
-      "prompt": true,
-      "width": null
-    },
-    "range": {
-      "value": null,
-      "units": "self",
-      "long": null
-    },
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": "1",
-      "units": "minute"
-    },
-    "damage": {
-      "parts": [
-        [
-          "2d6",
-          "healing"
-        ]
-      ],
-      "versatile": ""
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "save": {
-      "dc": null,
-      "scaling": "spell",
-      "ability": ""
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "formula": "",
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "heal",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "healing": {
+          "number": 2,
+          "denomination": 6,
+          "bonus": "",
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": false,
+            "formula": ""
+          },
+          "scaling": {
+            "mode": "",
+            "number": null,
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "name": "Create Aura",
+        "img": "systems/dnd5e/icons/svg/trait-damage-immunities.svg"
+      },
+      "0vYjMbBcXaMfGWR2": {
+        "type": "heal",
+        "_id": "0vYjMbBcXaMfGWR2",
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": "start of your turn"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "healing": {
+          "number": 2,
+          "denomination": 6,
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1,
+            "mode": ""
+          },
+          "bonus": ""
+        },
+        "name": "Start of Turn Heal"
+      }
     },
-    "cover": null,
-    "crewed": false,
-    "ability": ""
+    "identifier": "aura-of-vitality"
   },
-  "img": "icons/magic/life/ankh-gold-blue.webp",
+  "type": "spell",
+  "img": "icons/magic/life/cross-yellow-green.webp",
+  "effects": [],
+  "folder": "CxgAwElQGTbcnuvc",
   "ownership": {
     "default": 0
   },
   "flags": {
-    "plutonium": {
-      "page": "spells.html",
-      "source": "PHB",
-      "hash": "aura%20of%20vitality_phb",
-      "propDroppable": "spell"
-    },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.W8HqclrGTmq9MO3U",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplAuraOfVita",
       "spell-lists": "cleric,druid,paladin"
     }
   },
-  "effects": [],
-  "folder": "CxgAwElQGTbcnuvc",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.2.1",
-    "coreVersion": "12.327",
-    "createdTime": 1708932317916,
-    "modifiedTime": 1718792681036,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738510874763,
+    "modifiedTime": 1738510993264,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "W8HqclrGTmq9MO3U",
-  "sort": 3600000,
-  "_key": "!items!W8HqclrGTmq9MO3U"
+  "sort": 0,
+  "_key": "!items!matSplAuraOfVita"
 }

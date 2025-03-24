@@ -387,7 +387,7 @@
         "climb": null,
         "fly": null,
         "swim": null,
-        "walk": null,
+        "walk": 15,
         "units": null,
         "hover": false
       },
@@ -445,11 +445,18 @@
       },
       "alignment": "",
       "race": null,
-      "type": {},
+      "type": {
+        "value": "construct",
+        "custom": "",
+        "subtype": "",
+        "swarm": ""
+      },
       "environment": "",
-      "cr": 1,
+      "cr": null,
       "spellLevel": 0,
-      "source": {}
+      "source": {
+        "custom": ""
+      }
     },
     "resources": {
       "legact": {
@@ -497,10 +504,15 @@
         "value": [],
         "custom": ""
       }
+    },
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     }
   },
   "prototypeToken": {
-    "name": "Arcane Screamer",
+    "name": "Protector",
     "displayName": 20,
     "actorLink": false,
     "appendNumber": false,
@@ -572,7 +584,11 @@
       "monks-tokenbar": {
         "include": "default"
       },
-      "dnd5e": {}
+      "dnd5e": {
+        "tokenRing": {
+          "effects": 1
+        }
+      }
     },
     "randomImg": false,
     "ring": {
@@ -594,21 +610,20 @@
   },
   "items": [
     {
-      "folder": "EyT6wN4Hl33u5SG9",
-      "name": "Arcane Exhalation (Cone)",
+      "name": "Bolster Allies",
       "type": "feat",
-      "_id": "svXYa8LVXnfQeB6E",
-      "img": "icons/magic/light/beam-rays-magenta-large.webp",
       "system": {
-        "description": {
-          "value": "<p>The cannon exhales your choice of fire, lightning, necrotic, radiant or thunder damage in an adjacent 15-foot cone on each of it's turns. Each creature in that area must make a Dexterity saving throw against your spell save DC, taking 2d8 + your Intelligence modifier chosen damage type on a failed save or half as much damage on a successful one. If the damage is fire it ignites any flammable objects in the area that are not being worn or carried</p>",
-          "chat": ""
-        },
-        "source": {},
         "activation": {
-          "type": "action",
+          "type": "bonus",
           "cost": 1,
           "condition": ""
+        },
+        "description": {
+          "value": "<p>The cannon emits a burst of positive energy that grants itself and each creature of your choice within 10 feet of it a number of temporary hit points equal to 1d8 + your Intelligence modifier (minimum of +1).</p>",
+          "chat": ""
+        },
+        "source": {
+          "custom": ""
         },
         "duration": {
           "value": "",
@@ -617,16 +632,16 @@
         "cover": null,
         "crewed": false,
         "target": {
-          "value": 15,
+          "value": "",
           "width": null,
-          "units": "ft",
-          "type": "cone",
+          "units": "",
+          "type": "creature",
           "prompt": true
         },
         "range": {
-          "value": null,
+          "value": 10,
           "long": null,
-          "units": "self"
+          "units": "ft"
         },
         "uses": {
           "value": null,
@@ -642,7 +657,7 @@
           "scale": false
         },
         "ability": "",
-        "actionType": "save",
+        "actionType": "heal",
         "attack": {
           "bonus": "",
           "flat": false
@@ -655,174 +670,99 @@
         "damage": {
           "parts": [
             [
-              "2d8",
-              "fire"
+              "1d8",
+              "temphp"
             ]
           ],
           "versatile": ""
         },
+        "enchantment": null,
         "formula": "",
         "save": {
-          "ability": "dex",
+          "ability": "",
           "dc": null,
           "scaling": "spell"
         },
         "summons": null,
         "type": {
-          "value": "class",
+          "value": "monster",
           "subtype": ""
+        },
+        "prerequisites": {
+          "level": null
         },
         "properties": [],
         "requirements": "",
         "recharge": {
           "value": null,
           "charged": false
+        },
+        "activities": {
+          "dnd5eactivity000": {
+            "name": "",
+            "img": "",
+            "target": {
+              "template": {
+                "type": "radius",
+                "size": "10",
+                "units": "ft"
+              }
+            },
+            "healing": {
+              "denomination": "8"
+            },
+            "appliedEffects": [],
+            "range": {
+              "units": "self"
+            }
+          }
         }
       },
+      "_id": "XqgOUHO9AQAk0wiJ",
+      "img": "icons/magic/life/cross-area-circle-green-white.webp",
       "effects": [],
-      "sort": 600000,
+      "folder": null,
+      "sort": 0,
       "ownership": {
         "default": 0
       },
       "flags": {
-        "core": {
-          "sourceId": "Compendium.materia-dnd.monster-features.Item.xli7fKN1fPK5zDbI"
+        "dnd5e": {
+          "riders": {
+            "activity": [],
+            "effect": []
+          }
         }
       },
       "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "3.1.0",
-        "coreVersion": "12.325",
-        "createdTime": 1711373342382,
-        "modifiedTime": 1711373608129,
-        "lastModifiedBy": "dnd5mbuilder0000",
-        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.xli7fKN1fPK5zDbI",
-        "duplicateSource": null
+        "systemVersion": "4.1.1",
+        "createdTime": 1718921762561,
+        "modifiedTime": 1731572686029,
+        "lastModifiedBy": "dnd5mbuilder0000"
       },
-      "_key": "!actors.items!2ElkZB7AWhBNuNiA.svXYa8LVXnfQeB6E"
-    },
-    {
-      "folder": "EyT6wN4Hl33u5SG9",
-      "name": "Arcane Exhalation (Line)",
-      "type": "feat",
-      "img": "icons/magic/light/beam-rays-magenta-large.webp",
-      "system": {
-        "description": {
-          "value": "<p>The cannon exhales your choice of fire, lightning, necrotic, radiant or thunder damage in a 5 by 30-foot line on each of it's turns. Each creature in that area must make a Dexterity saving throw against your spell save DC, taking 2d8 + your Intelligence modifier chosen damage type on a failed save or half as much damage on a successful one. If the damage is fire it ignites any flammable objects in the area that are not being worn or carried</p>",
-          "chat": ""
-        },
-        "source": {},
-        "activation": {
-          "type": "action",
-          "cost": 1,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": "inst"
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": 30,
-          "width": 5,
-          "units": "ft",
-          "type": "line",
-          "prompt": true
-        },
-        "range": {
-          "value": null,
-          "long": null,
-          "units": "self"
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": "",
-        "actionType": "save",
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [
-            [
-              "2d8",
-              "fire"
-            ]
-          ],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "dex",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "summons": null,
-        "type": {
-          "value": "class",
-          "subtype": ""
-        },
-        "properties": [],
-        "requirements": "",
-        "recharge": {
-          "value": null,
-          "charged": false
-        }
-      },
-      "effects": [],
-      "ownership": {
-        "default": 0
-      },
-      "flags": {
-        "core": {
-          "sourceId": "Compendium.materia-dnd.monster-features.Item.EuufUtp4ZDPgm9rc"
-        }
-      },
-      "_stats": {
-        "systemId": "dnd5e",
-        "systemVersion": "3.1.0",
-        "coreVersion": "12.325",
-        "createdTime": 1711373342382,
-        "modifiedTime": 1711373609416,
-        "lastModifiedBy": "dnd5mbuilder0000",
-        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.EuufUtp4ZDPgm9rc",
-        "duplicateSource": null
-      },
-      "_id": "0nah4Bg4x447JMks",
-      "sort": 100000,
-      "_key": "!actors.items!2ElkZB7AWhBNuNiA.0nah4Bg4x447JMks"
+      "_key": "!actors.items!2ElkZB7AWhBNuNiA.XqgOUHO9AQAk0wiJ"
     }
   ],
   "effects": [],
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "showTokenPortrait": false
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.1.1",
+    "coreVersion": "12.331",
     "createdTime": 1711373117630,
-    "modifiedTime": 1711373840971,
+    "modifiedTime": 1731569198049,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "2ElkZB7AWhBNuNiA",

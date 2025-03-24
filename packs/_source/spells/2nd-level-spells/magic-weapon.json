@@ -1,75 +1,53 @@
 {
   "name": "Magic Weapon",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplMagicWeapo",
   "system": {
     "description": {
-      "value": "<p>You touch a nonmagical weapon. Until the spell ends, that weapon becomes a magic weapon with a +1 bonus to Attack rolls and Damage Rolls.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 4th level or higher, the bonus increases to +2. When you use a spell slot of 6th level or higher, the bonus increases to +3.</p>",
+      "value": "<p>You touch a nonmagical weapon. Until the spell ends, that weapon becomes a magic weapon with a +1 bonus to attack rolls and damage rolls. The spell ends early if you cast it again.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The bonus increases to +2 with a level 3-5 spell slot. The bonus increases to +3 with a level 6+ spell slot.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "bonus",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "",
-      "prompt": true
+      "affects": {
+        "type": "object",
+        "count": "1",
+        "choice": false,
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "touch"
+      "units": "touch",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 2,
     "school": "trs",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -80,37 +58,328 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "enchant",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "IMt1nMPrWppyRYMT",
+            "level": {
+              "min": 2,
+              "max": 2
+            },
+            "riders": {
+              "effect": [],
+              "item": [],
+              "activity": []
+            }
+          },
+          {
+            "_id": "9zA6SFF8HKk9xNn2",
+            "level": {
+              "min": 3,
+              "max": 5
+            },
+            "riders": {
+              "effect": [],
+              "item": [],
+              "activity": []
+            }
+          },
+          {
+            "_id": "AJQwm1dgXz7D333k",
+            "level": {
+              "min": 6,
+              "max": null
+            },
+            "riders": {
+              "effect": [],
+              "item": [],
+              "activity": []
+            }
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "enchant": {
+          "identifier": ""
+        },
+        "restrictions": {
+          "allowMagical": false,
+          "type": "weapon",
+          "categories": [],
+          "properties": []
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "concentration"
-    ],
-    "crewed": false
+    "identifier": "magic-weapon"
+  },
+  "type": "spell",
+  "img": "icons/skills/melee/sword-engraved-glow-purple.webp",
+  "effects": [
+    {
+      "name": "Magic Weapon +1",
+      "flags": {
+        "dnd5e": {
+          "enchantment": {
+            "level": {
+              "min": 2,
+              "max": 2
+            },
+            "riders": {
+              "effect": [],
+              "item": []
+            }
+          }
+        }
+      },
+      "img": "icons/skills/melee/weapons-crossed-swords-black.webp",
+      "_id": "IMt1nMPrWppyRYMT",
+      "type": "enchantment",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "value": "mgc",
+          "priority": null
+        },
+        {
+          "key": "system.magicalBonus",
+          "mode": 4,
+          "value": "1",
+          "priority": null
+        },
+        {
+          "key": "name",
+          "mode": 5,
+          "value": "Magic {} +1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>Until the spell ends, that weapon becomes a magic weapon with a +1 bonus to attack rolls and damage rolls.</p>",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplMagicWeapo.IMt1nMPrWppyRYMT"
+    },
+    {
+      "name": "Magic Weapon +2",
+      "flags": {
+        "dnd5e": {
+          "enchantment": {
+            "level": {
+              "min": 3,
+              "max": 5
+            },
+            "riders": {
+              "effect": [],
+              "item": []
+            }
+          }
+        }
+      },
+      "img": "icons/skills/melee/weapons-crossed-swords-black-gray.webp",
+      "_id": "9zA6SFF8HKk9xNn2",
+      "type": "enchantment",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "value": "mgc",
+          "priority": null
+        },
+        {
+          "key": "system.magicalBonus",
+          "mode": 4,
+          "value": "2",
+          "priority": null
+        },
+        {
+          "key": "name",
+          "mode": 5,
+          "value": "Magic {} +2",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>Until the spell ends, that weapon becomes a magic weapon with a +2 bonus to attack rolls and damage rolls.</p>",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplMagicWeapo.9zA6SFF8HKk9xNn2"
+    },
+    {
+      "name": "Magic Weapon +3",
+      "flags": {
+        "dnd5e": {
+          "enchantment": {
+            "level": {
+              "min": 6,
+              "max": null
+            },
+            "riders": {
+              "effect": [],
+              "item": []
+            }
+          }
+        }
+      },
+      "img": "icons/skills/melee/weapons-crossed-swords-pink.webp",
+      "_id": "AJQwm1dgXz7D333k",
+      "type": "enchantment",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.properties",
+          "mode": 2,
+          "value": "mgc",
+          "priority": null
+        },
+        {
+          "key": "system.magicalBonus",
+          "mode": 4,
+          "value": "3",
+          "priority": null
+        },
+        {
+          "key": "name",
+          "mode": 2,
+          "value": "Magic {} +3",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>Until the spell ends, that weapon becomes a magic weapon with a +3 bonus to attack rolls and damage rolls.</p>",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplMagicWeapo.AJQwm1dgXz7D333k"
+    }
+  ],
+  "folder": "3rC3qr5FIlZymxFD",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.dUFB8zgpjBTJIZkc",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplMagicWeapo",
       "spell-lists": "artificer,paladin,ranger,sorcerer,wizard"
     }
   },
-  "img": "icons/magic/fire/dagger-rune-enchant-flame-blue.webp",
-  "effects": [],
-  "folder": "3rC3qr5FIlZymxFD",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234141,
-    "modifiedTime": 1708930454014,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738215114464,
+    "modifiedTime": 1738215124519,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "dUFB8zgpjBTJIZkc",
-  "sort": 500000,
-  "_key": "!items!dUFB8zgpjBTJIZkc"
+  "sort": 0,
+  "_key": "!items!matSplMagicWeapo"
 }

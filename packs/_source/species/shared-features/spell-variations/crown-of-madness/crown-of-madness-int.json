@@ -8,7 +8,11 @@
       "value": "<p>One humanoid of your choice that you can see within range must succeed on a Wisdom saving throw or become charmed by you for the duration. While the target is charmed in this way, a twisted crown of jagged iron appears on its head, and a madness glows in its eyes.</p><p>At the beginning of the charmed target's turn, you may either command the target to spend its action to make a weapon attack against a creature other than itself, or command it to move up to its speed in a direction of your choice. The target follows your command before doing anything else on its turn. The target may act normally on its turn if you do not command it.</p><p>A target is not compelled to move into an obviously deadly hazard, such as a fire or pit, but it will provoke opportunity attacks to move in the designated direction.</p><p>On your subsequent turns, you must use your action to maintain control over the target, or the spell ends. Also, the target can make a Wisdom saving throw at the end of each of its turns. On a success, the spell ends.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 3rd or 4th level, the target deals bonus damage with weapon attacks against a creature other than itself equal to your spellcasting modifier.</p><p>When you cast this spell using a spell slot of 5th level, the target makes its weapon attack rolls with advantage against a creature other than itself.</p><p>When you cast this spell using a spell slot of 7th level, the spell no longer requires your concentration.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -25,12 +29,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 120,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -61,7 +72,7 @@
     "save": {
       "ability": "wis",
       "dc": null,
-      "scaling": "spell"
+      "scaling": "int"
     },
     "level": 2,
     "school": "enc",
@@ -83,9 +94,58 @@
     "scaling": {
       "mode": "none",
       "formula": ""
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "effects": [
+          {
+            "_id": "baxfdf9HB0DOu23k",
+            "onSave": false
+          }
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Spectral Crown",
+      "img": "icons/equipment/head/crown-gold-blue.webp",
+      "origin": "Compendium.materia-dnd.species.Item.vWfN17SpF9xIoCiM",
+      "transfer": false,
+      "_id": "baxfdf9HB0DOu23k",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target is charmed and must act as commanded on its turn if commanded, otherwise it may act normally.</p>",
+      "tint": "#ffffff",
+      "statuses": [
+        "charmed"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728026093529,
+        "modifiedTime": 1728026292093,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!vWfN17SpF9xIoCiM.baxfdf9HB0DOu23k"
+    }
+  ],
   "flags": {
     "materia-dnd": {
       "sourceId": "Compendium.materia-dnd.species.Item.vWfN17SpF9xIoCiM"
@@ -93,12 +153,11 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "3.2.1",
+    "coreVersion": "12.328",
     "createdTime": 1708311559262,
-    "modifiedTime": 1710833372766,
+    "modifiedTime": 1720057613517,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "ownership": {

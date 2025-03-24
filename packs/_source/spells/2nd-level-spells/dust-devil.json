@@ -2,14 +2,18 @@
   "folder": "3rC3qr5FIlZymxFD",
   "name": "Dust Devil",
   "type": "spell",
-  "_id": "nePDLvISPexI6ON4",
+  "_id": "matSplDustDevil0",
   "img": "icons/magic/air/wind-tornado-funnel-gray.webp",
   "system": {
     "description": {
-      "value": "<p>Choose an unoccupied 5-foot cube of air that you can see within range. An elemental force that resembles a dust devil appears in the cube and lasts for the spell's duration.</p><p>Creatures of your choice that are within 10 feet of the dust devil when it first appears must make a Strength saving throw. On a failed save, the creature is pushed 10 feet away. On a successful save, the creature is not pushed.</p><p>Furthermore, any creature that ends its turn within 10 feet of the dust devil must make a Strength saving throw. On a failed save, the creature takes 2d8 magical bludgeoning damage and is pushed 10 feet away. On a successful save, the creature takes half as much damage and is not pushed.</p><p>As a bonus action, you can move the dust devil up to 30 feet in any direction. If the dust devil moves over sand, dust, loose dirt, or small gravel, it sucks up the material and forms a 10-foot-radius cloud of debris around itself that lasts until the start of your next turn. The cloud heavily obscures its area.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for each slot level above 2nd.</p>",
+      "value": "<p>Choose an unoccupied 5-foot cube of air that you can see within range. An elemental force that resembles a dust devil appears in the cube and lasts for the spell's duration.</p><p>Creatures of your choice that are within 10 feet of the dust devil when it first appears must make a Strength saving throw. On a failed save, the creature is pushed 10 feet away. On a successful save, the creature is not pushed.</p><p>Furthermore, any creature that ends its turn within 10 feet of the dust devil must make a Strength saving throw. On a failed save, the creature takes [[/damage 2d8 bludgeoning]] damage and is pushed 10 feet away. On a successful save, the creature takes half as much damage and is not pushed.</p><p>As a Bonus Action, you can move the dust devil up to 30 feet in any direction. If the dust devil moves over sand, dust, loose dirt, or small gravel, it sucks up the material and forms a 10-foot-radius cloud of debris around itself that lasts until the start of your next turn. The cloud heavily obscures its area.</p><p><strong>Using a Higher-Level Spell Slot.</strong> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by [[/r 1d8]] for each slot level above 2nd.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -26,12 +30,20 @@
       "width": null,
       "units": "ft",
       "type": "cube",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "count": ""
+      }
     },
     "range": {
       "value": 60,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -90,28 +102,255 @@
     "scaling": {
       "mode": "level",
       "formula": "1d8"
+    },
+    "activities": {
+      "BSNYKSsq11HMOIj5": {
+        "type": "utility",
+        "_id": "BSNYKSsq11HMOIj5",
+        "sort": 600000,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true,
+          "units": "spec",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Move Dust Devil",
+        "img": "",
+        "appliedEffects": []
+      },
+      "dnd5eactivity000": {
+        "name": "Conjure Dust Devil",
+        "img": "",
+        "appliedEffects": []
+      },
+      "YSwCHyAwrvCQnAaG": {
+        "type": "save",
+        "_id": "YSwCHyAwrvCQnAaG",
+        "sort": -100000,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "str"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Initial Save",
+        "img": "",
+        "appliedEffects": []
+      },
+      "fkylsJNMpTIbW0Js": {
+        "type": "save",
+        "_id": "fkylsJNMpTIbW0Js",
+        "sort": 0,
+        "activation": {
+          "type": "turnEnd",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true,
+          "units": "spec",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": "8",
+              "bonus": "",
+              "types": [
+                "bludgeoning"
+              ],
+              "scaling": {
+                "mode": "whole"
+              }
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "str"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "End of Turn Save",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.nePDLvISPexI6ON4",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplDustDevil0",
       "spell-lists": "druid,sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1708311852038,
-    "modifiedTime": 1708930454014,
+    "modifiedTime": 1738212727200,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 7600000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!nePDLvISPexI6ON4"
+  "_key": "!items!matSplDustDevil0"
 }

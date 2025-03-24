@@ -6,10 +6,14 @@
   "img": "icons/magic/nature/plant-sproud-hands-dirt-green.webp",
   "system": {
     "description": {
-      "value": "<p>Upon reaching 10th level, as an action, you can give yourself a number of temporary hit points equal to 1d10 + your Wisdom modifier (minimum of 1 temporary hit point).</p><p>You can use this action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p><p>In addition, whenever you finish a short rest, your exhaustion level, if any, is decreased by 1.</p>",
+      "value": "<p>Primal forces now help fuel you on your journeys, granting you the following benefits.</p><p><strong>Temporary Hit Points.</strong> As a Magic action, you can give yourself a number of Temporary Hit Points equal to 1d10 plus your Wisdom modifier (minimum of 1). You can use this action a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.</p><p><strong>Decrease Exhaustion.</strong> Whenever you finish a Short Rest, your Exhaustion level, if any, decreases by 1.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -78,21 +82,60 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 10
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Temporary Hit Points",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "healing": {
+          "denomination": "10"
+        },
+        "appliedEffects": [],
+        "target": {
+          "affects": {
+            "type": "self"
+          }
+        }
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707936731536,
-    "modifiedTime": 1710400302602,
+    "modifiedTime": 1741617437991,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 199988,
+  "sort": 1200000,
   "ownership": {
     "default": 0
   },

@@ -1,82 +1,56 @@
 {
   "name": "Dream",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplDream00000",
   "system": {
     "description": {
-      "value": "<p>This spell shapes a creature's dreams. Choose a creature known to you as the target of this spell. The target must be on the same plane of existence as you. Creatures that don't sleep, such as elves, can't be contacted by this spell. You, or a willing creature you touch, enters a trance state, acting as a messenger. While in the trance, the messenger is aware of his or her surroundings, but can't take Actions or move.</p><p>If the target is asleep, the messenger establishes telepathic contact with the target and appears in the target's dreams and can converse with the target as long as it remains asleep, through the Duration of the spell. The messenger can also shape The Environment of the dream, creating landscapes, Objects, and other images. The messenger can emerge from the trance at any time, ending the effect of the spell early. The target recalls the dream perfectly upon waking. If the target is awake when you cast the spell, the messenger knows it, and can either end the trance (and the spell) or wait for the target to fall asleep, at which point the messenger appears in the target's dreams.</p><p>You can make the messenger appear monstrous and terrifying to the target. If you do, the messenger can create horrible images of the target being injured or destroyed and can deliver up to 5d6 psychic damage to the target each round. Once the target takes 10d6 damage this way, they may make a Wisdom saving throw. On a successful save, the target wakes up and the spell ends, on a failed save, the messenger may continue delivering damage this way with the target making a new saving throw after each 10d6 psychic damage delivered. If the target reaches 0 hp, the spell ends. Should the target suffer damage from this spell, it prevents the target from gaining any benefit from that rest.</p><p>A target of a dream spell cannot be targeted by a second dream spell for the duration.</p>",
+      "value": "<p>You target a creature you know on the same plane of existence. You or a willing creature you touch enters a trance state to act as a dream messenger. While in the trance, the messenger is &amp;Reference[Incapacitated apply=false] and has a Speed of 0.</p><p>If the target is asleep, the messenger appears in the target's dreams and can converse with the target as long as it remains asleep, through the spell's duration. The messenger can also shape the dream's environment, creating landscapes, objects, and other images. The messenger can emerge from the trance at any time, ending the spell. The target recalls the dream perfectly upon waking.</p><p>If the target is awake when you cast the spell, the messenger knows it and can either end the trance (and the spell) or wait for the target to sleep, at which point the messenger enters its dreams.</p><p>You can make the messenger terrifying to the target. If you do so, the messenger can deliver a message of no more than ten words, and then the target makes a Wisdom saving throw. On a failed save, the target gains no benefit from its rest, and it takes 3d6 Psychic damage when it wakes up.</p><p>A target of a dream spell cannot be targeted by a second dream spell for the duration.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "minute",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": 1
     },
     "duration": {
       "value": "8",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "type": "willing",
+        "count": "1",
+        "choice": false,
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "self"
+      "units": "spec",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "3d6",
-          "psychic"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "wis",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 5,
     "school": "ill",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "a personal item of the target of the dream, such as a locket, a lock of hair, or a item of significance to the target, if the target takes damage from this spell, the component is consumed when the spell ends",
+      "value": "a handful of sand",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -85,37 +59,183 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "x52Ga7U45IJOPFxK",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "number": 3,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "psychic"
+              ],
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "scaling": {
+                "mode": "",
+                "number": null,
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material"
-    ],
-    "crewed": false
+    "identifier": "dream"
+  },
+  "type": "spell",
+  "img": "icons/magic/control/sleep-bubble-purple.webp",
+  "effects": [
+    {
+      "name": "Trance State",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplDream00000",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 28800,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "icons/magic/control/hypnosis-mesmerism-eye-tan.webp",
+      "_id": "x52Ga7U45IJOPFxK",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.movement.walk",
+          "mode": 3,
+          "value": "0",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.fly",
+          "mode": 3,
+          "value": "0",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.swim",
+          "mode": 3,
+          "value": "0",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.burrow",
+          "mode": 3,
+          "value": "0",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.climb",
+          "mode": 3,
+          "value": "0",
+          "priority": null
+        }
+      ],
+      "description": "<p><span style=\"font-family:Signika, sans-serif\">While in the trance, the messenger is Incapacitated and has a Speed of 0.</span></p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "incapacitated"
+      ],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplDream00000.x52Ga7U45IJOPFxK"
+    }
+  ],
+  "folder": "slWnSXtwvwnA9EXJ",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.MbQBiDyz3F8HmMXg",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplDream00000",
       "spell-lists": "bard,warlock,wizard"
     }
   },
-  "img": "icons/magic/air/fog-gas-smoke-swirling-pink.webp",
-  "effects": [],
-  "folder": "slWnSXtwvwnA9EXJ",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234214,
-    "modifiedTime": 1709186114418,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1739232011910,
+    "modifiedTime": 1739232022746,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "MbQBiDyz3F8HmMXg",
-  "sort": 3400000,
-  "_key": "!items!MbQBiDyz3F8HmMXg"
+  "sort": 0,
+  "_key": "!items!matSplDream00000"
 }

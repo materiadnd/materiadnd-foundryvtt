@@ -2,14 +2,18 @@
   "folder": "0jbyhDbsSp8KTsvC",
   "name": "Shortsword",
   "type": "weapon",
-  "_id": "9OEHcK2D3AGNzvx6",
+  "_id": "matIteShortsword",
   "img": "icons/weapons/swords/shortsword-guard-worn.webp",
   "system": {
     "description": {
       "value": "<p><strong>Deft: </strong>13</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "identified": true,
     "unidentified": {
       "description": ""
@@ -45,7 +49,8 @@
     "range": {
       "value": null,
       "long": null,
-      "units": ""
+      "units": "ft",
+      "reach": 5
     },
     "uses": {
       "value": null,
@@ -101,27 +106,57 @@
       "fin",
       "lgt"
     ],
-    "proficient": null
+    "proficient": null,
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "activation": {
+          "type": "action"
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "appliedEffects": [],
+        "range": {
+          "override": true,
+          "units": "ft",
+          "value": "5"
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1"
+          }
+        }
+      }
+    },
+    "mastery": "vex"
   },
   "effects": [],
-  "sort": 0,
+  "sort": 300000,
   "ownership": {
     "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.items.Item.9OEHcK2D3AGNzvx6"
+      "sourceId": "Compendium.materia-dnd.items.Item.matIteShortsword"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1708549803243,
-    "modifiedTime": 1712605026735,
+    "modifiedTime": 1739512047045,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_key": "!items!9OEHcK2D3AGNzvx6"
+  "_key": "!items!matIteShortsword"
 }

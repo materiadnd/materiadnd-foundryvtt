@@ -1,0 +1,129 @@
+{
+  "name": "Boon of Fate",
+  "_id": "matEpcFate000000",
+  "system": {
+    "description": {
+      "value": "<p>You gain the following benefits.</p><p><strong>Ability Score Increase.</strong> Increase one ability score of your choice by 1, to a maximum of 30.</p><p><strong>Improve Fate.</strong> When you or another creature within 60 feet of you succeeds on or fails a D20 Test, you can roll 2d4 and apply the total rolled as a bonus or penalty to the d20 roll. Once you use this benefit, you can't use it again until you roll Initiative or finish a Short or Long Rest.</p><section id=\"secret-zl5SPZXJtl1mEKOl\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Improve Fate</strong> activity includes a roll and automatically restores a use after a Short or Long Rest. It does not automatically refresh after you roll Initiative though.</p></section>",
+      "chat": ""
+    },
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "uses": {
+      "max": "1",
+      "spent": 0,
+      "recovery": [
+        {
+          "period": "sr",
+          "type": "recoverAll"
+        }
+      ]
+    },
+    "type": {
+      "value": "feat",
+      "subtype": "epicBoon"
+    },
+    "prerequisites": {
+      "level": null,
+      "repeatable": false
+    },
+    "properties": [],
+    "requirements": "Level 19",
+    "activities": {
+      "BSFYZ98EvNknWsaE": {
+        "type": "utility",
+        "name": "Improve Fate",
+        "_id": "BSFYZ98EvNknWsaE",
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": "When you or another creature within 60 feet of you succeeds or fails a D20 Test"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "",
+              "scaling": {}
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "60"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "override": false,
+          "prompt": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "Bonus/Penalty",
+          "formula": "2d4"
+        },
+        "img": "systems/dnd5e/icons/svg/dice/d4.svg"
+      }
+    },
+    "enchant": {},
+    "identifier": "boon-of-fate",
+    "advancement": [],
+    "cover": null,
+    "crewed": false
+  },
+  "type": "feat",
+  "img": "icons/magic/air/air-smoke-casting.webp",
+  "effects": [],
+  "folder": "HUc5LB15Q6Pyv3Nu",
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739508010531,
+    "modifiedTime": 1739508010578,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 1000000,
+  "_key": "!items!matEpcFate000000"
+}

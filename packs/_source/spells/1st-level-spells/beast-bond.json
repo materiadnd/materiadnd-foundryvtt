@@ -2,14 +2,18 @@
   "folder": "JMRA2elEdmr5pgX7",
   "name": "Beast Bond",
   "type": "spell",
-  "_id": "fNP0VSvCyMAiODRb",
+  "_id": "matSplBeastBond0",
   "img": "icons/creatures/mammals/dog-husky-white-blue.webp",
   "system": {
     "description": {
-      "value": "<div><p>You establish a telepathic link with one beast you touch that is friendly to you or charmed by you. The spell fails if the beast's Intelligence score is 4 or higher. Until the spell ends, the link is active while you and the beast are within line of sight of each other. Through the link, the beast can understand your telepathic messages to it, and it can telepathically communicate simple emotions and concepts back to you. While the link is active, the beast gains advantage on attack rolls against any creature within 5 feet of you that you can see.</p></div><div><div><p><strong>At Higher Levels.</strong></p><p>When you cast this spell using a spell slot of 2nd level or higher, the duration is up to 1 hour.</p><p>When you cast this spell using a spell slot of 3rd level or higher, the duration is up to 8 hours.</p><p>When you cast this spell using a spell slot of 4th level or higher, the duration is up to 24 hours.</p><p>When you cast this spell using a spell slot of 5th level or higher, the duration does not require concentration.</p></div></div>",
+      "value": "<div><p>You establish a telepathic link with one beast you touch that is friendly to you or charmed by you. The spell fails if the beast's Intelligence score is 4 or higher. Until the spell ends, the link is active while you and the beast are within line of sight of each other. Through the link, the beast can understand your telepathic messages to it, and it can telepathically communicate simple emotions and concepts back to you. While the link is active, the beast gains advantage on attack rolls against any creature within 5 feet of you that you can see.</p></div><div><div><p><strong>Using a Higher-Level Spell Slot.</strong> The duration is longer with a spell slot of level 2 (up to 1 hour), 3 (up to 8 hours), or 4+ (up to 24 hours).  At level 5 or higher, the duration does not require concentration.</p></div></div>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -26,12 +30,21 @@
       "width": null,
       "units": "",
       "type": "",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "1",
+        "type": "creature",
+        "special": "Beast"
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "touch"
+      "units": "touch",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -85,28 +98,149 @@
     "scaling": {
       "mode": "none",
       "formula": ""
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "appliedEffects": [
+          "0ni0MtA5H57iaU4b"
+        ],
+        "effects": [
+          {
+            "_id": "0ni0MtA5H57iaU4b"
+          }
+        ]
+      },
+      "Bj7CC993oougqcl0": {
+        "type": "utility",
+        "_id": "Bj7CC993oougqcl0",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "0ni0MtA5H57iaU4b"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Bond With Beast",
+        "img": "",
+        "appliedEffects": [
+          "0ni0MtA5H57iaU4b"
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Bonded",
+      "img": "systems/dnd5e/icons/svg/statuses/charmed.svg",
+      "_id": "0ni0MtA5H57iaU4b",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The beast is bonded to someone who has cast Beast Bond on it.</p>",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.2",
+        "createdTime": 1726871626518,
+        "modifiedTime": 1726871680325,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplBeastBond0.0ni0MtA5H57iaU4b"
+    }
+  ],
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.fNP0VSvCyMAiODRb",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplBeastBond0",
       "spell-lists": "druid,ranger"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1707626847617,
-    "modifiedTime": 1708928830321,
+    "modifiedTime": 1738042645606,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 6300000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!fNP0VSvCyMAiODRb"
+  "_key": "!items!matSplBeastBond0"
 }

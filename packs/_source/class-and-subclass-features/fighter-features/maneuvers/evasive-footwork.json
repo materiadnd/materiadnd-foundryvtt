@@ -6,10 +6,14 @@
   "img": "icons/skills/movement/feet-winged-boots-blue.webp",
   "system": {
     "description": {
-      "value": "<p>When you move, you can expend one superiority die, rolling the die and adding the number rolled to your AC until the beginning of your next turn.</p>",
+      "value": "<p>As a Bonus Action, you can expend one Superiority Die and take the Disengage action. You also roll the die and add the number rolled to your AC until the start ofr your next turn.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "special",
       "cost": null,
@@ -73,22 +77,59 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 2
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Evade",
+        "img": "",
+        "activation": {
+          "type": "bonus"
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.GT5M3hT8Bj34TRH0"
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "roll": {
+          "name": "AC Bonus",
+          "formula": "@scale.fighter.superiority.die"
+        }
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
       "item-use-source": "superiority-dice"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707151872078,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1741392677727,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 0,

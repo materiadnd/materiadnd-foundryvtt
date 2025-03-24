@@ -6,10 +6,14 @@
   "img": "icons/magic/earth/construct-stone.webp",
   "system": {
     "description": {
-      "value": "<p>At 17th level, your flesh takes on a wood like quality or becomes craggy like stone. You gain immunity to poison and the poisoned condition, (In Materia) immunity to the dazed condition and any critical hit against you counts as a normal hit instead.</p>",
+      "value": "<p>Your flesh takes on a wood like quality or becomes craggy like stone. You gain Immunity to Poison damage and the &amp;Reference[Poisoned  apply=false] condition, Immunity to the &amp;Reference[Dazed apply=false] condition and any critical hit against you counts as a normal hit instead.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "",
       "cost": null,
@@ -69,10 +73,13 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Nature Domain 17",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 17
     }
   },
   "effects": [
@@ -102,20 +109,32 @@
           "mode": 2,
           "value": "poisoned",
           "priority": null
+        },
+        {
+          "key": "system.traits.ci.value",
+          "mode": 2,
+          "value": "dazed",
+          "priority": null
         }
       ],
       "description": "",
       "transfer": true,
       "statuses": [],
-      "flags": {},
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
       "tint": "#ffffff",
       "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
         "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "modifiedTime": 1742441318815,
+        "lastModifiedBy": "dnd5mbuilder0000",
         "compendiumSource": null,
         "duplicateSource": null
       },
@@ -129,12 +148,11 @@
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707686882855,
-    "modifiedTime": 1710765518116,
+    "modifiedTime": 1742441304782,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 300000,

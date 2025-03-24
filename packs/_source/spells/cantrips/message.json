@@ -1,116 +1,142 @@
 {
   "name": "Message",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplMessage000",
   "system": {
     "description": {
-      "value": "<p>You point your finger toward a creature within range and whisper a message. The target (and only the target) hears the message and can reply in a whisper that only you can hear.</p><p>You can cast this spell through solid Objects if you are familiar with the target and know it is beyond the barrier. Magical silence, 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood blocks the spell. The spell doesn't have to follow a straight line and can travel freely around corners or through openings.</p>",
+      "value": "<p>You point toward a creature within range and whisper a message. The target (and only the target) hears the message and can reply in a whisper that only you can hear.</p><p>You can cast this spell through solid objects if you are familiar with the target and know it is beyond the barrier. Magical silence; 1 foot of stone, metal, or wood; or a thin sheet of lead blocks the spell.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "round"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": 120,
-      "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": "",
+      "value": "120"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 0,
     "school": "trs",
+    "properties": [
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "A short piece of copper wire",
+      "value": "a copper wire",
       "consumed": false,
       "cost": 0,
       "supply": 0
     },
     "preparation": {
-      "mode": "prepared",
+      "mode": "always",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "j0gd96TwtJYUr0EE": {
+        "type": "utility",
+        "_id": "j0gd96TwtJYUr0EE",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast"
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material"
-    ],
-    "crewed": false
+    "identifier": "message"
+  },
+  "type": "spell",
+  "img": "icons/sundries/documents/envelope-sealed-red-brown.webp",
+  "effects": [],
+  "folder": "WtBByem45tjsGx6Z",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.vGmZKEAFKrSAIV3X",
-      "spell-lists": "artificer,bard,sorcerer,wizard"
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplMessage000",
+      "spell-lists": "artificer,bard,druid,sorcerer,wizard"
     }
   },
-  "img": "icons/commodities/currency/coin-engraved-sun-smile-copper.webp",
-  "effects": [],
-  "folder": "WtBByem45tjsGx6Z",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234210,
-    "modifiedTime": 1708927608467,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1737925769429,
+    "modifiedTime": 1737926229907,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "vGmZKEAFKrSAIV3X",
-  "sort": 800000,
-  "_key": "!items!vGmZKEAFKrSAIV3X"
+  "sort": 700000,
+  "_key": "!items!matSplMessage000"
 }

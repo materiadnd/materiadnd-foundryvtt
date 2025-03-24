@@ -1,72 +1,54 @@
 {
   "name": "Tree Stride",
-  "type": "spell",
+  "_id": "matSplTreeStride",
   "system": {
     "description": {
-      "value": "<p>You gain the ability to enter a tree and move from inside it to inside another tree of the same kind within 500 feet. Both trees must be living and at least the same size as you. You must use 5 feet of Movement to enter a tree. You instantly know the location of all other trees of the same kind within 500 feet and, as part of the move used to enter the tree, can either pass into one of those trees or step out of the tree you're in. You appear in a spot of your choice within 5 feet of the destination tree, using another 5 feet of movement. If you have no movement left, you appear within 5 feet of the tree you entered.</p><p>You can use this transportation ability once per round for the Duration. You must end each turn outside a tree.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 7th level or higher, the duration is increased to up to 10 minutes.</p><p>When you cast this spell using a spell slot of 9th level or higher, grants a duration that does not require concentration.</p>",
+      "value": "<p>You gain the ability to enter a tree and move from inside it to inside another tree of the same kind within 500 feet. Both trees must be living and at least the same size as you. You must use 5 feet of movement to enter a tree. You instantly know the location of all other trees of the same kind within 500 feet and, as part of the move used to enter the tree, can either pass into one of those trees or step out of the tree you're in. You appear in a spot of your choice within 5 feet of the destination tree, using another 5 feet of movement. If you have no movement left, you appear within 5 feet of the tree you entered.</p><p>You can use this transportation ability only once on each of your turns. You must end each turn outside a tree.</p><p><strong>Using a Higher-Level Spell Slot.</strong> If you use a spell slot of level 7+, the duration is increased to up to 10 minutes.</p><p>If you use a spell slot level of 9+, the spell does not require your Concentration.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "Materia Source of Truth",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "self",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "",
+        "type": "",
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "self"
+      "units": "self",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 5,
     "school": "con",
+    "properties": [
+      "vocal",
+      "somatic",
+      "concentration"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -77,41 +59,86 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "vcosPna67heYEKpl": {
+        "type": "utility",
+        "name": "Cast",
+        "_id": "vcosPna67heYEKpl",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {},
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "concentration"
-    ],
-    "crewed": false
+    "identifier": "tree-stride"
+  },
+  "type": "spell",
+  "img": "icons/magic/nature/tree-spirit-blue.webp",
+  "effects": [],
+  "folder": "slWnSXtwvwnA9EXJ",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
       "tele-flag": "true",
-      "sourceId": "Compendium.materia-dnd.spells.Item.XarLQRsuntkz5IB4",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplTreeStride",
       "spell-lists": "druid,ranger"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
-  "img": "icons/magic/nature/leaf-glow-maple-orange-purple.webp",
-  "effects": [],
-  "folder": "slWnSXtwvwnA9EXJ",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234099,
-    "modifiedTime": 1709186114418,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1739233549213,
+    "modifiedTime": 1739233626599,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "XarLQRsuntkz5IB4",
-  "sort": 4700000,
-  "ownership": {
-    "default": 0
-  },
-  "_key": "!items!XarLQRsuntkz5IB4"
+  "sort": 0,
+  "_key": "!items!matSplTreeStride"
 }

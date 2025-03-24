@@ -1,77 +1,56 @@
 {
   "name": "Hypnotic Pattern",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplHypnoticPa",
   "system": {
     "description": {
-      "value": "<p>You create a twisting pattern of colors that weaves through the air inside a 30-foot cube within range. The pattern appears for a moment and vanishes. Each creature in the area who sees the pattern must make a Wisdom saving throw. On a failed save, the creature becomes charmed for the duration. While charmed by this spell, the creature is incapacitated and has a speed of 0.</p><p>The spell ends for an affected creature if it takes any damage or if someone else uses an action to shake the creature out of its stupor.</p>",
+      "value": "<p>You create a twisting pattern of colors in a 30-foot Cube within range. The pattern appears for a moment and vanishes. Each creature in the area who can see the pattern must succeed on a Wisdom saving throw or have the &amp;Reference[charmed apply=false] condition for the duration. While Charmed, the creature has the &amp;Reference[incapacitated apply=false] condition and a Speed of 0.</p><p>The spell ends for an affected creature if it takes any damage or if someone else uses an action to shake the creature out of its stupor.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 30,
-      "width": null,
-      "units": "ft",
-      "type": "cube",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "type": ""
+      },
+      "template": {
+        "units": "ft",
+        "type": "cube",
+        "size": "30",
+        "contiguous": false,
+        "count": ""
+      }
     },
     "range": {
-      "value": 120,
-      "long": null,
-      "units": "ft"
+      "value": "120",
+      "units": "ft",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "wis",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 3,
     "school": "ill",
+    "properties": [
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "A glowing stick of incense or a crystal vial filled with phosphorescent material.",
+      "value": "a pinch of confetti",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -80,109 +59,166 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "mjAs8ssQlgp0AQOp",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": []
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      }
     },
-    "properties": [
-      "somatic",
-      "material",
-      "concentration",
-      "mgc"
-    ],
-    "crewed": false
+    "identifier": "hypnotic-pattern"
   },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.E5BaOOU4mP5fBIme",
-      "spell-lists": "bard,sorcerer,warlock,wizard"
-    }
-  },
-  "img": "icons/magic/air/air-burst-spiral-pink.webp",
+  "type": "spell",
+  "img": "icons/magic/control/hypnosis-mesmerism-swirl.webp",
   "effects": [
     {
-      "name": "Hypnotic Pattern",
-      "origin": "Compendium.dnd5e.spells.Item.6g3WLOZ2u0EbaLAd",
+      "name": "Hypnotized",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplHypnoticPa",
       "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
         "rounds": null,
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "SQnfuD2rHVcyLZ4j",
+      "disabled": false,
+      "flags": {},
+      "img": "icons/magic/control/hypnosis-mesmerism-eye-tan.webp",
+      "_id": "mjAs8ssQlgp0AQOp",
+      "type": "base",
+      "system": {},
       "changes": [
         {
+          "key": "system.attributes.movement.walk",
+          "mode": 3,
+          "value": "0",
+          "priority": null
+        },
+        {
           "key": "system.attributes.movement.burrow",
-          "mode": 5,
+          "mode": 3,
           "value": "0",
           "priority": null
         },
         {
           "key": "system.attributes.movement.climb",
-          "mode": 5,
+          "mode": 3,
           "value": "0",
           "priority": null
         },
         {
           "key": "system.attributes.movement.fly",
-          "mode": 5,
+          "mode": 3,
           "value": "0",
           "priority": null
         },
         {
           "key": "system.attributes.movement.swim",
-          "mode": 5,
-          "value": "0",
-          "priority": null
-        },
-        {
-          "key": "system.attributes.movement.walk",
-          "mode": 5,
+          "mode": 3,
           "value": "0",
           "priority": null
         }
       ],
-      "description": "<p>The creature is Charmed for the duration. While charmed by this spell, the creature is Incapacitated and has a speed of 0.</p>",
+      "description": "<p>While &amp;Reference[charmed apply=false], the creature has the &amp;Reference[incapacitated apply=false] condition and a Speed of 0.</p><p>The spell ends for an affected creature if it takes any damage or if someone else uses an action to shake the creature out of its stupor.</p>",
+      "tint": "#ffffff",
       "transfer": false,
       "statuses": [
         "charmed",
         "incapacitated"
       ],
-      "flags": {},
-      "tint": "#ffffff",
+      "sort": 0,
       "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
+        "lastModifiedBy": null
       },
-      "img": "icons/magic/air/air-burst-spiral-pink.webp",
-      "type": "base",
-      "system": {},
-      "sort": 0,
-      "_key": "!items.effects!E5BaOOU4mP5fBIme.SQnfuD2rHVcyLZ4j"
+      "_key": "!items.effects!matSplHypnoticPa.mjAs8ssQlgp0AQOp"
     }
   ],
   "folder": "CxgAwElQGTbcnuvc",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234072,
-    "modifiedTime": 1713584796371,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "E5BaOOU4mP5fBIme",
-  "sort": 2900000,
-  "_key": "!items!E5BaOOU4mP5fBIme"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplHypnoticPa",
+      "spell-lists": "bard,sorcerer,warlock,wizard"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738513729780,
+    "modifiedTime": 1738513770804,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplHypnoticPa"
 }

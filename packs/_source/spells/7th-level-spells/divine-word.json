@@ -1,75 +1,53 @@
 {
   "name": "Divine Word",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplDivineWord",
   "system": {
     "description": {
-      "value": "<p>You utter a divine word, imbued with the power that shaped the world at the dawn of Creation. Choose any number of creatures you can see within range. Each creature that can hear you must make a Charisma saving throw. On a failed save, a creature suffers an effect based on its current hit points:</p><ul><li>50 Hit Points or fewer: Deafened for 1 minute</li><li>40 Hit Points or fewer: Deafened and Blinded for 10 minutes</li><li>30 Hit Points or fewer: Blinded, Deafened, and Stunned for 1 Hour</li><li>20 Hit Points or fewer: killed instantly</li></ul><p>Regardless of its current Hit Points, an aberration, a Celestial, an elemental, a fey, or a fiend that fails its save is forced back to its plane of Origin (if it isn't there already) and can't return to your current plane for 24 hours by any means short of a wish spell.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 8th level or higher, the range is increased by 30 feet for each slot level above 7th.</p>",
+      "value": "<p>You utter a word imbued with power from the Upper Planes. Each creature of your choice in range makes a Charisma saving throw. On a failed save, a target that has 50 Hit Points or fewer suffers an effect based on its current Hit Points, as shown in the Divine Word Effects table. Regardless of its Hit Points, an Aberration, Celestial, Elemental, Fey, or Fiend target that fails its save is forced back to its plane of origin (if it isn't there already) and can't return to the current plane for 24 hours by any means short of a <em>@UUID[Compendium.materia-dnd.spells.Item.matSplWish000000]{Wish}</em> spell.</p><table><thead><tr><td>Hit Points</td><td>Divine Word Effect</td></tr></thead><tbody><tr><td>0-20</td><td>The target dies.</td></tr><tr><td>21-30</td><td>The target has the &amp;Reference[Blinded apply=false], &amp;Reference[Deafened apply=false], and &amp;Reference[Stunned apply=false] conditions for 1 hour.</td></tr><tr><td>31040</td><td>The target has the Blinded and Deafened conditions for 10 minutes.</td></tr><tr><td>41-50</td><td>The target has the Deafened condition for 1 minute.</td></tr></tbody></table><p><strong>Using a Higher-Level Spell Slot.</strong>The range increases by 30 feet for each spell slot level above 7.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "bonus",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "any",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "",
+        "type": "creature",
+        "special": "each creature of your choice within range"
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": 60,
-      "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": "",
+      "value": "30"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "cha",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 7,
     "school": "evo",
+    "properties": [
+      "vocal"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -80,103 +58,137 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "jImdta87M9XcUBkn": {
+        "type": "save",
+        "_id": "jImdta87M9XcUBkn",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "poB090Yp3gKXXcMH",
+            "onSave": false
+          },
+          {
+            "_id": "grWj3oo8iH8egvi1",
+            "onSave": false
+          },
+          {
+            "_id": "8O8KymREuOZFi45g",
+            "onSave": false
+          },
+          {
+            "_id": "qZvAfjU2H6Fg6y6M",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "damage": {
+          "parts": [],
+          "onSave": "none"
+        },
+        "save": {
+          "ability": [
+            "cha"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": ""
+      }
     },
-    "properties": [
-      "vocal"
-    ],
-    "crewed": false
+    "identifier": "divine-word"
   },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.n26SuUP14AqTgeBu",
-      "spell-lists": "cleric"
-    }
-  },
-  "img": "icons/magic/light/explosion-star-large-orange-purple.webp",
+  "type": "spell",
+  "img": "icons/magic/holy/projectiles-blades-salvo-yellow.webp",
   "effects": [
     {
-      "name": "Divine Word (50 hp or fewer)",
-      "origin": "Compendium.dnd5e.spells.Item.T1vpZLam7LezjToj",
+      "name": "Death",
+      "img": "systems/dnd5e/icons/svg/statuses/dead.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplDivineWord",
+      "transfer": false,
+      "_id": "poB090Yp3gKXXcMH",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
       "duration": {
         "startTime": null,
-        "seconds": 60,
+        "seconds": null,
         "combat": null,
         "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "ng33sfAG959luxm1",
-      "changes": [],
-      "description": "<p>Creature is Deafened for 1 minute.</p>",
-      "transfer": false,
-      "statuses": [
-        "deafened"
-      ],
-      "flags": {},
+      "description": "",
       "tint": "#ffffff",
+      "statuses": [
+        "dead"
+      ],
+      "sort": 0,
+      "flags": {},
       "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
+        "lastModifiedBy": null
       },
-      "img": "icons/magic/light/explosion-star-large-orange-purple.webp",
-      "type": "base",
-      "system": {},
-      "sort": 0,
-      "_key": "!items.effects!n26SuUP14AqTgeBu.ng33sfAG959luxm1"
+      "_key": "!items.effects!matSplDivineWord.poB090Yp3gKXXcMH"
     },
     {
-      "name": "Divine Word (40 hp or fewer)",
-      "origin": "Compendium.dnd5e.spells.Item.T1vpZLam7LezjToj",
-      "duration": {
-        "startTime": null,
-        "seconds": 600,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": true,
-      "_id": "WFygB4koHfaqBOiK",
-      "changes": [],
-      "description": "<p>Creature is Deafened and Blinded for 10 minutes.</p>",
+      "name": "Blinded, Deafened, Stunned",
+      "img": "systems/dnd5e/icons/svg/statuses/stunned.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplDivineWord",
       "transfer": false,
-      "statuses": [
-        "deafened",
-        "blinded"
-      ],
-      "flags": {},
-      "tint": "#ffffff",
-      "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "icons/magic/light/explosion-star-large-orange-purple.webp",
+      "_id": "grWj3oo8iH8egvi1",
       "type": "base",
       "system": {},
-      "sort": 0,
-      "_key": "!items.effects!n26SuUP14AqTgeBu.WFygB4koHfaqBOiK"
-    },
-    {
-      "name": "Divine Word (30 hp or fewer)",
-      "origin": "Compendium.dnd5e.spells.Item.T1vpZLam7LezjToj",
+      "changes": [],
+      "disabled": false,
       "duration": {
         "startTime": null,
         "seconds": 3600,
@@ -186,48 +198,119 @@
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "QNru4BLkBqnn3uBB",
-      "changes": [],
-      "description": "<p>Creature is Blinded, Deafened, and Stunned for 1 hour.</p>",
-      "transfer": false,
-      "statuses": [
-        "deafened",
-        "blinded",
-        "stunned",
-        "incapacitated"
-      ],
-      "flags": {},
+      "description": "",
       "tint": "#ffffff",
+      "statuses": [
+        "blinded",
+        "deafened",
+        "stunned"
+      ],
+      "sort": 0,
+      "flags": {},
       "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
+        "lastModifiedBy": null
       },
-      "img": "icons/magic/light/explosion-star-large-orange-purple.webp",
+      "_key": "!items.effects!matSplDivineWord.grWj3oo8iH8egvi1"
+    },
+    {
+      "name": "Blinded, Deafened",
+      "img": "systems/dnd5e/icons/svg/statuses/blinded.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplDivineWord",
+      "transfer": false,
+      "_id": "8O8KymREuOZFi45g",
       "type": "base",
       "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
       "sort": 0,
-      "_key": "!items.effects!n26SuUP14AqTgeBu.QNru4BLkBqnn3uBB"
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplDivineWord.8O8KymREuOZFi45g"
+    },
+    {
+      "name": "Deafened",
+      "img": "systems/dnd5e/icons/svg/statuses/deafened.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplDivineWord",
+      "transfer": false,
+      "_id": "qZvAfjU2H6Fg6y6M",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplDivineWord.qZvAfjU2H6Fg6y6M"
     }
   ],
   "folder": "0whxxbO5gmG63mDV",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234144,
-    "modifiedTime": 1709231295849,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "n26SuUP14AqTgeBu",
-  "sort": 1900000,
-  "_key": "!items!n26SuUP14AqTgeBu"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplDivineWord",
+      "spell-lists": "cleric"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739422922394,
+    "modifiedTime": 1739423030202,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplDivineWord"
 }

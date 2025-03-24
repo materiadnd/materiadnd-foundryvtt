@@ -2,14 +2,18 @@
   "folder": "WtBByem45tjsGx6Z",
   "name": "Primal Savagery",
   "type": "spell",
-  "_id": "GqD9HFBlyQzrVHVo",
+  "_id": "matSplPrimalSava",
   "img": "icons/creatures/claws/claw-hooked-curved.webp",
   "system": {
     "description": {
-      "value": "<p>You channel primal magic to cause your teeth or fingernails to sharpen, ready to deliver a corrosive attack. Make a melee spell attack against one creature within your reach. On a hit, the target takes 1d10 acid damage and if the creature's speed is reduced in anyway, it's speed is reduced to 0 until the end of it's next turn. After you make the attack, your teeth or fingernails return to normal.</p><p>The spell's damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10).</p>",
+      "value": "<p>You channel primal magic to cause your teeth or fingernails to sharpen, ready to deliver a corrosive attack. Make a melee spell attack against one creature within your reach. On a hit, the target takes [[/damage 1d10 acid]] damage and if the creature's speed is reduced in anyway, it's speed is reduced to 0 until the end of it's next turn. After you make the attack, your teeth or fingernails return to normal.</p><p><strong>Cantrip Upgrade.</strong> </span>The damage increases by 1d10 when you reach levels 5 ([[/damage 2d10 acid]]), 11 ([[/damage 3d10 acid]]), and 17 ([[/damage 4d10 acid]]).</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -26,12 +30,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "self"
+      "units": "self",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -87,28 +98,120 @@
     "scaling": {
       "mode": "cantrip",
       "formula": "1d10"
+    },
+    "activities": {
+      "WD5xuszFgarU7KCr": {
+        "type": "attack",
+        "_id": "WD5xuszFgarU7KCr",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "attack": {
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": ""
+          },
+          "ability": "",
+          "bonus": ""
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": true,
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 10,
+              "bonus": "",
+              "types": [
+                "acid"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.GqD9HFBlyQzrVHVo",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplPrimalSava",
       "spell-lists": "druid"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1707666105252,
-    "modifiedTime": 1708927608467,
+    "modifiedTime": 1737929694848,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 2800000,
+  "sort": 3300000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!GqD9HFBlyQzrVHVo"
+  "_key": "!items!matSplPrimalSava"
 }

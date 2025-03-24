@@ -6,10 +6,14 @@
   "img": "icons/creatures/abilities/paw-glowing-yellow.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 14th level, the beast within you grows so powerful that you can spread its ferocity to others and gain resilience from them joining your hunt. When you enter your rage, you can choose a number of other willing creatures you can see within 30 feet of you equal to your Constitution modifier (minimum of one creature). You gain 5 temporary hit points for each creature that accepts this feature. Until the rage ends, the chosen creatures can each use the following benefit once on each of their turns: when the creature hits a target with an attack roll and deals damage to it, the creature can roll a d6 and gain a bonus to the damage equal to the number rolled.</p><p>You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>",
+      "value": "<p>The beast within you grows so powerful that you can spread its ferocity to others and gain resilience from them joining your hunt. When you activate your Rage, you can choose a number of other willing creatures you can see within 30 feet of you equal to your Constitution modifier (minimum of one creature). You gain 5 Temporary Hit Points for each creature that accepts this feature. Until your Rage ends, the chosen creatures can each use the following benefit once on each of their turns: when the creature hits a target with an attack roll and deals damage to it, the creature can roll a d6 and gain a bonus to the damage equal to the number rolled.</p><p>You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a Long Rest.</p><section id=\"secret-oeYQxvybDgGfdxDu\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Call the Hunt</strong> activity applies an Active Effect to creatures that receive the buff.</p><p>The <strong>Temporary Hit Points</strong> activity can be applied to give yourself temporary hit points.</p></section>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "special",
       "cost": null,
@@ -69,22 +73,189 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Path of the Beast 14",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 14
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Call the Hunt",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [
+          "phfkGELJG3sPCTLp"
+        ],
+        "activation": {
+          "condition": "When you enter your rage",
+          "type": ""
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "effects": [
+          {
+            "_id": "phfkGELJG3sPCTLp"
+          }
+        ]
+      },
+      "ZKxXEQXdq9RHcEmM": {
+        "type": "heal",
+        "name": "Temporary Hit Points",
+        "_id": "ZKxXEQXdq9RHcEmM",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true,
+            "max": "@abilities.con.mod"
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "temphp"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "5 * @scaling"
+          },
+          "scaling": {
+            "number": 1,
+            "mode": "",
+            "formula": ""
+          },
+          "bonus": ""
+        },
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
-  "flags": {},
+  "effects": [
+    {
+      "name": "Called to the Hunt",
+      "img": "icons/creatures/abilities/paw-glowing-yellow.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.P3jcslRj6nXIlr45",
+      "transfer": false,
+      "_id": "phfkGELJG3sPCTLp",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.bonuses.mwak.damage",
+          "mode": 2,
+          "value": "d6",
+          "priority": null
+        },
+        {
+          "key": "system.bonuses.rwak.damage",
+          "mode": 2,
+          "value": "d6",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>When the creature hits a target with an attack roll and deals damage to it, the creature can roll a d6 and gain a bonus to the damage equal to the number rolled.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1741791524706,
+        "modifiedTime": 1741791621013,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!P3jcslRj6nXIlr45.phfkGELJG3sPCTLp"
+    }
+  ],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1708298622781,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1741791801943,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 0,

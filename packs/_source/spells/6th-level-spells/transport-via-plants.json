@@ -1,75 +1,54 @@
 {
   "name": "Transport via Plants",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplTransportV",
   "system": {
     "description": {
-      "value": "<p>This spell creates a magical link between a Large or larger inanimate plant within range and another plant, at any distance, on the same plane of existence. You must have seen or touched the destination plant at least once before. For the Duration, any creature can step into the target plant and exit from the destination plant by using 5 feet of Movement.</p>",
+      "value": "<p>This spell creates a magical link between a Large or larger inanimate plant within range and another plant, at any distance, on the same plane of existence. You must have seen or touched the destination plant at least once before. For the duration, any creature can step into the target plant and exit from the destination plant by using 5 feet of movement.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
-      "units": "round"
+      "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 2,
-      "width": null,
-      "units": "spec",
-      "type": "object",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "2",
+        "type": "object",
+        "special": "Large or larger inanimate plant"
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": 10,
-      "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": "",
+      "value": "10"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 6,
     "school": "con",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -80,37 +59,86 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "HgtppydN1kkpdVyw": {
+        "type": "utility",
+        "name": "Cast",
+        "_id": "HgtppydN1kkpdVyw",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {},
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic"
-    ],
-    "crewed": false
+    "identifier": "transport-via-plants"
+  },
+  "type": "spell",
+  "img": "icons/magic/nature/tree-spirit-green.webp",
+  "effects": [],
+  "folder": "UjV13fGRtZfpmOAS",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
       "tele-flag": "true",
-      "sourceId": "Compendium.materia-dnd.spells.Item.uOiBp53dQeAWBtRq",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplTransportV",
       "spell-lists": "druid"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
-  "img": "icons/magic/nature/leaf-glow-maple-teal.webp",
-  "effects": [],
-  "folder": "UjV13fGRtZfpmOAS",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234233,
-    "modifiedTime": 1709222420345,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1739401242378,
+    "modifiedTime": 1739401242378,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "uOiBp53dQeAWBtRq",
-  "sort": 1000000,
-  "_key": "!items!uOiBp53dQeAWBtRq"
+  "sort": 0,
+  "_key": "!items!matSplTransportV"
 }

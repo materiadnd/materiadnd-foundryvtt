@@ -2,14 +2,18 @@
   "folder": "3rC3qr5FIlZymxFD",
   "name": "Salt the Wound",
   "type": "spell",
-  "_id": "TzyRmlW49fFXK2hR",
+  "_id": "matSplSaltTheWou",
   "img": "icons/magic/unholy/strike-beam-blood-large-red-green.webp",
   "system": {
     "description": {
-      "value": "<p>Necromantic energies fill a wounds of a creature you can see to further increase their suffering.   The target must make a Constitution saving throw, suffering 4d4 + your spellcasting ability modifier necrotic damage on a failed save, or half as much on a successful save. If the damage was dealt to the target by a critical hit then they make the Constitution saving throw at disadvantage.</p><p>A creature can only take damage for this spell once per turn.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 3rd level or higher, increase the necrotic damage by 2d4 for each slot level above 2nd.</p>",
+      "value": "<p>Necromantic energies fill a wounds of a creature you can see to further increase their suffering. The target must make a Constitution saving throw, suffering [[/damage 4d4]] + your spellcasting ability modifier necrotic damage on a failed save, or half as much on a successful save. If the damage was dealt to the target by a critical hit then they make the Constitution saving throw at disadvantage.</p><p>A creature can only take damage from this spell once per turn.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The necrotic damage increases by 2d4 for each spell slot level above 2.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "reaction",
       "cost": 1,
@@ -26,12 +30,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 30,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -90,28 +101,125 @@
     "scaling": {
       "mode": "level",
       "formula": "2d4"
+    },
+    "activities": {
+      "w1SNBSKKFKV6ehby": {
+        "type": "save",
+        "_id": "w1SNBSKKFKV6ehby",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 4,
+              "denomination": 4,
+              "bonus": "@mod",
+              "types": [
+                "necrotic"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 2,
+                "formula": ""
+              }
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "con",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.TzyRmlW49fFXK2hR",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplSaltTheWou",
       "spell-lists": "cleric,sorcerer,warlock,wizard"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1708313656521,
-    "modifiedTime": 1712621324390,
+    "modifiedTime": 1738216618282,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 6000000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!TzyRmlW49fFXK2hR"
+  "_key": "!items!matSplSaltTheWou"
 }

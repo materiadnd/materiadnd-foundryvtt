@@ -2,14 +2,18 @@
   "folder": "0jbyhDbsSp8KTsvC",
   "name": "Rapier",
   "type": "weapon",
-  "_id": "xbdtYE56Z6DQAfnU",
+  "_id": "matIteRapier0000",
   "img": "icons/weapons/swords/sword-guard-worn-purple.webp",
   "system": {
     "description": {
       "value": "",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "identified": true,
     "unidentified": {
       "description": ""
@@ -45,7 +49,8 @@
     "range": {
       "value": null,
       "long": null,
-      "units": ""
+      "units": "ft",
+      "reach": 5
     },
     "uses": {
       "value": null,
@@ -93,33 +98,116 @@
       "conditions": ""
     },
     "type": {
-      "value": "simpleM",
-      "baseItem": ""
+      "value": "martialM",
+      "baseItem": "rapier"
     },
     "properties": [
       "fin"
     ],
-    "proficient": null
+    "proficient": null,
+    "mastery": "vex",
+    "activities": {
+      "YS5PlVRgYV0GiiXB": {
+        "type": "attack",
+        "_id": "YS5PlVRgYV0GiiXB",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": true,
+          "units": "ft",
+          "special": "",
+          "value": "5"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "attack": {
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "",
+            "classification": ""
+          },
+          "ability": "",
+          "bonus": ""
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": true,
+          "parts": []
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "effects": [],
-  "sort": 0,
+  "sort": 2200000,
   "ownership": {
     "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.items.Item.xbdtYE56Z6DQAfnU"
+      "sourceId": "Compendium.materia-dnd.items.Item.matIteRapier0000"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1708541161185,
-    "modifiedTime": 1708541266845,
+    "modifiedTime": 1739512026731,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_key": "!items!xbdtYE56Z6DQAfnU"
+  "_key": "!items!matIteRapier0000"
 }

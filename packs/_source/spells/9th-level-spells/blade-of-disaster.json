@@ -1,15 +1,15 @@
 {
   "name": "Blade of Disaster",
+  "_id": "matSplBladeOfDis",
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "TCE",
-      "page": "106",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "description": {
-      "value": "<div class=\"rd__b  rd__b--3\"><p>You create a blade-shaped planar rift about 3 feet long in an unoccupied space you can see within range. The blade lasts for the duration. When you cast this spell, you can make up to two melee spell attacks with the blade, each one against a creature, loose object, or structure within 5 feet of the blade. On a hit, the target takes [[/r 4d12]] force damage. This attack scores a critical hit if the number on the [[/r d20]] is 18 or higher. On a critical hit, the blade deals an extra [[/r 8d12]] force damage (for a total of [[/r 12d12]] force damage).</p><div class=\"rd__spc-inline-post\"></div><p>As a bonus action on your turn, you can move the blade up to 30 feet to an unoccupied space you can see and then make up to two melee spell attacks with it again.</p><p>The blade can harmlessly pass through any barrier, including a @spell[wall of force].</p></div>",
+      "value": "<p>You create a blade-shaped planar rift about 3 feet long in an unoccupied space you can see within range. The blade lasts for the duration. When you cast this spell, you can make up to your spellcasting ability modifier number of melee spell attacks with the blade, each one against a creature, loose object, or structure within 5 feet of the blade. On a hit, the target takes [[/r 4d12]] force damage. This attack scores a critical hit if the number on the d20 is 18 or higher. On a critical hit, the blade deals an extra [[/r 8d12]] force damage (for a total of [[/r 12d12]] force damage).</p><p>As a Bonus Action on your turn, you can move the blade up to 60 feet to an unoccupied space you can see and then make up to your spellcasting ability modifier number of melee spell attacks with it again.</p><p>The blade can harmlessly pass through any barrier, including a @UUID[Compendium.materia-dnd.spells.Item.matSplWallOfForc]{Wall of Force}.</p>",
       "chat": ""
     },
     "actionType": "msak",
@@ -31,15 +31,23 @@
       "units": "",
       "type": "",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 60,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
-      "type": "bonus",
+      "type": "action",
       "cost": 1,
       "condition": ""
     },
@@ -99,7 +107,164 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "4lWWZE6A6nZ0wFbJ": {
+        "type": "summon",
+        "_id": "4lWWZE6A6nZ0wFbJ",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {},
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "bonuses": {},
+        "creatureSizes": [],
+        "creatureTypes": [],
+        "match": {
+          "attacks": false,
+          "proficiency": false,
+          "saves": false
+        },
+        "profiles": [
+          {
+            "_id": "fsBWwrg6yc6uIcmw",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": [],
+            "uuid": "Compendium.materia-dnd.actors.Actor.ERK9wQC3VNcrZ5i2"
+          }
+        ],
+        "summon": {
+          "prompt": true
+        }
+      },
+      "BsqfpPB6rbiXPFcP": {
+        "type": "attack",
+        "_id": "BsqfpPB6rbiXPFcP",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": true,
+          "units": "ft",
+          "special": "",
+          "value": "5"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "attack": {
+          "critical": {
+            "threshold": 18
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": ""
+          },
+          "ability": "",
+          "bonus": ""
+        },
+        "damage": {
+          "critical": {
+            "bonus": "8d12"
+          },
+          "includeBase": true,
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 4,
+              "denomination": 12,
+              "bonus": "",
+              "types": [
+                "force"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "name": "Move and Attack",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "img": "icons/skills/melee/strike-sword-blood-red.webp",
   "ownership": {
@@ -113,23 +278,42 @@
       "propDroppable": "spell"
     },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.lAK7stmfWbuKJ5b9",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplBladeOfDis",
       "spell-lists": "sorcerer,warlock,wizard"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickAttack": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true,
+          "1": true,
+          "2": true
+        }
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "effects": [],
   "folder": "89VDZRAxJ1IDvEOP",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1709232253460,
-    "modifiedTime": 1709241373551,
+    "modifiedTime": 1739434772615,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "lAK7stmfWbuKJ5b9",
   "sort": 1800000,
-  "_key": "!items!lAK7stmfWbuKJ5b9"
+  "_key": "!items!matSplBladeOfDis"
 }

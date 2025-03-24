@@ -2,14 +2,18 @@
   "folder": "flNjIH13DTI79OMB",
   "name": "Rage",
   "type": "feat",
-  "_id": "kZlNY34EDkyGpoju",
+  "_id": "matBrbRage000000",
   "img": "icons/skills/wounds/injury-eyes-blood-red-pink.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at first level when in battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action.</p><p>While raging, you gain the following benefits if you are not wearing heavy armor:</p><ul><li>You have advantage on Strength checks and Strength saving throws.</li><li>When you make an attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.</li><li>You have resistance to bludgeoning, piercing, and slashing damage.</li></ul><p>If you are able to cast spells, you cannot cast them or concentrate on them while raging.</p><p>Your rage lasts for 1 minute. It ends early if you are knocked unconscious. You can also end your rage on your turn as a bonus action.</p><p>Once you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian table, you must finish a long rest before you can rage again.</p>",
+      "value": "<p>You can imbue yourself with a primal power called Rage, a force that grants you extraordinary might and resilience. You can enter it as a Bonus Action if you aren't wearing Heavy armor.</p><p>You can enter your Rage the number of times shown for your Barbarian level in the Rages column of the Barbarian Features table (currently [[lookup @scale.barbarian.rages]]). You regain one expended use when you finish a Short Rest, and you regain all expended uses when you finish a Long Rest.</p><p>While active, your Rage follows the rules below.</p><p><strong>Damage Resistance.</strong> You have Resistance to Bludgeoning, Piercing, and Slashing damage.</p><p><strong>Rage Damage.</strong> When you make an attack using Strength-with either a weapon or an Unarmed Strike-and deal damage to the target, you gain a bonus to the damage that increases as you gain levels as a Barbarian, as shown in the Rage Damage column of the Barbarian Features table.</p><p><strong>Strength Advantage.</strong> You have Advantage on Strength checks and Strength saving throws.</p><p><strong>No Concentration or Spells.</strong> You can't maintain Concentration, and you can't cast spells.</p><p><strong>Duration.</strong> The Rage lasts until the end of your next turn, and it ends early if you don Heavy armor or have the Incapacitated condition. If your Rage is still active on your next turn, you can extend the Rage for another round by doing one of the following:</p><ul><li>Make an attack roll against an enemy.</li><li>Force an enemy to make a saving throw.</li><li>Take a Bonus Action to extend your Rage.</li></ul><p>Each time the Rage is extended, it lasts until the end of your next turn. You can maintain a Rage for up to 10 minutes.</p><section class=\"secret\" id=\"secret-o72MSFMdhSQC7kYa\"><p><strong>Foundry Note</strong></p><p>This feature includes an Active Effect which automates the Resistance and additional damage. This feature will also automatically recharge your Rage uses on a Short and Long Rest.</p></section>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "bonus",
       "cost": 1,
@@ -37,7 +41,17 @@
       "value": 1,
       "max": "@scale.barbarian.rages",
       "per": "lr",
-      "recovery": "",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll"
+        },
+        {
+          "period": "sr",
+          "type": "formula",
+          "formula": "1"
+        }
+      ],
       "prompt": true
     },
     "consume": {
@@ -74,27 +88,169 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Barbarian 1",
+    "requirements": "Barbarian",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "BFnBCVaPtO886GCg": {
+        "type": "utility",
+        "_id": "BFnBCVaPtO886GCg",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "bX0Z5ZJ7brszmIa5"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Expend Rage",
+        "img": "",
+        "appliedEffects": []
+      }
+    },
+    "prerequisites": {
+      "level": 1
     }
   },
-  "effects": [],
-  "flags": {},
+  "effects": [
+    {
+      "name": "Rage",
+      "img": "icons/skills/wounds/injury-eyes-blood-red-pink.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.matBrbRage000000",
+      "transfer": false,
+      "_id": "bX0Z5ZJ7brszmIa5",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.bonuses.mwak.damage",
+          "mode": 2,
+          "value": "+@scale.barbarian.rage-damage",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "slashing",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "piercing",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "bludgeoning",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "rounds": 10,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": 1739510586312,
+        "modifiedTime": 1739510612183,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matBrbRage000000.bX0Z5ZJ7brszmIa5"
+    }
+  ],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1708294539841,
-    "modifiedTime": 1715232684460,
+    "modifiedTime": 1739510586357,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 100000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!kZlNY34EDkyGpoju"
+  "_key": "!items!matBrbRage000000"
 }

@@ -1,5 +1,6 @@
 {
   "name": "Zone of Truth",
+  "_id": "matSplZoneOfTrut",
   "type": "spell",
   "system": {
     "description": {
@@ -7,10 +8,9 @@
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
@@ -27,12 +27,20 @@
       "width": null,
       "units": "ft",
       "type": "sphere",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "count": ""
+      }
     },
     "range": {
       "value": 60,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -85,31 +93,90 @@
       "vocal",
       "somatic"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "dnd5eactivity000": {
+        "effects": [
+          {
+            "_id": "SizwVh2pes7WV5tm",
+            "onSave": false
+          }
+        ]
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.MZzYDNMbkqtDvoK2",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplZoneOfTrut",
       "spell-lists": "bard,cleric,paladin"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      }
     }
   },
   "img": "icons/magic/symbols/runes-star-magenta.webp",
-  "effects": [],
+  "effects": [
+    {
+      "name": "Cannot Lie",
+      "img": "icons/magic/symbols/runes-star-magenta.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplZoneOfTrut",
+      "transfer": false,
+      "_id": "SizwVh2pes7WV5tm",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The creature can't speak a deliberate lie while in the radius.</p><p>An affected creature is aware of the spell and can thus avoid answering questions to which it would normally respond with a lie. Such a creature can be evasive in its answers as long as it remains within the boundaries of the truth.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728160940840,
+        "modifiedTime": 1728161005034,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplZoneOfTrut.SizwVh2pes7WV5tm"
+    }
+  ],
   "folder": "3rC3qr5FIlZymxFD",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.4",
+    "coreVersion": "12.331",
     "createdTime": 1661787234097,
-    "modifiedTime": 1708930454014,
+    "modifiedTime": 1728161007374,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "MZzYDNMbkqtDvoK2",
   "sort": 5700000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!MZzYDNMbkqtDvoK2"
+  "_key": "!items!matSplZoneOfTrut"
 }

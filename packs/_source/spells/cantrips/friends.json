@@ -2,14 +2,18 @@
   "folder": "WtBByem45tjsGx6Z",
   "name": "Friends",
   "type": "spell",
-  "_id": "lRzfmBDd3fPONes9",
+  "_id": "matSplFriends000",
   "img": "icons/skills/social/diplomacy-handshake.webp",
   "system": {
     "description": {
-      "value": "<p>For the duration, you have advantage on all Charisma checks directed at one creature of your choice that is not hostile toward you. When the spell ends, the creature realizes that you used magic to influence its mood and becomes hostile toward you. A creature prone to violence might attack you. Another creature might seek retribution in other ways (at the DM's discretion), depending on the nature of your interaction with it. The verbal component of this spell may be slipped into casual conversation. A successful Wisdom (Insight) check contested by your Charisma (Deception) check (made with advantage) allows a listener to determine that a spell has been cast.</p>",
+      "value": "<p>You magically emanate a sense of friendship toward one creature you can see within range. The target must succeed on a Wisdom saving throw or have the &amp;Reference[Charmed] condition for the duration. The target succeeds automatically if it isn't a Humanoid, if you're fighting it, or if you have cast this spell on it within the past 24 hours.</p><p>The spell ends early if the target takes damage or if you make an attack roll, deal damage, or force anyone to make a saving throw. When the spell ends, the target knows it was Charmed by you.</p><p>The verbal component of this spell may be slipped into casual conversation. A successful [[/check ability=wis skill=ins]] check contested by your [[/check ability=cha skill=dec]] check (made with advantage) allows a listener to determine that a spell has been cast.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -26,12 +30,19 @@
       "width": null,
       "units": "",
       "type": "self",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "self"
+      "units": "self",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -83,28 +94,139 @@
     "scaling": {
       "mode": "none",
       "formula": ""
+    },
+    "activities": {
+      "geLvpLhoFaZ3H8mC": {
+        "type": "utility",
+        "_id": "geLvpLhoFaZ3H8mC",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "io19Edb2RusqtXRd"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": [
+          "io19Edb2RusqtXRd"
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Friends",
+      "img": "icons/skills/social/diplomacy-handshake.webp",
+      "_id": "io19Edb2RusqtXRd",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "flags.midi-qol.advantage.ability.check.cha",
+          "mode": 0,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>You have advantage on all Charisma checks directed at one creature of your choice that isn't hostile toward you</p>",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.2",
+        "createdTime": 1726882438570,
+        "modifiedTime": 1726907244299,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplFriends000.io19Edb2RusqtXRd"
+    }
+  ],
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.lRzfmBDd3fPONes9",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplFriends000",
       "spell-lists": "bard,sorcerer,warlock,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1707665317057,
-    "modifiedTime": 1708927608467,
+    "modifiedTime": 1737931750105,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 3900000,
+  "sort": 4400000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!lRzfmBDd3fPONes9"
+  "_key": "!items!matSplFriends000"
 }

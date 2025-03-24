@@ -1,19 +1,19 @@
 {
   "name": "Regenerate",
+  "_id": "matSplRegenerate",
   "ownership": {
     "default": 0
   },
   "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You touch a creature and stimulate its natural healing ability. The target regains hit points equal to a number of hit dice equal to your spellcasting modifier, adding the target's Constitution modifier to each die rolled in this way. For the duration of the spell, the target regains hit points equal to one of its hit dice, adding the target's Constitution modifier on each die rolled in this way at the end of every minute (60 hit dice over the full one hour duration).</p><p>The target's severed body members (fingers, legs, tails, and so on), if any, are restored after 2 minutes. If you have the severed part and hold it to the stump, the spell instantaneously causes the limb to knit to the stump.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 9th level or higher, the target always regains hit points equal to the maximum number possible on their hit dice from the healing received by this spell.</p>",
+      "value": "<p>You touch a creature and stimulate its natural healing ability. The target regains hit points equal to a number of hit dice equal to your spellcasting modifier, adding the target's Constitution modifier to each die rolled in this way. For the duration of the spell, the target regains hit points equal to one of its hit dice, adding the target's Constitution modifier on each die rolled in this way at the end of every minute (60 hit dice over the full one hour duration).</p><p>The target's severed body members (fingers, legs, tails, and so on), if any, are restored after 2 minutes. If you have the severed part and hold it to the stump, the spell instantaneously causes the limb to knit to the stump.</p><p><strong>Using a Higher-Level Spell Slot.</strong> If you use a spell slot of level 9+, the target always regains hit points equal to the maximum number possible on their hit dice from the healing received by this spell.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "minute",
@@ -30,12 +30,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "touch"
+      "units": "touch",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -94,28 +101,126 @@
       "somatic",
       "material"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "2w9DaA6vTXOQzm71": {
+        "type": "utility",
+        "_id": "2w9DaA6vTXOQzm71",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {},
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "WYXPOhZ9hx96bYNk"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.frZb389S3MGeWqQk",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplRegenerate",
       "spell-lists": "bard,cleric,druid"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
     }
   },
   "img": "icons/magic/life/heart-cross-strong-flame-green.webp",
-  "effects": [],
+  "effects": [
+    {
+      "name": "Regenerating",
+      "img": "icons/magic/life/heart-cross-strong-flame-green.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplRegenerate",
+      "transfer": false,
+      "_id": "WYXPOhZ9hx96bYNk",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target regains hit points equal to a number of hit dice equal to your spellcasting modifier, adding the target's Constitution modifier to each die rolled in this way. For the duration of the spell, the target regains hit points equal to one of its hit dice, adding the target's Constitution modifier on each die rolled in this way at the end of every minute (60 hit dice over the full one hour duration).</p><p>The target's severed body members (fingers, legs, tails, and so on), if any, are restored after 2 minutes. If you have the severed part and hold it to the stump, the spell instantaneously causes the limb to knit to the stump.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728830451608,
+        "modifiedTime": 1728830730869,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplRegenerate.WYXPOhZ9hx96bYNk"
+    }
+  ],
   "folder": "0whxxbO5gmG63mDV",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1661787234086,
-    "modifiedTime": 1709231295849,
+    "modifiedTime": 1739429091848,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "frZb389S3MGeWqQk",
-  "sort": 1200000,
-  "_key": "!items!frZb389S3MGeWqQk"
+  "sort": 1800000,
+  "_key": "!items!matSplRegenerate"
 }

@@ -3,14 +3,13 @@
   "type": "spell",
   "system": {
     "description": {
-      "value": "<p>You attempt to charm a humanoid you can see within range. It must make a Wisdom saving throw, and does so with advantage if you or your companions are fighting it. If it fails the saving throw, it is &amp;Reference[charmed] by you until the spell ends or until you or your companions do anything harmful to it. The charmed creature regards you and your companions as friendly acquaintances. When the spell ends, the creature knows it was charmed by you.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.</p>",
+      "value": "<p>You attempt to charm a humanoid you can see within range. It must make a Wisdom saving throw, and does so with advantage if you or your companions are fighting it. If it fails the saving throw, it is charmed by you until the spell ends or until you or your companions do anything harmful to it. The charmed creature regards you and your companions as friendly acquaintances. When the spell ends, the creature knows it was charmed by you.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "Materia Source of Truth",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
@@ -27,12 +26,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 30,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -63,7 +69,7 @@
     "save": {
       "ability": "wis",
       "dc": null,
-      "scaling": "spell"
+      "scaling": "wis"
     },
     "level": 1,
     "school": "enc",
@@ -83,9 +89,78 @@
     },
     "properties": [
       "vocal",
-      "somatic"
+      "somatic",
+      "mgc"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "5F9TmLW5rRLIDM75": {
+        "type": "save",
+        "_id": "5F9TmLW5rRLIDM75",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "1QhUB3231btaCO0b",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "wis",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": [
+          "1QhUB3231btaCO0b"
+        ]
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
@@ -96,7 +171,7 @@
   "effects": [
     {
       "name": "Charm Person",
-      "origin": "Compendium.dnd5e.spells.Item.eS7XnnApoxRxYXPs",
+      "origin": "Compendium.materia-dnd.species.Item.W7hYNFdXPdkkqAnv",
       "duration": {
         "startTime": null,
         "seconds": 3600,
@@ -136,12 +211,11 @@
   "folder": "S6a8Zv7ARkU77QwF",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "3.2.1",
+    "coreVersion": "12.328",
     "createdTime": 1661787234185,
-    "modifiedTime": 1708380647515,
+    "modifiedTime": 1720057601116,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "ownership": {

@@ -6,10 +6,14 @@
   "img": "icons/skills/targeting/target-strike-gray.webp",
   "system": {
     "description": {
-      "value": "<p>Once you reach 3rd level, as an action you can target one ally you can see within 30 feet of you. If the target can see and hear you, the target can make one weapon attack or unarmed strike as a reaction.</p>",
+      "value": "<p>As an Action you can target one ally you can see within 30 feet of you. If the target can see and hear you, the target can make one weapon attack or Unarmed Strike as a Reaction.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": null,
@@ -73,18 +77,37 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Command Ally",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1706851916235,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1741715990461,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 0,

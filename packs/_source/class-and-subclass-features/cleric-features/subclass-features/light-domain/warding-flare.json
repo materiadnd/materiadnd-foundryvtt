@@ -6,10 +6,14 @@
   "img": "icons/magic/light/explosion-star-glow-yellow.webp",
   "system": {
     "description": {
-      "value": "<p>Also at 1st level, you can interpose divine light between yourself and an attacking enemy. When you are attacked by a creature within 30 feet of you that you can see, you can use your reaction to impose disadvantage on the attack roll, causing light to flare before the attacker before it hits or misses. An attacker that can't be blinded is immune to this feature.</p><p>You can use this feature a number of times equal to your Wisdom modifier (a minimum of once). You regain all expended uses when you finish a long rest.</p>",
+      "value": "<p>When a creature that you can see within 30 feet of yourself makes an attack roll, you can take a Reaction to impose Disadvantage on the attack roll, causing light to flare before it hits or misses.</p><p>You can use this feature a number of times equal to your Wisdom modifier (minimum of once, currently @abilities.wis.mod). You regain all expended uses when you finish a Long Rest.</p><section id=\"secret-Atse0RM4nr4aTDmI\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Flare</strong> activity includes a 30 foot emanation for identifying impacted creatures. It does not automate the Disadvantage.</p></section>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "reaction",
       "cost": 1,
@@ -69,22 +73,60 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Light Domain 1",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Flare",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "activation": {
+          "condition": "When a creature you can see within 30 feet makes an attack roll"
+        },
+        "range": {
+          "units": "self"
+        },
+        "target": {
+          "template": {
+            "type": "radius",
+            "units": "ft",
+            "size": "30"
+          }
+        }
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707684802175,
-    "modifiedTime": 1710765477806,
+    "modifiedTime": 1742336457309,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 175000,

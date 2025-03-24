@@ -1,80 +1,58 @@
 {
   "name": "Prismatic Wall",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplPrismaticW",
   "system": {
     "description": {
-      "value": "<p>A shimmering, multicolored plane of light forms a vertical opaque wall - up to 90 feet long, 30 feet high, and 1 inch thick - centered on a point you can see within range. Alternatively, you can shape the wall into a Sphere up to 30 feet in diameter centered on a point you choose within range. The wall remains in place for the Duration. If you position the wall so that it passes through a space occupied by a creature, the spell fails, and your action and the spell slot are wasted.</p><p>The wall sheds bright light out to a range of 100 feet and dim light for an additional 100 feet. You and creatures you designate at the time you cast the spell can pass through and remain near the wall without harm. If another creature that can see the wall moves to within 20 feet of it or starts its turn there, the creature must succeed on a Constitution saving throw or become Blinded for 1 minute.</p><p>The wall consists of seven layers, each with a different color. When a creature attempts to reach into or pass through the wall, it does so one layer at a time through all the wall's layers. As it passes or reaches through each layer, the creature must make a Dexterity saving throw or be affected by that layer's properties as described below.</p><p>The wall can be destroyed, also one layer at a time, in order from red to violet, by means specific to each layer. Once a layer is destroyed, it remains so for the Duration of the spell. An Antimagic Field has no effect on the wall, and Dispel Magic works only against the violet layer.</p>\n<ol>\n<li><strong>Red</strong>. The creature takes 10d6 fire damage on a failed save, or half as much damage on a successful one. While this layer is in place, nonmagical Ranged Attacks can't pass through the wall. The layer can be destroyed by dealing at least 25 cold damage to it.</li>\n<li><strong>Orange</strong>. The creature takes 10d6 acid damage on a failed save, or half as much damage on a successful one. While this layer is in place, magical Ranged Attacks can't pass through the wall. The layer is destroyed by a strong wind.</li>\n<li><strong>Yellow</strong>. The creature takes 10d6 lightning damage on a failed save, or half as much damage on a successful one. This layer can be destroyed by dealing at least 60 force damage to it.</li>\n<li><strong>Green</strong>. The creature takes 10d6 poison damage on a failed save, or half as much damage on a successful one. A Passwall spell, or another spell of equal or greater level that can open a portal on a solid surface, destroys this layer.</li>\n<li><strong>Blue</strong>. The creature takes 10d6 cold damage on a failed save, or half as much damage on a successful one. This layer can be destroyed by dealing at least 25 fire damage to it.</li>\n<li><strong>Indigo</strong>. On a failed save, the creature is Restrained. It must then make a Constitution saving throw at the end of each of its turns. If it successfully saves three times, the spell ends. If it fails its save three times, it permanently turns to stone and is subjected to the Petrified condition. The successes and failures don't need to be consecutive; keep track of both until the creature collects three of a kind.\n<ul>\n<li>While this layer is in place, Spells can't be cast through the wall. The layer is destroyed by bright light shed by a Daylight spell or a similar spell of equal or higher level.</li>\n</ul>\n</li>\n<li><strong>Violet</strong>. On a failed save, the creature is Blinded. It must then make a Wisdom saving throw at the start of your next turn. A successful save ends the blindness. If it fails that save, the creature is transported to another plane of the DM's choosing and is no longer Blinded. (Typically, a creature that is on a plane that isn't its home plane is banished home, while other creatures are usually cast into the Astral or Ethereal planes.) This layer is destroyed by a Dispel Magic spell or a similar spell of equal or higher level that can end Spells and magical Effects.</li>\n</ol>",
+      "value": "<p>A shimmering, multicolored plane of light forms a vertical opaque wall - up to 90 feet long, 30 feet high, and 1 inch thick - centered on a point within range. Alternatively, you shape the wall into a globe up to 30 feet in diameter centered on a point within range. The wall lasts for the duration. If you position the wall in a space occupied by a creature, the spell ends instantly without effect.</p><p>The wall sheds &amp;Reference[BrightLight] within 100 feet and &amp;Reference[DimLight] for an additional 100 feet. You and creatures you designate when you cast the spell can pass through and be near the wall without harm. If another creature that can see the wall moves within 20 feet of it or starts its turn there, the creature must succeed on a Constitution saving throw or have the &amp;Reference[Blinded apply=false] condition for 1 minute.</p><p>The wall consists of seven layers, each with a different color. When a creature reaches into or passes through the wall, it does so one layer at a time through all the layers. Each layer forces the creature to make a Dexterity saving throw or be affected by that layer's properties as described in the Prismatic Layers table.</p><p>The wall, which has AC 10, can be destroyed one layer at a time, in order from red to violet, by means specific to each layer. If a layer is destroyed, it is gone for the duration. <em>@UUID[Compendium.materia-dnd.spells.Item.matSplAntimagicF]{Antimagic Field}</em> has no effect on the wall, and <em>@UUID[Compendium.materia-dnd.spells.Item.matSplDispelMagi]{Dispel Magic}</em> can affect only the violet layer.</p><table><caption>Prismatic Layers</caption><thead><tr><td>Order</td><td>Effects</td></tr></thead><tbody><tr><td>1</td><td><strong>Red.</strong> <em>Failed Save:</em> 12d6 Fire damage. <em>Successful Save:</em> Half as much damage. <em>Additional Effects</em>: Nonmagical ranged attacks can't pass through this layer, which is destroyed if it takes at least 25 Cold damage.</td></tr><tr><td>2</td><td><strong>Orange.</strong> <em>Failed Save:</em> 12d6 Acid damage. <em>Successful Save:</em> Half as much damage. <em>Additional Effects:</em> Magical ranged attacks can't pass through this layer, which is destroyed by a strong wind (such as the one created by <em>@UUID[Compendium.materia-dnd.spells.Item.matSplGustofWind]{Gust of Wind}</em>).</td></tr><tr><td>3</td><td><strong>Yellow.</strong> <em>Failed Save:</em> 12d6 Lightning damage. <em>Successful Save:</em> Half as much damage. <em>Additional Effects:</em> The layer is destroyed if it takes at least 60 Force damage.</td></tr><tr><td>4</td><td><strong>Green.</strong> <em>Failed Save:</em> 12d6 Poison damage. <em>Successful Save:</em> Half as much damage. <em>Additional Effects:</em> A <em>@UUID[Compendium.materia-dnd.spells.Item.matSplPasswall00]{Passwall}</em> spell, or another spell of equal or greater level that can open a portal on a solid surface, destroys this layer.</td></tr><tr><td>5</td><td><strong>Blue.</strong> <em>Failed Save:</em> 12d6 Cold damage. <em>Successful Save:</em> Half as much damage. <em>Additional Effects:</em> The layer is destroyed if it takes at least 25 Fire damage.</td></tr><tr><td>6</td><td><strong>Indigo.</strong> <em>Failed Save:</em> The target has the &amp;Reference[Restrained apply=false] condition and makes a [[/save ability=con dc=@attributes.spelldc format=long]] at the end of each of its turns. If it successfully saves three times, the condition ends. If it fails three times, it has the &amp;Reference[Petrified] condition until it is freed by an effect like the <em>@UUID[Compendium.materia-dnd.spells.Item.matSplGreaterRes]{Greater Restoration}</em> spell. The successes and failures needn't be consecutive; keep track of both until the target collects three of a kind. <em>Additional Effects:</em> Spells can't be cast through this layer, which is destroyed by Bright Light shed by the <em>@UUID[Compendium.materia-dnd.spells.Item.matSplDaylight00]{Daylight}</em> spell.</td></tr><tr><td>7</td><td><strong>Violet.</strong> <em>Failed Save:</em> The target has the &amp;Reference[Blinded apply=false] condition and makes a [[/save ability=wis dc=@attributes.spelldc format=long]] at the start of your next turn. On a successful save, the condition ends. On a failed save, the condition ends, and the creature teleports to another plane of existence (DM's choice). <em>Additional Effects:</em> This layer is destroyed by <em>@UUID[Compendium.materia-dnd.spells.Item.matSplDispelMagi]{Dispel Magic}</em>.</td></tr></tbody></table>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "10",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 90,
-      "width": null,
-      "units": "ft",
-      "type": "wall",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "space",
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": "",
+        "size": "",
+        "width": "",
+        "height": "",
+        "count": ""
+      }
     },
     "range": {
-      "value": 60,
-      "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": "",
+      "value": "60"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "10d6",
-          ""
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "dex",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 9,
     "school": "abj",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -85,36 +63,435 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "5f0JerdDSOQQXiTe": {
+        "type": "utility",
+        "_id": "5f0JerdDSOQQXiTe",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "wall",
+            "size": "90",
+            "width": "1/12",
+            "height": "30",
+            "count": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "space",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Create Wall"
+      },
+      "fOYr1bgsB1VXROcm": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "count": "",
+            "type": "sphere",
+            "size": "15",
+            "width": "1/12",
+            "height": "30"
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "space",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "formula": "",
+          "name": ""
+        },
+        "name": "Create Globe",
+        "_id": "fOYr1bgsB1VXROcm"
+      },
+      "Pm0Re9Gt8pJNaF1C": {
+        "type": "save",
+        "name": "Blinding Save",
+        "_id": "Pm0Re9Gt8pJNaF1C",
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [
+          {
+            "_id": "iuIlP2Br3aHDUjai",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": true,
+          "units": "ft",
+          "special": "measured from nearest point on wall or globe",
+          "value": "20"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "damage": {
+          "parts": [],
+          "onSave": "none"
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      },
+      "fxEIn0sNwZReZJhV": {
+        "type": "save",
+        "name": "Traversal Save",
+        "_id": "fxEIn0sNwZReZJhV",
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [
+          {
+            "_id": "CbAuJQPoOViKebWs",
+            "onSave": false
+          },
+          {
+            "_id": "EIaFpuWAfQKSkFyp",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": true,
+          "units": "any",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 12,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "acid",
+                "fire",
+                "lightning",
+                "poison",
+                "cold"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        }
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic"
-    ],
-    "crewed": false
+    "identifier": "prismatic-wall"
+  },
+  "type": "spell",
+  "img": "icons/magic/defensive/barrier-shield-dome-blue-purple.webp",
+  "effects": [
+    {
+      "name": "Prismatic Blinding",
+      "img": "systems/dnd5e/icons/svg/statuses/blinded.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplPrismaticW",
+      "transfer": false,
+      "_id": "iuIlP2Br3aHDUjai",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target has the &amp;Reference[Blinded apply=false] condition for 1 minute.</p>",
+      "tint": "#ffffff",
+      "statuses": [
+        "blinded"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplPrismaticW.iuIlP2Br3aHDUjai"
+    },
+    {
+      "name": "Restrained (Indigo)",
+      "img": "systems/dnd5e/icons/svg/statuses/restrained.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplPrismaticW",
+      "transfer": false,
+      "_id": "CbAuJQPoOViKebWs",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target has the &amp;Reference[Restrained apply=false] condition and makes a [[/save ability=con dc=@attributes.spelldc]] format=long]] at the end of each of its turns. If it successfully saves three times, the condition ends. If it fails three times, it has the &amp;Reference[Petrified] condition until it is freed by an effect like the <em>@UUID[Compendium.materia-dnd.spells.Item.matSplGreaterRes]{Greater Restoration}</em> spell.</p>",
+      "tint": "#ffffff",
+      "statuses": [
+        "restrained"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplPrismaticW.CbAuJQPoOViKebWs"
+    },
+    {
+      "name": "Blinded (Violet)",
+      "img": "systems/dnd5e/icons/svg/statuses/blinded.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplPrismaticW",
+      "transfer": false,
+      "_id": "EIaFpuWAfQKSkFyp",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": 1,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p> The target has the &amp;Reference[Blinded apply=false] condition and makes a [[/save ability=wis dc=@attributes.spelldc format=long]] at the start of your next turn. On a successful save, the condition ends. On a failed save, the condition ends, and the creature teleports to another plane of existence (DM's choice).</p>",
+      "tint": "#ffffff",
+      "statuses": [
+        "blinded"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplPrismaticW.EIaFpuWAfQKSkFyp"
+    }
+  ],
+  "folder": "89VDZRAxJ1IDvEOP",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.C2oRC5vGhVfh3dW5",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplPrismaticW",
       "spell-lists": "bard,wizard"
     }
   },
-  "img": "icons/magic/light/beams-rays-orange-purple.webp",
-  "effects": [],
-  "folder": "89VDZRAxJ1IDvEOP",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234214,
-    "modifiedTime": 1709232343876,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1739435512192,
+    "modifiedTime": 1739435567856,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "C2oRC5vGhVfh3dW5",
-  "sort": 800000,
-  "_key": "!items!C2oRC5vGhVfh3dW5"
+  "sort": 0,
+  "_key": "!items!matSplPrismaticW"
 }

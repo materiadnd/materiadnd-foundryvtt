@@ -1,75 +1,55 @@
 {
   "name": "Eyebite",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplEyebite000",
   "system": {
     "description": {
-      "value": "<p>For the spell's Duration, your eyes become an inky void imbued with dread power. One creature of your choice within 60 feet of you that you can see must succeed on a Wisdom saving throw or be affected by one of the following Effects of your choice for the Duration. On each of your turns until the spell ends, you can use your action to target another creature but can't target a creature again if it has succeeded on a saving throw against this casting of eyebite.</p><ul><li><strong>Asleep</strong>. The target falls Unconscious. It wakes up if it takes any damage or if another creature uses its action to shake the sleeper awake.</li><li><strong>Panicked</strong>. The target is Frightened of you. On each of its turns, the frightened creature must take the Dash action and move away from you by the safest and shortest available route, unless there is nowhere to move. If the target moves to a place at least 60 feet away from you where it can no longer see you, this effect ends.</li><li><strong>Sickened</strong>. The target has disadvantage on Attack rolls and Ability Checks. At the end of each of its turns, it can make another Wisdom saving throw. If it succeeds, the effect ends</li></ul><p><strong>At Higher Levels.</strong> Using a spell slot of 9th level or higher grants a duration that does not require concentration.</p>",
+      "value": "<p>For the duration, your eyes become an inky void. One creature of your choice within 60 feet of you that you can see must succeed on a Wisdom saving throw or be affected by one of the following effects of your choice for the duration.</p><p>On each of your turns until the spell ends, you can take a Magic action to target another creature but can't target a creature again if it has succeeded on a save against this casting of the spell.</p><p><strong>Asleep.</strong> The target has the &amp;Reference[Unconscious apply=false] condition. It wakes up if it takes any damage or if another creature takes an action to shake it awake.</p><p><strong>Panicked.</strong> The target has the &amp;Reference[Frightened apply=false] condition. On each of its turns, the Frightened target must take the &amp;Reference[Dash] action and move away from you by the safest and shortest route available. If the target moves to a space at least 60 feet away from you where it can't see you, this effect ends.</p><p><strong>Sickened.</strong> The target has the &amp;Reference[Poisoned apply=false] condition.</p><p><strong>Using a Higher-Level Spell Slot.</strong> If you cast this spell using a 9+ level slot, it no longer requires your Concentration.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "creature",
+        "special": "cannot target a creature that has succeeded on a save against this casting"
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "self"
+      "units": "ft",
+      "special": "",
+      "value": "60"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "wis",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 6,
     "school": "nec",
+    "properties": [
+      "vocal",
+      "somatic",
+      "concentration"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -80,68 +60,166 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "r5eaxtkEdeKOXeHb": {
+        "type": "save",
+        "_id": "r5eaxtkEdeKOXeHb",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "5btX5iwwleMMzkvj",
+            "onSave": false
+          },
+          {
+            "_id": "Kj1GwWXD5k0Zen75",
+            "onSave": false
+          },
+          {
+            "_id": "5ZKeVyumUK0i76am",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Initial Cast"
+      },
+      "3PZbzzH8sBJl3heA": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [
+          {
+            "_id": "5btX5iwwleMMzkvj",
+            "onSave": false
+          },
+          {
+            "_id": "Kj1GwWXD5k0Zen75",
+            "onSave": false
+          },
+          {
+            "_id": "5ZKeVyumUK0i76am",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "While Concentrating",
+        "_id": "3PZbzzH8sBJl3heA",
+        "img": "systems/dnd5e/icons/svg/statuses/concentrating.svg"
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "concentration",
-      "mgc"
-    ],
-    "crewed": false
+    "identifier": "eyebite"
   },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.MqNUm6VbEmxnHmbu",
-      "spell-lists": "bard,sorcerer,warlock,wizard"
-    }
-  },
-  "img": "icons/magic/perception/eye-ringed-glow-angry-large-red.webp",
+  "type": "spell",
+  "img": "icons/skills/wounds/injury-eyes-blood-red.webp",
   "effects": [
     {
-      "name": "Eyebite (alseep)",
-      "origin": "Compendium.dnd5e.spells.Item.ZRqu3Xh9FmlBCZGy",
-      "duration": {
-        "startTime": null,
-        "seconds": 60,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": true,
-      "_id": "2pJGy924n0r44Zkh",
-      "changes": [],
-      "description": "<p>The target falls Unconscious. It wakes up if it takes any damage or if another creature uses its action to shake the sleeper awake.</p>",
-      "transfer": false,
-      "statuses": [
-        "unconscious",
-        "incapacitated"
-      ],
-      "flags": {},
-      "tint": "#ffffff",
-      "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "icons/magic/perception/eye-ringed-glow-angry-large-red.webp",
+      "name": "Asleep",
+      "img": "systems/dnd5e/icons/svg/statuses/unconscious.svg",
+      "_id": "5btX5iwwleMMzkvj",
       "type": "base",
       "system": {},
-      "sort": 0,
-      "_key": "!items.effects!MqNUm6VbEmxnHmbu.2pJGy924n0r44Zkh"
-    },
-    {
-      "name": "Eyebite (panicked)",
-      "origin": "Compendium.dnd5e.spells.Item.ZRqu3Xh9FmlBCZGy",
+      "changes": [],
+      "disabled": false,
       "duration": {
         "startTime": null,
         "seconds": 60,
@@ -151,45 +229,123 @@
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "VcwWVogEU3TwChxb",
+      "description": "<p>The target has the &amp;Reference[Unconscious apply=false] condition. It wakes up if it takes any damage or if another creature takes an action to shake it awake.</p>",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "unconscious"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplEyebite000.5btX5iwwleMMzkvj"
+    },
+    {
+      "name": "Panicked",
+      "img": "systems/dnd5e/icons/svg/statuses/frightened.svg",
+      "_id": "Kj1GwWXD5k0Zen75",
+      "type": "base",
+      "system": {},
       "changes": [],
-      "description": "<p>The target is Frightened of the caster. On each of its turns, the frightened creature must take the Dash action and move away from the caster by the safest and shortest available route, unless there is nowhere to move. If the target moves to a place at least 60 feet away from the case where it can no longer see them, this effect ends.</p>",
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target has the &amp;Reference[Frightened apply=false] condition. On each of its turns, the Frightened target must take the &amp;Reference[Dash] action and move away from you by the safest and shortest route available. If the target moves to a space at least 60 feet away from you where it can't see you, this effect ends.</p>",
+      "origin": null,
+      "tint": "#ffffff",
       "transfer": false,
       "statuses": [
         "frightened"
       ],
+      "sort": 0,
       "flags": {},
-      "tint": "#ffffff",
       "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
+        "lastModifiedBy": null
       },
-      "img": "icons/magic/perception/eye-ringed-glow-angry-large-red.webp",
+      "_key": "!items.effects!matSplEyebite000.Kj1GwWXD5k0Zen75"
+    },
+    {
+      "name": "Sickened",
+      "img": "systems/dnd5e/icons/svg/statuses/poisoned.svg",
+      "_id": "5ZKeVyumUK0i76am",
       "type": "base",
       "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target has the &amp;Reference[Poisoned apply=false] condition.</p>",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "poisoned"
+      ],
       "sort": 0,
-      "_key": "!items.effects!MqNUm6VbEmxnHmbu.VcwWVogEU3TwChxb"
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplEyebite000.5ZKeVyumUK0i76am"
     }
   ],
   "folder": "UjV13fGRtZfpmOAS",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234163,
-    "modifiedTime": 1711345023777,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "MqNUm6VbEmxnHmbu",
-  "sort": 3600000,
-  "_key": "!items!MqNUm6VbEmxnHmbu"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplEyebite000",
+      "spell-lists": "bard,sorcerer,warlock,wizard"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739393293911,
+    "modifiedTime": 1739394692123,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplEyebite000"
 }

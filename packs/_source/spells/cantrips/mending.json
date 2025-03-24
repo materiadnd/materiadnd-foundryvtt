@@ -4,16 +4,16 @@
     "default": 0
   },
   "type": "spell",
+  "_id": "matSplMending000",
   "system": {
     "description": {
       "value": "<p>This spell repairs a single break or tear in an object you touch, such as a broken chain link, two halves of a broken key, a torn cloak, or a leaking wineskin. As long as the break or tear is no larger than 1 foot in any dimension, you mend it, leaving no trace of the former damage.</p><p>This spell can physically repair a magic item or construct, but the spell can't restore magic to such an object.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "minute",
@@ -30,12 +30,19 @@
       "width": null,
       "units": "",
       "type": "object",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "touch"
+      "units": "touch",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -89,12 +96,74 @@
       "somatic",
       "material"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "22Rdrgj7ulNMNPcc": {
+        "type": "utility",
+        "_id": "22Rdrgj7ulNMNPcc",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.hhyV9pMioh7yhOap",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplMending000",
       "spell-lists": "artificer,bard,cleric,druid,sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "img": "icons/magic/air/wind-stream-purple-blue.webp",
@@ -102,15 +171,13 @@
   "folder": "WtBByem45tjsGx6Z",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.0.2",
+    "coreVersion": "12.331",
     "createdTime": 1661787234215,
-    "modifiedTime": 1708927608467,
+    "modifiedTime": 1737926229907,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "hhyV9pMioh7yhOap",
-  "sort": 1000000,
-  "_key": "!items!hhyV9pMioh7yhOap"
+  "sort": 2300000,
+  "_key": "!items!matSplMending000"
 }

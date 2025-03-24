@@ -6,10 +6,14 @@
   "img": "icons/creatures/abilities/lion-roar-yellow.webp",
   "system": {
     "description": {
-      "value": "<p>Once you reach 10th level, your flair is shared amongst those who follow your command. When initiative is rolled a number of creatures of your choice equal to your Charisma modifier (minimum of 1) within 60 feet of you can use their reaction to take a bonus action.</p><p>Some examples might be a Barbarian's Rage, a Monk spending Ki Points for Patient Defense, a Sorcerer converting Sorcery Points, a Bard giving a Bardic Inspiration, or a Wizard casting the Expeditious Retreat spell.</p><p>You cannot use this feature again until you finish a long rest or a Respite.</p>",
+      "value": "<p>Your flair is shared amongst those who follow your command. When initiative is rolled a number of creatures of your choice equal to your Charisma modifier (minimum of 1) within 60 feet of you can use their reaction to take a Bonus Action.</p><p>Some examples might be a Barbarian's Rage, a Monk spending Focus Points for Patient Defense, a Sorcerer converting Sorcery Points, a Bard giving a Bardic Inspiration, or a Wizard casting the Expeditious Retreat spell.</p><p>You cannot use this feature again until you finish a Long Rest or a Respite.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "special",
       "cost": null,
@@ -73,18 +77,43 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 10
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Consummate Command",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1706888614071,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1741716174360,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 0,

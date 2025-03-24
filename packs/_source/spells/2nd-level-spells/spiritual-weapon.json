@@ -1,78 +1,54 @@
 {
   "name": "Spiritual Weapon",
-  "type": "spell",
-  "img": "icons/magic/fire/dagger-rune-enchant-flame-purple.webp",
+  "_id": "matSplSpiritualW",
   "system": {
     "description": {
-      "value": "<p>You create a floating, spectral weapon within range that lasts for the duration or until you cast this spell again. When you cast the spell, you can make a melee spell attack against a creature within 5 feet of the weapon. On a hit, the target takes force damage equal to 1d8 + your spellcasting ability modifier.</p><p>As a bonus action on your turn, you can move the weapon up to 20 feet and repeat the attack against a creature within 5 feet of it.</p><p>The weapon can take whatever form you choose. Clerics of deities who are associated with a particular weapon (as St. Cuthbert is known for his mace and Thor for his hammer) make this spell's effect resemble that weapon.</p><p><strong>Higher Levels.</strong> When you cast this spell using a spell slot of 3rd level or higher, the damage increases by 1d8 for every two slot levels above the 2nd.</p>",
+      "value": "<p>You create a floating, spectral force that resembles a weapon of your choice and lasts for the duration. The force appears within range in a space of your choice, and you can immediately make one melee spell attack against one creature within 5 feet of the force. On a hit, the target takes Force damage equal to [[/damage 1d8]] plus your spellcasting ability modifier.</p><p>As a Bonus Action on your later turns, you can move the force up to 20 feet and repeat the attack against a creature within 5 feet of it.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d8 for every slot level above 2.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "bonus",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 5,
-      "width": null,
-      "units": "ft",
-      "type": "square",
-      "prompt": true
+      "affects": {
+        "type": "space",
+        "count": "1",
+        "choice": false,
+        "special": ""
+      },
+      "template": {
+        "units": "ft",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": 60,
-      "long": null,
-      "units": "ft"
+      "value": "60",
+      "units": "ft",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "summ",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "",
-          "force"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 2,
     "school": "evo",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -83,53 +59,93 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "summon",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "bonuses": {
+          "ac": "",
+          "hd": "",
+          "hp": "",
+          "attackDamage": "",
+          "saveDamage": "",
+          "healing": ""
+        },
+        "creatureSizes": [],
+        "creatureTypes": [],
+        "match": {
+          "proficiency": true,
+          "attacks": true,
+          "saves": false,
+          "ability": ""
+        },
+        "profiles": [
+          {
+            "count": "",
+            "name": "",
+            "_id": "Nz3W2vDYmMsyP8Yb",
+            "uuid": "Compendium.materia-dnd.actors.Actor.matNpcSpiritualW",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": []
+          }
+        ],
+        "summon": {
+          "identifier": "",
+          "mode": "",
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "name": "",
+        "effects": []
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "mgc"
-    ],
-    "crewed": false,
-    "summons": {
-      "match": {
-        "proficiency": false,
-        "attacks": true,
-        "saves": false
-      },
-      "bonuses": {
-        "ac": "",
-        "hp": "",
-        "attackDamage": "@abilities.wis.mod",
-        "saveDamage": "",
-        "healing": ""
-      },
-      "profiles": [
-        {
-          "name": "",
-          "_id": "ZPT3UJQgcuKKIFtk",
-          "uuid": "Compendium.materia-dnd.actors.Actor.sB3cg4oLxzn6SRfx"
-        },
-        {
-          "name": "",
-          "_id": "2WhTA0usZTaVq53e",
-          "uuid": "Compendium.materia-dnd.actors.Actor.NAmRGEsVpHEN4pLF"
-        },
-        {
-          "name": "",
-          "_id": "BSusnM9zTXKbmHDb",
-          "uuid": "Compendium.materia-dnd.actors.Actor.xo49jI70OQ2Iab1L"
-        },
-        {
-          "name": "",
-          "_id": "9Rgqm2zbrUXhgPbb",
-          "uuid": "Compendium.materia-dnd.actors.Actor.DkrOzOQjNPlchRKN"
-        }
-      ]
-    }
+    "identifier": "spiritual-weapon"
   },
+  "type": "spell",
+  "img": "icons/weapons/axes/axe-double-gold.webp",
   "effects": [],
   "folder": "3rC3qr5FIlZymxFD",
   "ownership": {
@@ -137,21 +153,25 @@
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.x1nsNijHZHnq2RqH",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplSpiritualW",
       "spell-lists": "cleric"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234115,
-    "modifiedTime": 1712142938070,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738217162578,
+    "modifiedTime": 1738217181864,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "x1nsNijHZHnq2RqH",
-  "sort": 1900000,
-  "_key": "!items!x1nsNijHZHnq2RqH"
+  "sort": 0,
+  "_key": "!items!matSplSpiritualW"
 }

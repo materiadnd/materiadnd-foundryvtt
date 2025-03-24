@@ -3,17 +3,17 @@
   "ownership": {
     "default": 0
   },
+  "_id": "matSplSacredFlam",
   "type": "spell",
   "system": {
     "description": {
-      "value": "<p>Flame-like radiance descends on a creature that you can see within range. The target must succeed on a Dexterity saving throw or take 1d8 radiant damage. The target gains no benefit from cover for this saving throw.</p><p>The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).</p>",
+      "value": "<p>Flame-like radiance descends on a creature that you can see within range. The target must succeed on a Dexterity saving throw or take [[/damage 1d8 radiant]] damage. The target gains no benefit from cover for this saving throw.</p><p><strong>Cantrip Upgrade.</strong> The damage increases by [[/r 1d8]] when you reach levels 5 ([[/damage 2d8 radiant]]), 11 ([[/damage 3d8 radiant]]), and 17 ([[/damage 4d8 radiant]]).</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
@@ -30,12 +30,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 60,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -93,12 +100,101 @@
       "vocal",
       "somatic"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": []
+      },
+      "e1E8ijeJUgQLINCb": {
+        "type": "save",
+        "_id": "e1E8ijeJUgQLINCb",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "radiant"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ],
+          "onSave": "none"
+        },
+        "save": {
+          "ability": "dex",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.1Uu36hsslXVmydN5",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplSacredFlam",
       "spell-lists": "cleric"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "img": "icons/magic/light/beam-rays-orange.webp",
@@ -106,15 +202,13 @@
   "folder": "WtBByem45tjsGx6Z",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1661787234221,
-    "modifiedTime": 1708927608467,
+    "modifiedTime": 1737929885359,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "1Uu36hsslXVmydN5",
-  "sort": 400000,
-  "_key": "!items!1Uu36hsslXVmydN5"
+  "sort": 2000000,
+  "_key": "!items!matSplSacredFlam"
 }

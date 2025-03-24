@@ -1,15 +1,15 @@
 {
   "name": "Tsunami",
+  "_id": "matSplTsunami000",
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "description": {
-      "value": "<div class=\"rd__b  rd__b--3\"><p>A wall of water springs into existence at a point you choose within range. You can make the wall up to 300 feet long, 300 feet high, and 50 feet thick. The wall lasts for the duration.</p><div class=\"rd__spc-inline-post\"><p></p></div><p>When the wall appears, each creature within its area must make a Strength saving throw. On a failed save, a creature takes [[/r 6d10]] bludgeoning damage, or half as much damage on a successful save.</p><p>At the start of each of your turns after the wall appears, the wall, along with any creatures in it, moves 50 feet away from you. Any Huge or smaller creature inside the wall or whose space the wall enters when it moves must succeed on a Strength saving throw or take [[/r 5d10]] bludgeoning damage. A creature can take this damage only once per round. At the end of the turn, the wall's height is reduced by 50 feet, and the damage creatures take from the spell on subsequent rounds is reduced by [[/r 1d10]]. When the wall reaches 0 feet in height, the spell ends.</p><p>A creature caught in the wall can move by swimming. Because of the force of the wave, though, the creature must make a successful Strength (Athletics) check against your spell save DC in order to move at all. If it fails the check, it can't move. A creature that moves out of the area falls to the ground.</p></div>",
+      "value": "<p>A wall of water springs into existence at a point you choose within range. You can make the wall up to 300 feet long, 300 feet high, and 50 feet thick. The wall lasts for the duration.</p><p>When the wall appears, each creature within its area must make a Strength saving throw. On a failed save, a creature takes [[/r 6d10]] bludgeoning damage, or half as much damage on a successful save.</p><p>At the start of each of your turns after the wall appears, the wall, along with any creatures in it, moves 50 feet away from you. Any Huge or smaller creature inside the wall or whose space the wall enters when it moves must succeed on a Strength saving throw or take [[/r 5d10]] bludgeoning damage. A creature can take this damage only once per round. At the end of the turn, the wall's height is reduced by 50 feet, and the damage creatures take from the spell on subsequent rounds is reduced by [[/r 1d10]]. When the wall reaches 0 feet in height, the spell ends.</p><p>A creature caught in the wall can move by swimming. Because of the force of the wave, though, the creature must make a successful Strength (Athletics) check against your spell save DC in order to move at all. If it fails the check, it can't move. A creature that moves out of the area falls to the ground.</p><section id=\"secret-k0iZbNlzC9MWhVkJ\" class=\"secret\"><p><span style=\"font-family:'Roboto Condensed', sans-serif\"><strong style=\"box-sizing:border-box;user-select:text;scrollbar-width:thin;scrollbar-color:var(--color-scrollbar) var(--color-scrollbar-track)\">Foundry Note</strong></span></p><p style=\"box-sizing:border-box;user-select:text;scrollbar-width:thin;scrollbar-color:var(--color-scrollbar) var(--color-scrollbar-track);margin:0.5em 0px;color:rgb(207, 210, 218);font-family:'Roboto Condensed', sans-serif;font-size:13px;font-style:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:2;text-indent:0px;text-transform:none;widows:2;word-spacing:0px;-webkit-text-stroke-width:0px;white-space:normal;text-decoration-thickness:initial;text-decoration-style:initial;text-decoration-color:initial;text-align:start\"><span style=\"font-family:'Roboto Condensed', sans-serif\">The limited uses value of this spell tracks the number of rounds remaining from its initial 6, which is reset as part of the <strong style=\"box-sizing:border-box;user-select:text;scrollbar-width:thin;scrollbar-color:var(--color-scrollbar) var(--color-scrollbar-track)\">Create Tsunami </strong>activity.</span></p><p style=\"box-sizing:border-box;user-select:text;scrollbar-width:thin;scrollbar-color:var(--color-scrollbar) var(--color-scrollbar-track);margin:0.5em 0px;color:rgb(207, 210, 218);font-family:'Roboto Condensed', sans-serif;font-size:13px;font-style:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-weight:400;letter-spacing:normal;orphans:2;text-indent:0px;text-transform:none;widows:2;word-spacing:0px;-webkit-text-stroke-width:0px;white-space:normal;text-decoration-thickness:initial;text-decoration-style:initial;text-decoration-color:initial;text-align:start\"><span style=\"font-family:'Roboto Condensed', sans-serif\">The <strong style=\"box-sizing:border-box;user-select:text;scrollbar-width:thin;scrollbar-color:var(--color-scrollbar) var(--color-scrollbar-track)\">Start of Turn Effects</strong> activity consumes one use to represent one round passing and uses the updated count for its damage rolls.</span></p></section>",
       "chat": ""
     },
     "actionType": "save",
@@ -32,12 +32,26 @@
       "units": "spec",
       "type": "",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "",
+        "type": "creature",
+        "special": ""
+      },
+      "template": {
+        "type": "wall",
+        "size": "300",
+        "width": "",
+        "height": "300",
+        "units": "",
+        "count": ""
+      }
     },
     "range": {
-      "value": null,
-      "units": "spec",
-      "long": null
+      "value": "1",
+      "units": "mi",
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -96,7 +110,147 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "dnd5eactivity000": {
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 5,
+              "denomination": 10,
+              "bonus": "",
+              "types": [
+                "bludgeoning"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "name": "Create Tsunami",
+        "img": "",
+        "appliedEffects": [],
+        "duration": {
+          "override": true,
+          "units": "round",
+          "value": "6",
+          "concentration": true
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-6",
+              "target": "",
+              "scaling": {
+                "mode": ""
+              }
+            }
+          ]
+        },
+        "range": {
+          "override": false,
+          "units": "mi",
+          "special": "",
+          "value": "1"
+        }
+      },
+      "8Uxrl90o1UBklcMO": {
+        "type": "save",
+        "_id": "8Uxrl90o1UBklcMO",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "",
+              "scaling": {
+                "mode": ""
+              }
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": true,
+          "units": "ft",
+          "special": "",
+          "value": "50"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "(@item.uses.value)d10"
+              },
+              "number": null,
+              "denomination": 0,
+              "bonus": "",
+              "types": [
+                "bludgeoning"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "str",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Start of Turn Effects",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "img": "icons/magic/water/wave-water-blue.webp",
   "ownership": {
@@ -110,23 +264,41 @@
       "propDroppable": "spell"
     },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.HnjgmmaSiifLU8O8",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplTsunami000",
       "spell-lists": "druid"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true,
+          "1": true
+        }
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "effects": [],
   "folder": "IeD7MeayeQqIoNnW",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1709231479222,
-    "modifiedTime": 1711345884326,
+    "modifiedTime": 1739434655180,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "HnjgmmaSiifLU8O8",
   "sort": 100000,
-  "_key": "!items!HnjgmmaSiifLU8O8"
+  "_key": "!items!matSplTsunami000"
 }

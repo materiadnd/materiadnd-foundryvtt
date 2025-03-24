@@ -1,82 +1,165 @@
 {
   "name": "Faithful Guard",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplFaithfulGu",
   "system": {
     "description": {
-      "value": "<p>You conjure a phantom guardian (commonly a watchdog), that cannot move, in an unoccupied space that you can see within range, where it remains for the duration, until you dismiss it as an action, or until you move more than 100 feet away from it.</p><p>The guardian is invisible to all creatures except you and cannot be harmed. When a Small or larger creature comes within 30 feet of it without first speaking the password that you specify when you cast this spell, the guardian starts making loud noises (if a watchdog then it barks loudly). The guardian sees invisible creatures and can see into the Ethereal Plane. It ignores illusions.</p><p>At the start of each of your turns, the guardian attempts to strike one creature within 5 feet of it that is hostile to you. The guardian's attack bonus is equal to your spellcasting ability modifier + your proficiency bonus. On a hit, it deals 4d8 force damage.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 5th level or higher, the number of guardians you conjure increases by 1 for each slot level above 4th.</p>",
+      "value": "<p>You conjure a phantom guardian (commonly a watchdog) in an unoccupied space that you can see within range. The guardian remains for the duration or until the two of you are more than 300 feet apart from each other.</p><p>No one but you can see the guardian, and it is intangible and invulnerable. When a Small or larger creature comes within 30 feet of it without first speaking the password that you specify when you cast this spell, the guardian starts making loud noises (if a watchdog, then it barks loudly). The guardian has Truesight with a range of 30 feet.</p><p>At the start of each of your turns, the guardian attempts to strike one enemy within 5 feet of it. That enemy must succeed on a Dexterity saving throw or take 4d8 Force damage.</p><p>On your later turns, you can take a Magic action to move the guardian up to 30 feet.</p>",
       "chat": ""
     },
+    "activities": {
+      "oXwEMXLXZLw2Ub0g": {
+        "type": "summon",
+        "_id": "oXwEMXLXZLw2Ub0g",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "bonuses": {
+          "ac": "",
+          "hd": "",
+          "hp": "",
+          "attackDamage": "",
+          "saveDamage": "",
+          "healing": ""
+        },
+        "creatureSizes": [],
+        "creatureTypes": [],
+        "match": {
+          "attacks": false,
+          "proficiency": false,
+          "saves": true
+        },
+        "profiles": [
+          {
+            "_id": "J8eaim5JYjLCIavu",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": [],
+            "uuid": "Compendium.materia-dnd.actors.Actor.IoJoxG7kzIzUqunS"
+          }
+        ],
+        "summon": {
+          "prompt": true,
+          "mode": ""
+        },
+        "name": ""
+      },
+      "vIOe9RHtAUBrnsR6": {
+        "type": "utility",
+        "name": "Move Hound",
+        "_id": "vIOe9RHtAUBrnsR6",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        }
+      }
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": [],
+      "max": ""
+    },
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
+      "value": null,
       "condition": ""
     },
     "duration": {
-      "value": "8",
-      "units": "hour"
-    },
-    "cover": null,
-    "target": {
-      "value": null,
-      "width": null,
-      "units": "any",
-      "type": "space",
-      "prompt": true
-    },
-    "range": {
-      "value": 30,
-      "long": null,
-      "units": "ft"
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "rsak",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "4d8",
-          "piercing"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "units": "hour",
+      "value": "8"
     },
     "level": 4,
-    "school": "con",
     "materials": {
-      "value": "A tiny silver whistle",
+      "value": "a silver whistle",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -85,37 +168,60 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
     "properties": [
       "vocal",
       "somatic",
       "material"
     ],
-    "crewed": false
+    "range": {
+      "units": "ft",
+      "special": "",
+      "value": "30"
+    },
+    "school": "con",
+    "target": {
+      "template": {
+        "contiguous": false,
+        "units": "ft",
+        "type": ""
+      },
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "space",
+        "special": ""
+      }
+    },
+    "identifier": "mordenkainens-faithful-hound"
+  },
+  "type": "spell",
+  "folder": "PrScRYl7JdLxwH3K",
+  "img": "icons/creatures/abilities/wolf-howl-moon-purple.webp",
+  "effects": [],
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.DqZvgc9xnfivavve",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplFaithfulGu",
       "spell-lists": "artificer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
-  "img": "icons/magic/nature/wolf-paw-glow-large-purple-teal.webp",
-  "effects": [],
-  "folder": "PrScRYl7JdLxwH3K",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234140,
-    "modifiedTime": 1709226592285,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738719247042,
+    "modifiedTime": 1738719421483,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "DqZvgc9xnfivavve",
-  "sort": 2500000,
-  "_key": "!items!DqZvgc9xnfivavve"
+  "sort": 200000,
+  "_key": "!items!matSplFaithfulGu"
 }

@@ -6,10 +6,14 @@
   "img": "icons/magic/symbols/rune-sigil-hook-white-red.webp",
   "system": {
     "description": {
-      "value": "<p>Also at 2nd level, you learn to invoke a rite of hemocraft that infuses your weapon strikes or unarmed strikes with elemental energy. As a bonus action, you can activate any rite you know on one weapon you are holding or your unarmed strikes, which you treat as one weapon. The effect of the rite lasts until you finish a short or long rest. When you activate a rite, you take necrotic damage equal to one roll of your hemocraft die. This damage cannot be reduced in any way.</p><p>While the rite is in effect, attacks you make with this weapon or unarmed strikes are magical, and deal extra damage equal to your hemocraft die of the type determined by the chosen rite. A weapon can hold only one active rite at a time. Other creatures cannot gain the benefit of your rite.</p><p>You choose one rite from the crimson rites below when you first gain this feature. You learn an additional crimson rite at 7th level, and again at 14th level.</p><p>@UUID[Item.UQjsA1Xzq147ccli]{Rite of the Devourer}</p><p>@UUID[Item.YLEMZ8Ru8IrB4Hed]{Rite of the Flame}</p><p>@UUID[Item.0AcqKJaYpG3XEHUl]{Rite of the Frozen}</p><p>@UUID[Item.c46uvOVV1ImXEd14]{Rite of the Storm}</p><p>@UUID[Item.40JPBzngQtUvVv38]{Rite of the Dead}</p><p>@UUID[Item.hAQNjzEttBVJFcup]{Rite of the Oracle}</p><p>@UUID[Item.RjusJyoLnU0A1sFW]{Rite of the Roar}<br /><br />At 20th level in blood hunter, you know all the Crimson Rite opens available to you.</p>",
+      "value": "<p>You have learned to invoke a rite of hemocraft that infuses your weapon strikes or Unarmed Strikes with elemental energy. As a Bonus Action, you can activate any rite you know on one weapon you are holding or your Unarmed Strikes, which you treat as one weapon. The effect of the rite lasts until you finish a Short or Long Rest. When you activate a rite, you take necrotic damage equal to one roll of your hemocraft die. This damage cannot be reduced in any way.</p><p>While the rite is in effect, attacks you make with this weapon or Unarmed Strikes are magical, and deal extra damage equal to your hemocraft die of the type determined by the chosen rite. A weapon can hold only one active rite at a time. Other creatures cannot gain the benefit of your rite.</p><p>You choose one rite from the crimson rites below when you first gain this feature. You learn an additional crimson rite at 7th level, and again at 14th level.</p><p>@UUID[Compendium.materia-dnd.class-and-subclass-features.Item.UQjsA1Xzq147ccli]{Rite of the Devourer}</p><p>@UUID[Compendium.materia-dnd.class-and-subclass-features.Item.YLEMZ8Ru8IrB4Hed]{Rite of the Flame}</p><p>@UUID[Compendium.materia-dnd.class-and-subclass-features.Item.0AcqKJaYpG3XEHUl]{Rite of the Frozen}</p><p>@UUID[Compendium.materia-dnd.class-and-subclass-features.Item.c46uvOVV1ImXEd14]{Rite of the Storm}</p><p>The following rites become available at 14th level in Blood Hunter:</p><p>@UUID[Compendium.materia-dnd.class-and-subclass-features.Item.40JPBzngQtUvVv38]{Rite of the Dead}</p><p>@UUID[Compendium.materia-dnd.class-and-subclass-features.Item.hAQNjzEttBVJFcup]{Rite of the Oracle}</p><p>@UUID[Compendium.materia-dnd.class-and-subclass-features.Item.RjusJyoLnU0A1sFW]{Rite of the Roar}</p><p>At 20th level in Blood Hunter, you know all the Crimson Rite options available to you.</p><section id=\"secret-FVdhRDRwmbjhqqs3\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Rite Damage</strong> activity on this feature applies the appropriate damage for any Crimson Rite.</p><p>Each rite has its own enchantment activity to infuse the weapon which adds the appropriate damage bonus to the weapon.</p></section>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "bonus",
       "cost": 1,
@@ -46,8 +50,8 @@
       "amount": null,
       "scale": false
     },
-    "ability": null,
-    "actionType": "",
+    "ability": "",
+    "actionType": "other",
     "attackBonus": "",
     "chatFlavor": "",
     "critical": {
@@ -55,7 +59,12 @@
       "damage": ""
     },
     "damage": {
-      "parts": [],
+      "parts": [
+        [
+          "@scale.blood-hunter.hemocraft-die",
+          "necrotic"
+        ]
+      ],
       "versatile": ""
     },
     "formula": "",
@@ -73,18 +82,108 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 2
+    },
+    "activities": {
+      "0s5tyVh6AMzd3tJO": {
+        "type": "damage",
+        "name": "Rite Damage",
+        "_id": "0s5tyVh6AMzd3tJO",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.YX4oh7xzBnc27HRK"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "@scale.blood-hunter.hemocraft-die"
+              },
+              "number": null,
+              "denomination": 0,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ]
+            }
+          ]
+        },
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707885292612,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1741735230636,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 0,

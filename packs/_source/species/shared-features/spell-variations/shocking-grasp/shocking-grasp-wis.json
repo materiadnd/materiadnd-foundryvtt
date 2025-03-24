@@ -3,14 +3,13 @@
   "type": "spell",
   "system": {
     "description": {
-      "value": "<p>Lightning springs from your hand to deliver a shock to a creature you touch. The creature must succeed on a Dexterity saving throw or take 1d8 lightning damage and cannot take reactions until the start of its next turn. If the creature succeeds on the saving throw it takes no damage, but cannot take opportunity attacks against you until the end of your turn.</p><p>The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).</p>",
+      "value": "<p>Lightning springs from your hand to deliver a shock to a creature you touch. The creature must succeed on a Dexterity saving throw or take [[/r 1d8]] lightning damage and cannot take reactions until the start of its next turn. If the creature succeeds on the saving throw it takes no damage, but cannot take opportunity attacks against you until the end of your turn.</p><p>The spell's damage increases by [[/r 1d8]] when you reach 5th level ([[/r 2d8]]), 11th level ([[/r 3d8]]), and 17th level ([[/r 4d8]]).</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "Materia Source of Truth",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
@@ -27,12 +26,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "touch"
+      "units": "touch",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -68,7 +74,7 @@
     "save": {
       "ability": "dex",
       "dc": null,
-      "scaling": "spell"
+      "scaling": "wis"
     },
     "level": 0,
     "school": "evo",
@@ -90,7 +96,116 @@
       "vocal",
       "somatic"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "appliedEffects": [
+          "YdYbaklwHcDp5NrJ",
+          "eUrjfvzNfCvg62Qp"
+        ],
+        "effects": [
+          {
+            "_id": "YdYbaklwHcDp5NrJ",
+            "onSave": true
+          },
+          {
+            "_id": "eUrjfvzNfCvg62Qp",
+            "onSave": false
+          }
+        ]
+      },
+      "JoAQhHRHPUGOQfxs": {
+        "type": "save",
+        "_id": "JoAQhHRHPUGOQfxs",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "YdYbaklwHcDp5NrJ",
+            "onSave": true
+          },
+          {
+            "_id": "eUrjfvzNfCvg62Qp",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 8,
+              "bonus": "",
+              "types": [
+                "lightning"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ],
+          "onSave": "none"
+        },
+        "save": {
+          "ability": "dex",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": [
+          "YdYbaklwHcDp5NrJ",
+          "eUrjfvzNfCvg62Qp"
+        ]
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
@@ -98,22 +213,94 @@
     }
   },
   "img": "icons/magic/lightning/bolt-forked-blue.webp",
-  "effects": [],
+  "effects": [
+    {
+      "name": "Shocked",
+      "img": "icons/magic/lightning/bolt-strike-wide-white.webp",
+      "_id": "YdYbaklwHcDp5NrJ",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target can't make Opportunity Attacks until the start of its next turn.</p>",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.2",
+        "createdTime": 1726897859059,
+        "modifiedTime": 1730990110481,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!4ZVfLrenRgjA8fPj.YdYbaklwHcDp5NrJ"
+    },
+    {
+      "name": "Slowed",
+      "img": "icons/magic/lightning/claws-unarmed-strike-teal.webp",
+      "_id": "eUrjfvzNfCvg62Qp",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target cannot take reactions until the start of its next turn.</p>",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.2",
+        "createdTime": 1726898011951,
+        "modifiedTime": 1726898148430,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!4ZVfLrenRgjA8fPj.eUrjfvzNfCvg62Qp"
+    }
+  ],
   "folder": "BtbnstsZAH4pw0g8",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "3.2.1",
+    "coreVersion": "12.331",
     "createdTime": 1661787234159,
-    "modifiedTime": 1709420062516,
+    "modifiedTime": 1731229726002,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "ownership": {
     "default": 0
   },
   "_id": "4ZVfLrenRgjA8fPj",
-  "sort": 100000,
+  "sort": 300000,
   "_key": "!items!4ZVfLrenRgjA8fPj"
 }

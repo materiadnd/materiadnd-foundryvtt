@@ -2,14 +2,18 @@
   "folder": "WtBByem45tjsGx6Z",
   "name": "Druidcraft",
   "type": "spell",
-  "_id": "uHOhetrvdFVZV6F3",
+  "_id": "matSplDruidcraft",
   "img": "icons/magic/nature/leaf-oak-glow-green.webp",
   "system": {
     "description": {
-      "value": "<p>Whispering to the spirits of nature, you create one of the following effects within range:</p><ul><li><p>You create a tiny, harmless sensory effect that predicts what the weather will be at your location for the next 24 hours. The effect might manifest as a golden orb for clear skies, a cloud for rain, falling snowflakes for snow, and so on. This effect persists for 1 round.</p></li><li><p>You instantly make a flower blossom, a seed pod open, or a leaf bud bloom.</p></li><li><p>You create an instantaneous, harmless visual effect, such as falling leaves, a puff of smoke, or a tiny animal, the effect must fit in a 5-foot cube.</p></li><li><p>You instantly light or snuff out a candle, a torch, or a small campfire.</p></li><li><p>You can influence nonmagical weather events such as rain, snow or wind to move around you, preventing you from being affected by them for the next 10 minutes.</p></li><li><p>You create a cacophony of animal sounds, winds rushing through trees, or the sounds of distant inclimate weather in a 10 foot cube within range.</p></li><li><p>You may create a mild odor of plants within a 10 foot cube within range, whether the smell of fresh flowers, rotting vegetation, or otherwise.</p></li></ul>",
+      "value": "<p>Whispering to the spirits of nature, you create one of the following effects within range:</p><ul><li><p><strong>Weather Sensor.</strong> You create a tiny, harmless sensory effect that predicts what the weather will be at your location for the next 24 hours. The effect might manifest as a golden orb for clear skies, a cloud for rain, falling snowflakes for snow, and so on. This effect persists for 1 round.</p></li><li><p><strong>Bloom.</strong>  You instantly make a flower blossom, a seed pod open, or a leaf bud bloom.</p></li><li><p><strong>Sensory Effect.</strong>  You create an instantaneous, harmless visual effect, such as falling leaves, a puff of smoke, or a tiny animal, the effect must fit in a 5-foot cube.</p></li><li><p><strong>Fire Play.</strong>  You instantly light or snuff out a candle, a torch, or a small campfire.</p></li><li><p><strong>Affect Weather.</strong>  You can influence nonmagical weather events such as rain, snow or wind to move around you, preventing you from being affected by them for the next 10 minutes.</p></li><li><p><strong>Conjure Sound.</strong>  You create a cacophony of animal sounds, winds rushing through trees, or the sounds of distant inclimate weather in a 10 foot cube within range.</p></li><li><p><strong>Scent Spray.</strong>  You may create a mild odor of plants within a 10 foot cube within range, whether the smell of fresh flowers, rotting vegetation, or otherwise.</p></li></ul>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -26,12 +30,20 @@
       "width": null,
       "units": "",
       "type": "space",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 30,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -84,28 +96,89 @@
     "scaling": {
       "mode": "none",
       "formula": ""
+    },
+    "activities": {
+      "W51PEqJ4nkbVLfGD": {
+        "type": "utility",
+        "_id": "W51PEqJ4nkbVLfGD",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.uHOhetrvdFVZV6F3",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplDruidcraft",
       "spell-lists": "druid"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1707204868681,
-    "modifiedTime": 1712806890095,
+    "modifiedTime": 1737927417064,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 4200000,
+  "sort": 4700000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!uHOhetrvdFVZV6F3"
+  "_key": "!items!matSplDruidcraft"
 }

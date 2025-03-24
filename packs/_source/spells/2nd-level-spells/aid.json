@@ -1,82 +1,57 @@
 {
   "name": "Aid",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplAid0000000",
   "system": {
     "description": {
-      "value": "<p>Your spell bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd.</p>",
+      "value": "<p>Choose up to three creatures within range. Each target's Hit Point maximum and current Hit Points increase by 5 for the duration.</p><p><strong>Using a Higher-Level Spell Slot. </strong>Each target's Hit Points increase by 5 for each spell slot level above 2.</p><section class=\"secret\" id=\"secret-u9DpSmufNhFMDGmN\"><p><strong>Foundry Note</strong></p><p>The default <strong>Heal</strong> activity is configured with multiple Active Effects representing the temporary maximum Hit Points provided by this spell.</p><p>Users should apply the appropriate Active Effect for the spell slot level used in the casting of this spell.</p></section>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "8",
       "units": "hour"
     },
-    "cover": null,
     "target": {
-      "value": 3,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "3",
+        "type": "creature",
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": 30,
-      "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": "",
+      "value": "30"
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "heal",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "5",
-          "healing"
-        ]
-      ],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "spent": 0,
+      "recovery": []
     },
     "level": 2,
     "school": "abj",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "A tiny strip of white cloth.",
+      "value": "a strip of white cloth",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -85,37 +60,463 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "(@item.level - 2) * 5"
+    "activities": {
+      "2JEDs5yWXLOYGN9m": {
+        "type": "heal",
+        "_id": "2JEDs5yWXLOYGN9m",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "XyGKCCrIhrFlixG8"
+          },
+          {
+            "_id": "cTNQ2KRJLj4CRpQJ"
+          },
+          {
+            "_id": "6hOGzq87iQntkHE5"
+          },
+          {
+            "_id": "Fs7zeTW4u9SvteWO"
+          },
+          {
+            "_id": "o1Gvp7nIrEHqdn3g"
+          },
+          {
+            "_id": "n4jjrd9bNOaDkos7"
+          },
+          {
+            "_id": "EHMDA2J47jwUUTKu"
+          },
+          {
+            "_id": "YnQP5Rd6w5NwZVLN"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "healing": {
+          "number": null,
+          "denomination": 0,
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": null,
+            "mode": "whole",
+            "formula": "5"
+          },
+          "bonus": "5"
+        },
+        "name": ""
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material"
-    ],
-    "crewed": false
+    "identifier": "aid"
+  },
+  "type": "spell",
+  "img": "icons/magic/life/cross-flared-green.webp",
+  "effects": [
+    {
+      "name": "Level 2: +5 Max HP",
+      "img": "icons/magic/life/cross-flared-green.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplAid0000000",
+      "transfer": false,
+      "_id": "XyGKCCrIhrFlixG8",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.hp.tempmax",
+          "mode": 2,
+          "value": "5",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 28800,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target's Hit Point maximum is increased for the duration.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplAid0000000.XyGKCCrIhrFlixG8"
+    },
+    {
+      "name": "Level 3: +10 Max HP",
+      "img": "icons/magic/life/cross-flared-green.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplAid0000000",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.hp.tempmax",
+          "mode": 2,
+          "value": "10",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 28800,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target's Hit Point maximum is increased for the duration.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "cTNQ2KRJLj4CRpQJ",
+      "_key": "!items.effects!matSplAid0000000.cTNQ2KRJLj4CRpQJ"
+    },
+    {
+      "name": "Level 4: +15 Max HP",
+      "img": "icons/magic/life/cross-flared-green.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplAid0000000",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.hp.tempmax",
+          "mode": 2,
+          "value": "15",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 28800,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target's Hit Point maximum is increased for the duration.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "6hOGzq87iQntkHE5",
+      "_key": "!items.effects!matSplAid0000000.6hOGzq87iQntkHE5"
+    },
+    {
+      "name": "Level 5: +20 Max HP",
+      "img": "icons/magic/life/cross-flared-green.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplAid0000000",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.hp.tempmax",
+          "mode": 2,
+          "value": "20",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 28800,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target's Hit Point maximum is increased for the duration.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "Fs7zeTW4u9SvteWO",
+      "_key": "!items.effects!matSplAid0000000.Fs7zeTW4u9SvteWO"
+    },
+    {
+      "name": "Level 6: +25 Max HP",
+      "img": "icons/magic/life/cross-flared-green.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplAid0000000",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.hp.tempmax",
+          "mode": 2,
+          "value": "25",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 28800,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target's Hit Point maximum is increased for the duration.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "o1Gvp7nIrEHqdn3g",
+      "_key": "!items.effects!matSplAid0000000.o1Gvp7nIrEHqdn3g"
+    },
+    {
+      "name": "Level 7: +30 Max HP",
+      "img": "icons/magic/life/cross-flared-green.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplAid0000000",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.hp.tempmax",
+          "mode": 2,
+          "value": "30",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 28800,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target's Hit Point maximum is increased for the duration.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "n4jjrd9bNOaDkos7",
+      "_key": "!items.effects!matSplAid0000000.n4jjrd9bNOaDkos7"
+    },
+    {
+      "name": "Level 8: +35 Max HP",
+      "img": "icons/magic/life/cross-flared-green.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplAid0000000",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.hp.tempmax",
+          "mode": 2,
+          "value": "35",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 28800,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target's Hit Point maximum is increased for the duration.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "EHMDA2J47jwUUTKu",
+      "_key": "!items.effects!matSplAid0000000.EHMDA2J47jwUUTKu"
+    },
+    {
+      "name": "Level 9: +40 Max HP",
+      "img": "icons/magic/life/cross-flared-green.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplAid0000000",
+      "transfer": false,
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.hp.tempmax",
+          "mode": 2,
+          "value": "40",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 28800,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target's Hit Point maximum is increased for the duration.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_id": "YnQP5Rd6w5NwZVLN",
+      "_key": "!items.effects!matSplAid0000000.YnQP5Rd6w5NwZVLN"
+    }
+  ],
+  "folder": "3rC3qr5FIlZymxFD",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.8NeNOaQTZZWFjJ0d",
-      "spell-lists": "artificer,bard,cleric,paladin,ranger"
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplAid0000000",
+      "spell-lists": "artificer,bard,cleric,druid,paladin,ranger"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
-  "img": "icons/magic/life/heart-cross-blue.webp",
-  "effects": [],
-  "folder": "3rC3qr5FIlZymxFD",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234131,
-    "modifiedTime": 1708930454014,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738210649337,
+    "modifiedTime": 1738556164541,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "8NeNOaQTZZWFjJ0d",
-  "sort": 4100000,
-  "_key": "!items!8NeNOaQTZZWFjJ0d"
+  "sort": 0,
+  "_key": "!items!matSplAid0000000"
 }

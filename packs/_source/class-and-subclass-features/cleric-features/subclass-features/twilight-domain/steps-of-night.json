@@ -6,10 +6,14 @@
   "img": "icons/magic/air/wind-stream-blue-gray.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 6th level, you can draw on the mystical power of night to rise into the air. As a bonus action when you are in dim light or darkness, you can magically give yourself a flying speed equal to your walking speed for 1 minute. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>",
+      "value": "<p>You can draw on the mystical power of night to rise into the air. As a Bonus Action when you are in &amp;Reference[Dim Light] or &amp;Reference[Darkness], you can magically give yourself a Flying Speed equal to your Speed for 1 minute. You can use this Bonus Action a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "bonus",
       "cost": 1,
@@ -69,10 +73,42 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Twilight Domain 6",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 6
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Steps of Night",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "duration": {
+          "units": "inst"
+        },
+        "target": {
+          "affects": {
+            "type": "self"
+          }
+        },
+        "effects": [
+          {
+            "_id": "SVkh12nhiFkGRhg3"
+          }
+        ]
+      }
     }
   },
   "effects": [
@@ -135,21 +171,76 @@
       "system": {},
       "sort": 0,
       "_key": "!items.effects!7ej1CQpnlH1V0IQF.hUQfMKZu7YO52RO8"
+    },
+    {
+      "name": "Steps of Night",
+      "img": "icons/magic/air/wind-stream-blue-gray.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.7ej1CQpnlH1V0IQF",
+      "transfer": false,
+      "_id": "SVkh12nhiFkGRhg3",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.movement.fly",
+          "mode": 4,
+          "value": "@attributes.movement.walk",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1742448594380,
+        "modifiedTime": 1742448658604,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!7ej1CQpnlH1V0IQF.SVkh12nhiFkGRhg3"
     }
   ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1710771087333,
-    "modifiedTime": 1710771171281,
+    "modifiedTime": 1742448594415,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_key": "!items!7ej1CQpnlH1V0IQF"

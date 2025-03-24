@@ -1,24 +1,53 @@
 {
   "name": "Charm Monster",
-  "type": "spell",
+  "_id": "matSplCharmMonst",
   "system": {
-    "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
-    },
     "description": {
-      "value": "<div class=\"rd__b  rd__b--3\"><p>You attempt to charm a creature you can see within range. It must make a Wisdom saving throw, and it does so with advantage if you or your companions are fighting it. If it fails the saving throw, it is charmed by you until the spell ends or until you or your companions do anything harmful to it. The charmed creature regards you and your companions as friendly acquaintances. When the spell ends, the creature knows it was charmed by you.</p></div><div class=\"rd__b  rd__b--3\"><div class=\"rd__b  rd__b--3\"><p><span class=\"entry-title-inner\"><strong>At Higher Levels.</strong> </span>When you cast this spell using a spell slot of 5th level or higher, you can target one additional creature for each slot level above 4th. The creatures must be within 30 feet of each other when you target them.</p><div class=\"rd__spc-inline-post\"><p></p></div></div><div class=\"rd__spc-inline-post\"><p></p></div></div>",
+      "value": "<p>One creature you can see within range makes a Wisdom saving throw. It does so with Advantage if you or your allies are fighting it. On a failed save, the target has the &amp;Reference[Charmed apply=false] condition until the spell ends or until you or your allies do anything harmful to it. The Charmed creature is Friendly to you. When the spell ends, the target knows it was Charmed by you.</p><p><strong>Using a Higher-Level Spell Slot.</strong>You can target one additional creature for each spell slot level above 4.</p>",
       "chat": ""
     },
-    "actionType": "save",
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "action",
+      "condition": "",
+      "value": null
+    },
+    "duration": {
+      "value": "1",
+      "units": "hour"
+    },
+    "target": {
+      "affects": {
+        "type": "creature",
+        "count": "@item.level - 3",
+        "choice": false,
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
+    },
+    "range": {
+      "value": "30",
+      "units": "ft",
+      "special": ""
+    },
+    "uses": {
+      "max": "",
+      "recovery": [],
+      "spent": 0
+    },
     "level": 4,
     "school": "enc",
     "properties": [
       "vocal",
-      "somatic",
-      "mgc"
+      "somatic"
     ],
     "materials": {
       "value": "",
@@ -26,97 +55,138 @@
       "cost": 0,
       "supply": 0
     },
-    "target": {
-      "value": null,
-      "units": "",
-      "type": "",
-      "prompt": true,
-      "width": null
-    },
-    "range": {
-      "value": 30,
-      "units": "ft",
-      "long": null
-    },
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": "1",
-      "units": "hour"
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "save": {
-      "ability": "wis",
-      "dc": null,
-      "scaling": "spell"
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "formula": "",
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "CB1jIPB4yINOpjQX",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": []
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      }
     },
-    "cover": null,
-    "crewed": false,
-    "ability": ""
+    "identifier": "charm-monster"
   },
-  "img": "icons/creatures/eyes/humanoid-single-red-brown.webp",
+  "type": "spell",
+  "img": "icons/creatures/magical/humanoid-silhouette-glowing-pink.webp",
+  "effects": [
+    {
+      "name": "Charmed",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplCharmMonst",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "systems/dnd5e/icons/svg/statuses/charmed.svg",
+      "_id": "CB1jIPB4yINOpjQX",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>The target has the &amp;Reference[Charmed apply=false] condition until the spell ends or until you or your allies damage it. The Charmed creature is Friendly to you. When the spell ends, the target knows it was Charmed by you.</p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "charmed"
+      ],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplCharmMonst.CB1jIPB4yINOpjQX"
+    }
+  ],
+  "folder": "PrScRYl7JdLxwH3K",
   "ownership": {
     "default": 0
   },
   "flags": {
-    "plutonium": {
-      "page": "spells.html",
-      "source": "XGE",
-      "hash": "charm%20monster_xge",
-      "propDroppable": "spell"
-    },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.9lvnwXHo308IP56W",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplCharmMonst",
       "spell-lists": "bard,druid,sorcerer,warlock,wizard"
     }
   },
-  "effects": [],
-  "folder": "PrScRYl7JdLxwH3K",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
-    "createdTime": 1709150496134,
-    "modifiedTime": 1711344812696,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738677827845,
+    "modifiedTime": 1738719247206,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "9lvnwXHo308IP56W",
-  "sort": 3200000,
-  "_key": "!items!9lvnwXHo308IP56W"
+  "sort": 2200000,
+  "_key": "!items!matSplCharmMonst"
 }

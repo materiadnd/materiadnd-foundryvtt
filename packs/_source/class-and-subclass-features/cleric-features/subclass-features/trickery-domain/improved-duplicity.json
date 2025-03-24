@@ -6,10 +6,14 @@
   "img": "icons/magic/control/energy-stream-link-white.webp",
   "system": {
     "description": {
-      "value": "<p>Upon reaching 17th level, you are no longer required to maintain concentration (as if you were concentrating on a spell) to maintain your illusory duplicates from Channel Divinity: Invoke Duplicity. As a bonus action, while you are concentrating on a spell, you can move the point of origin to one of your duplicates, but you are the source of concentration for the spell. If the illusory duplicate is the source of such a spell and it would take damage, you must succeed a DC 10 Concentration check to maintain concentration.</p>",
+      "value": "<p>The illusion of your Invoke Duplicity has grown more powerful in the following ways.</p><p><strong>Shared Distraction.</strong> When you and your allies make attack rolls against a creature within 5 feet of the illusion, the attack rolls have Advantage.</p><p><strong>Healing Illusion.</strong> When the illusion ends, you or a creature of your choice within 5 feet of it regains a number of Hit Points equal to your Cleric level.</p><section id=\"secret-52OK89KAR0ECC6Re\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>Thsi feature includes an activity for the <strong>Healing Illusion</strong> but it does not automate the advantage against creatures within 5 feet of the illusion.</p></section>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "bonus",
       "cost": 1,
@@ -69,10 +73,87 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Trickery Domain 17",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 17
+    },
+    "activities": {
+      "rEVfYqqi4R2XTsdP": {
+        "type": "heal",
+        "_id": "rEVfYqqi4R2XTsdP",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "spec",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "radius",
+            "size": "5",
+            "count": ""
+          },
+          "affects": {
+            "choice": true,
+            "type": "creature",
+            "count": "1",
+            "special": "Within 5 feet of the duplicate"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "@classes.cleric.levels"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "Healing Illusion",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -80,15 +161,21 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1710770247182,
-    "modifiedTime": 1710770300920,
+    "modifiedTime": 1742338878393,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_key": "!items!zweFtuyiDFPQA52M"

@@ -1,82 +1,58 @@
 {
   "name": "Arcane Hand",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplArcaneHand",
   "system": {
     "description": {
-      "value": "<p>You create a Large hand of shimmering, translucent force in an unoccupied space that you can see within range. The hand lasts for the spell's Duration, and it moves at your command, mimicking the movements of your own hand.</p><p>The hand is an object that has AC 20 and Hit Points equal to your hit point maximum. If it drops to 0 Hit Points, the spell ends. It has a Strength of 26 (+8) and a Dexterity of 10 (+0). The hand doesn't fill its space.</p><p>When you cast the spell and as a Bonus Action on your subsequent turns, you can move the hand up to 60 feet and then cause one of the following Effects with it.</p><p><strong>Clenched Fist</strong>. The hand strikes one creature or object within 5 feet of it. Make a melee spell Attack for the hand using your game Statistics. On a hit, the target takes 4d8 force damage.</p><p><strong>Forceful Hand</strong>. The hand attempts to push a creature within 5 feet of it in a direction you choose. Make a check with the hand's Strength contested by the Strength (Athletics) check of the target. If the target is Medium or smaller, you have advantage on the check. If you succeed, the hand pushes the target up to 5 feet plus a number of feet equal to five times your Spellcasting ability modifier. The hand moves with the target to remain within 5 feet of it.</p><p><strong>Grasping Hand</strong>. The hand attempts to grapple a Huge or smaller creature within 5 feet of it. You use the hand's Strength score to resolve the grapple. If the target is Medium or smaller, you have advantage on the check. While the hand is Grappling the target, you can use a Bonus Action to have the hand crush it. When you do so, the target takes bludgeoning damage equal to 2d6 + your Spellcasting ability modifier.</p><p><strong>Interposing Hand</strong>. The hand interposes itself between you and a creature you choose until you give the hand a different command. The hand moves to stay between you and the target, providing you with half cover against the target. The target can't move through the hand's space if its Strength score is less than or equal to the hand's Strength score. If its Strength score is higher than the hand's Strength score, the target can move toward you through the hand's space, but that space is difficult terrain for the target.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 6th level or higher, the damage from the clenched fist option increases by 2d8 and the damage from the grasping hand increases by 2d6 for each slot level above 5th.</p>",
+      "value": "<p>You create a Large hand of shimmering magical energy in an unoccupied space that you can see within range. The hand lasts for the duration, and it moves at your command, mimicking the movements of your own hand.</p><p>The hand is an object that has AC 20 and Hit Points equal to your Hit Point maximum. If it drops to 0 Hit Points, the spell ends. The hand doesn't occupy its space.</p><p>When you cast the spell and as a Bonus Action on your later turns, you can move the hand up to 60 feet and then cause one of the following effects:</p><p><strong>Clenched Fist </strong>@Embed[Compendium.materia-dnd.actors.Actor.matNpcArcaneHand.Item.matActClenchedFi inline]</p><p><strong>Forceful Hand</strong> @Embed[Compendium.materia-dnd.actors.Actor.matNpcArcaneHand.Item.matActForcefulHa inline]</p><p><strong>Grasping Hand</strong> @Embed[Compendium.materia-dnd.actors.Actor.matNpcArcaneHand.Item.matActGraspingHa inline classes=\"no-secrets\"]</p><p><strong>Interposing Hand </strong>@Embed[Compendium.materia-dnd.actors.Actor.matNpcArcaneHand.Item.matActInterposin inline]</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage of the Clenched Fist increases by 2d8 and the damage of the Grasping Hand increases by 2d6 for each spell slot level above 5.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "space",
-      "prompt": true
+      "affects": {
+        "type": "space",
+        "count": "1",
+        "choice": false,
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": 120,
-      "long": null,
-      "units": "ft"
+      "value": "120",
+      "units": "ft",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "rsak",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [
-        [
-          "4d8",
-          "force"
-        ]
-      ],
-      "versatile": "2d6"
-    },
-    "formula": "1d20+8",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 5,
     "school": "evo",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
     "materials": {
-      "value": "An eggshell and a snakeskin glove",
+      "value": "an eggshell and a glove",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -85,39 +61,116 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": "2d8"
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "summon",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "bonuses": {
+          "ac": "",
+          "hd": "",
+          "hp": "@attributes.hp.effectiveMax",
+          "attackDamage": "",
+          "saveDamage": "",
+          "healing": ""
+        },
+        "creatureSizes": [],
+        "creatureTypes": [],
+        "match": {
+          "proficiency": true,
+          "attacks": true,
+          "saves": true
+        },
+        "profiles": [
+          {
+            "count": "",
+            "name": "",
+            "_id": "vQGgSbSWhF45U93e",
+            "uuid": "Compendium.materia-dnd.actors.Actor.matNpcArcaneHand",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": []
+          }
+        ],
+        "summon": {
+          "identifier": "",
+          "mode": "",
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0,
+        "effects": []
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "concentration",
-      "mgc"
-    ],
-    "crewed": false
+    "identifier": "bigbys-hand"
+  },
+  "type": "spell",
+  "img": "icons/magic/earth/strike-fist-stone.webp",
+  "effects": [],
+  "folder": "slWnSXtwvwnA9EXJ",
+  "ownership": {
+    "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.WRM1WcEnmbGlSU8A",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplArcaneHand",
       "spell-lists": "artificer,sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
-  "img": "icons/magic/fire/projectile-fireball-smoke-strong-teal.webp",
-  "effects": [],
-  "folder": "slWnSXtwvwnA9EXJ",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234166,
-    "modifiedTime": 1712471734016,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1739231405429,
+    "modifiedTime": 1739256204066,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "WRM1WcEnmbGlSU8A",
-  "sort": 500000,
-  "_key": "!items!WRM1WcEnmbGlSU8A"
+  "sort": 0,
+  "_key": "!items!matSplArcaneHand"
 }

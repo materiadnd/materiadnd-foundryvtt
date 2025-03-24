@@ -1,77 +1,58 @@
 {
   "name": "Hold Person",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplHoldPerson",
   "system": {
     "description": {
-      "value": "<p>Choose a humanoid that you can see within range. The target must succeed on a Wisdom saving throw or be paralyzed for the duration. At the end of each of its turns, the target can make another Wisdom saving throw. On a success, the spell ends on the target.</p><p><strong>Higher Levels. </strong>When you cast this spell using a spell slot of 3rd level or higher, you can target one additional humanoid for each slot level above 2nd. The humanoids must be within 30 feet of each other when you target them.</p>",
+      "value": "<p>Choose a Humanoid that you can see within range. The target must succeed on a Wisdom saving throw or have the &amp;Reference[paralyzed apply=false] condition for the duration. At the end of each of its turns, the target repeats the save, ending the spell on itself on a success.</p><p><strong>Using a Higher-Level Spell Slot.</strong> You can target one additional Humanoid for each spell slot level above 2.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
+      "affects": {
+        "type": "creature",
+        "count": "@item.level - 1",
+        "choice": false,
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": 60,
-      "long": null,
-      "units": "ft"
+      "value": "60",
+      "units": "ft",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "wis",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 2,
     "school": "enc",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
     "materials": {
-      "value": "A small, straight piece of iron",
+      "value": "a straight piece of iron",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -80,79 +61,134 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "level",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "PklwZi3SKQ3JU2M2",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": []
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "concentration",
-      "mgc"
-    ],
-    "crewed": false
+    "identifier": "hold-person"
   },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.6suLH3nd7wbMLTK1",
-      "spell-lists": "bard,cleric,druid,sorcerer,warlock,wizard"
-    }
-  },
-  "img": "icons/magic/control/debuff-chains-ropes-purple.webp",
+  "type": "spell",
+  "img": "icons/magic/control/encase-creature-humanoid-hold.webp",
   "effects": [
     {
-      "name": "Hold Person",
-      "origin": "Compendium.dnd5e.spells.Item.3Lo9boi7P2ro6QV4",
+      "name": "Paralyzed",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplHoldPerson",
       "duration": {
+        "rounds": null,
         "startTime": null,
         "seconds": 60,
         "combat": null,
-        "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "HH5YVjzxkwXpDZS0",
-      "changes": [],
-      "description": "<p>The target is Paralyzed for the duration. At the end of each of its turns, the target can make another Wisdom saving throw. On a success, the spell ends on the target.</p>",
-      "transfer": false,
-      "statuses": [
-        "paralyzed",
-        "incapacitated"
-      ],
+      "disabled": false,
       "flags": {},
-      "tint": "#ffffff",
-      "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "icons/magic/control/debuff-chains-ropes-purple.webp",
+      "img": "systems/dnd5e/icons/svg/statuses/paralyzed.svg",
+      "_id": "PklwZi3SKQ3JU2M2",
       "type": "base",
       "system": {},
+      "changes": [],
+      "description": "<p>At the end of each of its turns, the target repeats the [[/save ability=wis]] save, ending the spell on itself on a success.</p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "paralyzed"
+      ],
       "sort": 0,
-      "_key": "!items.effects!6suLH3nd7wbMLTK1.HH5YVjzxkwXpDZS0"
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplHoldPerson.PklwZi3SKQ3JU2M2"
     }
   ],
   "folder": "3rC3qr5FIlZymxFD",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234063,
-    "modifiedTime": 1712471711376,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "6suLH3nd7wbMLTK1",
-  "sort": 3400000,
-  "_key": "!items!6suLH3nd7wbMLTK1"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplHoldPerson",
+      "spell-lists": "bard,cleric,druid,sorcerer,warlock,wizard"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738214419306,
+    "modifiedTime": 1738214436420,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplHoldPerson"
 }

@@ -1,19 +1,19 @@
 {
   "name": "Remove Curse",
+  "_id": "matSplRemoveCurs",
   "ownership": {
     "default": 0
   },
   "type": "spell",
   "system": {
     "description": {
-      "value": "<p>At your touch, all curses affecting one creature or object end. If the object is a cursed magic item, its curse remains, but the spell breaks its owner's Attunement to the object so it can be removed or discarded.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 5th level, 6th level or 7th level, the range is increases to 30 feet instead.</p><p>When you cast this spell using a spell slot of 8th level or higher, the range is increases to 60 feet instead.</p>",
+      "value": "<p>At your touch, all curses affecting one creature or object end. If the object is a cursed magic item, its curse remains, but the spell breaks its owner's Attunement to the object so it can be removed or discarded.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The range is increased with a spell slot of level 5-7 (30 feet), or 8+ (60 feet).</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
@@ -30,12 +30,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "touch"
+      "units": "touch",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -88,12 +95,79 @@
       "vocal",
       "somatic"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "aMDVF4vUornSoWPw": {
+        "type": "utility",
+        "_id": "aMDVF4vUornSoWPw",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.vcL7CJzvhhPeIObK",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplRemoveCurs",
       "spell-lists": "cleric,paladin,warlock,wizard"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "img": "icons/magic/life/heart-cross-strong-purple-orange.webp",
@@ -101,15 +175,13 @@
   "folder": "CxgAwElQGTbcnuvc",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1661787234157,
-    "modifiedTime": 1713584796371,
+    "modifiedTime": 1738556186748,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "vcL7CJzvhhPeIObK",
   "sort": 3900000,
-  "_key": "!items!vcL7CJzvhhPeIObK"
+  "_key": "!items!matSplRemoveCurs"
 }

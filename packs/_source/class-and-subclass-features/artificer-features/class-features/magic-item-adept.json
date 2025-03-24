@@ -6,10 +6,14 @@
   "img": "icons/commodities/materials/glass-orb-blue-gold.webp",
   "system": {
     "description": {
-      "value": "<p>When you reach 10th level, you achieve a profound understanding of how to use and make magic items:</p><ul><li>You can attune to up to four magic items at once.</li><li>Increase the number of charges on any magic item or infusion while it is attuned to you by your Intelligence modifier (minimum of 1). You cannot exceed double the original number of charges.</li></ul>",
+      "value": "<p>You've achieved a profound understanding of how to use and make magic items, granting you the following benefits:</p><p><strong>Additional Attunement.</strong> You can attune to up to four magic items at once rather than three.</p><p><strong>Expanded Replication.</strong> When you learn a plan for your [[/item Replicate Magic Item]] feature, you can now also choose from the <em>Magic Item Plans (Artificer Level 10+)</em> table.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "",
       "cost": null,
@@ -73,9 +77,62 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 10
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Magic Item Adept - Attunement",
+      "img": "icons/commodities/materials/glass-orb-blue-gold.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.vae9qeJkGATNerxh",
+      "_id": "zr9iVXwQsNU4EfV6",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.attunement.max",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1741702540338,
+        "modifiedTime": 1741703239611,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!vae9qeJkGATNerxh.zr9iVXwQsNU4EfV6"
+    }
+  ],
   "sort": 956250,
   "ownership": {
     "default": 0
@@ -83,12 +140,11 @@
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1708887569094,
-    "modifiedTime": 1709695514248,
+    "modifiedTime": 1741702487409,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_key": "!items!vae9qeJkGATNerxh"

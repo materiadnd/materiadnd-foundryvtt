@@ -6,10 +6,14 @@
   "img": "icons/creatures/mammals/beast-horned-scaled-glowing-orange.webp",
   "system": {
     "description": {
-      "value": "<p>The rites of your circle grant you the ability to transform into more dangerous animal forms. Starting at 2nd level, your Wild Shape to transform into a beast you the form gains temporary hit points equal to your druid level.</p><p>Additionally, while you are transformed by Wild Shape, you can use a bonus action to expend one spell slot to regain 1d10 hit points per level of the spell slot expended.</p>",
+      "value": "<p>The rites of your circle grant you the ability to transform into more dangerous animal forms. When you use your Wild Shape to transform into a beast the form gains additional Temporary Hit Points equal to three times your Druid level (instead of one).</p><p>Additionally, while you are transformed by Wild Shape, you can use a Bonus Action to expend a level 1+ spell slot to gain 1d10 Temporary Hit Points per slot level expended.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "bonus",
       "cost": 1,
@@ -73,10 +77,96 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Circle of the Moon 2",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "PrIzLrlLqDglXSXe": {
+        "type": "heal",
+        "_id": "PrIzLrlLqDglXSXe",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true,
+            "max": ""
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "spellSlots",
+              "value": "1",
+              "target": "1",
+              "scaling": {
+                "mode": "level",
+                "formula": ""
+              }
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "8",
+          "types": [
+            "temphp"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "(@scaling)d10"
+          },
+          "scaling": {
+            "number": 1,
+            "mode": ""
+          },
+          "bonus": ""
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,15 +174,21 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1712331841053,
-    "modifiedTime": 1712331896118,
+    "modifiedTime": 1742827981853,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_key": "!items!wHMWzjXZCBTXIvcW"

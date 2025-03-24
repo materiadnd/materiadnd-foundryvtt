@@ -1,15 +1,15 @@
 {
   "name": "Dark Star",
+  "_id": "matSplDarkStar00",
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "EGW",
-      "page": "186",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "description": {
-      "value": "<div class=\"rd__b  rd__b--3\"><p>This spell creates a sphere centered on a point you choose within range. The sphere can have a radius of up to 40 feet. The area within this sphere is filled with magical darkness and crushing gravitational force.</p><div class=\"rd__spc-inline-post\"></div><p>For the duration, the spell's area is difficult terrain. A creature with darkvision can't see through the magical darkness, and nonmagical light can't illuminate it. No sound can be created within or pass through the area. Any creature or object entirely inside the sphere is immune to thunder damage, and creatures are @condition[deafened] while entirely inside it. Casting a spell that includes a verbal component is impossible there.</p><p>Any creature that enters the spell's area for the first time on a turn or starts its turn there must make a Constitution saving throw. The creature takes [[/r 8d10]] force damage on a failed save, or half as much damage on a successful one. A creature reduced to 0 hit points by this damage is disintegrated. A disintegrated creature and everything it is wearing and carrying, except magic items, are reduced to a pile of fine gray dust.</p></div>",
+      "value": "<p>Cast on a point within 150 feet, the spell creates a sphere with a radius of up to 40 feet filled with magical darkness and crushing gravitational force. For the duration, the spell's area is difficult terrain which neither darkvision nor non-magical light illuminates, and no sound can be created within or pass through the area. A creature or object entirely inside the sphere is immune to thunder damage and deafened. It is impossible to cast a spell with a verbal component.</p><p>Creations of magical force like <em>forcecage</em>, and magical walls, such as a <em>wall of fire</em> or <em>blade barrier</em> are destroyed by the force of this spell.</p><p>Any creature that enters the spell's area for the first time on a turn or starts its turn takes [[/r 8d10]] force damage on a failed Constitution saving throw, and half as much damage on a successful one. A creature reduced to 0 hit points by this damage is disintegrated.</p><p>A disintegrated creature and everything it is wearing and carrying, except magic items, are reduced to a pile of fine gray dust. The creature can be restored to life only by means of a true resurrection or a wish spell.</p>",
       "chat": ""
     },
     "actionType": "save",
@@ -32,12 +32,23 @@
       "units": "",
       "type": "",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "type": "sphere",
+        "size": "40",
+        "count": "",
+        "units": "ft"
+      }
     },
     "range": {
       "value": 150,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -92,7 +103,146 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": null
+    "ability": null,
+    "activities": {
+      "1hjNOKNNuY8cm67V": {
+        "type": "utility",
+        "_id": "1hjNOKNNuY8cm67V",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Create Sphere",
+        "img": "",
+        "appliedEffects": []
+      },
+      "CxB12HHkfBNDKoeB": {
+        "type": "save",
+        "_id": "CxB12HHkfBNDKoeB",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true,
+          "units": "spec",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 8,
+              "denomination": 10,
+              "bonus": "",
+              "types": [
+                "force"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "con",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Area Save",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "img": "icons/magic/light/explosion-star-glow-blue-purple.webp",
   "ownership": {
@@ -106,23 +256,40 @@
       "propDroppable": "spell"
     },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.uJpy6RbAqonRgB8T",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplDarkStar00",
       "spell-lists": "wizard"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "effects": [],
   "folder": "IeD7MeayeQqIoNnW",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.1.2",
+    "coreVersion": "12.331",
     "createdTime": 1709232153802,
-    "modifiedTime": 1709232157692,
+    "modifiedTime": 1734576523669,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "uJpy6RbAqonRgB8T",
   "sort": 0,
-  "_key": "!items!uJpy6RbAqonRgB8T"
+  "_key": "!items!matSplDarkStar00"
 }

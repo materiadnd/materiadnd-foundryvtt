@@ -1,73 +1,51 @@
 {
   "name": "Mirror Image",
-  "type": "spell",
-  "img": "icons/magic/control/debuff-energy-hold-levitate-pink.webp",
+  "_id": "matSplMirrorImag",
   "system": {
     "description": {
-      "value": "<p>Three illusory duplicates of yourself appear in your space. Until the spell ends, the duplicates move with you and mimic your actions, shifting position so it's impossible to track which image is real. You can use your action to dismiss the illusory duplicates.</p>\n<p>Each time a creature targets you with an attack during the spell's duration, roll a [[/r 1d20 # Mirror Image Check]] to determine whether the attack instead targets one of your duplicates.</p>\n<p>If you have three duplicates, you must roll a 6 or higher to change the attack's target to a duplicate. With two duplicates, you must roll an 8 or higher. With one duplicate, you must roll an 11 or higher.</p>\n<p>A duplicate's AC equals 10 + your Dexterity modifier. If an attack hits a duplicate, the duplicate is destroyed. A duplicate can be destroyed only by an attack that hits it. It ignores all other damage and effects. The spell ends when all three duplicates are destroyed.</p>\n<p>A creature is unaffected by this spell if it can't see, if it relies on senses other than sight, such as blindsight, or if it can perceive illusions as false, as with truesight.</p>",
+      "value": "<p>Three illusory duplicates of yourself appear in your space. Until the spell ends, the duplicates move with you and mimic your actions, shifting position so it's impossible to track which image is real.</p><p>Each time a creature hits you with an attack roll during the spell's duration, roll a [[/r (@flags.materia-dnd.mirrorImages)d6kh1cs&gt;2#Duplicate destroyed]]{d6 for each} of your remaining duplicates. If any of the d6s rolls a 3 or higher, one of the duplicates is hit instead of you. The duplicates otherwise ignore all other damage and effects. The spell ends when all three duplicates are destroyed.</p><p><span style=\"font-family:'Roboto Condensed', sans-serif\">A duplicate's AC equals 10 + your Dexterity modifier. If an attack hits a duplicate, the duplicate is destroyed. A duplicate can be destroyed only by an attack that hits it. It ignores all other damage and effects. The spell ends when all three duplicates are destroyed.</span></p><p>A creature is unaffected by this spell if it has the &amp;Reference[blinded apply=false] condition, &amp;Reference[blindsight], or &amp;Reference[truesight].</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "self",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "type": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
     },
     "range": {
-      "value": null,
-      "long": null,
-      "units": "self"
+      "units": "self",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "1d20",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 2,
     "school": "ill",
+    "properties": [
+      "vocal",
+      "somatic"
+    ],
     "materials": {
       "value": "",
       "consumed": false,
@@ -78,38 +56,223 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "VUqQIaiZoIzxUdf1"
+          },
+          {
+            "_id": "XcTQl9DhT9lC3bxI"
+          },
+          {
+            "_id": "uMsGEsbEZ2hckOKW"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "(@flags.materia-dnd.mirrorImages)d6kh",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic"
-    ],
-    "crewed": false
+    "identifier": "mirror-image"
   },
-  "effects": [],
+  "type": "spell",
+  "img": "icons/magic/defensive/illusion-evasion-echo-purple.webp",
+  "effects": [
+    {
+      "name": "Duplicate A",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplMirrorImag",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "icons/sundries/flags/banner-pink.webp",
+      "_id": "VUqQIaiZoIzxUdf1",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "flags.materia-dnd.mirrorImages",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplMirrorImag.VUqQIaiZoIzxUdf1"
+    },
+    {
+      "name": "Duplicate B",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplMirrorImag",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "icons/sundries/flags/banner-green.webp",
+      "_id": "XcTQl9DhT9lC3bxI",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "flags.materia-dnd.mirrorImages",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplMirrorImag.XcTQl9DhT9lC3bxI"
+    },
+    {
+      "name": "Duplicate C",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplMirrorImag",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "icons/sundries/flags/banner-blue.webp",
+      "_id": "uMsGEsbEZ2hckOKW",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "flags.materia-dnd.mirrorImages",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplMirrorImag.uMsGEsbEZ2hckOKW"
+    }
+  ],
   "folder": "3rC3qr5FIlZymxFD",
   "ownership": {
     "default": 0
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.yY9XIEOildIsv3qP",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplMirrorImag",
       "spell-lists": "bard,sorcerer,warlock,wizard"
     }
   },
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234155,
-    "modifiedTime": 1708930454014,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738215582255,
+    "modifiedTime": 1738215789470,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "yY9XIEOildIsv3qP",
-  "sort": 600000,
-  "_key": "!items!yY9XIEOildIsv3qP"
+  "sort": 0,
+  "_key": "!items!matSplMirrorImag"
 }

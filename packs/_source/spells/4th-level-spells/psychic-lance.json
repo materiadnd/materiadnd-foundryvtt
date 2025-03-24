@@ -1,15 +1,15 @@
 {
   "name": "Psychic Lance",
+  "_id": "matSplPsychicLan",
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "description": {
-      "value": "<div><p>You unleash a shimmering lance of psychic power from your forehead at a creature that you can see within range. Alternatively, you can utter a creature's name. If the named target is within range, it becomes the spell's target even if you can't see it. If the named target isn't within range, the lance dissipates without effect.</p><div><p>The target must make an Intelligence saving throw. On a failed save, the target takes [[/r 7d6]] psychic damage and is incapacitated until the start of your next turn. If the target was concentrating on a spell or as if on a spell they are stunned while incapacitated in this way. On a successful save, the creature takes half as much damage and isn't incapacitated.</p></div></div><div><div><p><strong>At Higher Levels. </strong>When you cast this spell using a spell slot of 5th level or higher, the damage increases by [[/r 1d6]] for each slot level above 4th.</p><div><p></p></div></div><div><p></p></div></div>",
+      "value": "<p>You unleash a shimmering lance of psychic power from your forehead at a creature that you can see within range. Alternatively, you can utter a creature's name. If the named target is within range, it becomes the spell's target even if you can't see it. If the named target isn't within range, the lance dissipates without effect.</p><p>The target must make an Intelligence saving throw. On a failed save, the target takes [[/r 7d6]] psychic damage and is incapacitated until the start of your next turn. If the target was concentrating on a spell or as if on a spell they are stunned while incapacitated in this way. On a successful save, the creature takes half as much damage and isn't incapacitated.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d6 for each spell slot level above 4.</p>",
       "chat": ""
     },
     "actionType": "save",
@@ -30,12 +30,20 @@
       "units": "",
       "type": "",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 120,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -90,7 +98,17 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "dnd5eactivity000": {
+        "effects": [
+          {
+            "_id": "T3TSsPoxO2qKmxuS",
+            "onSave": false
+          }
+        ]
+      }
+    }
   },
   "img": "icons/magic/lightning/bolt-strike-beam-yellow.webp",
   "ownership": {
@@ -104,23 +122,79 @@
       "propDroppable": "spell"
     },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.7tm0K1DYfbFDxHAX",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplPsychicLan",
       "spell-lists": "bard,sorcerer,warlock,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Incapacitated",
+      "img": "systems/dnd5e/icons/svg/statuses/incapacitated.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplPsychicLan",
+      "transfer": false,
+      "_id": "T3TSsPoxO2qKmxuS",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": 1,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "incapacitated"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728386786893,
+        "modifiedTime": 1728386826322,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplPsychicLan.T3TSsPoxO2qKmxuS"
+    }
+  ],
   "folder": "PrScRYl7JdLxwH3K",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1709151547984,
-    "modifiedTime": 1711344866161,
+    "modifiedTime": 1738724337108,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "7tm0K1DYfbFDxHAX",
-  "sort": 2700000,
-  "_key": "!items!7tm0K1DYfbFDxHAX"
+  "sort": 4000000,
+  "_key": "!items!matSplPsychicLan"
 }

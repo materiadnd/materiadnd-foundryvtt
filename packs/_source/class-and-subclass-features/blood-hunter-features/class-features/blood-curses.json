@@ -6,10 +6,14 @@
   "img": "icons/magic/death/skull-weapon-staff-glow-pink.webp",
   "system": {
     "description": {
-      "value": "<p>At 1st level, you gain the ability to channel - or sometimes sacrifice - a part of your vital essence to curse and manipulate creatures through hemocraft magic. You know two blood curse of your choice, detailed in the \"Blood Curses\" section at the end of the class description. You learn one additional blood curse of your choice at 5th, 9th, 13th, and 17th level. Each time you level in this class, you can also choose one of the blood curses you know and replace it with another blood curse.</p><p>At 20th level in this class, whenever you complete a long rest you can replace one of your blood curses you know and replace it with another blood curse.</p><p>Each time you use your Blood Curse feature, you choose which curse to invoke from the curses you know. While invoking a blood curse, but before it affects the target, you can choose to amplify the curse into a Blood Maledict by taking necrotic damage equal to one roll of your hemocraft die. This damage cannot be reduced in any way. An amplified curse gains an additional effect, noted in the curse's description. Creatures that do not have blood are immune to blood curses unless you have amplified the curse.</p><p>You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>",
+      "value": "<p>You gain the ability to channel - or sometimes sacrifice - a part of your vital essence to curse and manipulate creatures through hemocraft magic. You know two blood curse of your choice, detailed in the \"Blood Curses\" section at the end of the class description. You learn one additional blood curse of your choice at 5th, 9th, 13th, and 17th level. Each time you level in this class, you can also choose one of the blood curses you know and replace it with another blood curse.</p><p>At 20th level in this class, whenever you complete a Long Rest you can replace one of your blood curses you know and replace it with another blood curse.</p><p>Each time you use your Blood Curse feature, you choose which curse to invoke from the curses you know. While invoking a blood curse, but before it affects the target, you can choose to amplify the curse into a Blood Maledict by taking necrotic damage equal to one roll of your hemocraft die. This damage cannot be reduced in any way. An amplified curse gains an additional effect, noted in the curse's description. Creatures that do not have blood are immune to blood curses unless you have amplified the curse.</p><p>You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a Long Rest.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "special",
       "cost": null,
@@ -73,18 +77,49 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Blood Curse",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": []
+      }
+    },
+    "prerequisites": {
+      "level": 1
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707884783424,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1741721224026,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 0,

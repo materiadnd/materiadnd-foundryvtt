@@ -6,10 +6,14 @@
   "img": "icons/skills/social/diplomacy-handshake.webp",
   "system": {
     "description": {
-      "value": "<p>When you or a creature who can see or hear you within 30 feet of you makes an ability check at disadvantage, you can use your reaction to roll a Merit die and add it to the result (this does not expend the Merit die). You can wait until after the d20 is rolled before deciding to use this feature, but must decide before the DM says whether the roll succeeds or fails.</p><p>The creature does not need disadvantage if it engages in an opposed ability check (or opposed roll at your DM's discretion). This can include, but is not limited to: Wisdom (Perception) vs Dexterity (Sleight of Hand) to see a letter being passed off, Strength (Athletics) vs Dexterity (Acrobatics) to escape a grapple, or Charisma (Deception) vs Wisdom (Insight) to bluff your way out of danger.</p><p>Once you use this feature, you cannot use it again until you finish a long rest. Any time before you regain the use of this feature, if a creature rolls a 6 or higher on a Merit die that you have expended, you then regain the use of this feature.</p>",
+      "value": "<p>When you or a creature who can see or hear you within 30 feet of you makes an ability check at Disadvantage, you can use take a Reaction to roll a Merit die and add it to the result (this does not expend the Merit die). You can wait until after the d20 is rolled before deciding to use this feature, but must decide before the DM says whether the roll succeeds or fails.</p><p>The creature does not need disadvantage if it engages in an opposed ability check (or opposed roll at your DM's discretion). This can include, but is not limited to: Wisdom (Perception) vs Dexterity (Sleight of Hand) to see a letter being passed off, Strength (Athletics) vs Dexterity (Acrobatics) to escape a grapple, or Charisma (Deception) vs Wisdom (Insight) to bluff your way out of danger.</p><p>Once you use this feature, you cannot use it again until you finish a Long Rest. Any time before you regain the use of this feature, if a creature rolls a 6 or higher on a Merit die that you have expended, you then regain the use of this feature.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "reaction",
       "cost": null,
@@ -73,22 +77,49 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 1
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Bolster Ally",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
       "item-use-target": "bravura"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1706848108387,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1741715357724,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 0,

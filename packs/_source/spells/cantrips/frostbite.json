@@ -1,15 +1,15 @@
 {
   "name": "Frostbite",
+  "_id": "matSplFrostbite0",
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "XGE",
-      "page": "156",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "description": {
-      "value": "<div class=\"rd__b  rd__b--3\"><p>You cause numbing frost to form on one creature that you can see within range. The target must make a Constitution saving throw. On a failed save, the target takes [[/r 1d6]] cold damage, and it has disadvantage on the next weapon attack roll it makes before the end of its next turn.</p><div class=\"rd__spc-inline-post\"></div><p>The spell's damage increases by [[/r 1d6]] when you reach 5th level ([[/r 2d6]]), 11th level ([[/r 3d6]]), and 17th level ([[/r 4d6]]).</p></div>",
+      "value": "<p>You cause numbing frost to form on one creature that you can see within range. The target must make a Constitution saving throw. On a failed save, the target takes [[/damage 1d6 cold]] damage, and it has disadvantage on the next weapon attack roll it makes before the end of its next turn.</p><p><strong>Cantrip Upgrade.</strong> </span>The damage increases by 1d6 when you reach levels 5 ([[/damage 2d6 cold]]), 11 ([[/damage 3d6 cold]]), and 17 ([[/damage 4d6 cold]]).</p>",
       "chat": ""
     },
     "actionType": "save",
@@ -30,12 +30,19 @@
       "units": "",
       "type": "creature",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 60,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -90,7 +97,93 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "N2yZm3gDrkpLA3Gr": {
+        "type": "save",
+        "_id": "N2yZm3gDrkpLA3Gr",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "Fn8PMznkfOm2XeRl",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "cold"
+              ],
+              "scaling": {
+                "mode": "whole",
+                "number": 1,
+                "formula": ""
+              }
+            }
+          ],
+          "onSave": "none"
+        },
+        "save": {
+          "ability": "con",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": [
+          "Fn8PMznkfOm2XeRl"
+        ]
+      }
+    }
   },
   "img": "icons/magic/water/snowflake-ice-blue-white.webp",
   "ownership": {
@@ -104,23 +197,64 @@
       "propDroppable": "spell"
     },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.zHbI8WMLubEhsSlT",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplFrostbite0",
       "spell-lists": "artificer,druid,sorcerer,warlock,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Frostbite",
+      "img": "icons/magic/water/strike-weapon-blade-ice-blue.webp",
+      "_id": "Fn8PMznkfOm2XeRl",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": 1,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target has disadvantage on the next weapon attack roll it makes before the end of its next turn.</p>",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.2",
+        "createdTime": 1726907344154,
+        "modifiedTime": 1726907418992,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplFrostbite0.Fn8PMznkfOm2XeRl"
+    }
+  ],
   "folder": "WtBByem45tjsGx6Z",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1708312543451,
-    "modifiedTime": 1710192496557,
+    "modifiedTime": 1737928782004,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "zHbI8WMLubEhsSlT",
-  "sort": 2200000,
-  "_key": "!items!zHbI8WMLubEhsSlT"
+  "sort": 2900000,
+  "_key": "!items!matSplFrostbite0"
 }

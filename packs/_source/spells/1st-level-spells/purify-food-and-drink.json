@@ -1,19 +1,19 @@
 {
   "name": "Purify Food and Drink",
+  "_id": "matSplPurifyFood",
   "ownership": {
     "default": 0
   },
   "type": "spell",
   "system": {
     "description": {
-      "value": "<p>All nonmagical food and drink within a 5-foot-radius sphere centered on a point of your choice within range is purified and rendered free of poison and disease.</p>",
+      "value": "<p>You remove poison and disease from all nonmagical food and drink in a 5-foot-radius Sphere centered on a point within range.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
@@ -30,12 +30,20 @@
       "width": null,
       "units": "ft",
       "type": "sphere",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "count": ""
+      }
     },
     "range": {
       "value": 10,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -89,12 +97,66 @@
       "somatic",
       "ritual"
     ],
-    "crewed": false
+    "crewed": false,
+    "activities": {
+      "TgqhctQ7kvbKnefm": {
+        "type": "utility",
+        "_id": "TgqhctQ7kvbKnefm",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {},
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false
+        }
+      }
+    }
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.FwZS6H7VKfknjqns",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplPurifyFood",
       "spell-lists": "artificer,cleric,druid,paladin"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "img": "icons/magic/light/explosion-star-small-teal.webp",
@@ -102,15 +164,13 @@
   "folder": "JMRA2elEdmr5pgX7",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1661787234118,
-    "modifiedTime": 1708928830321,
+    "modifiedTime": 1738040513006,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "FwZS6H7VKfknjqns",
   "sort": 600000,
-  "_key": "!items!FwZS6H7VKfknjqns"
+  "_key": "!items!matSplPurifyFood"
 }

@@ -6,10 +6,14 @@
   "img": "icons/commodities/biological/tail-scaled-green.webp",
   "system": {
     "description": {
-      "value": "<p>As a bonus action, you can manifest a spectral tail as a natural weapon and immediately attack with it. If you hit with the tail, you deal force damage equal to 1d6 + your Strength modifier or Dexterity modifier (You choose this when you manifest the tail), instead of the bludgeoning damage normal for an unarmed strike. Furthermore, if there are creatures within 5 feet of your initial target for your tail attack, you can deal force damage equal to the modifier you chose when attacking them.</p><p>You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest. Additional, you regain a use of this bonus action when you expend a Hit Die.</p>",
+      "value": "<p>As a Bonus Action, you can manifest a spectral tail as a natural weapon and immediately attack with it. If you hit with the tail, you deal Force damage equal to 1d6 + your Strength modifier or Dexterity modifier (You choose this when you manifest the tail), instead of the Bludgeoning damage normal for an unarmed strike. Furthermore, if there are creatures within 5 feet of your initial target for your tail attack, you can deal force damage equal to the modifier you chose when attacking them.</p><p>You can use this Bonus Action a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest. You can regain a use of this Bonus Action by expending a Hit Die.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "bonus",
       "cost": 1,
@@ -78,6 +82,376 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "GxXHRd2Dn3caaOOv": {
+        "type": "utility",
+        "_id": "GxXHRd2Dn3caaOOv",
+        "sort": 350000,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": ""
+            },
+            {
+              "type": "hitDice",
+              "value": "1",
+              "target": "smallest"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Recharge with Hit Die",
+        "img": "",
+        "appliedEffects": []
+      },
+      "bnnNQOVTjZLp6q38": {
+        "type": "damage",
+        "_id": "bnnNQOVTjZLp6q38",
+        "sort": 400000,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "5"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "@abilities.str.mod"
+              },
+              "number": null,
+              "denomination": 0,
+              "bonus": "",
+              "types": [
+                "force"
+              ]
+            }
+          ]
+        },
+        "name": "Nearby Damage (STR)",
+        "img": "",
+        "appliedEffects": []
+      },
+      "dnd5eactivity000": {
+        "name": "Attack (STR)",
+        "img": "",
+        "attack": {
+          "ability": "str"
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "range": {
+          "units": "ft",
+          "value": "5"
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": "6",
+              "bonus": "@mod",
+              "types": [
+                "force"
+              ]
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1"
+          }
+        },
+        "sort": 100000
+      },
+      "5UHdd0ElhrOI7s74": {
+        "type": "attack",
+        "activation": {
+          "type": "bonus",
+          "value": 1,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "concentration": false,
+          "value": "",
+          "units": "inst",
+          "special": "",
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "value": "5",
+          "units": "ft",
+          "special": "",
+          "override": false
+        },
+        "target": {
+          "template": {
+            "count": "",
+            "contiguous": false,
+            "type": "",
+            "size": "",
+            "width": "",
+            "height": "",
+            "units": ""
+          },
+          "affects": {
+            "count": "1",
+            "type": "creature",
+            "choice": false,
+            "special": ""
+          },
+          "prompt": true,
+          "override": false
+        },
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "attack": {
+          "ability": "dex",
+          "bonus": "",
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "weapon"
+          }
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": true,
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": "6",
+              "bonus": "@mod",
+              "types": [
+                "force"
+              ]
+            }
+          ]
+        },
+        "name": "Attack (DEX)",
+        "sort": 300000,
+        "_id": "5UHdd0ElhrOI7s74",
+        "img": "",
+        "appliedEffects": []
+      },
+      "rhrpH6QGA9EQZWyE": {
+        "type": "damage",
+        "sort": 400000,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "value": "5",
+          "units": "ft",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": "creature",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "@abilities.dex.mod"
+              },
+              "number": null,
+              "denomination": 0,
+              "bonus": "",
+              "types": [
+                "force"
+              ]
+            }
+          ]
+        },
+        "name": "Nearby Damage (DEX)",
+        "_id": "rhrpH6QGA9EQZWyE",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -85,15 +459,21 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1709261679583,
-    "modifiedTime": 1709261767901,
+    "modifiedTime": 1742243271722,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_key": "!items!aGQannsab4axKAOQ"

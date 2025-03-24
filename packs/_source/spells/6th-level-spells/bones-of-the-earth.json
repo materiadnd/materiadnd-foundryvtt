@@ -1,15 +1,15 @@
 {
   "name": "Bones of the Earth",
+  "_id": "matSplBonesOfThe",
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "description": {
-      "value": "<p>You cause up to six pillars of stone to burst from places on the ground, wall or ceiling that you can see within range. Each pillar is a cylinder that has a diameter of 5 feet and a height of up to 30 feet. The surface where a pillar appears must be wide enough for its diameter, and you can target the surface by a creature if that creature is Medium or smaller. You can target the surface by a large creature if you use four pillars, the surface by a huge creature if you use nine pillars, or the surface by a gargantuan creature if you use fifteen pillars.</p><p>Each pillar has AC 5 and 30 hit points. When reduced to 0 hit points, a pillar crumbles into rubble, which creates an area of difficult terrain with a 10-foot radius that lasts until the rubble is cleared. Each 5-foot-diameter portion of the area requires at least 1 minute to clear by hand.</p><p>If a pillar is created under a creature, that creature must succeed on a Dexterity saving throw or be lifted or pushed by the pillar. A creature can choose to fail the save.</p><p>If a pillar is prevented from reaching its full height because of a ceiling or other obstacle, a creature on the pillar takes 6d6 bludgeoning damage and is restrained, pinched between the pillar and the obstacle. The restrained creature can use an action to make a Strength or Dexterity check (the creature's choice) against the spell's save DC. On a success, the creature is no longer restrained and must either move off the pillar or fall off it.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 7th level or higher, you can create three additional pillars for each slot level above 6th.</p>",
+      "value": "<p>You cause up to six pillars of stone to burst from places on the ground, wall or ceiling that you can see within range. Each pillar is a cylinder that has a diameter of 5 feet and a height of up to 30 feet. The surface where a pillar appears must be wide enough for its diameter, and you can target the surface by a creature if that creature is Medium or smaller. You can target the surface by a large creature if you use four pillars, the surface by a huge creature if you use nine pillars, or the surface by a gargantuan creature if you use fifteen pillars.</p><p>Each pillar has AC 5 and 30 hit points. When reduced to 0 hit points, a pillar crumbles into rubble, which creates an area of difficult terrain with a 10-foot radius that lasts until the rubble is cleared. Each 5-foot-diameter portion of the area requires at least 1 minute to clear by hand.</p><p>If a pillar is created under a creature, that creature must succeed on a Dexterity saving throw or be lifted or pushed by the pillar. A creature can choose to fail the save.</p><p>If a pillar is prevented from reaching its full height because of a ceiling or other obstacle, a creature on the pillar takes [[/r 6d6]] bludgeoning damage and is &amp;Reference[restrained], pinched between the pillar and the obstacle. The restrained creature can use an Action to make a Strength or Dexterity check (the creature's choice) against the spell's save DC. On a success, the creature is no longer restrained and must either move off the pillar or fall off it.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The number of pillars increases by 3 for each spell slot level above 6.</p>",
       "chat": ""
     },
     "actionType": "save",
@@ -31,12 +31,21 @@
       "units": "ft",
       "type": "radius",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "type": "",
+        "count": ""
+      }
     },
     "range": {
       "value": 120,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -91,7 +100,126 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "WnrivCBz94r0iiOB": {
+        "type": "summon",
+        "_id": "WnrivCBz94r0iiOB",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "bonuses": {
+          "ac": "",
+          "hd": "",
+          "hp": "",
+          "attackDamage": "",
+          "saveDamage": "",
+          "healing": ""
+        },
+        "creatureSizes": [],
+        "creatureTypes": [],
+        "match": {
+          "attacks": false,
+          "proficiency": false,
+          "saves": false
+        },
+        "profiles": [
+          {
+            "count": "6",
+            "name": "",
+            "_id": "JGKswCEEBHIzhP6R",
+            "uuid": "Compendium.materia-dnd.actors.Actor.CpD9BDKnIyVhPOVP",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": []
+          }
+        ],
+        "summon": {
+          "prompt": true,
+          "mode": ""
+        },
+        "name": "Conjure Pillars",
+        "img": "",
+        "appliedEffects": []
+      },
+      "dnd5eactivity000": {
+        "sort": 100000,
+        "name": "Crush Save",
+        "img": "",
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 6,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "bludgeoning"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "appliedEffects": [
+          "TGuaBuSGycf5Y8tb"
+        ],
+        "effects": [
+          {
+            "_id": "TGuaBuSGycf5Y8tb",
+            "onSave": false
+          }
+        ],
+        "consumption": {
+          "spellSlot": false
+        }
+      }
+    }
   },
   "img": "icons/skills/movement/arrows-up-trio-red.webp",
   "ownership": {
@@ -105,23 +233,79 @@
       "propDroppable": "spell"
     },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.6aD31TuYYSLxFXrQ",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplBonesOfThe",
       "spell-lists": "druid"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Crushed by Stone",
+      "img": "icons/skills/movement/arrows-up-trio-red.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplBonesOfThe",
+      "transfer": false,
+      "_id": "TGuaBuSGycf5Y8tb",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The creature is restrained, pinched between the pillar and the obstacle. The restrained creature can use an action to make a Strength or Dexterity check (the creature's choice) against the spell's save DC. On a success, the creature is no longer restrained and must either move off the pillar or fall off it.</p>",
+      "tint": "#ffffff",
+      "statuses": [
+        "restrained"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728581409357,
+        "modifiedTime": 1728581444200,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplBonesOfThe.TGuaBuSGycf5Y8tb"
+    }
+  ],
   "folder": "UjV13fGRtZfpmOAS",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1709219807611,
-    "modifiedTime": 1712723489499,
+    "modifiedTime": 1739407995820,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "6aD31TuYYSLxFXrQ",
   "sort": 4200000,
-  "_key": "!items!6aD31TuYYSLxFXrQ"
+  "_key": "!items!matSplBonesOfThe"
 }

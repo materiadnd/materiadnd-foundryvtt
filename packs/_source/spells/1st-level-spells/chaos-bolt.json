@@ -2,14 +2,18 @@
   "folder": "JMRA2elEdmr5pgX7",
   "name": "Chaos Bolt",
   "type": "spell",
-  "_id": "sGYRfLuEBFiOZSgk",
+  "_id": "matSplChaosBolt0",
   "img": "icons/magic/light/projectiles-trio-pink.webp",
   "system": {
     "description": {
-      "value": "<p>You hurl an undulating, warbling mass of chaotic energy at one creature in range. Make a ranged spell attack against the target. On a hit, the target takes 3d8 damage. Choose one of the d8s. The number rolled on that die determines the attack's damage type, as shown below.</p><table><thead><tr><th>d8</th><th>Damage Type</th></tr></thead><tbody><tr><td>1</td><td>Acid</td></tr><tr><td>2</td><td>Cold</td></tr><tr><td>3</td><td>Fire</td></tr><tr><td>4</td><td>Force</td></tr><tr><td>5</td><td>Lightning</td></tr><tr><td>6</td><td>Poison</td></tr><tr><td>7</td><td>Psychic</td></tr><tr><td>8</td><td>Thunder</td></tr></tbody></table><p>If you roll the same number on two d8s, the chaotic energy leaps from the target to a different creature of your choice within 30 feet of it. Make a new attack roll against the new target, and make a new damage roll, which could cause the chaotic energy to leap again.</p><p>A creature can be targeted only once by each casting of this spell.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 2nd level or higher, each target takes 1d8 extra damage of the type rolled for each slot level above 1st.</p><p>When you cast this spell using a spell slot of 9th level or higher, remove the limit that a creature can be targeted only once by each casting of this spell.</p>",
+      "value": "<p>You hurl an undulating, warbling mass of chaotic energy at one creature in range. Make a ranged spell attack against the target. On a hit, the target takes [[/damage 3d8]] damage. Choose one of the d8s. The number rolled on that die determines the attack's damage type, as shown below.</p><table><thead><tr><th>[[/r d8]]</th><th>Damage Type</th></tr></thead><tbody><tr><td>1</td><td>Acid</td></tr><tr><td>2</td><td>Cold</td></tr><tr><td>3</td><td>Fire</td></tr><tr><td>4</td><td>Force</td></tr><tr><td>5</td><td>Lightning</td></tr><tr><td>6</td><td>Poison</td></tr><tr><td>7</td><td>Psychic</td></tr><tr><td>8</td><td>Thunder</td></tr></tbody></table><p>If you roll the same number on two d8s, the chaotic energy leaps from the target to a different creature of your choice within 30 feet of it. Make a new attack roll against the new target, and make a new damage roll, which could cause the chaotic energy to leap again.</p><p>A creature can be targeted only once by each casting of this spell.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 1d8 for each spell slot level above 1.</p><p>At level 9 or higher, a creature can be targeted <strong>more</strong> than once by each casting of this spell.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -26,12 +30,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 120,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -88,28 +99,130 @@
     "scaling": {
       "mode": "level",
       "formula": "1d8"
+    },
+    "activities": {
+      "NlSiqL9ULzJsEqbh": {
+        "type": "attack",
+        "_id": "NlSiqL9ULzJsEqbh",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "attack": {
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": ""
+          },
+          "ability": "",
+          "bonus": ""
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": true,
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 3,
+              "denomination": 8,
+              "bonus": "",
+              "types": [],
+              "scaling": {
+                "mode": "whole",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.sGYRfLuEBFiOZSgk",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplChaosBolt0",
       "spell-lists": "sorcerer"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickAttack": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1707628964936,
-    "modifiedTime": 1708928830321,
+    "modifiedTime": 1738042988424,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 7000000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!sGYRfLuEBFiOZSgk"
+  "_key": "!items!matSplChaosBolt0"
 }

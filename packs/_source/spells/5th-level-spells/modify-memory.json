@@ -1,25 +1,54 @@
 {
   "name": "Modify Memory",
-  "type": "spell",
+  "_id": "matSplModifyMemo",
   "system": {
-    "source": {
-      "custom": "",
-      "book": "PHB",
-      "page": "261",
-      "license": ""
-    },
     "description": {
-      "value": "<div class=\"rd__b  rd__b--3\"><p>You attempt to reshape another creature's memories. One creature that you can see must make a Wisdom saving throw. If you are fighting the creature, it has advantage on the saving throw. On a failed save, the target becomes charmed by you for the duration. The charmed target is incapacitated and unaware of its surroundings, though it can still hear you. If it takes any damage or is targeted by another spell, this spell ends, and none of the target's memories are modified.</p><p>While this charm lasts, you can affect the target's memory of an event that it experienced within the last 24 hours and that lasted no more than 10 minutes. You can permanently eliminate all memory of the event, allow the target to recall the event with perfect clarity and exacting detail, change its memory of the details of the event, or create a memory of some other event.</p><p>You must speak to the target to describe how its memories are affected, and it must be able to understand your language for the modified memories to take root. Its mind fills in any gaps in the details of your description. If the spell ends before you have finished describing the modified memories, the creature's memory isn't altered. Otherwise, the modified memories take hold when the spell ends.</p><p>A modified memory doesn't necessarily affect how a creature behaves, particularly if the memory contradicts the creature's natural inclinations, alignment, or beliefs. An illogical modified memory, such as implanting a memory of how much the creature enjoyed dousing itself in acid, is dismissed, perhaps as a bad dream. The DM might deem a modified memory too nonsensical to affect a creature in a significant manner.</p><p>A remove curse or greater restoration spell cast on the target restores the creature's true memory.</p></div><div class=\"rd__b  rd__b--3\"><div class=\"rd__b  rd__b--3\"><p><span class=\"entry-title-inner\">At Higher Levels.</span></p><p>If you cast this spell using a spell slot of 6th level or higher, you can alter the target's memories of an event that took place up to 7 days ago (6th level), 30 days ago (7th level), 1 year ago (8th level), or any time in the creature's past (9th level).</p><div class=\"rd__spc-inline-post\"><p></p></div></div><div class=\"rd__spc-inline-post\"><p></p></div></div>",
+      "value": "<p>You attempt to reshape another creature's memories. One creature that you can see within range makes a Wisdom saving throw. If you are fighting the creature, it has Advantage on the save. On a failed save, the target has the &amp;Reference[Charmed apply=false] condition for the duration. While Charmed in this way, the target also has the &amp;Reference[Incapacitated apply=false] condition and is unaware of its surroundings, though it can hear you. If it takes any damage or is targeted by another spell, this spell ends, and no memories are modified.</p><p>While this charm lasts, you can affect the target's memory of an event that it experienced within the last 24 hours and that lasted no more than 10 minutes. You can permanently eliminate all memory of the event, allow the target to recall the event with perfect clarity, change its memory of the event's details, or create a memory of some other event.</p><p>You must speak to the target to describe how its memories are affected, and it must be able to understand your language for the modified memories to take root. Its mind fills in any gaps in the details of your description. If the spell ends before you finish describing the modified memories, the creature's memory isn't altered. Otherwise, the modified memories take hold when the spell ends.</p><p>A modified memory doesn't necessarily affect how a creature behaves, particularly if the memory contradicts the creature's natural inclinations, alignment, or beliefs. An illogical modified memory, such as a false memory of how much the creature enjoyed swimming in acid, is dismissed as a bad dream. The DM might deem a modified memory too nonsensical to affect a creature.</p><p>A <em>@UUID[Compendium.materia-dnd.spells.Item.matSplRemoveCurs]{Remove Curse}</em> or <em>@UUID[Compendium.materia-dnd.spells.Item.matSplGreaterRes]{Greater Restoration}</em> spell cast on the target restores the creature's true memory.</p><p><strong>Using a Higher-Level Spell Slot.</strong> You can alter the target's memories of an event that took place up to 7 days ago (level 6 spell slot), 30 days ago (level 7 spell slot), 365 days ago (level 8 spell slot), or any time in the creature's past (level 9 spell slot).</p>",
       "chat": ""
     },
-    "actionType": "save",
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "action",
+      "condition": "",
+      "value": null
+    },
+    "duration": {
+      "value": "1",
+      "units": "minute"
+    },
+    "target": {
+      "affects": {
+        "type": "creature",
+        "count": "1",
+        "choice": false,
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
+    },
+    "range": {
+      "value": "30",
+      "units": "ft",
+      "special": ""
+    },
+    "uses": {
+      "max": "",
+      "recovery": [],
+      "spent": 0
+    },
     "level": 5,
     "school": "enc",
     "properties": [
       "vocal",
       "somatic",
-      "concentration",
-      "mgc"
+      "concentration"
     ],
     "materials": {
       "value": "",
@@ -27,97 +56,139 @@
       "cost": 0,
       "supply": 0
     },
-    "target": {
-      "value": 1,
-      "units": "",
-      "type": "creature",
-      "prompt": true,
-      "width": null
-    },
-    "range": {
-      "value": 30,
-      "units": "ft",
-      "long": null
-    },
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": "1",
-      "units": "minute"
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    },
-    "save": {
-      "ability": "wis",
-      "dc": null,
-      "scaling": "spell"
-    },
-    "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "formula": "",
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "ayfixWGhTtaIUusk",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": []
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      }
     },
-    "cover": null,
-    "crewed": false,
-    "ability": ""
+    "identifier": "modify-memory"
   },
-  "img": "icons/magic/control/hypnosis-mesmerism-pendulum.webp",
+  "type": "spell",
+  "img": "icons/sundries/documents/document-letter-blue.webp",
+  "effects": [
+    {
+      "name": "Memory Modification",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplModifyMemo",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "systems/dnd5e/icons/svg/statuses/incapacitated.svg",
+      "_id": "ayfixWGhTtaIUusk",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p><span style=\"font-family:Signika, sans-serif\">While &amp;Reference[Charmed apply=false] in this way, the target also has the &amp;Reference[Incapacitated apply=false] condition and is unaware of its surroundings, though it can hear you. If it takes any damage or is targeted by another spell, this spell ends, and no memories are modified.</span></p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [
+        "charmed",
+        "incapacitated"
+      ],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null
+      },
+      "_key": "!items.effects!matSplModifyMemo.ayfixWGhTtaIUusk"
+    }
+  ],
+  "folder": "slWnSXtwvwnA9EXJ",
   "ownership": {
     "default": 0
   },
   "flags": {
-    "plutonium": {
-      "page": "spells.html",
-      "source": "PHB",
-      "hash": "modify%20memory_phb",
-      "propDroppable": "spell"
-    },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.0NH0QJFrH9yS6Ijb",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplModifyMemo",
       "spell-lists": "bard,wizard"
     }
   },
-  "effects": [],
-  "folder": "slWnSXtwvwnA9EXJ",
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
-    "createdTime": 1709186222984,
-    "modifiedTime": 1711344981257,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1739232790588,
+    "modifiedTime": 1739232790588,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_id": "0NH0QJFrH9yS6Ijb",
   "sort": 0,
-  "_key": "!items!0NH0QJFrH9yS6Ijb"
+  "_key": "!items!matSplModifyMemo"
 }

@@ -6,10 +6,14 @@
   "img": "icons/magic/symbols/triangle-glow-purple.webp",
   "system": {
     "description": {
-      "value": "<p>At 20th level, you develop a mystical connection to your magic items, which you can draw on for protection:</p><ul><li>You gain a +1 bonus to all saving throws per magic item you are currently attuned to.</li><li>If you are reduced to 0 hit points but not killed out-right, you can use your reaction to end one of your artificer infusions, causing you to drop to 1 hit point instead of 0.</li></ul>",
+      "value": "<p>You have developed a mystical connection to your magic items, which you can draw on for aid. You gain the following benefits:</p><p><strong>Cheat Death.</strong> If you are reduced to 0 hit points but not killed outright, you can disintegrate one Uncommon or Rare magic item created by your Replicate Magic Item feature, changing your Hit Points to 20 instead of 0.</p><p><strong>Tinker's Boon.</strong> You gain a +1 bonus to all saving throws per magic item you are currently attuned to.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "",
       "cost": null,
@@ -73,22 +77,178 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "Hce95VOQHly7ftHV": {
+        "type": "heal",
+        "_id": "Hce95VOQHly7ftHV",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "20"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "Cheat Death",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Tinker's Boon",
+      "img": "icons/magic/symbols/triangle-glow-purple.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.hkPA6O0627gav7By",
+      "_id": "PAreCXMOraieashN",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "@abilities.str.saveBonus",
+          "mode": 2,
+          "value": "@attributes.attunement.value",
+          "priority": null
+        },
+        {
+          "key": "@abilities.dex.saveBonus",
+          "mode": 2,
+          "value": "@attributes.attunement.value",
+          "priority": null
+        },
+        {
+          "key": "@abilities.con.saveBonus",
+          "mode": 2,
+          "value": "@attributes.attunement.value",
+          "priority": null
+        },
+        {
+          "key": "@abilities.int.saveBonus",
+          "mode": 2,
+          "value": "@attributes.attunement.value",
+          "priority": null
+        },
+        {
+          "key": "@abilities.wis.saveBonus",
+          "mode": 2,
+          "value": "@attributes.attunement.value",
+          "priority": null
+        },
+        {
+          "key": "@abilities.cha.saveBonus",
+          "mode": 2,
+          "value": "@attributes.attunement.value",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1741703600563,
+        "modifiedTime": 1741703707881,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!hkPA6O0627gav7By.PAreCXMOraieashN"
+    }
+  ],
   "sort": 1075000,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1708890401590,
-    "modifiedTime": 1709695531322,
+    "modifiedTime": 1741703566167,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_key": "!items!hkPA6O0627gav7By"

@@ -2,14 +2,18 @@
   "folder": "3rC3qr5FIlZymxFD",
   "name": "Crown of Madness",
   "type": "spell",
-  "_id": "W4vvMyAKjUOJ7Ppw",
+  "_id": "matSplCrownOfMad",
   "img": "icons/magic/light/explosion-star-glow-orange.webp",
   "system": {
     "description": {
-      "value": "<p>One humanoid of your choice that you can see within range must succeed on a Wisdom saving throw or become charmed by you for the duration. While the target is charmed in this way, a twisted crown of jagged iron appears on its head, and a madness glows in its eyes.</p><p>At the beginning of the charmed target's turn, you may either command the target to spend its action to make a weapon attack against a creature other than itself, or command it to move up to its speed in a direction of your choice. The target follows your command before doing anything else on its turn. The target may act normally on its turn if you do not command it.</p><p>A target is not compelled to move into an obviously deadly hazard, such as a fire or pit, but it will provoke opportunity attacks to move in the designated direction.</p><p>On your subsequent turns, you must use your action to maintain control over the target, or the spell ends. Also, the target can make a Wisdom saving throw at the end of each of its turns. On a success, the spell ends.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 3rd or 4th level, the target deals bonus damage with weapon attacks against a creature other than itself equal to your spellcasting modifier.</p><p>When you cast this spell using a spell slot of 5th level, the target makes its weapon attack rolls with advantage against a creature other than itself.</p><p>When you cast this spell using a spell slot of 7th level, the spell no longer requires your concentration.</p>",
+      "value": "<p>One humanoid of your choice that you can see within range must succeed on a Wisdom saving throw or become &amp;Reference[Charmed] by you for the duration. While the target is Charmed in this way, a twisted crown of jagged iron appears on its head, and a madness glows in its eyes.</p><p>At the beginning of the Charmed target's turn, you may either command the target to spend its action to make a weapon attack against a creature other than itself, or command it to move up to its speed in a direction of your choice. The target follows your command before doing anything else on its turn. The target may act normally on its turn if you do not command it.</p><p>A target is not compelled to move into an obviously deadly hazard, such as a fire or pit, but it will provoke opportunity attacks to move in the designated direction.</p><p>On your subsequent turns, you must use take the Magic action to maintain control over the target, or the spell ends. Also, the target can make a Wisdom saving throw at the end of each of its turns. On a success, the spell ends.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The target deals bonus damage with weapon attacks against a creature other than itself equal to your spellcasting modifier when you use a spell slot level of 3 or higher.</p><p>The target makes its weapon attack rolls with advantage against a creature other than itself when you use a spell slot level of 5 or higher.</p><p>The spell no longer requires your concentration when you use a spell slot level of 7 or higher.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -26,12 +30,19 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 120,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -84,28 +95,155 @@
     "scaling": {
       "mode": "none",
       "formula": ""
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "effects": [
+          {
+            "_id": "baxfdf9HB0DOu23k",
+            "onSave": false
+          }
+        ]
+      },
+      "qS2NfqY853wtceTE": {
+        "type": "save",
+        "_id": "qS2NfqY853wtceTE",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "FxvUyCdI76kILiCF"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Spectral Crown",
+      "img": "icons/equipment/head/crown-gold-blue.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplCrownOfMad",
+      "transfer": false,
+      "_id": "FxvUyCdI76kILiCF",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target must use its action before moving on each of its turns to make a melee attack against a creature other than itself that you mentally choose. The target can act normally on its turn if you choose no creature or if no creature is within its reach. The target repeats the [[/save ability=wis]] save at the end of each of its turns, ending the spell on itself on a success.</p>",
+      "tint": "#ffffff",
+      "statuses": [
+        "charmed"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": 1738212157786,
+        "modifiedTime": 1738212260546,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplCrownOfMad.FxvUyCdI76kILiCF"
+    }
+  ],
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.W4vvMyAKjUOJ7Ppw",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplCrownOfMad",
       "spell-lists": "bard,sorcerer,warlock,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1708311559262,
-    "modifiedTime": 1708930454014,
+    "modifiedTime": 1738212157828,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 6300000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!W4vvMyAKjUOJ7Ppw"
+  "_key": "!items!matSplCrownOfMad"
 }

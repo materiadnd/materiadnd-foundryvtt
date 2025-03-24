@@ -2,14 +2,18 @@
   "folder": "WtBByem45tjsGx6Z",
   "name": "Encode Thoughts",
   "type": "spell",
-  "_id": "Fo0yzQETz32WlAH0",
+  "_id": "matSplEncodeThou",
   "img": "icons/magic/control/debuff-chains-purple.webp",
   "system": {
     "description": {
-      "value": "<p>Putting a finger to your head, you pull a memory, an idea, or a message from your mind and transform it into a tangible string of glowing energy called a thought strand, which persists for the duration or until you cast this spell again. The thought strand appears in an unoccupied space within 5 feet of you as a Tiny, weightless, semisolid object that can be held and carried like a ribbon. It is otherwise stationary.</p><p>If you cast this spell while concentrating on a spell or an ability that allows you to read or manipulate the thoughts of others (such as detect thoughts or modify memory), you can transform the thoughts or memories you read, rather than your own, into a thought strand.</p><p>Casting this spell while holding a thought strand allows you to instantly receive whatever memory, idea, or message the thought strand contains. (Casting detect thoughts on the strand has the same effect.)</p>",
+      "value": "<p>Putting a finger to your head, you pull a memory, an idea, or a message from your mind and transform it into a tangible string of glowing energy called a thought strand, which persists for the duration or until you cast this spell again. The thought strand appears in an unoccupied space within 5 feet of you as a Tiny, weightless, semisolid object that can be held and carried like a ribbon. It is otherwise stationary.</p><p>If you cast this spell while concentrating on a spell or an ability that allows you to read or manipulate the thoughts of others (such as @UUID[Compendium.materia-dnd.spells.Item.rI4Xri8O6zboJjTp]{Detect Thoughts} or @UUID[Compendium.materia-dnd.spells.Item.matSplModifyMemo]{Modify Memory}), you can transform the thoughts or memories you read, rather than your own, into a thought strand.</p><p>Casting this spell while holding a thought strand allows you to instantly receive whatever memory, idea, or message the thought strand contains. (Casting Detect Thoughts on the strand has the same effect.)</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -26,12 +30,20 @@
       "width": null,
       "units": "",
       "type": "",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "self"
+      "units": "self",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -82,28 +94,148 @@
     "scaling": {
       "mode": "none",
       "formula": ""
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Encode Thought Strand",
+        "img": "",
+        "appliedEffects": []
+      },
+      "CZqyCcCiT7ocrMar": {
+        "type": "utility",
+        "_id": "CZqyCcCiT7ocrMar",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Decode Thought Strand",
+        "img": "",
+        "appliedEffects": []
+      },
+      "vKBGieKEBlzZ7nu7": {
+        "type": "utility",
+        "_id": "vKBGieKEBlzZ7nu7",
+        "sort": 100000,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Encode Thought Strand",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.Fo0yzQETz32WlAH0",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplEncodeThou",
       "spell-lists": "bard,warlock,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1707665201489,
-    "modifiedTime": 1708927608467,
+    "modifiedTime": 1737927522598,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 2700000,
+  "sort": 3200000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!Fo0yzQETz32WlAH0"
+  "_key": "!items!matSplEncodeThou"
 }

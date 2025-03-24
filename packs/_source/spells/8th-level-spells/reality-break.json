@@ -1,15 +1,15 @@
 {
   "name": "Reality Break",
+  "_id": "matSplRealityBre",
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "EGW",
-      "page": "189",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "description": {
-      "value": "<div class=\"rd__b  rd__b--3\"><p>You shatter the barriers between realities and timelines, thrusting a creature into turmoil and madness. The target must succeed on a Wisdom saving throw, or it can't take reactions until the spell ends. The affected target must also roll a [[/r d10]] at the start of each of its turns; the number rolled determines what happens to the target, as shown on the Reality Break Effects table.</p><div class=\"rd__spc-inline-post\"></div><p>At the end of each of its turns, the affected target can repeat the Wisdom saving throw, ending the spell on itself on a success.</p><table class=\"w-100 rd__table  stripe-odd-table\"><caption>Reality Break Effects</caption><thead><tr><th class=\"col-2 ve-text-center\" data-rd-isroller=\"true\">[[/r d10]]</th><th class=\"col-10\" data-rd-isroller=\"false\">Effect</th></tr></thead><tbody><tr><td class=\"col-2 ve-text-center\" data-roll-min=\"1\" data-roll-max=\"2\">1-2</td><td class=\"col-10\"><b>Vision of the Far Realm.</b> The target takes [[/r 6d12]] psychic damage, and it is @condition[stunned] until the end of the turn.</td></tr><tr><td class=\"col-2 ve-text-center\" data-roll-min=\"3\" data-roll-max=\"5\">3-5</td><td class=\"col-10\"><b>Rending Rift.</b> The target must make a Dexterity saving throw, taking [[/r 8d12]] force damage on a failed save, or half as much damage on a successful one.</td></tr><tr><td class=\"col-2 ve-text-center\" data-roll-min=\"6\" data-roll-max=\"8\">6-8</td><td class=\"col-10\"><b>Wormhole.</b> The target is teleported, along with everything it is wearing and carrying, up to 30 feet to an unoccupied space of your choice that you can see. The target also takes [[/r 10d12]] force damage and is knocked @condition[prone].</td></tr><tr><td class=\"col-2 ve-text-center\" data-roll-min=\"9\" data-roll-max=\"10\">9-10</td><td class=\"col-10\"><b>Chill of the Dark Void.</b> The target takes [[/r 10d12]] cold damage, and it is @condition[blinded] until the end of the turn.</td></tr></tbody></table></div>",
+      "value": "<p>You shatter the barriers between realities and timelines, thrusting a creature into turmoil and madness. The target must succeed on a Intelligence, Wisdom, or Charisma saving throw (whichever is lowest), or it can't take reactions until the spell ends. The affected target must also roll a [[/r d10]] at the start of each of its turns; the number rolled determines what happens to the target, as shown on the Reality Break Effects table.</p><p>At the end of each of its turns, the affected target can repeat the saving throw, ending the spell on itself on a success.</p><table><caption>Reality Break Effects</caption><thead><tr><th>[[/r d10]]</th><th>Effect</th></tr></thead><tbody><tr><td>1-2</td><td><strong>Vision of the Far Realm.</strong> The target takes [[/r 8d12]] psychic damage, and it is stunned until the end of its next turn.</td></tr><tr><td>3-5</td><td><strong>Rending Rift.</strong> The target takes [[/r 8d12]] thunder damage, it cannot regain hit points until the start of your next turn.</td></tr><tr><td>6-8</td><td><strong>Wormhole.</strong> The target is teleported, along with everything it is wearing and carrying, up to 30 feet to an unoccupied visible space of your choice. The target also takes [[/r 10d12]] force damage and is knocked prone.</td></tr><tr><td>9-10</td><td><strong>Chill of the Dark Void.</strong> The target takes [[/r 10d12]] cold damage, and it is blinded and cannot benefit from any special senses until the end of the turn.</td></tr></tbody></table>",
       "chat": ""
     },
     "actionType": "save",
@@ -22,7 +22,7 @@
       "concentration"
     ],
     "materials": {
-      "value": "a crystal prism",
+      "value": "a crystal prism with an intentional crack in it",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -32,12 +32,20 @@
       "units": "",
       "type": "",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 60,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -104,7 +112,385 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": null
+    "ability": null,
+    "activities": {
+      "h0HFSE1ZAUwstAg4": {
+        "type": "save",
+        "_id": "h0HFSE1ZAUwstAg4",
+        "sort": 100000,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "SW1cRJyvbjBatT1y",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "str",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": []
+      },
+      "gHrtlFJSEO5nlE4a": {
+        "type": "damage",
+        "_id": "gHrtlFJSEO5nlE4a",
+        "sort": 200000,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "turn",
+          "concentration": false,
+          "override": true,
+          "value": "1"
+        },
+        "effects": [
+          {
+            "_id": "jWKLPHFtja4HGfBC"
+          }
+        ],
+        "range": {
+          "override": true,
+          "units": "spec",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 8,
+              "denomination": 12,
+              "bonus": "",
+              "types": [
+                "psychic"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "name": "Vision of the Far Realm",
+        "img": "",
+        "appliedEffects": [
+          "jWKLPHFtja4HGfBC"
+        ]
+      },
+      "hCut5vdcDrEj4DaR": {
+        "type": "damage",
+        "_id": "hCut5vdcDrEj4DaR",
+        "sort": 300000,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [
+          {
+            "_id": "tD16JSnnGvaeihKw"
+          }
+        ],
+        "range": {
+          "override": true,
+          "units": "spec",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 10,
+              "denomination": 12,
+              "bonus": "",
+              "types": [
+                "force"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "name": "Wormhole",
+        "img": "",
+        "appliedEffects": []
+      },
+      "KdWjTMYGvjYX5Wvb": {
+        "type": "damage",
+        "_id": "KdWjTMYGvjYX5Wvb",
+        "sort": 500000,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "turn",
+          "concentration": false,
+          "override": true,
+          "value": "1"
+        },
+        "effects": [
+          {
+            "_id": "Pg6FVqj9Os8i6hG5"
+          }
+        ],
+        "range": {
+          "override": true,
+          "units": "spec",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 10,
+              "denomination": 12,
+              "bonus": "",
+              "types": [
+                "cold"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "name": "Chill of the Dark Void",
+        "img": "",
+        "appliedEffects": []
+      },
+      "0rlDhe72VTeuydqg": {
+        "type": "damage",
+        "_id": "0rlDhe72VTeuydqg",
+        "sort": 250000,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true,
+          "units": "spec",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 8,
+              "denomination": 12,
+              "bonus": "",
+              "types": [
+                "thunder"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "name": "Rending Rift",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "img": "icons/magic/earth/explosion-lava-stone-orange.webp",
   "ownership": {
@@ -119,23 +505,194 @@
     },
     "materia-dnd": {
       "tele-flag": "true",
-      "sourceId": "Compendium.materia-dnd.spells.Item.s4Fx1KjNKmMhtchN",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplRealityBre",
       "spell-lists": "wizard"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true,
+          "1": true,
+          "2": true,
+          "3": true
+        }
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Reality Break",
+      "img": "icons/magic/time/clock-stopwatch-white-blue.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplRealityBre",
+      "transfer": false,
+      "_id": "SW1cRJyvbjBatT1y",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The target can't take reactions until the spell ends. The affected target must also roll a d10 at the start of each of its turns; the number rolled determines what happens to the target, as shown on the Reality Break Effects table.</p><p>At the end of each of its turns, the affected target can repeat the Wisdom saving throw, ending the spell on itself on a success.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728921959529,
+        "modifiedTime": 1728922010623,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplRealityBre.SW1cRJyvbjBatT1y"
+    },
+    {
+      "name": "Stunned",
+      "img": "systems/dnd5e/icons/svg/statuses/stunned.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplRealityBre",
+      "transfer": false,
+      "_id": "jWKLPHFtja4HGfBC",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "stunned"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728922054722,
+        "modifiedTime": 1728922075861,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplRealityBre.jWKLPHFtja4HGfBC"
+    },
+    {
+      "name": "Prone",
+      "img": "systems/dnd5e/icons/svg/statuses/prone.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplRealityBre",
+      "transfer": false,
+      "_id": "tD16JSnnGvaeihKw",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "prone"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728922156125,
+        "modifiedTime": 1728922181444,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplRealityBre.tD16JSnnGvaeihKw"
+    },
+    {
+      "name": "Blinded",
+      "img": "systems/dnd5e/icons/svg/statuses/blinded.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplRealityBre",
+      "transfer": false,
+      "_id": "Pg6FVqj9Os8i6hG5",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "blinded"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728922231424,
+        "modifiedTime": 1728922250581,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplRealityBre.Pg6FVqj9Os8i6hG5"
+    }
+  ],
   "folder": "IeD7MeayeQqIoNnW",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.1.2",
+    "coreVersion": "12.331",
     "createdTime": 1709232194848,
-    "modifiedTime": 1709232198297,
+    "modifiedTime": 1734577027249,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "s4Fx1KjNKmMhtchN",
   "sort": 0,
-  "_key": "!items!s4Fx1KjNKmMhtchN"
+  "_key": "!items!matSplRealityBre"
 }

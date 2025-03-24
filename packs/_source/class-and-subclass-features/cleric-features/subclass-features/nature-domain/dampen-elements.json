@@ -6,10 +6,14 @@
   "img": "icons/magic/earth/strike-fist-stone.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 6th level, when you or a creature within 30 feet of you takes acid, cold, fire, lightning, or thunder damage, you can use your reaction to grant resistance to the creature against that instance of the damage.</p><p>Alternatively, you can extend this protection to a number of creatures equal to your Wisdom modifier (minimum of 1) by expending a use of your Harness Divine Power (no action required) as a part of this reaction.</p>",
+      "value": "<p>When you or a creature within 30 feet of you takes Acid, Cold, Fire, Lightning, or Thunder damage, you can take a Reaction to grant Resistance to the creature against that instance of the damage.</p><p>Alternatively, you can extend this protection to a number of creatures equal to your Wisdom modifier (minimum of 1) by expending a use of your Harness Divine Power (no action required) as a part of this Reaction.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "reaction",
       "cost": 1,
@@ -69,22 +73,110 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Nature Domain 6",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 6
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Protect Single Creature",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "appliedEffects": []
+      },
+      "a21GYPdUnCZBlyPH": {
+        "type": "utility",
+        "_id": "a21GYPdUnCZBlyPH",
+        "sort": 0,
+        "activation": {
+          "type": "reaction",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.matClrHarnessDiv"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "radius",
+            "size": "30",
+            "count": ""
+          },
+          "affects": {
+            "choice": true,
+            "type": "creature",
+            "count": "",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Protect Multiple Creatures",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1707686771207,
-    "modifiedTime": 1710765534259,
+    "modifiedTime": 1742441023892,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 250000,

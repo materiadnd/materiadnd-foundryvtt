@@ -1,107 +1,250 @@
 {
   "name": "Heroes' Feast",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplHeroesFeas",
   "system": {
     "description": {
-      "value": "<p>You bring forth a great feast, including magnificent food and drink. The feast takes 1 Hour to consume and disappears at the end of that time, and the beneficial Effects don't set in until this hour is over. Up to twelve creatures can partake of the feast.</p><p>A creature that partakes of the feast gains several benefits. The creature is cured of all Diseases and poison, becomes immune to poison and being Frightened, and makes all Wisdom Saving Throws with advantage. Its hit point maximum also increases by 2d10, and it gains the same number of Hit Points. These benefits last for 24 hours.</p>",
+      "value": "<p>You conjure a feast that appears on a surface in an unoccupied 10-foot Cube next to you. The feast takes 1 hour to consume and disappears at the end of that time, and the beneficial effects don't set in until this hour is over. Up to twelve creatures can partake of the feast.</p><p>A creature that partakes gains several benefits, which last for 24 hours. The creature has &amp;Reference[damageResistance]{Resistance} to Poison damage, and it has Immunity to the &amp;Reference[Frightened] and &amp;Reference[Poisoned] conditions. Its Hit Point maximum also increases by 2d10, and it gains the same number of Hit Points.</p>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "minute",
-      "cost": 10,
-      "condition": ""
+      "condition": "",
+      "value": 10
     },
     "duration": {
       "value": "",
       "units": "inst"
     },
-    "cover": null,
     "target": {
-      "value": null,
-      "width": null,
-      "units": "",
-      "type": "",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "",
+        "type": "space",
+        "special": "unoccupied"
+      },
+      "template": {
+        "units": "ft",
+        "contiguous": false,
+        "type": "cube",
+        "size": "10",
+        "count": ""
+      }
     },
     "range": {
-      "value": 30,
-      "long": null,
-      "units": "ft"
+      "units": "self",
+      "special": ""
     },
     "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
+      "max": "12",
+      "spent": 12,
+      "recovery": [
+        {
+          "period": "sr",
+          "type": "loseAll"
+        }
+      ]
     },
     "level": 6,
     "school": "con",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material"
+    ],
     "materials": {
-      "value": "A gem-encrusted bowl worth at least 1000gp, which the spell consumes",
+      "value": "a gem-encrusted bowl worth 1,000+ GP, which the spell consumes",
       "consumed": true,
-      "cost": 1000,
+      "cost": 0,
       "supply": 0
     },
     "preparation": {
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "ooQ2IAF9MIDJssGp": {
+        "type": "utility",
+        "_id": "ooQ2IAF9MIDJssGp",
+        "activation": {
+          "type": "hour",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-12",
+              "target": "",
+              "scaling": {
+                "mode": ""
+              }
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "hour",
+          "concentration": false,
+          "override": false,
+          "value": "24"
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Conjure Feast",
+        "img": "systems/dnd5e/icons/svg/activity/summon.svg"
+      },
+      "6GsLAWV31TuE6ysp": {
+        "type": "heal",
+        "_id": "6GsLAWV31TuE6ysp",
+        "activation": {
+          "type": "hour",
+          "value": 1,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "",
+              "scaling": {
+                "mode": ""
+              }
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": "Hit Point maximum increased by healing amount"
+        },
+        "duration": {
+          "units": "hour",
+          "concentration": false,
+          "override": true,
+          "value": "24"
+        },
+        "effects": [
+          {
+            "_id": "wGsbKojtJs43Pjyx"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "healing": {
+          "number": 2,
+          "denomination": 10,
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "Consume Feast"
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material"
-    ],
-    "crewed": false
+    "identifier": "heroes-feast"
   },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.c5fDjjqNgHWz3dNi",
-      "spell-lists": "bard,cleric,druid"
-    }
-  },
-  "img": "icons/magic/life/heart-cross-strong-flame-purple-orange.webp",
+  "type": "spell",
+  "img": "icons/consumables/food/cooked-hock-glowing-orange.webp",
   "effects": [
     {
-      "name": "Heroes' Feast",
-      "origin": "Compendium.dnd5e.spells.Item.mgFqi0ev8f7Ut19y",
+      "name": "Feast's Benefits",
+      "img": "icons/consumables/food/cooked-ribs-rack-glazed-bones-brown-white.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplHeroesFeas",
+      "transfer": false,
+      "_id": "wGsbKojtJs43Pjyx",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "poison",
+          "priority": null
+        },
+        {
+          "key": "system.traits.ci.value",
+          "mode": 2,
+          "value": "frightened",
+          "priority": null
+        },
+        {
+          "key": "system.traits.ci.value",
+          "mode": 2,
+          "value": "poisoned",
+          "priority": null
+        }
+      ],
+      "disabled": false,
       "duration": {
         "startTime": null,
         "seconds": 86400,
@@ -111,62 +254,43 @@
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "RY4byZPJu4TkIxyz",
-      "changes": [
-        {
-          "key": "system.traits.di.value",
-          "mode": 2,
-          "value": "poison",
-          "priority": null
-        },
-        {
-          "key": "system.traits.ci.value",
-          "mode": 2,
-          "value": "poisoned",
-          "priority": null
-        },
-        {
-          "key": "system.traits.ci.value",
-          "mode": 2,
-          "value": "frightened",
-          "priority": null
-        }
-      ],
-      "description": "<p>The creature is cured of all Diseases and poison, becomes immune to poison and being Frightened, and makes all Wisdom Saving Throws with advantage. Its hit point maximum also increases by 2d10, and it gains the same number of Hit Points. These benefits last for 24 hours.</p>",
-      "transfer": true,
-      "statuses": [],
-      "flags": {},
+      "description": "<p>The creature has &amp;Reference[damageResistance]{Resistance} to Poison damage, and it has Immunity to the &amp;Reference[Frightened] and &amp;Reference[Poisoned] conditions. Its Hit Point maximum also increases by 2d10, and it gains the same number of Hit Points.</p>",
       "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
       "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
+        "lastModifiedBy": null
       },
-      "img": "icons/magic/life/heart-cross-strong-flame-purple-orange.webp",
-      "type": "base",
-      "system": {},
-      "sort": 0,
-      "_key": "!items.effects!c5fDjjqNgHWz3dNi.RY4byZPJu4TkIxyz"
+      "_key": "!items.effects!matSplHeroesFeas.wGsbKojtJs43Pjyx"
     }
   ],
   "folder": "UjV13fGRtZfpmOAS",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234220,
-    "modifiedTime": 1709222420345,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "c5fDjjqNgHWz3dNi",
-  "sort": 400000,
-  "_key": "!items!c5fDjjqNgHWz3dNi"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplHeroesFeas",
+      "spell-lists": "bard,cleric,druid"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1739395066836,
+    "modifiedTime": 1739395066836,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplHeroesFeas"
 }

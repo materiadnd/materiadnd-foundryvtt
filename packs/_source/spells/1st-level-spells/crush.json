@@ -2,14 +2,18 @@
   "folder": "JMRA2elEdmr5pgX7",
   "name": "Crush",
   "type": "spell",
-  "_id": "m42lSBKZsByIj5ao",
+  "_id": "matSplCrush00000",
   "img": "icons/magic/earth/strike-stone-stalactite-blood-red.webp",
   "system": {
     "description": {
-      "value": "<p>Crushing forces collide in an area of your choosing. Each creature in a 10-foot-cube centered on that point must make a Strength saving throw. A creature takes 2 dice of magical bludgeoning damage on a failed save, or half as much damage on a successful one. The size of the damage die is based on the size of the creature taking the damage, as shown in the table in this spell's description.</p><h5>Crush Damage Die</h5><table><thead><tr><th>Creature Size</th><th>Die Size</th></tr></thead><tbody><tr><td>Tiny</td><td>d12</td></tr><tr><td>Small</td><td>d10</td></tr><tr><td>Medium</td><td>d10</td></tr><tr><td>Large</td><td>d8</td></tr><tr><td>Huge</td><td>d6</td></tr><tr><td>Gargantuan+</td><td>d4</td></tr></tbody></table><p>A creature that is alone in the area of the spell makes the saving throw at disadvantage.</p><p><strong>At Higher Levels.</strong> When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1 die roll for each slot level above 1st.</p><p>When cast using a spell slot of 4th level or higher, you can increase the area of the cube by 5 feet for a total of a 15-foot-cube.</p><p>When cast using a spell slot of 8th level or higher, you can increase the area of the cube by an additional 5 feet for a total of a 20-foot-cube.</p>",
+      "value": "<p>Crushing forces collide in an area of your choosing. Each creature in a 10-foot-cube centered on that point must make a Strength saving throw. A creature takes 2 dice of magical bludgeoning damage on a failed save, or half as much damage on a successful one. The size of the damage die is based on the size of the creature taking the damage, as shown in the table in this spell's description.</p><h5>Crush Damage Die</h5><table><thead><tr><th>Creature Size</th><th>Die Size</th></tr></thead><tbody><tr><td>Tiny</td><td>d12</td></tr><tr><td>Small</td><td>d10</td></tr><tr><td>Medium</td><td>d10</td></tr><tr><td>Large</td><td>d8</td></tr><tr><td>Huge</td><td>d6</td></tr><tr><td>Gargantuan+</td><td>d4</td></tr></tbody></table><p>A creature that is alone in the area of the spell makes the saving throw at disadvantage.</p><p><strong>Using a Higher-Level Spell Slot.</strong> Tthe damage increases by 1 die roll for each spell slot level above 1.  The area can be increased with a spell slot of 4-7 (15-foot cube), or 8+ (20-foot cube).</p><p></p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -26,12 +30,20 @@
       "width": null,
       "units": "ft",
       "type": "cube",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "count": ""
+      }
     },
     "range": {
       "value": 60,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -85,6 +97,59 @@
     "scaling": {
       "mode": "none",
       "formula": ""
+    },
+    "activities": {
+      "GbaYYhci0LIbRJKX": {
+        "type": "save",
+        "_id": "GbaYYhci0LIbRJKX",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {},
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "damage": {
+          "parts": []
+        },
+        "save": {
+          "ability": "str",
+          "dc": {
+            "calculation": "initial"
+          }
+        }
+      }
     }
   },
   "effects": [],
@@ -94,19 +159,24 @@
   },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.m42lSBKZsByIj5ao",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplCrush00000",
       "spell-lists": "artificer,druid,sorcerer,wizard"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1709314062353,
-    "modifiedTime": 1711345213775,
+    "modifiedTime": 1738031630738,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_key": "!items!m42lSBKZsByIj5ao"
+  "_key": "!items!matSplCrush00000"
 }

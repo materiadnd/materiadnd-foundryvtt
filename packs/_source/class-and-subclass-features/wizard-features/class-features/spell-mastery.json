@@ -3,14 +3,13 @@
   "type": "feat",
   "system": {
     "description": {
-      "value": "<p>At 18th level, you have achieved such mastery over certain spells that you can cast them at will. Choose a 1st-level wizard spell and a 2nd-level wizard spell that are in your spellbook. You can cast those spells at their lowest level without expending a spell slot when you have them prepared. If you want to cast either spell at a higher level, you must expend a spell slot as normal.</p><p>By spending 8 hours in study, you can exchange one or both of the spells you chose for different spells of the same levels.</p>",
+      "value": "<p>You have achieved such mastery over certain spells that you can cast them at will. Choose a level 1 and a level 2 Wizard spell in your spellbook that have a casting time of an action. You always ahve those spells prepared, and you can cast them at their lowest level without expending a spell slot. To cast either spell at a higher level, you must expend a spell slot.</p><p>Whenever you finish a Long Rest, you can study your spellbook and replace one of those spells with an eligible spell of the same level from the book.</p><section class=\"secret\" id=\"secret-UH6iUhL1uiKVXuUQ\"><p><strong>Foundry Note</strong></p><p>The <strong>Master</strong> activity includes an enchantment that marks the spells as \"Always Prepared\" and adds \", Mastered\" to their name for easy identification.</p><p>Uncheck the \"Consumption\" box when casting at the lowest level. You can drag multiple spells to the same chat card.</p></section>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "",
@@ -75,24 +74,159 @@
       "charged": false
     },
     "crewed": false,
-    "properties": []
+    "properties": [],
+    "prerequisites": {
+      "level": 18
+    },
+    "activities": {
+      "5YGuh3sQXlNRrXEm": {
+        "type": "enchant",
+        "_id": "5YGuh3sQXlNRrXEm",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "fK82bXijXcPGUWlK"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "enchant": {
+          "identifier": ""
+        },
+        "restrictions": {
+          "allowMagical": false,
+          "categories": [],
+          "properties": [],
+          "type": ""
+        },
+        "name": "Master Spell",
+        "img": "",
+        "appliedEffects": [
+          "fK82bXijXcPGUWlK"
+        ]
+      }
+    }
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "img": "icons/magic/unholy/beam-impact-purple.webp",
-  "effects": [],
+  "effects": [
+    {
+      "type": "enchantment",
+      "name": "Mastered",
+      "img": "icons/magic/unholy/beam-impact-purple.webp",
+      "disabled": true,
+      "_id": "fK82bXijXcPGUWlK",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 2,
+          "value": ", Mastered",
+          "priority": null
+        },
+        {
+          "key": "system.preparation.mode",
+          "mode": 5,
+          "value": "always",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.6",
+        "createdTime": 1741656868071,
+        "modifiedTime": 1741656910952,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!pdsXmiIKqHrnV4re.fK82bXijXcPGUWlK"
+    }
+  ],
   "folder": "p7LSHcrwyYcR7M1a",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1661787234359,
-    "modifiedTime": 1710743945264,
+    "modifiedTime": 1741656927567,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_id": "pdsXmiIKqHrnV4re",
-  "sort": 500000,
+  "sort": 600000,
   "ownership": {
     "default": 0
   },

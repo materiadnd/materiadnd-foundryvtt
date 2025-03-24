@@ -2,14 +2,18 @@
   "folder": "3rC3qr5FIlZymxFD",
   "name": "Double Talk",
   "type": "spell",
-  "_id": "w6UupppNx4yERKbh",
+  "_id": "matSplDoubleTalk",
   "img": "icons/magic/unholy/silhouette-robe-evil-power.webp",
   "system": {
     "description": {
-      "value": "<p>You disguise your words, including this spell's verbal component, behind illusory speech. Choose a number of creatures within range, up to your spellcasting modifier (minimum of 1). The selected creatures hear you speaking as normal, with a distinct magical influence such as reverberation or in multiple voices (at your DMs discretion).</p><p>All other creatures hear only the illusory speech, which must be in the same language, of comparable length and tone. The spell also disguises the movement of your lips, but not any associated gestures.</p><p>A creature that detects the illusion hear the true words spoken.</p><p><strong>At Higher Levels</strong>. When you cast this spell using a spell slot of 3rd level or higher, you increase the number of creatures you can choose by an amount equal to your spellcasting modifier (minimum of 1) for each slot level above 2nd.</p>",
+      "value": "<p>You disguise your words, including this spell's verbal component, behind illusory speech. Choose a number of creatures within range, up to your spellcasting modifier (minimum of 1). The selected creatures hear you speaking as normal, with a distinct magical influence such as reverberation or in multiple voices (at your DMs discretion).</p><p>All other creatures hear only the illusory speech, which must be in the same language, of comparable length and tone. The spell also disguises the movement of your lips, but not any associated gestures.</p><p>A creature that detects the illusion hear the true words spoken.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The number of creatures you can choose increases by an amount equal to your spellcasting modifier (minimum of 1) for each spell slot level above 2.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
       "cost": 1,
@@ -26,12 +30,20 @@
       "width": null,
       "units": "",
       "type": "creature",
-      "prompt": true
+      "prompt": true,
+      "affects": {
+        "count": "",
+        "special": ""
+      },
+      "template": {
+        "type": ""
+      }
     },
     "range": {
       "value": 60,
       "long": null,
-      "units": "ft"
+      "units": "ft",
+      "special": ""
     },
     "uses": {
       "value": null,
@@ -83,28 +95,135 @@
     "scaling": {
       "mode": "none",
       "formula": ""
+    },
+    "activities": {
+      "LXGXIPhniO5E1C5F": {
+        "type": "utility",
+        "_id": "LXGXIPhniO5E1C5F",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "fp4GAkMWptOUe0jm"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Cast",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Understands Speech",
+      "img": "icons/magic/unholy/silhouette-robe-evil-power.webp",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplDoubleTalk",
+      "transfer": false,
+      "_id": "fp4GAkMWptOUe0jm",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The selected creatures hear you speaking as normal, with a distinct magical influence such as reverberation or in multiple voices (at your DMs discretion).</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1730123739341,
+        "modifiedTime": 1730123776379,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplDoubleTalk.fp4GAkMWptOUe0jm"
+    }
+  ],
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.w6UupppNx4yERKbh",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplDoubleTalk",
       "spell-lists": "bard,warlock,wizard"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1708311700219,
-    "modifiedTime": 1708930454014,
+    "modifiedTime": 1738212485778,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 8100000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!w6UupppNx4yERKbh"
+  "_key": "!items!matSplDoubleTalk"
 }

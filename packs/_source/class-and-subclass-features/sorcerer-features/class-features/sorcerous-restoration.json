@@ -2,16 +2,20 @@
   "folder": "x4zJPNXFoTfXUbEJ",
   "name": "Sorcerous Restoration",
   "type": "feat",
-  "_id": "xVlfvy76U3B879eq",
-  "img": "icons/magic/nature/plant-undersea-orb-purple.webp",
+  "_id": "upBu3Hwdd9e5yalA",
+  "img": "icons/magic/water/water-jet-wave-blue.webp",
   "system": {
     "description": {
-      "value": "<p>At 20th level, you regain all expended sorcery points whenever you finish a short rest. When you roll for initiative and have no sorcery points remaining, you regain a number of sorcery point equal to your charisma modifier (minimum of 1).</p>",
+      "value": "<p>When you finish a Short Rest, you can regain expended Sorcery Points, but no more than a number equal to half your Sorcerer level (rounded down). Once you use this feature, you can't do so again until you finish a Long Rest.</p><section id=\"secret-FF99Bo9QZpXpnVLB\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes 1 free use per Long Rest. Use it to automatically regain the correct number of Sorcery Points.</p></section>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
-      "type": "",
+      "type": "none",
       "cost": null,
       "condition": ""
     },
@@ -34,9 +38,9 @@
       "units": ""
     },
     "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
+      "value": 1,
+      "max": "1",
+      "per": "lr",
       "recovery": "",
       "prompt": true
     },
@@ -69,27 +73,63 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Sorcerer 20",
+    "requirements": "Sorcerer 5",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 5
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Restore Sorcery Points",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            },
+            {
+              "type": "itemUses",
+              "value": "-(floor(@classes.sorcerer.levels / 2))",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.wv3ZvDFeg34rJ4co"
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
-    "createdTime": 1708290553934,
-    "modifiedTime": 1710740201050,
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
+    "createdTime": 1708288537194,
+    "modifiedTime": 1741639483203,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "sort": 900000,
+  "sort": 296875,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!xVlfvy76U3B879eq"
+  "_key": "!items!upBu3Hwdd9e5yalA"
 }

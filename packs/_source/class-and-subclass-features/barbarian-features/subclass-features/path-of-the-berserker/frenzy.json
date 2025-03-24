@@ -6,10 +6,14 @@
   "img": "icons/magic/fire/elemental-fire-flying.webp",
   "system": {
     "description": {
-      "value": "<p>Starting when you choose this path at 3rd level, you can go into a Frenzy when you rage. If you do so, for the duration of your rage you can make a single melee weapon attack as a bonus action on each of your turns after this one. Each additional time you use this ability before completing a long rest, you suffer one level of exhaustion. You ignore the effects of exhaustion while raging.</p><p>At 5th level in barbarian, you may make a single melee weapon attack as part of the bonus action you use to begin a Frenzy.</p><p>At 11th level in barbarian, while you Frenzy and make a weapon attack as a bonus action, you may move as with your Instinctive Pounce.</p><p>At 17th level in barbarian, you no longer suffer exhaustion when you use Frenzy.</p>",
+      "value": "<p>If you use Reckless Attack while your Rage is active, you deal extra damage to the first target you hit on your turn with a Strength-based attack. To determine the extra damage, roll a number of d6s equal to your Rage Damage bonus, and add them together. The damage has the same type as the weapon or Unarmed Strike used for the attack.</p><section id=\"secret-9c4s7bpiFsJagack\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Damage</strong> activity scales automatically as you level up and allows you to select the type of damage to use in the damage roll's dialog box. It will then remember your choice going forward.</p></section>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "bonus",
       "cost": 1,
@@ -73,6 +77,97 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "k9XyZVsJrBN4YW0M": {
+        "type": "damage",
+        "_id": "k9XyZVsJrBN4YW0M",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "(@scale.barbarian.rage-damage)d6"
+              },
+              "number": null,
+              "denomination": 0,
+              "bonus": "",
+              "types": [
+                "acid",
+                "bludgeoning",
+                "cold",
+                "fire",
+                "force",
+                "lightning",
+                "necrotic",
+                "piercing",
+                "poison",
+                "psychic",
+                "radiant",
+                "slashing",
+                "thunder"
+              ]
+            }
+          ]
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -80,15 +175,21 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1710303930713,
-    "modifiedTime": 1710304366144,
+    "modifiedTime": 1741736547595,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "_key": "!items!fps0IMLjKj1ukF6H"

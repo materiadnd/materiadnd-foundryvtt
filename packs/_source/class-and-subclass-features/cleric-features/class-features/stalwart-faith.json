@@ -2,14 +2,18 @@
   "folder": "ddQ4xdJ8F9FGarTY",
   "name": "Stalwart Faith",
   "type": "feat",
-  "_id": "wixJd6O45NYDqMXU",
+  "_id": "matClrStalwartFa",
   "img": "icons/magic/control/buff-flight-wings-red.webp",
   "system": {
     "description": {
-      "value": "<p>Upon reaching 13th level, you have advantage on all saving throws to avoid or end the (in Materia) dazed, exhausted and (in Materia) weakened condition. Additionally, you are immune to being possessed.</p>",
+      "value": "<p>You have advantage on all saving throws to avoid or end the &amp;Reference[dazed apply=false], &amp;Reference[exhaustion apply=false]{Exhausted} and &amp;Reference[weakened apply=false] condition. Additionally, you are immune to being &amp;Reference[possessed apply=false].</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "",
       "cost": null,
@@ -73,23 +77,69 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 13
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Stalwart Faith",
+      "img": "icons/magic/control/buff-flight-wings-red.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.matClrStalwartFa",
+      "_id": "hHILObX8cbTgH3zs",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.ci.value",
+          "mode": 2,
+          "value": "possessed",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": 1739591437042,
+        "modifiedTime": 1739591462548,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matClrStalwartFa.hHILObX8cbTgH3zs"
+    }
+  ],
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1707235029920,
-    "modifiedTime": 1710764622562,
+    "modifiedTime": 1739591470837,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 800000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!wixJd6O45NYDqMXU"
+  "_key": "!items!matClrStalwartFa"
 }

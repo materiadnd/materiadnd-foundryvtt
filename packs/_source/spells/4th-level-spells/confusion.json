@@ -1,68 +1,48 @@
 {
-  "folder": "PrScRYl7JdLxwH3K",
   "name": "Confusion",
-  "type": "spell",
-  "_id": "IVSsvCN7diHIuseG",
-  "img": "icons/magic/symbols/question-stone-yellow.webp",
+  "_id": "matSplConfusion0",
   "system": {
     "description": {
-      "value": "<p>This spell assaults and twists creatures' minds, spawning delusions and provoking uncontrolled action. Each creature of your choice in a 10-foot-radius sphere centered on a point you choose within range must succeed on a Wisdom saving throw when you cast this spell or be affected by it.</p><p>An affected target can't take reactions and must roll a d10 at the start of each of its turns to determine its behavior for that turn.</p><table><thead><tr><th>d10</th><th>Behavior</th></tr></thead><tbody><tr><td>1</td><td>The creature uses all its movement to move in a random direction. To determine the direction, roll a d8 and assign a direction to each die face. The creature doesn't take an action this turn.</td></tr><tr><td>2-6</td><td>The creature doesn't move or take actions this turn.</td></tr><tr><td>7-8</td><td>The creature uses its action to make a melee attack against a randomly determined creature within its reach. If there is no creature within its reach, the creature does nothing this turn.</td></tr><tr><td>9-10</td><td>The creature can act and move normally.</td></tr></tbody></table><p>At the end of each of its turns, an affected target that has acted normally can make a Wisdom saving throw. If it succeeds, this effect ends for that target.</p><p>At Higher Levels. When you cast this spell using a spell slot of 9th level or higher, the radius of the sphere increases by 5 feet for each slot level above 4th.</p>",
+      "value": "<p>Each creature of your choice in a 10-foot-radius Sphere centered on a point you choose within range must succeed on a Wisdom saving throw, or that target can't take Bonus Actions or Reactions and must roll 1d10 at the start of each of its turns to determine its behavior for that turn, consulting the table below.</p><p>@Embed[Compendium.materia-dnd.rollable-tables.RollTable.matRolConfusionB rollable cite=false classes=\"caption-top\"]{Behavior for the Turn}</p><p>At the end of each of its turns, an affected target that has acted normally on its turn can repeat the save, ending the spell on itself on a success.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The Sphere's radius increases by 5 feet for each spell slot level above 4.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
-    "crewed": false,
     "target": {
-      "value": 10,
-      "width": null,
-      "units": "ft",
-      "type": "radius",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "units": "ft",
+        "type": "sphere",
+        "size": "@item.level * 5 - 10",
+        "contiguous": false,
+        "count": ""
+      }
     },
     "range": {
-      "value": 90,
-      "long": null,
-      "units": "ft"
+      "value": "90",
+      "units": "ft",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "",
-    "save": {
-      "ability": "wis",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 4,
     "school": "enc",
@@ -73,7 +53,7 @@
       "concentration"
     ],
     "materials": {
-      "value": "",
+      "value": "three nut shells",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -82,31 +62,132 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
-    }
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "VxmsgUz9OIUet6WC",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": []
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      }
+    },
+    "identifier": "confusion"
   },
-  "effects": [],
+  "type": "spell",
+  "img": "icons/magic/symbols/question-stone-yellow.webp",
+  "effects": [
+    {
+      "name": "Confused",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplConfusion0",
+      "duration": {
+        "rounds": null,
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": false,
+      "flags": {},
+      "img": "icons/magic/symbols/question-stone-yellow.webp",
+      "_id": "VxmsgUz9OIUet6WC",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "description": "<p>The target can't take Bonus Actions or Reactions and must roll 1d10 at the start of each of its turns to determine its behavior for that turn, consulting the table below.</p><p>@Embed[Compendium.materia-dnd.rollable-tables.RollTable.matRolConfusionB rollable cite=false classes=\"caption-top\"]{Behavior for the Turn}</p><p>At the end of each of its turns, an affected target repeats the [[/save ability=wis]] save, ending the spell on itself on a success.</p>",
+      "tint": "#ffffff",
+      "transfer": false,
+      "statuses": [],
+      "sort": 0,
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
+        "createdTime": null,
+        "modifiedTime": 1738728444608,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplConfusion0.VxmsgUz9OIUet6WC"
+    }
+  ],
+  "folder": "PrScRYl7JdLxwH3K",
+  "ownership": {
+    "default": 0
+  },
   "flags": {
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.IVSsvCN7diHIuseG",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplConfusion0",
       "spell-lists": "bard,druid,sorcerer,wizard"
     }
   },
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
-    "createdTime": 1707667464930,
-    "modifiedTime": 1709226592285,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+    "systemVersion": "4.2.2",
+    "createdTime": 1738678156490,
+    "modifiedTime": 1738728424224,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "sort": 3800000,
-  "ownership": {
-    "default": 0
-  },
-  "_key": "!items!IVSsvCN7diHIuseG"
+  "sort": 300000,
+  "_key": "!items!matSplConfusion0"
 }

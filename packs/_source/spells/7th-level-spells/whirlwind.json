@@ -1,15 +1,15 @@
 {
   "name": "Whirlwind",
+  "_id": "matSplWhirlwind0",
   "type": "spell",
   "system": {
     "source": {
-      "custom": "",
-      "book": "",
-      "page": "",
-      "license": ""
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "description": {
-      "value": "<div class=\"rd__b  rd__b--3\"><p>A whirlwind howls down to a point that you can see on the ground within range. The whirlwind is a 10-foot-radius, 120-foot-high cylinder centered on that point. Until the spell ends, you can use your action to move the whirlwind up to 30 feet in any direction along the ground. The whirlwind sucks up any Medium or smaller objects that aren't secured to anything and that aren't worn or carried by anyone.</p><p>A creature must make a Dexterity saving throw the first time on a turn that it enters the whirlwind or that the whirlwind enters its space, including when the whirlwind first appears. A creature takes [[/r 10d6]] magical bludgeoning damage on a failed save, or half as much damage on a successful one. In addition, a Large or smaller creature that fails the save must succeed on a Strength saving throw or become restrained in the whirlwind until the spell ends. When a creature starts its turn restrained by the whirlwind, the creature is pulled 5 times your spellcasting modifier feet higher inside it, unless the creature is at the top. A restrained creature moves with the whirlwind and falls when the spell ends, unless the creature has some means to stay aloft.</p><p>A restrained creature can use an action to make a Strength or Dexterity check against your spell save DC. If successful, the creature is no longer restrained by the whirlwind and is hurled [[/r 3d6 * 10]]{3d6 x 10} feet away from it in a random direction, taking fall damage where they impact or land.</p></div>",
+      "value": "<p>A whirlwind howls down to a point that you can see on the ground within range. The whirlwind is a 10-foot-radius, 120-foot-high cylinder centered on that point. As a Magic action, you can move the whirlwind up to 30 feet in any direction along the ground. The whirlwind sucks up any Medium or smaller objects that aren't secured to anything and that aren't worn or carried by anyone.</p><p>A creature must make a Dexterity saving throw the first time on a turn that it enters the whirlwind or that the whirlwind enters its space, including when the whirlwind first appears. A creature takes [[/r 10d6]] magical bludgeoning damage on a failed save, or half as much damage on a successful one. In addition, a Large or smaller creature that fails the save must succeed on a Strength saving throw or become &amp;Reference[restrained] in the whirlwind until the spell ends. When a creature starts its turn restrained by the whirlwind, the creature is pulled 5 times your spellcasting modifier feet higher inside it, unless the creature is at the top. A restrained creature moves with the whirlwind and falls when the spell ends, unless the creature has some means to stay aloft.</p><p>A restrained creature can use an Action to make a Strength or Dexterity check against your spell save DC. If successful, the creature is no longer restrained by the whirlwind and is hurled [[/r 3d6 * 10]]{3d6 x 10} feet away from it in a random direction, taking fall damage where they impact or land.</p>",
       "chat": ""
     },
     "actionType": "save",
@@ -32,12 +32,21 @@
       "units": "ft",
       "type": "cylinder",
       "prompt": true,
-      "width": null
+      "width": null,
+      "affects": {
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "height": "120",
+        "count": ""
+      }
     },
     "range": {
       "value": 300,
       "units": "ft",
-      "long": null
+      "long": null,
+      "special": ""
     },
     "activation": {
       "type": "action",
@@ -92,7 +101,105 @@
     },
     "cover": null,
     "crewed": false,
-    "ability": ""
+    "ability": "",
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Create Whirlwind",
+        "img": "",
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 10,
+              "denomination": 6,
+              "bonus": "",
+              "types": [
+                "bludgeoning"
+              ],
+              "scaling": {
+                "mode": "",
+                "number": 1
+              }
+            }
+          ]
+        },
+        "appliedEffects": []
+      },
+      "qWurPX2xNxjgD7VE": {
+        "type": "save",
+        "_id": "qWurPX2xNxjgD7VE",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": false,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [
+          {
+            "_id": "FstKwXeHgsSFzuFp",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": true,
+          "units": "spec",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": "str",
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Restrain Save",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
   },
   "img": "icons/magic/air/wind-tornado-funnel-blue-grey.webp",
   "ownership": {
@@ -106,23 +213,79 @@
       "propDroppable": "spell"
     },
     "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.YjM8fvXmDz728m3m",
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplWhirlwind0",
       "spell-lists": "druid,sorcerer,wizard"
+    },
+    "rsr5e": {
+      "quickFooter": {
+        "value": true
+      },
+      "quickSave": {
+        "value": true
+      },
+      "quickDamage": {
+        "value": {
+          "0": true
+        }
+      }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Restrained",
+      "img": "systems/dnd5e/icons/svg/statuses/restrained.svg",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplWhirlwind0",
+      "transfer": false,
+      "_id": "FstKwXeHgsSFzuFp",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "restrained"
+      ],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.0.4",
+        "createdTime": 1728912500451,
+        "modifiedTime": 1728912522639,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!matSplWhirlwind0.FstKwXeHgsSFzuFp"
+    }
+  ],
   "folder": "0whxxbO5gmG63mDV",
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.2.2",
+    "coreVersion": "12.331",
     "createdTime": 1709230341033,
-    "modifiedTime": 1711345831755,
+    "modifiedTime": 1739426326449,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
-  "_id": "YjM8fvXmDz728m3m",
-  "sort": 500000,
-  "_key": "!items!YjM8fvXmDz728m3m"
+  "sort": 1100000,
+  "_key": "!items!matSplWhirlwind0"
 }

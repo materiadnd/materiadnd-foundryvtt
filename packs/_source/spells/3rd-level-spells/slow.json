@@ -1,77 +1,59 @@
 {
   "name": "Slow",
-  "ownership": {
-    "default": 0
-  },
-  "type": "spell",
+  "_id": "matSplSlow000000",
   "system": {
     "description": {
-      "value": "<p>You alter time around up to six creatures of your choice in a 40-foot cube within range. Each target must succeed on a Wisdom saving throw or be affected by this spell for the duration.</p><p>An affected target's speed is halved, it takes a -2 penalty to AC and Dexterity saving throws, and it can't use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature's abilities or magic items, it can't make more than one melee or ranged attack during its turn.</p><p>If the creature attempts to cast a spell with a casting time of 1 action, roll a d20. On an 11 or higher, the spell doesn't take effect until the creature's next turn, and the creature must use its action on that turn to complete the spell. If it can't, the spell is wasted.</p><p>A creature affected by this spell makes another Wisdom saving throw at the end of its turn. On a successful save, the effect ends for it.</p>",
+      "value": "<p>You alter time around up to six creatures of your choice in a 40-foot Cube within range. Each target must succeed on a Wisdom saving throw or be affected by this spell for the duration.</p><p>An affected target's Speed is halved, it takes a a -2 penalty to AC and Dexterity saving throws, and it can't take Reactions. On its turns, it can take either an action or a Bonus Action, not both, and it can make only one attack if it takes the Attack action. If it casts a spell with a Somatic component, there is a [[/r 1d100cs&lt;=25#Slowed spell cast success]]{25 percent} chance the spell fails as a result of the target making the spell's gestures too slowly.</p><p>An affected target repeats the save at the end of each of its turns, ending the spell on itself on a success.</p><section id=\"secret-2RobIVhv3tn7gmU7\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The inline roll above will return 1 if it succeeded or 0 if it failed.</p></section>",
       "chat": ""
     },
     "source": {
-      "custom": "",
-      "book": "SRD 5.1",
-      "page": "",
-      "license": "CC-BY-4.0"
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
     },
     "activation": {
       "type": "action",
-      "cost": 1,
-      "condition": ""
+      "condition": "",
+      "value": null
     },
     "duration": {
       "value": "1",
       "units": "minute"
     },
-    "cover": null,
     "target": {
-      "value": 40,
-      "width": null,
-      "units": "ft",
-      "type": "cube",
-      "prompt": true
+      "affects": {
+        "choice": false,
+        "count": "",
+        "type": ""
+      },
+      "template": {
+        "units": "ft",
+        "type": "cube",
+        "size": "40",
+        "contiguous": false,
+        "count": ""
+      }
     },
     "range": {
-      "value": 120,
-      "long": null,
-      "units": "ft"
+      "value": "120",
+      "units": "ft",
+      "special": ""
     },
     "uses": {
-      "value": null,
       "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
-    },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
-    },
-    "ability": "",
-    "actionType": "save",
-    "attackBonus": "",
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
-    },
-    "damage": {
-      "parts": [],
-      "versatile": ""
-    },
-    "formula": "1d20",
-    "save": {
-      "ability": "wis",
-      "dc": null,
-      "scaling": "spell"
+      "recovery": [],
+      "spent": 0
     },
     "level": 3,
     "school": "trs",
+    "properties": [
+      "vocal",
+      "somatic",
+      "material",
+      "concentration"
+    ],
     "materials": {
-      "value": "A drop of molasses.",
+      "value": "a drop of molasses",
       "consumed": false,
       "cost": 0,
       "supply": 0
@@ -80,29 +62,134 @@
       "mode": "prepared",
       "prepared": false
     },
-    "scaling": {
-      "mode": "none",
-      "formula": ""
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "z1lkguBohjqXRSHm",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": []
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      },
+      "dnd5eactivity300": {
+        "_id": "dnd5eactivity300",
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "effects": [
+          {
+            "_id": "z1lkguBohjqXRSHm"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "roll": {
+          "formula": "1d100cs>25",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        },
+        "sort": 0
+      }
     },
-    "properties": [
-      "vocal",
-      "somatic",
-      "material",
-      "concentration"
-    ],
-    "crewed": false
+    "identifier": "slow"
   },
-  "flags": {
-    "materia-dnd": {
-      "sourceId": "Compendium.materia-dnd.spells.Item.aqGmKrLDMjD7GnAI",
-      "spell-lists": "bard,sorcerer,wizard"
-    }
-  },
-  "img": "icons/magic/air/fog-gas-smoke-dense-pink.webp",
+  "type": "spell",
+  "img": "icons/magic/time/clock-stopwatch-white-blue.webp",
   "effects": [
     {
-      "name": "Slow",
-      "origin": "Compendium.dnd5e.spells.Item.yqUDoxk4x0NWG5Bz",
+      "name": "Slowed",
+      "origin": "Compendium.materia-dnd.spells.Item.matSplSlow000000",
       "duration": {
         "startTime": null,
         "seconds": 60,
@@ -112,8 +199,8 @@
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "YtN8kTDQyxFaxpEx",
+      "disabled": false,
+      "_id": "z1lkguBohjqXRSHm",
       "changes": [
         {
           "key": "system.attributes.ac.bonus",
@@ -150,42 +237,55 @@
           "mode": 1,
           "value": "0.5",
           "priority": null
+        },
+        {
+          "key": "system.abilities.dex.bonuses.save",
+          "mode": 2,
+          "value": "-2",
+          "priority": null
         }
       ],
-      "description": "<p>An affected target's speed is halved, it takes a -2 penalty to AC and Dexterity saving throws, and it can't use reactions. On its turn, it can use either an action or a bonus action, not both. Regardless of the creature's abilities or magic items, it can't make more than one melee or ranged attack during its turn.</p>",
+      "description": "<p>An affected target's Speed is halved, it takes a a -2 penalty to AC and Dexterity saving throws, and it can't take Reactions. On its turns, it can take either an action or a Bonus Action, not both, and it can make only one attack if it takes the Attack action. If it casts a spell with a Somatic component, there is a [[/r 1d100cs&gt;25#Slowed spell cast success]]{25 percent} chance the spell fails as a result of the target making the spell's gestures too slowly.</p><p>An affected target repeats the [[/save ability=wis]] save at the end of each of its turns, ending the spell on itself on a success.</p>",
       "transfer": false,
       "statuses": [],
       "flags": {},
       "tint": "#ffffff",
       "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
+        "compendiumSource": "Compendium.dnd5e.spells.Item.yqUDoxk4x0NWG5Bz.ActiveEffect.YtN8kTDQyxFaxpEx",
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.2.2",
         "createdTime": null,
         "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
+        "lastModifiedBy": null
       },
-      "img": "icons/magic/air/fog-gas-smoke-dense-pink.webp",
+      "img": "icons/magic/time/clock-stopwatch-white-blue.webp",
       "type": "base",
       "system": {},
       "sort": 0,
-      "_key": "!items.effects!aqGmKrLDMjD7GnAI.YtN8kTDQyxFaxpEx"
+      "_key": "!items.effects!matSplSlow000000.z1lkguBohjqXRSHm"
     }
   ],
   "folder": "CxgAwElQGTbcnuvc",
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
-    "createdTime": 1661787234243,
-    "modifiedTime": 1713584796371,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
-    "duplicateSource": null
+  "ownership": {
+    "default": 0
   },
-  "_id": "aqGmKrLDMjD7GnAI",
-  "sort": 1500000,
-  "_key": "!items!aqGmKrLDMjD7GnAI"
+  "flags": {
+    "materia-dnd": {
+      "sourceId": "Compendium.materia-dnd.spells.Item.matSplSlow000000",
+      "spell-lists": "bard,sorcerer,wizard"
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.2.2",
+    "createdTime": 1738514548033,
+    "modifiedTime": 1738514548033,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 0,
+  "_key": "!items!matSplSlow000000"
 }

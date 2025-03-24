@@ -6,10 +6,14 @@
   "img": "icons/skills/social/intimidation-impressing.webp",
   "system": {
     "description": {
-      "value": "<p>When you reach 3rd level, as you strive for excellence you harness your potential as a capable leader. When you have no Merit die remaining, you can use your bonus action to regain a number of Merit die equal to your proficiency bonus.</p><p>You cannot use this feature again until you finish a long rest.</p>",
+      "value": "<p>When you have no Merit die remaining, you can use your Bonus Action to regain a number of Merit die equal to your proficiency bonus.</p><p>You cannot use this feature again until you finish a Long Rest.</p>",
       "chat": ""
     },
-    "source": {},
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
     "activation": {
       "type": "bonus",
       "cost": null,
@@ -73,18 +77,51 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Megaboss",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            },
+            {
+              "type": "itemUses",
+              "value": "-@prof",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.twXKFJkxqdT8PO2m"
+            }
+          ]
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.6",
+    "coreVersion": "12.331",
     "createdTime": 1706849374217,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1741715947812,
     "lastModifiedBy": "dnd5mbuilder0000",
-    "compendiumSource": null,
     "duplicateSource": null
   },
   "sort": 0,
