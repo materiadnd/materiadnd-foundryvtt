@@ -5,7 +5,7 @@ export class Constants {
     static TEMPLATES = {
         ITEM_RESTORE: `modules/${this.MODULE_ID}/templates/apps/item-restore.hbs`,
         SPELL_SEARCH: `modules/${this.MODULE_ID}/templates/apps/spell-search.hbs`,
-        LOCUS_MANAGER: `modules/${this.MODULE_ID}/templates/locus-manager.hbs`,
+        LOCUS_MANAGER: `modules/${this.MODULE_ID}/templates/apps/locus-manager.hbs`,
         STAT_ROLLER: {
             APP: `modules/${this.MODULE_ID}/templates/apps/stat-roller/stat-roller.hbs`,
             ROLL_DISPLAY: `modules/${this.MODULE_ID}/templates/apps/stat-roller/roll-display.hbs`,

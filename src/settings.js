@@ -16,6 +16,7 @@ export class Settings {
         ENABLE_SPELL_SEARCH: 'enable-spell-search',
         SPELL_SEARCH_PACK_NAME: 'spell-search-pack-name',
         SHOW_STARTING_STAT_ROLLER: 'show-starting-stat-roller',
+        ENABLE_LOCUS_MANAGER: 'enable-locus-manager',
         ADD_TOOLS: 'add-tools',
         DISPLAY_HANDBOOK: 'display-handbook',
     }
@@ -172,6 +173,16 @@ export class Settings {
             hint: `${Constants.MODULE_ID}.settings.${this.SETTINGS.DISPLAY_HANDBOOK}.Hint`,
             config: true,
             scope: 'world',
+            default: true,
+            type: Boolean,
+            onChange: () => {},
+            requiresReload: true,
+        });
+        game.settings.register(Constants.MODULE_ID, this.SETTINGS.ENABLE_LOCUS_MANAGER, {
+            name: `${Constants.MODULE_ID}.settings.${this.SETTINGS.ENABLE_LOCUS_MANAGER}.Name`,
+            hint: `${Constants.MODULE_ID}.settings.${this.SETTINGS.ENABLE_LOCUS_MANAGER}.Hint`,
+            config: true,
+            scope: 'workd',
             default: true,
             type: Boolean,
             onChange: () => {},

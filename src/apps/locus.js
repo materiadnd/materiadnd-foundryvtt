@@ -1,6 +1,11 @@
 import { Constants } from "../constants.js";
 
 export class LocusManagerApp extends FormApplication {
+
+    static launchAppForItem(event, target) {
+
+    }
+
     constructor() {
         super();
         this._initialize();
@@ -36,3 +41,22 @@ export class LocusManagerApp extends FormApplication {
 
     }
 }
+
+export default class MateriaActorSheet5eCharacter2 extends ActorSheetV2Mixin(ActorSheet5eCharacter) {
+    static DEFAULT_OPTIONS = {
+        actions: {
+            locus: LocusManagerApp.launchAppForItem
+        }
+    }
+}
+
+Hooks.on("init", () => {
+    const documentSheetConfig = 
+        game.release.generation < 13
+            ? documentSheetConfig
+            : foundry.application.apps.DocumentSheetConfig;
+    
+    documentSheetConfig.registerSheet(
+
+    );
+});

@@ -142,13 +142,13 @@ Hooks.on("renderItemSheet5e", async (app, html, item) => {
             openButton.insertAfter(titleElement);
         }
     }
-    if (true) { // TODO : make setting for locus UI 
+    if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ENABLE_LOCUS_MANAGER)) { 
         // filter on itemSheet.object.type:
         //   consumable  (wand)
         //   weapon      (all weapons, staves, etc.)
         //   equipment   (all armor, trinkets)
         //   tool     
-        const buttonText = game.i18n.localize('MATERIA-DND.locus-manager.ui.charsheet-titlebar-button');
+        const buttonText = game.i18n.localize(`${Constants.MODULE_ID}.locus-manager.ui.charsheet-titlebar-button`);
         let openButton = $(`<a class="open-locus-mgr"><i calss="fas fa-layer-group"></i> ${buttonText}</a>`);
         openButton.click(async (evt) => {
             var locusMgr = new LocusManagerApp();
