@@ -1,5 +1,5 @@
 import { AddMateriaArmor } from "./armor.js"
-import { AddMateriaConditions } from "./conditions.js";
+import { AddMateriaConditions, AddMateriaStatusEffects } from "./conditions.js";
 import { AddMateriaWeapons } from "./weapons.js";
 import { Constants } from "./constants.js";
 import { ExhastionActiveEffectHandler, ExhaustionDamageHandler } from "./exhaustion.js";
@@ -35,6 +35,7 @@ Hooks.once('init', () => {
         SpellcastingAddThirdPactProgression();
     }
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_MATERIA_CONDITIONS)) { AddMateriaConditions(); }
+    if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_MATERIA_STATUS_EFFECTS)) { AddMateriaStatusEffects(); }
 });
 
 Hooks.once("ready", () => {
