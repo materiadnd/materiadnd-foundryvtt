@@ -4,6 +4,7 @@ export class Settings {
     static SETTINGS = {
         ADD_ARMOR_TYPES: 'add-armor-types',
         ADD_MATERIA_CONDITIONS: 'add-materia-conditions',
+        ADD_MATERIA_STATUS_EFFECTS: 'add-materia-status-effects',
         ADD_THIRD_PACT_CASTER: 'add-third-pact-caster',
         ADD_WEAPONS_AND_WEAPON_PROPS: 'add-weapons-and-weapon-props',
         ADD_SPELL_PREP_COUNTER: 'add-spell-prep-counter',
@@ -34,6 +35,16 @@ export class Settings {
         game.settings.register(Constants.MODULE_ID, this.SETTINGS.ADD_MATERIA_CONDITIONS, {
             name: `${Constants.MODULE_ID}.settings.${this.SETTINGS.ADD_MATERIA_CONDITIONS}.Name`,
             hint: `${Constants.MODULE_ID}.settings.${this.SETTINGS.ADD_MATERIA_CONDITIONS}.Hint`,
+            config: true,
+            scope: 'world',
+            default: true,
+            type: Boolean,
+            onChange: () => {},
+            requiresReload: true,
+        });
+        game.settings.register(Constants.MODULE_ID, this.SETTINGS.ADD_MATERIA_STATUS_EFFECTS, {
+            name: `${Constants.MODULE_ID}.settings.${this.SETTINGS.ADD_MATERIA_STATUS_EFFECTS}.Name`,
+            hint: `${Constants.MODULE_ID}.settings.${this.SETTINGS.ADD_MATERIA_STATUS_EFFECTS}.Hint`,
             config: true,
             scope: 'world',
             default: true,
