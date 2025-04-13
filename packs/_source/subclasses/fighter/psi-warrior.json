@@ -6,7 +6,7 @@
   "img": "icons/magic/lightning/fist-unarmed-strike-blue-green.webp",
   "system": {
     "description": {
-      "value": "<p>Beginning when you choose this archetype at 3rd level, you awake to the psionic power within, a Psi Warrior is a fighter who augments their physical might with psi-infused weapon strikes, telekinetic lashes, and barriers of mental force. Many githyanki train to become such warriors, as do some of the most disciplined high elves.</p><p>As a Psi Warrior, you might have honed your psionic abilities through solo discipline, unlocked it under the tutelage of a master, or refined it at an academy dedicated to wielding the mind's power as both weapon and shield.</p>",
+      "value": "<blockquote><p>Augment Physical Might with Psionic Power</p></blockquote><p>Psi Warriors awaken the power of their minds to augment their physical might. They harness this psionic power to infuse their weapon strikes, lash out with telekinetic energy, and create barriers of mental force.</p>",
       "chat": ""
     },
     "source": {
@@ -21,7 +21,7 @@
         "_id": "54kGz1oLry8bksIn",
         "type": "ScaleValue",
         "configuration": {
-          "identifier": "",
+          "identifier": "die",
           "type": "dice",
           "distance": {
             "units": ""
@@ -60,8 +60,8 @@
           }
         },
         "value": {},
-        "title": "Psionic Energy",
-        "icon": null
+        "title": "Psionic Energy Die",
+        "hint": ""
       },
       {
         "_id": "5XxIYNW7oH4x95u8",
@@ -69,19 +69,8 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.VeUdh38C2AUBY0tO"
-            },
-            {
-              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.ZUL6EVxrRuco6ejh"
-            },
-            {
-              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.uLWgoUcgG5WumzDL"
-            },
-            {
-              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.9XXMtkoNs7V4I5nU"
-            },
-            {
-              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.gFuMfmYky3PF1uuM"
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.9XXMtkoNs7V4I5nU",
+              "optional": false
             }
           ],
           "optional": false,
@@ -89,8 +78,8 @@
         },
         "value": {},
         "level": 3,
-        "title": "Features",
-        "icon": null
+        "title": "Subclass Features",
+        "hint": ""
       },
       {
         "_id": "odlPerdeEsy7svwH",
@@ -98,10 +87,8 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.hm45QMGxDbdPeJPq"
-            },
-            {
-              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.KedAjFzmfBIWiluH"
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.vRC3NL4EUp3irSji",
+              "optional": false
             }
           ],
           "optional": false,
@@ -109,8 +96,8 @@
         },
         "value": {},
         "level": 7,
-        "title": "Features",
-        "icon": null
+        "title": "Subclass Features",
+        "hint": ""
       },
       {
         "_id": "1NKxP4VXMA0DoanN",
@@ -118,6 +105,7 @@
         "configuration": {
           "items": [
             {
+              "optional": false,
               "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.8Kby8hgVnEUJyTs1"
             }
           ],
@@ -126,8 +114,8 @@
         },
         "value": {},
         "level": 10,
-        "title": "Features",
-        "icon": null
+        "title": "Subclass Features",
+        "hint": ""
       },
       {
         "_id": "xhXcKay2XaTfVWBl",
@@ -135,6 +123,7 @@
         "configuration": {
           "items": [
             {
+              "optional": false,
               "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.jidivd2hVjRACY4s"
             }
           ],
@@ -143,8 +132,8 @@
         },
         "value": {},
         "level": 15,
-        "title": "Features",
-        "icon": null
+        "title": "Subclass Features",
+        "hint": ""
       },
       {
         "_id": "Vr8oTH1oLSU4KCyK",
@@ -152,6 +141,7 @@
         "configuration": {
           "items": [
             {
+              "optional": false,
               "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.bKA5BvlfndGYTS1G"
             }
           ],
@@ -160,23 +150,77 @@
         },
         "value": {},
         "level": 18,
-        "title": "Features",
-        "icon": null
+        "title": "Subclass Features",
+        "hint": ""
+      },
+      {
+        "_id": "BYwqxfRCUtCpMaBo",
+        "type": "Trait",
+        "configuration": {
+          "allowReplacements": false,
+          "choices": [],
+          "grants": [
+            "dr:psychic"
+          ],
+          "mode": "default"
+        },
+        "value": {
+          "chosen": []
+        },
+        "level": 10,
+        "title": "Guarded Mind",
+        "hint": "You have Resistance to Psychic damage.",
+        "icon": "icons/magic/defensive/shield-barrier-flaming-diamond-magenta.webp"
+      },
+      {
+        "_id": "NOKiATdvl9f8SDYg",
+        "type": "ItemGrant",
+        "configuration": {
+          "items": [
+            {
+              "optional": false,
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplTelekinesi"
+            },
+            {
+              "optional": false,
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplArcaneHand"
+            }
+          ],
+          "optional": false,
+          "spell": {
+            "ability": [
+              "int"
+            ],
+            "preparation": "always",
+            "uses": {
+              "max": "1",
+              "per": "lr",
+              "requireSlot": false
+            }
+          }
+        },
+        "value": {},
+        "level": 18,
+        "title": "Telekinetic Master",
+        "hint": ""
       }
     ],
     "spellcasting": {
       "progression": "none",
-      "ability": ""
+      "ability": "",
+      "preparation": {
+        "formula": ""
+      }
     }
   },
   "effects": [],
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1707255350619,
-    "modifiedTime": 1713669236076,
+    "modifiedTime": 1744497084896,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

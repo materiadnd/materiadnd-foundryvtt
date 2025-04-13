@@ -1,12 +1,12 @@
 {
   "folder": "cEQg1d1flYogQANH",
-  "name": "Eldritch War Magic",
+  "name": "Improved War Magic",
   "type": "feat",
   "_id": "dSWhbWKqS7lyLIuG",
   "img": "icons/magic/air/wind-tornado-funnel-damage-blue.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 18th level, when you use your action to cast a spell, you can make one additional weapon attack as part of that action.</p><p>Additionally, you can expend a 4th level spell slot or higher to take an Action Surge. Once you use this feature, you cannot use it again until you finish a long rest.</p>",
+      "value": "<p>When you take the Magic action to cast a spell, you can make one additional weapon attack as part of that action.</p><p>Additionally, you can expend a level 4+ spell slot to take an Action Surge. Once you use this feature, you cannot use it again until you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,40 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Eldritch Knight 18",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 18
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "War Magic Action Surge",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            },
+            {
+              "type": "spellSlots",
+              "value": "1",
+              "target": "4"
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +114,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1710921271058,
-    "modifiedTime": 1710921329078,
+    "modifiedTime": 1744488834413,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

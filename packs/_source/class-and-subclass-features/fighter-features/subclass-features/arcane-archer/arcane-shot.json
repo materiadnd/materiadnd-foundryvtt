@@ -6,7 +6,7 @@
   "img": "icons/magic/light/explosion-star-glow-blue.webp",
   "system": {
     "description": {
-      "value": "<p>At 3rd level, you learn to unleash special magical effects with some of your shots. When you gain this feature, you learn two Arcane Shot options of your choice.</p><p>Once per turn when you fire an arrow from a shortbow, or a longbow, or a warbow (in Materia) as part of a range weapon attack, you can apply one of your Arcane Shot options to that arrow. You decide to use the option when the arrow hits a creature, unless the option does not involve an attack roll. You have a number of uses of this ability equal to your proficiency bonus, and you regain all expended uses of it when you finish a long rest.</p><p>When you have no uses available, you can expend two of your Superiority Die from your Combat Superiority to perform one of your Arcane Shots.</p><p>If an option requires a saving throw, your Arcane Shot save DC equals 8 + your proficiency bonus + your Intelligence modifier.</p><p>You gain an additional Arcane Shot option of your choice when you reach certain levels in this class: 7th, 10th, and 15th level. At 18th level in fighter you learn all Arcane Shot options available to you. Each option also improves when you become an 15th-level fighter.</p><p>The Arcane Shot feature lets you choose options for it at certain levels. The options are presented here in alphabetical order. They are all magical effects, and each one is associated with one of the schools of magic.</p>",
+      "value": "<p>You learn to unleash special magical effects with some of your shots. When you gain this feature, you learn two Arcane Shot options of your choice.</p><p>Once per turn when you fire an arrow from a shortbow, or a longbow, or a warbow as part of a ranged weapon attack, you can apply one of your Arcane Shot options to that arrow. You decide to use the option when the arrow hits a creature, unless the option does not involve an attack roll. You have a number of uses of this ability equal to your Proficiency Bonus, and you regain all expended uses of it when you finish a Long Rest.</p><p>When you have no uses available, you can expend two of your Superiority Dice to perform one of your Arcane Shots.</p><p>If an option requires a saving throw, your Arcane Shot save DC equals 8 + your proficiency bonus + your Intelligence modifier.</p><p>You gain an additional Arcane Shot option of your choice when you reach certain levels 7, 10, and 15 in this class. At level 18 in Fighter you learn all Arcane Shot options available to you. Each option also improves when you reach level 15 in this class.</p><section id=\"secret-Ex2nJl1mqyYu0bSH\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes an <strong>Arcane Shot</strong> activity which will consume a use of this feature.</p><p>It also includes an <strong>Arcane Shot with Superiority Dice</strong> activity which will consume two Superiority Dice.</p></section>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,108 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Arcane Archer 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Arcane Shot",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "activation": {
+          "type": ""
+        },
+        "target": {
+          "affects": {
+            "type": "self"
+          }
+        }
+      },
+      "MnCgO443yj9XKc26": {
+        "type": "utility",
+        "_id": "MnCgO443yj9XKc26",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "2",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.GT5M3hT8Bj34TRH0"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Arcane Shot with Superiority Dice",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +182,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1710915201879,
-    "modifiedTime": 1710918654444,
+    "modifiedTime": 1744497786193,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

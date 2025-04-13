@@ -6,7 +6,7 @@
   "img": "icons/magic/water/orb-water-bubbles-teal.webp",
   "system": {
     "description": {
-      "value": "<p>This rune's magic provides adaptations for life in and around the seas. While wearing or carrying on object inscribed with this rune, you can breath underwater and you gain a swimming speed equal to your walking speed.</p><p>In addition, you can invoke the rune as a bonus action to providing warding to yourself for 1 minute. Whenever you roll a Superiority Die as part of a Maneuver you gain temporary hit points equal to the Superiority Die roll. Once you invoke this rune, you cannot do so again until you finish a short or long rest.</p>",
+      "value": "<p>This rune's magic provides adaptations for life in and around the seas. While wearing or carrying on object inscribed with this rune, you can breathe underwater and you gain a Swim Speed equal to your Speed.</p><p>In addition, you can invoke the rune as a Bonus Action to providing warding to yourself for 1 minute. Whenever you roll a Superiority Die as part of a Maneuver you gain Temporary Hit Points equal to the Superiority Die roll. Once you invoke this rune, you cannot do so again until you finish a Short or Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -39,7 +39,7 @@
     },
     "uses": {
       "value": 1,
-      "max": "1",
+      "max": "",
       "per": "sr",
       "recovery": "",
       "prompt": true
@@ -78,20 +78,275 @@
       "subtype": "rune"
     },
     "properties": [],
-    "requirements": "Rune Knight 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "enchant": {
+      "max": "",
+      "period": ""
+    },
+    "activities": {
+      "cORGdfMEc6EwnsZg": {
+        "type": "enchant",
+        "_id": "cORGdfMEc6EwnsZg",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "MLx4xp7fP0UX3C05"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "enchant": {
+          "identifier": ""
+        },
+        "restrictions": {
+          "allowMagical": false,
+          "categories": [],
+          "properties": [],
+          "type": ""
+        },
+        "name": "Inscribe Rune",
+        "img": "",
+        "appliedEffects": []
+      },
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "activation": {
+          "type": ""
+        },
+        "consumption": {
+          "targets": []
+        },
+        "appliedEffects": [],
+        "duration": {
+          "units": "inst"
+        },
+        "sort": 100000
+      },
+      "QSh7sZxcfpxBehvz": {
+        "type": "utility",
+        "_id": "QSh7sZxcfpxBehvz",
+        "sort": 50000,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "Ydr9qVfgrcM1QHNK"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Invoke Rune",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
-  "flags": {},
+  "effects": [
+    {
+      "type": "enchantment",
+      "name": "Coral Rune",
+      "img": "icons/magic/water/orb-water-bubbles-teal.webp",
+      "disabled": true,
+      "_id": "MLx4xp7fP0UX3C05",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 2,
+          "value": ", Coral Rune",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": 1744505847919,
+        "modifiedTime": 1744505857900,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!cVqF0pKRmtgqCz2E.MLx4xp7fP0UX3C05"
+    },
+    {
+      "name": "Coral Protection",
+      "img": "icons/magic/water/orb-water-bubbles-teal.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.cVqF0pKRmtgqCz2E",
+      "transfer": false,
+      "_id": "Ydr9qVfgrcM1QHNK",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>Whenever you roll a Superiority Die as part of a Maneuver you gain Temporary Hit Points equal to the Superiority Die roll.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": 1744505961353,
+        "modifiedTime": 1744505986964,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!cVqF0pKRmtgqCz2E.Ydr9qVfgrcM1QHNK"
+    }
+  ],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1707154011962,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1744506003822,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

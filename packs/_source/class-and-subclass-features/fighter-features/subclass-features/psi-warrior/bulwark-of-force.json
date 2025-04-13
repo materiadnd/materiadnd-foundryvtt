@@ -6,7 +6,7 @@
   "img": "icons/magic/defensive/shield-barrier-blue.webp",
   "system": {
     "description": {
-      "value": "<p>Once you reach 15th level, you can shield yourself and others with telekinetic force. As a bonus action, you can choose creatures, which can include you, that you can see within 30 feet of you, up to a number of creatures equal to your Intelligence modifier (minimum of one creature). Each of the chosen creatures is protected by half cover for 1 minute or until you are incapacitated.</p><p>Once you take this bonus action, you cannot do so again until you finish a long rest, unless you expend a Psionic Energy die to take it again.</p>",
+      "value": "<p>You can shield yourself and others with telekinetic force. As a Bonus Action, you can choose creatures, including yourself, within 30 feet of yourself, up to a number of creatures equal to your Intelligence modifier (minimum of one creature). Each of the chosen creatures has &amp;Reference[half cover] for 1 minute or until you have the &amp;Reference[incapacitated apply=false] condition.</p><p>Once you use this feature, you cannot do so again until you finish a Long Rest, unless you expend a Psionic Energy Die (no action required) to restore your use of it.</p><section id=\"secret-uKNWGzYIKi9Kqqt9\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes an Active Effect which applies the Half Cover status but it does not automatically end.</p><p>The <strong>Recharge with Psionic Energy</strong> activity will consume a use of your Psionic Energy Die and grant another use of this feature.</p></section>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,119 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Psi Warrior 15",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 15
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Bulwark of Force",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "ft",
+          "value": "30"
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "(max(1,@abilities.int.mod))"
+          },
+          "template": {
+            "type": ""
+          }
+        },
+        "effects": [
+          {
+            "_id": "QrjgQKE8PWU8GtuK"
+          }
+        ]
+      },
+      "P7VqDZxaTDm1wIMp": {
+        "type": "utility",
+        "_id": "P7VqDZxaTDm1wIMp",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "activityUses",
+              "value": "-1"
+            },
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.9XXMtkoNs7V4I5nU"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Recharge with Psionic Energy",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [
@@ -128,15 +237,66 @@
         "lastModifiedBy": "dnd5mbuilder0000"
       },
       "_key": "!items.effects!jidivd2hVjRACY4s.vcXXzrmFPZHm9viX"
+    },
+    {
+      "name": "Bulwark of Force",
+      "img": "icons/magic/defensive/shield-barrier-blue.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.jidivd2hVjRACY4s",
+      "transfer": false,
+      "_id": "QrjgQKE8PWU8GtuK",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "coverHalf"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": 1744496136609,
+        "modifiedTime": 1744496154324,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!jidivd2hVjRACY4s.QrjgQKE8PWU8GtuK"
     }
   ],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.2.1",
-    "coreVersion": "12.328",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1707256328325,
-    "modifiedTime": 1719705389324,
+    "modifiedTime": 1744496182126,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

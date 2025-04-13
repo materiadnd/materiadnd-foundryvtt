@@ -6,7 +6,7 @@
   "img": "icons/magic/water/projectiles-ice-explosion.webp",
   "system": {
     "description": {
-      "value": "<p>This rune's magic evokes the might of those who survive in the wintry wilderness, such as frost giants. While wearing or carrying an object inscribed with this rune, you have advantage on Charisma (Intimidation) checks, and you ignore difficult terrain.</p><p>In addition, you can invoke the rune as a bonus action to increase your sturdiness. For 10 minutes, you gain a bonus equal to your Constitution modifier (minimum of 1) to all ability checks and saving throws that use Strength or Constitution. Once you invoke this rune, you cannot do so again until you finish a short or long rest.</p>",
+      "value": "<p><em><strong>Requires Fighter Level 7+</strong></em></p><p>This rune's magic evokes the might of those who survive in the wintry wilderness, such as frost giants. While wearing or carrying an object inscribed with this rune, you have Advantage on Charisma (Intimidation) checks, and you ignore &amp;Reference[difficult terrain].</p><p>In addition, you can invoke the rune as a Bonus Action to increase your sturdiness. For 10 minutes, you gain a bonus equal to your Constitution modifier (minimum of 1) to all Ability Checks and Saving Throws that use Strength or Constitution. Once you invoke this rune, you cannot do so again until you finish a Short or Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -73,24 +73,246 @@
       "subtype": "rune"
     },
     "properties": [],
-    "requirements": "Rune Knight 7",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "enchant": {
+      "max": "",
+      "period": ""
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Invoke Rune",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [
+          "EepzcFpGbYg6c179"
+        ],
+        "effects": [
+          {
+            "_id": "EepzcFpGbYg6c179"
+          }
+        ],
+        "target": {
+          "affects": {
+            "type": "self"
+          }
+        }
+      },
+      "1M3zIobI0dq2AK0K": {
+        "type": "enchant",
+        "_id": "1M3zIobI0dq2AK0K",
+        "sort": -100000,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "k1e3XM6i0OOB4425"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "enchant": {
+          "identifier": ""
+        },
+        "restrictions": {
+          "allowMagical": false,
+          "categories": [],
+          "properties": [],
+          "type": ""
+        },
+        "name": "Inscribe Rune",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Sturdy",
+      "img": "icons/magic/water/projectiles-ice-explosion.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.ZSRgwnL39z4CxMLi",
+      "transfer": false,
+      "_id": "EepzcFpGbYg6c179",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.abilities.str.bonuses.save",
+          "mode": 2,
+          "value": "@abilities.con.mod",
+          "priority": null
+        },
+        {
+          "key": "system.abilities.con.bonuses.save",
+          "mode": 2,
+          "value": "@abilities.con.mod",
+          "priority": null
+        },
+        {
+          "key": "system.skills.ath.bonuses.check",
+          "mode": 2,
+          "value": "@abilities.con.mod",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>For 10 minutes, you gain a bonus equal to your Constitution modifier (minimum of 1) to all Ability Checks and Saving Throws that use Strength or Constitution</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": 1744506601677,
+        "modifiedTime": 1744506770706,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!ZSRgwnL39z4CxMLi.EepzcFpGbYg6c179"
+    },
+    {
+      "type": "enchantment",
+      "name": "Frost Rune",
+      "img": "icons/magic/water/projectiles-ice-explosion.webp",
+      "disabled": true,
+      "_id": "k1e3XM6i0OOB4425",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 2,
+          "value": ", Frost Rune",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": 1744506877762,
+        "modifiedTime": 1744506896973,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!ZSRgwnL39z4CxMLi.k1e3XM6i0OOB4425"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1710308730455,
-    "modifiedTime": 1710308911184,
+    "modifiedTime": 1744506974779,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

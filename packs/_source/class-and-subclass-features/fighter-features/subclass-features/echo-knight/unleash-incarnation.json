@@ -6,7 +6,7 @@
   "img": "icons/skills/melee/strikes-sword-triple-gray.webp",
   "system": {
     "description": {
-      "value": "<p>At 3rd level, you can heighten your echo's fury. Whenever you take the Attack action, you can make one additional melee attack from the echo's position. This attack cannot perform any of your Maneuvers.</p><p>You can use this feature a number of times equal to your proficiency bonus. You regain all expended uses when you finish a long rest.</p>",
+      "value": "<p>You can heighten your echo's fury. Whenever you take the Attack action, you can make one additional melee attack from the echo's position. This attack cannot perform any of your Maneuvers.</p><p>You can use this feature a number of times equal to your Proficiency Bonus. You regain all expended uses when you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,38 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Echo Knight 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "activation": {
+          "type": ""
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +112,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1710920158619,
-    "modifiedTime": 1710920209687,
+    "modifiedTime": 1744501138065,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

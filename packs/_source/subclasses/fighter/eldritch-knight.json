@@ -6,7 +6,7 @@
   "img": "icons/magic/unholy/hand-weapon-glow-black-green.webp",
   "system": {
     "description": {
-      "value": "<p>The archetypal Eldritch Knight combines the martial mastery common to all fighters with a careful study of magic. Eldritch Knights use magical techniques similar to those practiced by wizards. They focus their study on two of the eight schools of magic: abjuration and evocation. Abjuration spells grant an Eldritch Knight additional protection in battle, and evocation spells deal damage to many foes at once, extending the fighter's reach in combat. These knights learn a comparatively small number of spells, committing them to memory instead of keeping them in a spellbook.</p>",
+      "value": "<blockquote><p>Support Combat Skills with Arcane Magic</p></blockquote><p>Eldritch Knights combine the martial mastery common to all Fighters with a careful study of magic. Their spells both complement and extend their combat skills, providing additional protection to shore up their armor and also allowing them to engage many foes at once with explosive magic.</p>",
       "chat": ""
     },
     "source": {
@@ -22,8 +22,14 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.rt1eN8ZtQ32Pmr80",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.evD45eY5tlyGHzZV"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.rt1eN8ZtQ32Pmr80",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.evD45eY5tlyGHzZV",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -38,7 +44,10 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.1CmwwPdA3EPdeJqN"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.1CmwwPdA3EPdeJqN",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -53,7 +62,10 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.f9szBTtlJyFzyzZh"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.f9szBTtlJyFzyzZh",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -68,7 +80,10 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.3IW48mzAw8HW2tPB"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.3IW48mzAw8HW2tPB",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -83,7 +98,10 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.dSWhbWKqS7lyLIuG"
+            {
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.dSWhbWKqS7lyLIuG",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -92,11 +110,85 @@
         "level": 18,
         "title": "Features",
         "icon": null
+      },
+      {
+        "_id": "JLyVwK4KGHKEKzT4",
+        "type": "ScaleValue",
+        "configuration": {
+          "identifier": "",
+          "type": "number",
+          "distance": {
+            "units": ""
+          },
+          "scale": {
+            "3": {
+              "value": 2
+            },
+            "10": {
+              "value": 3
+            }
+          }
+        },
+        "value": {},
+        "title": "Cantrips",
+        "hint": ""
+      },
+      {
+        "_id": "7wLctoZnoDgqjH6w",
+        "type": "ScaleValue",
+        "configuration": {
+          "identifier": "prepared",
+          "type": "number",
+          "distance": {
+            "units": ""
+          },
+          "scale": {
+            "3": {
+              "value": 3
+            },
+            "4": {
+              "value": 4
+            },
+            "7": {
+              "value": 5
+            },
+            "8": {
+              "value": 6
+            },
+            "10": {
+              "value": 7
+            },
+            "11": {
+              "value": 8
+            },
+            "13": {
+              "value": 9
+            },
+            "14": {
+              "value": 10
+            },
+            "17": {
+              "value": 11
+            },
+            "19": {
+              "value": 12
+            },
+            "20": {
+              "value": 13
+            }
+          }
+        },
+        "value": {},
+        "title": "Prepared Spells",
+        "hint": ""
       }
     ],
     "spellcasting": {
       "progression": "third",
-      "ability": "int"
+      "ability": "int",
+      "preparation": {
+        "formula": "@scale.eldritch-knight.prepared"
+      }
     }
   },
   "effects": [],
@@ -107,10 +199,10 @@
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1710920819758,
-    "modifiedTime": 1710921388768,
+    "modifiedTime": 1744487102231,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
