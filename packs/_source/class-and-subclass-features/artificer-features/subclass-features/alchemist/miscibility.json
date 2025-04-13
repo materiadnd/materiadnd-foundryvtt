@@ -6,7 +6,7 @@
   "img": "icons/magic/holy/prayer-hands-glowing-yellow-green.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 9th level, when you cast a cantrip with your action, you can use one of your Alchemical Formula as a bonus action.</p><p>Additionally, you can cast lesser restoration without expending a spell slot and without preparing the spell, provided you use Alchemist's Satchel within reach. Your lesser restoration adds the charmed, frightened or (in Materia) weakened condition as one condition that can end. You can do so a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a long rest.</p>",
+      "value": "<p>When you cast a cantrip with a casting time of an action, you can use one of your Alchemical Formula as a Bonus Action even if they would normally require a Magic action.</p><p>Additionally, you can cast @UUID[Compendium.materia-dnd.spells.Item.matSplLesserRest]{Lesser Restoration} without expending a spell slot and without preparing the spell, provided you use @UUID[Compendium.materia-dnd.class-and-subclass-features.Item.JT7RobJSiQVCO1dh]{Alchemist's Satchel} within reach. Your Lesser Restoration adds the &amp;Reference[charmed apply=false], &amp;Reference[frightened apply=false] or &amp;Reference[weakened apply=false] condition as one condition that can end. You can do so a number of times equal to your Intelligence modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,79 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Alchemist 9",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 9
+    },
+    "activities": {
+      "t0ay0TlDaPHDaM3p": {
+        "type": "cast",
+        "_id": "t0ay0TlDaPHDaM3p",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": "@abilities.int.mod"
+        },
+        "spell": {
+          "challenge": {
+            "attack": null,
+            "save": null,
+            "override": false
+          },
+          "level": "2",
+          "properties": [
+            "vocal",
+            "somatic",
+            "material"
+          ],
+          "spellbook": true,
+          "uuid": "Compendium.materia-dnd.spells.Item.matSplLesserRest",
+          "ability": ""
+        },
+        "name": "Cast Lesser Restoration",
+        "img": ""
+      }
     }
   },
   "effects": [],
@@ -84,13 +153,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1709697386531,
-    "modifiedTime": 1709697527088,
+    "modifiedTime": 1744522245716,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
