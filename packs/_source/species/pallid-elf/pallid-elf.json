@@ -14,28 +14,6 @@
     },
     "advancement": [
       {
-        "type": "AbilityScoreImprovement",
-        "_id": "ENyuzrJxjHoXRTFM",
-        "configuration": {
-          "points": 3,
-          "fixed": {
-            "str": 0,
-            "dex": 0,
-            "con": 0,
-            "int": 0,
-            "wis": 0,
-            "cha": 0
-          },
-          "cap": 2
-        },
-        "value": {
-          "type": "asi"
-        },
-        "level": 0,
-        "title": "",
-        "icon": null
-      },
-      {
         "type": "Size",
         "_id": "vKuLvxq1IgWyoRyk",
         "configuration": {
@@ -45,32 +23,6 @@
         },
         "level": 0,
         "value": {}
-      },
-      {
-        "type": "Trait",
-        "configuration": {
-          "grants": [
-            "languages:standard:common"
-          ],
-          "mode": "default",
-          "allowReplacements": false,
-          "choices": [
-            {
-              "count": 1,
-              "pool": [
-                "languages:*"
-              ]
-            }
-          ],
-          "hint": ""
-        },
-        "_id": "BhNGcJY2vmSNvGm1",
-        "level": 0,
-        "value": {
-          "chosen": []
-        },
-        "title": "",
-        "icon": null
       },
       {
         "_id": "odqnJfw1IsmjiEQb",
@@ -86,15 +38,15 @@
                 "languages:*"
               ]
             }
-          ],
-          "hint": "You can speak, read, and write one extra language of your choice."
+          ]
         },
         "level": 0,
         "title": "Extra Language",
         "icon": null,
         "value": {
           "chosen": []
-        }
+        },
+        "hint": "You can speak, read, and write one extra language of your choice."
       },
       {
         "_id": "wB3mPxGIsXRboLNq",
@@ -105,15 +57,15 @@
           "grants": [
             "skills:prc"
           ],
-          "choices": [],
-          "hint": "You have proficiency in the Perception skill."
+          "choices": []
         },
         "level": 0,
         "title": "Keen Senses",
         "icon": null,
         "value": {
           "chosen": []
-        }
+        },
+        "hint": "You have proficiency in the Perception skill."
       },
       {
         "_id": "rdgRxhZYKVuujRBy",
@@ -121,13 +73,16 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.species.Item.aCSiqRm8aDQFR0CS"
+              "uuid": "Compendium.materia-dnd.species.Item.aCSiqRm8aDQFR0CS",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.FB12HMTHA72B7Po1"
+              "uuid": "Compendium.materia-dnd.species.Item.FB12HMTHA72B7Po1",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.TG4lwCsy2waUpi5h"
+              "uuid": "Compendium.materia-dnd.species.Item.TG4lwCsy2waUpi5h",
+              "optional": false
             }
           ],
           "optional": false,
@@ -143,7 +98,10 @@
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "0": 1
+            "0": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": "spell",
@@ -159,28 +117,37 @@
             }
           ],
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "always",
             "uses": {
               "max": "",
-              "per": ""
+              "per": "",
+              "requireSlot": false
             }
           },
-          "hint": "You know the light cantrip.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for this spell when you cast it with this trait (choose below). This spell does not require spell components when you cast it with this trait.",
           "restriction": {
             "level": ""
           }
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Pallid Magic: Light",
-        "icon": "icons/magic/light/explosion-star-small-blue-yellow.webp"
+        "icon": "icons/magic/light/explosion-star-small-blue-yellow.webp",
+        "hint": "You know the light cantrip.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for this spell when you cast it with this trait (choose below). This spell does not require spell components when you cast it with this trait."
       },
       {
         "_id": "jiKY2NGj4OIUJL6h",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "3": 1
+            "3": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": "spell",
@@ -196,28 +163,37 @@
             }
           ],
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "always",
             "uses": {
               "max": "1",
-              "per": "lr"
+              "per": "lr",
+              "requireSlot": false
             }
           },
-          "hint": "When you reach 3rd level, you can cast the sleep spell with this trait.  Once you cast sleep with this trait, you cannot cast that spell with it again until you finish a long rest. You can also cast this spell using spell slots you have of the appropriate level.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for this spell when you cast it with this trait (choose below). This spell does not require spell components when you cast it with this trait.",
           "restriction": {
             "level": ""
           }
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Pallid Magic: Sleep",
-        "icon": "icons/magic/light/explosion-star-small-pink.webp"
+        "icon": "icons/magic/light/explosion-star-small-pink.webp",
+        "hint": "When you reach 3rd level, you can cast the sleep spell with this trait.  Once you cast sleep with this trait, you cannot cast that spell with it again until you finish a long rest. You can also cast this spell using spell slots you have of the appropriate level.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for this spell when you cast it with this trait (choose below). This spell does not require spell components when you cast it with this trait."
       },
       {
         "_id": "CRPdgCJX4vritIrj",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "5": 1
+            "5": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": "spell",
@@ -233,28 +209,37 @@
             }
           ],
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "always",
             "uses": {
               "max": "1",
-              "per": "lr"
+              "per": "lr",
+              "requireSlot": false
             }
           },
-          "hint": "Starting at 5th level, you can cast the invisibility spell (targeting yourself only) with it. Once you cast invisibility with this trait, you cannot cast that spell with it again until you finish a long rest. You can also cast this spell using spell slots you have of the appropriate level.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for this spell when you cast it with this trait (choose below). This spell does not require spell components when you cast them with this trait.",
           "restriction": {
             "level": ""
           }
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Pallid Magic: Invisibility",
-        "icon": "icons/magic/air/fog-gas-smoke-dense-gray.webp"
+        "icon": "icons/magic/air/fog-gas-smoke-dense-gray.webp",
+        "hint": "Starting at 5th level, you can cast the invisibility spell (targeting yourself only) with it. Once you cast invisibility with this trait, you cannot cast that spell with it again until you finish a long rest. You can also cast this spell using spell slots you have of the appropriate level.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for this spell when you cast it with this trait (choose below). This spell does not require spell components when you cast them with this trait."
       },
       {
-        "_id": "",
+        "_id": "z2uVZeR6Nj74Vezt",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "6": 1
+            "6": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -282,18 +267,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "4Q2UB8hKGtS0VeLG",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "12": 1
+            "12": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -321,18 +313,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "KOO5blcJblHDYZxh",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "18": 1
+            "18": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -360,11 +359,15 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       }
     ],
     "movement": {
@@ -399,7 +402,7 @@
     "systemVersion": "4.3.8",
     "coreVersion": "12.331",
     "createdTime": 1710817130766,
-    "modifiedTime": 1744227135538,
+    "modifiedTime": 1745197760416,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

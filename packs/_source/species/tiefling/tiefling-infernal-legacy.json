@@ -13,28 +13,6 @@
     },
     "advancement": [
       {
-        "type": "AbilityScoreImprovement",
-        "_id": "p7sbuu3nVuYqNukS",
-        "configuration": {
-          "points": 3,
-          "fixed": {
-            "str": 0,
-            "dex": 0,
-            "con": 0,
-            "int": 0,
-            "wis": 0,
-            "cha": 0
-          },
-          "cap": 2
-        },
-        "value": {
-          "type": "asi"
-        },
-        "level": 0,
-        "title": "",
-        "icon": null
-      },
-      {
         "type": "Size",
         "_id": "a7Kx4MTUTzz9Il8B",
         "configuration": {
@@ -46,32 +24,6 @@
         "value": {}
       },
       {
-        "type": "Trait",
-        "configuration": {
-          "grants": [
-            "languages:standard:common"
-          ],
-          "mode": "default",
-          "allowReplacements": false,
-          "choices": [
-            {
-              "count": 1,
-              "pool": [
-                "languages:*"
-              ]
-            }
-          ],
-          "hint": ""
-        },
-        "_id": "AahsQJ10ji2NgCAE",
-        "level": 0,
-        "value": {
-          "chosen": []
-        },
-        "title": "",
-        "icon": null
-      },
-      {
         "_id": "MqmoYoLwA596ODDd",
         "type": "Trait",
         "configuration": {
@@ -80,15 +32,15 @@
           "grants": [
             "dr:fire"
           ],
-          "choices": [],
-          "hint": "You have resistance to fire damage."
+          "choices": []
         },
         "level": 0,
         "title": "Hellish Resistance",
         "icon": "icons/magic/fire/flame-burning-fist-strike.webp",
         "value": {
           "chosen": []
-        }
+        },
+        "hint": "You have resistance to fire damage."
       },
       {
         "_id": "wCWDoTpI2NKpf7YZ",
@@ -96,16 +48,20 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.dnd5e.spells.Item.MUO1uYN7JR1hm4dR"
+              "uuid": "Compendium.dnd5e.spells.Item.MUO1uYN7JR1hm4dR",
+              "optional": false
             }
           ],
           "optional": false,
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "always",
             "uses": {
               "max": "",
-              "per": ""
+              "per": "",
+              "requireSlot": false
             }
           }
         },
@@ -120,16 +76,20 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.dnd5e.spells.Item.S7VbUetIfVT7B6Eq"
+              "uuid": "Compendium.dnd5e.spells.Item.S7VbUetIfVT7B6Eq",
+              "optional": false
             }
           ],
           "optional": false,
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "always",
             "uses": {
               "max": "1",
-              "per": "lr"
+              "per": "lr",
+              "requireSlot": false
             }
           }
         },
@@ -143,7 +103,10 @@
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "3": 1
+            "3": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": "spell",
@@ -159,28 +122,37 @@
             }
           ],
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "always",
             "uses": {
               "max": "1",
-              "per": "lr"
+              "per": "lr",
+              "requireSlot": false
             }
           },
-          "hint": "Starting at 3rd level, you can cast the hellish rebuke spell as a 2nd-level spell once with your Legacy of Blood trait.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for casting it (choose below). Once you cast this spell with this trait, you cannot cast this spell with it again until you finish a long rest. You can also cast this spell using spell slots you have of the appropriate level.",
           "restriction": {
             "level": ""
           }
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Legacy of Blood - Hellish Rebuke",
-        "icon": "icons/magic/control/fear-fright-shadow-monster-red.webp"
+        "icon": "icons/magic/control/fear-fright-shadow-monster-red.webp",
+        "hint": "Starting at 3rd level, you can cast the hellish rebuke spell as a 2nd-level spell once with your Legacy of Blood trait.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for casting it (choose below). Once you cast this spell with this trait, you cannot cast this spell with it again until you finish a long rest. You can also cast this spell using spell slots you have of the appropriate level."
       },
       {
-        "_id": "",
+        "_id": "ZexYZvnRkVuSDFr8",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "6": 1
+            "6": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -208,18 +180,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "jesL1HmrMdLw2rIt",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "12": 1
+            "12": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -247,18 +226,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "8Pyre19FqX3tJpud",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "18": 1
+            "18": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -286,11 +272,15 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       }
     ],
     "movement": {
@@ -321,7 +311,7 @@
     "systemVersion": "4.3.8",
     "coreVersion": "12.331",
     "createdTime": 1707250914337,
-    "modifiedTime": 1744228939314,
+    "modifiedTime": 1745197865213,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

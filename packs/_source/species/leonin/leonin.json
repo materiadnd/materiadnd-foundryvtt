@@ -14,28 +14,6 @@
     },
     "advancement": [
       {
-        "type": "AbilityScoreImprovement",
-        "_id": "v0FbScT1Y64utdGf",
-        "configuration": {
-          "points": 3,
-          "fixed": {
-            "str": 0,
-            "dex": 0,
-            "con": 0,
-            "int": 0,
-            "wis": 0,
-            "cha": 0
-          },
-          "cap": 2
-        },
-        "value": {
-          "type": "asi"
-        },
-        "level": 0,
-        "title": "",
-        "icon": null
-      },
-      {
         "type": "Size",
         "_id": "lg1dZk4DzPUlB2cT",
         "configuration": {
@@ -47,41 +25,17 @@
         "value": {}
       },
       {
-        "type": "Trait",
-        "configuration": {
-          "grants": [
-            "languages:standard:common"
-          ],
-          "mode": "default",
-          "allowReplacements": false,
-          "choices": [
-            {
-              "count": 1,
-              "pool": [
-                "languages:*"
-              ]
-            }
-          ],
-          "hint": ""
-        },
-        "_id": "i37aLso0V2W9cuwn",
-        "level": 0,
-        "value": {
-          "chosen": []
-        },
-        "title": "",
-        "icon": null
-      },
-      {
         "_id": "BI9AltVN4rGV0VSv",
         "type": "ItemGrant",
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.species.Item.T54pvg2gQ9SXysTU"
+              "uuid": "Compendium.materia-dnd.species.Item.T54pvg2gQ9SXysTU",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.rvvaJiDVC5WS0wMu"
+              "uuid": "Compendium.materia-dnd.species.Item.rvvaJiDVC5WS0wMu",
+              "optional": false
             }
           ],
           "optional": false,
@@ -109,22 +63,25 @@
                 "skills:sur"
               ]
             }
-          ],
-          "hint": "You have proficiency in one of the following skills of your choice: Athletics, Intimidation, Perception, or Survival."
+          ]
         },
         "level": 0,
         "title": "Hunter's Instincts",
         "icon": "icons/creatures/eyes/humanoid-single-red-brown.webp",
         "value": {
           "chosen": []
-        }
+        },
+        "hint": "You have proficiency in one of the following skills of your choice: Athletics, Intimidation, Perception, or Survival."
       },
       {
         "_id": "eneiwfh6kTaPwLUj",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "0": 1
+            "0": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": "feat",
@@ -137,21 +94,27 @@
             }
           ],
           "spell": null,
-          "hint": "Your claws are natural weapons, which you can use to make unarmed strikes. If you hit with them, you can deal slashing damage equal to 1d6 + your Strength modifier or Dexterity modifier (choose below), instead of the bludgeoning damage normal for an unarmed strike.",
           "restriction": {
             "type": "race"
           }
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Claws",
-        "icon": "icons/creatures/claws/claw-talons-glowing-orange.webp"
+        "icon": "icons/creatures/claws/claw-talons-glowing-orange.webp",
+        "hint": "Your claws are natural weapons, which you can use to make unarmed strikes. If you hit with them, you can deal slashing damage equal to 1d6 + your Strength modifier or Dexterity modifier (choose below), instead of the bludgeoning damage normal for an unarmed strike."
       },
       {
-        "_id": "",
+        "_id": "QOtfQFgpmUWy0RzI",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "6": 1
+            "6": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -179,18 +142,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "Yobdqv1CYnqqLvxS",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "12": 1
+            "12": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -218,18 +188,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "U9DdG0ugs5COv0Sl",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "18": 1
+            "18": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -257,11 +234,15 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       }
     ],
     "movement": {
@@ -292,7 +273,7 @@
     "systemVersion": "4.3.8",
     "coreVersion": "12.331",
     "createdTime": 1707253858382,
-    "modifiedTime": 1744225773264,
+    "modifiedTime": 1745197622427,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

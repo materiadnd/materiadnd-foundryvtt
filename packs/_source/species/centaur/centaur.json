@@ -14,28 +14,6 @@
     },
     "advancement": [
       {
-        "type": "AbilityScoreImprovement",
-        "_id": "6uiTrYaz7CTXCPxs",
-        "configuration": {
-          "points": 3,
-          "fixed": {
-            "str": 0,
-            "dex": 0,
-            "con": 0,
-            "int": 0,
-            "wis": 0,
-            "cha": 0
-          },
-          "cap": 2
-        },
-        "value": {
-          "type": "asi"
-        },
-        "level": 0,
-        "title": "",
-        "icon": null
-      },
-      {
         "type": "Size",
         "_id": "rCV8PVbch2YO9Hkf",
         "configuration": {
@@ -45,32 +23,6 @@
         },
         "level": 0,
         "value": {}
-      },
-      {
-        "type": "Trait",
-        "configuration": {
-          "grants": [
-            "languages:standard:common"
-          ],
-          "mode": "default",
-          "allowReplacements": false,
-          "choices": [
-            {
-              "count": 1,
-              "pool": [
-                "languages:*"
-              ]
-            }
-          ],
-          "hint": ""
-        },
-        "_id": "GACk03ViWVfmSHUF",
-        "level": 0,
-        "value": {
-          "chosen": []
-        },
-        "title": "",
-        "icon": null
       },
       {
         "_id": "u4h0jof6Pj8s6GaP",
@@ -89,22 +41,25 @@
                 "skills:sur"
               ]
             }
-          ],
-          "hint": "Your fey connection to nature gives you an intuitive connection to the natural world and the animals within it. You therefore have proficiency in one of the following skills of your choice: Animal Handling, Medicine, Nature, or Survival."
+          ]
         },
         "level": 0,
         "title": "Natural Affinity",
         "icon": "icons/magic/nature/leaf-glow-maple-teal.webp",
         "value": {
           "chosen": []
-        }
+        },
+        "hint": "Your fey connection to nature gives you an intuitive connection to the natural world and the animals within it. You therefore have proficiency in one of the following skills of your choice: Animal Handling, Medicine, Nature, or Survival."
       },
       {
         "_id": "KQ6jOjMqkGEkdexy",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "0": 1
+            "0": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": "feat",
@@ -117,14 +72,17 @@
             }
           ],
           "spell": null,
-          "hint": "Your hooves are natural weapons, which you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier or Dexterity modifier (choose below), bludgeoning damage, instead of the normal for an unarmed strike.",
           "restriction": {
             "type": "race"
           }
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Hooves",
-        "icon": "icons/tools/smithing/horseshoe-steel-blue.webp"
+        "icon": "icons/tools/smithing/horseshoe-steel-blue.webp",
+        "hint": "Your hooves are natural weapons, which you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier or Dexterity modifier (choose below), bludgeoning damage, instead of the normal for an unarmed strike."
       },
       {
         "_id": "MAcIHPjvqzS68W0G",
@@ -132,13 +90,16 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.species.Item.GceEFPLz2evZkwCn"
+              "uuid": "Compendium.materia-dnd.species.Item.GceEFPLz2evZkwCn",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.w22mJUvRwjB0bP6Z"
+              "uuid": "Compendium.materia-dnd.species.Item.w22mJUvRwjB0bP6Z",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.3VxV4I7NVji5JbjP"
+              "uuid": "Compendium.materia-dnd.species.Item.3VxV4I7NVji5JbjP",
+              "optional": false
             }
           ],
           "optional": false,
@@ -148,11 +109,14 @@
         "level": 0
       },
       {
-        "_id": "",
+        "_id": "xnf64I21fXQgdwro",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "6": 1
+            "6": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -180,18 +144,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "fCwwp2qnjROjoSry",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "12": 1
+            "12": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -219,18 +190,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "I8AWSdHpEiF97vu9",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "18": 1
+            "18": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -258,11 +236,15 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       }
     ],
     "movement": {
@@ -297,7 +279,7 @@
     "systemVersion": "4.3.8",
     "coreVersion": "12.331",
     "createdTime": 1709423307296,
-    "modifiedTime": 1744222551528,
+    "modifiedTime": 1745197373008,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

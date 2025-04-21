@@ -14,35 +14,12 @@
     },
     "advancement": [
       {
-        "type": "AbilityScoreImprovement",
-        "_id": "BssHdKx7aU6bjs6I",
-        "configuration": {
-          "points": 3,
-          "fixed": {
-            "str": 0,
-            "dex": 0,
-            "con": 0,
-            "int": 0,
-            "wis": 0,
-            "cha": 0
-          },
-          "cap": 2
-        },
-        "value": {
-          "type": "asi"
-        },
-        "level": 0,
-        "title": "",
-        "icon": null
-      },
-      {
         "type": "Size",
         "_id": "X2vm12eSQQNoqQKM",
         "configuration": {
           "sizes": [
             "sm"
-          ],
-          "hint": ""
+          ]
         },
         "level": 0,
         "title": "",
@@ -50,47 +27,25 @@
         "value": {}
       },
       {
-        "type": "Trait",
-        "configuration": {
-          "grants": [
-            "languages:standard:common"
-          ],
-          "mode": "default",
-          "allowReplacements": false,
-          "choices": [
-            {
-              "count": 1,
-              "pool": [
-                "languages:*"
-              ]
-            }
-          ],
-          "hint": ""
-        },
-        "_id": "gQQ9au0TzOzZRhl7",
-        "level": 0,
-        "value": {
-          "chosen": []
-        },
-        "title": "",
-        "icon": null
-      },
-      {
         "_id": "4swe0SeuO1YC5I3V",
         "type": "ItemGrant",
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.spells.Item.matSplDruidcraft"
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplDruidcraft",
+              "optional": false
             }
           ],
           "optional": false,
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "",
             "uses": {
               "max": "",
-              "per": ""
+              "per": "",
+              "requireSlot": false
             }
           }
         },
@@ -104,7 +59,10 @@
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "5": 1
+            "5": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": "spell",
@@ -120,28 +78,37 @@
             }
           ],
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "always",
             "uses": {
               "max": "1",
-              "per": "lr"
+              "per": "lr",
+              "requireSlot": false
             }
           },
-          "hint": "Starting at 5th level, you can cast the enlarge/reduce spell with this trait. Once you cast enlarge/reduce with this trait, you cannot cast that spell with it again until you finish a long rest. You can also cast this spell using any spell slots you have of the appropriate level.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this species).",
           "restriction": {
             "level": ""
           }
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Faerie Magic: Enlarge/Reduce",
-        "icon": "icons/magic/control/energy-stream-link-large-blue.webp"
+        "icon": "icons/magic/control/energy-stream-link-large-blue.webp",
+        "hint": "Starting at 5th level, you can cast the enlarge/reduce spell with this trait. Once you cast enlarge/reduce with this trait, you cannot cast that spell with it again until you finish a long rest. You can also cast this spell using any spell slots you have of the appropriate level.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this species)."
       },
       {
         "_id": "x8mPsaESKEh5KYX2",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "3": 1
+            "3": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": "spell",
@@ -157,21 +124,27 @@
             }
           ],
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "always",
             "uses": {
               "max": "1",
-              "per": "lr"
+              "per": "lr",
+              "requireSlot": false
             }
           },
-          "hint": "Starting at 3rd level, you can cast the faerie fire spell with this trait. Once you cast faerie fire with this trait, you cannot cast that spell with it again until you finish a long rest. You can also cast this spell using any spell slots you have of the appropriate level.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this species).",
           "restriction": {
             "level": ""
           }
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Faerie Magic: Faerie Fire",
-        "icon": "icons/magic/fire/projectile-meteor-salvo-light-teal.webp"
+        "icon": "icons/magic/fire/projectile-meteor-salvo-light-teal.webp",
+        "hint": "Starting at 3rd level, you can cast the faerie fire spell with this trait. Once you cast faerie fire with this trait, you cannot cast that spell with it again until you finish a long rest. You can also cast this spell using any spell slots you have of the appropriate level.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this species)."
       },
       {
         "_id": "YN9Hn8IwmtE4clDc",
@@ -179,10 +152,12 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.species.Item.ot5tBwDGJryAqb1i"
+              "uuid": "Compendium.materia-dnd.species.Item.ot5tBwDGJryAqb1i",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.l2bK3c4XvYOCPcu9"
+              "uuid": "Compendium.materia-dnd.species.Item.l2bK3c4XvYOCPcu9",
+              "optional": false
             }
           ],
           "optional": false,
@@ -194,11 +169,14 @@
         "icon": null
       },
       {
-        "_id": "",
+        "_id": "BZuxa8GKBMz0p5Ud",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "6": 1
+            "6": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -226,18 +204,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "39qoFc8qhyOyhTrl",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "12": 1
+            "12": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -265,18 +250,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "yBvXDbPM34FyLKip",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "18": 1
+            "18": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -304,11 +296,15 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       }
     ],
     "movement": {
@@ -345,7 +341,7 @@
     "systemVersion": "4.3.8",
     "coreVersion": "12.331",
     "createdTime": 1710458126938,
-    "modifiedTime": 1744223971504,
+    "modifiedTime": 1745197481386,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
