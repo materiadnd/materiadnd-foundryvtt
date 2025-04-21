@@ -6,7 +6,7 @@
   "img": "icons/magic/life/heart-cross-strong-purple-orange.webp",
   "system": {
     "description": {
-      "value": "<p>At 18th level, you attain the pinnacle of resilience in battle. At the start of each of your turns, you regain hit points equal to your Proficiency bonus + Constitution modifier (minimum of 0) if you have no more than half of your hit points left. You do not gain this benefit if you have 0 hit points.</p><p>Furthermore, when you are subjected to any spell or effect that allows you to make a saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail.</p>",
+      "value": "<p>You attain the pinnacle of resilience in battle, giving you these benefits.</p><p><strong>Defy Death.</strong> You have Advantage on Death Saving Throws. Moreover, when you roll 18-20 on a Death Saving Throw, you gain the benefit of rolling a 20 on it.</p><p><strong>Heroic Rally.</strong> At the start of each of your turns, you regain Hit Points equal to 5 plus your Constitution modifier if you are Bloodied and have at least 1 Hit Point.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,84 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Champion 18",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 18
+    },
+    "activities": {
+      "ukVxPDiQ9CmqgYPm": {
+        "type": "heal",
+        "_id": "ukVxPDiQ9CmqgYPm",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "5 + @abilities.con.mod"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "Bloodied Heal",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +158,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1710310308315,
-    "modifiedTime": 1710919888750,
+    "modifiedTime": 1744487017158,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

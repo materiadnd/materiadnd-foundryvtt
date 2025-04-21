@@ -13,28 +13,6 @@
     },
     "advancement": [
       {
-        "type": "AbilityScoreImprovement",
-        "_id": "dINhoOwbBg5TbH1Q",
-        "configuration": {
-          "points": 3,
-          "fixed": {
-            "str": 0,
-            "dex": 0,
-            "con": 0,
-            "int": 0,
-            "wis": 0,
-            "cha": 0
-          },
-          "cap": 2
-        },
-        "value": {
-          "type": "asi"
-        },
-        "level": 0,
-        "title": "",
-        "icon": null
-      },
-      {
         "type": "Size",
         "_id": "php2KWJ1eKwgucmV",
         "configuration": {
@@ -46,38 +24,13 @@
         "value": {}
       },
       {
-        "type": "Trait",
-        "configuration": {
-          "grants": [
-            "languages:standard:common"
-          ],
-          "mode": "default",
-          "allowReplacements": false,
-          "choices": [
-            {
-              "count": 1,
-              "pool": [
-                "languages:*"
-              ]
-            }
-          ],
-          "hint": ""
-        },
-        "_id": "wOYBjmgcdiZzOYWj",
-        "level": 0,
-        "value": {
-          "chosen": []
-        },
-        "title": "",
-        "icon": null
-      },
-      {
         "_id": "tRCSF66EOFqpAVGV",
         "type": "ItemGrant",
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.species.Item.EjBvpPmo4PQehnkw"
+              "uuid": "Compendium.materia-dnd.species.Item.EjBvpPmo4PQehnkw",
+              "optional": false
             }
           ],
           "optional": false,
@@ -97,8 +50,7 @@
           "grants": [
             "dr:poison"
           ],
-          "choices": [],
-          "hint": ""
+          "choices": []
         },
         "level": 0,
         "title": "",
@@ -113,16 +65,20 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.spells.Item.matSplFloatingDi"
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplFloatingDi",
+              "optional": false
             }
           ],
           "optional": false,
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "always",
             "uses": {
               "max": "1",
-              "per": "lr"
+              "per": "lr",
+              "requireSlot": false
             }
           }
         },
@@ -137,16 +93,20 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.dnd5e.spells.Item.pRMvmknwLf2tdMTj"
+              "uuid": "Compendium.dnd5e.spells.Item.pRMvmknwLf2tdMTj",
+              "optional": false
             }
           ],
           "optional": false,
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "always",
             "uses": {
               "max": "1",
-              "per": "lr"
+              "per": "lr",
+              "requireSlot": false
             }
           }
         },
@@ -161,19 +121,24 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.spells.Item.matSplBladeWard0"
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplBladeWard0",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.OUErHJWQ3ybhxs3e"
+              "uuid": "Compendium.materia-dnd.species.Item.OUErHJWQ3ybhxs3e",
+              "optional": false
             }
           ],
           "optional": false,
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "always",
             "uses": {
               "max": "",
-              "per": ""
+              "per": "",
+              "requireSlot": false
             }
           }
         },
@@ -183,11 +148,14 @@
         "icon": null
       },
       {
-        "_id": "",
+        "_id": "N4ri9pwQWnLforsw",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "6": 1
+            "6": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -215,18 +183,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "1vuRIzPGKCFay05H",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "12": 1
+            "12": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -254,18 +229,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "2vfsAQjsGV0FUelO",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "18": 1
+            "18": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -293,11 +275,15 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       }
     ],
     "movement": {
@@ -328,7 +314,7 @@
     "systemVersion": "4.3.8",
     "coreVersion": "12.331",
     "createdTime": 1706858187077,
-    "modifiedTime": 1744223616058,
+    "modifiedTime": 1745197455554,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

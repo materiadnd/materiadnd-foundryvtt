@@ -14,28 +14,6 @@
     },
     "advancement": [
       {
-        "type": "AbilityScoreImprovement",
-        "_id": "ntg55SJtdQJlVQVQ",
-        "configuration": {
-          "points": 3,
-          "fixed": {
-            "str": 0,
-            "dex": 0,
-            "con": 0,
-            "int": 0,
-            "wis": 0,
-            "cha": 0
-          },
-          "cap": 2
-        },
-        "value": {
-          "type": "asi"
-        },
-        "level": 0,
-        "title": "",
-        "icon": null
-      },
-      {
         "type": "Size",
         "_id": "1m4ITUd7fNk0pmgY",
         "configuration": {
@@ -47,44 +25,21 @@
         "value": {}
       },
       {
-        "type": "Trait",
-        "configuration": {
-          "grants": [
-            "languages:standard:common"
-          ],
-          "mode": "default",
-          "allowReplacements": false,
-          "choices": [
-            {
-              "count": 1,
-              "pool": [
-                "languages:*"
-              ]
-            }
-          ],
-          "hint": ""
-        },
-        "_id": "VYmltZ1ya5GCCe5r",
-        "level": 0,
-        "value": {
-          "chosen": []
-        },
-        "title": "",
-        "icon": null
-      },
-      {
         "_id": "1u6hiofPUilIEr6i",
         "type": "ItemGrant",
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.species.Item.nNI4q5sM6bIOvo0b"
+              "uuid": "Compendium.materia-dnd.species.Item.nNI4q5sM6bIOvo0b",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.jCv1uRjh1NtQiit4"
+              "uuid": "Compendium.materia-dnd.species.Item.jCv1uRjh1NtQiit4",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.EgqQFBDdV49JTSJW"
+              "uuid": "Compendium.materia-dnd.species.Item.EgqQFBDdV49JTSJW",
+              "optional": false
             }
           ],
           "optional": false,
@@ -107,15 +62,15 @@
             "weapon:mar:battleaxe",
             "weapon:mar:warhammer"
           ],
-          "choices": [],
-          "hint": "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer."
+          "choices": []
         },
         "level": 0,
         "title": "Hill Dwarf Training",
         "icon": "icons/weapons/axes/axe-broad-engraved-grey.webp",
         "value": {
           "chosen": []
-        }
+        },
+        "hint": "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer."
       },
       {
         "_id": "kB8froTzWJlAD13I",
@@ -133,22 +88,25 @@
                 "tool:art:woodcarver"
               ]
             }
-          ],
-          "hint": "You gain proficiency with the artisan's tools of your choice: brewer's supplies, cartographer's tools or woodcarver's tools."
+          ]
         },
         "level": 0,
         "title": "Tool Proficiency",
         "icon": "icons/tools/hand/chisel-steel-brown.webp",
         "value": {
           "chosen": []
-        }
+        },
+        "hint": "You gain proficiency with the artisan's tools of your choice: brewer's supplies, cartographer's tools or woodcarver's tools."
       },
       {
         "_id": "RfG21vY70XgVlvZI",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "6": 1
+            "6": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -176,19 +134,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs).",
           "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
         "_id": "KNEsgeKB75FIZwu2",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "12": 1
+            "12": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -216,19 +180,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs).",
           "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
         "_id": "ypFXDvhWH8ukAamM",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "18": 1
+            "18": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -256,12 +226,15 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs).",
           "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       }
     ],
     "movement": {
@@ -296,7 +269,7 @@
     "systemVersion": "4.3.8",
     "coreVersion": "12.331",
     "createdTime": 1710578457403,
-    "modifiedTime": 1744225041891,
+    "modifiedTime": 1745197569733,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

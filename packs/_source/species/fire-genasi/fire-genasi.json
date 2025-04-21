@@ -14,67 +14,18 @@
     },
     "advancement": [
       {
-        "type": "AbilityScoreImprovement",
-        "_id": "9kkqnN5IggX9azOd",
-        "configuration": {
-          "points": 3,
-          "fixed": {
-            "str": 0,
-            "dex": 0,
-            "con": 0,
-            "int": 0,
-            "wis": 0,
-            "cha": 0
-          },
-          "cap": 2
-        },
-        "value": {
-          "type": "asi"
-        },
-        "level": 0,
-        "title": "",
-        "icon": null
-      },
-      {
         "type": "Size",
         "_id": "jPiK7hdODu2NtJ46",
         "configuration": {
           "sizes": [
             "sm",
             "med"
-          ],
-          "hint": ""
+          ]
         },
         "level": 0,
         "title": "",
         "icon": null,
         "value": {}
-      },
-      {
-        "type": "Trait",
-        "configuration": {
-          "grants": [
-            "languages:standard:common"
-          ],
-          "mode": "default",
-          "allowReplacements": false,
-          "choices": [
-            {
-              "count": 1,
-              "pool": [
-                "languages:*"
-              ]
-            }
-          ],
-          "hint": ""
-        },
-        "_id": "kTbthKREQVapUWIR",
-        "level": 0,
-        "value": {
-          "chosen": []
-        },
-        "title": "",
-        "icon": null
       },
       {
         "_id": "MDokn4e0RRT2zQpj",
@@ -85,22 +36,25 @@
           "grants": [
             "dr:fire"
           ],
-          "choices": [],
-          "hint": "You have resistance to fire damage."
+          "choices": []
         },
         "level": 0,
         "title": "Fire Resistance",
         "icon": "icons/magic/defensive/shield-barrier-flaming-diamond-red.webp",
         "value": {
           "chosen": []
-        }
+        },
+        "hint": "You have resistance to fire damage."
       },
       {
         "_id": "C5n40UsxOQOJ7TZE",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "3": 1
+            "3": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": "spell",
@@ -116,28 +70,37 @@
             }
           ],
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "always",
             "uses": {
               "max": "1",
-              "per": "lr"
+              "per": "lr",
+              "requireSlot": false
             }
           },
-          "hint": "Starting at 3rd level, you can cast the burning hands spell with this trait.  Once you cast burning hands with this trait, you cannot cast that spell with it again until you finish a long rest. You can also cast this spell using any spell slots you have of the appropriate level.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose below). None of these spells require spell components when you cast them with this trait.",
           "restriction": {
             "level": ""
           }
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Reach to the Blaze: Burning Hands",
-        "icon": "icons/magic/air/fog-gas-smoke-dense-orange.webp"
+        "icon": "icons/magic/air/fog-gas-smoke-dense-orange.webp",
+        "hint": "Starting at 3rd level, you can cast the burning hands spell with this trait.  Once you cast burning hands with this trait, you cannot cast that spell with it again until you finish a long rest. You can also cast this spell using any spell slots you have of the appropriate level.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose below). None of these spells require spell components when you cast them with this trait."
       },
       {
         "_id": "qdOuRZ63BFVZTHtD",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "5": 1
+            "5": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": "spell",
@@ -153,21 +116,27 @@
             }
           ],
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "always",
             "uses": {
               "max": "1",
-              "per": "lr"
+              "per": "lr",
+              "requireSlot": false
             }
           },
-          "hint": "Starting at 5th level, you can also cast the flame blade spell with this trait. Once you cast flame blade with this trait, you cannot cast that spell with it again until you finish a long rest.  You can also cast this spell using any spell slots you have of the appropriate level.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose below). None of these spells require spell components when you cast them with this trait.",
           "restriction": {
             "level": ""
           }
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Reach for the Blaze: Flame Blade",
-        "icon": "icons/magic/fire/dagger-rune-enchant-flame-orange.webp"
+        "icon": "icons/magic/fire/dagger-rune-enchant-flame-orange.webp",
+        "hint": "Starting at 5th level, you can also cast the flame blade spell with this trait. Once you cast flame blade with this trait, you cannot cast that spell with it again until you finish a long rest.  You can also cast this spell using any spell slots you have of the appropriate level.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose below). None of these spells require spell components when you cast them with this trait."
       },
       {
         "_id": "bSlEdSTLftfZ8BgH",
@@ -175,10 +144,12 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.species.Item.KhdSfZ8a21EfdG2H"
+              "uuid": "Compendium.materia-dnd.species.Item.KhdSfZ8a21EfdG2H",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.spells.Item.matSplProduceFla"
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplProduceFla",
+              "optional": false
             }
           ],
           "optional": false,
@@ -190,11 +161,14 @@
         "icon": null
       },
       {
-        "_id": "",
+        "_id": "MhP1sVP61AgRYRD6",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "6": 1
+            "6": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -222,18 +196,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "D6m188MMSY7NJb0g",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "12": 1
+            "12": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -261,18 +242,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "swzHcsixJsmDuTD7",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "18": 1
+            "18": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -300,11 +288,15 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       }
     ],
     "movement": {
@@ -339,7 +331,7 @@
     "systemVersion": "4.3.8",
     "coreVersion": "12.331",
     "createdTime": 1710459149971,
-    "modifiedTime": 1744224188838,
+    "modifiedTime": 1745197494683,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

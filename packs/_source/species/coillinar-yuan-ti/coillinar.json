@@ -14,67 +14,19 @@
     },
     "advancement": [
       {
-        "type": "AbilityScoreImprovement",
-        "_id": "gUkGO6l8FWsWZWyA",
-        "configuration": {
-          "points": 3,
-          "fixed": {
-            "str": 0,
-            "dex": 0,
-            "con": 0,
-            "int": 0,
-            "wis": 0,
-            "cha": 0
-          },
-          "cap": 2
-        },
-        "value": {
-          "type": "asi"
-        },
-        "level": 0,
-        "title": "",
-        "icon": null
-      },
-      {
         "type": "Size",
         "_id": "Yo8ISxkjmCDAERoC",
         "configuration": {
           "sizes": [
             "sm",
             "med"
-          ],
-          "hint": "You are Medium or Small. You choose the size when you select this species."
+          ]
         },
         "level": 0,
         "title": "",
         "icon": null,
-        "value": {}
-      },
-      {
-        "type": "Trait",
-        "configuration": {
-          "grants": [
-            "languages:standard:common"
-          ],
-          "mode": "default",
-          "allowReplacements": false,
-          "choices": [
-            {
-              "count": 1,
-              "pool": [
-                "languages:*"
-              ]
-            }
-          ],
-          "hint": ""
-        },
-        "_id": "fscXPj9HvVG0MAjq",
-        "level": 0,
-        "value": {
-          "chosen": []
-        },
-        "title": "",
-        "icon": null
+        "value": {},
+        "hint": "You are Medium or Small. You choose the size when you select this species."
       },
       {
         "_id": "bwBciOpUfeYL2Va4",
@@ -82,10 +34,12 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.species.Item.ODCxkzpQ2uzQqqxM"
+              "uuid": "Compendium.materia-dnd.species.Item.ODCxkzpQ2uzQqqxM",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.HnDds2Iv45nUDtz5"
+              "uuid": "Compendium.materia-dnd.species.Item.HnDds2Iv45nUDtz5",
+              "optional": false
             }
           ],
           "optional": false,
@@ -103,22 +57,25 @@
           "grants": [
             "dr:poison"
           ],
-          "choices": [],
-          "hint": "You have resistance to poison damage."
+          "choices": []
         },
         "level": 0,
         "title": "Poison Resilience",
         "icon": "icons/skills/toxins/poison-bottle-corked-fire-green.webp",
         "value": {
           "chosen": []
-        }
+        },
+        "hint": "You have resistance to poison damage."
       },
       {
         "_id": "c5dDjOLSqbAKEBkD",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "0": 1
+            "0": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": "spell",
@@ -134,28 +91,37 @@
             }
           ],
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "innate",
             "uses": {
               "max": "",
-              "per": ""
+              "per": "",
+              "requireSlot": false
             }
           },
-          "hint": "You know the poison spray cantrip.  Intelligence, Wisdom, or Charisma is your spellcasting ability for this spell when you cast them with your Serpentine Spellcasting trait (choose below).",
           "restriction": {
             "level": ""
           }
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Poison Spray",
-        "icon": "icons/magic/fire/projectile-fireball-smoke-large-green.webp"
+        "icon": "icons/magic/fire/projectile-fireball-smoke-large-green.webp",
+        "hint": "You know the poison spray cantrip.  Intelligence, Wisdom, or Charisma is your spellcasting ability for this spell when you cast them with your Serpentine Spellcasting trait (choose below)."
       },
       {
         "_id": "zHnBZDeKTkKiZMNX",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "0": 1
+            "0": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": "spell",
@@ -171,28 +137,37 @@
             }
           ],
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "innate",
             "uses": {
               "max": "",
-              "per": ""
+              "per": "",
+              "requireSlot": false
             }
           },
-          "hint": "You can cast animal friendship an unlimited number of times with this trait, but you can target only snakes with it.  Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose below).",
           "restriction": {
             "level": ""
           }
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Snake Friendship",
-        "icon": "icons/creatures/reptiles/snake-fangs-bite-green-yellow.webp"
+        "icon": "icons/creatures/reptiles/snake-fangs-bite-green-yellow.webp",
+        "hint": "You can cast animal friendship an unlimited number of times with this trait, but you can target only snakes with it.  Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose below)."
       },
       {
         "_id": "nmZE0UdZaU89kvs2",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "3": 1
+            "3": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": "spell",
@@ -208,28 +183,37 @@
             }
           ],
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "innate",
             "uses": {
               "max": "1",
-              "per": "lr"
+              "per": "lr",
+              "requireSlot": false
             }
           },
-          "hint": "Starting at 3rd level, you can also cast suggestion with your Serpentine Spellcasting trait. Once you cast suggestion with this trait, you cannot do so again until you finish a long rest. You can also cast it using any spell slots you have of 2nd level or higher.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose below). This spell does not require spell components when you cast them with this trait.",
           "restriction": {
             "level": ""
           }
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Suggestion",
-        "icon": "icons/magic/air/air-burst-spiral-pink.webp"
+        "icon": "icons/magic/air/air-burst-spiral-pink.webp",
+        "hint": "Starting at 3rd level, you can also cast suggestion with your Serpentine Spellcasting trait. Once you cast suggestion with this trait, you cannot do so again until you finish a long rest. You can also cast it using any spell slots you have of 2nd level or higher.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose below). This spell does not require spell components when you cast them with this trait."
       },
       {
-        "_id": "",
+        "_id": "iYlYeHodbtvTRPIx",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "6": 1
+            "6": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -257,18 +241,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "zpRn9HdCnKd22FPd",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "12": 1
+            "12": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -296,18 +287,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "jQqETxVBdDKPcZmk",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "18": 1
+            "18": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -335,11 +333,15 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       }
     ],
     "movement": {
@@ -374,7 +376,7 @@
     "systemVersion": "4.3.8",
     "coreVersion": "12.331",
     "createdTime": 1709424651788,
-    "modifiedTime": 1744222736774,
+    "modifiedTime": 1745197374922,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

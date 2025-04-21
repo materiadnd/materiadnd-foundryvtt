@@ -6,7 +6,7 @@
   "img": "icons/environment/wilderness/terrain-rocky-ground.webp",
   "system": {
     "description": {
-      "value": "<p>This rune's magic channels the judiciousness associated with stone giants. While wearing or carrying an object inscribed with this rune, you have advantage on Wisdom (Insight) checks, and you have darkvision out to a range of 60 feet. If you already have darkvision from your species, its range increases by 30 feet.</p><p>In addition, when a creature you can see ends its turn within 30 feet of you, you can use your reaction to invoke the rune and force the creature to make a Wisdom saving throw. Unless the save succeeds, the creature is charmed by you for 1 minute. While charmed in this way, the creature has a speed of 0 and is incapacitated, descending into a dreamy stupor. The creature repeats the saving throw at the end of each of its turns, ending the effect on a success. Once you invoke this rune, you cannot do so again until you finish a short or long rest.</p>",
+      "value": "<p>This rune's magic channels the judiciousness associated with stone giants. While wearing or carrying an object inscribed with this rune, you have Advantage on Wisdom (Insight) checks, and you have &amp;Reference[Darkvision] out to a range of 60 feet. If you already have Darkvision from your species, its range increases by 30 feet.</p><p>In addition, when a creature you can see ends its turn within 30 feet of you, you can take a Reaction to invoke the rune and force the creature to make a Wisdom Saving Throw. Unless the save succeeds, the creature is &amp;Reference[charmed] by you for 1 minute. While Charmed in this way, the creature has a Speed of 0 and has the &amp;Reference[incapacitated] condition, descending into a dreamy stupor. The creature repeats the saving throw at the end of each of its turns, ending the effect on a success. Once you invoke this rune, you cannot do so again until you finish a Short or Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -77,6 +77,97 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "enchant": {
+      "max": "",
+      "period": ""
+    },
+    "activities": {
+      "kzdgwnCraUmsY9md": {
+        "type": "enchant",
+        "_id": "kzdgwnCraUmsY9md",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "mV5FM2do4rtmTnY2"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "enchant": {
+          "identifier": ""
+        },
+        "restrictions": {
+          "allowMagical": false,
+          "categories": [],
+          "properties": [],
+          "type": ""
+        },
+        "name": "Inscribe Rune",
+        "img": "",
+        "appliedEffects": []
+      },
+      "dnd5eactivity000": {
+        "name": "Invoke Rune",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "effects": [
+          {
+            "_id": "CYN8w9CoaN9gEFoz"
+          }
+        ]
+      }
     }
   },
   "effects": [
@@ -165,15 +256,116 @@
       "system": {},
       "sort": 0,
       "_key": "!items.effects!AhxqKhZbsddpjOpM.4R67AkwtOPN3T6Eg"
+    },
+    {
+      "type": "enchantment",
+      "name": "Stone Rune",
+      "img": "icons/environment/wilderness/terrain-rocky-ground.webp",
+      "disabled": true,
+      "_id": "mV5FM2do4rtmTnY2",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 2,
+          "value": ", Stone Rune",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": 1744507525380,
+        "modifiedTime": 1744507534808,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!AhxqKhZbsddpjOpM.mV5FM2do4rtmTnY2"
+    },
+    {
+      "name": "Charmed",
+      "img": "systems/dnd5e/icons/svg/statuses/charmed.svg",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.AhxqKhZbsddpjOpM",
+      "transfer": false,
+      "_id": "CYN8w9CoaN9gEFoz",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "charmed",
+        "incapacitated"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": 1744507718949,
+        "modifiedTime": 1744507756481,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!AhxqKhZbsddpjOpM.CYN8w9CoaN9gEFoz"
     }
   ],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1707154342883,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1744507718998,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

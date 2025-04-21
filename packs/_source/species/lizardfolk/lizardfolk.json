@@ -14,28 +14,6 @@
     },
     "advancement": [
       {
-        "type": "AbilityScoreImprovement",
-        "_id": "N7TP74F794msBqFK",
-        "configuration": {
-          "points": 3,
-          "fixed": {
-            "str": 0,
-            "dex": 0,
-            "con": 0,
-            "int": 0,
-            "wis": 0,
-            "cha": 0
-          },
-          "cap": 2
-        },
-        "value": {
-          "type": "asi"
-        },
-        "level": 0,
-        "title": "",
-        "icon": null
-      },
-      {
         "type": "Size",
         "_id": "ETyups8BwDjw00bu",
         "configuration": {
@@ -47,47 +25,25 @@
         "value": {}
       },
       {
-        "type": "Trait",
-        "configuration": {
-          "grants": [
-            "languages:standard:common"
-          ],
-          "mode": "default",
-          "allowReplacements": false,
-          "choices": [
-            {
-              "count": 1,
-              "pool": [
-                "languages:*"
-              ]
-            }
-          ],
-          "hint": ""
-        },
-        "_id": "XZObRMvCOW6ONVRD",
-        "level": 0,
-        "value": {
-          "chosen": []
-        },
-        "title": "",
-        "icon": null
-      },
-      {
         "_id": "02YnI8uqIQdzu02W",
         "type": "ItemGrant",
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.species.Item.aoYvUx6B4FazPLOH"
+              "uuid": "Compendium.materia-dnd.species.Item.aoYvUx6B4FazPLOH",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.pIibbWo77EAQ9CNh"
+              "uuid": "Compendium.materia-dnd.species.Item.pIibbWo77EAQ9CNh",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.AjasrdgSpbzdHG3Q"
+              "uuid": "Compendium.materia-dnd.species.Item.AjasrdgSpbzdHG3Q",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.YA5gKar1HJQ24Mro"
+              "uuid": "Compendium.materia-dnd.species.Item.YA5gKar1HJQ24Mro",
+              "optional": false
             }
           ],
           "optional": false,
@@ -117,22 +73,25 @@
                 "skills:sur"
               ]
             }
-          ],
-          "hint": "Thanks to your mystical connection to nature, you gain proficiency with two of the following skills of your choice: Animal Handling, Medicine, Nature, Perception, Stealth, or Survival."
+          ]
         },
         "level": 0,
         "title": "Nature's Intuition",
         "icon": "icons/magic/light/beam-rays-green.webp",
         "value": {
           "chosen": []
-        }
+        },
+        "hint": "Thanks to your mystical connection to nature, you gain proficiency with two of the following skills of your choice: Animal Handling, Medicine, Nature, Perception, Stealth, or Survival."
       },
       {
         "_id": "M7wwvNICDuirDQ9J",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "0": 1
+            "0": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": "feat",
@@ -145,21 +104,27 @@
             }
           ],
           "spell": null,
-          "hint": "Your fanged maw is a natural weapon, which you can use to make unarmed strikes. When you hit with it, the strike deals 1d6 + your Strength modifier or Dexterity modifier (choose below) piercing damage, instead of the bludgeoning damage normal for an unarmed strike.",
           "restriction": {
             "type": "race"
           }
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Bite",
-        "icon": "icons/creatures/abilities/mouth-teeth-lamprey-red.webp"
+        "icon": "icons/creatures/abilities/mouth-teeth-lamprey-red.webp",
+        "hint": "Your fanged maw is a natural weapon, which you can use to make unarmed strikes. When you hit with it, the strike deals 1d6 + your Strength modifier or Dexterity modifier (choose below) piercing damage, instead of the bludgeoning damage normal for an unarmed strike."
       },
       {
-        "_id": "",
+        "_id": "4HWEuLVL7KCGWXhz",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "6": 1
+            "6": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -187,18 +152,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "J3Ym0iCkkL6LZPwf",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "12": 1
+            "12": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -226,18 +198,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "HPyMmjFzD36mhGAL",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "18": 1
+            "18": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -265,11 +244,15 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       }
     ],
     "movement": {
@@ -300,7 +283,7 @@
     "systemVersion": "4.3.8",
     "coreVersion": "12.331",
     "createdTime": 1707965110741,
-    "modifiedTime": 1744225908443,
+    "modifiedTime": 1745197635578,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

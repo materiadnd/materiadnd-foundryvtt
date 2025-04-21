@@ -14,67 +14,18 @@
     },
     "advancement": [
       {
-        "type": "AbilityScoreImprovement",
-        "_id": "dnFplHrlcEl6chOi",
-        "configuration": {
-          "points": 3,
-          "fixed": {
-            "str": 0,
-            "dex": 0,
-            "con": 0,
-            "int": 0,
-            "wis": 0,
-            "cha": 0
-          },
-          "cap": 2
-        },
-        "value": {
-          "type": "asi"
-        },
-        "level": 0,
-        "title": "",
-        "icon": null
-      },
-      {
         "type": "Size",
         "_id": "i2551SFWcQNVuqNR",
         "configuration": {
           "sizes": [
             "sm",
             "med"
-          ],
-          "hint": ""
+          ]
         },
         "level": 0,
         "title": "",
         "icon": null,
         "value": {}
-      },
-      {
-        "type": "Trait",
-        "configuration": {
-          "grants": [
-            "languages:standard:common"
-          ],
-          "mode": "default",
-          "allowReplacements": false,
-          "choices": [
-            {
-              "count": 1,
-              "pool": [
-                "languages:*"
-              ]
-            }
-          ],
-          "hint": ""
-        },
-        "_id": "1asgiNPmElwnoQih",
-        "level": 0,
-        "value": {
-          "chosen": []
-        },
-        "title": "",
-        "icon": null
       },
       {
         "_id": "F6ktZR6KNvpdJjar",
@@ -92,22 +43,25 @@
                 "skills:prf"
               ]
             }
-          ],
-          "hint": "You have proficiency in your choice of Charisma (Deception), Charisma (Intimidation), or Charisma (Performance)"
+          ]
         },
         "level": 0,
         "title": "Cackling Nature",
         "icon": "icons/magic/defensive/shield-barrier-flaming-pentagon-magenta.webp",
         "value": {
           "chosen": []
-        }
+        },
+        "hint": "You have proficiency in your choice of Charisma (Deception), Charisma (Intimidation), or Charisma (Performance)"
       },
       {
         "_id": "2Mpx7K5DbEhOrcJJ",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "0": 1
+            "0": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": "feat",
@@ -120,12 +74,15 @@
             }
           ],
           "spell": null,
-          "hint": "Your bite is a natural weapon, which you can use to make unarmed strikes. If you hit with them, you deal piercing damage equal to 1d6 + your Strength modifier or Dexterity modifier (choose below), instead of the bludgeoning damage normal for an unarmed strike.",
           "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Bite",
-        "icon": null
+        "icon": null,
+        "hint": "Your bite is a natural weapon, which you can use to make unarmed strikes. If you hit with them, you deal piercing damage equal to 1d6 + your Strength modifier or Dexterity modifier (choose below), instead of the bludgeoning damage normal for an unarmed strike."
       },
       {
         "_id": "f63bsOTWREyUIVO9",
@@ -133,13 +90,16 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.species.Item.TccqmCFJrYAa5abW"
+              "uuid": "Compendium.materia-dnd.species.Item.TccqmCFJrYAa5abW",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.GuhDcY3cgmz3St3N"
+              "uuid": "Compendium.materia-dnd.species.Item.GuhDcY3cgmz3St3N",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.iLui28pEs8R3Kc3w"
+              "uuid": "Compendium.materia-dnd.species.Item.iLui28pEs8R3Kc3w",
+              "optional": false
             }
           ],
           "optional": false,
@@ -151,11 +111,14 @@
         "icon": null
       },
       {
-        "_id": "",
+        "_id": "AOw1sW0mtVJqkmPx",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "6": 1
+            "6": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -183,18 +146,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "pJjqWC78JexAFO8X",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "12": 1
+            "12": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -222,18 +192,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "f3JztwIhb3uscc5Y",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "18": 1
+            "18": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -261,11 +238,15 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       }
     ],
     "movement": {
@@ -300,7 +281,7 @@
     "systemVersion": "4.3.8",
     "coreVersion": "12.331",
     "createdTime": 1710827597508,
-    "modifiedTime": 1744229309089,
+    "modifiedTime": 1745197940152,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

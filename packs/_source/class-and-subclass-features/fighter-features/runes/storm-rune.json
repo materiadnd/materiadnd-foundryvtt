@@ -6,7 +6,7 @@
   "img": "icons/magic/lightning/orb-ball-purple.webp",
   "system": {
     "description": {
-      "value": "<p>Using this rune, you can glimpse the future like a storm giant seer. While wearing or carrying an object inscribed with this rune, you have advantage on Intelligence (Arcana) checks, and you cannot be surprised as long as you are not incapacitated.</p><p>In addition, you can invoke the rune as a bonus action to enter a prophetic state for 1 minute or until you are incapacitated. Until the state ends, when you or another creature you can see within 60 feet of you makes an attack roll, a saving throw, or an ability check, you can use your reaction to cause the roll to have advantage or disadvantage. Once you invoke this rune, you cannot do so again until you finish a short or long rest.</p>",
+      "value": "<p><em><strong>Requires Fighter Level 7+</strong></em></p><p>Using this rune, you can glimpse the future like a storm giant seer. While wearing or carrying an object inscribed with this rune, you have Advantage on Intelligence (Arcana) checks, and you cannot be surprised as long as you do not have the &amp;Reference[incapacitated apply=false] condition.</p><p>In addition, you can invoke the rune as a Bonus Action to enter a prophetic state for 1 minute or until you have the &amp;Reference[incapacitated apply=false] condition. Until the state ends, when you or another creature you can see within 60 feet of you makes an attack roll, a saving throw, or an ability check, you can take a Reaction to cause the roll to have Advantage or Disadvantage. Once you invoke this rune, you cannot do so again until you finish a Short or Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -73,24 +73,277 @@
       "subtype": "rune"
     },
     "properties": [],
-    "requirements": "Rune Knight 7",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "enchant": {
+      "max": "",
+      "period": ""
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Invoke Rune",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "effects": [
+          {
+            "_id": "3qaFbYwspaStjnuC"
+          }
+        ],
+        "sort": 100000
+      },
+      "VewXW6filDu9ewMp": {
+        "type": "enchant",
+        "_id": "VewXW6filDu9ewMp",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "DjQXP1m3OCU8iul8"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "enchant": {
+          "identifier": ""
+        },
+        "restrictions": {
+          "allowMagical": false,
+          "categories": [],
+          "properties": [],
+          "type": ""
+        },
+        "name": "Inscribe Rune",
+        "img": "",
+        "appliedEffects": []
+      },
+      "jn1ZrNreSYCJTxZ2": {
+        "type": "utility",
+        "_id": "jn1ZrNreSYCJTxZ2",
+        "sort": 300000,
+        "activation": {
+          "type": "reaction",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "60"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Influence Roll",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Prophetic",
+      "img": "icons/magic/lightning/orb-ball-purple.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.YhWamEOiU3Ysex2R",
+      "transfer": false,
+      "_id": "3qaFbYwspaStjnuC",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>When you or another creature you can see within 60 feet of you makes an attack roll, a saving throw, or an ability check, you can take a Reaction to cause the roll to have Advantage or Disadvantage</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": 1744508089556,
+        "modifiedTime": 1744508312313,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!YhWamEOiU3Ysex2R.3qaFbYwspaStjnuC"
+    },
+    {
+      "type": "enchantment",
+      "name": "Storm Rune",
+      "img": "icons/magic/lightning/orb-ball-purple.webp",
+      "disabled": true,
+      "_id": "DjQXP1m3OCU8iul8",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 2,
+          "value": ", Storm Rune",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": 1744508504233,
+        "modifiedTime": 1744508520555,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!YhWamEOiU3Ysex2R.DjQXP1m3OCU8iul8"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1710309155086,
-    "modifiedTime": 1710309215839,
+    "modifiedTime": 1744508778655,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

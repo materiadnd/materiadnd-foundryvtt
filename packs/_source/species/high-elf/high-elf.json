@@ -14,28 +14,6 @@
     },
     "advancement": [
       {
-        "type": "AbilityScoreImprovement",
-        "_id": "MGzovUFkWSZQ9aa9",
-        "configuration": {
-          "points": 3,
-          "fixed": {
-            "str": 0,
-            "dex": 0,
-            "con": 0,
-            "int": 0,
-            "wis": 0,
-            "cha": 0
-          },
-          "cap": 2
-        },
-        "value": {
-          "type": "asi"
-        },
-        "level": 0,
-        "title": "",
-        "icon": null
-      },
-      {
         "type": "Size",
         "_id": "ZYLRmpSDLp17MeRl",
         "configuration": {
@@ -45,32 +23,6 @@
         },
         "level": 0,
         "value": {}
-      },
-      {
-        "type": "Trait",
-        "configuration": {
-          "grants": [
-            "languages:standard:common"
-          ],
-          "mode": "default",
-          "allowReplacements": false,
-          "choices": [
-            {
-              "count": 1,
-              "pool": [
-                "languages:*"
-              ]
-            }
-          ],
-          "hint": ""
-        },
-        "_id": "kN4cWCCoaOJuAYMC",
-        "level": 0,
-        "value": {
-          "chosen": []
-        },
-        "title": "",
-        "icon": null
       },
       {
         "_id": "vBiz2Pe7sGdm055w",
@@ -90,15 +42,15 @@
                 "languages:exotic"
               ]
             }
-          ],
-          "hint": "You can speak, read, and write one extra language of your choice."
+          ]
         },
         "level": 0,
         "title": "Extra Language",
         "icon": null,
         "value": {
           "chosen": []
-        }
+        },
+        "hint": "You can speak, read, and write one extra language of your choice."
       },
       {
         "_id": "7UXg6a64PrX1OmRr",
@@ -112,15 +64,15 @@
             "weapon:mar:longsword",
             "weapon:mar:shortsword"
           ],
-          "choices": [],
-          "hint": "You have proficiency with the longsword, shortsword, shortbow, and longbow."
+          "choices": []
         },
         "level": 0,
         "title": "High Elf Weapon Training",
         "icon": "icons/weapons/bows/shortbow-arrows-black.webp",
         "value": {
           "chosen": []
-        }
+        },
+        "hint": "You have proficiency with the longsword, shortsword, shortbow, and longbow."
       },
       {
         "_id": "zUn2YbOZ4Elzbu6s",
@@ -128,16 +80,20 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.species.Item.FB12HMTHA72B7Po1"
+              "uuid": "Compendium.materia-dnd.species.Item.FB12HMTHA72B7Po1",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.O0va2z3WOMhfa2Ne"
+              "uuid": "Compendium.materia-dnd.species.Item.O0va2z3WOMhfa2Ne",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.TG4lwCsy2waUpi5h"
+              "uuid": "Compendium.materia-dnd.species.Item.TG4lwCsy2waUpi5h",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.bHD5DKkTQLzQG362"
+              "uuid": "Compendium.materia-dnd.species.Item.bHD5DKkTQLzQG362",
+              "optional": false
             }
           ],
           "optional": false,
@@ -149,11 +105,14 @@
         "icon": null
       },
       {
-        "_id": "",
+        "_id": "PSo0Y42VpbVRCLqJ",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "6": 1
+            "6": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -181,18 +140,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "g9KZ4J614DZAB1aa",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "12": 1
+            "12": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -220,18 +186,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "YeA1G80tYCmszEkd",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "18": 1
+            "18": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -259,11 +232,15 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       }
     ],
     "movement": {
@@ -298,7 +275,7 @@
     "systemVersion": "4.3.8",
     "coreVersion": "12.331",
     "createdTime": 1710537639972,
-    "modifiedTime": 1744224974001,
+    "modifiedTime": 1745197562726,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

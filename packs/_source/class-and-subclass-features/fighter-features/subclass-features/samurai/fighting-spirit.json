@@ -6,7 +6,7 @@
   "img": "icons/skills/melee/maneuver-sword-katana-yellow.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 3rd level, your intensity in battle can shield you and help you strike true. When you make your first attack on your turn, you can give yourself advantage on weapon and unarmed strike attack rolls until the start of your next turn. When you do so, you also gain temporary hit points equal to half your fighter level.</p><p>You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>",
+      "value": "<p>Your intensity in battle can shield you and help you strike true. When you make your first attack on your turn, you can give yourself Advantage on weapon and Unarmed Strike attack rolls until the start of your next turn. When you do so, you also gain Temporary Hit Points equal to half your Fighter level.</p><p>You can use this feature a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -78,24 +78,111 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Samurai 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Fighting Spirit",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "effects": [
+          {
+            "_id": "seBrgr2lry36M2Qd"
+          }
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Fighting Spirit",
+      "img": "icons/skills/melee/maneuver-sword-katana-yellow.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.w8w2v6TzKX403Qb5",
+      "transfer": false,
+      "_id": "seBrgr2lry36M2Qd",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "flags.midi-qol.advantage.attack.all",
+          "mode": 0,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": 1744509868854,
+        "modifiedTime": 1744509898306,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!w8w2v6TzKX403Qb5.seBrgr2lry36M2Qd"
+    }
+  ],
   "sort": -100000,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1710921479558,
-    "modifiedTime": 1712473106026,
+    "modifiedTime": 1744509868920,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

@@ -6,7 +6,7 @@
   "img": "icons/magic/defensive/shield-barrier-flaming-diamond-magenta.webp",
   "system": {
     "description": {
-      "value": "<p>At 10th level, the psionic energy flowing through you has bolstered your mind. You have resistance to psychic damage. Moreover, if you start your turn charmed, dazed, or frightened, you can expend a Psionic Energy die and end every effect on yourself subjecting you to those conditions.</p>",
+      "value": "<p>You have resistance to Psychic damage. Moreover, if you start your turn with the Charmed, Dazed, or Frightened condition, you can expend a Psionic Energy Die (no action required) and end every effect on yourself subjecting you to those conditions.</p><section id=\"secret-nMYTHANv9X37Fxoq\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The Psychic Resistance is granted as you level up.</p><p>The <strong>End Effects</strong> activity can be used to consume a use of your Psionic Energy Die. It does not automatically end the effects though.</p></section>",
       "chat": ""
     },
     "source": {
@@ -70,88 +70,52 @@
     },
     "type": {
       "value": "class",
-      "subtype": "psionicPower"
+      "subtype": ""
     },
     "properties": [],
-    "requirements": "Psi Warrior 10",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 10
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "End Effects",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.9XXMtkoNs7V4I5nU"
+            }
+          ]
+        },
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [
-    {
-      "name": "Guarded Mind",
-      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.8Kby8hgVnEUJyTs1",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
-      "_id": "pdJ7wI0rI4OlYmxx",
-      "changes": [
-        {
-          "key": "system.traits.dr.value",
-          "mode": 2,
-          "value": "psychic",
-          "priority": null
-        }
-      ],
-      "description": "",
-      "transfer": true,
-      "statuses": [],
-      "flags": {
-        "ActiveAuras": {
-          "isAura": false,
-          "aura": "None",
-          "nameOverride": "",
-          "radius": "",
-          "alignment": "",
-          "type": "",
-          "customCheck": "",
-          "ignoreSelf": false,
-          "height": false,
-          "hidden": false,
-          "displayTemp": false,
-          "hostile": false,
-          "onlyOnce": false,
-          "wallsBlock": "system"
-        }
-      },
-      "tint": "#ffffff",
-      "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "icons/magic/defensive/shield-barrier-flaming-diamond-magenta.webp",
-      "type": "base",
-      "system": {},
-      "sort": 0,
-      "_key": "!items.effects!8Kby8hgVnEUJyTs1.pdJ7wI0rI4OlYmxx"
-    }
-  ],
+  "effects": [],
   "flags": {
     "materia-dnd": {
       "item-use-source": "psionic-power"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1707256212131,
-    "modifiedTime": 1714020063793,
+    "modifiedTime": 1744495843234,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

@@ -14,36 +14,13 @@
     },
     "advancement": [
       {
-        "type": "AbilityScoreImprovement",
-        "_id": "8e8LpxXbcIF1G10c",
-        "configuration": {
-          "points": 3,
-          "fixed": {
-            "str": 0,
-            "dex": 0,
-            "con": 0,
-            "int": 0,
-            "wis": 0,
-            "cha": 0
-          },
-          "cap": 2
-        },
-        "value": {
-          "type": "asi"
-        },
-        "level": 0,
-        "title": "",
-        "icon": null
-      },
-      {
         "type": "Size",
         "_id": "XXV8faQIE0pK9H2n",
         "configuration": {
           "sizes": [
             "sm",
             "med"
-          ],
-          "hint": ""
+          ]
         },
         "level": 0,
         "title": "",
@@ -51,50 +28,29 @@
         "value": {}
       },
       {
-        "type": "Trait",
-        "configuration": {
-          "grants": [
-            "languages:standard:common"
-          ],
-          "mode": "default",
-          "allowReplacements": false,
-          "choices": [
-            {
-              "count": 1,
-              "pool": [
-                "languages:*"
-              ]
-            }
-          ],
-          "hint": ""
-        },
-        "_id": "Lywc3FPgi3vAlSon",
-        "level": 0,
-        "value": {
-          "chosen": []
-        },
-        "title": "",
-        "icon": null
-      },
-      {
         "_id": "evja7Wv2UNZ2geWR",
         "type": "ItemGrant",
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.species.Item.SvYPUQPezIKAUacz"
+              "uuid": "Compendium.materia-dnd.species.Item.SvYPUQPezIKAUacz",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.2ClUcTDtpQE7ajHr"
+              "uuid": "Compendium.materia-dnd.species.Item.2ClUcTDtpQE7ajHr",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.lGCmnoLNYZlMQemT"
+              "uuid": "Compendium.materia-dnd.species.Item.lGCmnoLNYZlMQemT",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.cME9tKTbuHKbzUOA"
+              "uuid": "Compendium.materia-dnd.species.Item.cME9tKTbuHKbzUOA",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.pqRnfbMC6H3ymkni"
+              "uuid": "Compendium.materia-dnd.species.Item.pqRnfbMC6H3ymkni",
+              "optional": false
             }
           ],
           "optional": false,
@@ -119,22 +75,25 @@
                 "skills:*"
               ]
             }
-          ],
-          "hint": "You gain proficiency in two skills of your choice."
+          ]
         },
         "level": 0,
         "title": "Crimson Talent",
         "icon": "icons/magic/death/skull-humanoid-white-red.webp",
         "value": {
           "chosen": []
-        }
+        },
+        "hint": "You gain proficiency in two skills of your choice."
       },
       {
         "_id": "OJo65cO4vMbgluKL",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "0": 1
+            "0": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": null,
@@ -147,19 +106,25 @@
             }
           ],
           "spell": null,
-          "hint": "Your fanged bite is a natural weapon which you can use to make unarmed strikes. If you hit with it, you deal piercing damage equal to 1d6 + your Strength modifier or Dexterity modifier (choose below), instead of the bludgeoning damage normal for an unarmed strike.",
           "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Bite",
-        "icon": "icons/magic/death/mouth-bite-fangs-vampire.webp"
+        "icon": "icons/magic/death/mouth-bite-fangs-vampire.webp",
+        "hint": "Your fanged bite is a natural weapon which you can use to make unarmed strikes. If you hit with it, you deal piercing damage equal to 1d6 + your Strength modifier or Dexterity modifier (choose below), instead of the bludgeoning damage normal for an unarmed strike."
       },
       {
-        "_id": "",
+        "_id": "6h73nssYAeXQVJl9",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "6": 1
+            "6": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -187,18 +152,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "dloSoRgmgUjg2QuK",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "12": 1
+            "12": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -226,18 +198,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "LiqMuVH8h5nLVgEW",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "18": 1
+            "18": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -265,11 +244,15 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       }
     ],
     "movement": {
@@ -302,7 +285,7 @@
     "systemVersion": "4.3.8",
     "coreVersion": "12.331",
     "createdTime": 1708284649353,
-    "modifiedTime": 1744227515538,
+    "modifiedTime": 1745197793167,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

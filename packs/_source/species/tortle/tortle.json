@@ -14,36 +14,13 @@
     },
     "advancement": [
       {
-        "type": "AbilityScoreImprovement",
-        "_id": "UkW8SL52ECAzdimW",
-        "configuration": {
-          "points": 3,
-          "fixed": {
-            "str": 0,
-            "dex": 0,
-            "con": 0,
-            "int": 0,
-            "wis": 0,
-            "cha": 0
-          },
-          "cap": 2
-        },
-        "value": {
-          "type": "asi"
-        },
-        "level": 0,
-        "title": "",
-        "icon": null
-      },
-      {
         "type": "Size",
         "_id": "nw2zVhyOHw6ivIV5",
         "configuration": {
           "sizes": [
             "sm",
             "med"
-          ],
-          "hint": ""
+          ]
         },
         "level": 0,
         "title": "",
@@ -51,47 +28,25 @@
         "value": {}
       },
       {
-        "type": "Trait",
-        "configuration": {
-          "grants": [
-            "languages:standard:common"
-          ],
-          "mode": "default",
-          "allowReplacements": false,
-          "choices": [
-            {
-              "count": 1,
-              "pool": [
-                "languages:*"
-              ]
-            }
-          ],
-          "hint": ""
-        },
-        "_id": "e9WxTY66Oh8Vo28i",
-        "level": 0,
-        "value": {
-          "chosen": []
-        },
-        "title": "",
-        "icon": null
-      },
-      {
         "_id": "KzkLuUuSMVJuA3Tk",
         "type": "ItemGrant",
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.species.Item.sl4whInrUveFzJX7"
+              "uuid": "Compendium.materia-dnd.species.Item.sl4whInrUveFzJX7",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.XUwyysGCdyBraoTb"
+              "uuid": "Compendium.materia-dnd.species.Item.XUwyysGCdyBraoTb",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.M9vg97DyEgK1DxON"
+              "uuid": "Compendium.materia-dnd.species.Item.M9vg97DyEgK1DxON",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.wX5PY7tImJ5WBxXW"
+              "uuid": "Compendium.materia-dnd.species.Item.wX5PY7tImJ5WBxXW",
+              "optional": false
             }
           ],
           "optional": false,
@@ -107,7 +62,10 @@
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "0": 1
+            "0": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": "feat",
@@ -120,14 +78,17 @@
             }
           ],
           "spell": null,
-          "hint": "Your claws are natural weapons, which you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier or Dexterity modifier (choose below), instead of the bludgeoning damage normal for an unarmed strike.",
           "restriction": {
             "type": "race"
           }
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Claws",
-        "icon": "icons/creatures/claws/claw-talons-glowing-orange.webp"
+        "icon": "icons/creatures/claws/claw-talons-glowing-orange.webp",
+        "hint": "Your claws are natural weapons, which you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier or Dexterity modifier (choose below), instead of the bludgeoning damage normal for an unarmed strike."
       },
       {
         "_id": "JBC8RdKjXKobLAyo",
@@ -148,22 +109,25 @@
                 "skills:sur"
               ]
             }
-          ],
-          "hint": "Thanks to your mystical connection to nature, you gain proficiency with one of the following skills of your choice: Animal Handling, Medicine, Nature, Perception, Stealth, or Survival."
+          ]
         },
         "level": 0,
         "title": "Nature's Intuition",
         "icon": "icons/magic/nature/symbol-sun-yellow.webp",
         "value": {
           "chosen": []
-        }
+        },
+        "hint": "Thanks to your mystical connection to nature, you gain proficiency with one of the following skills of your choice: Animal Handling, Medicine, Nature, Perception, Stealth, or Survival."
       },
       {
-        "_id": "",
+        "_id": "kMyRHPm2YyQSUfMS",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "6": 1
+            "6": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -191,18 +155,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "xEZOR1NRO3zKMFwE",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "12": 1
+            "12": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -230,18 +201,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "uRxGPwnDBN4weHaa",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "18": 1
+            "18": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -269,11 +247,15 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       }
     ],
     "movement": {
@@ -304,7 +286,7 @@
     "systemVersion": "4.3.8",
     "coreVersion": "12.331",
     "createdTime": 1707254323123,
-    "modifiedTime": 1744229043707,
+    "modifiedTime": 1745197920301,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

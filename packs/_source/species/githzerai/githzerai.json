@@ -14,28 +14,6 @@
     },
     "advancement": [
       {
-        "type": "AbilityScoreImprovement",
-        "_id": "M4ET64Qz9XlphwBX",
-        "configuration": {
-          "points": 3,
-          "fixed": {
-            "str": 0,
-            "dex": 0,
-            "con": 0,
-            "int": 0,
-            "wis": 0,
-            "cha": 0
-          },
-          "cap": 2
-        },
-        "value": {
-          "type": "asi"
-        },
-        "level": 0,
-        "title": "",
-        "icon": null
-      },
-      {
         "type": "Size",
         "_id": "3xysNN52fDrpdTOE",
         "configuration": {
@@ -47,44 +25,21 @@
         "value": {}
       },
       {
-        "type": "Trait",
-        "configuration": {
-          "grants": [
-            "languages:standard:common"
-          ],
-          "mode": "default",
-          "allowReplacements": false,
-          "choices": [
-            {
-              "count": 1,
-              "pool": [
-                "languages:*"
-              ]
-            }
-          ],
-          "hint": ""
-        },
-        "_id": "lPJiN9xaZgVUu8KI",
-        "level": 0,
-        "value": {
-          "chosen": []
-        },
-        "title": "",
-        "icon": null
-      },
-      {
         "_id": "E5OtLwQIRQYEJ9nh",
         "type": "ItemGrant",
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.species.Item.qhoe1sX6kc018ZOq"
+              "uuid": "Compendium.materia-dnd.species.Item.qhoe1sX6kc018ZOq",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.3XoC7pqXWC64nUQ0"
+              "uuid": "Compendium.materia-dnd.species.Item.3XoC7pqXWC64nUQ0",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.aYO0bWXarOhMTosL"
+              "uuid": "Compendium.materia-dnd.species.Item.aYO0bWXarOhMTosL",
+              "optional": false
             }
           ],
           "optional": false,
@@ -101,16 +56,20 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.dnd5e.spells.Item.z1mx84ONwkXKUZd7"
+              "uuid": "Compendium.dnd5e.spells.Item.z1mx84ONwkXKUZd7",
+              "optional": false
             }
           ],
           "optional": false,
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "",
             "uses": {
               "max": "1",
-              "per": "lr"
+              "per": "lr",
+              "requireSlot": false
             }
           }
         },
@@ -125,7 +84,8 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.dnd5e.spells.Item.Utk1OQRwYkMkFRD3"
+              "uuid": "Compendium.dnd5e.spells.Item.Utk1OQRwYkMkFRD3",
+              "optional": false
             }
           ],
           "optional": false,
@@ -141,7 +101,10 @@
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "5": 1
+            "5": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": "spell",
@@ -157,28 +120,37 @@
             }
           ],
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "innate",
             "uses": {
               "max": "1",
-              "per": "lr"
+              "per": "lr",
+              "requireSlot": false
             }
           },
-          "hint": "Starting at 5th level, you can cast the detect thoughts spell with your Githzerai Psionics. Once you it with this trait, you cannot cast it again until you finish a long rest. You can also cast this spell using any spell slots you have of the appropriate level.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for this spell when you cast it with this trait (choose below). This spell does not require spell components when you cast it with this trait.",
           "restriction": {
             "level": ""
           }
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Detect Thoughts",
-        "icon": "icons/magic/light/explosion-star-teal-purple.webp"
+        "icon": "icons/magic/light/explosion-star-teal-purple.webp",
+        "hint": "Starting at 5th level, you can cast the detect thoughts spell with your Githzerai Psionics. Once you it with this trait, you cannot cast it again until you finish a long rest. You can also cast this spell using any spell slots you have of the appropriate level.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for this spell when you cast it with this trait (choose below). This spell does not require spell components when you cast it with this trait."
       },
       {
-        "_id": "",
+        "_id": "HOMpir6m50lM5Hiy",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "6": 1
+            "6": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -206,18 +178,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "KVNpI5Xk8WW3CKlv",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "12": 1
+            "12": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -245,18 +224,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "P3VROFGuhY7cZUdZ",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "18": 1
+            "18": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -284,11 +270,15 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       }
     ],
     "movement": {
@@ -319,7 +309,7 @@
     "systemVersion": "4.3.8",
     "coreVersion": "12.331",
     "createdTime": 1707243710508,
-    "modifiedTime": 1744224511162,
+    "modifiedTime": 1745197522075,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

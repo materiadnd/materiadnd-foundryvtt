@@ -6,7 +6,7 @@
   "img": "icons/environment/wilderness/cave-entrance-mountain-blue.webp",
   "system": {
     "description": {
-      "value": "<p>This rune's magic bestows a resilience reminiscent of a hill giant. While wearing or carrying an object that bears this rune, you have advantage on saving throws to avoid or end the poisoned condition, and you have resistance against poison damage.</p><p>In addition, you can invoke the rune as a bonus action, gaining resistance to bludgeoning, piercing, and slashing damage for 1 minute. Once you invoke this rune, you cannot do so again until you finish a short or long rest.</p>",
+      "value": "<p><em><strong>Requires Fighter Level 7+</strong></em></p><p>This rune's magic bestows a resilience reminiscent of a hill giant. While wearing or carrying an object that bears this rune, you have Advantage on Saving Throws to avoid or end the &amp;Reference[Poisoned apply=false] condition, and you have Resistance against poison damage.</p><p>In addition, you can invoke the rune as a Bonus Action, gaining Resistance to Bludgeoning, Piercing, and Slashing damage for 1 minute. Once you invoke this rune, you cannot do so again until you finish a Short or Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,105 @@
       "subtype": "rune"
     },
     "properties": [],
-    "requirements": "Rune Knight 7",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "enchant": {
+      "max": "",
+      "period": ""
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Invoke Rune",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "duration": {
+          "units": "inst"
+        },
+        "effects": [
+          {
+            "_id": "ax3DMNYAEGZtu0lC"
+          }
+        ],
+        "sort": 200000
+      },
+      "fEZBLlINOitc4ynb": {
+        "type": "enchant",
+        "_id": "fEZBLlINOitc4ynb",
+        "sort": 100000,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "zMK708nkFlKZ7ojD"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "enchant": {
+          "identifier": ""
+        },
+        "restrictions": {
+          "allowMagical": false,
+          "categories": [],
+          "properties": [],
+          "type": ""
+        },
+        "name": "Inscribe Rune",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [
@@ -211,19 +306,136 @@
       "system": {},
       "sort": 0,
       "_key": "!items.effects!zNOrOyPDBU8a2K7K.ND3bg13l4d62QjCl"
+    },
+    {
+      "name": "Hill Rune",
+      "img": "icons/environment/wilderness/cave-entrance-mountain-blue.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.zNOrOyPDBU8a2K7K",
+      "transfer": false,
+      "_id": "ax3DMNYAEGZtu0lC",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "bludgeoning",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "piercing",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "slashing",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": 1744507226425,
+        "modifiedTime": 1744507261761,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!zNOrOyPDBU8a2K7K.ax3DMNYAEGZtu0lC"
+    },
+    {
+      "type": "enchantment",
+      "name": "Hill Rune",
+      "img": "icons/environment/wilderness/cave-entrance-mountain-blue.webp",
+      "disabled": true,
+      "_id": "zMK708nkFlKZ7ojD",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 2,
+          "value": ", Hill Rune",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": 1744507300846,
+        "modifiedTime": 1744507310541,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!zNOrOyPDBU8a2K7K.zMK708nkFlKZ7ojD"
     }
   ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1710308935937,
-    "modifiedTime": 1710309149389,
+    "modifiedTime": 1744507327853,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

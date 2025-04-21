@@ -6,7 +6,7 @@
   "img": "icons/magic/light/beam-rays-blue-large.webp",
   "system": {
     "description": {
-      "value": "<p>Beginning when you choose this archetype at 3rd level, you harbor a wellspring of psionic energy within yourself. This energy is represented by your Psionic Energy dice, which are each a d6. You have a number of these dice equal to twice your proficiency bonus, and they fuel various psionic powers you have, which are detailed below.</p><p>Some of your powers expend the Psionic Energy die they use, as specified in a power's description, and you cannot use a power if it requires you to use a die when your dice are all expended. You regain all your expended Psionic Energy dice when you finish a long rest. In addition, you get the @UUID[Compendium.materia-dnd.class-and-subclass-features.Item.gFuMfmYky3PF1uuM]{Pisonic Power Recharge} feature to recharge your psionic power.</p><p>When you reach certain levels in this class, the size of your Psionic Energy dice increases: at 5th level (d8), 11th level (d10), and 17th level (d12). The powers below use your Psionic Energy dice.</p>",
+      "value": "<p>You harbor a wellspring of psionic energy within yourself. It is represented by your Psionic Energy Dice, which fuels powers you have from this subclass. The Psi Wawrrior Energy Dice table shows the die size and number of these dice have when you reach certain Fighter levels.</p><table><caption>Psi Warrior Energy Dice</caption><thead><tr><td>Fighter Level</td><td>Die Size</td><td>Number</td></tr></thead><tbody><tr><td>3</td><td>D6</td><td>4</td></tr><tr><td>5</td><td>D8</td><td>6</td></tr><tr><td>9</td><td>D8</td><td>8</td></tr><tr><td>11</td><td>D10</td><td>8</td></tr><tr><td>13</td><td>D10</td><td>10</td></tr><tr><td>17</td><td>D12</td><td>12</td></tr></tbody></table><p><strong>Current Dice:</strong> @scale.psi-warrior.die</p><p>Any features in this subclass that use a Psionic Energy Die use only the dice from this subclass. Some of your powers expend the Psionic Energy Die, as specified in a power's description, and you can't use a power if it requires to use a die when all your Psionic Energy Dice are expended.</p><p>You regain one of your expended Psionic Energy Dice when you finish a Short Rest, and you regain all of them when you finish a Long Rest. </p><p><strong>Psionic Power Recharge.</strong> As a Bonus Action you can regain one expended Psionic Energy Die. Once you take this action, you can't do so again until you finish a Short or Long Rest.</p><p><strong>Protective Field.</strong> When you or another creature you can see within 30 feet of you takes damage, you can take a Reaction to expend one Psionic Energy Die, roll the die, and reduce the damage taken by the number rolled plus your Intelligence modifier (minimum reduction of 1), as you create a momentary shield of telekinetic force.</p><p><strong>Psionic Strike.</strong> You can propel your weapons with psionic force. Once on each of your turns, immediately after you hit a target within 30 feet of yourself with an attack and deal damage to it with a weapon, you can expend one Psionic Energy Die, rolling it and dealing Force damage to the target equal to the number rolled plus your Intelligence modifier.</p><p><strong>Telekinetic Movement.</strong> You can move an object or a creature with your mind. As a Magic action, choose one target you can see within 30 feet of yourself; the target must be a loose object that is Large or smaller or one willing creature other than you. You transport the target up to 30 feet to an unoccupied space you can see. Alternatively, if the target is a Tiny object, you can transport it to or from your hand.</p><p>Once you take this action, you can't do so again until you finish a Short or Long Rest unless you expend a Psionic Energy Die (no action required) to restore your use of it.</p><section class=\"secret\" id=\"secret-RRXwdJ7FFlzMcfXn\"><p><strong>Foundry Note</strong></p><p>Your Psionic Energy Die will automatically update as you level up.</p><p>The <strong>Psionic Power Recharge</strong> activity will restore a Psionic Energy Die.</p><p>The <strong>Protective Field</strong> activity will consume a use and provide a healing roll for reducing the damage.</p><p>The <strong>Psionic Strike</strong> activity will consume a use and provide a Force damage roll.</p><p>The Telekinetic Movement activity has a single use that does not consume a use of your Psionic Energy Die. You can use the <strong>Telekinetic Movmement Using Psionic Energy</strong> activity to use it again by consuming a Psionic Energy Die.</p></section>",
       "chat": ""
     },
     "source": {
@@ -39,9 +39,9 @@
     },
     "uses": {
       "value": 1,
-      "max": "@scale.psi-warrior.psionic-energy.number",
+      "max": "@scale.psi-warrior.die.number",
       "per": "lr",
-      "recovery": "",
+      "recovery": [],
       "prompt": true
     },
     "consume": {
@@ -69,28 +69,406 @@
       "scaling": "spell"
     },
     "type": {
-      "value": "",
+      "value": "class",
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Psi Warrior 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "w4QcKxMNJHeGvqlU": {
+        "type": "heal",
+        "_id": "w4QcKxMNJHeGvqlU",
+        "sort": 100000,
+        "activation": {
+          "type": "reaction",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "(max(1,@scale.psi-warrior.die.die + @abilities.int.mod))"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "Protective Field",
+        "img": "",
+        "appliedEffects": []
+      },
+      "mNKtC9EcfQVO484A": {
+        "type": "damage",
+        "_id": "mNKtC9EcfQVO484A",
+        "sort": 300000,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": "Once on each of your turns, immediately after you hit a target within 30 feet of yourself with an attack and deal damage to it with a weapon"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "@scale.psi-warrior.die.die + @abilities.int.mod"
+              },
+              "number": null,
+              "denomination": 0,
+              "bonus": "",
+              "types": [
+                "force"
+              ]
+            }
+          ]
+        },
+        "name": "Psionic Strike",
+        "img": "",
+        "appliedEffects": []
+      },
+      "YWJRmC2mahKPtc5M": {
+        "type": "utility",
+        "_id": "YWJRmC2mahKPtc5M",
+        "sort": 400000,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": "One target within 30 feet, if an object it must be Large or smaller, if a creature, it must be willing"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "activityUses",
+              "value": "1"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creatureOrObject",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [
+            {
+              "period": "sr",
+              "type": "recoverAll"
+            }
+          ],
+          "max": "1"
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Telekinetic Movement",
+        "img": "",
+        "appliedEffects": []
+      },
+      "aF3mzFQhps1oPC15": {
+        "type": "utility",
+        "_id": "aF3mzFQhps1oPC15",
+        "sort": 500000,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": "One target within 30 feet, if an object it must be Large or smaller, if a creature, it must be willing"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creatureOrObject",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Telekinetic Movement Using Psionic Energy",
+        "img": "",
+        "appliedEffects": []
+      },
+      "fwcPLXGhcsQ2OWvN": {
+        "type": "utility",
+        "_id": "fwcPLXGhcsQ2OWvN",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [
+            {
+              "period": "sr",
+              "type": "recoverAll"
+            }
+          ],
+          "max": "1"
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Psionic Power Recharge",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
       "item-use-target": "psionic-power"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1707255276425,
-    "modifiedTime": 1713669237553,
+    "modifiedTime": 1744493896894,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

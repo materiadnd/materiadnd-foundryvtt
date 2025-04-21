@@ -14,36 +14,13 @@
     },
     "advancement": [
       {
-        "type": "AbilityScoreImprovement",
-        "_id": "9DQa8xc495wtMFiv",
-        "configuration": {
-          "points": 3,
-          "fixed": {
-            "str": 0,
-            "dex": 0,
-            "con": 0,
-            "int": 0,
-            "wis": 0,
-            "cha": 0
-          },
-          "cap": 2
-        },
-        "value": {
-          "type": "asi"
-        },
-        "level": 0,
-        "title": "",
-        "icon": null
-      },
-      {
         "type": "Size",
         "_id": "o5ARTz7pmbds5OMl",
         "configuration": {
           "sizes": [
             "sm",
             "med"
-          ],
-          "hint": ""
+          ]
         },
         "level": 0,
         "title": "",
@@ -51,50 +28,29 @@
         "value": {}
       },
       {
-        "type": "Trait",
-        "configuration": {
-          "grants": [
-            "languages:standard:common"
-          ],
-          "mode": "default",
-          "allowReplacements": false,
-          "choices": [
-            {
-              "count": 1,
-              "pool": [
-                "languages:*"
-              ]
-            }
-          ],
-          "hint": ""
-        },
-        "_id": "uZVXiJpYsa1kmzfI",
-        "level": 0,
-        "value": {
-          "chosen": []
-        },
-        "title": "",
-        "icon": null
-      },
-      {
         "_id": "4UBjV5mAM2MUhNGu",
         "type": "ItemGrant",
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.species.Item.Sx1bisGTROVcaw6v"
+              "uuid": "Compendium.materia-dnd.species.Item.Sx1bisGTROVcaw6v",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.GRGwkjYIi9fgAWmJ"
+              "uuid": "Compendium.materia-dnd.species.Item.GRGwkjYIi9fgAWmJ",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.mKNjAezAKhBhtBPe"
+              "uuid": "Compendium.materia-dnd.species.Item.mKNjAezAKhBhtBPe",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.7tQ8209vbIdmJfDc"
+              "uuid": "Compendium.materia-dnd.species.Item.7tQ8209vbIdmJfDc",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.2Jrl2JiTVwrEBvNY"
+              "uuid": "Compendium.materia-dnd.species.Item.2Jrl2JiTVwrEBvNY",
+              "optional": false
             }
           ],
           "optional": false,
@@ -110,7 +66,10 @@
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "0": 1
+            "0": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": "spell",
@@ -126,21 +85,27 @@
             }
           ],
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "always",
             "uses": {
               "max": "1",
-              "per": "lr"
+              "per": "lr",
+              "requireSlot": false
             }
           },
-          "hint": "You can cast the disguise self spell with this trait. Once you cast this spell with this trait, you cannot cast this spell with it again until you finish a long rest. You can also cast this spell using any spell slots you have.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for these spells (choose below).",
           "restriction": {
             "level": ""
           }
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Hex Magic: Disguise Self",
-        "icon": "icons/magic/control/debuff-energy-hold-teal-blue.webp"
+        "icon": "icons/magic/control/debuff-energy-hold-teal-blue.webp",
+        "hint": "You can cast the disguise self spell with this trait. Once you cast this spell with this trait, you cannot cast this spell with it again until you finish a long rest. You can also cast this spell using any spell slots you have.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for these spells (choose below)."
       },
       {
         "_id": "DAHQCRnP0pz5RDOM",
@@ -156,22 +121,25 @@
                 "skills:*"
               ]
             }
-          ],
-          "hint": "You gain proficiency in two skills of your choice, and when you make an ability check with these skills you can roll a d4 and add the number to the ability check."
+          ]
         },
         "level": 0,
         "title": "Hexling Proficiency",
         "icon": "icons/sundries/lights/candles-lit-red-evil.webp",
         "value": {
           "chosen": []
-        }
+        },
+        "hint": "You gain proficiency in two skills of your choice, and when you make an ability check with these skills you can roll a d4 and add the number to the ability check."
       },
       {
-        "_id": "",
+        "_id": "ycsL3oXisEoBiO2z",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "6": 1
+            "6": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -199,18 +167,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "hWiEWD8b8wppx4qh",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "12": 1
+            "12": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -238,18 +213,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "TThCffuPMqdOntNE",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "18": 1
+            "18": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -277,11 +259,15 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       }
     ],
     "movement": {
@@ -318,7 +304,7 @@
     "systemVersion": "4.3.8",
     "coreVersion": "12.331",
     "createdTime": 1710536310098,
-    "modifiedTime": 1744224874720,
+    "modifiedTime": 1745197548032,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
