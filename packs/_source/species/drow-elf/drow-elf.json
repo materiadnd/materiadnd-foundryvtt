@@ -14,28 +14,6 @@
     },
     "advancement": [
       {
-        "type": "AbilityScoreImprovement",
-        "_id": "3goQZp4msHkkLTfx",
-        "configuration": {
-          "points": 3,
-          "fixed": {
-            "str": 0,
-            "dex": 0,
-            "con": 0,
-            "int": 0,
-            "wis": 0,
-            "cha": 0
-          },
-          "cap": 2
-        },
-        "value": {
-          "type": "asi"
-        },
-        "level": 0,
-        "title": "",
-        "icon": null
-      },
-      {
         "type": "Size",
         "_id": "xqNw9XJU6QnmwguM",
         "configuration": {
@@ -47,47 +25,25 @@
         "value": {}
       },
       {
-        "type": "Trait",
-        "configuration": {
-          "grants": [
-            "languages:standard:common"
-          ],
-          "mode": "default",
-          "allowReplacements": false,
-          "choices": [
-            {
-              "count": 1,
-              "pool": [
-                "languages:*"
-              ]
-            }
-          ],
-          "hint": ""
-        },
-        "_id": "SNyMPHZkfrUax6sM",
-        "level": 0,
-        "value": {
-          "chosen": []
-        },
-        "title": "",
-        "icon": null
-      },
-      {
         "_id": "SsWJuuhGkGuWJ6UJ",
         "type": "ItemGrant",
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.species.Item.Q7vBofYVsQpmlGhC"
+              "uuid": "Compendium.materia-dnd.species.Item.Q7vBofYVsQpmlGhC",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.TG4lwCsy2waUpi5h"
+              "uuid": "Compendium.materia-dnd.species.Item.TG4lwCsy2waUpi5h",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.FB12HMTHA72B7Po1"
+              "uuid": "Compendium.materia-dnd.species.Item.FB12HMTHA72B7Po1",
+              "optional": false
             },
             {
-              "uuid": "Compendium.materia-dnd.species.Item.O0va2z3WOMhfa2Ne"
+              "uuid": "Compendium.materia-dnd.species.Item.O0va2z3WOMhfa2Ne",
+              "optional": false
             }
           ],
           "optional": false,
@@ -108,15 +64,15 @@
             "weapon:mar:shortsword",
             "weapon:mar:whip"
           ],
-          "choices": [],
-          "hint": "You have proficiency with rapiers, shortswords, whips and hand crossbows."
+          "choices": []
         },
         "level": 0,
         "title": "Drow Weapon Training",
         "icon": "icons/weapons/swords/greatsword-blue.webp",
         "value": {
           "chosen": []
-        }
+        },
+        "hint": "You have proficiency with rapiers, shortswords, whips and hand crossbows."
       },
       {
         "_id": "axCLURBRviyopEuk",
@@ -127,8 +83,7 @@
           "grants": [
             "skills:prc"
           ],
-          "choices": [],
-          "hint": ""
+          "choices": []
         },
         "level": 0,
         "title": "Keen Senses",
@@ -142,7 +97,10 @@
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "0": 1
+            "0": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": "spell",
@@ -158,28 +116,37 @@
             }
           ],
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "innate",
             "uses": {
               "max": "",
-              "per": ""
+              "per": "",
+              "requireSlot": false
             }
           },
-          "hint": "You know the dancing lights cantrip.\nIntelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose below). This spell does not require spell components when you cast it.",
           "restriction": {
             "level": ""
           }
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Dancing Lights",
-        "icon": "icons/magic/fire/projectile-meteor-salvo-strong-blue.webp"
+        "icon": "icons/magic/fire/projectile-meteor-salvo-strong-blue.webp",
+        "hint": "You know the dancing lights cantrip.\nIntelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose below). This spell does not require spell components when you cast it."
       },
       {
         "_id": "mGPsSRTf5oKVWszl",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "3": 1
+            "3": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": "spell",
@@ -195,28 +162,37 @@
             }
           ],
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "innate",
             "uses": {
               "max": "1",
-              "per": "lr"
+              "per": "lr",
+              "requireSlot": false
             }
           },
-          "hint": "Starting at 3rd level, you can cast the faerie fire spell with your Drow Magic trait. Once you cast faerie fire with this trait, you cannot cast that spell with it again until you finish a long rest. You can also cast this spell using spell slots you have of the appropriate level.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose below).",
           "restriction": {
             "level": ""
           }
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Faerie Fire",
-        "icon": "icons/magic/fire/projectile-meteor-salvo-strong-teal.webp"
+        "icon": "icons/magic/fire/projectile-meteor-salvo-strong-teal.webp",
+        "hint": "Starting at 3rd level, you can cast the faerie fire spell with your Drow Magic trait. Once you cast faerie fire with this trait, you cannot cast that spell with it again until you finish a long rest. You can also cast this spell using spell slots you have of the appropriate level.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose below)."
       },
       {
         "_id": "O1c9pQY4ndwIeAe4",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "5": 1
+            "5": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": true,
           "type": null,
@@ -232,19 +208,25 @@
             }
           ],
           "spell": null,
-          "hint": "Starting at 5th level, you can  cast the darkness spell with your Drow Magic trait. Once you cast darkness with this trait, you cannot cast that spell with it again until you finish a long rest. You can also cast this spell using spell slots you have of the appropriate level.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this species). This spell does not require spell components when you cast it with this trait.",
           "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "Darkness",
-        "icon": "icons/magic/perception/eye-ringed-glow-angry-red.webp"
+        "icon": "icons/magic/perception/eye-ringed-glow-angry-red.webp",
+        "hint": "Starting at 5th level, you can  cast the darkness spell with your Drow Magic trait. Once you cast darkness with this trait, you cannot cast that spell with it again until you finish a long rest. You can also cast this spell using spell slots you have of the appropriate level.\n\nIntelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this species). This spell does not require spell components when you cast it with this trait."
       },
       {
-        "_id": "",
+        "_id": "hCPVV6nxH68qxbOY",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "6": 1
+            "6": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -272,18 +254,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "0lNLLP2XmPb69S7i",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "12": 1
+            "12": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -311,18 +300,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "OXj7nATL5u8nqa0f",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "18": 1
+            "18": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -350,11 +346,15 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       }
     ],
     "movement": {
@@ -391,7 +391,7 @@
     "systemVersion": "4.3.8",
     "coreVersion": "12.331",
     "createdTime": 1709568800311,
-    "modifiedTime": 1744223376788,
+    "modifiedTime": 1745197443787,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

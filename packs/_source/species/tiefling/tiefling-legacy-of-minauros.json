@@ -13,28 +13,6 @@
     },
     "advancement": [
       {
-        "type": "AbilityScoreImprovement",
-        "_id": "p7sbuu3nVuYqNukS",
-        "configuration": {
-          "points": 3,
-          "fixed": {
-            "str": 0,
-            "dex": 0,
-            "con": 0,
-            "int": 0,
-            "wis": 0,
-            "cha": 0
-          },
-          "cap": 2
-        },
-        "value": {
-          "type": "asi"
-        },
-        "level": 0,
-        "title": "",
-        "icon": null
-      },
-      {
         "type": "Size",
         "_id": "a7Kx4MTUTzz9Il8B",
         "configuration": {
@@ -46,32 +24,6 @@
         "value": {}
       },
       {
-        "type": "Trait",
-        "configuration": {
-          "grants": [
-            "languages:standard:common"
-          ],
-          "mode": "default",
-          "allowReplacements": false,
-          "choices": [
-            {
-              "count": 1,
-              "pool": [
-                "languages:*"
-              ]
-            }
-          ],
-          "hint": ""
-        },
-        "_id": "AahsQJ10ji2NgCAE",
-        "level": 0,
-        "value": {
-          "chosen": []
-        },
-        "title": "",
-        "icon": null
-      },
-      {
         "_id": "jDncTfs0MxzwBq1v",
         "type": "Trait",
         "configuration": {
@@ -80,15 +32,15 @@
           "grants": [
             "dr:fire"
           ],
-          "choices": [],
-          "hint": "You have resistance to fire damage."
+          "choices": []
         },
         "level": 0,
         "title": "Hellish Resistance",
         "icon": "icons/magic/fire/flame-burning-fist-strike.webp",
         "value": {
           "chosen": []
-        }
+        },
+        "hint": "You have resistance to fire damage."
       },
       {
         "_id": "7F9lrT1BvH3pxZhC",
@@ -96,16 +48,20 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.spells.Item.matSplMageHand00"
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplMageHand00",
+              "optional": false
             }
           ],
           "optional": false,
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "always",
             "uses": {
               "max": "",
-              "per": ""
+              "per": "",
+              "requireSlot": false
             }
           }
         },
@@ -120,16 +76,20 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.spells.Item.matSplFloatingDi"
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplFloatingDi",
+              "optional": false
             }
           ],
           "optional": false,
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "always",
             "uses": {
               "max": "1",
-              "per": "lr"
+              "per": "lr",
+              "requireSlot": false
             }
           }
         },
@@ -144,16 +104,20 @@
         "configuration": {
           "items": [
             {
-              "uuid": "Compendium.materia-dnd.spells.Item.AbEiYpYSUpAyF7Wb"
+              "uuid": "Compendium.materia-dnd.spells.Item.AbEiYpYSUpAyF7Wb",
+              "optional": false
             }
           ],
           "optional": false,
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "always",
             "uses": {
               "max": "1",
-              "per": "lr"
+              "per": "lr",
+              "requireSlot": false
             }
           }
         },
@@ -163,11 +127,14 @@
         "icon": "icons/magic/symbols/runes-star-orange.webp"
       },
       {
-        "_id": "",
+        "_id": "s1urHOELXpy4V9JQ",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "6": 1
+            "6": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -195,18 +162,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "TDXwik2xqrS4AWu8",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "12": 1
+            "12": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -234,18 +208,25 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       },
       {
-        "_id": "",
+        "_id": "7L6xn1cI8sLAz3dW",
         "type": "ItemChoice",
         "configuration": {
           "choices": {
-            "18": 1
+            "18": {
+              "count": 1,
+              "replacement": false
+            }
           },
           "allowDrops": false,
           "type": "feat",
@@ -273,11 +254,15 @@
             }
           ],
           "spell": null,
-          "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
+          "restriction": {}
         },
-        "value": {},
+        "value": {
+          "added": {},
+          "replaced": {}
+        },
         "title": "INT Bonus",
-        "icon": null
+        "icon": null,
+        "hint": "Core rule that provides a bonus based on character level and intelligence modifier at levels 6, 12, 18.  Does NOT apply retroactively and is not affected by temporary changes in Intelligence stat (from items or other buffs/debuffs)."
       }
     ],
     "movement": {
@@ -308,7 +293,7 @@
     "systemVersion": "4.3.8",
     "coreVersion": "12.331",
     "createdTime": 1707250914337,
-    "modifiedTime": 1744228961637,
+    "modifiedTime": 1745197896713,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
