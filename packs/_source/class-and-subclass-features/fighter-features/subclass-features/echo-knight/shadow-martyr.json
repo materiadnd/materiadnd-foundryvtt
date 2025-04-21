@@ -6,7 +6,7 @@
   "img": "icons/magic/defensive/shield-barrier-flaming-diamond-blue-yellow.webp",
   "system": {
     "description": {
-      "value": "<p>By 10th level, you can make your echo throw itself in front of an attack directed at another creature that you can see. Before the attack roll is made, you can use your reaction to teleport the echo to an unoccupied space within 5 feet of the targeted creature. The attack roll that triggered the reaction is instead made against your echo.</p><p>Once you use this feature, you cannot use it again until you finish a short or long rest, unless you expend a Superiority Die to do so again.</p>",
+      "value": "<p>You can make your echo throw itself in front of an attack directed at another creature that you can see. Before the attack roll is made, you can take a Reaction to teleport the echo to an unoccupied space within 5 feet of the targeted creature. The attack roll that triggered the Reaction is instead made against your echo.</p><p>Once you use this feature, you cannot use it again until you finish a Short or Long rest, unless you expend a Superiority Die to do so again.</p><section id=\"secret-JYm8MaIqgY4BnWJH\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes an additional <strong>Use with Superiority Dice</strong> feature to expend Superiority Dice to use this feature.</p></section>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,100 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Echo Knight 10",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 10
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": []
+      },
+      "DXzhfdTiH4kBqHLe": {
+        "type": "utility",
+        "_id": "DXzhfdTiH4kBqHLe",
+        "sort": 0,
+        "activation": {
+          "type": "reaction",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.GT5M3hT8Bj34TRH0"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Use with Superiority Dice",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +174,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1710920300061,
-    "modifiedTime": 1710920419318,
+    "modifiedTime": 1744501801250,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

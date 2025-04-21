@@ -6,7 +6,7 @@
   "img": "icons/skills/ranged/rifle-scoped-gray-green.webp",
   "system": {
     "description": {
-      "value": "<div><div><p>When you reach 5th level, you know how to turn a wand, staff, or rod into an arcane firearm, a conduit for your destructive spells. When you finish a long rest, you can use woodcarver's tools to carve special sigils into a wand, staff, or rod and thereby turn it into your arcane firearm. The sigils make the item count as a magical simple ranged weapon for you with a normal range of 150 feet and a long range of 600 feet, and it deals 1d8 plus your Intelligence modifier force, piercing or thunder damage (your choice when carving special sigils). The sigils disappear from the object if you later carve them on a different item. The sigils otherwise last indefinitely. You can use your arcane firearm as a spellcasting focus for your artificer spells. When you cast an artificer spell through the firearm, roll a d8, and you gain a bonus to one of the spell's damage rolls equal to the number rolled. Starting at 15th level roll 2d8, and at 20th level roll 3d8.</p></div></div>",
+      "value": "<div><div><p>You know how to turn a wand, staff, or rod into an arcane firearm, a conduit for your destructive spells. When you finish a Long Rest, you can use Woodcarver's Tools to carve special sigils into a wand, staff, or rod and thereby turn it into your arcane firearm. The sigils make the item count as a magical simple ranged weapon for you with a normal range of 150 feet and a long range of 600 feet, and it deals 1d8 plus your Intelligence modifier Force, Piercing or Thunder damage (your choice when carving special sigils). The sigils disappear from the object if you later carve them on a different item. The sigils otherwise last indefinitely. You can use your arcane firearm as a spellcasting focus for your Artificer spells. When you cast an Artificer spell through the firearm, roll a d8, and you gain a bonus to one of the spell's damage rolls equal to the number rolled. Starting at 15th level roll 2d8, and at 20th level roll 3d8.</p></div></div>",
       "chat": ""
     },
     "source": {
@@ -77,24 +77,156 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Artillerist 5",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 5
+    },
+    "activities": {
+      "uYSolQb9CVbkYuTd": {
+        "type": "enchant",
+        "_id": "uYSolQb9CVbkYuTd",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "jNkCx99sE8fZmSgy"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "object",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "enchant": {
+          "identifier": ""
+        },
+        "restrictions": {
+          "allowMagical": false,
+          "categories": [],
+          "properties": [],
+          "type": ""
+        },
+        "name": "Create Firearm",
+        "img": "",
+        "appliedEffects": [
+          "jNkCx99sE8fZmSgy"
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "type": "enchantment",
+      "name": "Arcane Firearm",
+      "img": "icons/skills/ranged/rifle-scoped-gray-green.webp",
+      "disabled": true,
+      "_id": "jNkCx99sE8fZmSgy",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 2,
+          "value": ", Arcane Firearm",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": 1744537163310,
+        "modifiedTime": 1744537175616,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!m7xjSffq8xg7wSiF.jNkCx99sE8fZmSgy"
+    }
+  ],
   "sort": 400000,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1711374525721,
-    "modifiedTime": 1711375728883,
+    "modifiedTime": 1744537199712,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

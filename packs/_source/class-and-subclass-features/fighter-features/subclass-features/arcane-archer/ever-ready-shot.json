@@ -6,7 +6,7 @@
   "img": "icons/skills/ranged/arrow-flying-spiral-blue.webp",
   "system": {
     "description": {
-      "value": "<p>Upon reaching 18th level, whenever you score a critical hit with a shortbow, a longbow or a warbow (in Materia); you regain one expended use of your Arcane Shots.</p>",
+      "value": "<p>Whenever you score a Critical Hit with a shortbow, a longbow or a warbow; you regain one expended use of your Arcane Shots.</p><section id=\"secret-lS6rro1WFrw9gcdW\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes a <strong>Recharge Arcane Shot on Critical Hit</strong> activity that can be used to grant another use of your Arcane Shot.</p></section>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,80 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Arcane Archer 18",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 18
+    },
+    "activities": {
+      "sGf0Prbq9TLRW63M": {
+        "type": "utility",
+        "_id": "sGf0Prbq9TLRW63M",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.9mz7Rz1nBe0bNEUM"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Recharge Arcane Shot on Critical Hit",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +154,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1710918554539,
-    "modifiedTime": 1710918638039,
+    "modifiedTime": 1744497502792,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

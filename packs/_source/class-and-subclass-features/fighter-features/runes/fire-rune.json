@@ -6,7 +6,7 @@
   "img": "icons/magic/fire/projectile-smoke-swirl-red.webp",
   "system": {
     "description": {
-      "value": "<p>This rune's magic channels the masterful craftsmanship of great smiths. While wearing or carrying an object inscribed with this rune, your proficiency bonus is doubled for any ability check you make that uses your proficiency with a tool.</p><p>In addition, when you hit a creature with an attack using a weapon or unarmed strikes, you can invoke the rune to send an eruption of fire damage outwards. All creatures of your choice that are within 5 feet of your target take fire damage equal to the damage your target takes. Once you invoke this rune, you cannot do so again until you finish a short or long rest.</p>",
+      "value": "<p>This rune's magic channels the masterful craftsmanship of great smiths. While wearing or carrying an object inscribed with this rune, your Proficiency Bonus is doubled for any ability check you make that uses your proficiency with a tool.</p><p>In addition, when you hit a creature with an attack using a weapon or Unarmed Strikes, you can invoke the rune to send an eruption of fire damage outwards. All creatures of your choice that are within 5 feet of your target take fire damage equal to the damage your target takes. Once you invoke this rune, you cannot do so again until you finish a Short or Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -73,20 +73,163 @@
       "subtype": "rune"
     },
     "properties": [],
-    "requirements": "Rune Knight 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "enchant": {
+      "max": "",
+      "period": ""
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Invoke Rune",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": []
+      },
+      "D1W51uziltDfI0Lq": {
+        "type": "enchant",
+        "_id": "D1W51uziltDfI0Lq",
+        "sort": -100000,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "nuMR5jerFwhzaGbq"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "enchant": {
+          "identifier": ""
+        },
+        "restrictions": {
+          "allowMagical": false,
+          "categories": [],
+          "properties": [],
+          "type": ""
+        },
+        "name": "Inscribe Rune",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
-  "flags": {},
+  "effects": [
+    {
+      "type": "enchantment",
+      "name": "Fire Rune",
+      "img": "icons/magic/fire/projectile-smoke-swirl-red.webp",
+      "disabled": true,
+      "_id": "nuMR5jerFwhzaGbq",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 2,
+          "value": ", Fire Rune",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": 1744506324781,
+        "modifiedTime": 1744506335007,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!R0Pg43o60v2Ly8GU.nuMR5jerFwhzaGbq"
+    }
+  ],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1707154063691,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1744506348516,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

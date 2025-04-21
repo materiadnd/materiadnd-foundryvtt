@@ -6,7 +6,7 @@
   "img": "icons/weapons/swords/sword-katana.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 15th level, when you roll initiative and do not have your maximum uses of Fighting Spirit remaining, regain one you use.</p><p>Additionally, when do not have your maximum uses of Fighting Spirit remaining, you regain one use when you use your Second Wind feature.</p>",
+      "value": "<p>When you roll Initiative and do not have your maximum uses of Fighting Spirit remaining, you regain one use.</p><p>Additionally, when do not have your maximum uses of Fighting Spirit remaining, you regain one use when you use your Second Wind feature.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,80 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Samurai 15",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 15
+    },
+    "activities": {
+      "4A3NZzaD1J50RWWC": {
+        "type": "utility",
+        "_id": "4A3NZzaD1J50RWWC",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.w8w2v6TzKX403Qb5"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Restore Fighting Spirit",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +154,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1710921702319,
-    "modifiedTime": 1712473097633,
+    "modifiedTime": 1744510156343,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

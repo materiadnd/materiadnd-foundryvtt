@@ -6,7 +6,7 @@
   "img": "icons/skills/targeting/crosshair-mark-rough-pink.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 3rd level, you can menace your foes, foiling their attacks and punishing them for harming others. When you hit a creature with a melee weapon attack, you can mark the creature until the end of your next turn. This effect ends early if you are incapacitated or you die, or if someone else marks the creature.</p><p>While it is within the reach of your melee weapon, a creature marked by you has disadvantage on any attack roll that does not target you.</p><p>In addition, if a creature marked by you deals damage to anyone other than you, you can make a special melee weapon attack against the marked creature as it's own special action on your next turn. You have advantage on the attack roll, and if it hits, the attack's weapon deals extra damage to the target equal to half your fighter level.</p><p>Regardless of the number of creatures you mark, you can make this special attack a number of times equal to your proficiency bonus, and you regain all expended uses of it when you finish a long rest.</p>",
+      "value": "<p>You can menace your foes, foiling their attacks and punishing them for harming others. When you hit a creature with a melee weapon attack, you can mark the creature until the end of your next turn. This effect ends early if you get the &amp;Reference[incapacitated apply=false] condition, you die, or if someone else marks the creature.</p><p>While it is within the reach of your melee weapon, a creature marked by you has Disadvantage on any attack roll that does not target you.</p><p>In addition, if a creature marked by you deals damage to anyone other than you, you can make a special melee weapon attack against the marked creature as its own special action on your next turn. You have Advantage on the attack roll, and if it hits, the attack's weapon deals extra damage to the target equal to half your Fighter level.</p><p>Regardless of the number of creatures you mark, you can make this special attack a number of times equal to your Proficiency Bonus, and you regain all expended uses of it when you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -78,24 +78,150 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Arcane Archer 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "VQgR1r57Xqa6F0F7": {
+        "type": "utility",
+        "_id": "VQgR1r57Xqa6F0F7",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "LNYibsl4VEwnTPKd"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Place Mark",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Unwavering Mark",
+      "img": "icons/skills/targeting/crosshair-mark-rough-pink.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.LC9IY3jZWHGXZ0OX",
+      "transfer": false,
+      "_id": "LNYibsl4VEwnTPKd",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": 1744499730448,
+        "modifiedTime": 1744499757342,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!LC9IY3jZWHGXZ0OX.LNYibsl4VEwnTPKd"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1710919161714,
-    "modifiedTime": 1710919310456,
+    "modifiedTime": 1744499730521,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

@@ -6,7 +6,7 @@
   "img": "icons/skills/melee/unarmed-punch-fist-yellow-red.webp",
   "system": {
     "description": {
-      "value": "<p>Beginning at 3rd level, you have learned how to imbue yourself with the might of giants. As a bonus action, you magically gain the following benefits, which last for 1 minute:</p><ul><li>If you are smaller than Large, you become Large, along with anything you are wearing. If you lack the room to become Large, your size does not change.</li><li>You have advantage on Strength checks and Strength saving throws.</li><li>Once on each of your turns, one of your attacks with a weapon or an unarmed strike can deal an extra 1d6 damage to a target on a hit.</li></ul><p>You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses of it when you finish a long rest.</p>",
+      "value": "<p>You have learned how to imbue yourself with the might of giants. As a Bonus Action, you magically gain the following benefits, which last for 1 minute:</p><p><strong>Enlarged.</strong> If you are smaller than Large, you become Large, along with anything you are wearing. If you lack the room to become Large, your size does not change.</p><p><strong>Enhanced Strength.</strong> You have advantage on Strength checks and Strength saving throws.</p><p><strong>Extra Damage.</strong> Once on each of your turns, one of your attacks with a weapon or an unarmed strike can deal an extra 1d6 damage to a target on a hit.</p><p>You can use this feature a number of times equal to your Proficiency Bonus, and you regain all expended uses of it when you finish a Long Rest.</p><section id=\"secret-su6y4HQNhlVfVbde\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>When you use this feature, it applies an Active Effect which toggles the advantage reminder for your Strength checks and Strength saving throws, but it does not change your size or auto-apply the damage.</p><p>The <strong>Extra Damage</strong> activity can be used to produce a damage roll while empowered by this feature.</p></section>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,109 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Rune Knight 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "effects": [
+          {
+            "_id": "qea63G0ARAjBlWYf"
+          }
+        ]
+      },
+      "UPZJUeWxM4956SV2": {
+        "type": "damage",
+        "_id": "UPZJUeWxM4956SV2",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": "6",
+              "bonus": "",
+              "types": []
+            }
+          ]
+        },
+        "name": "Extra Damage",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [
@@ -171,15 +270,77 @@
       "system": {},
       "sort": 0,
       "_key": "!items.effects!TfHCix9VO8TuJtYf.sE20ZXEEXV7J4UJT"
+    },
+    {
+      "name": "Giant's Might",
+      "img": "icons/skills/melee/unarmed-punch-fist-yellow-red.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.TfHCix9VO8TuJtYf",
+      "transfer": false,
+      "_id": "qea63G0ARAjBlWYf",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "flags.midi-qol.advantage.ability.check.str",
+          "mode": 0,
+          "value": "1",
+          "priority": null
+        },
+        {
+          "key": "flags.midi-qol.advantage.ability.save.str",
+          "mode": 0,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>Enlarged. If you are smaller than Large, you become Large, along with anything you are wearing. If you lack the room to become Large, your size does not change.</p><p>Enhanced Strength. You have advantage on Strength checks and Strength saving throws.</p><p>Extra Damage. Once on each of your turns, one of your attacks with a weapon or an unarmed strike can deal an extra 1d6 damage to a target on a hit.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": 1744502680834,
+        "modifiedTime": 1744502749753,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!TfHCix9VO8TuJtYf.qea63G0ARAjBlWYf"
     }
   ],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1707153584057,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1744502870691,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

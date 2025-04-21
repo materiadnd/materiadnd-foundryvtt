@@ -6,7 +6,7 @@
   "img": "icons/magic/control/debuff-chains-red.webp",
   "system": {
     "description": {
-      "value": "<p>At 10th level, you learn how to make your weapon strikes undercut a creature's resistance to your spells. When you hit a creature with a weapon attack, that creature has disadvantage on the next saving throw it makes against a spell you cast before the end of your next turn.</p>",
+      "value": "<p>You learn how to make your weapon strikes undercut a creature's ability to withstand your spells. When you hit a creature with an attack using a weapon, that creature has Disadvantage on the next saving throw it makes against a spell you cast before the end of your next turn.</p><section id=\"secret-PfILv8fj60IYcnYD\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes an Active Effect which can be used for tracking but does not automate the Disadvantage.</p></section>",
       "chat": ""
     },
     "source": {
@@ -73,13 +73,59 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Eldritch Knight 10",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 10
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Struck",
+      "img": "icons/magic/control/debuff-chains-red.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.f9szBTtlJyFzyzZh",
+      "_id": "RiuWTSFljyyf5a6C",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The creature has Disadvantage on the next saving throw it makes against a spell you cast before the end of your next turn.</p>",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": 1744488497131,
+        "modifiedTime": 1744488529447,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!f9szBTtlJyFzyzZh.RiuWTSFljyyf5a6C"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
@@ -87,10 +133,10 @@
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1710921164695,
-    "modifiedTime": 1710921200233,
+    "modifiedTime": 1744488493107,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

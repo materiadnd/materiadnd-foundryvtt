@@ -1,12 +1,12 @@
 {
-  "folder": "V56KpvT1YXcOEzGj",
-  "name": "Fighting Spirit",
+  "folder": "vlfG0u6mSrWvrZ4R",
+  "name": "Grasping Arrow",
   "type": "feat",
-  "_id": "w8w2v6TzKX403Qb5",
-  "img": "icons/skills/melee/maneuver-sword-katana-yellow.webp",
+  "_id": "eo01VMORuBFrg9iE",
+  "img": "icons/magic/nature/root-vine-entangle-foot-green.webp",
   "system": {
     "description": {
-      "value": "<p>Your intensity in battle can shield you and help you strike true. When you make your first attack on your turn, you can give yourself Advantage on weapon and Unarmed Strike attack rolls until the start of your next turn. When you do so, you also gain Temporary Hit Points equal to half your Fighter level.</p><p>You can use this feature a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>",
+      "value": "<p>When this arrow strikes its target, conjuration magic creates grasping, poisonous brambles, which wrap around the target. The creature hit by the arrow has its Speed is reduced by 10 feet, and it takes a number of additional d6 equal to your Intelligence modifier (minimum of 1) slashing damage the first time on each turn it moves 1 foot or more without teleporting. The target or any creature that can reach it can use its action to remove the brambles with a successful Strength (Athletics) check against your Arcane Shot save DC. Otherwise, the brambles last for 1 minute or until you use this option again.</p><p>After you reach 15th level in this class, the creature's Speed is reduced by a number of feet equal to 5 times your Intelligence modifier (minimum of 10 feet). If the creature's Speed is reduced to 0 then it takes the slashing damage as if it had moved without teleporting initially and at the start of each of it's turns.</p>",
       "chat": ""
     },
     "source": {
@@ -15,13 +15,13 @@
       "book": "Materia"
     },
     "activation": {
-      "type": "none",
+      "type": "special",
       "cost": null,
       "condition": ""
     },
     "duration": {
-      "value": "",
-      "units": ""
+      "value": "1",
+      "units": "minute"
     },
     "cover": null,
     "crewed": false,
@@ -39,8 +39,8 @@
     },
     "uses": {
       "value": null,
-      "max": "@prof",
-      "per": "lr",
+      "max": "",
+      "per": null,
       "recovery": "",
       "prompt": true
     },
@@ -51,7 +51,7 @@
       "scale": false
     },
     "ability": "",
-    "actionType": "heal",
+    "actionType": "save",
     "attackBonus": "",
     "chatFlavor": "",
     "critical": {
@@ -61,21 +61,21 @@
     "damage": {
       "parts": [
         [
-          "floor(@classes.fighter.levels / 2)",
-          "temphp"
+          "(@abilities.int.mod)d6",
+          "slashing"
         ]
       ],
       "versatile": ""
     },
     "formula": "",
     "save": {
-      "ability": "",
+      "ability": "str",
       "dc": null,
-      "scaling": "spell"
+      "scaling": "int"
     },
     "type": {
       "value": "class",
-      "subtype": ""
+      "subtype": "arcaneShot"
     },
     "properties": [],
     "requirements": "",
@@ -88,27 +88,9 @@
     },
     "activities": {
       "dnd5eactivity000": {
-        "name": "Fighting Spirit",
-        "img": "",
-        "duration": {
-          "units": "inst"
-        },
-        "consumption": {
-          "targets": [
-            {
-              "type": "itemUses",
-              "value": "1",
-              "target": ""
-            }
-          ]
-        },
-        "range": {
-          "units": "self"
-        },
-        "appliedEffects": [],
         "effects": [
           {
-            "_id": "seBrgr2lry36M2Qd"
+            "_id": "mT6a46pT6K9Ss4WD"
           }
         ]
       }
@@ -116,28 +98,21 @@
   },
   "effects": [
     {
-      "name": "Fighting Spirit",
-      "img": "icons/skills/melee/maneuver-sword-katana-yellow.webp",
-      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.w8w2v6TzKX403Qb5",
+      "name": "Grasped",
+      "img": "icons/magic/nature/root-vine-entangle-foot-green.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.eo01VMORuBFrg9iE",
       "transfer": false,
-      "_id": "seBrgr2lry36M2Qd",
+      "_id": "mT6a46pT6K9Ss4WD",
       "type": "base",
       "system": {},
-      "changes": [
-        {
-          "key": "flags.midi-qol.advantage.attack.all",
-          "mode": 0,
-          "value": "1",
-          "priority": null
-        }
-      ],
+      "changes": [],
       "disabled": false,
       "duration": {
         "startTime": null,
-        "seconds": null,
+        "seconds": 60,
         "combat": null,
         "rounds": null,
-        "turns": 1,
+        "turns": null,
         "startRound": null,
         "startTurn": null
       },
@@ -158,14 +133,14 @@
         "coreVersion": "12.331",
         "systemId": "dnd5e",
         "systemVersion": "4.3.8",
-        "createdTime": 1744509868854,
-        "modifiedTime": 1744509898306,
+        "createdTime": 1744511252198,
+        "modifiedTime": 1744511270484,
         "lastModifiedBy": "dnd5mbuilder0000"
       },
-      "_key": "!items.effects!w8w2v6TzKX403Qb5.seBrgr2lry36M2Qd"
+      "_key": "!items.effects!eo01VMORuBFrg9iE.mT6a46pT6K9Ss4WD"
     }
   ],
-  "sort": -100000,
+  "sort": 0,
   "ownership": {
     "default": 0
   },
@@ -181,10 +156,10 @@
     "systemId": "dnd5e",
     "systemVersion": "4.3.8",
     "coreVersion": "12.331",
-    "createdTime": 1710921479558,
-    "modifiedTime": 1744509868920,
+    "createdTime": 1710917796894,
+    "modifiedTime": 1744511252274,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "_key": "!items!w8w2v6TzKX403Qb5"
+  "_key": "!items!eo01VMORuBFrg9iE"
 }

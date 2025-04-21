@@ -6,7 +6,7 @@
   "img": "icons/tools/laboratory/vials-blue-pink.webp",
   "system": {
     "description": {
-      "value": "<div><p>By 5th level, while you have your Alchemist's Satchel within reach, you are able to improve the properties of various potions during a short or long rest. You are able to add potent reagents to a number of potions equal to your Intelligence modifier (minimum of 1), you regain all expended uses when you finish a long rest. For more information on creating potions see Chapter 2: Downtime Revisited in Xanathar's Guide to Everything. Potions gain the the following benefits:</p><ul><li>Potions that grant a benefit for 1 hour or more after drinking, also grant temporary hit points equal to twice your proficiency bonus.</li><li>Healing potions restore an additional amount of health equal to your proficiency bonus.</li></ul><div><ul><li>Adventuring Gear such as Acid (vial) Alchemist's Fire (flask) or Holy Water (flask) (or more at your DM's Discretion) deal additional damage equal to your proficiency bonus.</li><li>Antitoxin cures the creature of one disease or neutralize one poison affecting it.</li></ul></div></div>",
+      "value": "<div><p>While you have your @UUID[Compendium.materia-dnd.class-and-subclass-features.Item.JT7RobJSiQVCO1dh]{Alchemist's Satchel} within reach, you are able to improve the properties of various potions during a Short or Long Rest. You are able to add potent reagents to a number of potions equal to your Intelligence modifier (minimum of 1), you regain all expended uses when you finish a Long Rest. For more information on creating potions see Chapter 2: Downtime Revisited in Xanathar's Guide to Everything. Potions gain the the following benefits:</p><p><strong>Extended Durability.</strong> Potions that grant a benefit for 1 hour or more after drinking also grant Temporary Hit Points equal to twice your Proficiency Bonus.</p><p><strong>Empowered Healing.</strong> Healing potions restore an additional amount of health equal to your Proficiency Bonus.</p><p><strong>Powerful Gear.</strong> Adventuring Gear such as Acid (vial), Alchemist's Fire (flask), or Holy Water (flask) (or more at your DM's discretion) deal additional damage equal to your Proficiency Bonus.</p><p><strong>Curative Elixirs.</strong> Antitoxin cures the creature of one disease or neutralizes one poison affecting it.</p></div>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,227 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Alchemist 5",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 5
+    },
+    "activities": {
+      "k8jZwY0fiSwYsc6w": {
+        "type": "heal",
+        "name": "Extended Durability",
+        "_id": "k8jZwY0fiSwYsc6w",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "temphp"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "2 * @prof"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "img": "",
+        "appliedEffects": []
+      },
+      "k3WhYoK1YWlPZGgZ": {
+        "type": "heal",
+        "_id": "k3WhYoK1YWlPZGgZ",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "@prof"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "Empowered Healing",
+        "img": "",
+        "appliedEffects": []
+      },
+      "c4rTWAtI4sHIwOhS": {
+        "type": "damage",
+        "_id": "c4rTWAtI4sHIwOhS",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "@prof"
+              },
+              "number": null,
+              "denomination": 0,
+              "bonus": "",
+              "types": []
+            }
+          ]
+        },
+        "name": "Powerful Gear",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +301,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1709697301535,
-    "modifiedTime": 1709697382574,
+    "modifiedTime": 1744521970922,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

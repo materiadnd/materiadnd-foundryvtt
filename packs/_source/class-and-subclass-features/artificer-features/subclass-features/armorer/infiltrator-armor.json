@@ -1,12 +1,12 @@
 {
-  "folder": "3hfaG6edAbRAaPZK",
-  "name": "Frost Rune",
+  "folder": "zGdtiQ6nbCZ4VB86",
+  "name": "Infiltrator Armor",
   "type": "feat",
-  "_id": "ZSRgwnL39z4CxMLi",
-  "img": "icons/magic/water/projectiles-ice-explosion.webp",
+  "_id": "tcv1ytOZPI5zaDUL",
+  "img": "icons/equipment/shoulder/pauldron-segmented-steel.webp",
   "system": {
     "description": {
-      "value": "<p><em><strong>Requires Fighter Level 7+</strong></em></p><p>This rune's magic evokes the might of those who survive in the wintry wilderness, such as frost giants. While wearing or carrying an object inscribed with this rune, you have Advantage on Charisma (Intimidation) checks, and you ignore &amp;Reference[difficult terrain].</p><p>In addition, you can invoke the rune as a Bonus Action to increase your sturdiness. For 10 minutes, you gain a bonus equal to your Constitution modifier (minimum of 1) to all Ability Checks and Saving Throws that use Strength or Constitution. Once you invoke this rune, you cannot do so again until you finish a Short or Long Rest.</p>",
+      "value": "<p>You customize your armor for subtle undertakings. It has the following features:</p><p><strong>Dampening Field.</strong> You have Advantage on Dexterity (Stealth) checks and you can use your Intelligence in place of Dexterity. If the armor normally imposes Disadvantage on such checks, the Advantage and Disadvantage cancel each other, as normal.</p><p><strong>Flux Launcher.</strong> A gemlike node appears on one of your armored fists or on the chest (your choice). It counts as a simple ranged weapon, with a normal range of 100 feet and a long range of 400 feet, and it deals 1d6 plus your Intelligence modifier Force or Lightning damage on a hit (you choose on each hit). Once on each of your turns when you hit a creature with it, you can deal an extra 1d6 die damage of the same type to that target.</p><p><strong>Powered Steps.</strong> Your Speed increases by 5 feet.</p>",
       "chat": ""
     },
     "source": {
@@ -15,8 +15,8 @@
       "book": "Materia"
     },
     "activation": {
-      "type": "bonus",
-      "cost": 1,
+      "type": "",
+      "cost": null,
       "condition": ""
     },
     "duration": {
@@ -38,9 +38,9 @@
       "units": ""
     },
     "uses": {
-      "value": 1,
-      "max": "1",
-      "per": "sr",
+      "value": null,
+      "max": "",
+      "per": null,
       "recovery": "",
       "prompt": true
     },
@@ -70,7 +70,7 @@
     },
     "type": {
       "value": "class",
-      "subtype": "rune"
+      "subtype": ""
     },
     "properties": [],
     "requirements": "",
@@ -78,49 +78,16 @@
       "value": null,
       "charged": false
     },
-    "enchant": {
-      "max": "",
-      "period": ""
+    "prerequisites": {
+      "level": 3
     },
     "activities": {
-      "dnd5eactivity000": {
-        "name": "Invoke Rune",
-        "img": "",
-        "duration": {
-          "units": "inst"
-        },
-        "consumption": {
-          "targets": [
-            {
-              "type": "itemUses",
-              "value": "1",
-              "target": ""
-            }
-          ]
-        },
-        "range": {
-          "units": "self"
-        },
-        "appliedEffects": [
-          "EepzcFpGbYg6c179"
-        ],
-        "effects": [
-          {
-            "_id": "EepzcFpGbYg6c179"
-          }
-        ],
-        "target": {
-          "affects": {
-            "type": "self"
-          }
-        }
-      },
-      "1M3zIobI0dq2AK0K": {
-        "type": "enchant",
-        "_id": "1M3zIobI0dq2AK0K",
-        "sort": -100000,
+      "uolZO6ZVJnU8F18s": {
+        "type": "attack",
+        "_id": "uolZO6ZVJnU8F18s",
+        "sort": 0,
         "activation": {
-          "type": "",
+          "type": "action",
           "value": null,
           "override": false,
           "condition": ""
@@ -140,15 +107,12 @@
           "concentration": false,
           "override": false
         },
-        "effects": [
-          {
-            "_id": "k1e3XM6i0OOB4425"
-          }
-        ],
+        "effects": [],
         "range": {
           "override": false,
-          "units": "self",
-          "special": ""
+          "units": "ft",
+          "special": "400",
+          "value": "100"
         },
         "target": {
           "template": {
@@ -158,7 +122,9 @@
           },
           "affects": {
             "choice": false,
-            "type": ""
+            "type": "creature",
+            "count": "1",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -168,16 +134,40 @@
           "recovery": [],
           "max": ""
         },
-        "enchant": {
-          "identifier": ""
+        "attack": {
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "weapon"
+          },
+          "ability": "int",
+          "bonus": ""
         },
-        "restrictions": {
-          "allowMagical": false,
-          "categories": [],
-          "properties": [],
-          "type": ""
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": true,
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": "6",
+              "bonus": "@abilities.int.mod",
+              "types": [
+                "force",
+                "lightning"
+              ]
+            }
+          ]
         },
-        "name": "Inscribe Rune",
+        "name": "Flux Launcher Attack",
         "img": "",
         "appliedEffects": []
       }
@@ -185,81 +175,21 @@
   },
   "effects": [
     {
-      "name": "Sturdy",
-      "img": "icons/magic/water/projectiles-ice-explosion.webp",
-      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.ZSRgwnL39z4CxMLi",
-      "transfer": false,
-      "_id": "EepzcFpGbYg6c179",
+      "name": "Dampening Field",
+      "img": "icons/magic/control/debuff-chains-ropes-net-white.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.tcv1ytOZPI5zaDUL",
+      "_id": "noySEJ8bWofw45fq",
       "type": "base",
       "system": {},
       "changes": [
         {
-          "key": "system.abilities.str.bonuses.save",
-          "mode": 2,
-          "value": "@abilities.con.mod",
-          "priority": null
-        },
-        {
-          "key": "system.abilities.con.bonuses.save",
-          "mode": 2,
-          "value": "@abilities.con.mod",
-          "priority": null
-        },
-        {
-          "key": "system.skills.ath.bonuses.check",
-          "mode": 2,
-          "value": "@abilities.con.mod",
+          "key": "flags.midi-qol.advantage.skill.ste",
+          "mode": 0,
+          "value": "1",
           "priority": null
         }
       ],
-      "disabled": false,
-      "duration": {
-        "startTime": null,
-        "seconds": 600,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "description": "<p>For 10 minutes, you gain a bonus equal to your Constitution modifier (minimum of 1) to all Ability Checks and Saving Throws that use Strength or Constitution</p>",
-      "tint": "#ffffff",
-      "statuses": [],
-      "sort": 0,
-      "flags": {
-        "dnd5e": {
-          "riders": {
-            "statuses": []
-          }
-        }
-      },
-      "_stats": {
-        "compendiumSource": null,
-        "duplicateSource": null,
-        "coreVersion": "12.331",
-        "systemId": "dnd5e",
-        "systemVersion": "4.3.8",
-        "createdTime": 1744506601677,
-        "modifiedTime": 1744506770706,
-        "lastModifiedBy": "dnd5mbuilder0000"
-      },
-      "_key": "!items.effects!ZSRgwnL39z4CxMLi.EepzcFpGbYg6c179"
-    },
-    {
-      "type": "enchantment",
-      "name": "Frost Rune",
-      "img": "icons/magic/water/projectiles-ice-explosion.webp",
       "disabled": true,
-      "_id": "k1e3XM6i0OOB4425",
-      "system": {},
-      "changes": [
-        {
-          "key": "name",
-          "mode": 2,
-          "value": ", Frost Rune",
-          "priority": null
-        }
-      ],
       "duration": {
         "startTime": null,
         "seconds": null,
@@ -270,7 +200,6 @@
         "startTurn": null
       },
       "description": "",
-      "origin": null,
       "tint": "#ffffff",
       "transfer": true,
       "statuses": [],
@@ -288,14 +217,63 @@
         "coreVersion": "12.331",
         "systemId": "dnd5e",
         "systemVersion": "4.3.8",
-        "createdTime": 1744506877762,
-        "modifiedTime": 1744506896973,
+        "createdTime": 1744533122034,
+        "modifiedTime": 1744533149359,
         "lastModifiedBy": "dnd5mbuilder0000"
       },
-      "_key": "!items.effects!ZSRgwnL39z4CxMLi.k1e3XM6i0OOB4425"
+      "_key": "!items.effects!tcv1ytOZPI5zaDUL.noySEJ8bWofw45fq"
+    },
+    {
+      "name": "Powered Steps",
+      "img": "icons/equipment/feet/boots-armored-steel-gold.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.tcv1ytOZPI5zaDUL",
+      "_id": "07NvibhBenUKrqC3",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.movement.walk",
+          "mode": 2,
+          "value": "5",
+          "priority": null
+        }
+      ],
+      "disabled": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": 1744533333735,
+        "modifiedTime": 1744533393554,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!tcv1ytOZPI5zaDUL.07NvibhBenUKrqC3"
     }
   ],
-  "sort": 0,
+  "sort": 12500,
   "ownership": {
     "default": 0
   },
@@ -311,10 +289,10 @@
     "systemId": "dnd5e",
     "systemVersion": "4.3.8",
     "coreVersion": "12.331",
-    "createdTime": 1710308730455,
-    "modifiedTime": 1744506974779,
+    "createdTime": 1709580459127,
+    "modifiedTime": 1744535439388,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "_key": "!items!ZSRgwnL39z4CxMLi"
+  "_key": "!items!tcv1ytOZPI5zaDUL"
 }

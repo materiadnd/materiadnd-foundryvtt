@@ -6,7 +6,7 @@
   "img": "icons/magic/control/buff-strength-muscle-damage-orange.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 7th level, you can add half your proficiency bonus (round up) to any Strength, Dexterity, or Constitution check you make that doesn't already use your proficiency bonus.</p><p>In addition, when you make a running long jump, the distance you can cover increases by a number of feet equal to your Strength modifier.</p><p>Furthermore, you can roll one additional superiority damage die when determining the extra damage for a critical hit with an attack you made with a Maneuver.</p>",
+      "value": "<p>Thanks to your athleticism, you have Advantage on Initiative rolls and Strength (Athletics) checks.</p><p>When you score a Critical Hit with a Maneuver that deals damage you can roll and additional Superiority Die for that damage.</p><p>In addition, immediately after you score a Critical Hit, you can move up to half your Speed without provoking Opportunity Attacks.  </p><section class=\"secret\" id=\"secret-mHtKsPkiGXEMQM3p\"><p><strong>Foundry Note</strong></p><p>This feature automatically grants Advantage on Initiative rolls.</p></section>",
       "chat": ""
     },
     "source": {
@@ -73,13 +73,72 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Champion 7",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Remarkable Athlete",
+      "img": "icons/magic/control/buff-strength-muscle-damage-orange.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.ryC4oCN656wlSwnp",
+      "_id": "sPkLl7H2AdeZULHn",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "flags.dnd5e.remarkableAthlete",
+          "mode": 5,
+          "value": "true",
+          "priority": null
+        },
+        {
+          "key": "flags.midi-qol.advantage.skill.ath",
+          "mode": 0,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": 1744486511189,
+        "modifiedTime": 1744486559725,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!ryC4oCN656wlSwnp.sPkLl7H2AdeZULHn"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
@@ -87,10 +146,10 @@
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1710310091829,
-    "modifiedTime": 1710310135946,
+    "modifiedTime": 1744490911843,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

@@ -6,7 +6,7 @@
   "img": "icons/environment/wilderness/tree-spruce.webp",
   "system": {
     "description": {
-      "value": "<p>This rune harnesses the gifts of flora and fauna. While wearing or carrying an object inscribed with this rune you have advantage on Wisdom (Animal Handling) checks and Intelligence (Nature) checks.</p><p>In addition, when you hit a creature with an attack using a weapon or unarmed strikes, you can invoke the rune to summon choking vegetation: the target must succeed on a Strength saving throw or be restrained for 1 minute. While restrained by the roots and vines, the cannot barely speak and is unable to complete the verbal component of spells. The target can repeat the saving throw at the end of each of its turns, banishing the shackles on a success. Once you invoke this rune, you cannot do so again until you finish a short or long rest.</p>",
+      "value": "<p>This rune harnesses the gifts of flora and fauna. While wearing or carrying an object inscribed with this rune you have Advantage on Wisdom (Animal Handling) checks and Intelligence (Nature) checks.</p><p>In addition, when you hit a creature with an attack using a weapon or Unarmed Strikes, you can invoke the rune to summon choking vegetation: the target must succeed on a Strength Saving Throw or be &amp;Reference[restrained] for 1 minute. While restrained by the roots and vines, the target can barely speak and is unable to complete the Verbal component of spells. The target can repeat the Saving Throw at the end of each of its turns, banishing the shackles on a success. Once you invoke this rune, you cannot do so again until you finish a Short or Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -73,20 +73,212 @@
       "subtype": "rune"
     },
     "properties": [],
-    "requirements": "Rune Knight 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "enchant": {
+      "max": "",
+      "period": ""
+    },
+    "activities": {
+      "oLKmRk66cKSoQmVh": {
+        "type": "enchant",
+        "_id": "oLKmRk66cKSoQmVh",
+        "sort": -100000,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "PMjf8qgqcd9HlTT7"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "enchant": {
+          "identifier": ""
+        },
+        "restrictions": {
+          "allowMagical": false,
+          "categories": [],
+          "properties": [],
+          "type": ""
+        },
+        "name": "Inscribe Rune",
+        "img": "",
+        "appliedEffects": []
+      },
+      "dnd5eactivity000": {
+        "name": "Invoke Rune",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "effects": [
+          {
+            "_id": "DeI8rni8cheEqtsc"
+          }
+        ]
+      }
     }
   },
-  "effects": [],
-  "flags": {},
+  "effects": [
+    {
+      "type": "enchantment",
+      "name": "Forest Rune",
+      "img": "icons/environment/wilderness/tree-spruce.webp",
+      "disabled": true,
+      "_id": "PMjf8qgqcd9HlTT7",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 2,
+          "value": ", Forest Rune",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": 1744506439409,
+        "modifiedTime": 1744506448309,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!L8fK7RiNfaHiossv.PMjf8qgqcd9HlTT7"
+    },
+    {
+      "name": "Restrained",
+      "img": "systems/dnd5e/icons/svg/statuses/restrained.svg",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.L8fK7RiNfaHiossv",
+      "transfer": false,
+      "_id": "DeI8rni8cheEqtsc",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "restrained"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.8",
+        "createdTime": 1744506473541,
+        "modifiedTime": 1744506492379,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!L8fK7RiNfaHiossv.DeI8rni8cheEqtsc"
+    }
+  ],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
     "createdTime": 1707154237798,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1744506473608,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

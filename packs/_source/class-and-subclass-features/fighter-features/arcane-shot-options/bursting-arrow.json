@@ -1,12 +1,12 @@
 {
-  "folder": "30s5QfCMKhxM5OoH",
-  "name": "Telekinetic Thrust",
+  "folder": "vlfG0u6mSrWvrZ4R",
+  "name": "Bursting Arrow",
   "type": "feat",
-  "_id": "KedAjFzmfBIWiluH",
-  "img": "icons/magic/light/explosion-star-glow-blue-purple.webp",
+  "_id": "bIV8ZkFbqRzh5UKT",
+  "img": "icons/magic/fire/explosion-flame-lightning-strike.webp",
   "system": {
     "description": {
-      "value": "<p>When you deal damage to a target with your Psionic Strike, you can force the target to make a Strength saving throw against a DC equal to 8 + your proficiency bonus + your Intelligence modifier. If the save fails, and if the target is one size category Larger than you or smaller, you can knock the target prone or move it up to 10 feet in any direction horizontally.</p>",
+      "value": "<p>You imbue your arrow with force energy drawn from the school of evocation. The energy detonates after your attack. Immediately after the arrow hits the creature or object, the target and all other creatures within 10 feet of it take a number of additional d6 equal to your Intelligence modifier (minimum of 1) Force damage each.</p><p>After you reach 15th level in this class, each creature that took Force damage from this shot must succeed a Strength saving throw or be &amp;Reference[dazed].</p>",
       "chat": ""
     },
     "source": {
@@ -17,7 +17,7 @@
     "activation": {
       "type": "special",
       "cost": null,
-      "condition": "When you deal damage to a target with your Psionic Strike"
+      "condition": ""
     },
     "duration": {
       "value": "",
@@ -26,16 +26,16 @@
     "cover": null,
     "crewed": false,
     "target": {
-      "value": 1,
+      "value": 10,
       "width": null,
-      "units": "",
-      "type": "creature",
+      "units": "ft",
+      "type": "radius",
       "prompt": true
     },
     "range": {
       "value": null,
       "long": null,
-      "units": ""
+      "units": "spec"
     },
     "uses": {
       "value": null,
@@ -51,7 +51,7 @@
       "scale": false
     },
     "ability": "",
-    "actionType": "save",
+    "actionType": "util",
     "attackBonus": "",
     "chatFlavor": "",
     "critical": {
@@ -59,7 +59,12 @@
       "damage": ""
     },
     "damage": {
-      "parts": [],
+      "parts": [
+        [
+          "(@abilities.int.mod)d6",
+          "force"
+        ]
+      ],
       "versatile": ""
     },
     "formula": "",
@@ -70,29 +75,32 @@
     },
     "type": {
       "value": "class",
-      "subtype": ""
+      "subtype": "arcaneShot"
     },
     "properties": [],
-    "requirements": "Psi Warrior 7",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
     }
   },
   "effects": [],
-  "flags": {},
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
-    "createdTime": 1707256121680,
-    "modifiedTime": 1710308675581,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
-  },
-  "sort": 196875,
+  "sort": 0,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!KedAjFzmfBIWiluH"
+  "flags": {},
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.8",
+    "coreVersion": "12.331",
+    "createdTime": 1710917562199,
+    "modifiedTime": 1744511118776,
+    "lastModifiedBy": "dnd5mbuilder0000",
+    "duplicateSource": null
+  },
+  "_key": "!items!bIV8ZkFbqRzh5UKT"
 }
