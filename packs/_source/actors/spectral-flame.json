@@ -1,8 +1,8 @@
 {
-  "name": "Wildfire Spirit",
+  "name": "Spectral Flame",
   "type": "npc",
-  "_id": "B5KBwLrf62zeLKpr",
-  "img": "icons/magic/fire/elemental-fire-humanoid.webp",
+  "_id": "BkBLEAhV0iFLWwY0",
+  "img": "icons/magic/fire/projectile-smoke-swirl-red.webp",
   "system": {
     "currency": {
       "pp": 0,
@@ -13,57 +13,141 @@
     },
     "abilities": {
       "str": {
-        "value": 10,
+        "value": 0,
         "proficient": 0,
         "max": null,
         "bonuses": {
           "check": "",
           "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
         }
       },
       "dex": {
-        "value": 14,
+        "value": 0,
         "proficient": 0,
         "max": null,
         "bonuses": {
           "check": "",
           "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
         }
       },
       "con": {
-        "value": 14,
+        "value": 0,
         "proficient": 0,
         "max": null,
         "bonuses": {
           "check": "",
           "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
         }
       },
       "int": {
-        "value": 13,
+        "value": 0,
         "proficient": 0,
         "max": null,
         "bonuses": {
           "check": "",
           "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
         }
       },
       "wis": {
-        "value": 15,
+        "value": 0,
         "proficient": 0,
         "max": null,
         "bonuses": {
           "check": "",
           "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
         }
       },
       "cha": {
-        "value": 11,
+        "value": 0,
         "proficient": 0,
         "max": null,
         "bonuses": {
           "check": "",
           "save": ""
+        },
+        "check": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
+        },
+        "save": {
+          "roll": {
+            "min": null,
+            "max": null,
+            "mode": 0
+          }
         }
       }
     },
@@ -373,6 +457,10 @@
       }
     },
     "attributes": {
+      "ac": {
+        "calc": "flat",
+        "flat": 0
+      },
       "init": {
         "ability": "",
         "roll": {
@@ -385,25 +473,25 @@
       "movement": {
         "burrow": null,
         "climb": null,
-        "fly": 30,
+        "fly": null,
         "swim": null,
-        "walk": 30,
+        "walk": null,
         "units": null,
-        "hover": true
+        "hover": false
       },
       "attunement": {
         "max": 3
       },
       "senses": {
-        "darkvision": 60,
+        "darkvision": null,
         "blindsight": null,
         "tremorsense": null,
         "truesight": null,
         "units": null,
         "special": ""
       },
-      "spellcasting": "int",
-      "exhaustion": 0,
+      "spellcasting": "str",
+      "exhaustion": 1,
       "concentration": {
         "ability": "",
         "roll": {
@@ -416,26 +504,33 @@
         },
         "limit": 1
       },
-      "ac": {
-        "flat": 10,
-        "calc": "natural"
+      "loyalty": {
+        "value": null
+      },
+      "hd": {
+        "spent": 0
       },
       "hp": {
-        "value": 5,
-        "max": 5,
+        "value": 0,
+        "max": 0,
         "temp": null,
         "tempmax": null,
         "formula": ""
       },
       "death": {
-        "ability": "",
         "roll": {
           "min": null,
           "max": null,
           "mode": 0
         },
         "success": 0,
-        "failure": 0
+        "failure": 0,
+        "bonuses": {
+          "save": ""
+        }
+      },
+      "spell": {
+        "level": 0
       }
     },
     "details": {
@@ -444,17 +539,19 @@
         "public": ""
       },
       "alignment": "",
+      "ideal": "",
+      "bond": "",
+      "flaw": "",
       "race": null,
-      "type": {
-        "value": "elemental",
-        "custom": "",
-        "subtype": "",
-        "swarm": ""
+      "type": {},
+      "habitat": {
+        "value": [],
+        "custom": ""
       },
-      "environment": "",
       "cr": 0,
-      "spellLevel": 0,
-      "source": {}
+      "treasure": {
+        "value": []
+      }
     },
     "resources": {
       "legact": {
@@ -467,78 +564,73 @@
       },
       "lair": {
         "value": false,
-        "initiative": null
+        "initiative": null,
+        "inside": false
       }
     },
+    "source": {
+      "revision": 1,
+      "rules": "2024"
+    },
     "traits": {
-      "size": "sm",
+      "size": "med",
       "di": {
-        "bypasses": [],
-        "value": [
-          "fire"
-        ],
-        "custom": ""
+        "value": [],
+        "custom": "",
+        "bypasses": []
       },
       "dr": {
-        "bypasses": [],
         "value": [],
-        "custom": ""
+        "custom": "",
+        "bypasses": []
       },
       "dv": {
-        "bypasses": [],
         "value": [],
-        "custom": ""
+        "custom": "",
+        "bypasses": []
       },
       "dm": {
         "amount": {},
         "bypasses": []
       },
       "ci": {
-        "value": [
-          "charmed",
-          "frightened",
-          "grappled",
-          "prone",
-          "restrained"
-        ],
+        "value": [],
         "custom": ""
       },
       "languages": {
         "value": [],
-        "custom": "understands the languages you speak"
-      }
-    },
-    "source": {
-      "rules": "2024",
-      "revision": 1,
-      "book": "Materia"
+        "custom": "",
+        "communication": {}
+      },
+      "important": false
     }
   },
   "prototypeToken": {
-    "name": "Wildfire Spirit",
-    "displayName": 0,
+    "name": "Spectral Flame",
+    "displayName": 20,
     "actorLink": false,
     "appendNumber": false,
     "prependAdjective": false,
+    "width": 1,
+    "height": 1,
     "texture": {
-      "src": "icons/magic/fire/elemental-fire-humanoid.webp",
-      "scaleX": 1,
-      "scaleY": 1,
-      "offsetX": 0,
-      "offsetY": 0,
-      "rotation": 0,
+      "src": "icons/magic/fire/projectile-smoke-swirl-red.webp",
       "anchorX": 0.5,
       "anchorY": 0.5,
+      "offsetX": 0,
+      "offsetY": 0,
       "fit": "contain",
+      "scaleX": 1,
+      "scaleY": 1,
+      "rotation": 0,
       "tint": "#ffffff",
       "alphaThreshold": 0.75
     },
-    "width": 1,
-    "height": 1,
+    "hexagonalShape": 0,
     "lockRotation": false,
     "rotation": 0,
     "alpha": 1,
-    "disposition": -1,
+    "disposition": 1,
     "displayBars": 0,
     "bar1": {
       "attribute": "attributes.hp"
@@ -547,9 +639,12 @@
       "attribute": null
     },
     "light": {
+      "negative": false,
+      "priority": 0,
       "alpha": 0.5,
       "angle": 360,
       "bright": 0,
+      "color": null,
       "coloration": 1,
       "dim": 0,
       "attenuation": 0.5,
@@ -566,26 +661,20 @@
       "darkness": {
         "min": 0,
         "max": 1
-      },
-      "negative": false,
-      "priority": 0,
-      "color": null
+      }
     },
     "sight": {
       "enabled": false,
       "range": 0,
       "angle": 360,
       "visionMode": "basic",
+      "color": null,
       "attenuation": 0.1,
       "brightness": 0,
       "saturation": 0,
-      "contrast": 0,
-      "color": null
+      "contrast": 0
     },
     "detectionModes": [],
-    "flags": {},
-    "randomImg": false,
-    "hexagonalShape": 0,
     "occludable": {
       "radius": 0
     },
@@ -595,289 +684,60 @@
         "ring": null,
         "background": null
       },
-      "effects": 1,
+      "effects": 0,
       "subject": {
         "scale": 1,
         "texture": null
       }
-    }
+    },
+    "flags": {},
+    "randomImg": false
   },
-  "items": [
+  "items": [],
+  "effects": [
     {
-      "folder": "EyT6wN4Hl33u5SG9",
-      "name": "Fiery Teleport",
-      "type": "feat",
-      "_id": "uLKvp2POkOVWWLR8",
-      "img": "icons/magic/fire/barrier-wall-flame-ring-yellow.webp",
-      "system": {
-        "description": {
-          "value": "<p>The spirit and each willing creature of your choice within 5 feet of it teleport up to 15 feet to unoccupied spaces you can see. Then each creature within 5 feet of the space that the spirit left must succeed on a Dexterity saving throw against your spell save DC or take 1d6 + PB fire damage.</p>",
-          "chat": ""
-        },
-        "source": {},
-        "activation": {
-          "type": "action",
-          "cost": 1,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": "inst"
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": 5,
-          "width": null,
-          "units": "ft",
-          "type": "radius",
-          "prompt": true
-        },
-        "range": {
-          "value": 15,
-          "long": null,
-          "units": "ft"
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": "",
-        "actionType": "save",
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [
-            [
-              "1d6 + @prof",
-              ""
-            ]
-          ],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "dex",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "summons": null,
-        "type": {
-          "value": "monster",
-          "subtype": ""
-        },
-        "properties": [],
-        "requirements": "",
-        "recharge": {
-          "value": null,
-          "charged": false
-        }
+      "name": "Exhaustion",
+      "_id": "dnd5eexhaustion0",
+      "img": "systems/dnd5e/icons/svg/statuses/exhaustion.svg",
+      "statuses": [
+        "exhaustion"
+      ],
+      "description": "@Embed[Compendium.materia-dnd.rules.JournalEntry.matJrnConditions.JournalEntryPage.matJrnCondExhaus inline]",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": 318,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
       },
-      "effects": [],
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": false,
       "sort": 0,
-      "ownership": {
-        "default": 0
-      },
       "flags": {
-        "core": {
-          "sourceId": "Compendium.materia-dnd.monster-features.Item.ycWHDMUyCrIfuZT2"
+        "dnd5e": {
+          "exhaustionLevel": 1
         }
       },
-      "_stats": {
-        "systemId": "dnd5e",
-        "systemVersion": "3.1.0",
-        "coreVersion": "12.325",
-        "createdTime": 1711337031313,
-        "modifiedTime": 1711337111384,
-        "lastModifiedBy": "dnd5mbuilder0000",
-        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.ycWHDMUyCrIfuZT2",
-        "duplicateSource": null
-      },
-      "_key": "!actors.items!B5KBwLrf62zeLKpr.uLKvp2POkOVWWLR8"
-    },
-    {
-      "folder": "EyT6wN4Hl33u5SG9",
-      "name": "Flame Seed",
-      "type": "feat",
-      "_id": "dEExeR1m63oS31Fb",
-      "img": "icons/magic/fire/projectile-fireball-smoke-large-orange.webp",
-      "system": {
-        "description": {
-          "value": "<p><em>Ranged Weapon Attack:</em> your spell attack modifier to hit, range 60 ft. (range 90 ft. at 6th level, range 120 ft. at 14th level), one target. <em>Hit:</em> 1d6 + PB fire damage.</p>",
-          "chat": ""
-        },
-        "source": {},
-        "activation": {
-          "type": "action",
-          "cost": 1,
-          "condition": ""
-        },
-        "duration": {
-          "value": "",
-          "units": ""
-        },
-        "cover": null,
-        "crewed": false,
-        "target": {
-          "value": 1,
-          "width": null,
-          "units": "",
-          "type": "creature",
-          "prompt": true
-        },
-        "range": {
-          "value": 60,
-          "long": null,
-          "units": "ft"
-        },
-        "uses": {
-          "value": null,
-          "max": "",
-          "per": null,
-          "recovery": "",
-          "prompt": true
-        },
-        "consume": {
-          "type": "",
-          "target": null,
-          "amount": null,
-          "scale": false
-        },
-        "ability": "",
-        "actionType": "rwak",
-        "attack": {
-          "bonus": "",
-          "flat": false
-        },
-        "chatFlavor": "",
-        "critical": {
-          "threshold": null,
-          "damage": ""
-        },
-        "damage": {
-          "parts": [
-            [
-              "1d6 + @prof",
-              "fire"
-            ]
-          ],
-          "versatile": ""
-        },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
-        },
-        "summons": null,
-        "type": {
-          "value": "monster",
-          "subtype": ""
-        },
-        "properties": [],
-        "requirements": "",
-        "recharge": {
-          "value": null,
-          "charged": false
-        }
-      },
-      "effects": [],
-      "sort": 0,
-      "ownership": {
-        "default": 0
-      },
-      "flags": {
-        "core": {
-          "sourceId": "Compendium.materia-dnd.monster-features.Item.2Tx4AfrScPEE73UA"
-        }
-      },
-      "_stats": {
-        "systemId": "dnd5e",
-        "systemVersion": "3.1.0",
-        "coreVersion": "12.325",
-        "createdTime": 1711336859773,
-        "modifiedTime": 1711337112419,
-        "lastModifiedBy": "dnd5mbuilder0000",
-        "compendiumSource": "Compendium.materia-dnd.monster-features.Item.2Tx4AfrScPEE73UA",
-        "duplicateSource": null
-      },
-      "_key": "!actors.items!B5KBwLrf62zeLKpr.dEExeR1m63oS31Fb"
-    },
-    {
-      "name": "Everburning",
-      "type": "feat",
-      "_id": "HJ2MkxmyPAXTdg0G",
-      "img": "icons/magic/fire/flame-burning-fist-strike.webp",
-      "system": {
-        "activities": {},
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
-        },
-        "description": {
-          "value": "<p>Whenever you cast a level 1+ spell from your Circle of Wildfire spell list, the {creature} can expend a number of Hit Dice equal to your Proficiency Bonus to regain Hit Points or the next [[/item Flame Seed]] attack it makes until the end of your next turn is made at Advantage.</p>",
-          "chat": ""
-        },
-        "identifier": "new-item",
-        "source": {
-          "revision": 1,
-          "rules": "2024"
-        },
-        "advancement": [],
-        "cover": null,
-        "crewed": false,
-        "enchant": {},
-        "prerequisites": {
-          "level": null,
-          "repeatable": false
-        },
-        "properties": [
-          "trait"
-        ],
-        "requirements": "",
-        "type": {
-          "value": "monster",
-          "subtype": ""
-        }
-      },
-      "effects": [],
-      "folder": null,
-      "sort": 0,
-      "ownership": {
-        "default": 0
-      },
-      "flags": {},
       "_stats": {
         "compendiumSource": null,
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
         "systemVersion": "4.3.9",
-        "createdTime": 1745481451190,
-        "modifiedTime": 1745481527086,
+        "createdTime": 1745481902067,
+        "modifiedTime": 1745481902067,
         "lastModifiedBy": "dnd5mbuilder0000"
       },
-      "_key": "!actors.items!B5KBwLrf62zeLKpr.HJ2MkxmyPAXTdg0G"
+      "_key": "!actors.effects!BkBLEAhV0iFLWwY0.dnd5eexhaustion0"
     }
   ],
-  "effects": [],
   "folder": null,
   "sort": 0,
   "ownership": {
@@ -885,13 +745,13 @@
   },
   "flags": {},
   "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
     "systemId": "dnd5e",
     "systemVersion": "4.3.9",
-    "coreVersion": "12.331",
-    "createdTime": 1711336550034,
-    "modifiedTime": 1745481406135,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+    "createdTime": 1745481867022,
+    "modifiedTime": 1745481934555,
+    "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_key": "!actors!B5KBwLrf62zeLKpr"
+  "_key": "!actors!BkBLEAhV0iFLWwY0"
 }

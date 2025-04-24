@@ -6,7 +6,7 @@
   "img": "icons/magic/nature/lotus-glow-pink.webp",
   "system": {
     "description": {
-      "value": "<p>At 2nd level, you become imbued with the blessings of the Summer Court. You are a font of energy that offers respite from injuries. You have a pool of fey energy represented by a number of d6s equal to your druid level.</p><p>As a bonus action, you can choose one creature you can see within 120 feet of you and spend a number of those dice equal to half your druid level or less. Roll the spent dice and add them together. The target regains a number of hit points equal to the total. The target also gains 1 temporary hit point per die spent.</p><p>You regain all expended dice when you finish a long rest. Alternatively at 9th level, when you roll initiative, you can choose to regain a number of expended d6s equal to your Wisdom modifier (minimum of 1) instead of an expended <em>Wild Shape</em> with your <em>Always Wild</em>.</p>",
+      "value": "<p>You become imbued with the blessings of the Summer Court. You are a font of energy that offers respite from injuries. You have a pool of fey energy represented by a number of d6s equal to your Druid level.</p><p>As a Bonus Action, you can choose one creature you can see within 120 feet of you and spend a number of those dice equal to half your Druid level or less. Roll the spent dice and add them together. The target regains a number of Hit Points equal to the total. The target also gains 1 Temporary Hit Point per die spent.</p><p>You regain all expended dice when you finish a Long Rest. Alternatively at 9th level, when you roll Initiative, you can choose to regain a number of expended d6s equal to your Wisdom modifier (minimum of 1) instead of an expended <em>Wild Shape</em> with your <em>Always Wild</em>.</p><section id=\"secret-g0r9We08FPldPOb3\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Heal</strong> activity will provide a heal for the appropriate number of d6 Hit Points, but it will not add the Temporary Hit Points, those need to be added manually.</p><p>The <strong>Regain Dice with Always Wild</strong> activity can be used to recharge your d6 pool and consume your use of Always Wild.</p></section>",
       "chat": ""
     },
     "source": {
@@ -77,10 +77,166 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Circle of Dreams 2",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "TyY2FuRYNJDTt9UY": {
+        "type": "heal",
+        "_id": "TyY2FuRYNJDTt9UY",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true,
+            "max": "@classes.druid.levels / 2"
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "activityUses",
+              "value": "1",
+              "scaling": {
+                "mode": "amount",
+                "formula": "@scaling"
+              }
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "120"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "(@scaling)d6"
+          },
+          "scaling": {
+            "number": 1,
+            "mode": ""
+          },
+          "bonus": ""
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      },
+      "Y0kt7ExnHgdWZ80E": {
+        "type": "utility",
+        "_id": "Y0kt7ExnHgdWZ80E",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.qsqpN93SGKMes5pp"
+            },
+            {
+              "type": "activityUses",
+              "value": "-@abilities.wis.mod"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Regain Dice with Always Wild",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -88,13 +244,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711333939950,
-    "modifiedTime": 1711334067079,
+    "modifiedTime": 1745419912362,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

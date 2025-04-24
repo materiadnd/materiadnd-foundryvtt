@@ -6,7 +6,7 @@
   "img": "icons/magic/air/fog-gas-smoke-green.webp",
   "system": {
     "description": {
-      "value": "<p>Beginning at 10th level, you gain the ability to seed an area with choking spores. As a bonus action while your Symbiotic Entity feature is active, you can hurl spores up to 30 feet away, where they swirl in up to a 5 x your wisdom modifier (minimum of 1) foot cube for 1 minute. You decide the size of the cube on each use. The spores disappear early if you use this feature again, if you dismiss them as a bonus action, or if your Symbiotic Entity feature is no longer active.</p><p>Whenever a creature other than you or your fungal thrall moves into the area or starts its turn there, that creature takes your Halo of Spores damage, unless the creature succeeds on a Constitution saving throw against your spell save DC. If a creature takes damage from these spores they can barely speak and are unable to complete the verbal component of spells or use abilities that require others to hear them. A creature can take this damage no more than once per turn.</p><p>While the cube of spores persists, you cannot use your Halo of Spores reaction.</p>",
+      "value": "<p>You gain the ability to seed an area with choking spores. As a Bonus Action while your [[/item Symbiotic Entity]] feature is active, you can hurl spores up to 30 feet away, where they swirl in up to a 5x your wisdom modifier (minimum of 1) foot cube for 1 minute. You decide the size of the cube on each use. The spores disappear early if you use this feature again, if you dismiss them as a Bonus Action, or if your Symbiotic Entity feature is no longer active.</p><p>Whenever a creature other than you or your Fungal Thrall moves into the area or starts its turn there, that creature takes your Halo of Spores damage, unless the creature succeeds on a Constitution saving throw against your spell save DC. If a creature takes damage from these spores they can barely speak and are unable to complete the Verbal component of spells or use abilities that require others to hear them. A creature can take this damage no more than once per turn.</p><p>While the cube of spores persists, you cannot take your Halo of Spores Reaction.</p>",
       "chat": ""
     },
     "source": {
@@ -82,10 +82,47 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Circle of Spores 10",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 10
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "consumption": {
+          "scaling": {
+            "allowed": false,
+            "max": "5 * @abilities.wis.mod"
+          }
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "@scale.circle-of-spores.halo-of-spores"
+              },
+              "number": null,
+              "denomination": null,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ]
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "target": {
+          "template": {
+            "size": ""
+          }
+        }
+      }
     }
   },
   "effects": [],
@@ -93,13 +130,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711335546409,
-    "modifiedTime": 1711335669786,
+    "modifiedTime": 1745444693289,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
