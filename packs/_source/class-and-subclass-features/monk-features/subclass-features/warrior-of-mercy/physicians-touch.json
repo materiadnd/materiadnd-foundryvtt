@@ -1,0 +1,313 @@
+{
+  "folder": "j4rYU4CkPaXJ5eoL",
+  "name": "Physician's Touch",
+  "type": "feat",
+  "_id": "himTaaNHCc1e0nvk",
+  "img": "icons/containers/bags/pouch-leather-brown-green.webp",
+  "system": {
+    "description": {
+      "value": "<p>Your Hand of Harm, Hand of Healing, and Implements of Mercy improve, as detailed below.</p><p><strong>Hand of Harm.</strong> When you use Hand of Harm on a creature, you can also give that creature the &amp;Reference[Poisoned] condition until the end of your next turn.</p><p><strong>Hand of Healing.</strong> When you use Hand of Healing, you can also end one of the following conditions on the creature you heal: Blinded, Deafened, Paralyzed, Poisoned, Stunned, or Weakened.</p><p><strong>Implements of Mercy.</strong> When you make an Insight check, Medicine check, or a check using your Herbalism Kit, you can roll a Martial Arts die and add it to the result.</p><section id=\"secret-XFpOkjmDwcPBSehD\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>You can use the <strong>Improved Hand of Harm</strong> and <strong>Improved Hand of Healing</strong> activities on this feature going forward. The <strong>Improved Hand of Harm</strong> activity includes an Active Effect which will apply the Poisoned status.</p></section>",
+      "chat": ""
+    },
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "",
+      "cost": null,
+      "condition": ""
+    },
+    "duration": {
+      "value": "",
+      "units": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": "",
+      "prompt": true
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": ""
+    },
+    "uses": {
+      "value": null,
+      "max": "",
+      "per": null,
+      "recovery": "",
+      "prompt": true
+    },
+    "consume": {
+      "type": "",
+      "target": null,
+      "amount": null,
+      "scale": false
+    },
+    "ability": null,
+    "actionType": "",
+    "attackBonus": "",
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "type": {
+      "value": "class",
+      "subtype": ""
+    },
+    "properties": [],
+    "requirements": "",
+    "recharge": {
+      "value": null,
+      "charged": false
+    },
+    "prerequisites": {
+      "level": 6
+    },
+    "activities": {
+      "3j9yFOs9k4dlvugt": {
+        "type": "heal",
+        "_id": "3j9yFOs9k4dlvugt",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.6PTV2WXjnNhwvYef"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "@scale.monk.die + @abilities.wis.mod"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "Improved Hand of Healing",
+        "img": "",
+        "appliedEffects": []
+      },
+      "7IOOw873uDCRtnxE": {
+        "type": "damage",
+        "_id": "7IOOw873uDCRtnxE",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": "Once per turn when you hit a creature with an Unarmed Strike and deal damage"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.6PTV2WXjnNhwvYef"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "uqAQAk2jIiDSonOy"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "@scale.monk.die + @abilities.wis.mod"
+              },
+              "number": null,
+              "denomination": 0,
+              "bonus": "",
+              "types": []
+            }
+          ]
+        },
+        "name": "Improved Hand of Harm",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
+  },
+  "effects": [
+    {
+      "name": "Improved Hand of Harm",
+      "img": "icons/containers/bags/pouch-leather-brown-green.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.himTaaNHCc1e0nvk",
+      "transfer": false,
+      "_id": "uqAQAk2jIiDSonOy",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "poisoned"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1745610666727,
+        "modifiedTime": 1745610704364,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!himTaaNHCc1e0nvk.uqAQAk2jIiDSonOy"
+    }
+  ],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
+    "createdTime": 1710980125002,
+    "modifiedTime": 1745610760830,
+    "lastModifiedBy": "dnd5mbuilder0000",
+    "duplicateSource": null
+  },
+  "_key": "!items!himTaaNHCc1e0nvk"
+}

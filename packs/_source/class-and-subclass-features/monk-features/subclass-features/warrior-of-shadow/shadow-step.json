@@ -1,12 +1,12 @@
 {
-  "folder": "79akmpD5nWDdYM6C",
-  "name": "Dampen Energy",
+  "folder": "LatRu9cecuZ68CyK",
+  "name": "Shadow Step",
   "type": "feat",
-  "_id": "IJ3sVXtVTRcHsrvQ",
-  "img": "icons/magic/defensive/shield-barrier-glowing-triangle-orange.webp",
+  "_id": "kvbOMTWwgF426ONt",
+  "img": "icons/magic/movement/trail-streak-pink.webp",
   "system": {
     "description": {
-      "value": "<p>You can now use your Deflect Harm ability against attacks that deal any damage type, not just Bludgeoning, Piercing, or Slashing.</p>",
+      "value": "<p>While entirely in &amp;Reference[Dim Light] or Darkness, you can use a Bonus Action to teleport up to 60 feet to an unoccupied space that is also in Dim Light or Darkness, and can make an Unarmed Strike as part of the same action.  You have Advantage on the next melee attack you make before the end of the current turn.</p>",
       "chat": ""
     },
     "source": {
@@ -15,7 +15,7 @@
       "book": "Materia"
     },
     "activation": {
-      "type": "reaction",
+      "type": "bonus",
       "cost": 1,
       "condition": ""
     },
@@ -26,16 +26,16 @@
     "cover": null,
     "crewed": false,
     "target": {
-      "value": 1,
+      "value": null,
       "width": null,
       "units": "",
-      "type": "creature",
+      "type": "self",
       "prompt": true
     },
     "range": {
-      "value": null,
+      "value": 60,
       "long": null,
-      "units": "spec"
+      "units": "ft"
     },
     "uses": {
       "value": null,
@@ -46,12 +46,12 @@
     },
     "consume": {
       "type": "",
-      "target": null,
+      "target": "",
       "amount": null,
       "scale": false
     },
-    "ability": null,
-    "actionType": "",
+    "ability": "",
+    "actionType": "util",
     "attackBonus": "",
     "chatFlavor": "",
     "critical": {
@@ -78,13 +78,28 @@
       "value": null,
       "charged": false
     },
-    "activities": {},
     "prerequisites": {
-      "level": 13
+      "level": 6
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Shadow Step",
+        "img": "",
+        "appliedEffects": [],
+        "activation": {
+          "condition": "While entirely within Dim Light or Darkness"
+        },
+        "target": {
+          "affects": {
+            "type": "space",
+            "count": "1"
+          }
+        }
+      }
     }
   },
   "effects": [],
-  "sort": 1800000,
+  "sort": 0,
   "ownership": {
     "default": 0
   },
@@ -100,10 +115,10 @@
     "systemId": "dnd5e",
     "systemVersion": "4.3.9",
     "coreVersion": "12.331",
-    "createdTime": 1708924778487,
-    "modifiedTime": 1745621819291,
+    "createdTime": 1710995555461,
+    "modifiedTime": 1745616986597,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "_key": "!items!IJ3sVXtVTRcHsrvQ"
+  "_key": "!items!kvbOMTWwgF426ONt"
 }

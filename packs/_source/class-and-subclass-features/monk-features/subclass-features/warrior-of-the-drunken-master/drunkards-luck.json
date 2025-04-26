@@ -1,12 +1,12 @@
 {
-  "folder": "79akmpD5nWDdYM6C",
-  "name": "Dampen Energy",
+  "folder": "HDDH5oZwPtYixU9s",
+  "name": "Drunkard's Luck",
   "type": "feat",
-  "_id": "IJ3sVXtVTRcHsrvQ",
-  "img": "icons/magic/defensive/shield-barrier-glowing-triangle-orange.webp",
+  "_id": "TF9YaAwbCYtVHjUy",
+  "img": "icons/magic/control/buff-luck-fortune-green.webp",
   "system": {
     "description": {
-      "value": "<p>You can now use your Deflect Harm ability against attacks that deal any damage type, not just Bludgeoning, Piercing, or Slashing.</p>",
+      "value": "<p>You always seem to get a lucky bounce at the right moment. When you make a &amp;Reference[D20 Test] and have disadvantage on the roll, you can cancel the disadvantage for that roll.</p><p>You can use this feature a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -15,8 +15,8 @@
       "book": "Materia"
     },
     "activation": {
-      "type": "reaction",
-      "cost": 1,
+      "type": "special",
+      "cost": null,
       "condition": ""
     },
     "duration": {
@@ -26,21 +26,21 @@
     "cover": null,
     "crewed": false,
     "target": {
-      "value": 1,
+      "value": null,
       "width": null,
       "units": "",
-      "type": "creature",
+      "type": "self",
       "prompt": true
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "spec"
+      "units": "self"
     },
     "uses": {
       "value": null,
-      "max": "",
-      "per": null,
+      "max": "@prof",
+      "per": "lr",
       "recovery": "",
       "prompt": true
     },
@@ -52,7 +52,10 @@
     },
     "ability": null,
     "actionType": "",
-    "attackBonus": "",
+    "attack": {
+      "bonus": "",
+      "flat": false
+    },
     "chatFlavor": "",
     "critical": {
       "threshold": null,
@@ -68,6 +71,7 @@
       "dc": null,
       "scaling": "spell"
     },
+    "summons": null,
     "type": {
       "value": "class",
       "subtype": ""
@@ -78,13 +82,28 @@
       "value": null,
       "charged": false
     },
-    "activities": {},
     "prerequisites": {
-      "level": 13
+      "level": 11
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Drunkard's Luck",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "sort": 1800000,
+  "sort": 0,
   "ownership": {
     "default": 0
   },
@@ -100,10 +119,10 @@
     "systemId": "dnd5e",
     "systemVersion": "4.3.9",
     "coreVersion": "12.331",
-    "createdTime": 1708924778487,
-    "modifiedTime": 1745621819291,
+    "createdTime": 1712407873186,
+    "modifiedTime": 1745634934331,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "_key": "!items!IJ3sVXtVTRcHsrvQ"
+  "_key": "!items!TF9YaAwbCYtVHjUy"
 }
