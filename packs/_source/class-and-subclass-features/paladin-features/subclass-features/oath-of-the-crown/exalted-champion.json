@@ -6,7 +6,7 @@
   "img": "icons/weapons/swords/sword-gold-holy.webp",
   "system": {
     "description": {
-      "value": "<div><div><p>At 20th level, your presence on the field of battle is an inspiration to those dedicated to your cause. You can use your bonus action to gain the following benefits for 1 hour:</p><ul><li>You have resistance to bludgeoning, piercing, and slashing damage.</li><li>You have advantage on any creature that has failed their saving throw against your Champion Challenge.</li><li>When you deal damage with Divine Smite the target must make a Wisdom saving throw against your Champion Challenge.</li></ul><p>Once you use this feature, you cannot use it again until you finish a long rest, unless you expend a 5th-level spell slot to use it again.</p></div></div>",
+      "value": "<p>Your presence on the field of battle is an inspiration to those dedicated to your cause. As a Bonus Action, you gain the following benefits for 1 hour. Once you use this feature, you cannot use it again until you finish a Long Rest. You can also restore your use of it by expending a 5th-level spell slot (no action required).</p><p><strong>Resistance.</strong> You have resistance to Bludgeoning, Piercing, and Slashing damage.</p><p><strong>Champion Saves.</strong> You have Advantage on any creature that has failed their saving throw against your [[/item Champion Challenge]].</p><p><strong>Smite Challenges.</strong> When you deal damage with Divine Smite the target must make a Wisdom saving throw against your [[/item Champion Challenge]].</p>",
       "chat": ""
     },
     "source": {
@@ -73,24 +73,237 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Oath of the Crown 20",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 20
+    },
+    "activities": {
+      "oTigAU3Gh61GXUpa": {
+        "type": "utility",
+        "_id": "oTigAU3Gh61GXUpa",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "ReTwSBSzdncYEwKy"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Exalted Champion",
+        "img": "",
+        "appliedEffects": []
+      },
+      "O6SQsVJQGMWk39x8": {
+        "type": "utility",
+        "_id": "O6SQsVJQGMWk39x8",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": ""
+            },
+            {
+              "type": "spellSlots",
+              "value": "1",
+              "target": "5"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Restore Use",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Exalted Champion",
+      "img": "icons/weapons/swords/sword-gold-holy.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.Xvm93bfVo0G5hqe8",
+      "transfer": false,
+      "_id": "ReTwSBSzdncYEwKy",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "bludgeoning",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "piercing",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "slashing",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746272225582,
+        "modifiedTime": 1746272258013,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!Xvm93bfVo0G5hqe8.ReTwSBSzdncYEwKy"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710970856878,
-    "modifiedTime": 1710972374960,
+    "modifiedTime": 1746272291973,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

@@ -1,12 +1,12 @@
 {
-  "folder": "s6OcmevFLgZaMfxC",
-  "name": "Aura of Alacrity",
+  "folder": "akfbtYERCdTbOoOQ",
+  "name": "Emissary of Peace",
   "type": "feat",
-  "_id": "9mXb0S08VRcOWYXU",
-  "img": "icons/magic/water/waves-water-blue.webp",
+  "_id": "S8KHfOe1iF32o3ko",
+  "img": "icons/skills/social/diplomacy-unity-alliance.webp",
   "system": {
     "description": {
-      "value": "<p>Your Speed increases by 10 feet.</p><p>In addition, whenever an ally enters your Aura of Protection for the first time on a turn or starts their turn there, the ally's Speed increases by 10 feet until the end of their next turn.</p><section id=\"secret-8oCQwBjIkIXwh6pP\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes an Active Effect which increases your Speed by 10 feet. It does not automatically apply to creatures within your aura.</p></section>",
+      "value": "<p>As a Bonus Action, you can expend a use of your Channel Divinity to grant yourself a +5 bonus to Charisma (Persuasion) checks and you can treat a d20 roll of 9 or lower as a 10 for the next 10 minutes.</p>",
       "chat": ""
     },
     "source": {
@@ -15,13 +15,13 @@
       "book": "Materia"
     },
     "activation": {
-      "type": "",
-      "cost": null,
+      "type": "bonus",
+      "cost": 1,
       "condition": ""
     },
     "duration": {
-      "value": "",
-      "units": ""
+      "value": "10",
+      "units": "minute"
     },
     "cover": null,
     "crewed": false,
@@ -35,7 +35,7 @@
     "range": {
       "value": null,
       "long": null,
-      "units": ""
+      "units": "self"
     },
     "uses": {
       "value": null,
@@ -45,9 +45,9 @@
       "prompt": true
     },
     "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
+      "type": "charges",
+      "target": "",
+      "amount": 1,
       "scale": false
     },
     "ability": null,
@@ -70,7 +70,7 @@
     },
     "type": {
       "value": "class",
-      "subtype": ""
+      "subtype": "channelDivinity"
     },
     "properties": [],
     "requirements": "",
@@ -79,29 +79,35 @@
       "charged": false
     },
     "prerequisites": {
-      "level": 7
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "effects": [
+          {
+            "_id": "uxT8nrKnwhyb8Am3"
+          }
+        ],
+        "consumption": {
+          "targets": []
+        }
+      }
     }
   },
   "effects": [
     {
-      "name": "Alacrity",
-      "img": "icons/magic/water/waves-water-blue.webp",
-      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.9mXb0S08VRcOWYXU",
-      "_id": "HNLwIpGA8fMGoqJF",
+      "name": "Emissary of Peace",
+      "img": "icons/skills/social/diplomacy-unity-alliance.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.S8KHfOe1iF32o3ko",
+      "transfer": false,
+      "_id": "uxT8nrKnwhyb8Am3",
       "type": "base",
       "system": {},
-      "changes": [
-        {
-          "key": "system.attributes.movement.walk",
-          "mode": 2,
-          "value": "10",
-          "priority": null
-        }
-      ],
+      "changes": [],
       "disabled": false,
       "duration": {
         "startTime": null,
-        "seconds": null,
+        "seconds": 600,
         "combat": null,
         "rounds": null,
         "turns": null,
@@ -110,7 +116,6 @@
       },
       "description": "",
       "tint": "#ffffff",
-      "transfer": true,
       "statuses": [],
       "sort": 0,
       "flags": {
@@ -126,26 +131,36 @@
         "coreVersion": "12.331",
         "systemId": "dnd5e",
         "systemVersion": "4.3.9",
-        "createdTime": 1746265114637,
-        "modifiedTime": 1746265129277,
+        "createdTime": 1746270490760,
+        "modifiedTime": 1746270496573,
         "lastModifiedBy": "dnd5mbuilder0000"
       },
-      "_key": "!items.effects!9mXb0S08VRcOWYXU.HNLwIpGA8fMGoqJF"
+      "_key": "!items.effects!S8KHfOe1iF32o3ko.uxT8nrKnwhyb8Am3"
     }
   ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "materia-dnd": {
+      "item-use-source": "channel-divinity"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "4.3.9",
     "coreVersion": "12.331",
-    "createdTime": 1710735555719,
-    "modifiedTime": 1746265110713,
+    "createdTime": 1710964505688,
+    "modifiedTime": 1746270513003,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "_key": "!items!9mXb0S08VRcOWYXU"
+  "_key": "!items!S8KHfOe1iF32o3ko"
 }

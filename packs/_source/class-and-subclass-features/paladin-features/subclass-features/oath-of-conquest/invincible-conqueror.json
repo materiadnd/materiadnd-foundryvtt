@@ -6,7 +6,7 @@
   "img": "icons/skills/melee/weapons-crossed-swords-yellow-teal.webp",
   "system": {
     "description": {
-      "value": "<p>At 20th level, you gain the ability to harness extraordinary martial prowess. As an action, you can magically become an avatar of conquest, gaining the following benefits for 1 hour:</p><ul><li>You have resistance to all damage.</li><li>When you take the Attack action on your turn, you can make one additional attack as part of that action.</li><li>Your melee weapon attacks score a critical hit on a roll of 18-20 on the d20.</li></ul><p>Once you use this bonus action, you cannot use it again until you finish a long rest, unless you expend a 5th-level spell slot to use it again.</p>",
+      "value": "<p>You gain the ability to harness extraordinary martial prowess. As a Magic action, you magically become an avatar of conquest, gaining the below benefits for 1 hour.  Once you use this feature, you cannot use it again until you finish a Long Rest. You can also restore your use of it by expending a 5th-level spell slot (no action required).</p><p><strong>Resistance.</strong> You have Resistance to all damage.</p><p><strong>Additional Attack.</strong> When you take the Attack action on your turn, you can make one additional attack as part of that action.</p><p><strong>Expanded Criticals.</strong> Your melee weapon attacks score a Critical Hit on a roll of 18-20 on the d20.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,154 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Oath of Conquest 20",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": null
+    },
+    "activities": {
+      "RXVd3e2v30qlcbGK": {
+        "type": "utility",
+        "_id": "RXVd3e2v30qlcbGK",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "iyzgZeUcdgQh8xA7"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Invincible Conqueror",
+        "img": "",
+        "appliedEffects": []
+      },
+      "YFsABnODo5Ht06EZ": {
+        "type": "utility",
+        "_id": "YFsABnODo5Ht06EZ",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": ""
+            },
+            {
+              "type": "spellSlots",
+              "value": "1",
+              "target": "5"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Restore Use",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [
@@ -211,19 +355,147 @@
       "system": {},
       "sort": 0,
       "_key": "!items.effects!MC0SgV7vONJVQyrK.fdtQppf0Orz6mQSs"
+    },
+    {
+      "name": "Invincible Conqueror",
+      "img": "icons/skills/melee/weapons-crossed-swords-yellow-teal.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.MC0SgV7vONJVQyrK",
+      "transfer": false,
+      "_id": "iyzgZeUcdgQh8xA7",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "acid",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "bludgeoning",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "cold",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "fire",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "force",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "lightning",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "necrotic",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "piercing",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "poison",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "psychic",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "radiant",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "slashing",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "thunder",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p><strong>Resistance.</strong> You have Resistance to all damage.</p><p><strong>Additional Attack.</strong> When you take the Attack action on your turn, you can make one additional attack as part of that action.</p><p><strong>Expanded Criticals.</strong> Your melee weapon attacks score a Critical Hit on a roll of 18-20 on the d20.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746270121997,
+        "modifiedTime": 1746270207539,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!MC0SgV7vONJVQyrK.iyzgZeUcdgQh8xA7"
     }
   ],
   "sort": 300000,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710734451311,
-    "modifiedTime": 1710742820512,
+    "modifiedTime": 1746270243993,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

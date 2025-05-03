@@ -1,12 +1,12 @@
 {
-  "folder": "55CLhFdU7q4ooWR6",
-  "name": "Channel Divinity: Nature's Wrath",
+  "folder": "5Bk7BWmA3dNIMk1F",
+  "name": "Turn the Tide",
   "type": "feat",
-  "_id": "21OU6TXWLLcQymIx",
-  "img": "icons/magic/nature/root-vine-entangled-humanoid.webp",
+  "_id": "iEJoEnfDyayPhNbQ",
+  "img": "icons/environment/people/charge.webp",
   "system": {
     "description": {
-      "value": "<p>You can use your Channel Divinity to invoke primeval forces to ensnare your foes. As an action, you can cause spectral vines to spring up and reach for enemy creatures of your choice within 10 feet of you that you can see. The creatures must succeed on a Dexterity saving throw or be restrained. While a creature is restrained by the vines, they are unable to take reactions, and the creature repeats the saving throw at the end of each of its turns. On a success, it frees itself and the vines vanish.</p>",
+      "value": "<p>As a Bonus Action, you can expend a use of your Channel Divinity to bolster injured creatures. Each creature of your choice that can hear you within 30 feet of you can expend a number of Hit Dice equal to your Charisma modifier (minimum of 1) to regain Hit Points. They do not benefit from their Constitution modifier when rolling Hit Dice in this way.</p>",
       "chat": ""
     },
     "source": {
@@ -15,18 +15,18 @@
       "book": "Materia"
     },
     "activation": {
-      "type": "action",
+      "type": "bonus",
       "cost": 1,
       "condition": ""
     },
     "duration": {
       "value": "",
-      "units": "disp"
+      "units": "inst"
     },
     "cover": null,
     "crewed": false,
     "target": {
-      "value": 10,
+      "value": 30,
       "width": null,
       "units": "ft",
       "type": "radius",
@@ -73,10 +73,29 @@
       "subtype": "channelDivinity"
     },
     "properties": [],
-    "requirements": "Oath of the Ancients 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.tw2Bq0gbttswYdY2"
+            }
+          ]
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -87,16 +106,22 @@
   "flags": {
     "materia-dnd": {
       "item-use-source": "channel-divinity"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
-    "createdTime": 1710968621582,
-    "modifiedTime": 1710968746485,
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
+    "createdTime": 1710969695570,
+    "modifiedTime": 1746271823058,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "_key": "!items!21OU6TXWLLcQymIx"
+  "_key": "!items!iEJoEnfDyayPhNbQ"
 }

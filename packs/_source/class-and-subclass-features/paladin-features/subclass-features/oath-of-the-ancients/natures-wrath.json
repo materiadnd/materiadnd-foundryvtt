@@ -1,12 +1,12 @@
 {
   "folder": "55CLhFdU7q4ooWR6",
-  "name": "Aura of Warding",
+  "name": "Nature's Wrath",
   "type": "feat",
-  "_id": "6YsGvNFLZog2H2G8",
-  "img": "icons/magic/defensive/shield-barrier-flaming-pentagon-blue.webp",
+  "_id": "21OU6TXWLLcQymIx",
+  "img": "icons/magic/nature/root-vine-entangled-humanoid.webp",
   "system": {
     "description": {
-      "value": "<p>Ancient magic lies so heavily upon you that it forms an eldritch ward, blunting energy from beyond the Material Plane; you and your allies have Resistance to Necrotic, Psychic, and Radiant damage while in your [[/item Aura of Protection]].</p><section id=\"secret-TYCdN7skb7LNytrR\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes an Active Effect that applies the Resistances but it is not automatically granted when a character enters/exits your aura.</p></section>",
+      "value": "<p>As a Magic action, you can expend one use of your Channel Divinity to conjure spectral vines around nearby creatures. Each creature of your choice that you can see within 15 feet of yoursrelf must succeed on a Strength saving throw or have the Restrained condition for 1 minute. A Restrained creature repeats the save at the end of each of its turns, ending the effect on itself on a success.</p><section id=\"secret-pCOjDo09yneFhU4R\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes an Active Effect which applies the Restrained condition.</p></section>",
       "chat": ""
     },
     "source": {
@@ -15,27 +15,27 @@
       "book": "Materia"
     },
     "activation": {
-      "type": "",
-      "cost": null,
+      "type": "action",
+      "cost": 1,
       "condition": ""
     },
     "duration": {
       "value": "",
-      "units": ""
+      "units": "disp"
     },
     "cover": null,
     "crewed": false,
     "target": {
-      "value": null,
+      "value": 10,
       "width": null,
-      "units": "",
-      "type": "",
+      "units": "ft",
+      "type": "radius",
       "prompt": true
     },
     "range": {
       "value": null,
       "long": null,
-      "units": ""
+      "units": "self"
     },
     "uses": {
       "value": null,
@@ -45,9 +45,9 @@
       "prompt": true
     },
     "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
+      "type": "charges",
+      "target": "",
+      "amount": 1,
       "scale": false
     },
     "ability": null,
@@ -70,7 +70,7 @@
     },
     "type": {
       "value": "class",
-      "subtype": ""
+      "subtype": "channelDivinity"
     },
     "properties": [],
     "requirements": "",
@@ -79,15 +79,15 @@
       "charged": false
     },
     "prerequisites": {
-      "level": 7
+      "level": 3
     },
     "activities": {
-      "V9gMQjcQM3WpLppW": {
-        "type": "utility",
-        "_id": "V9gMQjcQM3WpLppW",
+      "3zF8r4VZn1sQb5OE": {
+        "type": "save",
+        "_id": "3zF8r4VZn1sQb5OE",
         "sort": 0,
         "activation": {
-          "type": "",
+          "type": "action",
           "value": null,
           "override": false,
           "condition": ""
@@ -97,7 +97,13 @@
             "allowed": false
           },
           "spellSlot": true,
-          "targets": []
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.tw2Bq0gbttswYdY2"
+            }
+          ]
         },
         "description": {
           "chatFlavor": ""
@@ -109,24 +115,27 @@
         },
         "effects": [
           {
-            "_id": "cv3z7wvQTyCtezSH"
+            "_id": "Ya6cFDeqoUP94ymU"
           }
         ],
         "range": {
           "override": false,
-          "units": "ft",
-          "special": "",
-          "value": "10"
+          "units": "self",
+          "special": ""
         },
         "target": {
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": ""
+            "type": "radius",
+            "size": "15",
+            "count": ""
           },
           "affects": {
-            "choice": false,
-            "type": "ally"
+            "choice": true,
+            "type": "creature",
+            "count": "",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -136,13 +145,20 @@
           "recovery": [],
           "max": ""
         },
-        "roll": {
-          "prompt": false,
-          "visible": false,
-          "name": "",
-          "formula": ""
+        "damage": {
+          "parts": [],
+          "onSave": "half"
         },
-        "name": "Grant Resistances",
+        "save": {
+          "ability": [
+            "str"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
         "img": "",
         "appliedEffects": []
       }
@@ -150,37 +166,18 @@
   },
   "effects": [
     {
-      "name": "Aura of Warding",
-      "img": "icons/magic/defensive/shield-barrier-flaming-pentagon-blue.webp",
-      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.6YsGvNFLZog2H2G8",
+      "name": "Nature's Wrath",
+      "img": "icons/magic/nature/root-vine-entangled-humanoid.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.21OU6TXWLLcQymIx",
       "transfer": false,
-      "_id": "cv3z7wvQTyCtezSH",
+      "_id": "Ya6cFDeqoUP94ymU",
       "type": "base",
       "system": {},
-      "changes": [
-        {
-          "key": "system.traits.dr.value",
-          "mode": 2,
-          "value": "necrotic",
-          "priority": null
-        },
-        {
-          "key": "system.traits.dr.value",
-          "mode": 2,
-          "value": "psychic",
-          "priority": null
-        },
-        {
-          "key": "system.traits.dr.value",
-          "mode": 2,
-          "value": "radiant",
-          "priority": null
-        }
-      ],
+      "changes": [],
       "disabled": false,
       "duration": {
         "startTime": null,
-        "seconds": null,
+        "seconds": 60,
         "combat": null,
         "rounds": null,
         "turns": null,
@@ -189,7 +186,9 @@
       },
       "description": "",
       "tint": "#ffffff",
-      "statuses": [],
+      "statuses": [
+        "restrained"
+      ],
       "sort": 0,
       "flags": {
         "dnd5e": {
@@ -204,11 +203,11 @@
         "coreVersion": "12.331",
         "systemId": "dnd5e",
         "systemVersion": "4.3.9",
-        "createdTime": 1746268210418,
-        "modifiedTime": 1746268230970,
+        "createdTime": 1746267381360,
+        "modifiedTime": 1746267405427,
         "lastModifiedBy": "dnd5mbuilder0000"
       },
-      "_key": "!items.effects!6YsGvNFLZog2H2G8.cv3z7wvQTyCtezSH"
+      "_key": "!items.effects!21OU6TXWLLcQymIx.Ya6cFDeqoUP94ymU"
     }
   ],
   "sort": 0,
@@ -216,6 +215,9 @@
     "default": 0
   },
   "flags": {
+    "materia-dnd": {
+      "item-use-source": "channel-divinity"
+    },
     "dnd5e": {
       "riders": {
         "activity": [],
@@ -227,10 +229,10 @@
     "systemId": "dnd5e",
     "systemVersion": "4.3.9",
     "coreVersion": "12.331",
-    "createdTime": 1710968874887,
-    "modifiedTime": 1746268210481,
+    "createdTime": 1710968621582,
+    "modifiedTime": 1746267381454,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "_key": "!items!6YsGvNFLZog2H2G8"
+  "_key": "!items!21OU6TXWLLcQymIx"
 }

@@ -1,12 +1,12 @@
 {
-  "folder": "akfbtYERCdTbOoOQ",
-  "name": "Aura of the Guardian",
+  "folder": "s6OcmevFLgZaMfxC",
+  "name": "Inspiring Smite",
   "type": "feat",
-  "_id": "xqhfoWnZFQ149fCw",
-  "img": "icons/magic/defensive/shield-barrier-flaming-pentagon-purple-orange.webp",
+  "_id": "1dEaldMbyXLE5Y2A",
+  "img": "icons/magic/defensive/shield-barrier-flaming-pentagon-blue-yellow.webp",
   "system": {
     "description": {
-      "value": "<p>You can shield others from harm at the cost of your own health. When a creature within your Aura of Protection takes damage, you can use take a Reaction to magically take that damage, instead of that creature taking it. This feature does not transfer any other effects that might accompany the damage, and you can gain Resistance to this damage by expending 5 Hit Points from your Lay on Hands pool.</p>",
+      "value": "<p>Immediately after you deal damage to a creature with your Divine Smite feature, you can expend one use of your Channel Divinity and distribute Temporary Hit Points to creatures of your choice within 30 feet of yourself, which can include you. The total number of Temporary Hit Points equals the Divine Smite damage dealt plus your Paladin level, divided among the chosen creatures however you like.</p><section id=\"secret-wqPLZM42UCaadnJs\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Heal</strong> activity on this feature only provides Temporary Hit Points equal to your Paladin level, you will have to manually add your Divine Smite damage to determine the total to be divided.</p></section>",
       "chat": ""
     },
     "source": {
@@ -15,13 +15,13 @@
       "book": "Materia"
     },
     "activation": {
-      "type": "",
-      "cost": null,
+      "type": "bonus",
+      "cost": 1,
       "condition": ""
     },
     "duration": {
       "value": "",
-      "units": ""
+      "units": "inst"
     },
     "cover": null,
     "crewed": false,
@@ -29,13 +29,13 @@
       "value": null,
       "width": null,
       "units": "",
-      "type": "",
+      "type": "creature",
       "prompt": true
     },
     "range": {
-      "value": null,
+      "value": 30,
       "long": null,
-      "units": ""
+      "units": "ft"
     },
     "uses": {
       "value": null,
@@ -45,9 +45,9 @@
       "prompt": true
     },
     "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
+      "type": "charges",
+      "target": "",
+      "amount": 1,
       "scale": false
     },
     "ability": null,
@@ -70,7 +70,7 @@
     },
     "type": {
       "value": "class",
-      "subtype": ""
+      "subtype": "channelDivinity"
     },
     "properties": [],
     "requirements": "",
@@ -79,15 +79,15 @@
       "charged": false
     },
     "prerequisites": {
-      "level": 7
+      "level": 3
     },
     "activities": {
-      "D20HdM4J9hBUqWqf": {
-        "type": "utility",
-        "_id": "D20HdM4J9hBUqWqf",
+      "3GtiTdkvGumNh0Yn": {
+        "type": "heal",
+        "_id": "3GtiTdkvGumNh0Yn",
         "sort": 0,
         "activation": {
-          "type": "reaction",
+          "type": "",
           "value": null,
           "override": false,
           "condition": ""
@@ -97,7 +97,13 @@
             "allowed": false
           },
           "spellSlot": true,
-          "targets": []
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.tw2Bq0gbttswYdY2"
+            }
+          ]
         },
         "description": {
           "chatFlavor": ""
@@ -110,8 +116,9 @@
         "effects": [],
         "range": {
           "override": false,
-          "units": "self",
-          "special": ""
+          "units": "ft",
+          "special": "",
+          "value": "30"
         },
         "target": {
           "template": {
@@ -121,7 +128,9 @@
           },
           "affects": {
             "choice": false,
-            "type": ""
+            "type": "creature",
+            "count": "",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -131,13 +140,22 @@
           "recovery": [],
           "max": ""
         },
-        "roll": {
-          "prompt": false,
-          "visible": false,
-          "name": "",
-          "formula": ""
+        "healing": {
+          "number": 2,
+          "denomination": "8",
+          "types": [
+            "temphp"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "@classes.paladin.levels"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": "@classes.paladin.levels"
         },
-        "name": "Absorb Damage",
+        "name": "",
         "img": "",
         "appliedEffects": []
       }
@@ -149,6 +167,9 @@
     "default": 0
   },
   "flags": {
+    "materia-dnd": {
+      "item-use-source": "channel-divinity"
+    },
     "dnd5e": {
       "riders": {
         "activity": [],
@@ -160,10 +181,10 @@
     "systemId": "dnd5e",
     "systemVersion": "4.3.9",
     "coreVersion": "12.331",
-    "createdTime": 1710967038095,
-    "modifiedTime": 1746270911247,
+    "createdTime": 1710735367170,
+    "modifiedTime": 1746264839610,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "_key": "!items!xqhfoWnZFQ149fCw"
+  "_key": "!items!1dEaldMbyXLE5Y2A"
 }

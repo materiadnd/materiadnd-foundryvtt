@@ -6,7 +6,7 @@
   "img": "icons/magic/holy/chalice-glowing-yellow-blue.webp",
   "system": {
     "description": {
-      "value": "<div><div><p>At 20th level, you become an avatar of peace. As a bonus action, you gain the following benefits for 1 hour:</p><ul><li>All creatures understand you, and you understand all other creatures regardless of ability to speak or languages known.</li><li>You take half damage to all damage dealt by other creatures (their attacks, spells, and other effects).</li><li>Your Aura of the Guardian also causes any critical hit against creatures of your choice in the area to count as a normal hit instead.</li></ul><p>Once you use this feature, you cannot use it again until you finish a long rest, unless you expend a 5th-level spell slot to use it again.</p></div></div>",
+      "value": "<p>You become an avatar of peace. As a Bonus Action, you gain the following benefits for 1 hour. Once you use this feature, you can't use it again until you finish a Long Rest. You can also restore your use of it by expending a level 5 spell slot (no action required).</p><p><strong>Universal Language.</strong> All creatures understand you, and you understand all other creatures regardless of ability to speak or languages known.</p><p><strong>Damage Reduction.</strong> You take half damage to all damage dealt by other creatures (their attacks, spells, and other effects).</p><p><strong>Negated Criticals.</strong> Your Aura of Protection also causes any Critical Hits against creatures of your choice in the area to count as a normal hit instead.</p>",
       "chat": ""
     },
     "source": {
@@ -73,24 +73,218 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Oath of Redemption 20",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 20
+    },
+    "activities": {
+      "hFa79eRyCcghF2OJ": {
+        "type": "utility",
+        "_id": "hFa79eRyCcghF2OJ",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "Yl11rawdp7Csa85c"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Emissary of Redemption",
+        "img": "",
+        "appliedEffects": []
+      },
+      "N1Xx8CmF6KHo1nU0": {
+        "type": "utility",
+        "_id": "N1Xx8CmF6KHo1nU0",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": ""
+            },
+            {
+              "type": "spellSlots",
+              "value": "1",
+              "target": "5"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Restore Use",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Emissary of Redemption",
+      "img": "icons/magic/holy/chalice-glowing-yellow-blue.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.TqnYDa3YoFQ9OY17",
+      "transfer": false,
+      "_id": "Yl11rawdp7Csa85c",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p><strong>Universal Language.</strong> All creatures understand you, and you understand all other creatures regardless of ability to speak or languages known.</p><p><strong>Damage Reduction.</strong> You take half damage to all damage dealt by other creatures (their attacks, spells, and other effects).</p><p><strong>Negated Criticals.</strong> Your Aura of Protection also causes any Critical Hits against creatures of your choice in the area to count as a normal hit instead.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746271371813,
+        "modifiedTime": 1746271390687,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!TqnYDa3YoFQ9OY17.Yl11rawdp7Csa85c"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710967333646,
-    "modifiedTime": 1710968010387,
+    "modifiedTime": 1746271448881,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

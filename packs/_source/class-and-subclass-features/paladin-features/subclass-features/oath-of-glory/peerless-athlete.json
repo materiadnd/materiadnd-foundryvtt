@@ -1,12 +1,12 @@
 {
-  "folder": "akfbtYERCdTbOoOQ",
-  "name": "Aura of the Guardian",
+  "folder": "s6OcmevFLgZaMfxC",
+  "name": "Peerless Athlete",
   "type": "feat",
-  "_id": "xqhfoWnZFQ149fCw",
-  "img": "icons/magic/defensive/shield-barrier-flaming-pentagon-purple-orange.webp",
+  "_id": "lMXV935Iwfb0zE0s",
+  "img": "icons/creatures/mammals/unicorn-horned-white.webp",
   "system": {
     "description": {
-      "value": "<p>You can shield others from harm at the cost of your own health. When a creature within your Aura of Protection takes damage, you can use take a Reaction to magically take that damage, instead of that creature taking it. This feature does not transfer any other effects that might accompany the damage, and you can gain Resistance to this damage by expending 5 Hit Points from your Lay on Hands pool.</p>",
+      "value": "<p>As a Bonus Action, you can expend one use of your Channel Divinity to augment your athleticism. For 1 hour, you have Advantage on Strength (Athletics) and Dexterity (Acrobatics) checks, and the distance of your Long and High Jumps increases by 10 feet (this extra distance costs movement as normal).</p>",
       "chat": ""
     },
     "source": {
@@ -15,13 +15,13 @@
       "book": "Materia"
     },
     "activation": {
-      "type": "",
-      "cost": null,
+      "type": "bonus",
+      "cost": 1,
       "condition": ""
     },
     "duration": {
-      "value": "",
-      "units": ""
+      "value": "10",
+      "units": "minute"
     },
     "cover": null,
     "crewed": false,
@@ -35,7 +35,7 @@
     "range": {
       "value": null,
       "long": null,
-      "units": ""
+      "units": "self"
     },
     "uses": {
       "value": null,
@@ -45,9 +45,9 @@
       "prompt": true
     },
     "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
+      "type": "charges",
+      "target": "",
+      "amount": 1,
       "scale": false
     },
     "ability": null,
@@ -70,7 +70,7 @@
     },
     "type": {
       "value": "class",
-      "subtype": ""
+      "subtype": "channelDivinity"
     },
     "properties": [],
     "requirements": "",
@@ -79,15 +79,15 @@
       "charged": false
     },
     "prerequisites": {
-      "level": 7
+      "level": 3
     },
     "activities": {
-      "D20HdM4J9hBUqWqf": {
+      "r0UoBsDBoVWH66Hu": {
         "type": "utility",
-        "_id": "D20HdM4J9hBUqWqf",
+        "_id": "r0UoBsDBoVWH66Hu",
         "sort": 0,
         "activation": {
-          "type": "reaction",
+          "type": "bonus",
           "value": null,
           "override": false,
           "condition": ""
@@ -97,7 +97,13 @@
             "allowed": false
           },
           "spellSlot": true,
-          "targets": []
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.tw2Bq0gbttswYdY2"
+            }
+          ]
         },
         "description": {
           "chatFlavor": ""
@@ -107,7 +113,11 @@
           "concentration": false,
           "override": false
         },
-        "effects": [],
+        "effects": [
+          {
+            "_id": "L5ofgVZJtijVjumq"
+          }
+        ],
         "range": {
           "override": false,
           "units": "self",
@@ -121,7 +131,7 @@
           },
           "affects": {
             "choice": false,
-            "type": ""
+            "type": "self"
           },
           "override": false,
           "prompt": true
@@ -137,18 +147,64 @@
           "name": "",
           "formula": ""
         },
-        "name": "Absorb Damage",
+        "name": "",
         "img": "",
         "appliedEffects": []
       }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Peerless Athlete",
+      "img": "icons/creatures/mammals/unicorn-horned-white.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.lMXV935Iwfb0zE0s",
+      "transfer": false,
+      "_id": "L5ofgVZJtijVjumq",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746264961955,
+        "modifiedTime": 1746264968366,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!lMXV935Iwfb0zE0s.L5ofgVZJtijVjumq"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
   "flags": {
+    "materia-dnd": {
+      "item-use-source": "channel-divinity"
+    },
     "dnd5e": {
       "riders": {
         "activity": [],
@@ -160,10 +216,10 @@
     "systemId": "dnd5e",
     "systemVersion": "4.3.9",
     "coreVersion": "12.331",
-    "createdTime": 1710967038095,
-    "modifiedTime": 1746270911247,
+    "createdTime": 1710735472360,
+    "modifiedTime": 1746264962005,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "_key": "!items!xqhfoWnZFQ149fCw"
+  "_key": "!items!lMXV935Iwfb0zE0s"
 }

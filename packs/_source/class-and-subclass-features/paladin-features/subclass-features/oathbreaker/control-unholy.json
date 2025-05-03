@@ -1,12 +1,12 @@
 {
-  "folder": "55CLhFdU7q4ooWR6",
-  "name": "Aura of Warding",
+  "folder": "MZmmQxxPNNUypixG",
+  "name": "Control Unholy",
   "type": "feat",
-  "_id": "6YsGvNFLZog2H2G8",
-  "img": "icons/magic/defensive/shield-barrier-flaming-pentagon-blue.webp",
+  "_id": "x5fJ10hBlR5UDbgq",
+  "img": "icons/creatures/unholy/demon-horned-black-yellow.webp",
   "system": {
     "description": {
-      "value": "<p>Ancient magic lies so heavily upon you that it forms an eldritch ward, blunting energy from beyond the Material Plane; you and your allies have Resistance to Necrotic, Psychic, and Radiant damage while in your [[/item Aura of Protection]].</p><section id=\"secret-TYCdN7skb7LNytrR\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes an Active Effect that applies the Resistances but it is not automatically granted when a character enters/exits your aura.</p></section>",
+      "value": "<p>As a Magic action, you can expend a use of your Channel Divinity and target one Fiend or Undead creature you can see within 30 feet. The target must make a Wisdom saving throw. On a failed save, the target must obey the Paladin's commands for the next 24 hours, or until the Paladin uses this feature option again. A Fiend or Undead whose Challenge Rating is equal to or greater than the Paladin's level is immune to this effect.</p>",
       "chat": ""
     },
     "source": {
@@ -15,27 +15,27 @@
       "book": "Materia"
     },
     "activation": {
-      "type": "",
+      "type": "action",
       "cost": null,
       "condition": ""
     },
     "duration": {
-      "value": "",
-      "units": ""
+      "value": "24",
+      "units": "hour"
     },
     "cover": null,
     "crewed": false,
     "target": {
-      "value": null,
+      "value": 1,
       "width": null,
       "units": "",
-      "type": "",
+      "type": "creature",
       "prompt": true
     },
     "range": {
-      "value": null,
+      "value": 30,
       "long": null,
-      "units": ""
+      "units": "ft"
     },
     "uses": {
       "value": null,
@@ -45,9 +45,9 @@
       "prompt": true
     },
     "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
+      "type": "charges",
+      "target": "",
+      "amount": 1,
       "scale": false
     },
     "ability": null,
@@ -70,7 +70,7 @@
     },
     "type": {
       "value": "class",
-      "subtype": ""
+      "subtype": "channelDivinity"
     },
     "properties": [],
     "requirements": "",
@@ -79,15 +79,15 @@
       "charged": false
     },
     "prerequisites": {
-      "level": 7
+      "level": 3
     },
     "activities": {
-      "V9gMQjcQM3WpLppW": {
-        "type": "utility",
-        "_id": "V9gMQjcQM3WpLppW",
+      "smZVeSAze9GjtPPp": {
+        "type": "save",
+        "_id": "smZVeSAze9GjtPPp",
         "sort": 0,
         "activation": {
-          "type": "",
+          "type": "action",
           "value": null,
           "override": false,
           "condition": ""
@@ -109,14 +109,14 @@
         },
         "effects": [
           {
-            "_id": "cv3z7wvQTyCtezSH"
+            "_id": "lp4PRl3KnoZm4mkO"
           }
         ],
         "range": {
           "override": false,
           "units": "ft",
           "special": "",
-          "value": "10"
+          "value": "30"
         },
         "target": {
           "template": {
@@ -126,7 +126,9 @@
           },
           "affects": {
             "choice": false,
-            "type": "ally"
+            "type": "creature",
+            "count": "1",
+            "special": ""
           },
           "override": false,
           "prompt": true
@@ -136,13 +138,20 @@
           "recovery": [],
           "max": ""
         },
-        "roll": {
-          "prompt": false,
-          "visible": false,
-          "name": "",
-          "formula": ""
+        "damage": {
+          "parts": [],
+          "onSave": "half"
         },
-        "name": "Grant Resistances",
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Control Unholy",
         "img": "",
         "appliedEffects": []
       }
@@ -150,44 +159,25 @@
   },
   "effects": [
     {
-      "name": "Aura of Warding",
-      "img": "icons/magic/defensive/shield-barrier-flaming-pentagon-blue.webp",
-      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.6YsGvNFLZog2H2G8",
+      "name": "Controlled",
+      "img": "icons/creatures/unholy/demon-horned-black-yellow.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.x5fJ10hBlR5UDbgq",
       "transfer": false,
-      "_id": "cv3z7wvQTyCtezSH",
+      "_id": "lp4PRl3KnoZm4mkO",
       "type": "base",
       "system": {},
-      "changes": [
-        {
-          "key": "system.traits.dr.value",
-          "mode": 2,
-          "value": "necrotic",
-          "priority": null
-        },
-        {
-          "key": "system.traits.dr.value",
-          "mode": 2,
-          "value": "psychic",
-          "priority": null
-        },
-        {
-          "key": "system.traits.dr.value",
-          "mode": 2,
-          "value": "radiant",
-          "priority": null
-        }
-      ],
+      "changes": [],
       "disabled": false,
       "duration": {
         "startTime": null,
-        "seconds": null,
+        "seconds": 86400,
         "combat": null,
         "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "description": "",
+      "description": "<p>The target must obey the Paladin's commands for next 24 hours.</p>",
       "tint": "#ffffff",
       "statuses": [],
       "sort": 0,
@@ -204,11 +194,11 @@
         "coreVersion": "12.331",
         "systemId": "dnd5e",
         "systemVersion": "4.3.9",
-        "createdTime": 1746268210418,
-        "modifiedTime": 1746268230970,
+        "createdTime": 1746275219519,
+        "modifiedTime": 1746275264958,
         "lastModifiedBy": "dnd5mbuilder0000"
       },
-      "_key": "!items.effects!6YsGvNFLZog2H2G8.cv3z7wvQTyCtezSH"
+      "_key": "!items.effects!x5fJ10hBlR5UDbgq.lp4PRl3KnoZm4mkO"
     }
   ],
   "sort": 0,
@@ -216,6 +206,9 @@
     "default": 0
   },
   "flags": {
+    "materia-dnd": {
+      "item-use-source": "channel-divinity"
+    },
     "dnd5e": {
       "riders": {
         "activity": [],
@@ -227,10 +220,10 @@
     "systemId": "dnd5e",
     "systemVersion": "4.3.9",
     "coreVersion": "12.331",
-    "createdTime": 1710968874887,
-    "modifiedTime": 1746268210481,
+    "createdTime": 1710976855562,
+    "modifiedTime": 1746275324594,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "_key": "!items!6YsGvNFLZog2H2G8"
+  "_key": "!items!x5fJ10hBlR5UDbgq"
 }

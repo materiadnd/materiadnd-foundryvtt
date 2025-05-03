@@ -6,7 +6,7 @@
   "img": "icons/magic/defensive/shield-barrier-deflect-gold.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 15th level, you can turn defense into a sudden strike. When you or another creature you can see within any of your auras is hit by an attack roll, you can use your reaction to grant a bonus to the target's AC against that attack, potentially causing it to miss. The bonus equals your Charisma modifier (minimum of +1). If the attack misses, you can make one weapon attack against the attacker as part of this reaction, provided the attacker is within your weapon's range.</p><p>You can use this feature a number of times equal to twice your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>",
+      "value": "<p>You can turn defense into a sudden strike. When you or another creature you can see within any of your auras is hit by an attack roll, you can take a Reaction to grant a bonus to the target's AC against that attack, potentially causing it to miss. The bonus equals your Charisma modifier (minimum of +1). If the attack misses, you can make one weapon attack against the attacker as part of this Reaction, provided the attacker is within your weapon's range.</p><p>You can use this feature a number of times equal to twice your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,45 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Oath of Glory 15",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 15
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1"
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "roll": {
+          "name": "AC Bonus",
+          "formula": "(max(1,@abilities.cha.mod))"
+        }
+      }
     }
   },
   "effects": [],
@@ -84,13 +119,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710735646028,
-    "modifiedTime": 1710735762836,
+    "modifiedTime": 1746265278704,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
