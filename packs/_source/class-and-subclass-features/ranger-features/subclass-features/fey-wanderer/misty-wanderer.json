@@ -6,7 +6,7 @@
   "img": "icons/magic/control/debuff-energy-hold-levitate-green.webp",
   "system": {
     "description": {
-      "value": "<p>When you reach 15th level, you can slip in and out of the Feybinds (Feywild) to move in a blink of an eye: you can cast the misty step spell without expending a spell slot. You can do so a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a long rest.</p><p>In addition, whenever you cast misty step, you can bring along one willing creature you can see within 5 feet of you. That creature teleports to an unoccupied space of your choice within 5 feet of your destination space.</p>",
+      "value": "<p>You can slip in and out of the Feybinds to move in a blink of an eye: you can cast @UUID[Compendium.materia-dnd.spells.Item.matSplMistyStep0]{Misty Step} without expending a spell slot. You can do so a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.</p><p>In addition, whenever you cast <em>Misty Step</em>, you can bring along one willing creature you can see within 5 feet of yourself. That creature teleports to an unoccupied space of your choice within 5 feet of your destination space.</p>",
       "chat": ""
     },
     "source": {
@@ -77,10 +77,91 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Fey Wanderer 15",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 15
+    },
+    "activities": {
+      "iQ7Grh2I9AyY7VBi": {
+        "type": "cast",
+        "_id": "iQ7Grh2I9AyY7VBi",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": true,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "space",
+            "count": "1",
+            "special": ""
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "spell": {
+          "challenge": {
+            "attack": null,
+            "save": null,
+            "override": false
+          },
+          "level": "2",
+          "properties": [
+            "vocal",
+            "somatic",
+            "material"
+          ],
+          "spellbook": false,
+          "uuid": "Compendium.materia-dnd.spells.Item.matSplMistyStep0",
+          "ability": ""
+        },
+        "name": "",
+        "img": ""
+      }
     }
   },
   "effects": [],
@@ -88,13 +169,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1712501023314,
-    "modifiedTime": 1712501140925,
+    "modifiedTime": 1746310754876,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

@@ -6,7 +6,7 @@
   "img": "icons/magic/light/projectile-needles-salvo-yellow.webp",
   "system": {
     "description": {
-      "value": "<p>At 3rd level, you can augment your weapon strikes with mind-scarring magic, drawn from the gloomy hollows of the Feybinds (Feywild). When you hit a creature with a weapon, you can deal an extra 1d4 psychic damage to the target, which can take this extra damage only once per turn.</p><p>The extra damage increases to 1d6 when you reach 11th level in this class.</p><p>Additionally, the damage type from your hunter's mark can be psychic if you choose.</p>",
+      "value": "<p>You can augment your weapon strikes with mind-scarring magic drawn from the gloomy hollows of the Feybinds. When you hit a creature with a weapon, you can deal an extra 1d4 Psychic damage to the target, which can take this extra damage only once per turn.</p><p>The extra damage increases to 1d6 when you reach Ranger level 11.</p><p>Additionally, the damage type from your Hunter's Mark can be Psychic if you choose.</p>",
       "chat": ""
     },
     "source": {
@@ -82,10 +82,48 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Fey Wanderer 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1"
+          }
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "self"
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "@scale.fey-wanderer.dreadful-strike"
+              },
+              "number": null,
+              "denomination": 0,
+              "bonus": "",
+              "types": [
+                "psychic"
+              ]
+            }
+          ]
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -93,13 +131,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1712499579885,
-    "modifiedTime": 1712500654519,
+    "modifiedTime": 1746279923059,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

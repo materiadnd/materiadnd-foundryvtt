@@ -6,7 +6,7 @@
   "img": "icons/magic/unholy/projectile-fireball-agile-purple.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 15th level, you can dodge in unforeseen ways, with wisps of supernatural shadow around you. Whenever a creature makes an attack roll against you and does not have advantage on the roll, you can use your reaction to impose disadvantage on it. You must use this feature before you know the outcome of the attack roll.</p><p>If the creature misses the attack after you use this reaction, your hunter's mark deals an additional die of damage until the end of your next turn.</p>",
+      "value": "<p>You can dodge in unforeseen ways, with wisps of supernatural shadow around you. When a creature makes an attack roll against you and does not have Advantage on the roll, you can take a Reaction to impose Disadvantage on it. You must use this feature before you know the outcome of the attack roll. Whether the attack hits or misses, you can then teleport up to 30 feet to an unoccupied space you can see.</p><p>If the creature misses the attack after you take this Reaction, your hunter's mark deals an additional die of damage until the end of your next turn.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,32 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Gloom Stalker 15",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 17
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Shadowy Dodge",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "appliedEffects": [],
+        "range": {
+          "units": "ft",
+          "value": "30"
+        },
+        "target": {
+          "affects": {
+            "type": "space"
+          }
+        }
+      }
     }
   },
   "effects": [],
@@ -84,13 +106,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710401827267,
-    "modifiedTime": 1710401896842,
+    "modifiedTime": 1746312540540,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

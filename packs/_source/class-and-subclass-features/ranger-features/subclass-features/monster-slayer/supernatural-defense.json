@@ -6,7 +6,7 @@
   "img": "icons/magic/defensive/barrier-shield-dome-pink.webp",
   "system": {
     "description": {
-      "value": "<p>By 7th level, you gain extra resilience against your prey's assaults on your mind and body. Whenever the target of your hunter's mark forces you to make a saving throw and whenever you make an opposed ability check (at your DM's discretion) against the target, add 1d6 to your roll.</p>",
+      "value": "<p>You gain extra resilience against your prey's assaults on your mind and body. Whenever you make a D20 Test against the target of your Hunter's Mark, add 1d6 to your roll.</p>",
       "chat": ""
     },
     "source": {
@@ -77,10 +77,29 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Monster Slayer 7",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 7
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Bonus",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "roll": {
+          "name": "Bonus Against Marked Creature"
+        }
+      }
     }
   },
   "effects": [],
@@ -88,13 +107,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1712501819027,
-    "modifiedTime": 1712501959338,
+    "modifiedTime": 1746329893757,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

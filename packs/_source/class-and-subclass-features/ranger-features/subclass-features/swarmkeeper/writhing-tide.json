@@ -6,7 +6,7 @@
   "img": "icons/creatures/invertebrates/wasp-swarm-attack.webp",
   "system": {
     "description": {
-      "value": "<p>Beginning at 7th level, as a bonus action you can condense part of your swarm into a focused mass for 1 minute or until you are incapacitated. At the start of each turn you can change how the swarm interacts with your surroundings. You gain the following benefits:</p><ul><li>Your walking speed increases by 10 feet, and you can take the Disengage action as a bonus action.</li><li>You can climb difficult surfaces, including upside down on ceilings, without making an ability check.</li><li>You gain a flying speed of 10 feet and can hover.</li></ul><p>You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a long rest.</p>",
+      "value": "<p>As a Bonus Action, you can condense part of your swarm into a focused mass for 1 minute or until you have the &amp;Reference[incapacitated apply=false] condition. At the start of each turn you can change how the swarm interacts with your surroundings. You gain the following benefits.</p><p><strong>Increased Speed.</strong> Your Speed increases by 10 feet, and you can take the Disengage action as a Bonus Action.</p><p><strong>Spider Climb.</strong> You can climb difficult surfaces, including upside down on ceilings, without making an ability check.</p><p><strong>Fly Speed.</strong> You gain a Fly Speed of 10 feet and can hover.</p><p>You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -77,111 +77,116 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Swarmkeeper 7",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 7
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Focus Swarm",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "target": {
+          "affects": {
+            "type": "self"
+          }
+        },
+        "effects": [
+          {
+            "_id": "NXry6sp2BhpDC7nr"
+          }
+        ]
+      }
     }
   },
   "effects": [
     {
-      "name": "Writhing Tide - Upgraded Walk Speed",
+      "name": "Focused Swarm",
+      "img": "icons/creatures/invertebrates/wasp-swarm-attack.webp",
       "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.vTSiB5wjYcHAUT68",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": true,
-      "_id": "v7VmipKYIngVBc0n",
+      "transfer": false,
+      "_id": "NXry6sp2BhpDC7nr",
+      "type": "base",
+      "system": {},
       "changes": [
         {
           "key": "system.attributes.movement.walk",
           "mode": 2,
           "value": "10",
           "priority": null
+        },
+        {
+          "key": "system.attributes.movement.fly",
+          "mode": 4,
+          "value": "@scale.swarmkeeper.tide-fly",
+          "priority": null
         }
       ],
-      "description": "",
-      "transfer": true,
-      "statuses": [],
-      "flags": {},
-      "tint": "#ffffff",
-      "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "icons/creatures/invertebrates/wasp-swarm-attack.webp",
-      "type": "base",
-      "system": {},
-      "sort": 0,
-      "_key": "!items.effects!vTSiB5wjYcHAUT68.v7VmipKYIngVBc0n"
-    },
-    {
-      "name": "Writhing Tide - Fly Speed",
-      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.vTSiB5wjYcHAUT68",
+      "disabled": false,
       "duration": {
         "startTime": null,
-        "seconds": null,
+        "seconds": 60,
         "combat": null,
         "rounds": null,
         "turns": null,
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
-      "_id": "5VMfGc7yK9nwzogr",
-      "changes": [
-        {
-          "key": "system.attributes.movement.fly",
-          "mode": 4,
-          "value": "10",
-          "priority": null
-        }
-      ],
       "description": "",
-      "transfer": true,
-      "statuses": [],
-      "flags": {},
       "tint": "#ffffff",
-      "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "icons/creatures/invertebrates/wasp-swarm-attack.webp",
-      "type": "base",
-      "system": {},
+      "statuses": [],
       "sort": 0,
-      "_key": "!items.effects!vTSiB5wjYcHAUT68.5VMfGc7yK9nwzogr"
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746330896967,
+        "modifiedTime": 1746331242587,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!vTSiB5wjYcHAUT68.NXry6sp2BhpDC7nr"
     }
   ],
   "sort": 187500,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1712408604562,
-    "modifiedTime": 1712501252369,
+    "modifiedTime": 1746330897014,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

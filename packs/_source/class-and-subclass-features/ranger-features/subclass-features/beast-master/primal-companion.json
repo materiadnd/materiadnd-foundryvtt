@@ -1,12 +1,12 @@
 {
   "folder": "s3QFsL8ycFupkubs",
-  "name": "Primal Companion*",
+  "name": "Primal Companion",
   "type": "feat",
   "_id": "k15YaCpx5PvpgfCD",
   "img": "icons/magic/nature/wolf-paw-glow-teal-blue.webp",
   "system": {
     "description": {
-      "value": "<p>At 3rd level, you magically summon a primal beast, which draws strength from your bond with nature. The beast is friendly to you and your companions and obeys your commands. Choose its stat block - @UUID[Compendium.materia-dnd.actors.Actor.f2waTp8ZNLrtWUsX]{Beast of the Land}, @UUID[Compendium.materia-dnd.actors.Actor.77gpZ8A8TFdW3kFS]{Beast of the Sea}, or @UUID[Compendium.materia-dnd.actors.Actor.5CY09q8WipOIIKgA]{Beast of the Sky} - which uses your proficiency bonus (PB) in several places. You also determine the kind of animal the beast is, choosing a kind appropriate for the stat block. Whatever kind you choose, the beast bears primal markings, indicating its mystical origin.</p><p>In combat, the beast acts during your turn. It can move and use its reaction on its own, but the only action it takes is the Dash, Disengage, Dodge Help, or Hide action, unless you take a bonus action on your turn to command it to take another action. That action can be one in its stat block or some other action. You can also sacrifice one of your attacks when you take the Attack action to command the beast to take the Attack action. If you are incapacitated, the beast can take any action of its choice.</p><p>If the beast has died within the last hour, you can use your action to touch it and expend a spell slot of 1st level or higher. The beast returns to life after 1 minute with all its hit points restored.</p><p>When you finish a long rest, you can summon a different primal beast. The new beast appears in an unoccupied space within 5 feet of you, and you choose its stat block and appearance. If you already have a beast from this feature, it vanishes when the new beast appears. The beast also vanishes if you die.</p><section class=\"secret\" id=\"secret-Tcds5MrYUC2kI19N\"><p><strong>Foundry Note</strong></p><p>When summoning the Beast of the Sky with this, you will have to subtract your ranger level from its HP as it will add 5 times your ranger level to all of the primal companions and the sky one only gets 4 times your ranger level bonus HP.</p></section>",
+      "value": "<p>You magically summon a primal beast, which draws strength from your bond with nature. Choose its stat block - @UUID[Compendium.materia-dnd.actors.Actor.f2waTp8ZNLrtWUsX]{Beast of the Land}, @UUID[Compendium.materia-dnd.actors.Actor.77gpZ8A8TFdW3kFS]{Beast of the Sea}, or @UUID[Compendium.materia-dnd.actors.Actor.5CY09q8WipOIIKgA]{Beast of the Sky} - which uses your Proficiency Bonus (PB) in several places. You also determine the kind of animal the beast is, choosing a kind appropriate for the stat block. Whatever kind you choose, the beast bears primal markings, indicating its mystical origin.</p><p>The beast is Friendly to you and your allies and obeys your commands. It vanishes if you die.</p><p><strong>The Beast in Combat.</strong> In combat, the beast acts during your turn. It can move and take its Reaction on its own, but the only action it takes is the Dash, Disengage, Dodge Help, or Hide action, unless you take a Bonus Action to command it to take an action in its stat block or some other action. You can also sacrifice one of your attacks when you take the Attack action to command the beast to take the Attack action. If you have the &amp;Reference[Incapacitated apply=false] condition, the beast acts on its own and isn't limited to the Dodge action.</p><p><strong>Restoring or Replacing the Beast.</strong> If the beast has died within the last hour, you can use take a Magic action to touch it and expend a spell slot. The beast returns to life after 1 minute with all its Hit Points restored.</p><p>Whenever you finish a Long Rest, you can summon a different primal beast, which appears in an unoccupied space within 5 feet of you. You choose its stat block and appearance. If you already have a beast from this feature, the old one vanishes when the new one appears.</p><section class=\"fvtt advice\" style=\"margin:0.5rem;padding:0.5rem\"><article><p>In addition to the noted usage of your statistics in the companion's Traits and Actions, the following attributes are also affected.</p><table><caption>Common</caption><tbody><tr><td><strong>AC</strong></td><td>13 plus your Proficiency Bonus</td></tr><tr><td><strong>PB</strong></td><td>equals your Proficiency Bonus</td></tr><tr><td><strong>Senses</strong></td><td>Darkvision 60 ft.</td></tr></tbody></table><table><caption>Beast of the Land</caption><tbody><tr><td><strong>HP</strong></td><td>5 plus five times your Ranger level</td></tr><tr><td><strong>HD</strong></td><td>[d8s] equal to your Ranger level</td></tr><tr><td><strong>Speed</strong></td><td>40 ft., Climb 40 ft.</td></tr></tbody></table><table><caption>Beast of the Sky</caption><tbody><tr><td><strong>HP</strong></td><td>4 plus four times your Ranger level</td></tr><tr><td><strong>HD</strong></td><td>[d6s] equal to your Ranger level</td></tr><tr><td><strong>Speed</strong></td><td>5 ft., Fly 60 ft.</td></tr></tbody></table><table><caption>Beast of the Sea</caption><tbody><tr><td><strong>HP</strong></td><td>5 plus five times your Ranger level</td></tr><tr><td><strong>HD</strong></td><td>[d8s] equal to your Ranger level</td></tr><tr><td><strong>Speed</strong></td><td>5 ft., Swim 60 ft.</td></tr></tbody></table></article></section>",
       "chat": ""
     },
     "source": {
@@ -107,10 +107,297 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Beast Master 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "fO5VyycXaCGcGW2b": {
+        "type": "summon",
+        "_id": "fO5VyycXaCGcGW2b",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "5"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "space",
+            "count": "",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "bonuses": {
+          "ac": "@abilities.wis.mod",
+          "hd": "@classes.ranger.levels",
+          "hp": "@classes.ranger.levels * (@summon.attributes.hd.denomination * 0.5 + 1)",
+          "attackDamage": "",
+          "saveDamage": "",
+          "healing": ""
+        },
+        "creatureSizes": [],
+        "creatureTypes": [],
+        "match": {
+          "attacks": true,
+          "proficiency": true,
+          "saves": false,
+          "ability": ""
+        },
+        "profiles": [
+          {
+            "count": "",
+            "name": "",
+            "_id": "VqvMy8Schn1dJOcG",
+            "uuid": "Compendium.materia-dnd.actors.Actor.f2waTp8ZNLrtWUsX",
+            "level": {
+              "min": null,
+              "max": null
+            }
+          },
+          {
+            "count": "",
+            "name": "",
+            "_id": "sNfqYxBQ5rLEaztx",
+            "uuid": "Compendium.materia-dnd.actors.Actor.5CY09q8WipOIIKgA",
+            "level": {
+              "min": null,
+              "max": null
+            }
+          },
+          {
+            "count": "",
+            "name": "",
+            "_id": "UEQs1D5d5vvmkxYT",
+            "uuid": "Compendium.materia-dnd.actors.Actor.77gpZ8A8TFdW3kFS",
+            "level": {
+              "min": null,
+              "max": null
+            }
+          }
+        ],
+        "summon": {
+          "prompt": true,
+          "mode": "",
+          "identifier": ""
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      },
+      "37PNMVEkFP6AA7Mc": {
+        "type": "summon",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "spellSlots",
+              "value": "1"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "value": "5",
+          "units": "ft",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": "space",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "bonuses": {
+          "ac": "@abilities.wis.mod",
+          "hd": "@classes.ranger.levels",
+          "hp": "@classes.ranger.levels * (@summon.attributes.hd.denomination * 0.5 + 1)",
+          "attackDamage": "",
+          "saveDamage": "",
+          "healing": ""
+        },
+        "creatureSizes": [],
+        "creatureTypes": [],
+        "match": {
+          "attacks": true,
+          "proficiency": true,
+          "saves": false,
+          "ability": ""
+        },
+        "profiles": [
+          {
+            "count": "",
+            "name": "",
+            "_id": "VqvMy8Schn1dJOcG",
+            "uuid": "Compendium.materia-dnd.actors.Actor.f2waTp8ZNLrtWUsX",
+            "level": {
+              "min": null,
+              "max": null
+            }
+          },
+          {
+            "count": "",
+            "name": "",
+            "_id": "sNfqYxBQ5rLEaztx",
+            "uuid": "Compendium.materia-dnd.actors.Actor.5CY09q8WipOIIKgA",
+            "level": {
+              "min": null,
+              "max": null
+            }
+          },
+          {
+            "count": "",
+            "name": "",
+            "_id": "UEQs1D5d5vvmkxYT",
+            "uuid": "Compendium.materia-dnd.actors.Actor.77gpZ8A8TFdW3kFS",
+            "level": {
+              "min": null,
+              "max": null
+            }
+          }
+        ],
+        "summon": {
+          "prompt": true,
+          "identifier": "",
+          "mode": ""
+        },
+        "name": "Summon with Spell Slot",
+        "_id": "37PNMVEkFP6AA7Mc",
+        "img": "",
+        "appliedEffects": []
+      },
+      "WxAMpZjLq7LdkB0s": {
+        "type": "utility",
+        "_id": "WxAMpZjLq7LdkB0s",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Command",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -118,13 +405,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.1.1",
+    "systemVersion": "4.3.9",
     "coreVersion": "12.331",
     "createdTime": 1711385468472,
-    "modifiedTime": 1731559276098,
+    "modifiedTime": 1746278861182,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
