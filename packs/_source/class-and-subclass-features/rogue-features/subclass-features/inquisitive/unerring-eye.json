@@ -6,7 +6,7 @@
   "img": "icons/magic/perception/eye-ringed-glow-angry-small-teal.webp",
   "system": {
     "description": {
-      "value": "<p>Beginning at 13th level, your senses are almost impossible to foil. You can give yourself 60 feet truesight until the start of your next turn (no action required).</p><p>You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a long rest.</p>",
+      "value": "<p>Your senses are almost impossible to foil. You can give yourself Truesight  out to 60 feet until the start of your next turn (no action required).</p><p>You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -77,24 +77,108 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Inquisitive 13",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 13
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Gain Truesight",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "range": {
+          "units": "self"
+        },
+        "effects": [
+          {
+            "_id": "q34edavk4n1wqOsv"
+          }
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Unerring Eye",
+      "img": "icons/magic/perception/eye-ringed-glow-angry-small-teal.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.aKH9ESeCgWFPJu86",
+      "transfer": false,
+      "_id": "q34edavk4n1wqOsv",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.senses.truesight",
+          "mode": 4,
+          "value": "60",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746396903664,
+        "modifiedTime": 1746396936432,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!aKH9ESeCgWFPJu86.q34edavk4n1wqOsv"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711194904186,
-    "modifiedTime": 1711194971291,
+    "modifiedTime": 1746396903750,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

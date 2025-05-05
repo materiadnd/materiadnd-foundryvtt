@@ -6,7 +6,7 @@
   "img": "icons/skills/social/diplomacy-handshake-yellow.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 3rd level, you can use the Help action as a bonus action and the target moves as if it used the Disengage action until the end of its next turn. Additionally, when you use the Help action to aid an ally in attacking a creature, the target of that attack can be within 30 feet of you, rather than within 5 feet of you, if the target can see or hear you.</p>",
+      "value": "<p>You can use the Help action as a Bonus Action and the target moves as if it used the Disengage action until the end of its next turn. Additionally, when you use the Help action to aid an ally in attacking a creature, the target of that attack can be within 30 feet of you, rather than within 5 feet of you, if the target can see or hear you.</p>",
       "chat": ""
     },
     "source": {
@@ -77,10 +77,26 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Mastermind 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Help",
+        "img": "",
+        "appliedEffects": [],
+        "target": {
+          "affects": {
+            "type": "ally",
+            "count": "1"
+          }
+        }
+      }
     }
   },
   "effects": [],
@@ -88,13 +104,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711195601231,
-    "modifiedTime": 1711195671221,
+    "modifiedTime": 1746410123416,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

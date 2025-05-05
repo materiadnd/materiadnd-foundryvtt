@@ -6,7 +6,7 @@
   "img": "icons/sundries/gaming/dice-runed-brown.webp",
   "system": {
     "description": {
-      "value": "<p>By 13th level, your Sneak Attack die become d8s and you can reroll any Sneak Attack die of a 1. You must use the new result.</p>",
+      "value": "<p>Your Sneak Attack die become d8s and you can reroll any Sneak Attack die of a 1. You must use the new result.</p><p>Also, when you use the Poison option of your Cunning Strike, the target also takes [[/r 2d6]] Poison damage whenever it fails the saving throw. This damage ignores Resistance to Poison damage.</p><section id=\"secret-7vgZrVBoFugesPet\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Poison</strong> activity on this feature includes the save and poison damage.</p><p>Alternatively, you can use the inline roll above if you've already used the original activity.</p><p><strong>Important:</strong> This damage does not automatically bypass resistances so ensure the correct damage is being applied.</p></section>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,96 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Assassin 13",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 13
+    },
+    "activities": {
+      "2xGfuVcYAgECRWSE": {
+        "type": "save",
+        "_id": "2xGfuVcYAgECRWSE",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": "When you deal Sneak Attack damage"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": "6",
+              "bonus": "",
+              "types": [
+                "poison"
+              ]
+            }
+          ],
+          "onSave": "none"
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "dex",
+            "formula": ""
+          }
+        },
+        "name": "Poison",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +170,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710997610347,
-    "modifiedTime": 1710997688931,
+    "modifiedTime": 1746359053909,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

@@ -6,7 +6,7 @@
   "img": "icons/skills/wounds/blood-cells-vessel-blue.webp",
   "system": {
     "description": {
-      "value": "<p>Upon reaching 17th level, you have learned to exploit a creature's weakness with rapid study. When you hit a creature with your Sneak Attack, you can reduce the number of Sneak Attack die you roll by half to cause the creature to gain vulnerability to one damage type of your choice for 1 minute, or until the end of a turn in which it has taken damage of that type.</p><p>If a creature has resistance to the damage type you choose, this resistance is suppressed for 1 minute, rather than gaining vulnerability. A creature that is immune to the damage type you choose is unaffected. A creature who is affected by this feature cannot be affected by it again for 24 hours.</p>",
+      "value": "<p>Yu have learned to exploit a creature's weakness with rapid study. When you hit a creature with your Sneak Attack, you can reduce the number of Sneak Attack Dice you roll by half to cause the creature to gain Vulnerability to one damage type of your choice for 1 minute, or until the end of a turn in which it has taken damage of that type.</p><p>If a creature has Resistance to the damage type you choose, this Resistance is suppressed for 1 minute, rather than gaining Vulnerability. A creature that is Immune to the damage type you choose is unaffected. A creature who is affected by this feature cannot be affected by it again for 24 hours.</p>",
       "chat": ""
     },
     "source": {
@@ -77,24 +77,144 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Inquisitive 17",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 17
+    },
+    "activities": {
+      "BscfEr9V1KbI9DXV": {
+        "type": "utility",
+        "_id": "BscfEr9V1KbI9DXV",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": "When you hit a creature with your Sneak Attack"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "L3eNFLI6bMIfssdA"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Mark Opponent",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Marked for Damage",
+      "img": "icons/skills/wounds/blood-cells-vessel-blue.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.pTcCQzk9RZxXvJXl",
+      "transfer": false,
+      "_id": "L3eNFLI6bMIfssdA",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746397026416,
+        "modifiedTime": 1746397039556,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!pTcCQzk9RZxXvJXl.L3eNFLI6bMIfssdA"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711194979003,
-    "modifiedTime": 1711195035652,
+    "modifiedTime": 1746397026475,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

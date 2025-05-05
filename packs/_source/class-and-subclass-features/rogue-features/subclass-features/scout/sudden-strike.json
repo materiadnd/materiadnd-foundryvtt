@@ -6,7 +6,7 @@
   "img": "icons/weapons/daggers/dagger-twin-curved-black.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 17th level, you can strike with deadly speed. If you take the Attack action on your turn, you can make one additional attack as a bonus action. This attack can benefit from your Sneak Attack even if you have already used it this turn, but you cannot use your Sneak Attack against the same target more than once in a turn.</p>",
+      "value": "<p>You can strike with deadly speed. If you take the Attack action on your turn, you can make one additional attack as a Bonus Action. This attack can benefit from your Sneak Attack even if you have already used it this turn, but you cannot use your Sneak Attack against the same target more than once in a turn.</p>",
       "chat": ""
     },
     "source": {
@@ -69,24 +69,53 @@
       "scaling": "spell"
     },
     "type": {
-      "value": "",
+      "value": "class",
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Scout 17",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 17
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Additional Strike",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1"
+          }
+        }
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1707239408810,
-    "modifiedTime": 1710865251901,
+    "modifiedTime": 1746414327937,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

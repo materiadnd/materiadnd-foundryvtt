@@ -6,7 +6,7 @@
   "img": "icons/magic/lightning/bolt-strike-purple.webp",
   "system": {
     "description": {
-      "value": "<p>When you choose this archetype at 3rd level, you harbor a wellspring of psionic energy within yourself. This energy is represented by your Psionic Energy dice, which are each a d6. You have a number of these dice equal to twice your proficiency bonus, and they fuel various psionic powers you have, which are detailed below.</p><p>Some of your powers expend the Psionic Energy die they use, as specified in a power's description, and you can't use a power if it requires you to use a die when your dice are all expended. You regain all your expended Psionic Energy dice when you finish a long rest. In addition, as a bonus action, you can regain one expended Psionic Energy die, but you can't do so again until you finish a short or long rest.</p><p>When you reach certain levels in this class, the size of your Psionic Energy dice increases: at 5th level (d8), 11th level (d10), and 17th level (d12). The powers below use your Psionic Energy dice.</p>",
+      "value": "<p>You harbor a wellspring of psionic energy within yourself. It is represented by your Psionic Energy dice, which fuel certain powers you have from this subclass. The Soulknife Energy Dice table shows the number of these dice you have when you reach certain Rogue levels, and the table shows the die size.</p><table><caption>Soulknife Energy Dice</caption><thead><tr><td>Rogue Level</td><td>Die Size</td><td>Number</td></tr></thead><tbody><tr><td>3</td><td>D6</td><td>4</td></tr><tr><td>5</td><td>D8</td><td>6</td></tr><tr><td>9</td><td>D8</td><td>8</td></tr><tr><td>11</td><td>D10</td><td>8</td></tr><tr><td>13</td><td>D10</td><td>10</td></tr><tr><td>17</td><td>D12</td><td>12</td></tr></tbody></table><p>Any features in this subclass that use a Psionic Energy Die use only the dice from this subclass. Some of your powers expend a Psionic Energy Die, as specified in a power's description, and you can't use a power if it requires you to use a die when your Psionic Energy Dice are all expended.</p><p>You regain one of your expended Psionic Energy Dice when you finish a Short Rest, and you regain all of them when you finish a Long Rest.</p><p><strong>Psi-Bolstered Knack.</strong> If you fail an ability check using a skill or tool with which you have proficiency, you can roll one Psionic Energy Die and add the number rolled to the check, potentially turning failure into success. The die is expended only if the roll then succeeds.</p><p><strong>Psychic Whispers.</strong> You can establish telepathic communication between yourself and others. As a Magic action, choose one or more creatures you can see, up to a number of creatures equal to your Proficiency Bonus, and then roll one Psionic Energy Die. For a number of hours equal to the number rolled, the chosen creatures can speak telepathically with you, and you can speak telepathically with them. To send or receive a message (no action required), you and the other creature must be within 1 mile of each other. A creature can end the telepathic connection at any time (no action required).</p><p>The first time you use this power after each Long Rest, you don't expend the Psionic Energy Die. All other times you use the power, you expend the die.</p><section class=\"secret\" id=\"secret-0z3PEmOmXhLbPWYG\"><p><strong>Foundry Note</strong></p><p>This feature automatically regains a use on a Short Rest and all on a Long Rest.</p><p>The <strong>Psi-Bolstered Knack</strong> activity expands a die and includes a bonus roll. If it still fails you can refund the expended die.</p><p>This feature includes a <strong>Psychic Whispers</strong> activity and a <strong>Psychic Whispers (Free)</strong> activity. They both include an Active Effect which can be used for tracking creatures you've included.</p></section>",
       "chat": ""
     },
     "source": {
@@ -39,9 +39,19 @@
     },
     "uses": {
       "value": null,
-      "max": "@scale.soulknife.psionic-energy",
+      "max": "@scale.soulknife.die.number",
       "per": "lr",
-      "recovery": "",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll"
+        },
+        {
+          "period": "sr",
+          "type": "formula",
+          "formula": "1"
+        }
+      ],
       "prompt": true
     },
     "consume": {
@@ -73,28 +83,304 @@
     },
     "summons": null,
     "type": {
-      "value": "",
+      "value": "class",
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Soulknife 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "QOQ3zi8MHHGnHGwZ": {
+        "type": "utility",
+        "_id": "QOQ3zi8MHHGnHGwZ",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": "When you fail an ability check using a skill or tool with which you're proficient"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "Bonus",
+          "formula": "@scale.soulknife.die.die"
+        },
+        "name": "Psi-Bolstered Knack",
+        "img": "",
+        "appliedEffects": []
+      },
+      "GeYBYWRijfqHh5bv": {
+        "type": "utility",
+        "_id": "GeYBYWRijfqHh5bv",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "activityUses",
+              "value": "1"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "hour",
+          "concentration": false,
+          "override": false,
+          "value": ""
+        },
+        "effects": [
+          {
+            "_id": "CJkIsTRequ1LUxlm"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "@prof",
+            "special": "Creatures you can see"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll"
+            }
+          ],
+          "max": "1"
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "Psionic Energy Die",
+          "formula": "@scale.soulknife.die"
+        },
+        "name": "Psychic Whispers (Free)",
+        "img": "",
+        "appliedEffects": [
+          "CJkIsTRequ1LUxlm"
+        ]
+      },
+      "tt1r8iAJq7B3SI5V": {
+        "type": "utility",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "hour",
+          "concentration": false,
+          "override": false,
+          "value": ""
+        },
+        "effects": [
+          {
+            "_id": "CJkIsTRequ1LUxlm"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "@prof",
+            "type": "creature",
+            "special": "Creatures you can see"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll"
+            }
+          ],
+          "max": "1"
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "formula": "@scale.soulknife.die",
+          "name": "Psionic Energy Die"
+        },
+        "name": "Psychic Whispers",
+        "_id": "tt1r8iAJq7B3SI5V",
+        "img": "",
+        "appliedEffects": [
+          "CJkIsTRequ1LUxlm"
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Psychic Whispers",
+      "img": "icons/magic/lightning/bolt-strike-purple.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.rVq85oudK2b61BUX",
+      "transfer": false,
+      "_id": "CJkIsTRequ1LUxlm",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>The chosen creatures can speak telepathically with you, and you can speak telepathically with them. To send or receive a message (no action required), you and the other creature must be within 1 mile of each other. A creature can end the telepathic connection at any time (no action required).</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746359857855,
+        "modifiedTime": 1746359874956,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!rVq85oudK2b61BUX.CJkIsTRequ1LUxlm"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711229809783,
-    "modifiedTime": 1711230878640,
+    "modifiedTime": 1746360602227,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
