@@ -6,7 +6,7 @@
   "img": "icons/magic/fire/flame-burning-embers-yellow.webp",
   "system": {
     "description": {
-      "value": "<p>Upon reaching 6th level, you can use your action to exhale the draconic energies within you much like a dragon's breath weapon. Your draconic ancestry determines the damage type of the exhalation. When you use your breath weapon, each creature in the area of the exhalation must make a saving throw. You can choose the area of your breath weapon to be a 5 by 30 ft. line or 15 ft. cone each time you use the feature.</p><p>The DC for this saving throw equals 8 + your Charisma modifier + your proficiency bonus. A creature takes a number of d6s equal to half your sorcerer level in damage on a failed save, and half as much damage on a successful one.</p><p>Once you use your breath weapon, you cannot use it again until you finish a long rest, unless you spend 4 sorcery points to use it again.</p>",
+      "value": "<p>You can take a Magic action to exhale the draconic energies within you much like a dragon's breath weapon. Your draconic ancestry determines the damage type of the exhalation. When you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. You can choose the area of your breath weapon to be a 5 by 30 ft. line or 15 ft. cone each time you use the feature.</p><p>The DC for this saving throw equals 8 plus your Charisma modifier plus your Proficiency Bonus. A creature takes a number of d6s equal to half your Sorcerer level in damage on a failed save, and half as much damage on a successful one.</p><p>Once you use your breath weapon, you cannot use it again until you finish a Long Rest, unless you spend 4 Sorcery Points (no action required) to restore your use of it.</p>",
       "chat": ""
     },
     "source": {
@@ -82,10 +82,160 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Draconic Bloodline 6",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 6
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Deep Bellows (Free)",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "(@classes.sorcerer.levels / 2)d6"
+              },
+              "number": null,
+              "denomination": null,
+              "bonus": "",
+              "types": [
+                "acid",
+                "cold",
+                "fire",
+                "force",
+                "lightning",
+                "necrotic",
+                "poison",
+                "psychic",
+                "radiant",
+                "thunder"
+              ]
+            }
+          ]
+        },
+        "appliedEffects": []
+      },
+      "FoyKKUCulrbToCNX": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "4",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.wv3ZvDFeg34rJ4co"
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "concentration": false,
+          "value": "",
+          "units": "inst",
+          "special": "",
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "units": "self",
+          "special": "",
+          "override": false
+        },
+        "target": {
+          "template": {
+            "count": "",
+            "contiguous": false,
+            "type": "",
+            "size": "",
+            "width": "",
+            "height": "",
+            "units": ""
+          },
+          "affects": {
+            "count": "",
+            "type": "",
+            "choice": false,
+            "special": ""
+          },
+          "prompt": true,
+          "override": false
+        },
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "(@classes.sorcerer.levels / 2)d6"
+              },
+              "number": null,
+              "denomination": null,
+              "bonus": "",
+              "types": [
+                "acid",
+                "cold",
+                "fire",
+                "force",
+                "lightning",
+                "poison",
+                "psychic",
+                "radiant",
+                "thunder",
+                "necrotic"
+              ]
+            }
+          ]
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Deep Bellows (Sorcery Points)",
+        "sort": 0,
+        "_id": "FoyKKUCulrbToCNX",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -93,13 +243,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711263331249,
-    "modifiedTime": 1711263638993,
+    "modifiedTime": 1746454367857,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
