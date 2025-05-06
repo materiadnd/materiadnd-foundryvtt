@@ -6,7 +6,7 @@
   "img": "icons/magic/perception/third-eye-blue-red.webp",
   "system": {
     "description": {
-      "value": "<p>When you choose this patron at 1st level, your alien knowledge gives you the ability to touch the minds of other creatures. You can telepathically speak to any creature you can see within 120 feet of you. You do not need to share a language with the creature for it to understand your telepathic utterances, but the creature must be able to understand at least one language.</p><p>As an action, you can use this ability to frighten a creature targeted by Awakened Mind. The creature makes a Wisdom save against your spell DC. On a failed save, the creature is frightened until the beginning of your next turn.</p>",
+      "value": "<p>You can form a telepathic connection between your mind and the mind of another. As a Bonus Action, choose one creature you can see within 30 feet of yourself. You and the chosen creature can communicate telepathically with each other while the two of you are within a number of miles of each other equal to your Charisma modifier (minimum of 1 mile, currently @abilities.cha.mod). To understand each other, you each must mentally use a language the other knows.</p><p>The telepathic connection lasts for a number of minutes equal to your Warlock level. It ends early if you use this feature to connect with a different creature.</p><p>As a Magic action, you can use this ability to unnerve a creature targeted by Awakened Mind. The creature makes a Wisdom saving throw against your spell save DC. On a failed save, the creature has Disadvantage on attack rolls against you, and you have Advantage on attack rolls against that creature for the duration of the bond.</p>",
       "chat": ""
     },
     "source": {
@@ -77,24 +77,88 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "The Great Old One 1",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "effects": [
+          {
+            "_id": "VJzXs5Ku8qerYiWu"
+          }
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Frightened",
+      "img": "systems/dnd5e/icons/svg/statuses/frightened.svg",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.I5fnU7sTafTYFMzR",
+      "transfer": false,
+      "_id": "VJzXs5Ku8qerYiWu",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "frightened"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746517014080,
+        "modifiedTime": 1746517028189,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!I5fnU7sTafTYFMzR.VJzXs5Ku8qerYiWu"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1712464718392,
-    "modifiedTime": 1712464792001,
+    "modifiedTime": 1746517382657,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

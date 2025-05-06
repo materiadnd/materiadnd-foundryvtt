@@ -6,7 +6,7 @@
   "img": "icons/magic/nature/vines-thorned-curled-glow-teal-purple.webp",
   "system": {
     "description": {
-      "value": "<p>Upon reaching 10th level, you learn the spell Evard's black tentacles. It counts as a warlock spell for you, but it does not count against the number of spells you know. You can also cast it once without a spell slot, and you regain the ability to do so when you finish a long rest.</p><p>Whenever you cast this spell, your patron's magic bolsters you, granting you a number of temporary hit points equal to your warlock level. Moreover, damage cannot break your concentration on this spell.</p>",
+      "value": "<p>You learn the spell @UUID[Compendium.materia-dnd.spells.Item.matSplBlackTenta]{Black Tentacles}. It counts as a Warlock spell for you, but it does not count against the number of spells you know. You can also cast it once without a spell slot, and you regain the ability to do so when you finish a Long Rest.</p><p>Whenever you cast this spell, your patron's magic bolsters you, granting you a number of Temporary Hit Points equal to your Warlock level. Moreover, damage cannot break your Concentration on this spell.</p>",
       "chat": ""
     },
     "source": {
@@ -84,10 +84,83 @@
     "properties": [
       "concentration"
     ],
-    "requirements": "The Fathomless 10",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 10
+    },
+    "activities": {
+      "1pCoZ1eTZYyEjn5B": {
+        "type": "heal",
+        "_id": "1pCoZ1eTZYyEjn5B",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "temphp"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "@classes.warlock.levels"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -95,13 +168,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711486578509,
-    "modifiedTime": 1711487110518,
+    "modifiedTime": 1746519116285,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

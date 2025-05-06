@@ -6,7 +6,7 @@
   "img": "icons/magic/unholy/orb-hands-pink.webp",
   "system": {
     "description": {
-      "value": "<p>Once you reach 14th level, you gain the ability to infect a humanoid's mind with the alien magic of your patron. You can use your action to touch an incapacitated humanoid. That creature is then charmed by you until a @UUID[Compendium.materia-dnd.spells.Item.matSplRemoveCurs]{Remove Curse} spell is cast on it, the charmed condition is removed from it, or you use this feature again. If the charm is removed you instantaneously know.</p><p>You can communicate telepathically with the charmed creature as long as the two of you are on the same plane of existence.</p>",
+      "value": "<p>You gain the ability to infect a humanoid's mind with the alien magic of your patron. You can take a Magic action to touch an &amp;Reference[incapacitated] humanoid. That creature is awakened from its incapacitated state and is &amp;Reference[charmed] by you until a @UUID[Compendium.materia-dnd.spells.Item.matSplRemoveCurs]{Remove Curse} spell is cast on it, the Charmed condition is removed from it, or you use this feature again. If the Charmed condition is removed you instantaneously know.</p><p>You can communicate telepathically with the Charmed creature as long as the two of you are on the same plane of existence.</p>",
       "chat": ""
     },
     "source": {
@@ -77,24 +77,94 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "The Great Old One 14",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 14
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Raise Thrall",
+        "img": "",
+        "appliedEffects": [],
+        "duration": {
+          "units": "inst"
+        },
+        "effects": [
+          {
+            "_id": "o1ouxZ4qgPAyHJwa"
+          }
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Charmed",
+      "img": "systems/dnd5e/icons/svg/statuses/charmed.svg",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.wlT5mAOUR5fKoXSE",
+      "transfer": false,
+      "_id": "o1ouxZ4qgPAyHJwa",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "charmed"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746517903600,
+        "modifiedTime": 1746517928216,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!wlT5mAOUR5fKoXSE.o1ouxZ4qgPAyHJwa"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1712465133775,
-    "modifiedTime": 1712465236365,
+    "modifiedTime": 1746517903660,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

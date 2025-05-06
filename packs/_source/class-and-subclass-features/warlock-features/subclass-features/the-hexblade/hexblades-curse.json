@@ -6,7 +6,7 @@
   "img": "icons/magic/death/projectile-skull-fire-purple.webp",
   "system": {
     "description": {
-      "value": "<p>When you choose this patron at 1st level, you gain the ability to place a baleful curse on someone. As a bonus action, choose one creature you can see within 30 feet of you. The target is cursed for 1 minute. The curse ends early if the target dies, you die, or you are incapacitated. Until the curse ends, you gain the following benefits:</p><ul><li>You gain a bonus to damage rolls against the cursed target. The bonus equals your proficiency bonus.</li><li>Any attack roll you make against the cursed target is a critical hit on a roll of 19 or 20 on the d20.</li><li>Starting at 18th level in this class, the critical range increases to 18-20, and you increase the damage of a critical hit further by an amount equal to your proficiency bonus, per additional dice rolled.</li><li>If the cursed target dies, you regain hit points equal to your warlock level + your Charisma modifier (minimum of 1 hit point).</li></ul><p>You cannot use this feature again until you finish a short or long rest, unless when you would regain a pact magic spell slot through your Eldritch Conduit, you can instead choose to regain this feature.</p>",
+      "value": "<p>You gain the ability to place a baleful curse on someone. As a Bonus Action, choose one creature you can see within 30 feet of you. The target is cursed for 1 minute. The curse ends early if the target dies, you die, or you are incapacitated. Until the curse ends, you gain the following benefits.</p><p><strong>Bonus Damage.</strong> You gain a bonus to damage rolls against the cursed target. The bonus equals your Proficiency Bonus.</p><p><strong>Expanded Critical.</strong> Any attack roll you make against the cursed target is a Critical Hit on a roll of 19 or 20 on the d20.  At Warlock level 18, this increases to 18-20, and you increase the damage of a Critical Hit further by an amount equal to your Proficiency Bonus per additional dice rolled.</p><p><strong>Heal.</strong> If the cursed target dies, you regain Hit Points equal to your Warlock level plus your Charisma modifier (minimum of 1 Hit Point).</p><p>You cannot use this feature again until you finish a Short or Long Rest, unless when you would regain a Pact Magic spell slot through your Eldritch Conduit, you can instead choose to regain this feature.</p>",
       "chat": ""
     },
     "source": {
@@ -77,24 +77,234 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "The Hexblade 1",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Place Curse",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "duration": {
+          "units": "inst"
+        },
+        "effects": [
+          {
+            "_id": "9dNkGGf7U0ujuqYi"
+          }
+        ]
+      },
+      "bYQuusBzKWVIv0wY": {
+        "type": "damage",
+        "_id": "bYQuusBzKWVIv0wY",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": null,
+              "denomination": "",
+              "bonus": "@prof",
+              "types": []
+            }
+          ]
+        },
+        "name": "Bonus Damage",
+        "img": "",
+        "appliedEffects": []
+      },
+      "eI0Y6QY3ZvkLYAwo": {
+        "type": "heal",
+        "_id": "eI0Y6QY3ZvkLYAwo",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [],
+          "custom": {
+            "enabled": true,
+            "formula": "@classes.warlock.levels + @abilities.cha.mod"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Hexblade's Curse",
+      "img": "icons/magic/death/projectile-skull-fire-purple.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.NG1hMSg5FqgSFveY",
+      "transfer": false,
+      "_id": "9dNkGGf7U0ujuqYi",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746520052537,
+        "modifiedTime": 1746520052537,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!NG1hMSg5FqgSFveY.9dNkGGf7U0ujuqYi"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1712466060038,
-    "modifiedTime": 1712466240103,
+    "modifiedTime": 1746520245972,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

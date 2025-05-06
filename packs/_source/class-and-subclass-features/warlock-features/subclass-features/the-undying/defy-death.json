@@ -6,7 +6,7 @@
   "img": "icons/magic/death/hand-dirt-undead-zombie.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 6th level, you manipulate vitality when you cheat death or when you help someone else cheat it. When you succeed on a death saving throw you regain hit points equal to 1d8 + your Warlock level (minimum of 1 hit point). Alternatively when you stabilize a creature with spare the dying the target regains hit points equal to 1d8 + your Warlock level (minimum of 1 hit point).</p><p>Once a creature benefits from this feature, they cannot benefit from it again until they complete a long rest, unless you expend your Otherworldly Glimpse.</p>",
+      "value": "<p>You manipulate vitality when you cheat death or when you help someone else cheat it. When you succeed on a Death Saving Throw you regain Hit Points equal to 1d8 plus your Warlock level (minimum of 1 hit point). Alternatively when you stabilize a creature with Spare the Dying, the target regains Hit Points equal to 1d8 plus your Warlock level (minimum of 1 hit point).</p><p>Once a creature benefits from this feature, they cannot benefit from it again until they complete a Long Rest, unless you expend your Otherworldly Glimpse.</p>",
       "chat": ""
     },
     "source": {
@@ -77,10 +77,34 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "The Undying 6",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 6
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "self"
+        },
+        "healing": {
+          "denomination": "8",
+          "number": 1,
+          "bonus": "@classes.warlock.levels",
+          "types": [
+            "healing"
+          ]
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -88,13 +112,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1712467824817,
-    "modifiedTime": 1712467977291,
+    "modifiedTime": 1746523681008,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

@@ -6,7 +6,7 @@
   "img": "icons/equipment/finger/ring-cabochon-rounded-gold-red.webp",
   "system": {
     "description": {
-      "value": "<p>When you choose this patron at 1st level, your patron gifts you a magical vessel that grants you a measure of the genie's power. The vessel is a Tiny object, and you can use it as a spellcasting focus for your warlock spells. You decide what the object is, or you can determine what it is randomly by rolling on the Genie's Vessel table.</p><table><thead><tr><th>d4</th><th>Kind</th></tr></thead><tbody><tr><td>1</td><td>Oil lamp</td></tr><tr><td>2</td><td>Urn</td></tr><tr><td>3</td><td>Ring with a compartment</td></tr><tr><td>4</td><td>Stoppered bottle</td></tr><tr><td>5</td><td>Hollow statuette</td></tr><tr><td>6</td><td>Ornate lantern</td></tr></tbody></table><p>While you are touching the vessel, you can use it in the following ways:</p>",
+      "value": "<p>Your patron gifts you a magical vessel that grants you a measure of the genie's power. The vessel is a Tiny object, and you can use it as a Spellcasting Focus for your Warlock spells. You decide what the object is, or you can determine what it is randomly by rolling on the Genie's Vessel table.</p><table><thead><tr><th>d4</th><th>Kind</th></tr></thead><tbody><tr><td>1</td><td>Oil lamp</td></tr><tr><td>2</td><td>Urn</td></tr><tr><td>3</td><td>Ring with a compartment</td></tr><tr><td>4</td><td>Stoppered bottle</td></tr><tr><td>5</td><td>Hollow statuette</td></tr><tr><td>6</td><td>Ornate lantern</td></tr></tbody></table><p>While you are touching the vessel, you can use it in the following ways:</p><p><strong>Bottled Respite.</strong> As a Magic action, you can vanish and enter your vessel, which remains in the space you left. Alternatively, you and one willing creature of your choice can do the same. The interior of the vessel is an extradimensional space in the shape of a 20-foot-radius cylinder, 20 feet high, and resembles your vessel. The interior is appointed with cushions and low tables and is a comfortable temperature. While inside, you or the willing creature can hear the area around your vessel as if in its space. You or the willing creature can remain inside the vessel up to a number of hours equal to twice your Proficiency Bonus. You or the willing creature exit the vessel early if you or the willing creature use a Bonus Action to leave, if you die, or if the vessel is destroyed. When you or the willing creature exit the vessel, you or the willing creature appear in the unoccupied space closest to it. Any objects left in the vessel remain there until carried out, and if the vessel is destroyed, every object stored there harmlessly appears in the unoccupied spaces closest to the vessel's former space. Once you or the willing creature enter the vessel, no creature can enter again until you finish a Long Rest.</p><p><strong>Genie's Wrath.</strong> Once during each of your turns when you hit with an attack roll, you can deal extra damage to the target equal to your Proficiency Bonus. The type of this damage is determined by your patron: Bludgeoning (Dao), Thunder (Djinni), Fire (Efreeti), or Cold (Marid).</p><p>The vessel's AC equals your spell save DC. Its Hit Points equal your Warlock level plus your Proficiency Bonus, and it is Immune to Poison and Psychic damage.</p><p>If the vessel is destroyed or you lose it, you can perform a 1-hour ceremony to receive a replacement from your patron. This ceremony can be performed during a Short or Long Rest, and the previous vessel is destroyed if it still exists. The vessel vanishes in a flare of elemental power when you die.</p>",
       "chat": ""
     },
     "source": {
@@ -77,24 +77,222 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "The Genie 1",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "FDaV83SiZb2hkfrR": {
+        "type": "utility",
+        "_id": "FDaV83SiZb2hkfrR",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "Tbcrn9jmQHgxhb8j"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [
+            {
+              "period": "lr"
+            }
+          ],
+          "max": "1"
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Bottled Respite",
+        "img": "",
+        "appliedEffects": [
+          "Tbcrn9jmQHgxhb8j"
+        ]
+      },
+      "pbGJ1P3NzZVIxcXc": {
+        "type": "damage",
+        "_id": "pbGJ1P3NzZVIxcXc",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": null,
+              "denomination": "",
+              "bonus": "@prof",
+              "types": [
+                "bludgeoning",
+                "cold",
+                "fire",
+                "thunder"
+              ]
+            }
+          ]
+        },
+        "name": "Genie's Wrath",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Inside Vessel",
+      "img": "icons/equipment/finger/ring-cabochon-rounded-gold-red.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.g9lkUdRdDgrRxxYB",
+      "transfer": false,
+      "_id": "Tbcrn9jmQHgxhb8j",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746525522691,
+        "modifiedTime": 1746525539458,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!g9lkUdRdDgrRxxYB.Tbcrn9jmQHgxhb8j"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711493771837,
-    "modifiedTime": 1711493901377,
+    "modifiedTime": 1746525630339,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

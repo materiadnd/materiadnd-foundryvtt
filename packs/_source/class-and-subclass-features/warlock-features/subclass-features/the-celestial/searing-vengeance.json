@@ -6,7 +6,7 @@
   "img": "icons/magic/light/projectile-beams-salvo-yellow.webp",
   "system": {
     "description": {
-      "value": "<p>Once you reach 14th level, the radiant energy you channel allows you to resist death. When you have to make a death saving throw at the start of your turn, you can instead spring back to your feet with a burst of radiant energy. You regain hit points equal to half your hit point maximum, (In Materia) you do not gain a level of exhaustion, and then you stand up if you so choose. Each creature of your choice that is within 30 feet of you takes radiant damage equal to your Charisma modifier + a number of d8s equal to half your warlock level, and it is blinded until the end of the current turn.</p><p>Once you use this feature, you cannot use it again until you finish a long rest, unless you expend one of your Mystic Arcanum.</p>",
+      "value": "<p>The radiant energy you channel allows you to resist death. When you or an ally within 60 feet of you is about to make a Death Saving Throw, you can unleash radiant energy to save the creature. The creature regains Hit Points equal to half its Hit Point maximum and can end the &amp;Reference[Prone apply=false] condition, recover the level of &amp;Reference[Exhaustion apply=false] suffered, and stand up if the creature chooses. Each creature of your choice that is within 30 feet of the creature takes Radiant damage equal to your Charisma modifier plus a number of d8s equal to half your Warlock level, and each has the &amp;Reference[Blinded] condition until the end of the current turn.</p><p>Once you use this feature, you can't use it again until you finish a Long Rest, or you expend one of your Mystic Arcanum to restore your use of it.</p>",
       "chat": ""
     },
     "source": {
@@ -82,24 +82,131 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "The Celestial 14",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 14
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "effects": [
+          {
+            "_id": "X992IT9lg9BYZL1i"
+          }
+        ],
+        "name": "",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "range": {
+          "units": "ft",
+          "value": "60"
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "(floor(@classes.warlock.levels / 2))d8 + @abilities.cha.mod"
+              },
+              "number": null,
+              "denomination": null,
+              "bonus": "",
+              "types": [
+                "radiant"
+              ]
+            }
+          ]
+        },
+        "appliedEffects": [
+          "X992IT9lg9BYZL1i"
+        ],
+        "target": {
+          "affects": {
+            "choice": true,
+            "type": "creature"
+          }
+        }
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Blinded",
+      "img": "systems/dnd5e/icons/svg/statuses/blinded.svg",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.1x9KgP5Eff93eHRF",
+      "transfer": false,
+      "_id": "X992IT9lg9BYZL1i",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "blinded"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746503035716,
+        "modifiedTime": 1746503063639,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!1x9KgP5Eff93eHRF.X992IT9lg9BYZL1i"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711484848684,
-    "modifiedTime": 1711484972715,
+    "modifiedTime": 1746503083331,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
