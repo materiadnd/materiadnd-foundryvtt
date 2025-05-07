@@ -1,0 +1,277 @@
+{
+  "folder": "iWd7E6DcNWCs9eCM",
+  "name": "Quivering Palm",
+  "type": "feat",
+  "_id": "AjA3wWzaRlA1yIwv",
+  "img": "icons/magic/air/air-smoke-casting.webp",
+  "system": {
+    "description": {
+      "value": "<p>You gain the ability to set up lethal vibrations in someone's body. When you hit a creature with an Unarmed Strike, you can spend 4 Focus Points to start these imperceptible vibrations, which last for a number of days equal to your Monk level. The vibrations are harmless unless you take an action to end them. Alternatively, when you take the Attack action on your turn, you can forgo one of the attacks to end the vibrations. To end them, you and the target must be on the same plane of existence. When you end them, the target must make a Constitution saving throw, taking 10d12 Force or Necrotic damage (your choice when you end the vibrations) on a failed save or half as much damage on a successful one.</p><p>Alternatively, when you take the Attack action on your turn, you can replace one of your attacks with a Quivering Palm (expending 4 Focus Points to do so).</p><p>You can have only one creature under the effect of this feature at a time. You can choose to end the vibrations harmlessly (no action required).</p><section class=\"secret\" id=\"secret-mOnhN2QKs4ZdGRJQ\"><p><strong>Foundry Note</strong></p><p>The <strong>Instill Vibrations</strong> activity expends 4 Focus Points and includes an Active Effect which can be used to track the target you have set up lethal vibrations in.</p><p>The <strong>End Vibrations</strong> activity includes the Saving Throw and Damage rolls.</p></section>",
+      "chat": ""
+    },
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "special",
+      "cost": null,
+      "condition": ""
+    },
+    "duration": {
+      "value": "",
+      "units": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": 1,
+      "width": null,
+      "units": "",
+      "type": "creature",
+      "prompt": true
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": ""
+    },
+    "uses": {
+      "value": null,
+      "max": "",
+      "per": null,
+      "recovery": "",
+      "prompt": true
+    },
+    "consume": {
+      "type": "charges",
+      "target": "",
+      "amount": 3,
+      "scale": false
+    },
+    "ability": "",
+    "actionType": "save",
+    "attack": {
+      "bonus": "",
+      "flat": false
+    },
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [
+        [
+          "10d12",
+          "force"
+        ]
+      ],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "con",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "summons": null,
+    "type": {
+      "value": "class",
+      "subtype": "ki"
+    },
+    "properties": [],
+    "requirements": "",
+    "recharge": {
+      "value": null,
+      "charged": false
+    },
+    "prerequisites": {
+      "level": 17
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "End Vibrations",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": []
+        },
+        "range": {
+          "units": "self"
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 10,
+              "denomination": "12",
+              "bonus": "",
+              "types": [
+                "force",
+                "necrotic"
+              ]
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "activation": {
+          "type": "action",
+          "condition": "When you take the Attack action on your turn"
+        },
+        "save": {
+          "dc": {
+            "calculation": "wis"
+          }
+        }
+      },
+      "sow9bkNTDA5vBlB5": {
+        "type": "utility",
+        "_id": "sow9bkNTDA5vBlB5",
+        "sort": -100000,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": "When you hit a creature with an Unarmed Strike"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "4",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.6PTV2WXjnNhwvYef"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "day",
+          "concentration": false,
+          "override": false,
+          "value": "@classes.monk.levels"
+        },
+        "effects": [
+          {
+            "_id": "friMhdwjNDZGmqvh"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Instill Vibrations",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
+  },
+  "effects": [
+    {
+      "name": "Lethal Vibrations",
+      "img": "systems/dnd5e/icons/svg/items/feature.svg",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.AjA3wWzaRlA1yIwv",
+      "transfer": false,
+      "_id": "friMhdwjNDZGmqvh",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1745623291748,
+        "modifiedTime": 1745623312665,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!AjA3wWzaRlA1yIwv.friMhdwjNDZGmqvh"
+    }
+  ],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "materia-dnd": {
+      "item-use-source": "ki"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
+    "createdTime": 1712505447589,
+    "modifiedTime": 1745623341946,
+    "lastModifiedBy": "dnd5mbuilder0000",
+    "duplicateSource": null
+  },
+  "_key": "!items!AjA3wWzaRlA1yIwv"
+}

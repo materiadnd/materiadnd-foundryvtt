@@ -6,7 +6,7 @@
   "img": "icons/sundries/books/book-face-blue.webp",
   "system": {
     "description": {
-      "value": "<p>The Undead lets you choose from an expanded list of spells when you learn a warlock spell. The following spells are added to the warlock spell list for you.</p><table><thead><tr><th>Spell Level</th><th>Spells</th></tr></thead><tbody><tr><td>cantrip</td><td>@UUID[Compendium.materia-dnd.spells.Item.matSplMessage000]{Message}, @UUID[Compendium.materia-dnd.spells.Item.matSplThaumaturg]{Thaumaturgy}</td></tr><tr><td>1st</td><td>@UUID[Compendium.materia-dnd.spells.Item.matSplBane000000]{Bane}, @UUID[Compendium.materia-dnd.spells.Item.matSplFalseLife0]{False Life}</td></tr><tr><td>2nd</td><td>@UUID[Compendium.materia-dnd.spells.Item.mycojDbHOZg2luJc]{Blindness/Deafness}, @UUID[Compendium.materia-dnd.spells.Item.F2efriniToiMPjfv]{Phantasmal Force}</td></tr><tr><td>3rd</td><td>@UUID[Compendium.materia-dnd.spells.Item.matSplPhantomSte]{Phantom Steed}, @UUID[Compendium.materia-dnd.spells.Item.matSplSpeakWithD]{Speak with Dead}</td></tr><tr><td>4th</td><td>@UUID[Compendium.materia-dnd.spells.Item.matSplDeathWard0]{Death Ward}, @UUID[Compendium.materia-dnd.spells.Item.matSplGreaterInv]{Greater Invisibility}</td></tr><tr><td>5th</td><td>@UUID[Compendium.materia-dnd.spells.Item.matSplAntilifeSh]{Antilife Shell}, @UUID[Compendium.materia-dnd.spells.Item.matSplCloudkill0]{Cloudkill}</td></tr></tbody></table>",
+      "value": "<p>The magic of your patron ensures you always have certain spells ready; when you reach a Warlock level specified in the Undead Spells table, you thereafter always have the listed spells prepared.</p><table><caption>Undead Spells</caption><thead><tr><td>Warlock Level</td><td>Spells</td></tr></thead><tbody><tr><td>3</td><td>@UUID[Compendium.materia-dnd.spells.Item.matSplBane000000]{Bane}, @UUID[Compendium.materia-dnd.spells.Item.matSplBlindnessD]{Blindness/Deafness}, @UUID[Compendium.materia-dnd.spells.Item.matSplFalseLife0]{False Life}@UUID[Compendium.materia-dnd.spells.Item.matSplMessage000]{Message}, @UUID[Compendium.materia-dnd.spells.Item.matSplPhantasFor]{Phantasmal Force}, @UUID[Compendium.materia-dnd.spells.Item.matSplThaumaturg]{Thaumaturgy}</td></tr><tr><td>5</td><td>@UUID[Compendium.materia-dnd.spells.Item.matSplPhantomSte]{Phantom Steed}, @UUID[Compendium.materia-dnd.spells.Item.matSplSpeakWithD]{Speak with Dead}</td></tr><tr><td>7</td><td>@UUID[Compendium.materia-dnd.spells.Item.matSplDeathWard0]{Death Ward}, @UUID[Compendium.materia-dnd.spells.Item.matSplGreaterInv]{Greater Invisibility}</td></tr><tr><td>9</td><td>@UUID[Compendium.materia-dnd.spells.Item.matSplAntilifeSh]{Antilife Shell}, @UUID[Compendium.materia-dnd.spells.Item.matSplCloudkill0]{Cloudkill}</td></tr></tbody></table>",
       "chat": ""
     },
     "source": {
@@ -77,10 +77,71 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "The Undead 1",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "XHRVkl9etXPsxhc6": {
+        "type": "cast",
+        "spell": {
+          "uuid": "Compendium.materia-dnd.spells.Item.matSplBane000000",
+          "challenge": {
+            "attack": null,
+            "save": null,
+            "override": false
+          },
+          "level": null,
+          "properties": [
+            "vocal",
+            "somatic",
+            "material"
+          ],
+          "spellbook": true
+        },
+        "_id": "XHRVkl9etXPsxhc6",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {},
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": []
+        }
+      }
     }
   },
   "effects": [],
@@ -88,13 +149,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1712497618600,
-    "modifiedTime": 1712497827326,
+    "modifiedTime": 1746522055046,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

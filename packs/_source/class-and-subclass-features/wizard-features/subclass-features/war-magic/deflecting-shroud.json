@@ -6,7 +6,7 @@
   "img": "icons/magic/defensive/barrier-shield-dome-deflect-blue.webp",
   "system": {
     "description": {
-      "value": "<p>At 14th level, your Arcane Deflection becomes infused with deadly magic. When you use your Arcane Deflection feature, you can cause magical energy to arc from you. Up to your Intelligence modifier (minimum of 1) number of creatures of your choice that you can see within 60 feet of you each take force damage equal to half your wizard level.</p>",
+      "value": "<p>Your Arcane Deflection becomes infused with deadly magic. When you use your Arcane Deflection feature, you can cause magical energy to arc from you. Up to your Intelligence modifier (minimum of 1) number of creatures of your choice that you can see within 60 feet of you each take Force damage equal to half your Wizard level.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,91 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "War Magic 14",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "iEcMuwELfTEBiH4G": {
+        "type": "damage",
+        "_id": "iEcMuwELfTEBiH4G",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": "when you use your Arcane Deflection feature"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "radius",
+            "size": "60",
+            "count": ""
+          },
+          "affects": {
+            "choice": true,
+            "type": "creature",
+            "count": "@abilities.int.mod",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": null,
+              "denomination": "",
+              "bonus": "@classes.wizard.levels / 2",
+              "types": [
+                "force"
+              ]
+            }
+          ]
+        },
+        "name": "Deflecting Shroud",
+        "img": "",
+        "appliedEffects": []
+      }
+    },
+    "prerequisites": {
+      "level": 14
     }
   },
   "effects": [],
@@ -84,13 +165,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710839188202,
-    "modifiedTime": 1710839225181,
+    "modifiedTime": 1746598859116,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

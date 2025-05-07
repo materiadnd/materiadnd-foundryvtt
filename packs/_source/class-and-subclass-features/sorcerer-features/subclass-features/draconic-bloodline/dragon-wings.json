@@ -6,7 +6,7 @@
   "img": "icons/creatures/abilities/wing-batlike-white-blue.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 14th level, you gain the ability to sprout a pair of dragon wings from your back, gaining a flying speed equal to double your current speed. You can create these wings as a bonus action on your turn. They last until you dismiss them as a bonus action on your turn.</p><p>You cannot manifest your wings while wearing armor unless the armor is made to accommodate them, and clothing not made to accommodate your wings might be destroyed when you manifest them.</p>",
+      "value": "<p>As a Bonus Action, you can cause draconic wings to appear on your back. The wings last for an hour or until you dismiss them (no action required). For the duration, you have a Fly Speed of 60 feet.</p><p>Once you use this feature, you can't use it again until you finish a Long Rest unless you spend 3 Sorcery Points (no action required) to restore your use of it.</p><section id=\"secret-xTrFL4xVEyn2UJtO\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Dragon Wings</strong> activity includes an Active Effect that grants you a Fly Speed of 60 feet.</p><p>The <strong>Restore Use</strong> activity can be used to expend the Sorcery Points to restore a use of the <strong>Dragon Wings</strong> activity.</p></section>",
       "chat": ""
     },
     "source": {
@@ -39,9 +39,14 @@
     },
     "uses": {
       "value": null,
-      "max": "",
+      "max": "1",
       "per": null,
-      "recovery": "",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll"
+        }
+      ],
       "prompt": true
     },
     "consume": {
@@ -77,10 +82,113 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Draconic Bloodline 14",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 14
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Dragon Wings",
+        "img": "",
+        "appliedEffects": [],
+        "duration": {
+          "units": "hour",
+          "value": "1"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "target": {
+          "affects": {
+            "type": "self"
+          }
+        },
+        "effects": [
+          {
+            "_id": "YCYVtX5BoKHjjGOa"
+          }
+        ]
+      },
+      "Hqg6QDjRCbZjgctK": {
+        "type": "utility",
+        "_id": "Hqg6QDjRCbZjgctK",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": ""
+            },
+            {
+              "type": "itemUses",
+              "value": "3",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.wv3ZvDFeg34rJ4co"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Restore Use",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [
@@ -143,19 +251,75 @@
       "system": {},
       "sort": 0,
       "_key": "!items.effects!AdswoabyPwcWmSNi.eencRlGWUpOtmNC0"
+    },
+    {
+      "name": "Winged",
+      "img": "icons/creatures/abilities/wing-batlike-white-blue.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.AdswoabyPwcWmSNi",
+      "transfer": false,
+      "_id": "YCYVtX5BoKHjjGOa",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.movement.fly",
+          "mode": 4,
+          "value": "60",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p><span style=\"font-family:Signika, sans-serif\">The wings last for 1 hour or until you dismiss them (no action required). For the duration, you have a Fly Speed of 60 feet.</span></p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746454676974,
+        "modifiedTime": 1746454702843,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!AdswoabyPwcWmSNi.YCYVtX5BoKHjjGOa"
     }
   ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711263776410,
-    "modifiedTime": 1711263934489,
+    "modifiedTime": 1746454738317,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

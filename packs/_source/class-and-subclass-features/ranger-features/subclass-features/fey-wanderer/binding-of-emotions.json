@@ -6,7 +6,7 @@
   "img": "icons/magic/control/debuff-chains-purple.webp",
   "system": {
     "description": {
-      "value": "<p>Upon reaching 11th level, emotions are akin to reality in the Feybinds (Feywild) to those you learn to use them as such. Creature's effected by your hunter's mark have disadvantage on saving throws they make to avoid or end the charmed or frightened condition against them.</p><p>When you deal damage to a charmed or frightened target you can roll an additionally Dreadful Strikes and hunter's mark damage die for each.</p><p>In addition, when a creature fails their saving throw against your Beguiling Twist you can choose to have them restrained while they are charmed or frightened in this way. You can do so a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a long rest.</p>",
+      "value": "<p>Emotions are akin to reality in the Feybinds to those who learn to use them as such. Creatures effected by your hunter's mark have Disadvantage on saving throws they make to avoid or end the &amp;Reference[Charmed apply=false] or &amp;Reference[Frightened apply=false] condition against them.</p><p>When you deal damage to a Charmed or Frightened target you can roll an additional Dreadful Strikes and hunter's mark damage die for each.</p><p>In addition, when a creature fails their saving throw against your Beguiling Twist you can choose to apply the &amp;Reference[restrained] condition while they are Charmed or Frightened in this way. You can do so a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -77,24 +77,106 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Fey Wanderer 11",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Restrain Foe",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "effects": [
+          {
+            "_id": "2IqN7BBNixq3mGzl"
+          }
+        ]
+      }
+    },
+    "prerequisites": {
+      "level": 11
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Restrained",
+      "img": "systems/dnd5e/icons/svg/statuses/restrained.svg",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.qW7vHHjL7HkJch6T",
+      "transfer": false,
+      "_id": "2IqN7BBNixq3mGzl",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "restrained"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746309731148,
+        "modifiedTime": 1746309760038,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!qW7vHHjL7HkJch6T.2IqN7BBNixq3mGzl"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1712500930559,
-    "modifiedTime": 1712501017067,
+    "modifiedTime": 1746309887368,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

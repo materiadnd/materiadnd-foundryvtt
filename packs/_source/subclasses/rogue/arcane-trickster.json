@@ -6,7 +6,7 @@
   "img": "icons/magic/unholy/hands-cloud-light-pink.webp",
   "system": {
     "description": {
-      "value": "<p>Some rogues enhance their fine-honed skills of stealth and agility with magic, learning tricks of enchantment and illusion. These rogues include pickpockets and burglars, but also pranksters, mischief-makers, and a significant number of adventurers.</p>",
+      "value": "<blockquote><p>Enhance Stealth with Arcane Spells</p></blockquote><p>Some Rogues enhance their fine-honed skills of stealth and agility with spells, learning magical tricks to aid them in their trade. Some Arcane Tricksters use their talents as pickpockets and burglars, while others are pranksters.</p>",
       "chat": ""
     },
     "source": {
@@ -23,29 +23,33 @@
         "configuration": {
           "items": [
             {
+              "optional": false,
               "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.zpDwRirL4LYdxuCo"
             },
             {
+              "optional": false,
               "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.6Jr6PA9B7RkZLpBf"
             },
             {
+              "optional": false,
               "uuid": "Compendium.materia-dnd.spells.Item.matSplMageHand00"
             }
           ],
           "optional": false,
           "spell": {
-            "ability": "",
+            "ability": [],
             "preparation": "always",
             "uses": {
               "max": "",
-              "per": ""
+              "per": "",
+              "requireSlot": false
             }
           }
         },
         "value": {},
         "level": 3,
-        "title": "Features",
-        "icon": null
+        "title": "Subclass Features",
+        "hint": ""
       },
       {
         "_id": "w5heK7H6p9fwyjNC",
@@ -53,6 +57,7 @@
         "configuration": {
           "items": [
             {
+              "optional": false,
               "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.JcV7GPugPNuugiEW"
             }
           ],
@@ -61,8 +66,8 @@
         },
         "value": {},
         "level": 6,
-        "title": "Features",
-        "icon": null
+        "title": "Subclass Features",
+        "hint": ""
       },
       {
         "_id": "wElZMSvdTPdQuoh6",
@@ -70,6 +75,7 @@
         "configuration": {
           "items": [
             {
+              "optional": false,
               "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.NkhrUdTlCzlC7F4P"
             }
           ],
@@ -78,8 +84,8 @@
         },
         "value": {},
         "level": 13,
-        "title": "Features",
-        "icon": null
+        "title": "Subclass Features",
+        "hint": ""
       },
       {
         "_id": "21LeciCJwpJmAwTa",
@@ -87,6 +93,7 @@
         "configuration": {
           "items": [
             {
+              "optional": false,
               "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.gU8JLx3kzr15t40g"
             }
           ],
@@ -95,13 +102,65 @@
         },
         "value": {},
         "level": 17,
-        "title": "Features",
-        "icon": null
+        "title": "Subclass Features",
+        "hint": ""
+      },
+      {
+        "_id": "aQ2K4HeniWU3TsuS",
+        "type": "ScaleValue",
+        "configuration": {
+          "identifier": "max-prepared",
+          "type": "number",
+          "distance": {
+            "units": ""
+          },
+          "scale": {
+            "3": {
+              "value": 3
+            },
+            "4": {
+              "value": 4
+            },
+            "7": {
+              "value": 5
+            },
+            "8": {
+              "value": 6
+            },
+            "10": {
+              "value": 7
+            },
+            "11": {
+              "value": 8
+            },
+            "13": {
+              "value": 9
+            },
+            "14": {
+              "value": 10
+            },
+            "16": {
+              "value": 11
+            },
+            "19": {
+              "value": 12
+            },
+            "20": {
+              "value": 13
+            }
+          }
+        },
+        "value": {},
+        "title": "Max Prepared Spells",
+        "hint": ""
       }
     ],
     "spellcasting": {
       "progression": "third",
-      "ability": "int"
+      "ability": "int",
+      "preparation": {
+        "formula": "@scale.arcane-trickster.max-prepared"
+      }
     }
   },
   "effects": [],
@@ -112,10 +171,10 @@
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711329620051,
-    "modifiedTime": 1711330501900,
+    "modifiedTime": 1746352520067,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

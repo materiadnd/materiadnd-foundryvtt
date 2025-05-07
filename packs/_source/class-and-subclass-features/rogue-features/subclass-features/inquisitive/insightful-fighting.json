@@ -6,7 +6,7 @@
   "img": "icons/skills/melee/strike-dagger-white-orange.webp",
   "system": {
     "description": {
-      "value": "<p>At 3rd level, you gain the ability to decipher an opponent's tactics and develop a counter to them. As a bonus action, you can make a Wisdom (Insight) check against a creature you can see that is not incapacitated, contested by the target's Charisma (Deception) check. If you succeed, you gain the following benefits:</p><ul><li>You can use your Sneak Attack against that target even if you don't have advantage on the attack roll, but not if you have disadvantage on it.</li><li>You deal additional damage equal to your proficiency bonus whenever you Sneak Attack the target.</li><li>You can add half your Wisdom modifier to yout AC against all attack rolls that creature makes against you and to all saving throws that creature forces you to make.</li></ul><p>This benefit lasts for 1 minute or until you successfully use this feature against a different target.</p>",
+      "value": "<p>You gain the ability to decipher an opponent's tactics and develop a counter to them. As a Bonus Action, you can make an Insight check against a creature you can see that does not have the &amp;Reference[incapacitated apply=false] condition, contested by the target's Deception. If you succeed, you gain the following benefits:</p><p><strong>Sneakier Attack.</strong> You can use your Sneak Attack against that target even if you don't have Advantage on the attack roll, but not if you have disadvantage on it.</p><p><strong>Enhanced Sneak Damage.</strong> You deal additional damage equal to your Proficiency Bonus whenever you Sneak Attack the target.</p><p><strong>Roguish Defenses.</strong> You can add half your Wisdom modifier to your AC against all attack rolls that creature makes against you and to all saving throws that creature forces you to make.</p><p>This benefit lasts for 1 minute or until you successfully use this feature against a different target.</p>",
       "chat": ""
     },
     "source": {
@@ -82,24 +82,125 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Inquisitive 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity300": {
+        "name": "Gain Insight on Opponent",
+        "img": "",
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "duration": {
+          "units": "inst"
+        },
+        "effects": [
+          {
+            "_id": "c84YSBlIBZvdbx0x"
+          }
+        ],
+        "sort": 100000
+      },
+      "dnd5eactivity000": {
+        "sort": 200000,
+        "name": "Enhanced Sneak Damage",
+        "img": "",
+        "range": {
+          "units": "self"
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "@prof"
+              },
+              "number": null,
+              "denomination": null,
+              "bonus": "",
+              "types": []
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "activation": {
+          "type": ""
+        },
+        "duration": {
+          "units": "inst"
+        }
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Sized Up",
+      "img": "icons/skills/melee/strike-dagger-white-orange.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.PLAyG2dJw5Evbnpa",
+      "transfer": false,
+      "_id": "c84YSBlIBZvdbx0x",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746396785527,
+        "modifiedTime": 1746396794318,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!PLAyG2dJw5Evbnpa.c84YSBlIBZvdbx0x"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711194699451,
-    "modifiedTime": 1711194839176,
+    "modifiedTime": 1746396816632,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

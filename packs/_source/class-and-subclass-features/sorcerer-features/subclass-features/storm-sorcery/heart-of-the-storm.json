@@ -6,7 +6,7 @@
   "img": "icons/magic/lightning/projectile-tendrils-teal.webp",
   "system": {
     "description": {
-      "value": "<p>Upon reaching 6th level, you gain resistance to lightning and thunder damage. In addition, whenever you start casting a spell of 1st level or higher that deals lightning or thunder damage, stormy magic erupts from you. This eruption causes creatures of your choice that you can see within 10 feet of you to take lightning or thunder damage (choose each time this ability activates) equal to half your sorcerer level.</p>",
+      "value": "<p>You gain Resistance to Lightning and Thunder damage. In addition, whenever you start casting a level 1+ spell that deals Lightning or Thunder damage, stormy magic erupts from you. This eruption causes creatures of your choice that you can see within 10 feet of you to take Lightning or Thunder damage (choose each time this ability activates) equal to half your Sorcerer level.</p>",
       "chat": ""
     },
     "source": {
@@ -77,91 +77,113 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Storm Sorcery 1",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 6
+    },
+    "activities": {
+      "nlfbKFCcrz3WKMo4": {
+        "type": "damage",
+        "_id": "nlfbKFCcrz3WKMo4",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "radius",
+            "size": "10",
+            "count": ""
+          },
+          "affects": {
+            "choice": true,
+            "type": "creature",
+            "count": "",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "@classes.sorcerer.levels / 2"
+              },
+              "number": null,
+              "denomination": 0,
+              "bonus": "",
+              "types": [
+                "lightning",
+                "thunder"
+              ]
+            }
+          ]
+        },
+        "name": "Eruption",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [
-    {
-      "name": "Heart of the Storm",
-      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.NBBYIa9u64VvWpF8",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": false,
-      "_id": "IGYr6dV0EZf1M9v6",
-      "changes": [
-        {
-          "key": "system.traits.dr.value",
-          "mode": 2,
-          "value": "lightning",
-          "priority": null
-        },
-        {
-          "key": "system.traits.dr.value",
-          "mode": 2,
-          "value": "thunder",
-          "priority": null
-        }
-      ],
-      "description": "",
-      "transfer": true,
-      "statuses": [],
-      "flags": {
-        "ActiveAuras": {
-          "isAura": false,
-          "aura": "None",
-          "nameOverride": "",
-          "radius": "",
-          "alignment": "",
-          "type": "",
-          "customCheck": "",
-          "ignoreSelf": false,
-          "height": false,
-          "hidden": false,
-          "displayTemp": false,
-          "hostile": false,
-          "onlyOnce": false,
-          "wallsBlock": "system"
-        }
-      },
-      "tint": "#ffffff",
-      "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "icons/magic/lightning/projectile-tendrils-teal.webp",
-      "type": "base",
-      "system": {},
-      "sort": 0,
-      "_key": "!items.effects!NBBYIa9u64VvWpF8.IGYr6dV0EZf1M9v6"
-    }
-  ],
+  "effects": [],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711312942646,
-    "modifiedTime": 1711313093436,
+    "modifiedTime": 1746458799792,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

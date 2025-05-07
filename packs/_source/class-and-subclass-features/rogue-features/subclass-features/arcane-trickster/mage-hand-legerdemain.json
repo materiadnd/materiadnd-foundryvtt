@@ -6,7 +6,7 @@
   "img": "icons/magic/light/orbs-hand-gray.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 3rd level, when you cast mage hand, you can make the spectral hand invisible, and you can perform the following additional tasks with it:</p><ul><li>You can stow one object the hand is holding in a container worn or carried by another creature. You can retrieve an object in a container worn or carried by another creature.</li><li>You can use thieves' tools to pick locks and disarm traps at range.</li><li>You can perform one of these tasks without being noticed by a creature if you succeed on a Dexterity (Sleight of Hand) check contested by the creature's Wisdom (Perception) check.</li></ul><p>In addition, you can use the bonus action granted by your Cunning Action to control the hand.</p>",
+      "value": "<p>When you cast Mage Hand, you can cast it as a Bonus Action, and you can make the spectral hand Invisible. You can control the hand as a Bonus Action, and through it, you can make [[/skill slt]] checks.</p>",
       "chat": ""
     },
     "source": {
@@ -77,10 +77,74 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Arcane Trickster 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "lwAupEs11pTwGuHW": {
+        "type": "cast",
+        "_id": "lwAupEs11pTwGuHW",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "spell": {
+          "challenge": {
+            "attack": null,
+            "save": null,
+            "override": false
+          },
+          "level": null,
+          "properties": [],
+          "spellbook": false,
+          "uuid": "Compendium.materia-dnd.spells.Item.matSplMageHand00",
+          "ability": ""
+        },
+        "name": "",
+        "img": ""
+      }
     }
   },
   "effects": [],
@@ -88,13 +152,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711330077532,
-    "modifiedTime": 1711330163964,
+    "modifiedTime": 1746351762414,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

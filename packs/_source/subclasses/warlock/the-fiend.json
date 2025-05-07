@@ -6,7 +6,7 @@
   "img": "icons/creatures/unholy/demon-horned-winged-laughing.webp",
   "system": {
     "description": {
-      "value": "<p>You have made a pact with a fiend from the lower planes of existence, a being whose aims are evil, even if you strive against those aims. Such beings desire the corruption or destruction of all things, ultimately including you. Fiends powerful enough to forge a pact include demon lords such as Demogorgon, Orcus, Fraz'Urb-luu, and Baphomet; archdevils such as Asmodeus, Dispater, Mephistopheles, and Belial; pit fiends and balors that are especially mighty; and ultroloths and other lords of the yugoloths.</p>",
+      "value": "<blockquote><p>Make a Deal with the Lower Planes</p></blockquote><p>Your pact draws on the Lower Planes, the realms of perdition. You might forge a bargain with a demon lord such as Demogorgon or Orcus; an archdevil such as Asmodeus; or a pit fiend, balor, yugoloth, or night hag that is especially mighty. That patron's aims are evil—the corruption or destruction of all things, ultimately including you—and your path is defined by the extent to which you strive against those aims.</p>",
       "chat": ""
     },
     "source": {
@@ -14,7 +14,7 @@
       "revision": 1,
       "book": "Materia"
     },
-    "identifier": "the-fiend",
+    "identifier": "fiend",
     "classIdentifier": "warlock",
     "advancement": [
       {
@@ -22,88 +22,97 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.liAPEKkSO30rfsDc",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.OweCcbEyk1CZJ3z1",
-            "Compendium.materia-dnd.class-and-subclass-features.Item.4eG0UbRhIVXv9HnG"
+            {
+              "optional": false,
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.liAPEKkSO30rfsDc"
+            },
+            {
+              "optional": false,
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.OweCcbEyk1CZJ3z1"
+            },
+            {
+              "optional": false,
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.4eG0UbRhIVXv9HnG"
+            }
           ],
           "optional": false,
           "spell": null
         },
         "value": {},
-        "level": 1,
+        "level": 3,
         "title": "Subclass Features",
-        "icon": null
-      },
-      {
-        "_id": "KHOZwOD8YdDBJWrl",
-        "type": "ItemGrant",
-        "configuration": {
-          "items": [
-            "Compendium.materia-dnd.spells.Item.matSplFireBolt00",
-            "Compendium.materia-dnd.spells.Item.matSplResistance"
-          ],
-          "optional": false,
-          "spell": null
-        },
-        "value": {},
-        "level": 1,
-        "title": "Cantrips",
-        "icon": null
+        "hint": ""
       },
       {
         "_id": "dbDNUslR8TvREo9f",
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.spells.Item.matSplBurningHan",
-            "Compendium.materia-dnd.spells.Item.matSplCommand000"
-          ],
-          "optional": false,
-          "spell": null
-        },
-        "value": {},
-        "level": 1,
-        "title": "Expanded Spell List",
-        "icon": null
-      },
-      {
-        "_id": "vadtnmHIbPf6osWX",
-        "type": "ItemGrant",
-        "configuration": {
-          "items": [
-            "Compendium.materia-dnd.spells.Item.mycojDbHOZg2luJc",
-            "Compendium.materia-dnd.spells.Item.RSKqQMpJzJEkJi2G"
+            {
+              "optional": false,
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplBurningHan"
+            },
+            {
+              "optional": false,
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplCommand000"
+            },
+            {
+              "optional": false,
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplBlindnessD"
+            },
+            {
+              "optional": false,
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplFireBolt00"
+            },
+            {
+              "optional": false,
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplResistance"
+            },
+            {
+              "optional": false,
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplScorchingR"
+            }
           ],
           "optional": false,
           "spell": {
-            "ability": "",
-            "preparation": "",
+            "ability": [],
+            "preparation": "always",
             "uses": {
               "max": "",
-              "per": ""
+              "per": "",
+              "requireSlot": false
             }
           }
         },
         "value": {},
         "level": 3,
         "title": "Expanded Spell List",
-        "icon": null
+        "hint": ""
       },
       {
         "_id": "H1q5eqGFhQRwZTUV",
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.spells.Item.matSplFireball00",
-            "Compendium.materia-dnd.spells.Item.matSplStinkingCl"
+            {
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplFireball00",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplStinkingCl",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": {
-            "ability": "",
+            "ability": [
+              ""
+            ],
             "preparation": "",
             "uses": {
               "max": "",
-              "per": ""
+              "per": "",
+              "requireSlot": false
             }
           }
         },
@@ -117,8 +126,14 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.spells.Item.matSplFireShield",
-            "Compendium.materia-dnd.spells.Item.matSplWallOfFire"
+            {
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplFireShield",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplWallOfFire",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -133,8 +148,14 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.spells.Item.matSplFlameStrik",
-            "Compendium.materia-dnd.spells.Item.matSplHallow0000"
+            {
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplFlameStrik",
+              "optional": false
+            },
+            {
+              "uuid": "Compendium.materia-dnd.spells.Item.matSplHallow0000",
+              "optional": false
+            }
           ],
           "optional": false,
           "spell": null
@@ -149,50 +170,62 @@
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.Hxr2k9yIfYZs5eXo"
+            {
+              "optional": false,
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.Hxr2k9yIfYZs5eXo"
+            }
           ],
           "optional": false,
           "spell": null
         },
         "value": {},
         "level": 6,
-        "title": "",
-        "icon": null
+        "title": "Subclass Features",
+        "hint": ""
       },
       {
         "_id": "gNnAkih710hrgseI",
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.rFGdz1nut0z4B0dn"
+            {
+              "optional": false,
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.rFGdz1nut0z4B0dn"
+            }
           ],
           "optional": false,
           "spell": null
         },
         "value": {},
         "level": 10,
-        "title": "",
-        "icon": null
+        "title": "Subclass Features",
+        "hint": ""
       },
       {
         "_id": "mpNrZg2z0bXjWTkK",
         "type": "ItemGrant",
         "configuration": {
           "items": [
-            "Compendium.materia-dnd.class-and-subclass-features.Item.sEClts7IxK7pX9p7"
+            {
+              "optional": false,
+              "uuid": "Compendium.materia-dnd.class-and-subclass-features.Item.sEClts7IxK7pX9p7"
+            }
           ],
           "optional": false,
           "spell": null
         },
         "value": {},
         "level": 14,
-        "title": "",
-        "icon": null
+        "title": "Subclass Features",
+        "hint": ""
       }
     ],
     "spellcasting": {
       "progression": "none",
-      "ability": ""
+      "ability": "",
+      "preparation": {
+        "formula": ""
+      }
     }
   },
   "effects": [],
@@ -203,10 +236,10 @@
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1709177808820,
-    "modifiedTime": 1712465290904,
+    "modifiedTime": 1746515703688,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

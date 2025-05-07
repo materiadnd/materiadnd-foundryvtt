@@ -6,7 +6,7 @@
   "img": "icons/magic/water/waves-water-blue.webp",
   "system": {
     "description": {
-      "value": "<p>Beginning at 7th level, you emanate an aura that fills you and your companions with supernatural speed, allowing you to race across a battlefield in formation. Your walking speed increases by 10 feet. In addition, if you are not incapacitated, the walking speed of any ally who starts their turn within 5 feet of you increases by 10 feet until the end of that turn.</p><p>At 13th level in this class, your Aura Improvement increases the range of the aura to 10 feet.</p><p>When you reach 18th level in this class, your Aura Mastery increases the range of the aura to 15 feet.</p>",
+      "value": "<p>Your Speed increases by 10 feet.</p><p>In addition, whenever an ally enters your Aura of Protection for the first time on a turn or starts their turn there, the ally's Speed increases by 10 feet until the end of their next turn.</p><section id=\"secret-8oCQwBjIkIXwh6pP\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes an Active Effect which increases your Speed by 10 feet. It does not automatically apply to creatures within your aura.</p></section>",
       "chat": ""
     },
     "source": {
@@ -73,13 +73,66 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Oath of Glory 7",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 7
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Alacrity",
+      "img": "icons/magic/water/waves-water-blue.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.9mXb0S08VRcOWYXU",
+      "_id": "HNLwIpGA8fMGoqJF",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.movement.walk",
+          "mode": 2,
+          "value": "10",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746265114637,
+        "modifiedTime": 1746265129277,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!9mXb0S08VRcOWYXU.HNLwIpGA8fMGoqJF"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
@@ -87,10 +140,10 @@
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710735555719,
-    "modifiedTime": 1710735636369,
+    "modifiedTime": 1746265110713,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

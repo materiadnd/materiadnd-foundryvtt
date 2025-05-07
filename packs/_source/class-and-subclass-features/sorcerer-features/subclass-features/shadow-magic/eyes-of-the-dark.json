@@ -6,7 +6,7 @@
   "img": "icons/magic/perception/eye-ringed-glow-angry-teal.webp",
   "system": {
     "description": {
-      "value": "<p>Starting when you choose this origin at 1st level, you have darkvision with a range of 120 feet.</p><p>When you reach 3rd level in this class, you learn the darkness spell, which doesn't count against your number of sorcerer spells known. In addition, you can cast it by spending 2 sorcery points or by expending a spell slot. If you cast it with sorcery points, you can see through the darkness created by the spell.</p>",
+      "value": "<p>Your relationship with shadows affects how you see the world. You gain the following benefits.</p><p><strong>Darkvision.</strong> You have Darkvision with a range of 120 feet.</p><p><strong>Darkness.</strong> You learn the Darkness spell, which doesn't count against your number of Sorcerer spells known. In addition, you can cast it by spending 2 Sorcery Points or by expending a spell slot. If you cast it with Sorcery Points, you can see through the magical darkness created by the spell.</p>",
       "chat": ""
     },
     "source": {
@@ -77,10 +77,83 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Shadow Magic 1",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "tlCTZQHwQxyUAXod": {
+        "type": "cast",
+        "_id": "tlCTZQHwQxyUAXod",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "2",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.wv3ZvDFeg34rJ4co"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "spell": {
+          "challenge": {
+            "attack": null,
+            "save": null,
+            "override": false
+          },
+          "level": "2",
+          "properties": [
+            "vocal",
+            "somatic",
+            "material"
+          ],
+          "spellbook": true,
+          "uuid": "Compendium.materia-dnd.spells.Item.matSplDarkness00",
+          "ability": ""
+        },
+        "name": "Darkness",
+        "img": ""
+      }
     }
   },
   "effects": [
@@ -149,13 +222,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711265511218,
-    "modifiedTime": 1711265635345,
+    "modifiedTime": 1746456296107,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

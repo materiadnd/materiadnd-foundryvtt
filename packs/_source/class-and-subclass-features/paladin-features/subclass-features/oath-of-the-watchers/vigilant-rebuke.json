@@ -6,7 +6,7 @@
   "img": "icons/magic/defensive/shield-barrier-deflect-gold.webp",
   "system": {
     "description": {
-      "value": "<p>At 15th level, you have learned how to chastise anyone who dares wield beguilements against you and your wards. Whenever you or a creature you can see within 30 feet of you succeeds on an Intelligence, a Wisdom, or a Charisma saving throw, you can use your reaction to deal your paladin level + your Charisma modifier (minimum of 1) force damage to the creature that forced the saving throw.</p><p>If a creature under the effect of your Watcher's Will succeeds the saving throw, then you can also Divine Smite to to deal additional force damage as part of the same reaction.</p>",
+      "value": "<p>You have learned how to chastise anyone who dares wield beguilements against you and your wards. Whenever you or a creature you can see within 30 feet of you succeeds on an Intelligence, Wisdom, or Charisma saving throw, you can take a Reaction to deal Force damage to the creature equal to your Paladin level plus your Charisma modifier (minimum of 1).</p><p>If this creature is under the effect of your Watcher's Will and succeeds the saving throw that triggered this Reaction, you can choose to deal additional damage to them as if using your Divine Smite feature. This damage is Force damage instead of Radiant.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,90 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Oath of the Watchers 15",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 15
+    },
+    "activities": {
+      "tGdyn5bK9TACXHjt": {
+        "type": "damage",
+        "_id": "tGdyn5bK9TACXHjt",
+        "sort": 0,
+        "activation": {
+          "type": "reaction",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "@classes.paladin.levels + @abilities.cha.mod"
+              },
+              "number": null,
+              "denomination": 0,
+              "bonus": "",
+              "types": [
+                "force"
+              ]
+            }
+          ]
+        },
+        "name": "Vigilant Rebuke",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +164,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710973760419,
-    "modifiedTime": 1710973927979,
+    "modifiedTime": 1746274204844,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

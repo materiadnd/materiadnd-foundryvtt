@@ -6,7 +6,7 @@
   "img": "icons/magic/fire/projectile-wave-arrow.webp",
   "system": {
     "description": {
-      "value": "<p>Once you reach 14th level, when you hit a creature with an attack, you can use this feature to instantly transport the target through the lower planes. The creature disappears and hurtles through a nightmare landscape.</p><p>At the end of your next turn, the target returns to the space it previously occupied, or the nearest unoccupied space. If the target is not a fiend, it takes a number of d10s equal to twice your Charisma modifier (minimum of 2) psychic damage as it reels from its horrific experience.</p><p>Once you use this feature, you cannot use it again until you finish a long rest, unless you expend one of your Mystic Arcanum.</p>",
+      "value": "<p>Once per turn when you hit a creature with an attack roll, you can try to instantly transport the target through the Lower Planes. The target must succeed on a Charisma saving throw against your spell save DC, or the target disappears and hurtles through a nightmare landscape. The target takes 8d10 Psychic damage if it isn't a Fiend, and it has the &amp;Reference[incapacitated] condition until the end of your next turn, when it returns to the space it previously occupied or the nearest unoccupied space.</p><p>Once you use this feature, you cannot use it again until you finish a Long Rest, unless you expend a Pact Magic spell slot (no action required) to restore your use of it.</p><section id=\"secret-1okUowzidonZmqzY\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes one limited use.</p><p>The <strong>Regain Use</strong> activity will expend a Pact Magic spell slot and restore a use of this feature.</p></section>",
       "chat": ""
     },
     "source": {
@@ -78,10 +78,172 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "The Fiend 14",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 14
+    },
+    "activities": {
+      "2tZn0KLAPZ5VuG5T": {
+        "type": "save",
+        "_id": "2tZn0KLAPZ5VuG5T",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": "Once per turn when you hit a creature with an attack roll"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 8,
+              "denomination": "10",
+              "bonus": "",
+              "types": [
+                "psychic"
+              ]
+            }
+          ],
+          "onSave": "none"
+        },
+        "save": {
+          "ability": [
+            "cha"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Hurl Through Hell",
+        "img": "",
+        "appliedEffects": []
+      },
+      "OW5e0DUtSRc1NYxI": {
+        "type": "utility",
+        "_id": "OW5e0DUtSRc1NYxI",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            },
+            {
+              "type": "attribute",
+              "value": "1",
+              "target": "spells.pact.value"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Regain Use",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -89,13 +251,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1709186693210,
-    "modifiedTime": 1709277051979,
+    "modifiedTime": 1746516555592,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

@@ -6,7 +6,7 @@
   "img": "icons/magic/holy/angel-wings-gray.webp",
   "system": {
     "description": {
-      "value": "<p>Starting when you choose this origin at 1st level, divine power guards your destiny. If you fail a saving throw or miss with an attack roll, you can roll 2d4 and add it to the total, possibly changing the outcome. Once you use this feature, you cannot use it again until you finish a short or long rest, unless you spend 3 sorcery points to use it again.</p>",
+      "value": "<p>Divine power guards your destiny. If you fail a saving throw or miss with an attack roll, you can roll 2d4 and add it to the total, possibly changing the outcome. Once you use this feature, you cannot use it again until you finish a Short or Long Rest, unless you spend 3 Sorcery Points to use it again.</p>",
       "chat": ""
     },
     "source": {
@@ -77,10 +77,112 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Divine Soul 1",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Favored by the Gods (Free)",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "roll": {
+          "name": "Bonus"
+        }
+      },
+      "7xFF14C2vB8X1XIe": {
+        "type": "utility",
+        "activation": {
+          "type": "special",
+          "value": null,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "3",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.wv3ZvDFeg34rJ4co"
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "concentration": false,
+          "value": "",
+          "units": "inst",
+          "special": "",
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "units": "self",
+          "special": "",
+          "override": false
+        },
+        "target": {
+          "template": {
+            "count": "",
+            "contiguous": false,
+            "type": "",
+            "size": "",
+            "width": "",
+            "height": "",
+            "units": ""
+          },
+          "affects": {
+            "count": "",
+            "type": "self",
+            "choice": false,
+            "special": ""
+          },
+          "prompt": true,
+          "override": false
+        },
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "roll": {
+          "formula": "2d4",
+          "name": "Bonus",
+          "prompt": false,
+          "visible": false
+        },
+        "name": "Favored by the Gods (Sorcery Points)",
+        "sort": 0,
+        "_id": "7xFF14C2vB8X1XIe",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -88,13 +190,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711256621253,
-    "modifiedTime": 1711256665435,
+    "modifiedTime": 1746476078458,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

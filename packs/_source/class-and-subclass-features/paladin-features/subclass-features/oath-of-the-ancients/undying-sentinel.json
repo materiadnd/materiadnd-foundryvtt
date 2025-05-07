@@ -6,7 +6,7 @@
   "img": "icons/magic/life/heart-cross-strong-green.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 15th level, when you are reduced to 0 hit points and are not killed outright, you can choose to drop to 1 hit point instead. Alternatively, when you are subjected to an effect that would kill you instantaneously without dealing damage, you can choose to negate that effect.</p><p>Once you use this ability, you cannot use it again until you finish a long rest, unless you expend 5 hit points from your Lay on Hands pool immediately after warding dropping below 0 hit points or being killed. This amount increases by 5 more each time until you complete a short rest.</p><p>Additionally, you suffer none of the drawbacks of old age, and you cannot be aged magically.</p>",
+      "value": "<p>When you are reduced to 0 Hit Points and not killed outright, you can drop to 1 Hit Point instead, and you regain a number of Hit Points equal to three times your Paladin level. Alternatively, when you are subjected to an effect that would kill you instantaneously without dealing damage, you can choose to negate that effect.</p><p>Once you use this feature, you cannot use it again until you finish a Long Rest, unless you expend 5 Hit Points from your Lay on Hands pool immediately after warding against dropping below 0 Hit Points or being killed. This amount increases by 5 more each time until you complete a Short Rest.</p><p>Additionally, you can't be aged magically, and you cease visibly aging.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,90 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Oath of the Ancients 15",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 15
+    },
+    "activities": {
+      "0nVwxoteqv47BkQD": {
+        "type": "heal",
+        "_id": "0nVwxoteqv47BkQD",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "3 * @classes.paladin.levels"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +164,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710968953295,
-    "modifiedTime": 1710969040501,
+    "modifiedTime": 1746268533739,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

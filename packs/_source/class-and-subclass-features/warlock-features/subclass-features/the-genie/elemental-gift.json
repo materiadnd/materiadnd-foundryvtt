@@ -6,7 +6,7 @@
   "img": "icons/magic/defensive/shield-barrier-glowing-triangle-blue.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 6th level, you begin to take on characteristics of your patron's kind. You now have resistance to a damage type determined by your patron's kind: bludgeoning (dao), thunder (djinni), fire (efreeti), or cold (marid).</p><p>In addition, as a bonus action, you can give yourself a flying speed of 30 feet that lasts for 10 minutes, during which you can hover. You can use this bonus action a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>",
+      "value": "<p>You begin to take on characteristics of your patron's kind. You now have Resistance to a damage type determined by your patron's kind: Bludgeoning (Dao), Thunder (Djinni), Fire (Efreeti), or Cold (Marid).</p><p>In addition, as a Bonus Action, you can give yourself a Fly Speed of 30 feet that lasts for 10 minutes, during which you can hover. You can use this Bonus Action a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -77,10 +77,34 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "The Genie 6",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Take Flight",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "duration": {
+          "units": "inst"
+        },
+        "effects": [
+          {
+            "_id": "PsMse6qaRdhxLfMY"
+          }
+        ]
+      }
     }
   },
   "effects": [
@@ -383,19 +407,75 @@
       "system": {},
       "sort": 0,
       "_key": "!items.effects!2R7zwoVT91lg7KEr.o1PT0A1gW0XmtLm8"
+    },
+    {
+      "name": "Genie Flight",
+      "img": "icons/magic/defensive/shield-barrier-glowing-triangle-blue.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.2R7zwoVT91lg7KEr",
+      "transfer": false,
+      "_id": "PsMse6qaRdhxLfMY",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.movement.fly",
+          "mode": 4,
+          "value": "30",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746525743033,
+        "modifiedTime": 1746525787349,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!2R7zwoVT91lg7KEr.PsMse6qaRdhxLfMY"
     }
   ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711494362637,
-    "modifiedTime": 1711494582089,
+    "modifiedTime": 1746525743079,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

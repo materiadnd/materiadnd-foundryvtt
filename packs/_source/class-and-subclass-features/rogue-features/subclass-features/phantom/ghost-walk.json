@@ -6,7 +6,7 @@
   "img": "icons/magic/death/undead-ghost-strike-white.webp",
   "system": {
     "description": {
-      "value": "<p>Upon reaching 13th level, you can phase partially into the realm of the dead, becoming like a ghost. As a bonus action, you assume a spectral form. While in this form, you have a flying speed of 10 feet, you can hover, and attack rolls have disadvantage against you. You can also move through creatures and objects as if they were difficult terrain, but you take 1d10 force damage if you end your turn inside a creature or an object.</p><p>You stay in this form for 10 minutes or until you end it as a bonus action. To use this feature again, you must finish a long rest or destroy one of your soul trinkets as part of the bonus action you use to activate Ghost Walk.</p>",
+      "value": "<p>You can phase partially into the realm of the dead, becoming like a ghost. As a Bonus Action, you assume a spectral form. While in this form, you have a Fly Speed of 10 feet, you can hover, and attack rolls have Disadvantage against you. You can also move through creatures and objects as if they were Difficult Terrain, but you take 1d10 Force damage if you end your turn inside a creature or an object.</p><p>You stay in this form for 10 minutes or until you end it as a Bonus Action. To use this feature again, you must finish a Long Rest or destroy one of your Soul Trinkets as part of the Bonus Action you use to activate Ghost Walk.</p><section id=\"secret-VmBCXXGDksCanQbd\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Ghost Walk</strong> activity will use the once per Long Rest usage of this feature, the <strong>Ghost Walk (Soul Trinket)</strong> activity will consume one of your Soul Trinkets from [[/item Tokens of the Departed]].  These both have an Active Effect which grants you the 10 foot Fly Speed but does not automate anything else.</p><p>The <strong>End Ghost Walk</strong> activity can be used for tracking Bonus Action usage.</p></section>",
       "chat": ""
     },
     "source": {
@@ -39,9 +39,14 @@
     },
     "uses": {
       "value": null,
-      "max": "",
+      "max": "1",
       "per": null,
-      "recovery": "",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll"
+        }
+      ],
       "prompt": true
     },
     "consume": {
@@ -73,24 +78,244 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Phantom 13",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 13
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Ghost Walk",
+        "img": "",
+        "appliedEffects": [],
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "target": {
+          "affects": {
+            "type": "self"
+          }
+        },
+        "effects": [
+          {
+            "_id": "vrhiWoy7VyXf5VSS"
+          }
+        ]
+      },
+      "wNNzC9706ukNTpYS": {
+        "type": "utility",
+        "_id": "wNNzC9706ukNTpYS",
+        "sort": 200000,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "End Ghost Walk",
+        "img": "",
+        "appliedEffects": []
+      },
+      "fg17bpwEF1zWVBOK": {
+        "type": "utility",
+        "_id": "fg17bpwEF1zWVBOK",
+        "sort": 100000,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.j1ATv3F72f3xDorx"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "vrhiWoy7VyXf5VSS"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Ghost Walk (Soul Trinket)",
+        "img": "",
+        "appliedEffects": [
+          "vrhiWoy7VyXf5VSS"
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Ghost Walk",
+      "img": "icons/magic/death/undead-ghost-strike-white.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.kILgGUS9LX2jmjcg",
+      "transfer": false,
+      "_id": "vrhiWoy7VyXf5VSS",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.movement.fly",
+          "mode": 2,
+          "value": "10",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746412737596,
+        "modifiedTime": 1746412799831,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!kILgGUS9LX2jmjcg.vrhiWoy7VyXf5VSS"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710402841310,
-    "modifiedTime": 1710402899138,
+    "modifiedTime": 1746413004254,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

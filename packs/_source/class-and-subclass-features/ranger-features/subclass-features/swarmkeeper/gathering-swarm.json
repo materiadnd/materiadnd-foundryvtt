@@ -6,7 +6,7 @@
   "img": "icons/creatures/invertebrates/wasp-swarm-tan.webp",
   "system": {
     "description": {
-      "value": "<p>A swarm of intangible nature spirits has bonded itself to you and can assist you in battle. While you are alive, the swarm remains in your space, crawling on you or flying and skittering around you within your space. You determine its appearance, or you generate its appearance by rolling on the Swarm Appearance table.</p><h5>Swarm Appearance</h5><table><thead><tr><th>[[/r d6]]</th><th>Appearance</th></tr></thead><tbody><tr><td>1</td><td>Swarming insects</td></tr><tr><td>2</td><td>Miniature twig blights</td></tr><tr><td>3</td><td>Fluttering birds</td></tr><tr><td>4</td><td>Playful pixies</td></tr><tr><td>5</td><td>Tiny jellyfish</td></tr><tr><td>6</td><td>Flickering wisps</td></tr></tbody></table><p>Once on each of your turns, you can cause the swarm to assist you in one of the following ways, immediately after you hit a creature with an attack:</p><ul><li>Immediately after dealing damage to a target of your hunter's mark, you can target a second creature you can see within 30 feet of the first creature. The second target takes 1d6 piercing damage plus your hunter's mark damage as your swarm lashes out.</li><li>The attack's target must succeed on a Strength saving throw against your spell save DC if it is Larger or smaller or be moved by the swarm up to 15 feet horizontally in a direction of your choice.</li><li>You are moved by the swarm 5 feet horizontally in a direction of your choice.</li></ul>",
+      "value": "<p>A swarm of intangible nature spirits has bonded itself to you and can assist you in battle. While you are alive, the swarm remains in your space, crawling on you or flying and skittering around you within your space. You determine its appearance, or you generate its appearance by rolling on the Swarm Appearance table.</p><table><caption>Swarm Appearance</caption><thead><tr><th>[[/r d6]]</th><th>Appearance</th></tr></thead><tbody><tr><td>1</td><td>Swarming insects</td></tr><tr><td>2</td><td>Miniature twig blights</td></tr><tr><td>3</td><td>Fluttering birds</td></tr><tr><td>4</td><td>Playful pixies</td></tr><tr><td>5</td><td>Tiny jellyfish</td></tr><tr><td>6</td><td>Flickering wisps</td></tr></tbody></table><p>Once on each of your turns, you can cause the swarm to assist you in one of the following ways, immediately after you hit a creature with an attack.</p><p><strong>Swarm Lash.</strong> Immediately after dealing damage to a target of your hunter's mark, you can target a second creature you can see within 30 feet of the first creature. The second target takes 1d6 piercing damage plus your hunter's mark damage as your swarm lashes out.</p><p><strong>Push.</strong> The attack's target must succeed on a Strength saving throw against your spell save DC if it is Larger or smaller or be moved by the swarm up to 15 feet horizontally in a direction of your choice.</p><p><strong>Reposition.</strong> You are moved by the swarm 5 feet horizontally in a direction of your choice.</p>",
       "chat": ""
     },
     "source": {
@@ -77,10 +77,83 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Swarmkeeper 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "RaHr8n3E4xZisFp9": {
+        "type": "save",
+        "_id": "RaHr8n3E4xZisFp9",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "str"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Push",
+        "img": "",
+        "appliedEffects": []
+      }
+    },
+    "prerequisites": {
+      "level": 3
     }
   },
   "effects": [],
@@ -88,13 +161,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1712408368173,
-    "modifiedTime": 1712501243628,
+    "modifiedTime": 1746330399777,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

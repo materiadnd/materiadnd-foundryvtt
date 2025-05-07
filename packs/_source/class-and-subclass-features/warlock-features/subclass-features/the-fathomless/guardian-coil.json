@@ -6,7 +6,7 @@
   "img": "icons/creatures/tentacles/tentacle-earth-green.webp",
   "system": {
     "description": {
-      "value": "<p>At 6th level, your Tentacle of the Deeps can defend you and others, interposing itself between them and harm. When you or a creature you can see takes damage while within 10 feet of the tentacle, you can use your reaction to choose one of those creatures and reduce the damage to that creature by 1d8. When you reach 10th level in this class, the damage reduced by the tentacle increases to 2d8.</p>",
+      "value": "<p>Your Tentacle of the Deeps can defend you and others, interposing itself between them and harm. When you or a creature you can see takes damage while within 10 feet of the tentacle, you can take a Reaction to choose one of those creatures and reduce the damage to that creature by 1d8. When you reach 10th level in this class, the damage reduced by the tentacle increases to 2d8.</p>",
       "chat": ""
     },
     "source": {
@@ -77,10 +77,30 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "The Fathomless 6",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 6
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Guardian Coil",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "roll": {
+          "name": "Damage Reduction",
+          "formula": "@scale.fathomless.tentacle"
+        }
+      }
     }
   },
   "effects": [],
@@ -88,13 +108,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711486501988,
-    "modifiedTime": 1711486544215,
+    "modifiedTime": 1746518979936,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

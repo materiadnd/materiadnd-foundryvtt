@@ -6,7 +6,7 @@
   "img": "icons/magic/fire/flame-burning-skull-orange.webp",
   "system": {
     "description": {
-      "value": "<p>Upon reaching 10th level, you gain the ability to turn death into magical flames that can heal or incinerate. When a Small or larger creature dies within 30 feet of you or your wildfire spirit, a harmless spectral flame springs forth in the dead creature's space and flickers there for 1 minute. When a creature you can see enters that space, you can use your reaction to extinguish the spectral flame there and either heal the creature or deal fire damage to it. The healing or damage equals is based on the size of the dead creature with a bonus equal to your Wisdom modifier (minimum of 1). The number of d8s is shown in the table below.</p><h5>Cauterizing Flames Damage Dice</h5><table><thead><tr><th>Creature Size</th><th>Number of d8s</th></tr></thead><tbody><tr><td>Small</td><td>2</td></tr><tr><td>Medium</td><td>2</td></tr><tr><td>Large</td><td>3</td></tr><tr><td>Huge</td><td>4</td></tr><tr><td>Gargantuan+</td><td>5</td></tr></tbody></table><p>You can use this reaction a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>",
+      "value": "<p>You gain the ability to turn death into magical flames that can heal or incinerate. When a Small or larger creature dies within 30 feet of you or your wildfire spirit, a harmless spectral flame springs forth in the dead creature's space and flickers there for 1 minute. When a creature you can see enters that space, you can take a Reaction to extinguish the spectral flame there and either heal the creature or deal fire damage to it. The healing or damage equals is based on the size of the dead creature with a bonus equal to your Wisdom modifier (minimum of 1). The number of d8s is shown in the table below.</p><table><caption>Cauterizing Flames Damage Dice</caption><thead><tr><th>Creature Size</th><th>Number of d8s</th></tr></thead><tbody><tr><td>Small</td><td>2</td></tr><tr><td>Medium</td><td>2</td></tr><tr><td>Large</td><td>3</td></tr><tr><td>Huge</td><td>4</td></tr><tr><td>Gargantuan+</td><td>5</td></tr></tbody></table><p>You can take this Reaction a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -82,10 +82,341 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Circle of Wildfire 10",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 10
+    },
+    "activities": {
+      "NdTIoJDk4cNkfgKG": {
+        "type": "summon",
+        "_id": "NdTIoJDk4cNkfgKG",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "minute",
+          "concentration": false,
+          "override": false,
+          "value": "1"
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "space",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "bonuses": {
+          "ac": "",
+          "hd": "",
+          "hp": "",
+          "attackDamage": "",
+          "saveDamage": "",
+          "healing": ""
+        },
+        "creatureSizes": [],
+        "creatureTypes": [],
+        "match": {
+          "attacks": true,
+          "proficiency": true,
+          "saves": true,
+          "ability": ""
+        },
+        "profiles": [
+          {
+            "count": "",
+            "name": "",
+            "_id": "AHFVXvZsPRcOL4ef",
+            "uuid": "Compendium.materia-dnd.actors.Actor.BkBLEAhV0iFLWwY0",
+            "level": {
+              "min": null,
+              "max": null
+            }
+          }
+        ],
+        "summon": {
+          "prompt": true,
+          "mode": "",
+          "identifier": ""
+        },
+        "name": "Summon Flame",
+        "img": "",
+        "appliedEffects": []
+      },
+      "BxlM3jRRnt6AzRK1": {
+        "type": "utility",
+        "_id": "BxlM3jRRnt6AzRK1",
+        "sort": 0,
+        "activation": {
+          "type": "reaction",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "Damage or Heal",
+          "formula": "2d8 + @abilities.wis.mod"
+        },
+        "name": "Extinguish Flame (Small/Medium)",
+        "img": "",
+        "appliedEffects": []
+      },
+      "kEg5Zsq6oPjoLhq4": {
+        "type": "utility",
+        "sort": 0,
+        "activation": {
+          "type": "reaction",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "formula": "3d8 + @abilities.wis.mod",
+          "name": "Damage or Heal"
+        },
+        "name": "Extinguish Flame (Large)",
+        "_id": "kEg5Zsq6oPjoLhq4",
+        "img": "",
+        "appliedEffects": []
+      },
+      "zisODB6Ncd5P78sr": {
+        "type": "utility",
+        "sort": 0,
+        "activation": {
+          "type": "reaction",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "formula": "4d8 + @abilities.wis.mod",
+          "name": "Damage or Heal"
+        },
+        "name": "Extinguish Flame (Huge)",
+        "_id": "zisODB6Ncd5P78sr",
+        "img": "",
+        "appliedEffects": []
+      },
+      "H4s7wv8rSqN0b47l": {
+        "type": "utility",
+        "sort": 0,
+        "activation": {
+          "type": "reaction",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "formula": "5d8 + @abilities.wis.mod",
+          "name": "Damage or Heal"
+        },
+        "name": "Extinguish Flame (Gargantuan)",
+        "_id": "H4s7wv8rSqN0b47l",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -93,13 +424,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711337636641,
-    "modifiedTime": 1711337795839,
+    "modifiedTime": 1745482185599,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

@@ -6,7 +6,7 @@
   "img": "icons/skills/targeting/crosshair-scope-sniper-green.webp",
   "system": {
     "description": {
-      "value": "<p>Also at 3rd level, when you cast hunter's mark on a creature or deal hunter's mark damage to a target, a lingering fragment of your swarm can remain on the creature (no action required). You always know the direction to the to the creature with this fragment as long as it is on the same plane as you.</p><p>Your fragment of the swarm lasts until you dismiss it or until you use this feature to apply a fragment to another creature. Your fragment can be dispelled with dispel magic, and it is treated as a spell with a level equal to half your ranger level (maximum of 9th level).</p><p>Once you use this feature, you cannot use it again until you finish a short or long rest.</p>",
+      "value": "<p>When you cast Hunter's Mark on a creature or deal Hunter's Mark damage to a target, a lingering fragment of your swarm can remain on the creature (no action required). You always know the direction to the to the creature with this fragment as long as it is on the same plane as you.</p><p>Your fragment of the swarm lasts until you dismiss it or until you use this feature to apply a fragment to another creature. Your fragment can be dispelled with Dispel Magic, and it is treated as a spell with a level equal to half your ranger level (maximum of 9th level).</p><p>Once you use this feature, you cannot use it again until you finish a Short or Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -77,24 +77,101 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Swarmkeeper 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Mark With Swarm",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "effects": [
+          {
+            "_id": "uIH6zwuojIBIqnT6"
+          }
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Marked by Swarm",
+      "img": "icons/skills/targeting/crosshair-scope-sniper-green.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.nKBgbcbYAZcpEqLR",
+      "transfer": false,
+      "_id": "uIH6zwuojIBIqnT6",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746330467439,
+        "modifiedTime": 1746330481001,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!nKBgbcbYAZcpEqLR.uIH6zwuojIBIqnT6"
+    }
+  ],
   "sort": 175000,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1712408502272,
-    "modifiedTime": 1712501249019,
+    "modifiedTime": 1746330467487,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

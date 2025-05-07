@@ -6,7 +6,7 @@
   "img": "icons/weapons/swords/sword-runed-glowing.webp",
   "system": {
     "description": {
-      "value": "<p>At 6th level, your charm becomes extraordinarily beguiling. As an action, you can make a Charisma (Persuasion) check contested by a creature's Wisdom (Insight) check. The creature must be able to hear you, and the two of you must share a language.</p><p>If you succeed on the check and the creature is hostile to you, your weapon attacks against the target deal additional damage equal to your Charisma modifier (minimum of 1), it has disadvantage on attack rolls against targets other than you and cannot make opportunity attacks against targets other than you. This effect lasts for 1 minute, until one of your companions attacks the target or affects it with a spell, or until you and the target are more than 60 feet apart.</p><p>At 9th level, your Evasive feature adds your Charisma modifier (minimum of 1) to the damage reduced against the creature you succeed your check against.</p><p>If you succeed on the check and the creature is not hostile to you, it is charmed by you for 1 minute. While charmed, it regards you as a friendly acquaintance. This effect ends immediately if you or your companions do anything harmful to it.</p>",
+      "value": "<p>Your charm becomes extraordinarily beguiling. As an Influence action, you can make a Persuasion check contested by a creature's Insight check. The creature must be able to hear you, and the two of you must share a language.</p><p>If you succeed on the check and the creature is hostile to you, your weapon attacks against the target deal additional damage equal to your Charisma modifier (minimum of 1), it has Disadvantage on attack rolls against targets other than you and cannot make Opportunity Attacks against targets other than you. This effect lasts for 1 minute, until one of your companions attacks the target or affects it with a spell, or until you and the target are more than 60 feet apart.</p><p>At 9th level, your [[/item Evasive]] feature adds your Charisma modifier (minimum of 1) to the damage reduced against the creature you succeed your check against.</p><p>If you succeed on the check and the creature is not hostile to you, it is &amp;Reference[charmed] by you for 1 minute. While Charmed in this way, it regards you as a friendly acquaintance. This effect ends immediately if you or your companions do anything harmful to it.</p>",
       "chat": ""
     },
     "source": {
@@ -77,24 +77,150 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Soulknife 6",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 6
+    },
+    "activities": {
+      "f94O1REgpqwuLiHC": {
+        "type": "check",
+        "_id": "f94O1REgpqwuLiHC",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "IN1dBhdHHH6jvtTe"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "check": {
+          "associated": [
+            "per"
+          ],
+          "dc": {
+            "calculation": "",
+            "formula": ""
+          },
+          "ability": ""
+        },
+        "name": "Influence",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Panache",
+      "img": "icons/weapons/swords/sword-runed-glowing.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.IGkgdpMsXjWmU4lg",
+      "transfer": false,
+      "_id": "IN1dBhdHHH6jvtTe",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "charmed"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746415116595,
+        "modifiedTime": 1746415156298,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!IGkgdpMsXjWmU4lg.IN1dBhdHHH6jvtTe"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711234283992,
-    "modifiedTime": 1711234467655,
+    "modifiedTime": 1746415116656,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

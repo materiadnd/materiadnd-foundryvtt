@@ -1,12 +1,12 @@
 {
   "folder": "RbF4A8BzEa51MGQp",
-  "name": "Otherworldly Glamour*",
+  "name": "Otherworldly Glamour",
   "type": "feat",
   "_id": "wGZ2uusSpppPkFlP",
   "img": "icons/magic/light/explosion-star-teal.webp",
   "system": {
     "description": {
-      "value": "<p>Also at 3rd level, your fey qualities give you a supernatural charm. You can use your Wisdom in place of Charisma for any Charisma checks you make.</p><p>In addition, you gain proficiency in one of the following skills of your choice: Charisma (Deception), Charisma (Performance), or Charisma (Persuasion).</p><section id=\"secret-SsglSu1EoicJA7s6\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>When you get this feature, if you would like to change any Charisma skills to use your Wisdom modifier by default you will have to do so manually.</p></section>",
+      "value": "<p>Whenever you make a Charisma check, you gain a bonus to the check equal to your Wisdom modifier (minimum of +1).</p><p>You also gain proficiency in one of these skills of your choice: Deception, Performance, or Persuasion.</p>",
       "chat": ""
     },
     "source": {
@@ -77,13 +77,66 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Fey Wanderer 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Glamorous",
+      "img": "icons/magic/light/explosion-star-teal.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.wGZ2uusSpppPkFlP",
+      "_id": "gOyfEPWOQn8S9qW9",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.abilities.cha.bonuses.check",
+          "mode": 2,
+          "value": "(max(1,@abilities.wis.mod))",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746279685079,
+        "modifiedTime": 1746279706089,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!wGZ2uusSpppPkFlP.gOyfEPWOQn8S9qW9"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
@@ -91,10 +144,10 @@
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.1.1",
+    "systemVersion": "4.3.9",
     "coreVersion": "12.331",
     "createdTime": 1712500670993,
-    "modifiedTime": 1731559437233,
+    "modifiedTime": 1746279679752,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

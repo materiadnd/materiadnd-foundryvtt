@@ -6,7 +6,7 @@
   "img": "icons/magic/air/fog-gas-smoke-purple.webp",
   "system": {
     "description": {
-      "value": "<p>At 13th level, you can weave a veil of psychic static to mask yourself. As an action, you can magically become invisible, along with anything you are wearing or carrying, for 1 hour or until you dismiss this effect (no action required). This invisibility ends early immediately after you deal damage to a creature or you force a creature to make a saving throw.</p><p>Once you use this feature, you cannot do so again until you finish a long rest, unless you expend a Psionic Energy die to use this feature again.</p>",
+      "value": "<p>You can weave a veil of psychic static to mask yourself. As a Magic action, you gain the &amp;Reference[invisible] condition for 1 hour or until you dismiss this effect (no action required). This invisibility ends early immediately after you deal damage to a creature or you force a creature to make a saving throw.</p><p>Once you use this feature, you can't do so again until you finish a Long Rest, unless you expend a Psionic Energy Die (no action required) to restore your use of it.</p><section id=\"secret-kphVDbNtMPCUXnxs\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Psychic Veil (Free)</strong> activity contains a free use. The <strong>Psychic Veil</strong> activity consumes a Psionic Die. They both include an Active Effect that applies the Invisible condition.</p></section>",
       "chat": ""
     },
     "source": {
@@ -39,9 +39,14 @@
     },
     "uses": {
       "value": 1,
-      "max": "1",
+      "max": "",
       "per": "lr",
-      "recovery": "",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll"
+        }
+      ],
       "prompt": true
     },
     "consume": {
@@ -77,24 +82,196 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Soulknife 13",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 13
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Psychic Veil (Free)",
+        "img": "systems/dnd5e/icons/svg/statuses/invisible.svg",
+        "consumption": {
+          "targets": [
+            {
+              "type": "activityUses",
+              "value": "1"
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "duration": {
+          "units": "inst"
+        },
+        "uses": {
+          "max": "1",
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll"
+            }
+          ]
+        },
+        "target": {
+          "affects": {
+            "type": "self"
+          }
+        },
+        "effects": [
+          {
+            "_id": "JUUesO0twTcba0Re"
+          }
+        ]
+      },
+      "VxtRHVU39Q70vMb4": {
+        "type": "utility",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.rVq85oudK2b61BUX"
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "concentration": false,
+          "value": "1",
+          "units": "inst",
+          "special": "",
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "JUUesO0twTcba0Re"
+          }
+        ],
+        "range": {
+          "units": "self",
+          "special": "",
+          "override": false
+        },
+        "target": {
+          "template": {
+            "count": "",
+            "contiguous": false,
+            "type": "",
+            "size": "",
+            "width": "",
+            "height": "",
+            "units": ""
+          },
+          "affects": {
+            "count": "",
+            "type": "self",
+            "choice": false,
+            "special": ""
+          },
+          "prompt": true,
+          "override": false
+        },
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "name": "Psychic Veil",
+        "img": "systems/dnd5e/icons/svg/statuses/invisible.svg",
+        "sort": 0,
+        "_id": "VxtRHVU39Q70vMb4",
+        "appliedEffects": [
+          "JUUesO0twTcba0Re"
+        ]
+      }
     }
   },
-  "effects": [],
-  "sort": 0,
+  "effects": [
+    {
+      "name": "Veiled",
+      "img": "icons/magic/air/fog-gas-smoke-purple.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.ON6ciQkFGGfNSfnd",
+      "transfer": false,
+      "_id": "JUUesO0twTcba0Re",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>You gain the Invisible condition for 1 hour or until you dismiss this effect (no action required). This invisibility ends early immediately after you deal damage to a creature or you force a creature to make a saving throw.</p>",
+      "tint": "#ffffff",
+      "statuses": [
+        "invisible"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746361844527,
+        "modifiedTime": 1746361866377,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!ON6ciQkFGGfNSfnd.JUUesO0twTcba0Re"
+    }
+  ],
+  "sort": 350000,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711233582265,
-    "modifiedTime": 1711233640915,
+    "modifiedTime": 1746361899827,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

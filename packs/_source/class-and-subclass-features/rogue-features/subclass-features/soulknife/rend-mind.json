@@ -6,7 +6,7 @@
   "img": "icons/magic/control/debuff-chains-ropes-net-purple-blue.webp",
   "system": {
     "description": {
-      "value": "<p>Upon reaching 17th level, you can sweep your Psychic Blades directly through a creature's mind. When you use your Psychic Blades to deal Sneak Attack damage to a creature, you can force that target to make a Wisdom saving throw (DC equal to 8 + your proficiency bonus + your Dexterity modifier). If the save fails, the target is stunned for 1 minute. The stunned target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success.</p><p>Once you use this feature, you cannot do so again until you finish a long rest, unless you expend three Psionic Energy dice to use it again.</p>",
+      "value": "<p>You can sweep your Psychic Blades through a creature's mind. When you use your Psychic Blades to deal Sneak Attack damage to a creature, you can force that target to make a Wisdom saving throw (DC 8 plus your Dexterity modifer and Proficiency Bonus). If the save fails, the target has the &amp;Reference[Stunned] condition for 1 minute. The Stunned target repeats the save at the end of each of its turns, ending the effect on itself on a success.</p><section id=\"secret-eg83t8eyfr1Ctg9a\" class=\"secret\"><p>Once you use this feature, you cannot do so again until you finish a Long Rest, unless you expend three Psionic Energy Dice (no action required) to restore your use of it.</p><p><strong>Foundry Note</strong></p><p>The <strong>Rend Mind (Free)</strong> activity includes a free use of this feature. The <strong>Rend Mind</strong> activity will consume three Psionic Energy Dice. Both activities include the save and an Active Effect that applies the Stunned condition.</p></section>",
       "chat": ""
     },
     "source": {
@@ -39,7 +39,7 @@
     },
     "uses": {
       "value": 1,
-      "max": "1",
+      "max": "",
       "per": "lr",
       "recovery": "",
       "prompt": true
@@ -73,28 +73,248 @@
     },
     "summons": null,
     "type": {
-      "value": "",
+      "value": "class",
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Soulknife 17",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 17
+    },
+    "activities": {
+      "Tl7oIzZF7DKen3N5": {
+        "type": "save",
+        "_id": "Tl7oIzZF7DKen3N5",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": "When you deal Sneak Attack damage with your Psychic Blades"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "activityUses",
+              "value": "1"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "AZdHeqXc7slYb5DR"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll"
+            }
+          ],
+          "max": "1"
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "dex",
+            "formula": ""
+          }
+        },
+        "name": "Rend Mind (Free)",
+        "img": "",
+        "appliedEffects": []
+      },
+      "oP1VvtjNZoI3jpxU": {
+        "type": "save",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": "When you deal Sneak Attack damage with your Psychic Blades"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "3",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.rVq85oudK2b61BUX"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "AZdHeqXc7slYb5DR",
+            "onSave": false
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "creature",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "dex",
+            "formula": ""
+          }
+        },
+        "name": "Rend Mind",
+        "_id": "oP1VvtjNZoI3jpxU",
+        "img": "",
+        "appliedEffects": [
+          "AZdHeqXc7slYb5DR"
+        ]
+      }
     }
   },
-  "effects": [],
-  "sort": 0,
+  "effects": [
+    {
+      "name": "Rend Mind",
+      "img": "icons/magic/control/debuff-chains-ropes-net-purple-blue.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.yFMxLmhI3CBkVcw8",
+      "transfer": false,
+      "_id": "AZdHeqXc7slYb5DR",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p><span style=\"font-family:Signika, sans-serif\">The target has the Stunned condition for 1 minute. The Stunned target repeats the save at the end of each of its turns, ending the effect on itself on a success.</span></p>",
+      "tint": "#ffffff",
+      "statuses": [
+        "stunned"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746362157567,
+        "modifiedTime": 1746362180901,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!yFMxLmhI3CBkVcw8.AZdHeqXc7slYb5DR"
+    }
+  ],
+  "sort": 700000,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711233651675,
-    "modifiedTime": 1711233750992,
+    "modifiedTime": 1746362226835,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

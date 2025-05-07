@@ -6,7 +6,7 @@
   "img": "icons/magic/death/skeleton-worn-skull-tan.webp",
   "system": {
     "description": {
-      "value": "<p>Beginning at 1st level, you manifest an aspect of your patron's dreadful power. As a bonus action, you transform for 1 minute. You gain the following benefits while transformed:</p><ul><li>You gain temporary hit points equal to 1d10 + your warlock level.</li><li>Once during each of your turns, when you hit a creature with an attack roll, you can force it to make a Wisdom saving throw, and if the saving throw fails, the target is frightened of you until the end of your next turn.</li><li>You are immune to the frightened condition.</li></ul><p>You can transform a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p><p>The appearance of your Form of Dread reflects some aspect of your patron. For example, your form could be a shroud of shadows forming the crown and robes of your lich patron, or your body might glow with glyphs from ancient funerary rites and be surrounded by desert winds, suggesting your mummy patron.</p>",
+      "value": "<p>You manifest an aspect of your patron's dreadful power. As a Bonus Action, you transform for 1 minute. You gain the following benefits while transformed.</p><p><strong>Extra Health.</strong> You gain Temporary Hit Points equal to 1d10 plus your Warlock level.</p><p><strong>Frightening Attacks.</strong> Once during each of your turns, when you hit a creature with an attack roll, you can force it to make a Wisdom saving throw.  On a failed save, the target is &amp;Reference[frightened] of you until the end of your next turn.</p><p><strong>No Fear.</strong> You are Immune to the Frightened condition.</p><p>You can transform a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p><p>The appearance of your Form of Dread reflects some aspect of your patron. For example, your form could be a shroud of shadows forming the crown and robes of your lich patron, or your body might glow with glyphs from ancient funerary rites and be surrounded by desert winds, suggesting your mummy patron.</p>",
       "chat": ""
     },
     "source": {
@@ -77,10 +77,118 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "The Undead 1",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "Q02F5lsRGdvILNaa": {
+        "type": "heal",
+        "_id": "Q02F5lsRGdvILNaa",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "E0y5W6qKb6D43P7X"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": 1,
+          "denomination": "10",
+          "types": [
+            "temphp"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": "@classes.warlock.levels"
+        },
+        "name": "Form of Dread",
+        "img": "",
+        "appliedEffects": []
+      },
+      "dnd5eactivity000": {
+        "name": "Frightening Attacks",
+        "img": "",
+        "consumption": {
+          "targets": []
+        },
+        "appliedEffects": [],
+        "activation": {
+          "type": ""
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1"
+          }
+        },
+        "effects": [
+          {
+            "_id": "wC0biwhGD9nPG8DI"
+          }
+        ]
+      }
     }
   },
   "effects": [
@@ -126,19 +234,119 @@
       "system": {},
       "sort": 0,
       "_key": "!items.effects!tLs07vrIF5xD9oC8.6Peg3sAnKeE0Hb4k"
+    },
+    {
+      "name": "Form of Dread",
+      "img": "icons/magic/death/skeleton-worn-skull-tan.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.tLs07vrIF5xD9oC8",
+      "transfer": false,
+      "_id": "E0y5W6qKb6D43P7X",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.ci.value",
+          "mode": 2,
+          "value": "frightened",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746522401444,
+        "modifiedTime": 1746522436771,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!tLs07vrIF5xD9oC8.E0y5W6qKb6D43P7X"
+    },
+    {
+      "name": "Frightened",
+      "img": "systems/dnd5e/icons/svg/statuses/frightened.svg",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.tLs07vrIF5xD9oC8",
+      "transfer": false,
+      "_id": "wC0biwhGD9nPG8DI",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "frightened"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746522482595,
+        "modifiedTime": 1746522503503,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!tLs07vrIF5xD9oC8.wC0biwhGD9nPG8DI"
     }
   ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1712498301622,
-    "modifiedTime": 1712498575540,
+    "modifiedTime": 1746522482639,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
