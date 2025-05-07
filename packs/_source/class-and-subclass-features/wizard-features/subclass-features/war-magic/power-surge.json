@@ -6,7 +6,7 @@
   "img": "icons/magic/light/projectiles-trio-pink.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 6th level, you can store magical energy within yourself to later empower your damaging spells. In its stored form, this energy is called a power surge.</p><p>You can store a maximum number of power surges equal to your Intelligence modifier (minimum of one). Whenever you finish a long rest, your number of power surges resets to one. Whenever you successfully end a spell with dispel magic or counterspell, or deal damage with a wizard cantrip on your turn, you gain one power surge. If you end a short rest with no power surges, you gain one power surge.</p><p>Once per turn when you deal damage to a creature or object with a wizard spell of 1st level or higher, weapon attack or unarmed strike, you can spend one power surge to deal extra force damage to that target. The extra damage equals half your wizard level.</p>",
+      "value": "<p>You can store magical energy within yourself to later empower your damaging spells. In its stored form, this energy is called a Power Surge.</p><p>You can store a maximum number of Power Surges equal to your Intelligence modifier (minimum of one). Whenever you finish a Long Rest, your number of Power Surges resets to one. Whenever you successfully end a spell with @UUID[Compendium.materia-dnd.spells.Item.matSplDispelMagi]{Dispel Magic} or @UUID[Compendium.materia-dnd.spells.Item.matSplCounterspe]{Counterspell}, or deal damage with a Wizard cantrip on your turn, you gain one Power Surge. If you end a Short Rest with no power surges, you gain one Power Surge.</p><p>Once per turn when you deal damage to a creature or object with a Wizard spell using a spell slot, weapon attack, or Unarmed Strike, you can spend one Power Surge to deal extra Force damage to that target. The extra damage equals half your Wizard level.</p>",
       "chat": ""
     },
     "source": {
@@ -41,7 +41,17 @@
       "value": 1,
       "max": "@abilities.int.mod",
       "per": "charges",
-      "recovery": "",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "loseAll"
+        },
+        {
+          "period": "lr",
+          "type": "formula",
+          "formula": "1"
+        }
+      ],
       "prompt": true
     },
     "consume": {
@@ -73,10 +83,124 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "War Magic 6",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 6
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Gain Power Surge",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": ""
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "activation": {
+          "type": "",
+          "condition": "when you successfully end a spell with Dispel Magic or Counterspell, or deal damage with a Wizard cantrip on your turn"
+        },
+        "target": {
+          "affects": {
+            "type": "self"
+          }
+        }
+      },
+      "HhttOBYQ385cqYeP": {
+        "type": "damage",
+        "_id": "HhttOBYQ385cqYeP",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": "when you deal damage to a creature or object with a Wizard spell using a spell slot, weapon attack, or Unarmed Strike"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": null,
+              "denomination": "",
+              "bonus": "@classes.wizard.levels / 2",
+              "types": [
+                "force"
+              ]
+            }
+          ]
+        },
+        "name": "Expend Power Surge",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +208,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710838908508,
-    "modifiedTime": 1710838999634,
+    "modifiedTime": 1746598694744,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

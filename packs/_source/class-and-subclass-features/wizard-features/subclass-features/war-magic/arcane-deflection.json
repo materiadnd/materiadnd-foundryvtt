@@ -6,7 +6,7 @@
   "img": "icons/magic/defensive/shield-barrier-flaming-diamond-blue.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 2nd level when you select this tradition 2nd level, you have learned to weave your magic to fortify yourself against harm. When you are hit by an attack or you fail a saving throw, you can use your reaction to gain a bonus to your AC against that attack equal to half your proficiency bonus or your proficiency bonus to that saving throw.</p><p>When you use this feature, you cannot cast spells other than cantrips until the end of your next turn.</p>",
+      "value": "<p>You have learned to weave your magic to fortify yourself against harm. When you are hit by an attack or you fail a saving throw, you can take a Reaction to gain a bonus to your AC against that attack equal to half your Proficiency Bonus or your Proficiency Bonus to that saving throw.</p><p>When you use this feature, you cannot cast spells other than cantrips until the end of your next turn.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,95 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "War Magic 2",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Arcane Deflection (Attack)",
+        "img": "",
+        "appliedEffects": [],
+        "duration": {
+          "units": "inst"
+        },
+        "roll": {
+          "name": "AC Bonus",
+          "formula": "@prof / 2"
+        }
+      },
+      "GjE4qzDORACTouEL": {
+        "type": "utility",
+        "activation": {
+          "type": "reaction",
+          "value": 1,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "concentration": false,
+          "value": "1",
+          "units": "inst",
+          "special": "",
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "units": "self",
+          "special": "",
+          "override": false
+        },
+        "target": {
+          "template": {
+            "count": "",
+            "contiguous": false,
+            "type": "",
+            "size": "",
+            "width": "",
+            "height": "",
+            "units": ""
+          },
+          "affects": {
+            "count": "",
+            "type": "self",
+            "choice": false,
+            "special": ""
+          },
+          "prompt": true,
+          "override": false
+        },
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "roll": {
+          "formula": "@prof",
+          "name": "Save Bonus",
+          "prompt": false,
+          "visible": false
+        },
+        "name": "Arcane Deflection (Saving Throw)",
+        "sort": 0,
+        "_id": "GjE4qzDORACTouEL",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +169,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710838670160,
-    "modifiedTime": 1710838759050,
+    "modifiedTime": 1746598352999,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

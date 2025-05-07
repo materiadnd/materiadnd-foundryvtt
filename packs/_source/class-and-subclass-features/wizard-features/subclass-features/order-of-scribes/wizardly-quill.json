@@ -6,7 +6,7 @@
   "img": "icons/commodities/materials/feather-blue-grey.webp",
   "system": {
     "description": {
-      "value": "<p>At 2nd level, as a bonus action, you can magically create a Tiny quill in your free hand. The magic quill has the following properties:</p><ul><li>The quill does not require ink. When you write with it, it produces ink in a color of your choice on the writing surface.</li><li>The time you must spend to copy a spell into your spellbook equals 2 minutes per spell level if you use the quill for the transcription.</li><li>You can erase anything you write with the quill if you wave the feather over the text as a bonus action, provided the text is within 5 feet of you.</li></ul><p>This quill disappears if you create another one or if you die.</p>",
+      "value": "<p>As a Bonus Action, you can magically create a Tiny quill in your free hand. The magic quill has the following properties.</p><p><strong>Infinite Ink.</strong> The quill does not require ink. When you write with it, it produces ink in a color of your choice on the writing surface.</p><p><strong>Fast Copies.</strong> The time you must spend to copy a spell into your spellbook equals 2 minutes per spell level if you use the quill for transcription.</p><p><strong>Magical Erase.</strong> You can erase anything you write with the quill if you wave the feather over the text as a Bonus Action, provided the text is within 5 feet of you.</p><p>The quill dsappears if you create another one or if you die.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,133 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Order of Scribes 2",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "XX3E8ZdO27PsHZza": {
+        "type": "utility",
+        "_id": "XX3E8ZdO27PsHZza",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Manifest Quill",
+        "img": "",
+        "appliedEffects": []
+      },
+      "erfZNcsuf5bAKiRk": {
+        "type": "utility",
+        "_id": "erfZNcsuf5bAKiRk",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Magical Erase",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +207,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1708630840998,
-    "modifiedTime": 1710744072852,
+    "modifiedTime": 1746592257881,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
