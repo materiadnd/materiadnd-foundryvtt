@@ -6,7 +6,7 @@
   "img": "icons/magic/control/fear-fright-shadow-monster-green.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 6th level, you can call on your patron to alter fate in your favor. When you make an ability check or a saving throw, you can use this feature to add a d10 to your roll. You can do so after seeing the initial roll but before any of the roll's effects occur.</p><p>Once you use this feature, you cannot use it again until you finish a short or long rest, unless you expend your Otherworldly Glimpse.</p>",
+      "value": "<p>You can call on your fiendish patron to alter fate in your favor. When you make an ability check or a saving throw, you can use this feature to add 1d10 to your roll. You can do so after seeing the roll but before any of the roll's effects occur.</p><p>You can use this feature a number of times equal to your Charisma modifier (minimum of once), but you can use it no more than once per roll. You regain all expended uses when you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -69,14 +69,36 @@
       "scaling": "spell"
     },
     "type": {
-      "value": "",
+      "value": "class",
       "subtype": ""
     },
     "properties": [],
-    "requirements": "The Fiend 6",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 6
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "roll": {
+          "name": "Bonus"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +106,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1709186526760,
-    "modifiedTime": 1709277051979,
+    "modifiedTime": 1746515989034,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

@@ -6,7 +6,7 @@
   "img": "icons/magic/water/water-drop-swirl-blue.webp",
   "system": {
     "description": {
-      "value": "<p>Once you reach 14th level, you gain the ability to call upon your patron for aid. As an action, you choose a point within 30 feet of you where your patron tears through reality, manifesting a measure of its thalassic grandeur. Choose one of the following effects to issue from this manifestation point.</p><p>Once you use either effect, you cannot use this feature again until you finish a long rest, unless you expend one of your Mystic Arcanum.</p><p><strong>Conceal</strong>. A thick, otherworldly cloud of fog pours from the manifestation point heavily obscuring a 30 foot radius around it. You and up to your Charisma modifier (minimum of 1) creatures of your choice see through this fog normally. This fog lasts for 1 minute, spreads around corners and cannot be dispersed.</p><p><strong>Fury</strong>. You can direct a barrage of spectral tentacles to issue forth and strike up to five creatures you can see within 30 feet of the manifestation point. Each target must make a Dexterity saving throw against your spell save DC. On a failed save, the creature takes a number of d12s equal to your proficiency bonus cold or lightning damage (your choice) and is knocked prone. On a successful save, it takes half as much damage and is not knocked prone. The tentacles then vanish.</p><p><strong>Transport</strong>. You and up to five willing creatures of your choice that you can see within 30 feet of the manifestation point are grasped by spectral tentacles and yanked through your patron's realm. The tentacles teleport you and the chosen creatures to a point of your choice within 100 miles that you have visited within the past 24 hours. The tentacles then vanish.</p>",
+      "value": "<p>You gain the ability to call upon your patron for aid. As a Magic action, you choose a point within 30 feet of you where your patron tears through reality, manifesting a measure of its thalassic grandeur. Choose one of the following effects to issue from this manifestation point.</p><p>Once you use any effect, you cannot use this feature again until you finish a Long Rest, unless you expend one of your Mystic Arcanum.</p><p><strong>Conceal</strong>. A thick, otherworldly cloud of fog pours from the manifestation point creates a 30 foot radius of &amp;Reference[Heavily Obscured] area. You and up to your Charisma modifier (minimum of 1) creatures of your choice see through this fog normally. This fog lasts for 1 minute, spreads around corners and cannot be dispersed.</p><p><strong>Fury</strong>. You can direct a barrage of spectral tentacles to issue forth and strike up to five creatures you can see within 30 feet of the manifestation point. Each target must make a Dexterity saving throw against your spell save DC. On a failed save, the creature takes a number of d12s equal to your Proficiency Bonus Cold or Lightning damage (your choice) and is knocked &amp;Reference[prone]. On a successful save, it takes half as much damage and is not knocked prone. The tentacles then vanish.</p><p><strong>Transport</strong>. You and up to five willing creatures of your choice that you can see within 30 feet of the manifestation point are grasped by spectral tentacles and yanked through your patron's realm. The tentacles teleport you and the chosen creatures to a point of your choice within 100 miles that you have visited within the past 24 hours. The tentacles then vanish.</p>",
       "chat": ""
     },
     "source": {
@@ -77,24 +77,267 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "The Fathomless 14",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 14
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Conceal",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "target": {
+          "template": {
+            "type": "sphere",
+            "units": "ft",
+            "size": "30"
+          }
+        }
+      },
+      "5yeofNKN46gwthaG": {
+        "type": "save",
+        "name": "Fury",
+        "_id": "5yeofNKN46gwthaG",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "eltMxOoVpkZvxwXM"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "radius",
+            "size": "30",
+            "count": ""
+          },
+          "affects": {
+            "choice": true,
+            "type": "creature",
+            "count": "5",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "(@prof)d12"
+              },
+              "number": null,
+              "denomination": 0,
+              "bonus": "",
+              "types": [
+                "cold",
+                "lightning"
+              ]
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "img": "",
+        "appliedEffects": []
+      },
+      "ryE1CrK3BZHqOyCm": {
+        "type": "utility",
+        "name": "Transport",
+        "_id": "ryE1CrK3BZHqOyCm",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "radius",
+            "size": "30",
+            "count": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "willing",
+            "count": "5",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Prone",
+      "img": "systems/dnd5e/icons/svg/statuses/prone.svg",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.rMoQaINK7CJR2ABh",
+      "transfer": false,
+      "_id": "eltMxOoVpkZvxwXM",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "prone"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746519473057,
+        "modifiedTime": 1746519490363,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!rMoQaINK7CJR2ABh.eltMxOoVpkZvxwXM"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711486883080,
-    "modifiedTime": 1711487077680,
+    "modifiedTime": 1746519558525,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

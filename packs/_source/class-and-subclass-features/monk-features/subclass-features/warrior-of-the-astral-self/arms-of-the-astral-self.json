@@ -1,0 +1,360 @@
+{
+  "folder": "2J5VPRhGxytAnq7J",
+  "name": "Arms of the Astral Self",
+  "type": "feat",
+  "_id": "qYiyovIW5h4MjmYf",
+  "img": "icons/skills/melee/unarmed-punch-fist-yellow-red.webp",
+  "system": {
+    "description": {
+      "value": "<p>Your mastery of your Focus allows you to summon a portion of your astral self. As a Bonus Action, you can expend 1 Focus Point to summon the arms of your astral self. When you do so, each creature of your choice that you can see within 10 feet of you must succeed on a Dexterity saving throw or take Force damage equal to a number of of your Martial Arts die equal to half your Monk level.</p><p>For 10 minutes, these spectral arms hover near your shoulders or surround your arms (your choice). You determine the arms' appearance, and they vanish early if you have the &amp;Reference[Incapacitated apply=false] condition or die. While the spectral arms are present, you gain the following benefits:</p><p><strong>Astral Reach</strong>. When you make an Unarmed Strike with the arms on your turn, your reach for it is 5 feet greater than normal. The arms deal your choice of Bludgeoning or Force damage (you choose for each attack you make with them). When you attack with the arms, you can use your Wisdom modifier instead of your Strength or Dexterity modifier for the attack and damage rolls.</p><p><strong>Astral Strength</strong>. You can use your Wisdom modifier in place of your Strength modifier when making Strength checks or Strength saving throws.</p><p><strong>Astral Vortex</strong>. Immediately after you miss with an attack when you take the Attack action or use your Flurry of Blows you can make an additional Unarmed Strike with one of your astral arms as part of the same action. You can make a number of these attacks with your astral arms equal to your Proficiency Bonus in a turn.</p><section id=\"secret-KGvurcck65o8UaHK\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Summon Arms</strong> activity uses the Focus Point and applies an Active Effect to track that your Arms are summoned.</p><p>The <strong>Summon Save</strong> activity can be used to apply the Dexterity save to surrounding opponents.</p></section>",
+      "chat": ""
+    },
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "bonus",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": "10",
+      "units": "minute"
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": "self",
+      "prompt": true
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": "self"
+    },
+    "uses": {
+      "value": null,
+      "max": "",
+      "per": null,
+      "recovery": "",
+      "prompt": true
+    },
+    "consume": {
+      "type": "charges",
+      "target": "",
+      "amount": 1,
+      "scale": false
+    },
+    "ability": "",
+    "actionType": "save",
+    "attack": {
+      "bonus": "",
+      "flat": false
+    },
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [
+        [
+          "floor(@classes.monk.levels / 2)@scale.monk.martial-arts-die.dice",
+          "force"
+        ]
+      ],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "dex",
+      "dc": null,
+      "scaling": "wis"
+    },
+    "summons": null,
+    "type": {
+      "value": "class",
+      "subtype": "ki"
+    },
+    "properties": [],
+    "requirements": "",
+    "recharge": {
+      "value": null,
+      "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "LiIWcMg7N5HrLpuG": {
+        "type": "save",
+        "_id": "LiIWcMg7N5HrLpuG",
+        "sort": 200000,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "radius",
+            "size": "10",
+            "count": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "(@classes.monk.levels / 2)d@scale.monk.die.faces"
+              },
+              "number": null,
+              "denomination": 0,
+              "bonus": "",
+              "types": [
+                "force"
+              ]
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "dex"
+          ],
+          "dc": {
+            "calculation": "wis",
+            "formula": ""
+          }
+        },
+        "name": "Summon Save",
+        "img": "",
+        "appliedEffects": []
+      },
+      "kxEEBmfRN5TE0Ncc": {
+        "type": "utility",
+        "_id": "kxEEBmfRN5TE0Ncc",
+        "sort": 100000,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.6PTV2WXjnNhwvYef"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "Lo8MKM4w5j5x2Men"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Summon Arms",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
+  },
+  "effects": [
+    {
+      "name": "Astral Strength",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.qYiyovIW5h4MjmYf",
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": true,
+      "_id": "hp1Qpu7AunqA9npx",
+      "changes": [
+        {
+          "key": "system.skills.ath.ability",
+          "mode": 5,
+          "value": "wis",
+          "priority": null
+        },
+        {
+          "key": "system.abilities.str.save",
+          "mode": 5,
+          "value": "@abilities.wis.mod",
+          "priority": null
+        }
+      ],
+      "description": "",
+      "transfer": true,
+      "statuses": [],
+      "flags": {},
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "12.325",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "img": "icons/skills/melee/unarmed-punch-fist-yellow-red.webp",
+      "type": "base",
+      "system": {},
+      "sort": 0,
+      "_key": "!items.effects!qYiyovIW5h4MjmYf.hp1Qpu7AunqA9npx"
+    },
+    {
+      "name": "Arms of the Astral Self",
+      "img": "icons/skills/melee/unarmed-punch-fist-yellow-red.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.qYiyovIW5h4MjmYf",
+      "transfer": false,
+      "_id": "Lo8MKM4w5j5x2Men",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {},
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1745633305171,
+        "modifiedTime": 1745633305171,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!qYiyovIW5h4MjmYf.Lo8MKM4w5j5x2Men"
+    }
+  ],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "materia-dnd": {
+      "item-use-source": "ki"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
+    "createdTime": 1712365949434,
+    "modifiedTime": 1745633372307,
+    "lastModifiedBy": "dnd5mbuilder0000",
+    "duplicateSource": null
+  },
+  "_key": "!items!qYiyovIW5h4MjmYf"
+}

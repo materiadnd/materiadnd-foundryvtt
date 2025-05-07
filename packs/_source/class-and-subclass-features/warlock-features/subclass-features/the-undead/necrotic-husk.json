@@ -6,7 +6,7 @@
   "img": "icons/magic/death/undead-skeleton-energy-green.webp",
   "system": {
     "description": {
-      "value": "<p>Upon reaching 10th level, your connection to undeath and necrotic energy now saturates your body. You have resistance to necrotic damage. If you are transformed using your Form of Dread, you instead become immune to necrotic damage.</p><p>In addition, when you would be reduced to 0 hit points, you can use your reaction to drop to 1 hit point instead and cause your body to erupt with deathly energy. Each creature of your choice that is within 30 feet of you takes necrotic damage equal to a number of d10 equal to your Charisma modifier (minimum of 1) + your warlock level. You are healed for the damage done up to half your maximum hit points. You then gain 1 level of exhaustion. Once you use this reaction, you cannot do so again until you finish 1d4 long rests. You can reduce the number of long rests by 1 until you can negate death longer by expend one of your Mystic Arcanum.</p>",
+      "value": "<p>Your connection to undeath and necrotic energy now saturates your body. You have Resistance to Necrotic damage. If you are transformed using your Form of Dread, you instead become Immune to Necrotic damage.</p><p>In addition, when you would be reduced to 0 Hit Points, you can take a Reaction to drop to 1 Hit Point instead and cause your body to erupt with deathly energy. Each creature of your choice that is within 30 feet of you takes Necrotic damage equal to a number of d10 equal to your Charisma modifier (minimum of 1) plus your Warlock level. You are healed for the damage done up to half your maximum Hit Points. You then gain 1 level of Exhaustion. Once you use this Reaction, you cannot do so again until you finish 1d4 Long Rests. You can reduce the number of long rests by 1 until you can negate death longer by expending one of your Mystic Arcanum.</p>",
       "chat": ""
     },
     "source": {
@@ -82,10 +82,56 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "The Undead 10",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 10
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Death Eruption",
+        "img": "",
+        "target": {
+          "template": {
+            "type": "radius",
+            "units": "ft",
+            "size": "30"
+          },
+          "affects": {
+            "choice": true,
+            "type": "creature"
+          }
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "(@abilities.cha.mod)d10 + @classes.warlock.levels"
+              },
+              "number": null,
+              "denomination": null,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ]
+            }
+          ]
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [
@@ -180,13 +226,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1712498691933,
-    "modifiedTime": 1712498920450,
+    "modifiedTime": 1746522695429,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

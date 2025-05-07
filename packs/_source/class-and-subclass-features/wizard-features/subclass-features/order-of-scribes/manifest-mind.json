@@ -6,7 +6,7 @@
   "img": "icons/magic/light/projectile-smoke-blue-white.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 6th level, you can conjure forth the mind of your Awakened Spellbook. As a bonus action while the book is on your person, you can cause the mind to manifest as a Tiny spectral object, hovering in an unoccupied space of your choice within 60 feet of you. The spectral mind has a number of hit points equal to 5 times your wizard level, is immune to all conditions, is immune to poison and psychic damage, and does not occupy its space, and it sheds dim light in a 10-foot radius. It looks like a ghostly tome, a cascade of text, or a scholar from the past (or something else at your DMs discretion) (your choice).</p><p>While manifested, the spectral mind can hear and see, and it has darkvision with a range of 60 feet. The mind can telepathically share with you what it sees and hears (no action required).</p><p>Whenever you cast a wizard spell on your turn, you can cast it as if you were in the spectral mind's space, instead of your own, using its senses. You can do so a number of times per day equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p><p>As a bonus action, you can cause the spectral mind to hover up to 30 feet to an unoccupied space that you or it can see. It can pass through creatures but not objects.</p><p>The spectral mind stops manifesting if it is ever more than 300 feet away from you, if someone casts dispel magic on it, if the Awakened Spellbook is destroyed, if you die, if it is reduced to 0 hit points, or if you dismiss the spectral mind as a bonus action. Once you conjure the mind, you cannot do so again until you finish a long rest, unless you expend a spell slot of any level to conjure it again.</p>",
+      "value": "<p>You can conjure forth the mind of your Awakened Spellbook. As a Bonus Action while the book is on your person, you can cause the mind to manifest as a Tiny spectral object, hovering in an unoccupied space of your choice within 60 feet of you. It has the following features.</p><p><strong>Hit Points.</strong> The spectral mind has a number of Hit Points equal to 5 times your Wizard level.</p><p><strong>Spectral Immunities.</strong> The spectral mind is Immune to all conditions and is Immune to Poison and Psychic damage,.</p><p><strong>Ephemeral Presence.</strong> The spectral mind does not occupy its space, and it sheds &amp;Reference[dim light] in a 10-foot radius. It looks like a ghostly tome, a cascade of text, or a scholar from the past (or something else at your DMs discretion) (your choice).</p><p><strong>Senses.</strong> While manifested, the spectral mind can hear and see, and it has Darkvision with a range of 60 feet. The mind can telepathically share with you what it sees and hears (no action required).</p><p><strong>Remote Casting.</strong> Whenever you cast a Wizard spell on your turn, you can cast it as if you were in the spectral mind's space, instead of your own, using its senses. You can do so a number of times per day equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p><p>As a Bonus Action, you can cause the spectral mind to hover up to 30 feet to an unoccupied space that you or it can see. It can pass through creatures but not objects.</p><p>The spectral mind stops manifesting if it is ever more than 300 feet away from you, if someone casts Dispel Magic on it, if the Awakened Spellbook is destroyed, if you die, if it is reduced to 0 Hit Points, or if you dismiss the spectral mind as a Bonus Action. Once you conjure the mind, you cannot do so again until you finish a Long Rest, unless you expend a spell slot of any level (no action required) to restore your use of this feature.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,297 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Order of Scribes 6",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 6
+    },
+    "activities": {
+      "2r0KJ0ix7pElcS08": {
+        "type": "summon",
+        "_id": "2r0KJ0ix7pElcS08",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "60"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "space",
+            "count": "",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "bonuses": {
+          "ac": "",
+          "hd": "",
+          "hp": "5 * @classes.wizard.levels",
+          "attackDamage": "",
+          "saveDamage": "",
+          "healing": ""
+        },
+        "creatureSizes": [],
+        "creatureTypes": [],
+        "match": {
+          "attacks": false,
+          "proficiency": false,
+          "saves": false,
+          "ability": ""
+        },
+        "profiles": [
+          {
+            "count": "",
+            "name": "",
+            "_id": "44DQqV6257JZC9L5",
+            "uuid": "Compendium.materia-dnd.actors.Actor.x4X8GLSMvZzqyCT0",
+            "level": {
+              "min": null,
+              "max": null
+            }
+          }
+        ],
+        "summon": {
+          "prompt": true,
+          "mode": "",
+          "identifier": ""
+        },
+        "name": "Manifest Mind",
+        "img": "",
+        "appliedEffects": []
+      },
+      "Izdhv1A0fiBLJsww": {
+        "type": "utility",
+        "_id": "Izdhv1A0fiBLJsww",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "activityUses",
+              "value": "1"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll"
+            }
+          ],
+          "max": "@prof"
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Remote Casting",
+        "img": "",
+        "appliedEffects": []
+      },
+      "UbqElj3TEEJByMfL": {
+        "type": "utility",
+        "_id": "UbqElj3TEEJByMfL",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Move Mind",
+        "img": "",
+        "appliedEffects": []
+      },
+      "hRziQkFb25xFYnGI": {
+        "type": "utility",
+        "_id": "hRziQkFb25xFYnGI",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Dismiss Mind",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +371,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1708630914951,
-    "modifiedTime": 1710744082172,
+    "modifiedTime": 1746594392137,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

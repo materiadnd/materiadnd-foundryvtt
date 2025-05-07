@@ -6,7 +6,7 @@
   "img": "icons/sundries/books/book-symbol-yellow-grey.webp",
   "system": {
     "description": {
-      "value": "<p>Beginning when you select this school at 2nd level, using specially prepared inks and ancient incantations passed down by your wizardly order, you have awakened an arcane sentience within your spellbook.</p><p>@UUID[Compendium.materia-dnd.actors.Actor.x4X8GLSMvZzqyCT0]{Awakened Spellbook}</p><p>While you are holding the book, it grants you the following benefits:</p><ul><li>You can use the book as a spellcasting focus for your wizard spells.</li><li>When you cast a wizard spell with a spell slot, you can temporarily replace its damage type with a type that appears in another spell in your spellbook, which magically alters the spell's formula for this casting only.</li><li>When you cast a wizard spell as a ritual, you can use the spell's normal casting time, rather than adding 10 minutes to it. Once you use this benefit. You can use this feature a number of times equal to your Intelligence modifier (minimum of 1), and you regain all expended uses of it when you finish a long rest.</li></ul><p>If necessary, you can replace the book over the course of a short rest by using your Wizardly Quill to write arcane sigils in a blank book or a magic spellbook to which you're attuned. At the end of the rest, your spellbook's consciousness is summoned into the new book, which the consciousness transforms into your spellbook, along with all its spells. If the previous book still existed somewhere, all the spells vanish from its pages.</p>",
+      "value": "<p>Using specially prepared inks and ancient incantations passed down by your wizardly order, you have awakened an arcane sentience within your spellbook.</p><p>@UUID[Compendium.materia-dnd.actors.Actor.x4X8GLSMvZzqyCT0]{Awakened Spellbook}</p><p>While you are holding the book, it grants you the following benefits.</p><p><strong>Spellcasting Focus.</strong> You can use the book as a spellcasting focus for your Wizard spells.</p><p><strong>Mutable Damage.</strong> When you cast a Wizard spell with a spell slot, you can temporarily replace its damage type with a type that appears in another spell in your spellbook, which magically alters the spell's formula for this casting only.</p><p><strong>Faster Rituals.</strong> When you cast a Wizard spell as a Ritual, you can use the spell's normal casting time, rather than adding 10 minutes to it. You can use this feature a number of times equal to your Intelligence modifier (minimum of 1), and you regain all expended uses of it when you finish a Long Rest.</p><p>If necessary, you can replace the book over the course of a Short Rest by using your Wizardly Quill to write arcane sigils in a blank book or a magic spellbook to which you're attuned. At the end of the rest, your spellbook's consciousness is summoned into the new book, which the consciousness transforms into your spellbook, along with all its spells. If the previous book still existed somewhere, all the spells vanish from its pages.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,79 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Order of Scribes 2",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "1sZXjaPQXJlAxnqB": {
+        "type": "utility",
+        "_id": "1sZXjaPQXJlAxnqB",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll"
+            }
+          ],
+          "max": "@abilities.int.mod"
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Faster Rituals",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +153,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1708630776081,
-    "modifiedTime": 1710744072852,
+    "modifiedTime": 1746592481504,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

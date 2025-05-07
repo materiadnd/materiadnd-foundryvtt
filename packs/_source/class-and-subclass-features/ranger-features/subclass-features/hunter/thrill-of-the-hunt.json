@@ -6,7 +6,7 @@
   "img": "icons/skills/targeting/crosshair-arrowhead-blue.webp",
   "system": {
     "description": {
-      "value": "<p>Also at 3rd level, nothing gets you as excited or focused as hunting. Once on each of your turns, you can add your Wisdom modifier (minimum of 1) to the attack roll or the damage roll of an attack you make against one creature. You can choose to use this feature before or after the roll, but before any effects of the roll are applied.</p>",
+      "value": "<p>Nothing gets you as excited or focused as hunting. Once on each of your turns, you can add your Wisdom modifier (minimum of 1) to the attack roll or the damage roll of an attack you make against one creature. You can choose to use this feature before or after the roll, but before any effects of the roll are applied.</p>",
       "chat": ""
     },
     "source": {
@@ -77,10 +77,87 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Hunter 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "2bODiqFL1JrCmdNS": {
+        "type": "damage",
+        "_id": "2bODiqFL1JrCmdNS",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "@abilities.wis.mod"
+              },
+              "number": null,
+              "denomination": 0,
+              "bonus": "",
+              "types": []
+            }
+          ]
+        },
+        "name": "Thrill of the Hunt Damage",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -88,13 +165,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1712095591428,
-    "modifiedTime": 1712096297641,
+    "modifiedTime": 1746312835129,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

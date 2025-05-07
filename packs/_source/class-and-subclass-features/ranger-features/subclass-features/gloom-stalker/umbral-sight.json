@@ -1,12 +1,12 @@
 {
   "folder": "jN3XKNg2yFvkgF6U",
-  "name": "Umbral Sight*",
+  "name": "Umbral Sight",
   "type": "feat",
   "_id": "FoVREGZiScxt5njH",
   "img": "icons/magic/perception/shadow-stealth-eyes-purple.webp",
   "system": {
     "description": {
-      "value": "<p>Also at 3rd level, you gain darkvision out to a range of 60 feet. If you already have darkvision from your race, its range increases by 30 feet.</p><p>You are also adept at evading creatures that rely on darkvision. While in darkness, you are invisible to any creature that relies on darkvision to see you in that darkness.</p><section id=\"secret-BRAbW3elwkH75GkK\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>When you get this feature, enable the appropriate effect (either darkvision or improved darkvision) depending upon whether or not you already have darkvision.</p></section>",
+      "value": "<p>You gain Darkvision with a range of 60 feet. If you already have Darkvision when you gain this feature, its range increases by 60 feet.</p><p>You are also adept at evading creatures that rely on Darkvision. While entirely in Darkness, you have the &amp;Reference[Invisible] condition to any creature that relies on Darkvision to see you in that Darkness.</p><section class=\"secret\" id=\"secret-BRAbW3elwkH75GkK\"><p><strong>Foundry Note</strong></p><p>This feature includes an Active Effect which will automatically increase your Darkvision range.</p></section>",
       "chat": ""
     },
     "source": {
@@ -73,15 +73,18 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Gloom Stalker 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
     }
   },
   "effects": [
     {
-      "name": "Umbral Sight - Darkvision",
+      "name": "Umbral Sight",
       "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.FoVREGZiScxt5njH",
       "duration": {
         "startTime": null,
@@ -92,12 +95,12 @@
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
+      "disabled": false,
       "_id": "7e40wwZ2I1qvFncM",
       "changes": [
         {
           "key": "system.attributes.senses.darkvision",
-          "mode": 4,
+          "mode": 2,
           "value": "60",
           "priority": null
         }
@@ -121,16 +124,21 @@
           "hostile": false,
           "onlyOnce": false,
           "wallsBlock": "system"
+        },
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
         }
       },
       "tint": "#ffffff",
       "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
         "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "modifiedTime": 1746312139840,
+        "lastModifiedBy": "dnd5mbuilder0000",
         "compendiumSource": null,
         "duplicateSource": null
       },
@@ -139,66 +147,6 @@
       "system": {},
       "sort": 0,
       "_key": "!items.effects!FoVREGZiScxt5njH.7e40wwZ2I1qvFncM"
-    },
-    {
-      "name": "Umbral Sight - Improved Darkvision",
-      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.FoVREGZiScxt5njH",
-      "duration": {
-        "startTime": null,
-        "seconds": null,
-        "combat": null,
-        "rounds": null,
-        "turns": null,
-        "startRound": null,
-        "startTurn": null
-      },
-      "disabled": true,
-      "_id": "YFmtBA7u76oX2XcN",
-      "changes": [
-        {
-          "key": "system.attributes.senses.darkvision",
-          "mode": 2,
-          "value": "30",
-          "priority": null
-        }
-      ],
-      "description": "",
-      "transfer": true,
-      "statuses": [],
-      "flags": {
-        "ActiveAuras": {
-          "isAura": false,
-          "aura": "None",
-          "nameOverride": "",
-          "radius": "",
-          "alignment": "",
-          "type": "",
-          "customCheck": "",
-          "ignoreSelf": false,
-          "height": false,
-          "hidden": false,
-          "displayTemp": false,
-          "hostile": false,
-          "onlyOnce": false,
-          "wallsBlock": "system"
-        }
-      },
-      "tint": "#ffffff",
-      "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
-        "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
-        "compendiumSource": null,
-        "duplicateSource": null
-      },
-      "img": "icons/magic/perception/shadow-stealth-eyes-purple.webp",
-      "type": "base",
-      "system": {},
-      "sort": 0,
-      "_key": "!items.effects!FoVREGZiScxt5njH.YFmtBA7u76oX2XcN"
     }
   ],
   "sort": 0,
@@ -208,10 +156,10 @@
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.1.1",
+    "systemVersion": "4.3.9",
     "coreVersion": "12.331",
     "createdTime": 1710401514969,
-    "modifiedTime": 1731559456437,
+    "modifiedTime": 1746312110878,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

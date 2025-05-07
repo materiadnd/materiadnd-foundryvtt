@@ -6,7 +6,7 @@
   "img": "icons/commodities/tech/coil-steel-grey.webp",
   "system": {
     "description": {
-      "value": "<p>Beginning at 18th level, you summon spirits of order to expunge disorder around you. As an action, you summon the spirits in a 30-foot cube originating from you. The spirits look like modrons or other constructs of your choice. The spirits are intangible and invulnerable, and they create the following effects within the cube before vanishing:</p><p>The spirits restore up to 100 hit points, divided as you choose among any number of creatures of your choice in the cube. Any damaged objects entirely in the cube are repaired instantly. Every spell of 6th level or lower ends on creatures and objects of your choice in the cube. Once you use this action, you can't use it again until you finish a long rest, unless you spend 7 sorcery points to use it again.</p>",
+      "value": "<p>You momentarily summon spirits of order to expunge disorder around you. As a Magic action, you summon the spirits in a 30-foot Cube originating from you. The spirits look like modrons or other Cof your choice. The spirits are intangible and invulnerable, and they create the effects below within the Cube before vanishing. Once you use this action, you can't use it again until you finish a Long Rest, unless you spend 7 Sorcery Points (no action required) to restore your use of it.</p><p><strong>Heal.</strong> The spirits restore up to 100 hit points, divided as you choose among any number of creatures of your choice in the Cube.</p><p><strong>Repair.</strong> Any damaged objects entirely in the Cube are repaired instantly.</p><p><strong>Dispel.</strong> Every spell of level 6 lower ends on creatures and objects of your choice in the Cube. </p><section id=\"secret-vGvdRrBmPBcVZiBy\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Cavalcade (Free)</strong> activity includes a free use and the <strong>Cavalcade (Sorcery Points)</strong> activity expends the correct number of Sorcery Points. Both include a teplate for tracking the impacted area.</p></section>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,171 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Clockwork Soul 18",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 18
+    },
+    "activities": {
+      "3h4p7iC1eHAvMlTx": {
+        "type": "heal",
+        "_id": "3h4p7iC1eHAvMlTx",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "cube",
+            "size": "30",
+            "count": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "100"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "Cavalcade (Free)",
+        "img": "",
+        "appliedEffects": []
+      },
+      "hIsbLwRIjpydIdks": {
+        "type": "heal",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "7",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.wv3ZvDFeg34rJ4co"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "count": "",
+            "type": "cube",
+            "size": "30"
+          },
+          "affects": {
+            "choice": false,
+            "count": "",
+            "type": "creature",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": 0,
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "100"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "Cavalcade (Sorcery Points)",
+        "_id": "hIsbLwRIjpydIdks",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +245,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710742260809,
-    "modifiedTime": 1710742402541,
+    "modifiedTime": 1746452895813,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

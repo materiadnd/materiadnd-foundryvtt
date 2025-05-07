@@ -6,7 +6,7 @@
   "img": "icons/magic/lightning/bolts-salvo-clouds-sky.webp",
   "system": {
     "description": {
-      "value": "<p>At 20th level, as a bonus action, you can emanate an aura of sunlight. You gain the following benefits for 1 hour:</p><ul><li>Bright light shines from you in a 30-foot radius, and dim light shines 30 feet beyond that. This light is considered daylight.</li><li>Whenever an enemy creature starts its turn in or ends its turn in the bright light, the creature takes 10 radiant damage separately.</li><li>For the duration, you have advantage on saving throws against spells.</li></ul><p>Once you use this bonus action, you cannot use it again until you finish a long rest, unless you expend a 5th-level spell slot to use it again.</p>",
+      "value": "<p>As a Bonus Action, you can imbue your Aura of Protection with holy power, granting the benefits below for 10 minutes or until you end them (no action required). Once you use this feature, you can't use it again until you finish a Long Rest. You can also restore your use of it by expending a level 5 spell slot (no action required).</p><p><strong>Holy Ward.</strong> You have advantage on any saving throw you are forced to make by a Fiend or Undead.</p><p><strong>Radiant Damage.</strong> Whenever an enemy starts its turn in the aura, that creature takes Radiant damage equal to your Charisma modifier plus your Proficiency Bonus.</p><p><strong>Sunlight.</strong> The aura is filled with Bright Light that is sunlight.</p><section id=\"secret-1EJjzRXuVzXmQvRb\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes an Active Effect for tracking your Holy Nimbus but it does not automate the Advantage on Saving Throws.</p><p>The <strong>Holy Nimbus</strong> activity includes a damage roll.</p><p>The <strong>Regain Use</strong> activity will consume a 5th level spell slot and restore a use of this feature.</p></section>",
       "chat": ""
     },
     "source": {
@@ -73,20 +73,184 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Oath of Devotion 20",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 20
+    },
+    "activities": {
+      "0BZIdPS8G3AGG8WS": {
+        "type": "damage",
+        "_id": "0BZIdPS8G3AGG8WS",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "minute",
+          "concentration": false,
+          "override": false,
+          "value": "10"
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false,
+            "bonus": ""
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "@abilities.cha.mod + @prof"
+              },
+              "number": null,
+              "denomination": 0,
+              "bonus": "",
+              "types": [
+                "radiant"
+              ]
+            }
+          ]
+        },
+        "name": "Holy Nimbus",
+        "img": "",
+        "appliedEffects": []
+      },
+      "tMWiEU3XycxCU1PR": {
+        "type": "utility",
+        "_id": "tMWiEU3XycxCU1PR",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            },
+            {
+              "type": "spellSlots",
+              "value": "1",
+              "target": "5"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Regain Use",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1708284367824,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1745749931568,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

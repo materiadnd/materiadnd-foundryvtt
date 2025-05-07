@@ -6,7 +6,7 @@
   "img": "icons/skills/melee/strike-sword-stabbed-brown.webp",
   "system": {
     "description": {
-      "value": "<p>You focus your training on the grim art of death. Those who adhere to this archetype are diverse: hired killers, spies, bounty hunters, and even specially anointed priests trained to exterminate the enemies of their deity. Stealth, poison, and disguise help you eliminate your foes with deadly efficiency.</p>",
+      "value": "<p>You're adept at ambushing a target, granting you the following benefits.</p><p><strong>Initiative.</strong> You have Advantage on Initiative rolls.</p><p><strong>Surprising Strikes.</strong> During the first round of each combat, you have Advantage on attack rolls against any creature that hasn't taken a turn. If your Sneak Attack hits any target during that round, the target takes extra damage of the weapon's type equal to your Rogue level.</p><section id=\"secret-z8th63HFjgguY7FK\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes an Active Effect which automates the advantage on Initiative rolls.</p><p>The <strong>Damage</strong> activity can be used to apply extra damage equal to your level. You can choose the damage type in the roll's dialog box. Alternatively, you could add your level (@classes.rogue.levels) as a situational bonus to your normal damage roll.</p></section>",
       "chat": ""
     },
     "source": {
@@ -73,24 +73,172 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Assassin 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "4nmTAQbxPivulKnq": {
+        "type": "damage",
+        "_id": "4nmTAQbxPivulKnq",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": "Your Sneak Attack hits any target during the first round"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": null,
+              "denomination": "",
+              "bonus": "@classes.rogue.levels",
+              "types": [
+                "acid",
+                "bludgeoning",
+                "cold",
+                "fire",
+                "force",
+                "lightning",
+                "necrotic",
+                "piercing",
+                "poison",
+                "psychic",
+                "radiant",
+                "slashing",
+                "thunder"
+              ]
+            }
+          ]
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Assassinate",
+      "img": "icons/skills/melee/strike-sword-stabbed-brown.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.F5EsOTjhgDSFubL6",
+      "_id": "G7MseLv2HmB70qbi",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "flags.dnd5e.initiativeAdv",
+          "mode": 5,
+          "value": "true",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746352813982,
+        "modifiedTime": 1746352835960,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!F5EsOTjhgDSFubL6.G7MseLv2HmB70qbi"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710997298548,
-    "modifiedTime": 1710997356442,
+    "modifiedTime": 1746352806060,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

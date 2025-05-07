@@ -6,7 +6,7 @@
   "img": "icons/skills/trades/music-singing-voice-blue.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 17th level, your words gain an almost unnatural power to mislead and confuse others. No matter what you say, magic that would determine if you are telling the truth indicates you are being truthful if you so choose, and you can't be compelled to tell the truth by magic.</p><p>Additionally, as an action, you can make a Charisma (Deception) check contested by a creature's Wisdom (Insight) check. The creature must be able to hear you, and the two of you must share a language.</p><p>If you succeed on the check and the creature is hostile to you, it has disadvantage on attack rolls against you, they cannot make opportunity attacks against you, and you have advantage on any saving throws they force you to make for 1 minute or until you and the target are more than 60 feet apart.</p><p>If you succeed on the check and the creature is not hostile to you, the creature has disadvantage on Wisdom (Perception) checks and Wisdom (Insight) checks for 1 minute. This effect ends immediately if you or your companions do anything harmful to it.</p><p>If your check fails, the target can't be deceived by you in this way for 24 hours.</p>",
+      "value": "<p>Your words gain an almost unnatural power to mislead and confuse others. No matter what you say, magic that would determine if you are telling the truth indicates you are being truthful if you so choose, and you can't be compelled to tell the truth by magic.</p><p>Additionally, as an Influence action, you can make a Deception check contested by a creature's Insight check. The creature must be able to hear you, and the two of you must share a language.</p><p>If you succeed on the check and the creature is hostile to you, it has Disadvantage on attack rolls against you, they cannot make Opportunity Attacks against you, and you have Advantage on any saving throws they force you to make for 1 minute or until you and the target are more than 60 feet apart.</p><p>If you succeed on the check and the creature is not hostile to you, the creature has Disadvantage on Perception checks and Insight checks for 1 minute. This effect ends immediately if you or your companions do anything harmful to it.</p><p>If your check fails, the target can't be deceived by you in this way for 24 hours.</p>",
       "chat": ""
     },
     "source": {
@@ -77,24 +77,148 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Mastermind 17",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 17
+    },
+    "activities": {
+      "nn1DS5GmhovbD6br": {
+        "type": "check",
+        "_id": "nn1DS5GmhovbD6br",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "1V6WaKwBOj1ps0A8"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "check": {
+          "associated": [
+            "dec"
+          ],
+          "dc": {
+            "calculation": "",
+            "formula": ""
+          },
+          "ability": ""
+        },
+        "name": "Influence",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Influenced by Mastermind",
+      "img": "icons/skills/trades/music-singing-voice-blue.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.CNVfvuT9DX4V0Pbe",
+      "transfer": false,
+      "_id": "1V6WaKwBOj1ps0A8",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>If you succeed on the check and the creature is hostile to you, it has Disadvantage on attack rolls against you, they cannot make Opportunity Attacks against you, and you have Advantage on any saving throws they force you to make for 1 minute or until you and the target are more than 60 feet apart.</p><p>If you succeed on the check and the creature is not hostile to you, the creature has Disadvantage on Perception checks and Insight checks for 1 minute. This effect ends immediately if you or your companions do anything harmful to it.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746410438850,
+        "modifiedTime": 1746410462128,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!CNVfvuT9DX4V0Pbe.1V6WaKwBOj1ps0A8"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711195971943,
-    "modifiedTime": 1711196148980,
+    "modifiedTime": 1746410438928,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

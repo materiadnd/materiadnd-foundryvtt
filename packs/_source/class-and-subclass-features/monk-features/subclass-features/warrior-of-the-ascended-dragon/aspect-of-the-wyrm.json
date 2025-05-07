@@ -1,0 +1,737 @@
+{
+  "folder": "U2qz075hxY6yMWSd",
+  "name": "Aspect of the Wyrm",
+  "type": "feat",
+  "_id": "lhGgkPbwd6b3gE4l",
+  "img": "icons/creatures/reptiles/dragon-horned-blue.webp",
+  "system": {
+    "description": {
+      "value": "<p>The power of your draconic spirit now radiates from you, warding your allies or inspiring fear in your enemies. As long as you have at least 1 Focus Point you radiate with draconic power in a 10 foot Emanation around you in one of two ways. You can change which aspect of the aura you radiate when you complete a Short or Long Rest, or when you unleash it (as described below). You can choose to suppress this aura (no action required).</p><p><strong>Unleash.</strong> As a Bonus Action, you can unleash your draconic power increasing the aura to 30 feet for 1 minute.</p><p><strong>Frightful Presence.</strong> When you create this aura, and as a Bonus Action on the subsequent turns, you can choose a creature within the aura. The target must succeed on a Wisdom saving throw against your Focus Save DC or become &amp;Reference[Frightened] of you for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save.</p><p><strong>Resistance.</strong> Choose a damage type when you activate this aura: Acid, Cold, Fire, Lightning, or Poison. You and your allies within the aura have Resistance to this damage.</p><section id=\"secret-19YwzzfEIW4dGpwH\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Invoke Frightful Presence</strong> and <strong>Invoke Resistance</strong> activities will create an emanation and consume a usage of this feature and should be used whenever changing the aspect you are emanating.</p><p>The <strong>Frightful Presence Save</strong> activity has an Active Effect that can be used to apply the Frightened condition.</p><p>The <strong>Unleash</strong> activity does not change the size of your Emanation, it only is used to track your Bonus Action.</p><p>The <strong>Invoke Resistance</strong> activity provides Active Effects for all five resistances, disable all but the appropriate one for the damage type you choose.</p></section>",
+      "chat": ""
+    },
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "bonus",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": "1",
+      "units": "minute"
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": "self",
+      "prompt": true
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": "self"
+    },
+    "uses": {
+      "value": null,
+      "max": "@prof",
+      "per": "lr",
+      "recovery": "",
+      "prompt": true
+    },
+    "consume": {
+      "type": "",
+      "target": null,
+      "amount": null,
+      "scale": false
+    },
+    "ability": null,
+    "actionType": "",
+    "attack": {
+      "bonus": "",
+      "flat": false
+    },
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "summons": null,
+    "type": {
+      "value": "class",
+      "subtype": ""
+    },
+    "properties": [],
+    "requirements": "",
+    "recharge": {
+      "value": null,
+      "charged": false
+    },
+    "prerequisites": {
+      "level": 11
+    },
+    "activities": {
+      "PLVWPP8CIb3ueY1n": {
+        "type": "save",
+        "_id": "PLVWPP8CIb3ueY1n",
+        "sort": -125000,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "cyzQ9iQOwTmdn2Mw"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "wis",
+            "formula": ""
+          }
+        },
+        "name": "Frightful Presence Save",
+        "img": "",
+        "appliedEffects": []
+      },
+      "TGZ8LwO32ZXyVujL": {
+        "type": "utility",
+        "_id": "TGZ8LwO32ZXyVujL",
+        "sort": -100000,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "minute",
+          "concentration": false,
+          "override": false,
+          "value": "1"
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Unleash",
+        "img": "",
+        "appliedEffects": []
+      },
+      "xxeGlz7fYFATFC5x": {
+        "type": "utility",
+        "_id": "xxeGlz7fYFATFC5x",
+        "sort": -200000,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": "As long as you have at least 1 Focus Point"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "ZyDLLQR123AiP0iU"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "radius",
+            "size": "10",
+            "count": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Invoke Frightful Presence",
+        "img": "",
+        "appliedEffects": [
+          "ZyDLLQR123AiP0iU"
+        ]
+      },
+      "7EYOXkDR52ytNesL": {
+        "type": "utility",
+        "name": "Invoke Resistance",
+        "_id": "7EYOXkDR52ytNesL",
+        "sort": -150000,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": "As long as you have at least 1 Focus Point"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "Q0JjIQ6cOhabQ4aX"
+          },
+          {
+            "_id": "PqpeJrgryANtBPX9"
+          },
+          {
+            "_id": "QHbDrllxRYXM6fHD"
+          },
+          {
+            "_id": "kUBjkUlQBNwIaYbQ"
+          },
+          {
+            "_id": "fDF1k6AfxciEXX7Q"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "radius",
+            "size": "10",
+            "count": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "img": "",
+        "appliedEffects": [
+          "Q0JjIQ6cOhabQ4aX",
+          "PqpeJrgryANtBPX9",
+          "QHbDrllxRYXM6fHD",
+          "kUBjkUlQBNwIaYbQ",
+          "fDF1k6AfxciEXX7Q"
+        ]
+      }
+    }
+  },
+  "effects": [
+    {
+      "name": "Frightened",
+      "img": "systems/dnd5e/icons/svg/statuses/frightened.svg",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.lhGgkPbwd6b3gE4l",
+      "transfer": false,
+      "_id": "cyzQ9iQOwTmdn2Mw",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "frightened"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1745631069030,
+        "modifiedTime": 1745631090521,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!lhGgkPbwd6b3gE4l.cyzQ9iQOwTmdn2Mw"
+    },
+    {
+      "name": "Frightful Presence",
+      "img": "icons/creatures/reptiles/dragon-horned-blue.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.lhGgkPbwd6b3gE4l",
+      "transfer": false,
+      "_id": "ZyDLLQR123AiP0iU",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>When you create this aura, and as a Bonus Action on the subsequent turns, you can choose a creature within the aura. The target must succeed on a Wisdom saving throw against your Focus Save DC or become Frightened of you for 1 minute. The target can repeat the saving throw at the end of each of its turns, ending the effect on itself on a successful save.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1745631102500,
+        "modifiedTime": 1745631123494,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!lhGgkPbwd6b3gE4l.ZyDLLQR123AiP0iU"
+    },
+    {
+      "name": "Wyrm Resistance: Acid",
+      "img": "icons/creatures/reptiles/dragon-horned-blue.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.lhGgkPbwd6b3gE4l",
+      "transfer": false,
+      "_id": "Q0JjIQ6cOhabQ4aX",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "acid",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>You and your allies within the aura have Resistance to this damage.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1745631179382,
+        "modifiedTime": 1745631360719,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!lhGgkPbwd6b3gE4l.Q0JjIQ6cOhabQ4aX"
+    },
+    {
+      "name": "Wyrm Resistance: Cold",
+      "img": "icons/creatures/reptiles/dragon-horned-blue.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.lhGgkPbwd6b3gE4l",
+      "transfer": false,
+      "_id": "PqpeJrgryANtBPX9",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "cold",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>You and your allies within the aura have Resistance to this damage.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1745631273312,
+        "modifiedTime": 1745631302563,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!lhGgkPbwd6b3gE4l.PqpeJrgryANtBPX9"
+    },
+    {
+      "name": "Wyrm Resistance: Fire",
+      "img": "icons/creatures/reptiles/dragon-horned-blue.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.lhGgkPbwd6b3gE4l",
+      "transfer": false,
+      "_id": "QHbDrllxRYXM6fHD",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "fire",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>You and your allies within the aura have Resistance to this damage.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1745631304431,
+        "modifiedTime": 1745631323192,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!lhGgkPbwd6b3gE4l.QHbDrllxRYXM6fHD"
+    },
+    {
+      "name": "Wyrm Resistance: Poison",
+      "img": "icons/creatures/reptiles/dragon-horned-blue.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.lhGgkPbwd6b3gE4l",
+      "transfer": false,
+      "_id": "kUBjkUlQBNwIaYbQ",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "poison",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>You and your allies within the aura have Resistance to this damage.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1745631326506,
+        "modifiedTime": 1745631346878,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!lhGgkPbwd6b3gE4l.kUBjkUlQBNwIaYbQ"
+    },
+    {
+      "name": "Wyrm Resistance: Lightning",
+      "img": "icons/creatures/reptiles/dragon-horned-blue.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.lhGgkPbwd6b3gE4l",
+      "transfer": false,
+      "_id": "fDF1k6AfxciEXX7Q",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "lightning",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>You and your allies within the aura have Resistance to this damage.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1745631349455,
+        "modifiedTime": 1745631365946,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!lhGgkPbwd6b3gE4l.fDF1k6AfxciEXX7Q"
+    }
+  ],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
+    "createdTime": 1712365305507,
+    "modifiedTime": 1745631624439,
+    "lastModifiedBy": "dnd5mbuilder0000",
+    "duplicateSource": null
+  },
+  "_key": "!items!lhGgkPbwd6b3gE4l"
+}

@@ -6,7 +6,7 @@
   "img": "icons/magic/defensive/shield-barrier-flaming-pentagon-magenta.webp",
   "system": {
     "description": {
-      "value": "<p>Upon reaching 10th level, your hex grows more powerful. If the target cursed by your Hexblade's Curse hits you with an attack roll, you can use your reaction to roll a d6. On a 4 or higher, the attack instead misses you, regardless of its roll.</p>",
+      "value": "<p>Your hex grows more powerful. If the target cursed by your Hexblade's Curse hits you with an attack roll, you can take a Reaction to roll a d6. On a 4 or higher, the attack instead misses you, regardless of its roll.</p>",
       "chat": ""
     },
     "source": {
@@ -77,10 +77,32 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "The Hexblade 10",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 10
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "roll": {
+          "name": "Armor of Hexes"
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "target": {
+          "affects": {
+            "type": "creature",
+            "count": "1"
+          }
+        }
+      }
     }
   },
   "effects": [],
@@ -88,13 +110,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1712467065507,
-    "modifiedTime": 1712467146723,
+    "modifiedTime": 1746521710564,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

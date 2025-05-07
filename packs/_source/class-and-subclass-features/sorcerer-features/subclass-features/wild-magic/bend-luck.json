@@ -6,7 +6,7 @@
   "img": "icons/sundries/gaming/dice-runed-tan.webp",
   "system": {
     "description": {
-      "value": "<p>Upon reaching 6th level, you have the ability to twist fate using your wild magic. When another creature you can see makes an attack roll, an ability check, or a saving throw, you can use your reaction and spend 2 sorcery points to roll 1d12 and apply the number rolled as a bonus or penalty (your choice) to the creature's roll. You can do so after the creature rolls but before any effects of the roll occur.</p>",
+      "value": "<p>You have the ability to twist fate using your wild magic. Immediately after another creature you can see rolls the d20 for a D20 Test, you can take a Reaction and spend 2 Sorcery Points to roll 1d12 and apply the number rolled as a bonus or penalty (your choice) to the d20 roll.</p>",
       "chat": ""
     },
     "source": {
@@ -73,20 +73,97 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Wild Magic 6",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 6
+    },
+    "activities": {
+      "L6cnltHZJjX9mzaD": {
+        "type": "utility",
+        "_id": "L6cnltHZJjX9mzaD",
+        "sort": 0,
+        "activation": {
+          "type": "reaction",
+          "value": null,
+          "override": false,
+          "condition": "Immediately after another creature you can see rolls the d20 for a D20 Test"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "2",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.wv3ZvDFeg34rJ4co"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "Bonus/Penalty",
+          "formula": "1d12"
+        },
+        "name": "Bend Luck",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1708292206227,
-    "modifiedTime": 1710775093094,
+    "modifiedTime": 1746455608458,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

@@ -6,7 +6,7 @@
   "img": "icons/magic/unholy/hand-grasping-green.webp",
   "system": {
     "description": {
-      "value": "<p>Once you reach 6th level, your spores gain the ability to infest a corpse and animate it. If a beast or a humanoid that is Small or Medium dies within 10 feet of you, you can use your reaction to animate it as a @UUID[Compendium.materia-dnd.actors.Actor.S7KtKfmZ7W8REyiq]{Fungal Thrall}, causing it to stand up immediately (in Materia) without provoking attacks of opportunity. See its game statistics in the accompanying @UUID[Compendium.materia-dnd.actors.Actor.S7KtKfmZ7W8REyiq]{Fungal Thrall} stat block, which uses your proficiency bonus (PB) in several places. When the thrall rises, it gains temporary hit points equal to the amount gained from your Symbiotic Entity. In combat, the thrall acts during your turn. It obeys your mental commands, and if you are incapacitated, the thrall can take any action of its choice.</p><p>You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses of it when you finish a long rest.</p>",
+      "value": "<p>Your spores gain the ability to infest a corpse and animate it. If a Beast or a Humanoid that is Small or Medium dies within 10 feet of you, you can take a Reaction to animate it as a @UUID[Compendium.materia-dnd.actors.Actor.S7KtKfmZ7W8REyiq]{Fungal Thrall}, causing it to stand up immediately without provoking Opportunity Attacks. See its game statistics in the accompanying @UUID[Compendium.materia-dnd.actors.Actor.S7KtKfmZ7W8REyiq]{Fungal Thrall} stat block, which uses your Proficiency Bonus (PB) in several places. When the thrall rises, it gains Temporary Hit Points equal to the amount gained from your Symbiotic Entity. In combat, the thrall acts during your turn. It obeys your mental commands, and if you have the &amp;Reference[Incapacitated apply=false] condition, the thrall can take any action of its choice.</p><p>You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses of it when you finish a Long Rest.</p><section id=\"secret-KslThkbRUUo7cfWT\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Raise Thrall</strong> activity will summon the appropriate NPC actor with appropriate stats.</p><p>The <strong>Empower Thrall</strong> activity can be used to grant the appropriate number of Temporary Hit Points to the raised thrall.</p></section>",
       "chat": ""
     },
     "source": {
@@ -77,10 +77,174 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Circle of Spores 6",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 6
+    },
+    "activities": {
+      "RU0AY3EvClzTKwyh": {
+        "type": "summon",
+        "_id": "RU0AY3EvClzTKwyh",
+        "sort": 0,
+        "activation": {
+          "type": "reaction",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "bonuses": {
+          "ac": "@prof",
+          "hd": "(@prof)d6",
+          "hp": "@prof",
+          "attackDamage": "",
+          "saveDamage": "",
+          "healing": ""
+        },
+        "creatureSizes": [
+          "sm",
+          "med"
+        ],
+        "creatureTypes": [],
+        "match": {
+          "attacks": true,
+          "proficiency": true,
+          "saves": false,
+          "ability": ""
+        },
+        "profiles": [
+          {
+            "count": "",
+            "name": "",
+            "_id": "c7SH8bGiVluTXQI0",
+            "uuid": "Compendium.materia-dnd.actors.Actor.S7KtKfmZ7W8REyiq",
+            "level": {
+              "min": null,
+              "max": null
+            }
+          }
+        ],
+        "summon": {
+          "prompt": true,
+          "mode": "",
+          "identifier": ""
+        },
+        "name": "Raise Thrall",
+        "img": "",
+        "appliedEffects": []
+      },
+      "1np79921P4H0Ym3e": {
+        "type": "heal",
+        "_id": "1np79921P4H0Ym3e",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": "Fungal Thrall only"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "temphp"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "4 * @classes.druid.levels"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "Empower Thrall",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -88,13 +252,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711335091636,
-    "modifiedTime": 1711335531028,
+    "modifiedTime": 1745444544248,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

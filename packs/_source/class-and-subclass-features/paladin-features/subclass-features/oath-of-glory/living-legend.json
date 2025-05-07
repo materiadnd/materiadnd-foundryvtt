@@ -6,7 +6,7 @@
   "img": "icons/commodities/treasure/cup-trophy-gold.webp",
   "system": {
     "description": {
-      "value": "<div><div><p>Upon reaching 20th level, you can empower yourself with the legends - whether true or exaggerated - of your great deeds. As a bonus action, you gain the following benefits for 1 hour:</p><ul><li>You are blessed with an otherworldly presence, gaining advantage on all Charisma checks.</li><li>Once on each of your turns when you make a weapon attack and miss, you can cause that attack to hit instead.</li></ul></div></div><div><div><ul><li>If you fail a saving throw, you can use your reaction to reroll it. When you use this feature to reroll a saving throw for which you are not proficient, add your proficiency modifier to the result of the new roll. You must use this new roll.</li></ul><p>Once you use this feature, you cannot use it again until you finish a long rest, unless you expend a 5th-level spell slot to use it again.</p></div></div>",
+      "value": "<div><p>You can empower yourself with the legends - whether true or exaggerated - of your great deeds. As a Bonus Action, you gain the benefits below for 1 hour. Once you use this feature, you can't use it again until you finish a Long Rest. You can also restore your use of it by expending a level 5 spell slot (no action required).</p><p><strong>Charismatic.</strong> You are blessed with an otherworldly presence and have Advantage on all Charisma checks.</p><p><strong>Saving Throw Reroll.</strong> If you fail a saving throw, you can take a Reaction to reroll it. You must uese this new roll.</p><p><strong>Unerring Strike.</strong> Once on each of your turns when you make an attack roll with a weapon and miss, you can cause that attack to hit instead.</p><section id=\"secret-17DZR0nX6hJlgLcB\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes an Active Effect which can be used for tracking but the above benefits are not automated.</p><p>The <strong>Reroll Saving Throw</strong> activity is just for tracking Reaction use.</p><p>The <strong>Restore Use</strong> activity can be used to consume a 5th level slot and restore a use of this feature.</p></section></div>",
       "chat": ""
     },
     "source": {
@@ -73,24 +73,277 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Oath of Glory 20",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 20
+    },
+    "activities": {
+      "TavYVr6Tcp0YQiNu": {
+        "type": "utility",
+        "_id": "TavYVr6Tcp0YQiNu",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "minute",
+          "concentration": false,
+          "override": false,
+          "value": "10"
+        },
+        "effects": [
+          {
+            "_id": "mZ8NmVENzSDX0du6"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Empower Self",
+        "img": "",
+        "appliedEffects": []
+      },
+      "fpaNklaJyCUd4X0K": {
+        "type": "utility",
+        "_id": "fpaNklaJyCUd4X0K",
+        "sort": 0,
+        "activation": {
+          "type": "reaction",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Reroll Saving Throw",
+        "img": "",
+        "appliedEffects": []
+      },
+      "tfpu7BpwFkCQBotF": {
+        "type": "utility",
+        "_id": "tfpu7BpwFkCQBotF",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": ""
+            },
+            {
+              "type": "spellSlots",
+              "value": "1",
+              "target": "5"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Restore Use",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Living Legend",
+      "img": "icons/commodities/treasure/cup-trophy-gold.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.aEgOEvPQ9YTyTetP",
+      "transfer": false,
+      "_id": "mZ8NmVENzSDX0du6",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746265513109,
+        "modifiedTime": 1746265533436,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!aEgOEvPQ9YTyTetP.mZ8NmVENzSDX0du6"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710735773558,
-    "modifiedTime": 1710735839776,
+    "modifiedTime": 1746265607714,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

@@ -6,7 +6,7 @@
   "img": "icons/creatures/eyes/lizard-single-slit-green.webp",
   "system": {
     "description": {
-      "value": "<p>Beginning at 18th level, you can channel the dread presence of your dragon ancestor, causing those around you to become awestruck or frightened. As an action, you can spend 5 sorcery points to draw on this power and exude an aura of awe or fear (your choice) to a distance of 60 feet. For 1 minute or until you dismiss this ability as a bonus action, each hostile creature that starts its turn in this aura must succeed on a Wisdom saving throw or be charmed (if you chose awe) or frightened (if you chose fear) until the aura ends. A creature that succeeds on this saving throw is immune to your aura for 24 hours.</p>",
+      "value": "<p>You can channel the dread presence of your dragon ancestor, causing those around you to become awestruck or frightened. As a Magic action, you can spend 5 Sorcery Points to draw on this power and exude an aura of awe or fear (your choice) to a distance of 60 feet. For 1 minute or until you dismiss this ability as a Bonus Action, each hostile creature that starts its turn in this aura must succeed on a Wisdom saving throw or be &amp;Reference[Charmed] (if you chose awe) or &amp;Reference[frightened] (if you chose fear) until the aura ends. A creature that succeeds on this saving throw is immune to your aura for 24 hours.</p>",
       "chat": ""
     },
     "source": {
@@ -77,13 +77,133 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Draconic Bloodline 18",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 18
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "5",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.wv3ZvDFeg34rJ4co"
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "effects": [
+          {
+            "_id": "H5ihAw2KmhnoGQIl",
+            "onSave": false
+          },
+          {
+            "_id": "HiInaD6pnv8UfLKJ"
+          }
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Charmed",
+      "img": "systems/dnd5e/icons/svg/statuses/charmed.svg",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.YpbHLj17FflfooLr",
+      "transfer": false,
+      "_id": "H5ihAw2KmhnoGQIl",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "charmed"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746454836301,
+        "modifiedTime": 1746454858265,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!YpbHLj17FflfooLr.H5ihAw2KmhnoGQIl"
+    },
+    {
+      "name": "Frightened",
+      "img": "systems/dnd5e/icons/svg/statuses/frightened.svg",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.YpbHLj17FflfooLr",
+      "transfer": false,
+      "_id": "HiInaD6pnv8UfLKJ",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "frightened"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746454838009,
+        "modifiedTime": 1746454877682,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!YpbHLj17FflfooLr.HiInaD6pnv8UfLKJ"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
@@ -91,14 +211,20 @@
   "flags": {
     "materia-dnd": {
       "item-use-source": "sorcery-points"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711264017561,
-    "modifiedTime": 1711264170373,
+    "modifiedTime": 1746454838056,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

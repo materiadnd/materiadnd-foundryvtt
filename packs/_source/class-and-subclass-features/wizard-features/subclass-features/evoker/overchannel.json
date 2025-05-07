@@ -1,0 +1,261 @@
+{
+  "folder": "h76RhHcEu900Kawf",
+  "name": "Overchannel",
+  "type": "feat",
+  "_id": "gZVqRFkTcXAveKrh",
+  "img": "icons/magic/unholy/hand-fire-skeleton-pink.webp",
+  "system": {
+    "description": {
+      "value": "<p>You can increase the power of your spells. When you cast a Wizard spell with a spell slot of levels 1-5 that deals damage, you can deal maximum damage with that spell on the turn you cast it.</p><p>The first time you do so, you suffer no adverse effect. If you use this feature again before you finish a Long Rest, you take 2d12 Necrotic damage for each level of the spell immediately after you cast it. This damage ignores Resistance and Immunity.</p><p>Each time you use this feature again before finishing a long rest, the Necrotic damage per spell level increases by 1d12.</p><section id=\"secret-vjvWhV3gPPuq53rr\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature has Limited Uses to track how many times it has been used to automate the damage.</p><p>The <strong>First Use</strong> activity includes one free activity use and restores all uses of the feature.</p><p>The <strong>Second+</strong> Use activity consumes a use and increases the damage automatically and should be used for all subsequent uses until you finish a Long Rest.</p></section>",
+      "chat": ""
+    },
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "",
+      "cost": null,
+      "condition": ""
+    },
+    "duration": {
+      "value": "",
+      "units": ""
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": "",
+      "prompt": true
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": ""
+    },
+    "uses": {
+      "value": null,
+      "max": "20",
+      "per": null,
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll"
+        }
+      ],
+      "prompt": true
+    },
+    "consume": {
+      "type": "",
+      "target": null,
+      "amount": null,
+      "scale": false
+    },
+    "ability": null,
+    "actionType": "",
+    "attackBonus": "",
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "type": {
+      "value": "class",
+      "subtype": ""
+    },
+    "properties": [],
+    "requirements": "",
+    "recharge": {
+      "value": null,
+      "charged": false
+    },
+    "prerequisites": {
+      "level": 14
+    },
+    "activities": {
+      "KlzQsDCFcNPnDAtX": {
+        "type": "damage",
+        "_id": "KlzQsDCFcNPnDAtX",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": "When you cast a Wizard spell with a spell slot of levels 1-5 that deals damage"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-20",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {}
+          ]
+        },
+        "name": "First Use",
+        "img": "",
+        "appliedEffects": []
+      },
+      "R6s6hgDYGoHLfrGB": {
+        "type": "damage",
+        "_id": "R6s6hgDYGoHLfrGB",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": "When you cast a Wizard spell with a spell slot of levels 1-5 that deals damage"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "(2 + @item.uses.spent - 1)d12"
+              },
+              "number": null,
+              "denomination": 0,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ]
+            }
+          ]
+        },
+        "name": "Second+ Use",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
+  },
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
+    "createdTime": 1710835490061,
+    "modifiedTime": 1746531533744,
+    "lastModifiedBy": "dnd5mbuilder0000",
+    "duplicateSource": null
+  },
+  "_key": "!items!gZVqRFkTcXAveKrh"
+}

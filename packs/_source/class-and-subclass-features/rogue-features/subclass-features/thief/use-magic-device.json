@@ -6,7 +6,7 @@
   "img": "icons/sundries/scrolls/scroll-bound-green.webp",
   "system": {
     "description": {
-      "value": "<p>By 13th level, you have learned enough about the workings of magic that you can improvise the use of items even when they are not intended for you. You ignore all class, race, and level requirements on the use of magic items; as well as the following benefits:</p><ul><li><strong>Attunement</strong>. You can attune to one additional magic item.</li><li><strong>Charges</strong>. Whenever you use a magic item property that expends charges, roll a d6. On 6, you use the property without expending the charges.</li><li><strong>Scrolls</strong>. You can use any Spell Scroll that bears a cantrip or a 1st level spell. You can also try to use any Spell Scroll that contains a higher-level spell, but you must first succeed on an Intelligence (Arcana) check with the DC equal to 10 + the spell's level. You are considered proficient in Arcana for the sake of the check. Once a successful check, you cast the spell from the scroll, and you use Intelligence as your Spellcasting ability for this spell. On a failed check, the scroll disintegrates.</li></ul>",
+      "value": "<p>You've learned thow to maximize use of magic items, granting you the following benefits.</p><p><strong>Attunement.</strong> You can attune to up to four magic items at once.</p><p><strong>Charges.</strong> Whenever you use a magic item property that expends charges, roll [[/r 1d6]]. On a roll of 6, you use the property without expending the charges.</p><p><strong>Scrolls.</strong> You can use any Spell Scroll, using Intelligence as your spellcasting ability for the spell. If the spell is a cantrip or a level 1 spell, you can cast it reliably. If the scroll contains a higher-level spell, you must first succeed on an [[/skill arc]] check (DC 10 plus the spell's level). On a successful check, you cast the spell from the scroll. On a failed check, the scroll disintegrates.</p><section id=\"secret-61gzCnjkM2JkXVLy\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes an Active Effect that automatically increases your attunement maximum.</p><p>When using an item property that expends charges roll the d6 and uncheck the consumption box to use it for free.</p></section>",
       "chat": ""
     },
     "source": {
@@ -77,13 +77,66 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Thief 13",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 13
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Use Magic Device",
+      "img": "icons/sundries/scrolls/scroll-bound-green.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.tQueRflAs3elIekn",
+      "_id": "i2lFImi5GVL27dVB",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.attunement.max",
+          "mode": 2,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746363832648,
+        "modifiedTime": 1746363848459,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!tQueRflAs3elIekn.i2lFImi5GVL27dVB"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
@@ -91,10 +144,10 @@
   "flags": {},
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711236025408,
-    "modifiedTime": 1711236095219,
+    "modifiedTime": 1746363788417,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

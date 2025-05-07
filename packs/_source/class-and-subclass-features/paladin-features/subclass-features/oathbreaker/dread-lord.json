@@ -6,7 +6,7 @@
   "img": "icons/magic/unholy/orb-rays-blue.webp",
   "system": {
     "description": {
-      "value": "<p>At 20th level, you surround yourself with an aura of gloom. Using your bonus action, you undergo a transformation. For 1 hour, you gain the following benefits:</p><ul><li>The any bright light in a 30-foot radius around the paladin to is reduced to dim light and you have resistance to bludgeoning, piercing, and slashing damage.</li><li>Creatures that rely on sight have disadvantage on attack rolls against creatures in the 30-foot radius around you.</li><li>As a bonus action on your turn you cause the shadows in the 30-foot radius around you to attack one creature. The paladin makes a melee spell attack against the target. If the attack hits, the target takes psychic damage equal to 3d10 + the paladin's Charisma modifier.</li></ul><p>Once you use this bonus action, you cannot use it again until you finish a long rest, unless you expend a 5th-level spell slot to use it again.</p>",
+      "value": "<p>You surround yourself with an aura of gloom. As a Bonus Action, you can undergo a transformation. For 1 hour, you gain the following benefits. Once you use this feature, you can't use it again until you finish a Long Rest. You can also restore your use of it by expending a level 5 spell slot (no action required).</p><p><strong>Dark Aura.</strong> Any Bright Light in a 30-foot radius around you is reduced to Dim Light.</p><p><strong>Resistance.</strong> You have resistance to Bludgeoning, Piercing, and Slashing damage.</p><p><strong>Defensive Shroud.</strong> Creatures that rely on sight have Disadvantage on attack rolls against creatures in the 30-foot radius around you.</p><p><strong>Shadow Attackers.</strong> As a Bonus Action on your turn, you can cause the shadows in the 30-foot radius around you to attack one creature. Make a melee spell attack against the target. If the attack hits, the target takes Psychic damage equal to 3d10 plus your Charisma modifier.</p>",
       "chat": ""
     },
     "source": {
@@ -73,24 +73,311 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Oathbreaker 20",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 20
+    },
+    "activities": {
+      "8B6H7di1lF87c8EQ": {
+        "type": "utility",
+        "_id": "8B6H7di1lF87c8EQ",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "HRXBikpXIYuv8qyo"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Dread Lord",
+        "img": "",
+        "appliedEffects": []
+      },
+      "BKOGgXaUvWbHybou": {
+        "type": "utility",
+        "_id": "BKOGgXaUvWbHybou",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": ""
+            },
+            {
+              "type": "spellSlots",
+              "value": "1",
+              "target": "5"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Restore Use",
+        "img": "",
+        "appliedEffects": []
+      },
+      "wsPV4zTgIvGYdMqr": {
+        "type": "damage",
+        "_id": "wsPV4zTgIvGYdMqr",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 3,
+              "denomination": 10,
+              "bonus": "@abilities.cha.mod",
+              "types": [
+                "psychic"
+              ]
+            }
+          ]
+        },
+        "name": "Shadow Attacker Damage",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Dread Lord",
+      "img": "icons/magic/unholy/orb-rays-blue.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.MYU6CaUdk5YNqZR0",
+      "transfer": false,
+      "_id": "HRXBikpXIYuv8qyo",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "bludgeoning",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "piercing",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "slashing",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746277009281,
+        "modifiedTime": 1746277043161,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!MYU6CaUdk5YNqZR0.HRXBikpXIYuv8qyo"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710977696839,
-    "modifiedTime": 1710977797479,
+    "modifiedTime": 1746277192398,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

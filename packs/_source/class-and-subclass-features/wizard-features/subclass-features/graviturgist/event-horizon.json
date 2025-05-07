@@ -1,0 +1,331 @@
+{
+  "folder": "YrEL5CFOVyKqsUfi",
+  "name": "Event Horizon",
+  "type": "feat",
+  "_id": "zp3UuYPHWHN4rfCV",
+  "img": "icons/magic/light/beam-horizon-strike-yellow.webp",
+  "system": {
+    "description": {
+      "value": "<p>As a Magic action, you can magically emit a powerful field of gravitational energy that tugs at other creatures for up to 1 minute or until your Concentration ends (as if you were Concentrating on a spell). For the duration, whenever a creature hostile to you starts its turn within 30 feet of you, it must make a Strength saving throw against your spell save DC. On a failed save, it cannot take Reactions, it cannot make more than one weapon attack on it's turn, its Speed is reduced to 0, and any if they attempt to teleport they must succeed a Concentration check at Disadvantage against your Wizard spell save DC until the start of its next turn. On a successful save, if they attempt to teleport they must succeed a Concentration check at against your Wizard spell save DC, and every foot it moves this turn costs 2 extra feet of movement.</p><p>Once you use this feature, you cannot do so again until you finish a Long Rest or until you expend a level 3+ spell slot to restore your use of it (no action required).</p>",
+      "chat": ""
+    },
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "action",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": "1",
+      "units": "minute"
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": 30,
+      "width": null,
+      "units": "ft",
+      "type": "radius",
+      "prompt": true
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": "self"
+    },
+    "uses": {
+      "value": 1,
+      "max": "1",
+      "per": "lr",
+      "recovery": "",
+      "prompt": true
+    },
+    "consume": {
+      "type": "",
+      "target": null,
+      "amount": null,
+      "scale": false
+    },
+    "ability": "",
+    "actionType": "save",
+    "attackBonus": "",
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "str",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "type": {
+      "value": "class",
+      "subtype": ""
+    },
+    "properties": [
+      "concentration"
+    ],
+    "requirements": "",
+    "recharge": {
+      "value": null,
+      "charged": false
+    },
+    "prerequisites": {
+      "level": 14
+    },
+    "activities": {
+      "obeo5x4gsbvYB91X": {
+        "type": "utility",
+        "_id": "obeo5x4gsbvYB91X",
+        "sort": 100000,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "Fx4yPaFdPxeZL0SO"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Event Horizon",
+        "img": "",
+        "appliedEffects": [
+          "Fx4yPaFdPxeZL0SO"
+        ]
+      },
+      "dnd5eactivity000": {
+        "sort": 200000,
+        "name": "Aura Save",
+        "img": "",
+        "consumption": {
+          "targets": []
+        },
+        "appliedEffects": [],
+        "activation": {
+          "type": "",
+          "condition": "whenever a creature hostile to you starts its turn within 30 feet of you"
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "target": {
+          "template": {
+            "type": ""
+          },
+          "affects": {
+            "type": "creature",
+            "count": "1"
+          }
+        },
+        "effects": [
+          {
+            "_id": "Zxfc4dgkys1qIPhe"
+          }
+        ]
+      }
+    }
+  },
+  "effects": [
+    {
+      "name": "Event Horizon",
+      "img": "icons/magic/light/beam-horizon-strike-yellow.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.zp3UuYPHWHN4rfCV",
+      "transfer": false,
+      "_id": "Fx4yPaFdPxeZL0SO",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "concentrating"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746582605260,
+        "modifiedTime": 1746582699936,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!zp3UuYPHWHN4rfCV.Fx4yPaFdPxeZL0SO"
+    },
+    {
+      "name": "Black Holed",
+      "img": "icons/magic/light/beam-horizon-strike-yellow.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.zp3UuYPHWHN4rfCV",
+      "transfer": false,
+      "_id": "Zxfc4dgkys1qIPhe",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.movement.walk",
+          "mode": 5,
+          "value": "0",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.climb",
+          "mode": 5,
+          "value": "0",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.swim",
+          "mode": 5,
+          "value": "0",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.fly",
+          "mode": 5,
+          "value": "0",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.burrow",
+          "mode": 5,
+          "value": "0",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746583286027,
+        "modifiedTime": 1746583365856,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!zp3UuYPHWHN4rfCV.Zxfc4dgkys1qIPhe"
+    }
+  ],
+  "sort": 500000,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
+    "createdTime": 1708624842958,
+    "modifiedTime": 1746583319122,
+    "lastModifiedBy": "dnd5mbuilder0000",
+    "duplicateSource": null
+  },
+  "_key": "!items!zp3UuYPHWHN4rfCV"
+}

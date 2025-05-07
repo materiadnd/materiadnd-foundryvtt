@@ -6,7 +6,7 @@
   "img": "icons/magic/control/fear-fright-shadow-monster-purple.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 18th level, you can spend 6 sorcery points as a bonus action to magically transform yourself into a shadowy form. In this form, you have resistance to all damage except force and radiant damage, and you can move through other creatures and objects as if they were difficult terrain. You take 5 force damage if you end your turn inside an object.</p><p>You remain in this form for 1 minute. It ends early if you are incapacitated, if you die, or if you dismiss it as a bonus action.</p>",
+      "value": "<p>You can spend 6 Sorcery Points as a Bonus Action to magically transform yourself into a shadowy form. In this form, you have Resistance to all damage except Force and Radiant damage, and you can move through other creatures and objects as if they were &amp;Reference[difficult terrain]. You take 5 Force damage if you end your turn inside an object.</p><p>You remain in this form for 1 minute. It ends early if you are &amp;Reference[incapacitated apply=false], if you die, or if you dismiss it as a Bonus Action.</p>",
       "chat": ""
     },
     "source": {
@@ -77,13 +77,152 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Shadow Magic 18",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 18
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "6",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.wv3ZvDFeg34rJ4co"
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "target": {
+          "affects": {
+            "type": "self"
+          }
+        },
+        "effects": [
+          {
+            "_id": "8mbgW9ILSx0NLs6v"
+          }
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Umbral Form",
+      "img": "icons/magic/control/fear-fright-shadow-monster-purple.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.yRtOJiDKQu9dftn6",
+      "transfer": false,
+      "_id": "8mbgW9ILSx0NLs6v",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "acid",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "cold",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "fire",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "bludgeoning",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "lightning",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "necrotic",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "piercing",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "poison",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "psychic",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "slashing",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "thunder",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746457740628,
+        "modifiedTime": 1746457930471,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!yRtOJiDKQu9dftn6.8mbgW9ILSx0NLs6v"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
@@ -91,14 +230,20 @@
   "flags": {
     "materia-dnd": {
       "item-use-source": "sorcery-points"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711266039784,
-    "modifiedTime": 1711266168649,
+    "modifiedTime": 1746457740717,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

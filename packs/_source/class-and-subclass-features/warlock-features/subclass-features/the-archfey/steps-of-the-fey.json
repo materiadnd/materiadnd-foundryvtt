@@ -1,0 +1,319 @@
+{
+  "folder": "BwmqwiFLovJ3Oo25",
+  "name": "Steps of the Fey",
+  "type": "feat",
+  "_id": "jkA6wBSrkTuSaIbl",
+  "img": "icons/magic/nature/root-vine-entangle-foot-green.webp",
+  "system": {
+    "activities": {
+      "yenECfR7llTpxXki": {
+        "type": "heal",
+        "_id": "yenECfR7llTpxXki",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": "Immediately after you teleport"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "1"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": 1,
+          "denomination": "10",
+          "types": [
+            "temphp"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "Refreshing Step",
+        "img": "",
+        "appliedEffects": []
+      },
+      "nX5FPVI2GSikQ1AP": {
+        "type": "save",
+        "_id": "nX5FPVI2GSikQ1AP",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "tS3nXl4vpayusOQK"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "5"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Taunting Step",
+        "img": "",
+        "appliedEffects": []
+      },
+      "S2rprkzz81cCj2hT": {
+        "type": "cast",
+        "_id": "S2rprkzz81cCj2hT",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "activityUses",
+              "value": "1"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [
+            {
+              "period": "lr"
+            }
+          ],
+          "max": "max(1,@abilities.cha.mod)"
+        },
+        "spell": {
+          "challenge": {
+            "attack": null,
+            "save": null,
+            "override": false
+          },
+          "level": "2",
+          "properties": [
+            "vocal",
+            "somatic",
+            "material"
+          ],
+          "spellbook": true,
+          "uuid": "Compendium.materia-dnd.spells.Item.matSplMistyStep0",
+          "ability": ""
+        },
+        "name": "",
+        "img": ""
+      }
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": [],
+      "max": ""
+    },
+    "description": {
+      "value": "<p>Your patron grants you the ability to move between the boundaries of the planes. You can cast @UUID[Compendium.materia-dnd.spells.Item.matSplMistyStep0]{Misty Step} without expending a spell slot a number of times equal to your Charisma modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.</p><p>In addition, whenever you cast that spell, you can choose one of the following additional effects.</p><p><strong>Refreshing Step.</strong> Immediately after you teleport, you or one creature you can see within 10 feet of yourself gains 1d10 Temporary Hit Points.</p><p><strong>Taunting Step.</strong> Creatures within 5 feet of the space you left must succeed on a Wisdom saving throw against your spell save DC or have Disadvantage or attack rolls against creatures other than you until the start of your next turn.</p><section id=\"secret-vuxuB0pCDYugOv6h\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Refreshing Step</strong> activity includes the Temporary Hit Points.</p><p>The <strong>Taunting Step</strong> activity includes the save and an Active Effect for tracking but it does not automate the effect.</p><p>You are granted the spell with free uses as you level up.</p></section>",
+      "chat": ""
+    },
+    "identifier": "steps-of-the-fey",
+    "source": {
+      "revision": 1,
+      "rules": "2024"
+    },
+    "advancement": [],
+    "cover": null,
+    "crewed": false,
+    "enchant": {},
+    "prerequisites": {
+      "level": 3,
+      "repeatable": false
+    },
+    "properties": [],
+    "requirements": "",
+    "type": {
+      "value": "class",
+      "subtype": ""
+    }
+  },
+  "effects": [
+    {
+      "name": "Taunted",
+      "img": "icons/magic/nature/root-vine-entangle-foot-green.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.jkA6wBSrkTuSaIbl",
+      "transfer": false,
+      "_id": "tS3nXl4vpayusOQK",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746499700443,
+        "modifiedTime": 1746499717905,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!jkA6wBSrkTuSaIbl.tS3nXl4vpayusOQK"
+    }
+  ],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.9",
+    "createdTime": 1746483829507,
+    "modifiedTime": 1746499759912,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_key": "!items!jkA6wBSrkTuSaIbl"
+}

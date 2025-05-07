@@ -6,7 +6,7 @@
   "img": "icons/magic/life/heart-hand-gold-green.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 6th level, the divine energy coursing through you can empower healing spells. Whenever you or an ally within 5 feet of you rolls dice to determine the number of hit points a spell restores, you can spend 1 sorcery point to reroll any number of those dice once, provided you aren't incapacitated. You can use this feature only once per turn.</p>",
+      "value": "<p>The divine energy coursing through you can empower healing spells. Whenever you or an ally within 5 feet of you rolls dice to determine the number of Hit Points a spell restores, you can spend 1 Sorcery Point to reroll any number of those dice once, provided you don't have the &amp;Reference[incapacitated apply=false] condition. You can use this feature only once per turn.</p>",
       "chat": ""
     },
     "source": {
@@ -77,10 +77,83 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Divine Soul 6",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 6
+    },
+    "activities": {
+      "aNWyoYHofiQxoVEa": {
+        "type": "utility",
+        "name": "Empowered Healing",
+        "_id": "aNWyoYHofiQxoVEa",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.wv3ZvDFeg34rJ4co"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "5"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -88,13 +161,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711256680220,
-    "modifiedTime": 1711256726113,
+    "modifiedTime": 1746476389995,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

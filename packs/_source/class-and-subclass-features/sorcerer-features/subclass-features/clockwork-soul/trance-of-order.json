@@ -6,7 +6,7 @@
   "img": "icons/commodities/treasure/broach-pink-orbs.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 14th level, you gain the ability to align your consciousness to the endless calculations of Mechanus. As a bonus action, you can enter this state for 1 minute. For the duration, attack rolls against you can't benefit from advantage, and whenever you make an attack roll, an ability check, or a saving throw, you can treat a roll of 9 or lower on the d20 as a 10.</p><p>Once you use this bonus action, you can't use it again until you finish a long rest, unless you spend 5 sorcery points to use it again.</p>",
+      "value": "<p>You gain the ability to align your consciousness with the endless calculations of Mechanus. As a Bonus Action, you can enter this state for 1 minute. For the duration, attack rolls against you can't benefit from Advantage, and whenever you make a D20 Test, you can treat a roll of 9 or lower on the d20 as a 10.</p><p>Once you use this feature, you can't use it again until you finish a Long Rest, unless you spend 5 Sorcery Points (no action required) to restore your use of it.</p><section id=\"secret-3i6zTdoXWJLosTLa\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Enter Trance (Free)</strong> activity includes one free use.</p><p>The <strong>Enter Trance (Sorcery Points)</strong> activity will expend five Sorcery Points.</p><p>The minimum roll is not automated.</p></section>",
       "chat": ""
     },
     "source": {
@@ -73,24 +73,186 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Clockwork Soul 14",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 14
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Enter Trance (Free)",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "duration": {
+          "value": "1"
+        },
+        "target": {
+          "affects": {
+            "type": "self"
+          }
+        },
+        "effects": [
+          {
+            "_id": "77flwXXYCT5Dg7Ky"
+          }
+        ]
+      },
+      "wG9dZoR0UE4OKkxF": {
+        "type": "utility",
+        "activation": {
+          "type": "bonus",
+          "value": 1,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "5",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.wv3ZvDFeg34rJ4co"
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "concentration": false,
+          "value": "1",
+          "units": "minute",
+          "special": "",
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "77flwXXYCT5Dg7Ky"
+          }
+        ],
+        "range": {
+          "units": "self",
+          "special": "",
+          "override": false
+        },
+        "target": {
+          "template": {
+            "count": "",
+            "contiguous": false,
+            "type": "",
+            "size": "",
+            "width": "",
+            "height": "",
+            "units": ""
+          },
+          "affects": {
+            "count": "",
+            "type": "self",
+            "choice": false,
+            "special": ""
+          },
+          "prompt": true,
+          "override": false
+        },
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "roll": {
+          "formula": "",
+          "name": "",
+          "prompt": false,
+          "visible": false
+        },
+        "name": "Enter Trance (Sorcery Points)",
+        "sort": 0,
+        "_id": "wG9dZoR0UE4OKkxF",
+        "img": "",
+        "appliedEffects": [
+          "77flwXXYCT5Dg7Ky"
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Trance of Order",
+      "img": "icons/commodities/treasure/broach-pink-orbs.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.r2ovIrH3yFeMNw7D",
+      "transfer": false,
+      "_id": "77flwXXYCT5Dg7Ky",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p><span style=\"font-family:Signika, sans-serif\">For the duration, attack rolls against you can’t benefit from Advantage, and whenever you make a D20 Test, you can treat a roll of 9 or lower on the d20 as a 10.</span></p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746452579759,
+        "modifiedTime": 1746452598070,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!r2ovIrH3yFeMNw7D.77flwXXYCT5Dg7Ky"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710742188929,
-    "modifiedTime": 1710742237105,
+    "modifiedTime": 1746452622575,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

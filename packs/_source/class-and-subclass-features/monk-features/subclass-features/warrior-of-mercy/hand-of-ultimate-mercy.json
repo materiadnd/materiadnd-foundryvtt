@@ -1,0 +1,186 @@
+{
+  "folder": "j4rYU4CkPaXJ5eoL",
+  "name": "Hand of Ultimate Mercy",
+  "type": "feat",
+  "_id": "GIhKRToIL8dMIfNf",
+  "img": "icons/equipment/head/mask-carved-bird-grey-pink.webp",
+  "system": {
+    "description": {
+      "value": "<p>Your mastery of life energy opens the door to the ultimate mercy. As a Magic action, you can touch the corpse of a creature that died within the past 24 hours, and expend 5 Focus Points. The creature then returns to lifewith a number of Hit Points equal to a number of Martial Arts die equal to your Wisdom modifier (minimum of 1), and stand from Prone for free. The target can immediately expend a number of their Hit Die equal to your Wisdom modifier (minimum of 1) to further increase the Hit Points recovered.</p><p>If the creature died with any of the following conditions, it revives with them removed: Blinded, Deafened, Exhausted, Paralyzed, Poisoned, Stunned, and Weakened.</p><p>Once you use this feature, you cannot use it again until you finish a Long Rest.</p><section id=\"secret-hrVZf8W9bt4eIbxj\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes a single use per Long Rest and a healing roll.</p></section>",
+      "chat": ""
+    },
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "action",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": "",
+      "units": "inst"
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": 1,
+      "width": null,
+      "units": "",
+      "type": "creature",
+      "prompt": true
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": "touch"
+    },
+    "uses": {
+      "value": 1,
+      "max": "1",
+      "per": "lr",
+      "recovery": "",
+      "prompt": true
+    },
+    "consume": {
+      "type": "",
+      "target": null,
+      "amount": null,
+      "scale": false
+    },
+    "ability": null,
+    "actionType": "",
+    "attackBonus": "",
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "type": {
+      "value": "class",
+      "subtype": "ki"
+    },
+    "properties": [],
+    "requirements": "",
+    "recharge": {
+      "value": null,
+      "charged": false
+    },
+    "prerequisites": {
+      "level": 17
+    },
+    "activities": {
+      "hwLObr4AG5OHkwd3": {
+        "type": "heal",
+        "_id": "hwLObr4AG5OHkwd3",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "5",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.6PTV2WXjnNhwvYef"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": "died within the past 24 hours"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "@abilities.wis.mod@scale.monk.die.die"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
+    }
+  },
+  "effects": [],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
+    "createdTime": 1710980337356,
+    "modifiedTime": 1745613155752,
+    "lastModifiedBy": "dnd5mbuilder0000",
+    "duplicateSource": null
+  },
+  "_key": "!items!GIhKRToIL8dMIfNf"
+}

@@ -6,7 +6,7 @@
   "img": "icons/magic/control/debuff-energy-snare-purple-pink.webp",
   "system": {
     "description": {
-      "value": "<p>Beginning at 18th level, you can unleash your aberrant power as a space-warping anomaly. As an action, you can teleport to an unoccupied space you can see within 120 feet of you. Immediately after you disappear, each creature within 30 feet of the space you left must make a Strength saving throw against your spell save DC. On a failed save, a creature takes 3d10 force damage and is pulled straight toward the space you left, ending in an unoccupied space as close to your former space as possible. On a successful save, the creature takes half as much damage and isn't pulled.</p><p>Once you use this feature, you can't do so again until you finish a long rest, unless you spend 5 sorcery points to use it again.</p>",
+      "value": "<p>You can unleash a space-warping anomaly. As a Magic action, you teleport to an unoccupied space you can see within 120 feet of yourself. Immediately after you disappear, each creature within 30 feet of the space you left must make a Strength saving throw against your spell save DC. On a failed save, a creature takes 3d10 Force damage and is pulled straight toward the space you left, ending in an unoccupied space as close to your former space as possible. On a successful save, the creature takes half as much damage only.</p><p>Once you use this feature, you can't do so again until you finish a Long Rest, unless you spend 5 Sorcery Points (no action required) to restore your use of it.</p>",
       "chat": ""
     },
     "source": {
@@ -41,7 +41,12 @@
       "value": 1,
       "max": "1",
       "per": "lr",
-      "recovery": "",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll"
+        }
+      ],
       "prompt": true
     },
     "consume": {
@@ -78,10 +83,145 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Aberrant Mind 18",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 18
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Warping Implosion",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 3,
+              "denomination": "10",
+              "bonus": "",
+              "types": [
+                "force"
+              ]
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "target": {
+          "affects": {
+            "type": "creature"
+          }
+        }
+      },
+      "pN0eishJtuixlYCn": {
+        "type": "save",
+        "activation": {
+          "type": "action",
+          "value": 1,
+          "condition": "",
+          "override": false
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "5",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.wv3ZvDFeg34rJ4co"
+            }
+          ],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "concentration": false,
+          "value": "",
+          "units": "inst",
+          "special": "",
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "value": "120",
+          "units": "ft",
+          "special": "",
+          "override": false
+        },
+        "target": {
+          "template": {
+            "count": "",
+            "contiguous": false,
+            "type": "radius",
+            "size": "30",
+            "width": "",
+            "height": "",
+            "units": "ft"
+          },
+          "affects": {
+            "count": "",
+            "type": "creature",
+            "choice": false,
+            "special": ""
+          },
+          "prompt": true,
+          "override": false
+        },
+        "uses": {
+          "spent": 0,
+          "max": "",
+          "recovery": []
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 3,
+              "denomination": "10",
+              "bonus": "",
+              "types": [
+                "force"
+              ]
+            }
+          ]
+        },
+        "save": {
+          "ability": [
+            "str"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Warping Implosion (Sorcery Points)",
+        "sort": 0,
+        "_id": "pN0eishJtuixlYCn",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -89,13 +229,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710741293940,
-    "modifiedTime": 1710741392212,
+    "modifiedTime": 1746449387424,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

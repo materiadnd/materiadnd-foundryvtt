@@ -6,7 +6,7 @@
   "img": "icons/magic/defensive/shield-barrier-glowing-triangle-teal.webp",
   "system": {
     "description": {
-      "value": "<p>Upon reaching 10th level, your patron teaches you how to turn the mind-affecting magic of your enemies against them. You are immune to being charmed, and when another creature attempts to charm you, you can use your reaction to attempt to turn the charm back on that creature. The creature must succeed on a Wisdom saving throw against your warlock spell save DC or be charmed by you for 1 minute or until the creature takes any damage.</p>",
+      "value": "<p>Your patron teaches you how to guard your mind and body. You are immune to the &amp;Reference[Charmed] condition.</p><p>In addition, immediately after a creature you can see hits you with an attack roll, you can take a Reaction to reduce the damage you take by half (round down), and you can force the attacker to make a Wisdom saving throw against your spell save DC. On a failed save, the attacker takes Psychic damage equal to the damage you take. Once you use this Reaction, you can't use it again until you finish a Long Rest unless you expend a Pact Magic slot (no action required) to restore your use of it.</p><section id=\"secret-qeHh83uhPu7xGEtU\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Beguiling Reaction</strong> activity includes the saving throw.</p></section>",
       "chat": ""
     },
     "source": {
@@ -39,9 +39,14 @@
     },
     "uses": {
       "value": null,
-      "max": "",
+      "max": "1",
       "per": null,
-      "recovery": "",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll"
+        }
+      ],
       "prompt": true
     },
     "consume": {
@@ -73,10 +78,37 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "The Archfey 10",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 10
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Beguiling Reaction",
+        "img": "",
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "activation": {
+          "condition": "Immediately after a creature you can see hits you with an attack roll"
+        },
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1"
+            }
+          ]
+        }
+      }
     }
   },
   "effects": [],
@@ -84,13 +116,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710743307372,
-    "modifiedTime": 1710743368619,
+    "modifiedTime": 1746500523977,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

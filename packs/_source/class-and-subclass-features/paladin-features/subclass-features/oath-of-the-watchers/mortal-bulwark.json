@@ -6,7 +6,7 @@
   "img": "icons/equipment/shoulder/shoulderguard-segmented-studded-leather.webp",
   "system": {
     "description": {
-      "value": "<div><div><p>Upon reaching 20th level, you manifest a spark of divine power in defense of the mortal realms. As a bonus action, you gain the following benefits for 1 hour:</p><ul><li>You gain truesight with a range of 120 feet.</li><li>You have advantage on attack rolls against aberrations, celestials, elementals, fey, and fiends.</li><li>When you hit a creature with an attack roll and deal damage to it, you can also force it to make a Charisma saving throw against your spell save DC. On a failed save, the creature is magically banished to its native plane of existence if it's currently not there. On a successful save, the creature cannot be banished by this feature for 24 hours.</li></ul></div></div><div><div><p>Once you use this bonus action, you cannot use it again until you finish a long rest, unless you expend a 5th-level spell slot to use it again.</p></div></div>",
+      "value": "<div><p>You manifest a spark of divine power in defense of the mortal realms. As a Bonus Action, you gain the following benefits for 1 hour. Once you use this feature, you cannot use it again until you finish a Long Rest. You can also restore your use of it by expending a 5th-level spell slot (no action required).</p><p><strong>Truesight.</strong> You gain truesight with a range of 120 feet.</p><p><strong>Attack Advantage.</strong> You have Advantage on attack rolls against Aberrations, Celestials, Elementals, Fey, and Fiends.</p><p><strong>Banishing Attacks.</strong> When you hit a creature with an attack roll and deal damage to it, you can also force it to make a Charisma saving throw against your spell save DC. On a failed save, the creature is magically banished to its native plane of existence if it's currently not there. On a successful save, the creature cannot be banished by this feature for 24 hours.</p></div>",
       "chat": ""
     },
     "source": {
@@ -73,24 +73,339 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Oath of the Watchers 20",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 20
+    },
+    "activities": {
+      "ww1UKIL3MIeL3xEt": {
+        "type": "utility",
+        "_id": "ww1UKIL3MIeL3xEt",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "NaHvwfnSznYGVgOJ"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Mortal Bulwark",
+        "img": "",
+        "appliedEffects": []
+      },
+      "2fUBYcf1YpJ50TMq": {
+        "type": "utility",
+        "_id": "2fUBYcf1YpJ50TMq",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": ""
+            },
+            {
+              "type": "spellSlots",
+              "value": "1",
+              "target": "5"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Restore Use",
+        "img": "",
+        "appliedEffects": []
+      },
+      "yb60XgdwirFaN89H": {
+        "type": "save",
+        "_id": "yb60XgdwirFaN89H",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "RhjJ0Ye4LfP2F7Ry"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "cha"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "Banishing Attacks",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Mortal Bulwark",
+      "img": "icons/equipment/shoulder/shoulderguard-segmented-studded-leather.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.nBnXjhK2mILTrZNt",
+      "transfer": false,
+      "_id": "NaHvwfnSznYGVgOJ",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.senses.truesight",
+          "mode": 4,
+          "value": "120",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p><strong>Truesight.</strong> You gain truesight with a range of 120 feet.</p><p><strong>Attack Advantage.</strong> You have Advantage on attack rolls against Aberrations, Celestials, Elementals, Fey, and Fiends.</p><p><strong>Banishing Attacks.</strong> When you hit a creature with an attack roll and deal damage to it, you can also force it to make a Charisma saving throw against your spell save DC. On a failed save, the creature is magically banished to its native plane of existence if it's currently not there. On a successful save, the creature cannot be banished by this feature for 24 hours.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746274500527,
+        "modifiedTime": 1746274734713,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!nBnXjhK2mILTrZNt.NaHvwfnSznYGVgOJ"
+    },
+    {
+      "name": "Banished",
+      "img": "icons/magic/control/energy-stream-link-teal.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.nBnXjhK2mILTrZNt",
+      "transfer": false,
+      "_id": "RhjJ0Ye4LfP2F7Ry",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746274912369,
+        "modifiedTime": 1746274931537,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!nBnXjhK2mILTrZNt.RhjJ0Ye4LfP2F7Ry"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710973942214,
-    "modifiedTime": 1710974031027,
+    "modifiedTime": 1746274912414,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

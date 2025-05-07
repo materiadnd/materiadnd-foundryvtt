@@ -6,7 +6,7 @@
   "img": "icons/creatures/mammals/wolf-shadow-black.webp",
   "system": {
     "description": {
-      "value": "<p>At 6th level, you gain the ability to call forth a howling creature of darkness to harass your foes. As a bonus action, you can spend 3 sorcery points to magically summon a hound of ill omen to target one creature you can see within 120 feet of you. The hound uses the dire wolf statistics (see the Monster Manual or appendix C in the Player's Handbook), with the following changes:</p><ul><li>The hound is size Medium, not Large, and it counts as a monstrosity, not a beast.</li><li>The hound has darkvision 120 ft and can see through your magical darkness.</li><li>It appears with a number of additional hit points equal to your sorcerer level.</li><li>It can move through other creatures and objects as if they were difficult terrain. The hound takes 5 force damage if it ends its turn inside an object.</li><li>At the start of its turn, the hound automatically knows its target's location. If the target was hidden, it is no longer hidden from the hound.</li></ul><p>The hound appears in an unoccupied space of your choice within 30 feet of the target. You can have multiple hounds of ill omen summoned. Roll initiative for the hound. On its turn, it can move only toward its target by the most direct route, and it can use its action only to attack its target. The hound can make opportunity attacks, but only against its target. Additionally, while the hound is within 5 feet of the target, the target has disadvantage on saving throws against any spell you cast. The hound disappears if it is reduced to 0 hit points, if its target is reduced to 0 hit points, or after 10 minutes.</p>",
+      "value": "<p>You gain the ability to call forth a howling creature of darkness to harass your foes. As a Bonus Action, you can spend 3 Sorcery Points to magically summon a @UUID[Compendium.materia-dnd.actors.Actor.HOQ5TnmXJWpbHm1O]{Hound of Ill Omen} to target one creature you can see within 120 feet of you. The hound uses the Dire Wolf statistics (see the Monster Manual or appendix C in the Player's Handbook), with the following changes:</p><ul><li>The hound is size Medium, not Large, and it counts as a Monstrosity, not a Beast.</li><li>The hound has Darkvision to 120 ft and can see through your magical darkness.</li><li>It appears with a number of additional Hit Points equal to your Sorcerer level.</li><li>It can move through other creatures and objects as if they were &amp;Reference[difficult terrain]. The hound takes 5 Force damage if it ends its turn inside an object.</li><li>At the start of its turn, the hound automatically knows its target's location. If the target was hidden, it is no longer hidden from the hound.</li></ul><p>The hound appears in an unoccupied space of your choice within 30 feet of the target. You can have multiple Hounds of Ill Omen summoned. Roll Initiative for the hound. On its turn, it can move only toward its target by the most direct route, and it can use its action only to attack its target. The hound can make Opportunity Attacks, but only against its target. Additionally, while the hound is within 5 feet of the target, the target has Disadvantage on saving throws against any spell you cast. The hound disappears if it is reduced to 0 Hit Points, if its target is reduced to 0 Hit Points, or after 10 minutes.</p>",
       "chat": ""
     },
     "source": {
@@ -77,10 +77,110 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Shadow Magic 6",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 6
+    },
+    "activities": {
+      "C502MO5mL8ZE4oRY": {
+        "type": "summon",
+        "_id": "C502MO5mL8ZE4oRY",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "3",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.wv3ZvDFeg34rJ4co"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "120"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "space",
+            "count": "",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "bonuses": {
+          "ac": "",
+          "hd": "",
+          "hp": "@classes.sorcerer.levels",
+          "attackDamage": "",
+          "saveDamage": "",
+          "healing": ""
+        },
+        "creatureSizes": [],
+        "creatureTypes": [],
+        "match": {
+          "attacks": false,
+          "proficiency": false,
+          "saves": false,
+          "ability": ""
+        },
+        "profiles": [
+          {
+            "count": "",
+            "name": "",
+            "_id": "swpNvC60F9kFpvtB",
+            "uuid": "Compendium.materia-dnd.actors.Actor.HOQ5TnmXJWpbHm1O",
+            "level": {
+              "min": null,
+              "max": null
+            }
+          }
+        ],
+        "summon": {
+          "prompt": true,
+          "mode": "",
+          "identifier": ""
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -91,14 +191,20 @@
   "flags": {
     "materia-dnd": {
       "item-use-source": "sorcery-points"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711265866393,
-    "modifiedTime": 1711265966482,
+    "modifiedTime": 1746457447509,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

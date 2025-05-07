@@ -1,0 +1,249 @@
+{
+  "folder": "Q1ZtAs27h6nQf6rf",
+  "name": "Bladesong",
+  "type": "feat",
+  "_id": "h4gZSebiZ5Wpqlxr",
+  "img": "icons/magic/light/beam-explosion-pink-purple.webp",
+  "system": {
+    "description": {
+      "value": "<p>You can invoke the magic known as the Bladesong, provided that you are not wearing Medium or Heavy Armor or using a Shield. It graces you with supernatural speed, agility, and focus.</p><p>You can use a Bonus Action to start the Bladesong, which lasts for 1 minute. It ends early if you have the &amp;Reference[incapacitated apply=false] condition, if you don Medium or Heavy Armor or a Shield, or if you use two hands to make an attack with a weapon. You can also dismiss the Bladesong at any time (no action required).</p><p>While your Bladesong is active, you gain the following benefits.</p><p><strong>Armor Class.</strong> You gain a bonus to your AC equal to your Intelligence modifier (minimum of +1).</p><p><strong>Speed.</strong> Your Speed increases by a number of feet equal to 5 times your Intelligence modifier (minimum of 1).</p><p><strong>Agile.</strong> You have advantage on Acrobatics checks.</p><p><strong>Focused.</strong> You gain a bonus to any Constitution saving throw you make to maintain Concentration. The bonus equals your Intelligence modifier (minimum of +1).</p><p>You can use this feature a number of times equal to your Proficiency Bonus, and you regain all expended uses of it when you finish a Long Rest.</p>",
+      "chat": ""
+    },
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "bonus",
+      "cost": 1,
+      "condition": ""
+    },
+    "duration": {
+      "value": "1",
+      "units": "minute"
+    },
+    "cover": null,
+    "crewed": false,
+    "target": {
+      "value": null,
+      "width": null,
+      "units": "",
+      "type": "self",
+      "prompt": true
+    },
+    "range": {
+      "value": null,
+      "long": null,
+      "units": "self"
+    },
+    "uses": {
+      "value": 1,
+      "max": "@prof",
+      "per": "lr",
+      "recovery": "",
+      "prompt": true
+    },
+    "consume": {
+      "type": "",
+      "target": null,
+      "amount": null,
+      "scale": false
+    },
+    "ability": null,
+    "actionType": "",
+    "attackBonus": "",
+    "chatFlavor": "",
+    "critical": {
+      "threshold": null,
+      "damage": ""
+    },
+    "damage": {
+      "parts": [],
+      "versatile": ""
+    },
+    "formula": "",
+    "save": {
+      "ability": "",
+      "dc": null,
+      "scaling": "spell"
+    },
+    "type": {
+      "value": "class",
+      "subtype": ""
+    },
+    "properties": [],
+    "requirements": "",
+    "recharge": {
+      "value": null,
+      "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Start Bladesong",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "duration": {
+          "units": "inst"
+        },
+        "effects": [
+          {
+            "_id": "6qTWrA0UNp18XQ34"
+          }
+        ]
+      }
+    }
+  },
+  "effects": [
+    {
+      "name": "Bladesong",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.h4gZSebiZ5Wpqlxr",
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "disabled": true,
+      "_id": "BIeJfVT45J7izOnr",
+      "changes": [
+        {
+          "key": "system.attributes.ac.bonus",
+          "mode": 2,
+          "value": "ceil(@attributes.int.mod, 1)",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.walk",
+          "mode": 2,
+          "value": "5 * ceil(@attributes.int.mod, 1)",
+          "priority": null
+        },
+        {
+          "key": "flags.midi-qol.advantage.skill.acr",
+          "mode": 0,
+          "value": "1",
+          "priority": null
+        }
+      ],
+      "description": "",
+      "transfer": true,
+      "statuses": [],
+      "flags": {},
+      "tint": "#ffffff",
+      "_stats": {
+        "coreVersion": "12.325",
+        "systemId": null,
+        "systemVersion": null,
+        "createdTime": null,
+        "modifiedTime": null,
+        "lastModifiedBy": null,
+        "compendiumSource": null,
+        "duplicateSource": null
+      },
+      "img": "icons/magic/light/beam-explosion-pink-purple.webp",
+      "type": "base",
+      "system": {},
+      "sort": 0,
+      "_key": "!items.effects!h4gZSebiZ5Wpqlxr.BIeJfVT45J7izOnr"
+    },
+    {
+      "name": "Bladesong",
+      "img": "icons/magic/light/beam-explosion-pink-purple.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.h4gZSebiZ5Wpqlxr",
+      "transfer": false,
+      "_id": "6qTWrA0UNp18XQ34",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.movement.walk",
+          "mode": 2,
+          "value": "5 * @abilities.int.mod",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.ac.bonus",
+          "mode": 2,
+          "value": "@abilities.int.mod",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.concentration.bonuses.save",
+          "mode": 2,
+          "value": "@abilities.int.mod",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746533136519,
+        "modifiedTime": 1746533220485,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!h4gZSebiZ5Wpqlxr.6qTWrA0UNp18XQ34"
+    }
+  ],
+  "sort": 100000,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "_stats": {
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
+    "createdTime": 1708619764950,
+    "modifiedTime": 1746533136565,
+    "lastModifiedBy": "dnd5mbuilder0000",
+    "duplicateSource": null
+  },
+  "_key": "!items!h4gZSebiZ5Wpqlxr"
+}

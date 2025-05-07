@@ -6,7 +6,7 @@
   "img": "icons/magic/defensive/shield-barrier-flaming-pentagon-purple-orange.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 7th level, you can shield others from harm at the cost of your own health. When a creature within 10 feet of you takes damage, you can use your reaction to magically take that damage, instead of that creature taking it. This feature does not transfer any other effects that might accompany the damage, and you can gain resistance to this damage by expending 5 hit points from your Lay on Hands pool.</p><p>At 13th level, the range of this aura increases to 15 feet. At level 18th level, the range of this aura increases once more to 30 feet.</p>",
+      "value": "<p>You can shield others from harm at the cost of your own health. When a creature within your Aura of Protection takes damage, you can use take a Reaction to magically take that damage, instead of that creature taking it. This feature does not transfer any other effects that might accompany the damage, and you can gain Resistance to this damage by expending 5 Hit Points from your Lay on Hands pool.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,74 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Oath of Redemption 7",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 7
+    },
+    "activities": {
+      "D20HdM4J9hBUqWqf": {
+        "type": "utility",
+        "_id": "D20HdM4J9hBUqWqf",
+        "sort": 0,
+        "activation": {
+          "type": "reaction",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Absorb Damage",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +148,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710967038095,
-    "modifiedTime": 1710967099306,
+    "modifiedTime": 1746270911247,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

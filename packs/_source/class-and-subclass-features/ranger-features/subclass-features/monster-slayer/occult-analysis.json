@@ -6,7 +6,7 @@
   "img": "icons/tools/navigation/spyglass-telescope-brass.webp",
   "system": {
     "description": {
-      "value": "<div><div><p>Also at 3rd level, you gain the ability to peer at a creature and magically discern how best to hurt it. As a bonus action, choose one creature you can see within 60 feet of you and analyze it. Whenever an analyzed creature fails an opposed ability check (at your DM's discretion) or fails a saving throw, you can immediately use your reaction to make a weapon attack or unarmed strike against the creature if it is within range of you. This benefit lasts until you finish a short or long rest.</p><div><p>Additionally, when you analyze a creature, you learn all of its damage immunities, resistances, and vulnerabilities. If the creature is hidden from divination magic, you sense that that is the case and that it has no damage immunities, resistances, or vulnerabilities.</p></div><p>You can use this feature a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses of it when you finish a long rest.</p></div></div>",
+      "value": "<div><div><p>You gain the ability to peer at a creature and magically discern how best to hurt it. As a Bonus Action, choose one creature you can see within 60 feet of yourself and analyze it. Whenever an analyzed creature fails a D20 Test, you can immediately take a Reaction to make a weapon attack or Unarmed Strike against the creature if it is within range of you. This benefit lasts until you finish a Short or Long Rest.</p><div><p>Additionally, when you analyze a creature, you learn all of its Immunities, Resistances, and Vulnerabilities. If the creature is hidden from Divination magic, you sense that that is the case and that it has no Immunities, Resistances, or Vulnerabilities.</p></div><p>You can use this feature a number of times equal to your Wisdom modifier (minimum of once). You regain all expended uses of it when you finish a Long Rest.</p></div></div>",
       "chat": ""
     },
     "source": {
@@ -77,24 +77,101 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Monster Slayer 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Analyze Creature",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "effects": [
+          {
+            "_id": "NdJqxyRNtReKfPTF"
+          }
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Analyzed",
+      "img": "icons/tools/navigation/spyglass-telescope-brass.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.rorFModdR0g0Mn2c",
+      "transfer": false,
+      "_id": "NdJqxyRNtReKfPTF",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746329731697,
+        "modifiedTime": 1746329751748,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!rorFModdR0g0Mn2c.NdJqxyRNtReKfPTF"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1712501619968,
-    "modifiedTime": 1712501806911,
+    "modifiedTime": 1746329731752,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

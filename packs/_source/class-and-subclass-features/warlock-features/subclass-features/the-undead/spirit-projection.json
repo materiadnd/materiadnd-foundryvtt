@@ -6,7 +6,7 @@
   "img": "icons/magic/death/undead-ghosts-trio-blue.webp",
   "system": {
     "description": {
-      "value": "<p>Once you reach 14th level, your spirit can become untethered from your physical form. As an action, you can project your spirit from your body. The body you leave behind is unconscious and in a state of suspended animation.</p><p>Your spirit resembles your mortal form in almost every way, replicating your game statistics but not your possessions. Any damage or other effects that apply to your spirit or physical body affects the other. Your spirit can remain outside your body for up to 1 hour or until your concentration is broken (as if concentrating on a spell). When your projection ends, your spirit returns to your body or your body magically teleports to your spirit's space (your choice).</p><p>While projecting your spirit, you gain the following benefits:</p><ul><li>Your spirit and body gain resistance to bludgeoning, piercing, and slashing damage.</li><li>When you cast a spell of the conjuration or necromancy school, the spell does not require verbal or somatic components or material components that lack a gold cost.</li><li>You have a flying speed equal to your walking speed and can hover. You can move through creatures and objects as if they were difficult terrain, but you take 1d10 force damage if you end your turn inside a creature or an object.</li><li>While you are using your Form of Dread, once during each of your turns when you deal necrotic damage to a creature, you regain hit points equal to half the amount of necrotic damage dealt.</li></ul><p>Once you use this feature, you cannot do so again until you finish a long rest. At 20th level in warlock, you also regain this feature when you use your Eldritch Master feature.</p>",
+      "value": "<p>Your spirit can become untethered from your physical form. As a Magic action, you can project your spirit from your body. The body you leave behind is &amp;Reference[unconscious] and in a state of suspended animation.</p><p>Your spirit resembles your mortal form in almost every way, replicating your game statistics but not your possessions. Any damage or other effects that apply to your spirit or physical body affects the other. Your spirit can remain outside your body for up to 1 hour or until your Concentration is broken (as if Concentrating on a spell). When your projection ends, your spirit returns to your body or your body magically teleports to your spirit's space (your choice).</p><p>While projecting your spirit, you gain the following benefits.</p><p><strong>Damage Resistance.</strong> Your spirit and body gain Resistance to Bludgeoning, Piercing, and Slashing damage.</p><p><strong>Magic Adept.</strong> When you cast a spell of the Conjuration or Necromancy school the spell does not require Verbal or Somatic components or Material components that have no cost.</p><p><strong>Flight.</strong> You have a Fly Speed equal to your Speed and can hover. You can move through creatures and objects as if they were &amp;Reference[difficult terrain], but you take 1d10 Force damage if you end your turn inside a creature or an object.</p><p><strong>Healing Form.</strong> When you are using your Form of Dread, once during each of your turns when you deal Necrotic damage to a creature, you regain Hit Points equal to half the amount of Necrotic damage dealt.</p><p>Once you use this feature, you cannot do so again until you finish a Long Rest. At 20th level in Warlock, you also regain this feature when you use your Eldritch Master feature.</p>",
       "chat": ""
     },
     "source": {
@@ -77,24 +77,131 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "The Undead 14",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 14
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Project Spirit",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "duration": {
+          "units": "inst"
+        },
+        "target": {
+          "affects": {
+            "type": "self"
+          }
+        },
+        "effects": [
+          {
+            "_id": "zHrUrYOhofjakWSk"
+          }
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Spirit Projection",
+      "img": "icons/magic/death/undead-ghosts-trio-blue.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.Gu14mzpMGU7Our4x",
+      "transfer": false,
+      "_id": "zHrUrYOhofjakWSk",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "bludgeoning",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "piercing",
+          "priority": null
+        },
+        {
+          "key": "system.traits.dr.value",
+          "mode": 2,
+          "value": "slashing",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.fly",
+          "mode": 2,
+          "value": "@attributes.movement.walk",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746523017082,
+        "modifiedTime": 1746523107617,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!Gu14mzpMGU7Our4x.zHrUrYOhofjakWSk"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1712498929341,
-    "modifiedTime": 1712499088914,
+    "modifiedTime": 1746523183537,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

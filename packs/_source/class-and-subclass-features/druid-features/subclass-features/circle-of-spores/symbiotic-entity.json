@@ -6,7 +6,7 @@
   "img": "icons/magic/nature/elemental-plant-humanoid.webp",
   "system": {
     "description": {
-      "value": "<p>At 2nd level, you gain the ability to channel magic into your spores. As an action, you can expend a use of your Wild Shape feature to awaken those spores, rather than transforming into a beast form, and you gain 4 temporary hit points for each level you have in this class. While this feature is active, you gain the following benefits:</p><ul><li>When you deal your Halo of Spores damage, roll the damage die a second time and add it to the total.</li><li>When a hostile creature is reduced to 0 hit points before the start of your next turn after it takes damage from your Halo of Spores, you restore temporary hit points equal to your Wisdom modifier + half your druid level (minimum of 1).</li><li>Your melee weapon attacks and unarmed strikes deal an extra 1d6 necrotic damage to any target they hit.</li></ul><p>These benefits last for 10 minutes, until you lose all these temporary hit points, or until you use your Wild Shape again.</p><p>Beginning at 6th level in this class, you can attack twice, instead of once, whenever you take the Attack action on your turn while your spores are awakened.</p>",
+      "value": "<p>You gain the ability to channel magic into your spores. As a Magic action, you can expend a use of your Wild Shape feature to awaken those spores, rather than transforming into a beast form, and you gain 4 Temporary Hit Points for each level you have in this class. While this feature is active, you gain the following benefits:</p><p><strong>Enhanced Spores.</strong> When you deal your Halo of Spores damage, roll the damage die a second time and add it to the total.</p><p><strong>Siphon Life.</strong> When a creature is reduced to 0 Hit Points before the start of your next turn after it takes damage from your Halo of Spores, you restore Temporary Hit Points equal to your Wisdom modifier plus half your Druid level (minimum of 1).</p><p><strong>Spore-Powered Strikes.</strong> Your melee weapon attacks and Unarmed Strikes deal an extra 1d6 Necrotic damage to any target they hit.</p><p>These benefits last for 10 minutes, until you lose all these Temporary Hit Points, or until you use your Wild Shape again.</p><p>Beginning at 6th level in this class, you can attack twice, instead of once, whenever you take the Attack action on your turn while your spores are awakened.</p><section id=\"secret-3VWekutVQCAXNIre\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Awakend Spores</strong> activity will consume a use of your Wild Shape and give you the appropriate Temporary Hit Points and apply an active effect that grants the Spore-Powered Strikes bonus damage to melee attacks.</p><p>The <strong>Siphon Life</strong> activity can be used to restore the appropriate number of Temporary Hit Points.</p></section>",
       "chat": ""
     },
     "source": {
@@ -82,13 +82,216 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Circle of Spores 2",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 3
+    },
+    "activities": {
+      "1vLrA0JlxJe0n5T5": {
+        "type": "heal",
+        "_id": "1vLrA0JlxJe0n5T5",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.51CTtXjg284mHaIj"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "ksZU8zT2UDcUvYc6"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "temphp"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "4 * @classes.druid.levels"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "Awaken Spores",
+        "img": "",
+        "appliedEffects": []
+      },
+      "Dg6kuKWbswEirwM5": {
+        "type": "heal",
+        "_id": "Dg6kuKWbswEirwM5",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "temphp"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "@abilities.wis.mod + @classes.druid.levels"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "Siphon Life",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Symbiotic Entity",
+      "img": "icons/magic/nature/elemental-plant-humanoid.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.d9hjydgU4AMpXPO8",
+      "transfer": false,
+      "_id": "ksZU8zT2UDcUvYc6",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.bonuses.mwak.damage",
+          "mode": 2,
+          "value": "1d6[necrotic]",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p><strong>Enhanced Spores.</strong> When you deal your Halo of Spores damage, roll the damage die a second time and add it to the total.</p><p><strong>Siphon Life.</strong> When a creature is reduced to 0 Hit Points before the start of your next turn after it takes damage from your Halo of Spores, you restore Temporary Hit Points equal to your Wisdom modifier plus half your Druid level (minimum of 1).</p><p><strong>Spore-Powered Strikes.</strong> Your melee weapon attacks and Unarmed Strikes deal an extra 1d6 Necrotic damage to any target they hit.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1745443894670,
+        "modifiedTime": 1745443980425,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!d9hjydgU4AMpXPO8.ksZU8zT2UDcUvYc6"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
@@ -96,14 +299,20 @@
   "flags": {
     "materia-dnd": {
       "item-use-source": "wild-shape"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.0",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1711334967751,
-    "modifiedTime": 1711335085090,
+    "modifiedTime": 1745444104237,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
