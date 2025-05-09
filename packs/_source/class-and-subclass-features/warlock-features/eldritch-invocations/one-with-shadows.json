@@ -6,7 +6,7 @@
   "img": "icons/magic/air/fog-gas-smoke-gray.webp",
   "system": {
     "description": {
-      "value": "<p><em>Prerequisite: 5th level</em><br />When you are in an area of dim light or darkness, you can use your action to become invisible until you move or take an action or a reaction.</p>",
+      "value": "<blockquote><p>Prerequisite: Level 5+ Warlock</p></blockquote><p>When you're in an area of &amp;Reference[dim light] or &amp;Reference[darkness], you can use a Magic action to give yourself the &amp;Reference[invisible] condition for up to 1 hour. This condition ends immediately after you make an attack roll, deal damage, or cast a spell.</p>",
       "chat": ""
     },
     "source": {
@@ -73,24 +73,96 @@
       "subtype": "eldritchInvocation"
     },
     "properties": [],
-    "requirements": "Warlock 5",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 5
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Become Invisible",
+        "img": "",
+        "appliedEffects": [],
+        "target": {
+          "affects": {
+            "type": "self"
+          }
+        },
+        "effects": [
+          {
+            "_id": "oVrWXOAkl7HP2T3t"
+          }
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Invisible",
+      "img": "systems/dnd5e/icons/svg/statuses/invisible.svg",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.7cLuvzA7sKThm9TH",
+      "transfer": false,
+      "_id": "oVrWXOAkl7HP2T3t",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "invisible"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746640301544,
+        "modifiedTime": 1746640320825,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!7cLuvzA7sKThm9TH.oVrWXOAkl7HP2T3t"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710873869729,
-    "modifiedTime": 1710873914355,
+    "modifiedTime": 1746640301604,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

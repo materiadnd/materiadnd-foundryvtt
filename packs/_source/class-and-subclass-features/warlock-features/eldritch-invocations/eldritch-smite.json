@@ -6,7 +6,7 @@
   "img": "icons/magic/lightning/bolt-strike-sparks-purple.webp",
   "system": {
     "description": {
-      "value": "<p><em>Prerequisite: 5th level, Pact of the Blade feature</em><br />Once per turn when you hit a creature with your pact weapon, you can expend a a spell slot to deal an extra 1d8 for damage to the target, plus another 1d8 per level of the spell slot, to a maximum of 5d8.</p><p>Alternatively, if you expend a warlock pact spell slot to deal an extra 2d8 force damage to the target, plus another 1d8 per level of the spell slot to a maximum of 6d8, and you can knock the target prone if it is Huge or smaller.</p>",
+      "value": "<blockquote><p>Prerequisite: Level 5+ Warlock, Pact of the Blade invocation</p></blockquote><p>Once per turn when you hit a creature with your pact weapon, you can expend a Pact Magic spell slot to deal an extra 1d8 Force damage to the target, plus another 1d8 per level of the spell slot, and you can give the target the &amp;Reference[Prone] condition if it is Huge or smaller.</p><section class=\"secret\" id=\"secret-AO8GTueywc2Doff2\"><p><strong>Foundry Note</strong></p><p>The <strong>Smite</strong> activity consumes a Pact Magic spell slot and increases the damage based on your pact spell level.</p></section>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,95 @@
       "subtype": "eldritchInvocation"
     },
     "properties": [],
-    "requirements": "Warlock 5; Pact of the Blade",
+    "requirements": "Pact of the Blade",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 5
+    },
+    "activities": {
+      "17BzbVhO2LaxHZvB": {
+        "type": "damage",
+        "_id": "17BzbVhO2LaxHZvB",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": "Hit a creature with your pact weapon"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "attribute",
+              "value": "1",
+              "target": "spells.pact.value"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "(1 + @spells.pact.level)d8"
+              },
+              "number": null,
+              "denomination": 0,
+              "bonus": "",
+              "types": [
+                "force"
+              ]
+            }
+          ]
+        },
+        "name": "Smite",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +169,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.3",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1709311431099,
-    "modifiedTime": 1709312262073,
+    "modifiedTime": 1746710277044,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

@@ -6,7 +6,7 @@
   "img": "icons/magic/light/beam-rays-magenta-large.webp",
   "system": {
     "description": {
-      "value": "<p><em>Prerequisite: eldritch blast feature</em><br />When you hit a creature with your eldritch blast, that is no more than two size categories Larger than you or smaller, you can push the creature up to 10 feet away from you in a straight line.</p>",
+      "value": "<blockquote><p>Prerequisite: Level 2+ Warlock, a Warlock cantrip that deals damage via an attack roll or Eldritch Blast Feature</p></blockquote><p>Choose one of your known Warlock cantrips that requires an attack roll or your Eldritch Blast feature. When you hit a Large or smaller creature with it, you can push the creature up to 10 feet straight away from you.</p><p><strong>Repeatable.</strong> You can gain this invocation more than once. Each time you do so, choose a different eligible cantrip.</p><section class=\"secret\" id=\"secret-hI8IKUP9ClmMa8f7\"><p><strong>Foundry Note</strong></p><p>The <strong>Make Repelling</strong> activity can be used to enchant a cantrip which adds \", Repelling\" as a reminder.</p></section>",
       "chat": ""
     },
     "source": {
@@ -77,20 +77,150 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 2
+    },
+    "activities": {
+      "76CXtDw2HnTZu91s": {
+        "type": "enchant",
+        "_id": "76CXtDw2HnTZu91s",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "0qnzL5WTJXbj3vIh"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "enchant": {
+          "identifier": ""
+        },
+        "restrictions": {
+          "allowMagical": true,
+          "categories": [],
+          "properties": [],
+          "type": ""
+        },
+        "name": "Make Repelling",
+        "img": "",
+        "appliedEffects": [
+          "0qnzL5WTJXbj3vIh"
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "type": "enchantment",
+      "name": "Repelling Blast",
+      "img": "icons/magic/light/beam-rays-magenta-large.webp",
+      "disabled": true,
+      "_id": "0qnzL5WTJXbj3vIh",
+      "system": {},
+      "changes": [
+        {
+          "key": "name",
+          "mode": 2,
+          "value": ", Repelling",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>Choose one of your known Warlock cantrips that requires an attack roll or your Eldritch Blast feature. When you hit a Large or smaller creature with it, you can push the creature up to 10 feet straight away from you.</p>",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746641129529,
+        "modifiedTime": 1746641159532,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!zA1h5rSujk2BE0JQ.0qnzL5WTJXbj3vIh"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710875974259,
-    "modifiedTime": 1710876038714,
+    "modifiedTime": 1746641184259,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

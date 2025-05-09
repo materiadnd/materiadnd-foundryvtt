@@ -6,7 +6,7 @@
   "img": "icons/equipment/back/cloak-layered-tattered-purple.webp",
   "system": {
     "description": {
-      "value": "<p><em>Prerequisite: 15th level</em><br />As an action, a creature you touch becomes invisible for up to 1 hour. Anything the target is wearing or carrying is invisible as long as it is on the target's person. The spell ends for a target that attacks or casts a spell, or if you use this invocation again.</p>",
+      "value": "<blockquote><p>Prerequisite: Level 12+ Warlock</p></blockquote><p>As a Magic action, a creature you touch becomes &amp;Reference[Invisible] for up to 1 hour. Anything the target is wearing or carrying is invisible as long as it is on the target's person. The spell ends for a target that makes an attack roll. deals damage, or casts a spell, or if you use this invocation again.</p>",
       "chat": ""
     },
     "source": {
@@ -73,24 +73,91 @@
       "subtype": "eldritchInvocation"
     },
     "properties": [],
-    "requirements": "Warlock 15",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 12
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Grant Invisibility",
+        "img": "",
+        "appliedEffects": [],
+        "effects": [
+          {
+            "_id": "nqm6PUnbZPTiMLC0"
+          }
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Invisible",
+      "img": "systems/dnd5e/icons/svg/statuses/invisible.svg",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.b5O2CBjID3VkUBkS",
+      "transfer": false,
+      "_id": "nqm6PUnbZPTiMLC0",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 3600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "invisible"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746641277099,
+        "modifiedTime": 1746641305048,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!b5O2CBjID3VkUBkS.nqm6PUnbZPTiMLC0"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710876063132,
-    "modifiedTime": 1710876122134,
+    "modifiedTime": 1746641312419,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

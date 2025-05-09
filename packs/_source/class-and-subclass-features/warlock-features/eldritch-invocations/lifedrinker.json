@@ -6,7 +6,7 @@
   "img": "icons/magic/unholy/strike-beam-blood-red-blue.webp",
   "system": {
     "description": {
-      "value": "<p><em>Prerequisite: 12th level, Pact of the Blade feature</em><br />When you hit a creature with your pact weapon, the creature takes extra necrotic damage equal to your Charisma modifier (minimum 1).</p>",
+      "value": "<blockquote><p>Prerequisite: Level 9+ Warlock, Pact of the Blade invocation</p></blockquote><p>Once per turn when you hit a creature with your pact weapon, you can deal an extra 1d6 Necrotic, Psychic, or Radiant damage (your choice) to the creature, and you can expend one of your Hit Point Dice to roll it and regain a number of Hit Points equal to the roll plus your Constitution modifier (minimum of 1 Hit Point).</p><section class=\"secret\" id=\"secret-0UMx0YuO1LHpddDd\"><p><strong>Foundry Note</strong></p><p>The <strong>Damage</strong> activity allows you to choose the type of damage in the roll's dialog. It will remember your choice going forward.</p><p>The <strong>Heal (Largest Hit Die)</strong> and <strong>Smallest Hit Die</strong> activities expend the relevant Hit Die and provides a healing roll with your Constitution modifier included. Which you choose only matters if you are multi-classed with multiple hit die types.</p></section>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,240 @@
       "subtype": "eldritchInvocation"
     },
     "properties": [],
-    "requirements": "Warlock 12; Pact of the Blade",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 9
+    },
+    "activities": {
+      "HO9aeT7NtTSAELi9": {
+        "type": "damage",
+        "_id": "HO9aeT7NtTSAELi9",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": "Once per turn when you hit a creature with your pact weapon"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": "6",
+              "bonus": "",
+              "types": [
+                "necrotic",
+                "psychic",
+                "radiant"
+              ]
+            }
+          ]
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      },
+      "U8pPAhlGALODrQ9s": {
+        "type": "heal",
+        "_id": "U8pPAhlGALODrQ9s",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": "Once per turn when you hit a creature with your pact weapon"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "hitDice",
+              "value": "1",
+              "target": "largest"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "@attributes.hd.largestAvailable + (max(1,@abilities.con.mod))"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "Heal (Largest Hit Die)",
+        "img": "",
+        "appliedEffects": []
+      },
+      "oz9xbnUVXgstXxcj": {
+        "type": "heal",
+        "_id": "oz9xbnUVXgstXxcj",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": "Once per turn when you hit a creature with your pact weapon"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "hitDice",
+              "value": "1",
+              "target": "smallest"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "@attributes.hd.smallestAvailable + (max(1,@abilities.con.mod))"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "Heal (Smallest Hit Die)",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +314,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710872646494,
-    "modifiedTime": 1710872754376,
+    "modifiedTime": 1746637902973,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

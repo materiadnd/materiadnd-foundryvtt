@@ -6,7 +6,7 @@
   "img": "icons/magic/symbols/runes-carved-stone-purple.webp",
   "system": {
     "description": {
-      "value": "<p><em>Prerequisite: 5th level</em><br />As an action, you touch a creature, and that creature must succeed on a Wisdom saving throw or become cursed for one minute or until you use this ability again. When you use this invocation, choose one ability score. While cursed, the target has disadvantage on ability checks and saving throws made with that ability score.</p><p>While the target is cursed, your attacks and spells deal an extra 1d8 necrotic damage to the target.</p><p>At 9th level of Warlock, if you have the Pact of the Blade feature, you can impose the Wisdom saving throw when you hit a creature with your Pact Weapon.</p><p>A remove curse spell ends this effect.</p>",
+      "value": "<blockquote><p>Prerequisite: Level 5+ Warlock</p></blockquote><p>As a Magic action, you touch a creature, and that creature must succeed on a Wisdom saving throw or become cursed for one minute or until you use this ability again. When you use this invocation, choose one ability score. While cursed, the target has Disadvantage on ability checks and saving throws made with that ability score.</p><p>While the target is cursed, your attacks and spells deal an extra 1d8 Necrotic damage to the target.</p><p>A @UUID[Compendium.materia-dnd.spells.Item.matSplRemoveCurs]{Remove Curse} spell ends this effect.</p>",
       "chat": ""
     },
     "source": {
@@ -73,24 +73,92 @@
       "subtype": "eldritchInvocation"
     },
     "properties": [],
-    "requirements": "Warlock 5",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Curse Creature",
+        "img": "",
+        "appliedEffects": [],
+        "duration": {
+          "units": "inst"
+        },
+        "effects": [
+          {
+            "_id": "0VKUMlb40YoSoWTq"
+          }
+        ]
+      }
+    },
+    "prerequisites": {
+      "level": 5
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Sign of Ill Omen",
+      "img": "icons/magic/symbols/runes-carved-stone-purple.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.eIoI4Q4VyuGZdszF",
+      "transfer": false,
+      "_id": "0VKUMlb40YoSoWTq",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>While cursed, the target has Disadvantage on ability checks and saving throws made with that ability score.</p><p>While the target is cursed, your attacks and spells deal an extra 1d8 Necrotic damage to the target.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746641457994,
+        "modifiedTime": 1746641479797,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!eIoI4Q4VyuGZdszF.0VKUMlb40YoSoWTq"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710876144016,
-    "modifiedTime": 1710876235268,
+    "modifiedTime": 1746641487795,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
