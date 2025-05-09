@@ -6,7 +6,7 @@
   "img": "icons/commodities/bones/bones-stack-brown.webp",
   "system": {
     "description": {
-      "value": "<p><em>Prerequisite: 5th-level warlock</em><br />This invocation creates an undead servant. Choose a pile of bones or a corpse of a Medium or Small humanoid within range. You imbue the target with a foul mimicry of life as if by the @UUID[Compendium.materia-dnd.spells.Item.matSplAnimateDea]{Animate Dead} spell.</p><p>Once you do so, you cannot cast it in this way again until you finish a long rest.</p>",
+      "value": "<blockquote><p>Prerequisite: Level 5+ Warlock</p></blockquote><p>This invocation creates an Undead servant. Choose a pile of bones or a corpse of a Medium or Small humanoid within range. You imbue the target with a foul mimicry of life as if by the @UUID[Compendium.materia-dnd.spells.Item.matSplAnimateDea]{Animate Dead} spell.</p><p>Once you do so, you cannot cast it in this way again until you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,104 @@
       "subtype": "eldritchInvocation"
     },
     "properties": [],
-    "requirements": "Warlock 5",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 5
+    },
+    "activities": {
+      "jPibuoq7BBHinvVV": {
+        "type": "summon",
+        "_id": "jPibuoq7BBHinvVV",
+        "sort": 0,
+        "activation": {
+          "type": "minute",
+          "value": 1,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "10"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "space",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "bonuses": {
+          "ac": "",
+          "hd": "",
+          "hp": "",
+          "attackDamage": "",
+          "saveDamage": "",
+          "healing": ""
+        },
+        "creatureSizes": [],
+        "creatureTypes": [],
+        "match": {
+          "attacks": true,
+          "proficiency": true,
+          "saves": true,
+          "ability": "cha"
+        },
+        "profiles": [
+          {
+            "count": "",
+            "name": "",
+            "_id": "jHbp2daylJBNTKfO",
+            "uuid": "Compendium.materia-dnd.actors.Actor.matNpcUndeadCrea",
+            "level": {
+              "min": null,
+              "max": null
+            }
+          }
+        ],
+        "summon": {
+          "prompt": true,
+          "mode": "",
+          "identifier": ""
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +178,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710876632006,
-    "modifiedTime": 1710876767850,
+    "modifiedTime": 1746642399161,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

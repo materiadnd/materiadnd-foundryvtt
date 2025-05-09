@@ -6,7 +6,7 @@
   "img": "icons/magic/control/hypnosis-mesmerism-eye.webp",
   "system": {
     "description": {
-      "value": "<div><div><p>You create the image of an object, a creature, or some other visible phenomenon that is no larger than a 5-foot cube. The image appears at a spot you can see and lasts for one minute. The image is purely visual; it is not accompanied by sound, smell, or other sensory effects.</p><p>You can use your action to cause the image to move to any spot you can see. As the image changes location, you can alter its appearance so that its movements appear natural for the image. For example, if you create an image of a creature and move it, you can alter the image so that it appears to be walking.</p></div></div><div><div><p>Physical interaction with the image reveals it to be an illusion, because things can pass through it. A creature that uses its action to examine the image can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the creature can see through the image.</p><p>The image lasts until you dismiss it as an action, or create another image with this invocation.</p></div></div>",
+      "value": "<div><div><blockquote><p>Prerequisite: Level 2+ Warlock</p></blockquote><p>As a Magic action, you create the image of an object, a creature, or some other visible phenomenon that is no larger than a 15-foot Cube. The image appears at a spot you can see within 60 feet and lasts for 10 minutes. The image is purely visual; it isn't accompanied by sound, smell, or other sensory effects.</p><p>As a Magic action, you can cause the image to move to any spot you can see within 60 feet. As the image changes location, you can alter its appearance so that its movements appear natural for the image. For example, if you create an image of a creature and move it, you can alter the image so that it appears to be walking.</p></div></div><div><div><p>Physical interaction with the image reveals it to be an illusion, because things can pass through it. A creature that takes a Study action to examine the image can determine that it is an illusion with a successful [[/skill inv]] check against your spell save DC. If a creature discerns the illusion for what it is, the creature can see through the image.</p><p>The image lasts until you dismiss it as a Magic action, or create another image with this invocation.</p></div></div>",
       "chat": ""
     },
     "source": {
@@ -77,6 +77,127 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 2
+    },
+    "activities": {
+      "qz3n8hD9orthybco": {
+        "type": "summon",
+        "_id": "qz3n8hD9orthybco",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "minute",
+          "concentration": false,
+          "override": false,
+          "value": "10"
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "60"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "space",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "bonuses": {
+          "ac": "",
+          "hd": "",
+          "hp": "",
+          "attackDamage": "",
+          "saveDamage": "",
+          "healing": ""
+        },
+        "creatureSizes": [
+          "tiny",
+          "sm",
+          "med",
+          "lg",
+          "huge"
+        ],
+        "creatureTypes": [],
+        "match": {
+          "attacks": false,
+          "proficiency": false,
+          "saves": false,
+          "ability": "cha"
+        },
+        "profiles": [
+          {
+            "count": "",
+            "name": "",
+            "_id": "FZRrzMPv60Rq1e4c",
+            "uuid": "Compendium.materia-dnd.actors.Actor.matNpcIllusoryCr",
+            "level": {
+              "min": null,
+              "max": null
+            }
+          },
+          {
+            "count": "",
+            "name": "",
+            "_id": "jqZOmho1gOe1p4rf",
+            "uuid": "Compendium.materia-dnd.actors.Actor.matNpcIlluObject",
+            "level": {
+              "min": null,
+              "max": null
+            }
+          },
+          {
+            "count": "",
+            "name": "",
+            "_id": "EYcAyOtp6gRaNmI8",
+            "uuid": "Compendium.materia-dnd.actors.Actor.matNpcIlluPhenom",
+            "level": {
+              "min": null,
+              "max": null
+            }
+          }
+        ],
+        "summon": {
+          "prompt": true,
+          "mode": "",
+          "identifier": ""
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +205,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710873699663,
-    "modifiedTime": 1710873856145,
+    "modifiedTime": 1746640103143,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

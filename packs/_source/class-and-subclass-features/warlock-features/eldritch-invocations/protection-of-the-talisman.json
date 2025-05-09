@@ -6,7 +6,7 @@
   "img": "icons/commodities/gems/pearl-blue-gold.webp",
   "system": {
     "description": {
-      "value": "<p><em>Prerequisite: 7th-level warlock, Pact of the Talisman feature</em><br />When the wearer of your talisman fails a saving throw, they can add a d4 to the roll, potentially turning the save into a success. This benefit can be used a number of times equal to your proficiency bonus, and all expended uses are restored when you finish a long rest.</p><p>Starting at 17th level in this class, they can add 2d4 to the roll instead.</p>",
+      "value": "<blockquote><p>Prerequisite: Level 7+ Warlock, Pact of the Talisman</p></blockquote><p>When the wearer of your talisman fails a saving throw, they can add a d4 to the roll, potentially turning the save into a success. This benefit can be used a number of times equal to your Proficiency Bonus, and all expended uses are restored when you finish a Long Rest.</p><p>Starting at 17th level in this class, they can add 2d4 to the roll instead.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,38 @@
       "subtype": "eldritchInvocation"
     },
     "properties": [],
-    "requirements": "Warlock 7; Pact of the Talisman",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 7
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Protect",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "roll": {
+          "name": "Saving Throw Bonus"
+        }
+      }
     }
   },
   "effects": [],
@@ -84,13 +112,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710875069268,
-    "modifiedTime": 1710877771847,
+    "modifiedTime": 1746640839077,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

@@ -6,7 +6,7 @@
   "img": "icons/sundries/books/book-tooled-eye-gold-red.webp",
   "system": {
     "description": {
-      "value": "<p><em>Prerequisite: Pact of the Tome feature</em><br />When you cast a ritual from your Book of Ancient Secrets, you can use the spell's normal casting time, rather than adding 10 minutes to it.</p><p>Once you use this invocation, you cannot use it again until you finish a short or long rest.</p>",
+      "value": "<blockquote><p>Prerequisite: Level 2+ Warlock, Pact of the Tome invocation</p></blockquote><p>When you cast a Ritual from your Book of Ancient Secrets, you can use the spell's normal casting time, rather than adding 10 minutes to it.</p><p>Once you use this invocation, you cannot use it again until you finish a Short or Long Rest.</p><section id=\"secret-oHlJKyCNWHkpzns7\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This invocation includes a <strong>Faster Ritual Cast</strong> activity which will track its usage.</p></section>",
       "chat": ""
     },
     "source": {
@@ -39,9 +39,14 @@
     },
     "uses": {
       "value": null,
-      "max": "",
+      "max": "1",
       "per": null,
-      "recovery": "",
+      "recovery": [
+        {
+          "period": "sr",
+          "type": "recoverAll"
+        }
+      ],
       "prompt": true
     },
     "consume": {
@@ -77,6 +82,75 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "OFwwF7WoQMDtFjKH": {
+        "type": "utility",
+        "_id": "OFwwF7WoQMDtFjKH",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Faster Ritual Cast",
+        "img": "",
+        "appliedEffects": []
+      }
+    },
+    "prerequisites": {
+      "level": 2
     }
   },
   "effects": [],
@@ -84,13 +158,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710869926621,
-    "modifiedTime": 1710870043889,
+    "modifiedTime": 1746706652603,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

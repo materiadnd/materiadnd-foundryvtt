@@ -6,7 +6,7 @@
   "img": "icons/magic/perception/orb-crystal-ball-scrying-blue.webp",
   "system": {
     "description": {
-      "value": "<p><em>Prerequisite: 7th level</em><br />As an action, you gain the ability to see through solid objects to a range of 30 feet. Within that range, you have darkvision if you do not already have it. This special sight lasts for 1 minute or until your concentration ends (as if you were concentrating on a spell). During that time, you perceive objects as ghostly, transparent images.</p><p>Once you use this invocation, you cannot use it again until you finish a short or long rest.</p>",
+      "value": "<blockquote><p>Prerequisite: Level 7+ Warlock</p></blockquote><p>As a Magic action, you gain the ability to see through solid objects within 30 feet of yourself. Within that range, you have &amp;Reference[Darkvision] if you do not already have it. This special sight lasts for 1 minute or until your Concentration ends. During that time, you perceive objects as ghostly, transparent images.</p><p>Once you use this invocation, you cannot use it again until you finish a Short or Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -75,24 +75,115 @@
     "properties": [
       "concentration"
     ],
-    "requirements": "Warlock 7",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 7
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Ghostly Gaze",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "duration": {
+          "units": "inst"
+        },
+        "target": {
+          "affects": {
+            "type": "self"
+          }
+        },
+        "effects": [
+          {
+            "_id": "zuVMmqHaZJBDRsOl"
+          }
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Ghostly Gaze",
+      "img": "icons/magic/perception/orb-crystal-ball-scrying-blue.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.qod816UkvF3vbKRd",
+      "transfer": false,
+      "_id": "zuVMmqHaZJBDRsOl",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.senses.darkvision",
+          "mode": 4,
+          "value": "30",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 60,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "concentrating"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746636333172,
+        "modifiedTime": 1746636375736,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!qod816UkvF3vbKRd.zuVMmqHaZJBDRsOl"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710870814600,
-    "modifiedTime": 1710871214125,
+    "modifiedTime": 1746636365445,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

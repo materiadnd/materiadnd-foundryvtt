@@ -6,7 +6,7 @@
   "img": "icons/weapons/ammunition/arrowhead-glowing-blue.webp",
   "system": {
     "description": {
-      "value": "<p><em>Prerequisite: eldritch blast feature</em><br />When you cast eldritch blast, its range is 300 feet.</p>",
+      "value": "<blockquote><p>Prerequisite: Level 2+ Warlock, a Warlock Cantrip that deals damage or Eldritch Blast feature</p></blockquote><p>Choose one of your known Warlock cantrips that deals damage and has a range of 10+ feet or your Eldritch Blast feature. When you cast that spell or fire your Eldritch Blasts, their range is increased by a number of feet equal to 30 times your Warlock level.</p><p><strong>Repeatable.</strong> You can gain this invocation more than once. Each time you do so, choose a different eligible cantrip.</p><section id=\"secret-UCsjucTkxTJFte3M\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>Use the <strong>Increase Range</strong> enchantment activity and drag your chosen cantrip or Eldritch Blast to the chat card to increase its range and append \", Eldritch Spear\" for easier identification.</p></section>",
       "chat": ""
     },
     "source": {
@@ -77,20 +77,156 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 2
+    },
+    "activities": {
+      "nyhsoq3xLYNPV6aB": {
+        "type": "enchant",
+        "_id": "nyhsoq3xLYNPV6aB",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "QDrIXagQhKMr2E35"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "enchant": {
+          "identifier": ""
+        },
+        "restrictions": {
+          "allowMagical": true,
+          "categories": [],
+          "properties": [],
+          "type": ""
+        },
+        "name": "Increase Range",
+        "img": "",
+        "appliedEffects": [
+          "QDrIXagQhKMr2E35"
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "type": "enchantment",
+      "name": "Eldritch Spear",
+      "img": "icons/weapons/ammunition/arrowhead-glowing-blue.webp",
+      "disabled": true,
+      "_id": "QDrIXagQhKMr2E35",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.range.value",
+          "mode": 2,
+          "value": "@classes.warlock.levels * 30",
+          "priority": null
+        },
+        {
+          "key": "name",
+          "mode": 2,
+          "value": ", Eldritch Spear",
+          "priority": null
+        }
+      ],
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "origin": null,
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746634900962,
+        "modifiedTime": 1746634924656,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!ML0ektkuxSVg5zod.QDrIXagQhKMr2E35"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710869220553,
-    "modifiedTime": 1710869265805,
+    "modifiedTime": 1746634936028,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

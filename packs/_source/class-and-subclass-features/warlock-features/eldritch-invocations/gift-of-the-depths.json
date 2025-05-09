@@ -6,7 +6,7 @@
   "img": "icons/magic/water/bubbles-air-water-light.webp",
   "system": {
     "description": {
-      "value": "<p><em>Prerequisite: 5th level</em><br />You can breathe underwater, and you gain a swimming speed equal to your walking speed.</p><p>As an action you can grant up to ten willing creatures you can see within 30 feet of you the ability to breathe underwater for 24 hours. Affected creatures also retain their normal mode of respiration.</p><p>You regain the ability to do so when you finish a long rest.</p>",
+      "value": "<blockquote><p>Prerequisite: Level 5+ Warlock</p></blockquote><p>You can breathe underwater, and you gain a Swim Speed equal to Speed.</p><p>As a Magic action you can grant up to ten willing creatures you can see within 30 feet of you the ability to breathe underwater for 24 hours. Affected creatures also retain their normal mode of respiration.</p><p>You regain the ability to do so when you finish a Long Rest.</p><section id=\"secret-snnuKItDZ389VZnR\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Gift Water Breating</strong> activity consumes a limited use and includes an Active Effect for tracking the chosen creatures.</p></section>",
       "chat": ""
     },
     "source": {
@@ -73,24 +73,103 @@
       "subtype": "eldritchInvocation"
     },
     "properties": [],
-    "requirements": "Warlock 5",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 5
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Gift Water Breathing",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "target": {
+          "affects": {
+            "type": "creature"
+          }
+        },
+        "effects": [
+          {
+            "_id": "dNQS9OStjQfnxlrH"
+          }
+        ]
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Water Breathing",
+      "img": "icons/magic/water/bubbles-air-water-light.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.deA0WMbkQSrye9ze",
+      "transfer": false,
+      "_id": "dNQS9OStjQfnxlrH",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 86400,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746636517248,
+        "modifiedTime": 1746636532645,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!deA0WMbkQSrye9ze.dNQS9OStjQfnxlrH"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710871235458,
-    "modifiedTime": 1710871313253,
+    "modifiedTime": 1746636517311,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

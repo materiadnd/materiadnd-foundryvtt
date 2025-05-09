@@ -1,107 +1,353 @@
 {
   "folder": "79akmpD5nWDdYM6C",
-  "name": "Unarmed Strike*",
-  "type": "feat",
-  "_id": "kenCgQtPgV7G4HGH",
-  "img": "icons/skills/melee/unarmed-punch-fist-white.webp",
+  "name": "Unarmed Strike",
+  "type": "weapon",
+  "_id": "qjOhv05W86c692UB",
+  "img": "icons/skills/melee/unarmed-punch-fist-yellow-red.webp",
   "system": {
-    "description": {
-      "value": "<section class=\"secret\" id=\"secret-747QWQYPstWbZeRk\"><p><strong>Foundry Note</strong></p><p>Upon receiving this feature, you can choose to change the \"Ability Modifier\" in the \"Feature Attack\" section of the Details tab to Dexterity if you wish to use that in place of Strength.</p></section>",
-      "chat": ""
-    },
-    "source": {
-      "rules": "2024",
-      "revision": 1,
-      "book": "Materia"
-    },
-    "activation": {
-      "type": "action",
-      "cost": 1,
-      "condition": ""
-    },
-    "duration": {
-      "value": "",
-      "units": "inst"
-    },
-    "cover": null,
-    "crewed": false,
-    "target": {
-      "value": 1,
-      "width": null,
-      "units": "",
-      "type": "creature",
-      "prompt": true
-    },
-    "range": {
-      "value": 5,
-      "long": null,
-      "units": "ft"
+    "activities": {
+      "FRIM4jEN51xSL6Um": {
+        "_id": "FRIM4jEN51xSL6Um",
+        "type": "attack",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "attack": {
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "unarmed"
+          },
+          "ability": "",
+          "bonus": ""
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": true,
+          "parts": []
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      },
+      "yIE3SBj9LmURNHWb": {
+        "type": "save",
+        "_id": "yIE3SBj9LmURNHWb",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "EKIF52WJ7YlQt81g",
+            "onSave": false
+          },
+          {
+            "_id": "A4T35izkSdXhsVEe"
+          }
+        ],
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "str",
+            "dex"
+          ],
+          "dc": {
+            "calculation": "",
+            "formula": "8 + @abilities.str.mod + @prof"
+          }
+        },
+        "name": "Grapple/Shove",
+        "img": "",
+        "appliedEffects": []
+      }
     },
     "uses": {
-      "value": null,
-      "max": "",
-      "per": null,
-      "recovery": "",
-      "prompt": true
+      "spent": 0,
+      "recovery": [],
+      "max": ""
     },
-    "consume": {
-      "type": "",
-      "target": null,
-      "amount": null,
-      "scale": false
+    "description": {
+      "value": "",
+      "chat": ""
     },
-    "ability": "str",
-    "actionType": "mwak",
-    "attack": {
-      "bonus": "",
-      "flat": false
+    "identifier": "new-item",
+    "source": {
+      "revision": 1,
+      "rules": "2024",
+      "book": "Materia"
     },
-    "chatFlavor": "",
-    "critical": {
-      "threshold": null,
-      "damage": ""
+    "identified": true,
+    "unidentified": {
+      "description": ""
+    },
+    "container": null,
+    "quantity": 1,
+    "weight": {
+      "value": 0,
+      "units": "lb"
+    },
+    "price": {
+      "value": 0,
+      "denomination": "gp"
+    },
+    "rarity": "",
+    "attunement": "",
+    "attuned": false,
+    "equipped": false,
+    "cover": null,
+    "crewed": false,
+    "type": {
+      "value": "natural",
+      "baseItem": ""
+    },
+    "ammunition": {},
+    "armor": {
+      "value": null
     },
     "damage": {
-      "parts": [
-        [
-          "@scale.monk.martial-arts-die + @mod",
+      "base": {
+        "number": null,
+        "denomination": 0,
+        "types": [
           "bludgeoning"
-        ]
-      ],
-      "versatile": ""
+        ],
+        "custom": {
+          "enabled": true,
+          "formula": "1@scale.monk.die + @mod"
+        },
+        "scaling": {
+          "number": 1
+        },
+        "bonus": ""
+      },
+      "versatile": {
+        "number": null,
+        "denomination": null,
+        "types": [],
+        "custom": {
+          "enabled": false
+        },
+        "scaling": {
+          "number": 1
+        }
+      }
     },
-    "formula": "",
-    "save": {
-      "ability": "",
-      "dc": null,
-      "scaling": "spell"
-    },
-    "summons": null,
-    "type": {
-      "value": "class",
-      "subtype": ""
-    },
-    "properties": [],
-    "requirements": "Monk 1",
-    "recharge": {
+    "magicalBonus": null,
+    "properties": [
+      "fin"
+    ],
+    "proficient": 1,
+    "range": {
       "value": null,
-      "charged": false
-    }
+      "long": null,
+      "reach": null,
+      "units": "ft"
+    },
+    "mastery": ""
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Grappled",
+      "img": "systems/dnd5e/icons/svg/statuses/grappled.svg",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.qjOhv05W86c692UB",
+      "transfer": false,
+      "_id": "EKIF52WJ7YlQt81g",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "grappled"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746629332520,
+        "modifiedTime": 1746629353602,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!qjOhv05W86c692UB.EKIF52WJ7YlQt81g"
+    },
+    {
+      "name": "Prone",
+      "img": "systems/dnd5e/icons/svg/statuses/prone.svg",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.qjOhv05W86c692UB",
+      "transfer": false,
+      "_id": "A4T35izkSdXhsVEe",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "prone"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.331",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1746629356453,
+        "modifiedTime": 1746629374531,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!qjOhv05W86c692UB.A4T35izkSdXhsVEe"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
   },
-  "flags": {},
-  "_stats": {
-    "systemId": "dnd5e",
-    "systemVersion": "4.1.1",
-    "coreVersion": "12.331",
-    "createdTime": 1715130002541,
-    "modifiedTime": 1731558857592,
-    "lastModifiedBy": "dnd5mbuilder0000",
-    "duplicateSource": null
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
   },
-  "_key": "!items!kenCgQtPgV7G4HGH"
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.9",
+    "createdTime": 1746629154375,
+    "modifiedTime": 1746629356538,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_key": "!items!qjOhv05W86c692UB"
 }

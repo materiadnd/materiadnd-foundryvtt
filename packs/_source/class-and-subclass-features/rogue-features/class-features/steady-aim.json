@@ -6,7 +6,7 @@
   "img": "icons/skills/targeting/crosshair-pointed-orange.webp",
   "system": {
     "description": {
-      "value": "<p>As a bonus action, you give yourself Advantage on your next attack roll on the current turn. You can use this feature only if you haven't moved during this turn, and after you use it, your Speed is 0 until the end of the current turn.</p>",
+      "value": "<p>As a Bonus Action, you give yourself Advantage on your next attack roll on the current turn. You can use this feature only if you haven't moved during this turn, and after you use it, your Speed is 0 until the end of the current turn.</p>",
       "chat": ""
     },
     "source": {
@@ -73,7 +73,7 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Rogue 3",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
@@ -88,21 +88,111 @@
             "_id": "zp5TpnogHhsH6gHP"
           }
         ]
+      },
+      "aUlXBy13FvH6QhyT": {
+        "type": "utility",
+        "_id": "aUlXBy13FvH6QhyT",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "W48eJ3WFVdOTAB0N"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self"
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Steady Aim",
+        "img": "",
+        "appliedEffects": []
       }
+    },
+    "prerequisites": {
+      "level": 3
     }
   },
   "effects": [
     {
-      "name": "Aiming",
+      "name": "Steadying Aim",
       "img": "icons/skills/targeting/crosshair-pointed-orange.webp",
       "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.FwjXhZGj0BZmkSDG",
       "transfer": false,
-      "_id": "zp5TpnogHhsH6gHP",
+      "_id": "W48eJ3WFVdOTAB0N",
       "type": "base",
       "system": {},
       "changes": [
         {
           "key": "system.attributes.movement.walk",
+          "mode": 5,
+          "value": "0",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.fly",
+          "mode": 5,
+          "value": "0",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.swim",
+          "mode": 5,
+          "value": "0",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.climb",
+          "mode": 5,
+          "value": "0",
+          "priority": null
+        },
+        {
+          "key": "system.attributes.movement.burrow",
           "mode": 5,
           "value": "0",
           "priority": null
@@ -134,12 +224,12 @@
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "dnd5e",
-        "systemVersion": "4.3.6",
-        "createdTime": 1741626725594,
-        "modifiedTime": 1741626759782,
+        "systemVersion": "4.3.9",
+        "createdTime": 1746630672696,
+        "modifiedTime": 1746630720966,
         "lastModifiedBy": "dnd5mbuilder0000"
       },
-      "_key": "!items.effects!FwjXhZGj0BZmkSDG.zp5TpnogHhsH6gHP"
+      "_key": "!items.effects!FwjXhZGj0BZmkSDG.W48eJ3WFVdOTAB0N"
     }
   ],
   "flags": {
@@ -152,10 +242,10 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.3.6",
+    "systemVersion": "4.3.9",
     "coreVersion": "12.331",
     "createdTime": 1707148348314,
-    "modifiedTime": 1741626725640,
+    "modifiedTime": 1746630672762,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
