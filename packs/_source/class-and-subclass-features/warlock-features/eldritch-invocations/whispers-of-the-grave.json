@@ -6,7 +6,7 @@
   "img": "icons/magic/death/skull-energy-light-purple.webp",
   "system": {
     "description": {
-      "value": "<p><em>Prerequisite: 9th level</em><br />As an action, you grant the semblance of life and intelligence to a corpse of your choice within range, allowing it to answer the questions you pose. The corpse must still have a mouth and cannot be undead. The invocation fails if the corpse was the target of this invocation within the last 10 days.</p><p>Over the next 10 minutes, you can ask the corpse up to five questions. The corpse knows only what it knew in life, including the languages it knew. Answers are usually brief, cryptic, or repetitive, but as part of this invocation the corpse recognizes you as someone near and dear to it in life. This should aid you in getting less cryptic answers from it, but does not guarantee you will get the answers you seek.</p><p>This invocation does not return the creature's soul to its body, only its animating spirit. Thus, the corpse cannot learn new information, does not comprehend anything that has happened since it died, and cannot speculate about future events.</p>",
+      "value": "<blockquote><p>Prerequisite: Level 9+ Warlock</p></blockquote><p>As a Magic action, you grant the semblance of life to a corpse of your choice within 10 feet, allowing it to answer the questions you pose. The corpse must have a mouth, and this invocation fails if the deceased creature was Undead when it died. The invocation also fails if the corpse was the target of this invocation within the last 10 days.</p><p>Over the next 10 minutes, you can ask the corpse up to five questions. The corpse knows only what it knew in life, including the languages it knew. Answers are usually brief, cryptic, or repetitive, but as part of this invocation the corpse recognizes you as someone near and dear to it in life. This should aid you in getting less cryptic answers from it, but does not guarantee you will get the answers you seek.</p><p>This invocation does not return the creature's soul to its body, only its animating spirit. Thus, the corpse cannot learn new information, does not comprehend anything that has happened since it died, and cannot speculate about future events.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,34 @@
       "subtype": "eldritchInvocation"
     },
     "properties": [],
-    "requirements": "Warlock 9",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 9
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Speak With Dead",
+        "img": "",
+        "duration": {
+          "units": "minute",
+          "value": "10"
+        },
+        "range": {
+          "units": "ft",
+          "value": "10"
+        },
+        "appliedEffects": [],
+        "target": {
+          "affects": {
+            "type": "object",
+            "count": "1"
+          }
+        }
+      }
     }
   },
   "effects": [],
@@ -84,13 +108,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710877531388,
-    "modifiedTime": 1710877594523,
+    "modifiedTime": 1746644829942,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

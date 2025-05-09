@@ -6,7 +6,7 @@
   "img": "icons/sundries/documents/document-symbol-triangle-pink.webp",
   "system": {
     "description": {
-      "value": "<p><em>Prerequisite: 5th-level warlock, Pact of the Tome feature</em><br />A new page appears in your Book of Ancient Secrets. With your permission, a creature can use its action to write its name on that page, which can contain a number of names equal to your proficiency bonus.</p><p>You can cast the sending spell, targeting a creature whose name is on the page, without using a spell slot and without using material components. To do so, you must write the message on the page. The target hears the message in their mind, and if the target replies, their message appears on the page, rather than in your mind. The writing disappears after 1 minute.</p><p>As an action, you can magically erase a name on the page by touching it.</p>",
+      "value": "<blockquote><p>Prerequisite: Level 5+ Warlock, Pact of the Tome invocation</p></blockquote><p>A new page appears in your Book of Ancient Secrets. With your permission, a creature can use the Utilize action to write its name on that page, which can contain a number of names equal to your Proficiency Bonus.</p><p>You can cast the @UUID[Compendium.materia-dnd.spells.Item.matSplSending000]{Sending} spell, targeting a creature whose name is on the page, without using a spell slot and without using Material components. To do so, you must write the message on the page. The target hears the message in their mind, and if the target replies, their message appears written on the page rather than in your mind. The writing disappears after 1 minute.</p><p>As a Magic action, you can erase a name on the page by touching it.</p><section id=\"secret-lwzVndPkzHxd7VdK\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Write Name</strong> activity consumes a use of the item which can be used for tracking how many names you've written down.</p><p>The <strong>Erase Name</strong> activity will restore a use of the item and allows you to add another name.</p></section>",
       "chat": ""
     },
     "source": {
@@ -39,7 +39,7 @@
     },
     "uses": {
       "value": null,
-      "max": "",
+      "max": "(max(1,@prof))",
       "per": null,
       "recovery": "",
       "prompt": true
@@ -73,10 +73,144 @@
       "subtype": "eldritchInvocation"
     },
     "properties": [],
-    "requirements": "Warlock 5; Pact of the Tome",
+    "requirements": "Pact of the Tome",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 5
+    },
+    "activities": {
+      "FIfEsWJYHAWnJZCt": {
+        "type": "utility",
+        "_id": "FIfEsWJYHAWnJZCt",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Write Name",
+        "img": "",
+        "appliedEffects": []
+      },
+      "PYl2GP3tDvzYp1fl": {
+        "type": "utility",
+        "_id": "PYl2GP3tDvzYp1fl",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "touch",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Erase Name",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +218,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710869483900,
-    "modifiedTime": 1710869675713,
+    "modifiedTime": 1746637031137,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

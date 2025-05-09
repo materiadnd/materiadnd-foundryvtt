@@ -6,7 +6,7 @@
   "img": "icons/sundries/scrolls/scroll-plain-red.webp",
   "system": {
     "description": {
-      "value": "<p><em>Prerequisite: 9th-level warlock, Pact of the Tome feature</em><br />Immediately after a creature casts a spell that targets you or includes you in its area of effect, you can use your reaction to make an ability check using your warlock spellcasting ability. On a success, you steal the knowledge of the spell if it is at least 1st level and of a level you can cast (it can be a spell from any spell list). For the next 8 hours or until you use this feature again, you know the spell and can cast it using your spell slots. The DC equals 10 + the spell's level.</p>",
+      "value": "<blockquote><p>Prerequisite: Level 9+ Warlock, Pact of the Tome invocation</p></blockquote><p>Immediately after a creature casts a spell that targets you or includes you in its area of effect, you can use take a Reaction to make an ability check using your Warlock spellcasting ability. On a success, you steal the knowledge of the spell if it is at least a level 1 spell and of a level you can cast (it can be a spell from any spell list). For the next 8 hours or until you use this feature again, you know the spell and can cast it using your spell slots. The DC equals 10 plus the spell's level.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,23 @@
       "subtype": "eldritchInvocation"
     },
     "properties": [],
-    "requirements": "Warlock 9; Pact of the Tome",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 9
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Steal Spell",
+        "img": "",
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +97,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710874553028,
-    "modifiedTime": 1710874641327,
+    "modifiedTime": 1746640752716,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

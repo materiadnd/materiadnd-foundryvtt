@@ -6,7 +6,7 @@
   "img": "icons/equipment/neck/amulet-geometric-blue-yellow.webp",
   "system": {
     "description": {
-      "value": "<p><em>Prerequisite: 7th level, Pact of the Talisman feature</em><br />When the wearer of your talisman (yourself included) takes damage and is within 120 feet of you, you can use your reaction to grant the wearer resistance to the source of damage.</p>",
+      "value": "<blockquote><p>Prerequisite: Level 7+ Warlock, Pact of the Talisman invocation</p></blockquote><p>When the wearer of your talisman (yourself included) takes damage and is within 120 feet of you, you can take a Reaction to grant the wearer Resistance to the source of damage.</p>",
       "chat": ""
     },
     "source": {
@@ -73,10 +73,77 @@
       "subtype": "eldritchInvocation"
     },
     "properties": [],
-    "requirements": "Warlock 7; Pact of the Talisman",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "prerequisites": {
+      "level": 7
+    },
+    "activities": {
+      "yJ9RkKpekpGtVG37": {
+        "type": "utility",
+        "_id": "yJ9RkKpekpGtVG37",
+        "sort": 0,
+        "activation": {
+          "type": "reaction",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "120"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Grant Resistance",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -84,13 +151,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.331",
     "createdTime": 1710877382534,
-    "modifiedTime": 1710877460870,
+    "modifiedTime": 1746644615584,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
