@@ -1,4 +1,5 @@
 import re
+from typing import List
 
 FORMAT_TAGS_RE = r"<.*?>"
 PARA_TAGS_RE = r"<p\s?.*?>(.*?)</p>"  # replace with contents and a newline
@@ -41,11 +42,67 @@ SKILL_NAMES = {
     "nat": "Nature",
     "prc": "Perception",
     "prf": "Performance",
-    "prs": "Persuasion",
+    "per": "Persuasion",
     "rel": "Religion",
     "slt": "Sleight of Hand",
     "ste": "Stealth",
     "sur": "Survival",
+}
+
+WEAPON_NAMES = {
+    "sim": "Simple Weapons",
+    "mar": "Martial Weapons",
+    "ballista": "Ballista",
+    "battleaxe": "Battleaxe",
+    "blowgun": "Blowgun",
+    "boomerang": "Boomerang",
+    "club": "Club",
+    "compositelongbow": "Composite Longbow",
+    "compositeshortbow": "Composite Shortbow",
+    "compositewarbow": "Composite Warbow",
+    "dagger": "Dagger",
+    "dart": "Dart",
+    "dbscimitar": "Double-Bladed Scimitar",
+    "flail": "Flail",
+    "glaive": "Glaive",
+    "greataxe": "Greataxe",
+    "greatclub": "Greatclub",
+    "greatsword": "Greatsword",
+    "halberd": "Halberd",
+    "handaxe": "Handaxe",
+    "handcrossbow": "Hand Crossbow",
+    "heavycrossbow": "Heavy Crossbow",
+    "heavyspear": "Heavy Spear",
+    "javelin": "Javelin",
+    "lance": "Lance",
+    "lightcrossbow": "Light Crossbow",
+    "lighthammer": "Light Hammer",
+    "longbow": "Longbow",
+    "longknife": "Longknife",
+    "longsword": "Longsword",
+    "mace": "Mace",
+    "maul": "Maul",
+    "morningstar": "Morningstar",
+    "musket": "Musket",
+    "net": "Net",
+    "pike": "Pike",
+    "pistol": "Pistol",
+    "quarterstaff": "Quarterstaff",
+    "rapier": "Rapier",
+    "rod": "Rod",
+    "scimitar": "Scimitar",
+    "shortbow": "Shortbow",
+    "shortspear": "Shortspear",
+    "shortsword": "Shortsword",
+    "sickle": "Sickle",
+    "sling": "Sling",
+    "spear": "Spear",
+    "trident": "Trident",
+    "warbow": "Warbow",
+    "warhammer": "Warhammer",
+    "warpick": "Warpick",
+    "whip": "Whip",
+    "yklwa": "Yklwa",
 }
 
 
@@ -216,3 +273,49 @@ def getComponents(properties):
     if "material" in properties:
         components.append("M")
     return components
+
+
+def formatPrimaryAbility(abilityList: List[str]) -> str:
+    scoreNames = []
+    for ability in abilityList:
+        scoreNames.append(SCORE_NAMES[ability])
+    return commaAndify(scoreNames)
+
+
+def formatSkillList(skillList: List[str]) -> str:
+    skillNames = []
+    for skill in skillList:
+        if skill == "*":
+            skillNames.append("Any Skill Proficiency")
+        else:
+            skillNames.append(SKILL_NAMES[skill])
+    return commaAndify(skillNames)
+
+
+def formatSavingThrows(saveList: List[str]) -> str:
+    saveNames = []
+    for save in saveList:
+        saveNames.append(SCORE_NAMES[save])
+    return commaAndify(saveNames)
+
+
+def formatWeaponProfs(weaponList: List[str]) -> str:
+    weaponNames = []
+    for weapon in weaponList:
+        if ":" in weapon:
+            weapon = weapon.split(":")[-1]
+        weaponNames.append(WEAPON_NAMES[weapon])
+    return commaAndify(weaponNames)
+
+
+def commaAndify(items: List[str], andWord: str = "and") -> str:
+    if len(items) == 0:
+        return ""
+    elif len(items) == 1:
+        return "".join(items)
+    elif len(items) == 2:
+        items.insert(1, andWord)
+        return " ".join(items)
+    else:
+        items[-1] = f"{andWord} {items[-1]}"
+        return ", ".join(items)
