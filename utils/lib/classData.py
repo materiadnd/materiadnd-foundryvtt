@@ -12,6 +12,8 @@ def readClassFromFile(path: str):
         else:
             classData = {}
             classData["name"] = jsonObj["name"]
+            classData["half_caster"] = jsonObj["system"]["spellcasting"]["progression"] == "half"
+            classData["full_caster"] = jsonObj["system"]["spellcasting"]["progression"] == "full"
             classData["primary_ability"] = formatPrimaryAbility(jsonObj["system"]["primaryAbility"]["value"])
             classData["hit_point_die"] = jsonObj["system"]["hitDice"]
             advancementData = jsonObj["system"]["advancement"]
@@ -27,7 +29,14 @@ def readClassFromFile(path: str):
             classData["tool_profs"] = getToolProfs(advancementData)
 
             # other class features
-            classData["features"] = getClassFeatures(advancementData)
+            classFeatures = getClassFeatures(advancementData)
+            classData["features"] = classFeatures
+            for i in range(1, 21):
+                classData[f"level_{i}_features"] = [f for f in classFeatures if f["level"] == i]
+
+            # scale values
+            scaleValues = getScaleValues(advancementData)
+            classData["scale_values"] = scaleValues
 
             return classData
 
@@ -109,6 +118,39 @@ def getClassFeatures(advancementData):
                 featureItem = getItemByUuid(item["uuid"])
                 if featureItem:
                     feature["name"] = featureItem["name"]
-                    feature["description"] = formatDescription(featureItem["system"]["description"]["value"])
+                    feature["description"] = formatDescription(
+                        featureItem["system"]["description"]["value"], clean_html_tags=False
+                    )
                     classFeatures.append(feature)
-    return classFeatures
+
+    return sorted(classFeatures, key=lambda x: x["level"])
+
+
+def getScaleValues(advancementData):
+    scaleValues = []
+    for advItem in advancementData:
+        if advItem["type"] != "ScaleValue":
+            continue
+        else:
+            scaleValue = flattenScaleValue(advItem["configuration"]["scale"], advItem["configuration"]["type"])
+            scaleValue["name"] = advItem["title"]
+            scaleValues.append(scaleValue)
+    return scaleValues
+
+
+def flattenScaleValue(scaleConfig, scaleType):
+    def formatValue(config, scaleType):
+        if scaleType == "dice":
+            return f"{config['number']}d{config['faces']}"
+        elif scaleType == "number":
+            return f"{config['value']}"
+
+    # scaleConfigKeyInts = [int(k) for k in scaleConfig.keys()]
+    # minLevel = sorted(scaleConfigKeyInts)[0]
+    prevValue = ""
+    accumValues = {}
+    for i in range(1, 21):
+        if str(i) in scaleConfig:
+            prevValue = formatValue(scaleConfig[str(i)], scaleType)
+        accumValues[i] = prevValue
+    return accumValues

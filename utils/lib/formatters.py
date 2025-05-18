@@ -123,10 +123,11 @@ def formatCastingTime(activation):
         return "Other"
 
 
-def formatDescription(desc):
+def formatDescription(desc, clean_html_tags=True):
     clean_desc = re.sub(SECRET_TAGS_RE, "", desc)
-    clean_desc = re.sub(PARA_TAGS_RE, r"\1\n", clean_desc)
-    clean_desc = re.sub(FORMAT_TAGS_RE, "", clean_desc)
+    if clean_html_tags:
+        clean_desc = re.sub(PARA_TAGS_RE, r"\1\n", clean_desc)
+        clean_desc = re.sub(FORMAT_TAGS_RE, "", clean_desc)
     clean_desc = formatEnrichers(clean_desc)
     clean_desc = re.sub(REF_TAGS_RE, r"\1", clean_desc)
     clean_desc = re.sub(UUID_TAGS_RE, r"\1", clean_desc)
