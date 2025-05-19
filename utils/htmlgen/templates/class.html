@@ -153,6 +153,9 @@
                 <td class="level">{{ level }}</td>
                 <td class="prof"> {{ class.prof[level] }}</td>
                 <td>
+                    {% if level in class.asi_levels %}
+                    Ability Score Improvement{{ ", " if class.features_by_level[level] else "" }}
+                    {% endif %}
                     {% for feature in class.features_by_level[level] %}
                     <a href="#{{ feature.slug }}">{{ feature.name }}</a>{{ ", " if not loop.last else "" }}
                     {% endfor %}

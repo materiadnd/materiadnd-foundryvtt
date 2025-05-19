@@ -78,6 +78,9 @@ def readClassFromFile(path: str):
             classFeatures = getClassFeatures(advancementData)
             classData["features"] = classFeatures
 
+            asiLevels = getASI(advancementData)
+            classData["asi_levels"] = asiLevels
+
             classData["features_by_level"] = {}
             classData["full_caster_slots"] = {}
             classData["half_caster_slots"] = {}
@@ -211,3 +214,13 @@ def flattenScaleValue(scaleConfig, scaleType):
             prevValue = formatValue(scaleConfig[str(i)], scaleType)
         accumValues[i] = prevValue
     return accumValues
+
+
+def getASI(advancementData):
+    levels = []
+    for advItem in advancementData:
+        if advItem["type"] != "AbilityScoreImprovement":
+            continue
+        else:
+            levels.append(advItem["level"])
+    return levels
