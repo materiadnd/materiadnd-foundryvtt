@@ -56,6 +56,7 @@ if __name__ == "__main__":
     if not os.path.exists(OUTPUT_DIR):
         os.mkdir(OUTPUT_DIR)
     env = Environment(loader=PackageLoader("htmlgen"), autoescape=select_autoescape())
+    env.add_extension("jinja2.ext.debug")
 
     spells_template = env.get_template("spell.html")
     renderSpellData(SPELL_DIR_ROOT, SPELL_SUBDIR_LIST, spells_template)

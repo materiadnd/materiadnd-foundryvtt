@@ -9,25 +9,102 @@
         font-weight: 780;
     }
 
+    table {
+        border-collapse: collapse;
+        border-top: 1px solid #7a7971;
+        border-bottom: 1px solid #7a7971;
+    }
+
+    table caption {
+        font-weight: bold;
+        font-variant: small-caps;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #f1ebe8;
+    }
+
+    table tr:nth-child(odd) {
+        background-color: #f8f4f1;
+    }
+
+    table thead tr:nth-child(even) {
+        background: unset;
+    }
+    table thead tr:nth-child(odd) {
+        background: unset;
+    }
+
+    table thead {
+        background: linear-gradient(to right, #401f25, #741b2b);
+        color: #fff;
+        text-align: center;
+        font-weight: bold;
+        font-variant: small-caps;
+    }
+
+    table thead th {
+        padding: 5px;
+    }
+
+    .class-core-traits th {
+        text-align: start;
+    }
+
     section.secret {
         display: none;
     }
 
+    .class-feature h3 {
+        font-weight: bold;
+        border-block-end: 1px solid #782e22;
+    }
+
+    .features-table td:is(.level, .prof, .scale, .spell-slots){
+        text-align: center;
+    }
 </style>
 {% endblock %}
 
 {% block body %}
 <h1>{{ class.name }}</h1>
-<div class="class-core-traits">
-    <p><strong>Primary Ability</strong> {{ class.primary_ability }}</p>
-    <p><strong>Hit Point Die</strong> {{ class.hit_point_die }}</p>
-    <p><strong>Saving Throw Proficiencies</strong> {{ class.saving_throws }}</p>
-    <p><strong>Skill Proficiencies</strong> Choose {{ class.skill_choice_count }} from {{class.skill_list }}</p>
-    <p><strong>Weapon Proficiencies</strong> {{class.weapon_profs }}</p>
-    <p><strong>Tool Proficiencies</strong> {{ class.tool_profs }}</p>
-    <p><strong>Armor Training</strong> {{ class.armor_training }}</p>
-    <p><strong>Starting Equipment</strong></p>
-</div>
+<table class="class-core-traits">
+    <caption>Core {{ class.name }} Traits</caption>
+    <tbody>
+        <tr>
+            <th>Primary Ability</th>
+            <td>{{ class.primary_ability }}</td>
+        </tr>
+        <tr>
+            <th>Hit Point Die</th>
+            <td>{{ class.hit_point_die }}</td>
+        </tr>
+        <tr>
+            <th>Saving Throw Proficiencies</th>
+            <td>{{ class.saving_throws }}</td>
+        </tr>
+        <tr>
+            <th>Skill Proficiencies</th>
+            <td>Choose {{ class.skill_choice_count }} from {{class.skill_list }}</td>
+        </tr>
+        <tr>
+            <th>Weapon Proficiencies</th>
+            <td>{{class.weapon_profs }}</td>
+        </tr>
+        <tr>
+            <th>Tool Proficiencies</th>
+            <td>{{ class.tool_profs }}</td>
+        </tr>
+        <tr>
+            <th>Armor Training</th>
+            <td>{{ class.armor_training }}</td>
+        </tr>
+        <tr>
+            <th>Starting Equipment</th>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
 <div class="class-table">
     <table class="features-table">
         <caption>{{ class.name }}</caption>
@@ -71,517 +148,39 @@
             {% endif %}
         </thead>
         <tbody>
+            {% for level in range(1, 21) %}
             <tr>
-                <td>1</td>
-                <td>+2</td>
-                <td>{{ class.level_1_features|join(', ', attribute='name') }}</td>
+                <td class="level">{{ level }}</td>
+                <td class="prof"> {{ class.prof[level] }}</td>
+                <td>
+                    {% for feature in class.features_by_level[level] %}
+                    <a href="#{{ feature.slug }}">{{ feature.name }}</a>{{ ", " if not loop.last else "" }}
+                    {% endfor %}
+                </td>
                 {% for scale_value in class.scale_values %}
-                <td>{{ scale_value.1 }}</td>
+                <td class="scale">{{ scale_value[level] }}</td>
                 {% endfor %}
                 {% if class.half_caster %}
-                <td>2</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                {% elif class.full_caster %}
-                <td>2</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                {% endif %} 
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>+2</td>
-                <td>{{ class.level_2_features|join(', ', attribute='name') }}</td>
-                {% for scale_value in class.scale_values %}
-                <td>{{ scale_value.2 }}</td>
+                {% for slots in class.half_caster_slots[level] %}
+                <td class="spell-slots">{{ slots }}</td>
                 {% endfor %}
-                {% if class.half_caster %}
-                <td>2</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
                 {% elif class.full_caster %}
-                <td>3</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                {% endif %} 
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>+2</td>
-                <td>{{ class.level_3_features|join(', ', attribute='name') }}</td>
-                {% for scale_value in class.scale_values %}
-                <td>{{ scale_value.3 }}</td>
+                {% for slots in class.full_caster_slots[level] %}
+                <td class="spell-slots">{{ slots }}</td>
                 {% endfor %}
-                {% if class.half_caster %}
-                <td>3</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                {% elif class.full_caster %}
-                <td>4</td>
-                <td>2</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
                 {% endif %} 
             </tr>
-            <tr>
-                <td>4</td>
-                <td>+2</td>
-                <td>{{ class.level_4_features|join(', ', attribute='name') }}</td>
-                {% for scale_value in class.scale_values %}
-                <td>{{ scale_value.4 }}</td>
-                {% endfor %}
-                {% if class.half_caster %}
-                <td>3</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                {% elif class.full_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                {% endif %} 
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>+3</td>
-                <td>{{ class.level_5_features|join(', ', attribute='name') }}</td>
-                {% for scale_value in class.scale_values %}
-                <td>{{ scale_value.5 }}</td>
-                {% endfor %}
-                {% if class.half_caster %}
-                <td>4</td>
-                <td>2</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                {% elif class.full_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>2</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                {% endif %} 
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>+3</td>
-                <td>{{ class.level_6_features|join(', ', attribute='name') }}</td>
-                {% for scale_value in class.scale_values %}
-                <td>{{ scale_value.6 }}</td>
-                {% endfor %}
-                {% if class.half_caster %}
-                <td>4</td>
-                <td>2</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                {% elif class.full_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                {% endif %} 
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>+3</td>
-                <td>{{ class.level_7_features|join(', ', attribute='name') }}</td>
-                {% for scale_value in class.scale_values %}
-                <td>{{ scale_value.7 }}</td>
-                {% endfor %}
-                {% if class.half_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                {% elif class.full_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>1</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                {% endif %} 
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>+3</td>
-                <td>{{ class.level_8_features|join(', ', attribute='name') }}</td>
-                {% for scale_value in class.scale_values %}
-                <td>{{ scale_value.8 }}</td>
-                {% endfor %}
-                {% if class.half_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                {% elif class.full_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>2</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                {% endif %} 
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>+4</td>
-                <td>{{ class.level_9_features|join(', ', attribute='name') }}</td>
-                {% for scale_value in class.scale_values %}
-                <td>{{ scale_value.9 }}</td>
-                {% endfor %}
-                {% if class.half_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>2</td>
-                <td>-</td>
-                <td>-</td>
-                {% elif class.full_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>1</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                {% endif %} 
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>+4</td>
-                <td>{{ class.level_10_features|join(', ', attribute='name') }}</td>
-                {% for scale_value in class.scale_values %}
-                <td>{{ scale_value.10 }}</td>
-                {% endfor %}
-                {% if class.half_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>2</td>
-                <td>-</td>
-                <td>-</td>
-                {% elif class.full_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>2</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                {% endif %} 
-            </tr>
-            <tr>
-                <td>11</td>
-                <td>+4</td>
-                <td>{{ class.level_11_features|join(', ', attribute='name') }}</td>
-                {% for scale_value in class.scale_values %}
-                <td>{{ scale_value.11 }}</td>
-                {% endfor %}
-                {% if class.half_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>-</td>
-                <td>-</td>
-                {% elif class.full_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>2</td>
-                <td>1</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                {% endif %} 
-            </tr>
-            <tr>
-                <td>12</td>
-                <td>+4</td>
-                <td>{{ class.level_12_features|join(', ', attribute='name') }}</td>
-                {% for scale_value in class.scale_values %}
-                <td>{{ scale_value.12 }}</td>
-                {% endfor %}
-                {% if class.half_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>-</td>
-                <td>-</td>
-                {% elif class.full_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>2</td>
-                <td>1</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                {% endif %} 
-            </tr>
-            <tr>
-                <td>13</td>
-                <td>+5</td>
-                <td>{{ class.level_13_features|join(', ', attribute='name') }}</td>
-                {% for scale_value in class.scale_values %}
-                <td>{{ scale_value.13 }}</td>
-                {% endfor %}
-                {% if class.half_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>1</td>
-                <td>-</td>
-                {% elif class.full_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>2</td>
-                <td>1</td>
-                <td>1</td>
-                <td>-</td>
-                <td>-</td>
-                {% endif %} 
-            </tr>
-            <tr>
-                <td>14</td>
-                <td>+5</td>
-                <td>{{ class.level_14_features|join(', ', attribute='name') }}</td>
-                {% for scale_value in class.scale_values %}
-                <td>{{ scale_value.14 }}</td>
-                {% endfor %}
-                {% if class.half_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>1</td>
-                <td>-</td>
-                {% elif class.full_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>2</td>
-                <td>1</td>
-                <td>1</td>
-                <td>-</td>
-                <td>-</td>
-                {% endif %} 
-            </tr>
-            <tr>
-                <td>15</td>
-                <td>+5</td>
-                <td>{{ class.level_15_features|join(', ', attribute='name') }}</td>
-                {% for scale_value in class.scale_values %}
-                <td>{{ scale_value.15 }}</td>
-                {% endfor %}
-                {% if class.half_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>2</td>
-                <td>-</td>
-                {% elif class.full_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>2</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>-</td>
-                {% endif %} 
-            </tr>
-            <tr>
-                <td>16</td>
-                <td>+5</td>
-                <td>{{ class.level_16_features|join(', ', attribute='name') }}</td>
-                {% for scale_value in class.scale_values %}
-                <td>{{ scale_value.16 }}</td>
-                {% endfor %}
-                {% if class.half_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>2</td>
-                <td>-</td>
-                {% elif class.full_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>2</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>-</td>
-                {% endif %} 
-            </tr>
-            <tr>
-                <td>17</td>
-                <td>+6</td>
-                <td>{{ class.level_17_features|join(', ', attribute='name') }}</td>
-                {% for scale_value in class.scale_values %}
-                <td>{{ scale_value.17 }}</td>
-                {% endfor %}
-                {% if class.half_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>1</td>
-                {% elif class.full_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>2</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                {% endif %} 
-            </tr>
-            <tr>
-                <td>18</td>
-                <td>+6</td>
-                <td>{{ class.level_18_features|join(', ', attribute='name') }}</td>
-                {% for scale_value in class.scale_values %}
-                <td>{{ scale_value.18 }}</td>
-                {% endfor %}
-                {% if class.half_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>1</td>
-                {% elif class.full_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                {% endif %} 
-            </tr>
-            <tr>
-                <td>19</td>
-                <td>+6</td>
-                <td>{{ class.level_19_features|join(', ', attribute='name') }}</td>
-                {% for scale_value in class.scale_values %}
-                <td>{{ scale_value.19 }}</td>
-                {% endfor %}
-                {% if class.half_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>2</td>
-                {% elif class.full_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>2</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                {% endif %} 
-            </tr>
-            <tr>
-                <td>20</td>
-                <td>+6</td>
-                <td>{{ class.level_20_features|join(', ', attribute='name') }}</td>
-                {% for scale_value in class.scale_values %}
-                <td>{{ scale_value.20 }}</td>
-                {% endfor %}
-                {% if class.half_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>2</td>
-                {% elif class.full_caster %}
-                <td>4</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>3</td>
-                <td>2</td>
-                <td>2</td>
-                <td>1</td>
-                <td>1</td>
-                {% endif %} 
-            </tr>
+            {% endfor %}
         </tbody>
     </table>
 </div>
 <h2>Class Features</h2>
 {% for feature in class.features %}
 <div class="class-feature">
-    <h3>Level {{ feature.level }}: {{ feature.name }}</h3>
+    <h3 id="{{ feature.slug }}">Level {{ feature.level }}: {{ feature.name }}</h3>
     <p>
         {{ feature.description|safe }}
     </p>
 </div>
-<hr />
 {% endfor %}
 {% endblock %}

@@ -3,6 +3,52 @@ import json
 from .formatters import formatPrimaryAbility, formatSkillList, formatSavingThrows, formatDescription, formatWeaponProfs
 from .itemLookup import getItemByUuid
 
+FULL_CASTER_SLOTS_BY_LEVEL = [
+    [2, 0, 0, 0, 0, 0, 0, 0, 0],  # 1
+    [3, 0, 0, 0, 0, 0, 0, 0, 0],  # 2
+    [4, 2, 0, 0, 0, 0, 0, 0, 0],  # 3
+    [4, 3, 0, 0, 0, 0, 0, 0, 0],  # 4
+    [4, 3, 2, 0, 0, 0, 0, 0, 0],  # 5
+    [4, 3, 3, 0, 0, 0, 0, 0, 0],  # 6
+    [4, 3, 3, 1, 0, 0, 0, 0, 0],  # 7
+    [4, 3, 3, 2, 0, 0, 0, 0, 0],  # 8
+    [4, 3, 3, 3, 1, 0, 0, 0, 0],  # 9
+    [4, 3, 3, 3, 2, 0, 0, 0, 0],  # 10
+    [4, 3, 3, 3, 2, 1, 0, 0, 0],  # 11
+    [4, 3, 3, 3, 2, 1, 0, 0, 0],  # 12
+    [4, 3, 3, 3, 2, 1, 1, 0, 0],  # 13
+    [4, 3, 3, 3, 2, 1, 1, 0, 0],  # 14
+    [4, 3, 3, 3, 2, 1, 1, 1, 0],  # 15
+    [4, 3, 3, 3, 2, 1, 1, 1, 0],  # 16
+    [4, 3, 3, 3, 2, 1, 1, 1, 1],  # 17
+    [4, 3, 3, 3, 3, 1, 1, 1, 1],  # 18
+    [4, 3, 3, 3, 3, 2, 1, 1, 1],  # 19
+    [4, 3, 3, 3, 3, 2, 2, 1, 1],  # 20
+]
+
+HALF_CASTER_SLOTS_BY_LEVEL = [
+    [2, 0, 0, 0, 0],  # 1
+    [2, 0, 0, 0, 0],  # 2
+    [3, 0, 0, 0, 0],  # 3
+    [3, 0, 0, 0, 0],  # 4
+    [4, 2, 0, 0, 0],  # 5
+    [4, 2, 0, 0, 0],  # 6
+    [4, 3, 0, 0, 0],  # 7
+    [4, 3, 0, 0, 0],  # 8
+    [4, 3, 2, 0, 0],  # 9
+    [4, 3, 2, 0, 0],  # 10
+    [4, 3, 3, 0, 0],  # 11
+    [4, 3, 3, 0, 0],  # 12
+    [4, 3, 3, 1, 0],  # 13
+    [4, 3, 3, 1, 0],  # 14
+    [4, 3, 3, 2, 0],  # 15
+    [4, 3, 3, 2, 0],  # 16
+    [4, 3, 3, 3, 1],  # 17
+    [4, 3, 3, 3, 1],  # 18
+    [4, 3, 3, 3, 2],  # 19
+    [4, 3, 3, 3, 2],  # 20
+]
+
 
 def readClassFromFile(path: str):
     with open(path, "r") as jsonFile:
@@ -31,12 +77,22 @@ def readClassFromFile(path: str):
             # other class features
             classFeatures = getClassFeatures(advancementData)
             classData["features"] = classFeatures
+
+            classData["features_by_level"] = {}
+            classData["full_caster_slots"] = {}
+            classData["half_caster_slots"] = {}
+            classData["prof"] = {}
             for i in range(1, 21):
-                classData[f"level_{i}_features"] = [f for f in classFeatures if f["level"] == i]
+                classData["features_by_level"][i] = [f for f in classFeatures if f["level"] == i]
+                classData["full_caster_slots"][i] = FULL_CASTER_SLOTS_BY_LEVEL[i - 1]
+                classData["half_caster_slots"][i] = HALF_CASTER_SLOTS_BY_LEVEL[i - 1]
+                classData["prof"][i] = f"+{2 + ((i - 1) // 4)}"
 
             # scale values
             scaleValues = getScaleValues(advancementData)
             classData["scale_values"] = scaleValues
+
+            # print(f"classData half_caster_slots = {classData['half_caster_slots']}")
 
             return classData
 
@@ -121,6 +177,7 @@ def getClassFeatures(advancementData):
                     feature["description"] = formatDescription(
                         featureItem["system"]["description"]["value"], clean_html_tags=False
                     )
+                    feature["slug"] = featureItem["name"].replace(" ", "-").lower()
                     classFeatures.append(feature)
 
     return sorted(classFeatures, key=lambda x: x["level"])
