@@ -201,7 +201,10 @@ def getScaleValues(advancementData):
 def flattenScaleValue(scaleConfig, scaleType):
     def formatValue(config, scaleType):
         if scaleType == "dice":
-            return f"{config['number']}d{config['faces']}"
+            if config["number"] is not None:
+                return f"{config['number']}d{config['faces']}"
+            else:
+                return f"d{config['faces']}"
         elif scaleType == "number":
             return f"{config['value']}"
 
