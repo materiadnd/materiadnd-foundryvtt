@@ -93,11 +93,11 @@
         </tr>
         <tr>
             <th>Tool Proficiencies</th>
-            <td>{{ class.tool_profs }}</td>
+            <td>{% if class.tool_profs %}Choose {{ class.tool_choice_count }} from {{ class.tool_profs }}{% else %}None{% endif %}</td>
         </tr>
         <tr>
             <th>Armor Training</th>
-            <td>{{ class.armor_training }}</td>
+            <td>{{ class.armor_training if class.armor_training else "None" }}</td>
         </tr>
         <tr>
             <th>Starting Equipment</th>
@@ -136,6 +136,17 @@
                 <th>9th</th>
                 {% endif %}
             </tr>
+            {% elif class.pact_caster %}
+            <tr>
+                <th>Level</th>
+                <th>Proficiency Bonus</th>
+                <th>Features</th>
+                {% for scale_value in class.scale_values %}
+                <th>{{ scale_value.name }}</th>
+                {% endfor %}
+                <th>Spell Slots</th>
+                <th>Slot Level</th>
+            </tr>
             {% else %}
             <tr>
                 <th>Level</th>
@@ -171,6 +182,9 @@
                 {% for slots in class.full_caster_slots[level] %}
                 <td class="spell-slots">{{ slots }}</td>
                 {% endfor %}
+                {% elif class.pact_caster %}
+                <td class="spell-slots">{{ class.pact_caster_slots[level] }}</td>
+                <td class="spell-slots">{{ class.pact_caster_level[level] }}</td>
                 {% endif %} 
             </tr>
             {% endfor %}

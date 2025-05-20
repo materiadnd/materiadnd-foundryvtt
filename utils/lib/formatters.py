@@ -1,5 +1,5 @@
 import re
-from typing import List
+from typing import List, Tuple
 
 FORMAT_TAGS_RE = r"<.*?>"
 PARA_TAGS_RE = r"<p\s?.*?>(.*?)</p>"  # replace with contents and a newline
@@ -48,6 +48,8 @@ SKILL_NAMES = {
     "ste": "Stealth",
     "sur": "Survival",
 }
+
+ARMOR_NAMES = {"lgt": "Light Armor", "med": "Medium Armor", "hvy": "Heavy Armor", "shl": "Shields"}
 
 WEAPON_NAMES = {
     "sim": "Simple Weapons",
@@ -103,6 +105,13 @@ WEAPON_NAMES = {
     "warpick": "Warpick",
     "whip": "Whip",
     "yklwa": "Yklwa",
+}
+
+TOOL_NAMES = {
+    "art:*": "Any Artisan's Tools",
+    "music:*": "Any Musical Instruments",
+    "vehicle:land": "Land Vehicles",
+    "vehicle:water": "Water Vehicles",
 }
 
 
@@ -307,6 +316,20 @@ def formatWeaponProfs(weaponList: List[str]) -> str:
             weapon = weapon.split(":")[-1]
         weaponNames.append(WEAPON_NAMES[weapon])
     return commaAndify(weaponNames)
+
+
+def formatToolProfs(toolList: List[str]) -> str:
+    toolNames = []
+    for tool in toolList:
+        toolNames.append(TOOL_NAMES[tool])
+    return commaAndify(toolNames)
+
+
+def formatArmorProfs(armorList: List[str]) -> str:
+    armorNames = []
+    for armor in armorList:
+        armorNames.append(ARMOR_NAMES[armor])
+    return commaAndify(armorNames)
 
 
 def commaAndify(items: List[str], andWord: str = "and") -> str:

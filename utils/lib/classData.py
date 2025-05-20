@@ -1,6 +1,14 @@
 import json
 
-from .formatters import formatPrimaryAbility, formatSkillList, formatSavingThrows, formatDescription, formatWeaponProfs
+from .formatters import (
+    formatPrimaryAbility,
+    formatSkillList,
+    formatSavingThrows,
+    formatDescription,
+    formatWeaponProfs,
+    formatArmorProfs,
+    formatToolProfs,
+)
 from .itemLookup import getItemByUuid
 
 FULL_CASTER_SLOTS_BY_LEVEL = [
@@ -49,6 +57,9 @@ HALF_CASTER_SLOTS_BY_LEVEL = [
     [4, 3, 3, 3, 2],  # 20
 ]
 
+PACT_SLOTS_PER_LEVEL = [1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4]
+PACT_LEVEL_PER_LEVEL = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+
 
 def readClassFromFile(path: str):
     with open(path, "r") as jsonFile:
@@ -60,6 +71,7 @@ def readClassFromFile(path: str):
             classData["name"] = jsonObj["name"]
             classData["half_caster"] = jsonObj["system"]["spellcasting"]["progression"] == "half"
             classData["full_caster"] = jsonObj["system"]["spellcasting"]["progression"] == "full"
+            classData["pact_caster"] = jsonObj["system"]["spellcasting"]["progression"] == "pact"
             classData["primary_ability"] = formatPrimaryAbility(jsonObj["system"]["primaryAbility"]["value"])
             classData["hit_point_die"] = jsonObj["system"]["hitDice"]
             advancementData = jsonObj["system"]["advancement"]
@@ -68,11 +80,14 @@ def readClassFromFile(path: str):
             classData["skill_choice_count"] = skillInfo["count"]
             classData["skill_list"] = formatSkillList(skillInfo["choices"])
 
+            toolInfo = getToolProfs(advancementData)
+            if toolInfo:
+                classData["tool_choice_count"] = toolInfo[0]
+                classData["tool_profs"] = formatToolProfs(toolInfo[1])
+
             classData["saving_throws"] = formatSavingThrows(getSaves(advancementData))
-
             classData["weapon_profs"] = formatWeaponProfs(getWeaponProfs(advancementData))
-
-            classData["tool_profs"] = getToolProfs(advancementData)
+            classData["armor_training"] = formatArmorProfs(getArmorProfs(advancementData))
 
             # other class features
             classFeatures = getClassFeatures(advancementData)
@@ -84,11 +99,15 @@ def readClassFromFile(path: str):
             classData["features_by_level"] = {}
             classData["full_caster_slots"] = {}
             classData["half_caster_slots"] = {}
+            classData["pact_caster_slots"] = {}
+            classData["pact_caster_level"] = {}
             classData["prof"] = {}
             for i in range(1, 21):
                 classData["features_by_level"][i] = [f for f in classFeatures if f["level"] == i]
                 classData["full_caster_slots"][i] = FULL_CASTER_SLOTS_BY_LEVEL[i - 1]
                 classData["half_caster_slots"][i] = HALF_CASTER_SLOTS_BY_LEVEL[i - 1]
+                classData["pact_caster_slots"][i] = PACT_SLOTS_PER_LEVEL[i - 1]
+                classData["pact_caster_level"][i] = PACT_LEVEL_PER_LEVEL[i - 1]
                 classData["prof"][i] = f"+{2 + ((i - 1) // 4)}"
 
             # scale values
@@ -161,7 +180,10 @@ def getToolProfs(advancementData):
         elif not advItem["configuration"]["choices"][0]["pool"][0].startswith("tool:"):
             continue
         else:
-            return [tool.replace("tool:", "") for tool in advItem["configuration"]["choices"][0]["pool"]]
+            return (
+                advItem["configuration"]["choices"][0]["count"],
+                [tool.replace("tool:", "") for tool in advItem["configuration"]["choices"][0]["pool"]],
+            )
 
 
 def getClassFeatures(advancementData):
@@ -227,3 +249,18 @@ def getASI(advancementData):
         else:
             levels.append(advItem["level"])
     return levels
+
+
+def getArmorProfs(advancementData):
+    for advItem in advancementData:
+        if advItem["type"] != "Trait":
+            continue
+        elif advItem["level"] != 1:
+            continue
+        elif len(advItem["configuration"]["grants"]) == 0:
+            continue
+        elif not advItem["configuration"]["grants"][0].startswith("armor:"):
+            continue
+        else:
+            return [weapon.replace("armor:", "") for weapon in advItem["configuration"]["grants"]]
+    return []
