@@ -1,5 +1,5 @@
 import re
-from typing import List, Tuple
+from typing import List
 
 FORMAT_TAGS_RE = r"<.*?>"
 PARA_TAGS_RE = r"<p\s?.*?>(.*?)</p>"  # replace with contents and a newline
@@ -343,3 +343,7 @@ def commaAndify(items: List[str], andWord: str = "and") -> str:
     else:
         items[-1] = f"{andWord} {items[-1]}"
         return ", ".join(items)
+
+
+def slugify(id: str) -> str:
+    return id.replace(" ", "-").lower()

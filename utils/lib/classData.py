@@ -8,6 +8,7 @@ from .formatters import (
     formatWeaponProfs,
     formatArmorProfs,
     formatToolProfs,
+    slugify,
 )
 from .itemLookup import getItemByUuid
 
@@ -69,6 +70,8 @@ def readClassFromFile(path: str):
         else:
             classData = {}
             classData["name"] = jsonObj["name"]
+            classData["description"] = jsonObj["system"]["description"]["value"]
+            classData["identifier"] = jsonObj["system"]["identifier"]
             classData["half_caster"] = jsonObj["system"]["spellcasting"]["progression"] == "half"
             classData["full_caster"] = jsonObj["system"]["spellcasting"]["progression"] == "full"
             classData["pact_caster"] = jsonObj["system"]["spellcasting"]["progression"] == "pact"
@@ -202,7 +205,7 @@ def getClassFeatures(advancementData):
                     feature["description"] = formatDescription(
                         featureItem["system"]["description"]["value"], clean_html_tags=False
                     )
-                    feature["slug"] = featureItem["name"].replace(" ", "-").lower()
+                    feature["slug"] = slugify(featureItem["name"])
                     classFeatures.append(feature)
 
     return sorted(classFeatures, key=lambda x: x["level"])

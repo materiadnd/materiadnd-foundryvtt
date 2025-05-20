@@ -68,43 +68,15 @@
 
 {% block body %}
 <h1>{{ class.name }}</h1>
-<table class="class-core-traits">
-    <caption>Core {{ class.name }} Traits</caption>
-    <tbody>
-        <tr>
-            <th>Primary Ability</th>
-            <td>{{ class.primary_ability }}</td>
-        </tr>
-        <tr>
-            <th>Hit Point Die</th>
-            <td>{{ class.hit_point_die }}</td>
-        </tr>
-        <tr>
-            <th>Saving Throw Proficiencies</th>
-            <td>{{ class.saving_throws }}</td>
-        </tr>
-        <tr>
-            <th>Skill Proficiencies</th>
-            <td>Choose {{ class.skill_choice_count }} from {{class.skill_list }}</td>
-        </tr>
-        <tr>
-            <th>Weapon Proficiencies</th>
-            <td>{{class.weapon_profs }}</td>
-        </tr>
-        <tr>
-            <th>Tool Proficiencies</th>
-            <td>{% if class.tool_profs %}Choose {{ class.tool_choice_count }} from {{ class.tool_profs }}{% else %}None{% endif %}</td>
-        </tr>
-        <tr>
-            <th>Armor Training</th>
-            <td>{{ class.armor_training if class.armor_training else "None" }}</td>
-        </tr>
-        <tr>
-            <th>Starting Equipment</th>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
+<h2>Subclasses</h2>
+<ul>
+    {% for subclass in subclasses %}
+    <li><a href="#{{ subclass.slug }}">{{ subclass.name }}</a></li>
+    {% endfor %}
+</ul>
+<div class="class-description">
+    {{ class.description|safe }}
+</div>
 <div class="class-table">
     <table class="features-table">
         <caption>{{ class.name }}</caption>
@@ -199,5 +171,82 @@
         {{ feature.description|safe }}
     </p>
 </div>
+{% endfor %}
+<h2>Subclasses</h2>
+{% for subclass in subclasses %}
+<h2 class="subclass-title" id="{{ subclass.slug }}">{{ subclass.name }}</h2>
+<div class="subclass-description">
+    {{ subclass.description|safe }}
+</div>
+<table class="features-table">
+    <thead>
+        {% if subclass.third_caster %}
+        <tr>
+            <th rowspan="2">Level</th>
+            <th rowspan="2">Features</th>
+            {% for scale_value in subclass.scale_values %}
+            <th rowspan="2">{{ scale_value.name }}</th>
+            {% endfor %}
+            <th colspan="4">--Spell Slots per Spell Level--</th>
+        </tr>
+        <tr>
+            <th>1st</th>
+            <th>2nd</th>
+            <th>3rd</th>
+            <th>4th</th>
+        </tr>
+        {% else %}
+        <tr>
+            <th>Level</th>
+            <th>Features</th>
+            {% for scale_value in subclass.scale_values %}
+            <th>{{ scale_value.name }}</th>
+            {% endfor %}
+        </tr>
+        {% endif %}
+    </thead>
+    <tbody>
+        {% if subclass.third_caster %}
+        {% for level in range(1,21) %}
+        <tr>
+            <td class="level">{{ level }}</td>
+            <td class="features">
+                {% for feature in subclass.features_by_level[level] %}
+                <a href="#{{ feature.slug }}">{{ feature.name }}</a>{{ ", " if not loop.last else "" }}
+                {% endfor %}
+            </td>
+            {% for scale_value in subclass.scale_values %}
+            <td class="scale">{{ scale_value[level] }}</td>
+            {% endfor %}
+            {% for slots in subclass.third_caster_slots[level] %}
+            <td class="spell-slots">{{ " "if not slots else slots }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        {% else %}
+        {% for level in subclass.feature_levels %}
+        <tr>
+            <td class="level">{{ level }}</td>
+            <td class="features">
+                {% for feature in subclass.features_by_level[level] %}
+                <a href="#{{ feature.slug }}">{{ feature.name }}</a>{{ ", " if not loop.last else "" }}
+                {% endfor %}
+            </td>
+            {% for scale_value in subclass.scale_values %}
+            <td class="scale">{{ scale_value[level] }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </tbody>
+</table>
+{% for feature in subclass.features %}
+<div class="class-feature">
+    <h3 id="{{ feature.slug }}">Level {{ feature.level }}: {{ feature.name }}</h3>
+    <p>
+        {{ feature.description|safe }}
+    </p>
+</div>
+{% endfor %}
 {% endfor %}
 {% endblock %}

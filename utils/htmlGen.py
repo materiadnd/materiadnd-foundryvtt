@@ -1,7 +1,9 @@
 import os
-from typing import List
+import json
+from typing import Any, Dict, List
 from lib.spellData import readSpellFromFile
 from lib.classData import readClassFromFile
+from lib.subclassData import readSubclassData
 from jinja2 import Environment, PackageLoader, select_autoescape, Template
 
 
@@ -14,6 +16,7 @@ OUTPUT_SUBDIRECTORIES = {
 }
 SPELL_DIR_ROOT = "packs\\_source\\spells"
 CLASS_DIR_ROOT = "packs\\_source\\classes"
+SUBCLASS_DIR_ROOT = "packs\\_source\\subclasses"
 SPELL_SUBDIR_LIST = [
     "cantrips",
     "1st-level-spells",
@@ -37,6 +40,17 @@ def getSpellData(rootDir: str):
     return spellData
 
 
+def getSubclassData(identifier: str) -> List[Dict[str, Any]]:
+    subclassData = []
+    for root, dirs, files in os.walk(SUBCLASS_DIR_ROOT):
+        for file in [f for f in files if os.path.splitext(f)[1] == ".json" and f not in FILES_TO_IGNORE]:
+            fullPath = os.path.join(root, file)
+            subclass = readSubclassData(fullPath, identifier)
+            if subclass is not None:
+                subclassData.append(subclass)
+    return subclassData
+
+
 def renderIndex(template: Template):
     indexOutput = template.render()
     with open(os.path.join(OUTPUT_DIR, "index.html"), "w") as htmlOutputFile:
@@ -57,7 +71,9 @@ def renderClassData(classDirRoot: str, template: Template):
     for classFile in os.listdir(classDirRoot):
         fullPath = os.path.join(classDirRoot, classFile)
         classData = readClassFromFile(fullPath)
-        classOutput = template.render({"class": classData})
+        subclassData = getSubclassData(classData["identifier"])
+
+        classOutput = template.render({"class": classData, "subclasses": subclassData})
         with open(
             os.path.join(
                 OUTPUT_DIR, OUTPUT_SUBDIRECTORIES["class"], f"{classData['name'].replace(' ', '-').lower()}.html"
