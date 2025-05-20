@@ -59,7 +59,10 @@ def renderClassData(classDirRoot: str, template: Template):
         classData = readClassFromFile(fullPath)
         classOutput = template.render({"class": classData})
         with open(
-            os.path.join(OUTPUT_DIR, OUTPUT_SUBDIRECTORIES["class"], f"{classData['name'].lower()}.html"), "w"
+            os.path.join(
+                OUTPUT_DIR, OUTPUT_SUBDIRECTORIES["class"], f"{classData['name'].replace(' ', '-').lower()}.html"
+            ),
+            "w",
         ) as htmlOutputFile:
             htmlOutputFile.write(classOutput)
 
