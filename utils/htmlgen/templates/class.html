@@ -63,17 +63,37 @@
     .features-table td:is(.level, .prof, .scale, .spell-slots){
         text-align: center;
     }
+
+    .subclass-nav {
+        display: flex;
+    }
+
+    ul.subclass-list {
+        list-style: none;
+    }
+
+    ul.subclass-list li {
+        display: inline-block;
+        padding: 0.05rem;
+        min-width: 10rem;
+        text-align: center;
+    }
+
 </style>
 {% endblock %}
-
+{% block title %}
+{{ class.name }} - Materia 5.M 2024
+{% endblock %}
 {% block body %}
 <h1>{{ class.name }}</h1>
-<h2>Subclasses</h2>
-<ul>
-    {% for subclass in subclasses %}
-    <li><a href="#{{ subclass.slug }}">{{ subclass.name }}</a></li>
-    {% endfor %}
-</ul>
+<div class="subclass-nav">
+    <h3>Subclasses:</h3>
+    <ul class="subclass-list">
+        {% for subclass in subclasses %}
+        <li><a href="#{{ subclass.slug }}">{{ subclass.name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
 <div class="class-description">
     {{ class.description|safe }}
 </div>

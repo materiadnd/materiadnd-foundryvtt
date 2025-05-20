@@ -17,4 +17,7 @@ def readSpellFromFile(path: str):
             spell["components"] = ", ".join(getComponents(jsonObj["system"]["properties"]))
             spell["duration"] = formatDuration(jsonObj["system"]["duration"])
             spell["description"] = formatDescription(jsonObj["system"]["description"]["value"], clean_html_tags=False)
+            spell["concentration"] = "conecntration" in jsonObj["system"]["properties"]
+            spell["materials"] = jsonObj["system"]["materials"]["value"]
+            spell["ritual"] = "ritual" in jsonObj["system"]["properties"]
             return spell

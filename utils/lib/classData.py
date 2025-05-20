@@ -217,13 +217,17 @@ def getScaleValues(advancementData):
         if advItem["type"] != "ScaleValue":
             continue
         else:
-            scaleValue = flattenScaleValue(advItem["configuration"]["scale"], advItem["configuration"]["type"])
+            scaleValue = flattenScaleValue(
+                advItem["configuration"]["scale"],
+                advItem["configuration"]["type"],
+                advItem["configuration"]["distance"],
+            )
             scaleValue["name"] = advItem["title"]
             scaleValues.append(scaleValue)
     return scaleValues
 
 
-def flattenScaleValue(scaleConfig, scaleType):
+def flattenScaleValue(scaleConfig, scaleType, distance):
     def formatValue(config, scaleType):
         if scaleType == "dice":
             if config["number"] is not None:
@@ -232,6 +236,8 @@ def flattenScaleValue(scaleConfig, scaleType):
                 return f"d{config['faces']}"
         elif scaleType == "number":
             return f"{config['value']}"
+        elif scaleType == "distance":
+            return f"{config['value']} {distance['units']}"
 
     # scaleConfigKeyInts = [int(k) for k in scaleConfig.keys()]
     # minLevel = sorted(scaleConfigKeyInts)[0]

@@ -1,11 +1,71 @@
 {% extends "base.html" %}    
+{% block head %}
+<style>
+    body {
+        font-family: Roboto, Helvetica, sans-serif;
+    }
+    h1 {
+        font-size: 36px;
+        font-weight: 780;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-top: 1px solid #7a7971;
+        border-bottom: 1px solid #7a7971;
+    }
+
+    table caption {
+        font-weight: bold;
+        font-variant: small-caps;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #f1ebe8;
+    }
+
+    table tr:nth-child(odd) {
+        background-color: #f8f4f1;
+    }
+
+    table thead tr:nth-child(even) {
+        background: unset;
+    }
+    table thead tr:nth-child(odd) {
+        background: unset;
+    }
+
+    table thead {
+        background: linear-gradient(to right, #401f25, #741b2b);
+        color: #fff;
+        text-align: center;
+        font-weight: bold;
+        font-variant: small-caps;
+    }
+
+    table thead th {
+        padding: 5px;
+    }
+</style>
+{% endblock %}
+{% block title %}
+{% if spells[0].level == 0 %}
+Cantrips - Materia 5.M 2024
+{% else %}
+Level {{ spells[0].level }} Spells - Materia 5.M 2024
+{% endif %}
+{% endblock %}
 {% block body %}
 {% for spell in spells %}
 <h3>{{ spell.name }}</h3>
-<p><em>Level {{ spell.level }} {{ spell.school }}</em></p>
+{% if spell.level == 0 %}
+<p><em>{{ spell.school }} cantrip {% if spell.ritual %}(ritual){% endif %}</em></p>
+{% else %}
+<p><em>Level {{ spell.level }} {{ spell.school }} {% if spell.ritual %}(ritual){% endif %}</em></p>
+{% endif %}
 <p><strong>Casting Time:</strong> {{ spell.castingTime }}</p>
 <p><strong>Range:</strong> {{ spell.range }}</p>
-<p><strong>Components:</strong> {{ spell.components }}</p>
+<p><strong>Components:</strong> {{ spell.components }} {% if spell.materials %}({{ spell.materials }}){% endif %}</p>
 <p><strong>Duration:</strong> {{ spell.duration }}</p>
 <div>
     {{ spell.description|safe }}
