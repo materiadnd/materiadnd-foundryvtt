@@ -140,7 +140,7 @@ def formatEnrichers(desc):
                         desc = desc.replace(match.group(0), f"{properties[0]} {healType}")
                     else:
                         desc = desc.replace(match.group(0), f"{properties[0]} healing")
-                elif enricher_type == "roll" or enricher_type == "r":
+                elif enricher_type == "roll" or enricher_type == "r" or enricher_type == "item":
                     desc = desc.replace(match.group(0), properties[0])
                 elif enricher_type == "save" or enricher_type == "concentration":
                     kvps = [prop.split("=") for prop in properties if "=" in prop]
