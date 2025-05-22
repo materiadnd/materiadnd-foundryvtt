@@ -1,17 +1,26 @@
-<html>
-<body>
-    <div>
-        {% for spell in spells %}
-        <h3>{{ spell.name }}</h3>
-        <p><em>Level {{ spell.level }} {{ spell.school }}</em></p>
-        <p><strong>Casting Time:</strong> {{ spell.castingTime }}</p>
-        <p><strong>Range:</strong> {{ spell.range }}</p>
-        <p><strong>Components:</strong> {{ spell.components }}</p>
-        <p><strong>Duration:</strong> {{ spell.duration }}</p>
-        <div>
-            {{ spell.description }}
-        </div>
-        {% endfor %}
-    </div>
-</body>
-</html>
+{% extends "base.html" %}    
+{% block relPath %}../{% endblock %}
+{% block title %}
+{% if spells[0].level == 0 %}
+Cantrips - Materia 5.M 2024
+{% else %}
+Level {{ spells[0].level }} Spells - Materia 5.M 2024
+{% endif %}
+{% endblock %}
+{% block body %}
+{% for spell in spells %}
+<h3>{{ spell.name }}</h3>
+{% if spell.level == 0 %}
+<p><em>{{ spell.school }} cantrip {% if spell.ritual %}(ritual){% endif %}</em></p>
+{% else %}
+<p><em>Level {{ spell.level }} {{ spell.school }} {% if spell.ritual %}(ritual){% endif %}</em></p>
+{% endif %}
+<p><strong>Casting Time:</strong> {{ spell.castingTime }}</p>
+<p><strong>Range:</strong> {{ spell.range }}</p>
+<p><strong>Components:</strong> {{ spell.components }} {% if spell.materials %}({{ spell.materials }}){% endif %}</p>
+<p><strong>Duration:</strong> {{ spell.duration }}</p>
+<div>
+    {{ spell.description|safe }}
+</div>
+{% endfor %}
+{% endblock body %}

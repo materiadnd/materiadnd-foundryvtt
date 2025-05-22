@@ -6,7 +6,7 @@
   "img": "icons/magic/light/explosion-star-large-teal-purple.webp",
   "system": {
     "description": {
-      "value": "<p>At 3rd level, you can charge your performance with seductive, fey magic.</p><p>If you perform for at least 1 minute, you can attempt to inspire wonder in your audience by singing, reciting a poem, or dancing. At the end of the performance, choose a number of humanoids within 60 feet of you who watched and listened to all of it, up to a number equal to your Charisma modifier (minimum of one). Each target must succeed on a Wisdom saving throw against your spell save DC or be charmed by you. While charmed in this way, the target idolizes you, it speaks glowingly of you to anyone who talks to it, and it hinders anyone who opposes you, although it avoids violence unless it was already inclined to fight on your behalf. This effect ends on a target after a number of hours equal to your Charisma modifier (minimum of 1), if it takes any damage, if you attack it, or if it witnesses you attacking or damaging any of its allies.</p><p>If a target succeeds on its saving throw, the target has no hint that you tried to charm it.</p><p>You can use this feature a number of times equal to your proficiency bonus, and you regain all expended uses when you finish a long rest.</p>",
+      "value": "<p>You can charge your performance with seductive, fey magic.</p><p>If you perform for at least 1 minute, you can attempt to inspire wonder in your audience by singing, reciting a poem, or dancing. At the end of the performance, choose a number of humanoids within 60 feet of you who watched and listened to all of it, up to a number equal to your Charisma modifier (minimum of one). Each target must succeed on a Wisdom saving throw against your spell save DC or be &amp;Reference[Charmed] by you. While Charmed in this way, the target idolizes you, it speaks glowingly of you to anyone who talks to it, and it hinders anyone who opposes you, although it avoids violence unless it was already inclined to fight on your behalf. This effect ends on a target after a number of hours equal to your Charisma modifier (minimum of 1), if it takes any damage, if you attack it, or if it witnesses you attacking or damaging any of its allies.</p><p>If a target succeeds on its saving throw, the target has no hint that you tried to charm it.</p><p>You can use this feature a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -77,16 +77,111 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Enthralling Performance",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": [],
+        "activation": {
+          "type": "minute",
+          "value": 1
+        },
+        "target": {
+          "template": {
+            "type": "radius",
+            "size": "60",
+            "units": "ft"
+          },
+          "affects": {
+            "type": "creature",
+            "choice": true,
+            "count": "@abilities.cha.mod"
+          }
+        },
+        "effects": [
+          {
+            "_id": "g6gTiivwlKZlP9kF"
+          }
+        ]
+      }
     }
   },
-  "effects": [],
-  "flags": {},
+  "effects": [
+    {
+      "name": "Charmed",
+      "img": "systems/dnd5e/icons/svg/statuses/charmed.svg",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.qx5Xhsf86dq2VFIg",
+      "transfer": false,
+      "_id": "g6gTiivwlKZlP9kF",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [
+        "charmed"
+      ],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.343",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1747838343340,
+        "modifiedTime": 1747838367012,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!qx5Xhsf86dq2VFIg.g6gTiivwlKZlP9kF"
+    }
+  ],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.4",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.343",
     "createdTime": 1707596698337,
-    "modifiedTime": 1710839640479,
+    "modifiedTime": 1747838400145,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

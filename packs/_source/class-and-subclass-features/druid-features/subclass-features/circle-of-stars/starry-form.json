@@ -6,7 +6,7 @@
   "img": "icons/magic/light/explosion-star-glow-silhouette.webp",
   "system": {
     "description": {
-      "value": "<div><div><p>At 2nd level, as a bonus action, you can expend a use of your Wild Shape feature to take on a Starry Form, rather than transforming into a beast.</p><p>While in your Starry Form, you retain your game statistics, but your body becomes luminous; your joints glimmer like stars, and glowing lines connect them as on a star chart. This form sheds bright light in a 10-foot radius and dim light for an additional 10 feet. The form lasts for 10 minutes. It ends early if you dismiss it (no action required), are incapacitated, die, or use this feature again.</p></div><div><p>Whenever you assume your Starry Form, choose which of the following constellations glimmers on your body; your choice gives you certain benefits while in the form:</p><p>@UUID[Compendium.materia-dnd.class-and-subclass-features.Item.9rFbyt2v4mqFikfZ]{Starry Form: Archer}</p><p>@UUID[Compendium.materia-dnd.class-and-subclass-features.Item.MPRxRJzrMSG2tGZl]{Starry Form: Chalice}</p><p>@UUID[Compendium.materia-dnd.class-and-subclass-features.Item.iMmaK41ITQ6nEmTq]{Starry Form: Dragon}</p></div></div>",
+      "value": "<div><div><p>As a bonus action, you can expend a use of your Wild Shape feature to take on a Starry Form, rather than transforming into a beast.</p><p>While in your Starry Form, you retain your game statistics, but your body becomes luminous; your joints glimmer like stars, and glowing lines connect them as on a star chart. This form sheds bright light in a 10-foot radius and dim light for an additional 10 feet. The form lasts for 10 minutes. It ends early if you dismiss it (no action required), are Incapacitated, die, or use this feature again.</p></div><div><p>Whenever you assume your Starry Form, choose which of the following constellations glimmers on your body; your choice gives you certain benefits while in the form:</p><p><strong>Archer.</strong>  A constellation of an archer appears on you. When you activate this form, and as a Bonus Action on your subsequent turns while it lasts, you can make a ranged spell attack, hurling a luminous arrow that targets one creature within 60 feet of you. On a hit, the attack deals Radiant damage equal to 1d8 plus your Wisdom modifier.</p><p><strong>Chalice.</strong> A constellation of a life-giving goblet appears on you. Whenever you cast a spell using a spell slot that restores Hit Points to a creature, you or another creature within 30 feet of you can regain Hit Points equal to 1d8 plus your Wisdom modifier.</p><p><strong>Dragon.</strong> A constellation of a wise dragon appears on you. When you make an Intelligence or a Wisdom check or a Constitution saving throw to maintain Concentration on a spell, you can treat a roll of 9 or lower on the d20 as a 10.</p></div></div>",
       "chat": ""
     },
     "source": {
@@ -81,9 +81,234 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Assume Starry Form",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "appliedEffects": [],
+        "duration": {
+          "units": "inst"
+        },
+        "effects": [
+          {
+            "_id": "XW4LHzryuJmXXWR2"
+          }
+        ]
+      },
+      "lvGKcJ8YhnqT5ct3": {
+        "type": "attack",
+        "name": "Archer: Attack",
+        "_id": "lvGKcJ8YhnqT5ct3",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "60"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "attack": {
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "spell"
+          },
+          "ability": "",
+          "bonus": ""
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": true,
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 1,
+              "denomination": "8",
+              "bonus": "@abilities.wis.mod",
+              "types": [
+                "radiant"
+              ]
+            }
+          ]
+        },
+        "img": "",
+        "appliedEffects": []
+      },
+      "vSRn45boy2ZDfNbw": {
+        "type": "heal",
+        "_id": "vSRn45boy2ZDfNbw",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": 1,
+          "denomination": "8",
+          "types": [
+            "healing"
+          ],
+          "custom": {
+            "enabled": false
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": "@abilities.wis.mod"
+        },
+        "name": "Chalice: Heal",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Starry Form",
+      "img": "icons/magic/light/explosion-star-glow-silhouette.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.hwhLIXCNKhJHAq8p",
+      "transfer": false,
+      "_id": "XW4LHzryuJmXXWR2",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.343",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1747850300280,
+        "modifiedTime": 1747850308165,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!hwhLIXCNKhJHAq8p.XW4LHzryuJmXXWR2"
+    }
+  ],
   "sort": 300000,
   "ownership": {
     "default": 0
@@ -91,14 +316,20 @@
   "flags": {
     "materia-dnd": {
       "item-use-source": "wild-shape"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.343",
     "createdTime": 1712333065856,
-    "modifiedTime": 1712334162399,
+    "modifiedTime": 1747851163828,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
