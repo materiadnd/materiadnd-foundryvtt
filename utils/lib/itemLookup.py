@@ -10,6 +10,15 @@ COLLECTION_DIR_MAP = {
 }
 
 
+def isUuid(uuid: str) -> bool:
+    try:
+        splitUuidIntoParts(uuid)
+    except Exception:
+        return False
+    else:
+        return True
+
+
 def splitUuidIntoParts(uuid: str) -> Dict[str, str]:
     parts = deque(uuid.split("."))
     if parts[0] == "Compendium":

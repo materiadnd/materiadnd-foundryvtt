@@ -1,17 +1,54 @@
 {% extends "base.html" %}
+{% block relPath %}../{% endblock %}
+{% block head %}
+<style>
+    /* remove some of the built-in elements that we recreate */
+    p.prerequisite {
+        display: none;
+    }
+    div.feat-options {
+        display: none;
+    }
+    span.feat-name {
+        font-weight: 700;
+        font-variant: small-caps;
+        font-size: 22px;
+    }
+    .bullet-feat {
+        border: 2px solid black;
+        margin: 10px;
+        padding: 10px;
+    }
+    .bullet-feat-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-bottom: 10px;
+    }
+</style>
+{% endblock %}
 {% block title %}{{ title }}- Materia 5.M 2024{% endblock %}
 {% block body %}
 {% if parentFeat %}
-<h1>{{ parentFeat.name }}</h1>
-<p>
-    {{ parentFeat.description|safe }}
-</p>
+<div class="parent-feat feat">
+    <h1 class="feat-name">{{ parentFeat.name }}</h1>
+    <p class="feat-description">
+        {{ parentFeat.description|safe }}
+    </p>
+</div>
 <h2>Feat Bullet Options</h2>
 {% endif %}
 {% for feat in feats %}
-<h3>{{ feat.name }}</h3>
-<p>
-    {{ feat.description|safe }}
-</p>
+<div class="bullet-feat feat">
+    <div class="bullet-feat-info">
+        <span class="feat-name">{{ feat.name }}</span>{% if feat.featCost %}<span class="feat-cost">(Costs: {{ feat.featCost }})</span>{% endif %}
+    </div>
+    <div class="bullet-feat-details">
+        {% if feat.prerequisites %}<div class="prerequisites"><strong>Prerequisites:</strong> <em>{{ feat.prerequisites|join("; ") }}</em></div>{% endif %}
+        <p class="feat-description">
+            {{ feat.description|safe }}
+        </p
+    ></div>
+</div>
 {% endfor %}
 {% endblock %}

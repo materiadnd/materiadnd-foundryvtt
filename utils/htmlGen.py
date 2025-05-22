@@ -1,5 +1,5 @@
 import os
-import json
+import shutil
 from typing import Any, Dict, List
 from lib.classData import readClassFromFile
 from lib.featData import readFeatFromFile
@@ -13,7 +13,7 @@ from jinja2 import Environment, PackageLoader, select_autoescape, Template
 FILES_TO_IGNORE = ["_folder.json"]
 TEMPLATE_DIR = "utils\\htmlgen\\templates"
 OUTPUT_DIR = "output"
-OUTPUT_SUBDIRECTORIES = {"class": "classes", "spell": "spells", "feat": "feats"}
+OUTPUT_SUBDIRECTORIES = {"class": "classes", "spell": "spells", "feat": "feats", "css": "css"}
 SPELL_DIR_ROOT = "packs\\_source\\spells"
 CLASS_DIR_ROOT = "packs\\_source\\classes"
 FEATS_DIR_ROOT = "packs\\_source\\feats"
@@ -119,7 +119,11 @@ def renderFeatsData(featsDirRoot: str, template: Template):
         for parentFeat in parentFeatList:
             if parentFeat["id"] == uuidParts["documentId"]:
                 break
-        featOutput = template.render(parentFeat=parentFeat, feats=children, title=parentFeat["name"])
+        featOutput = template.render(
+            parentFeat=parentFeat,
+            feats=sorted(children, key=lambda f: f["name"].replace("*", "")),
+            title=parentFeat["name"],
+        )
         with open(
             os.path.join(OUTPUT_DIR, OUTPUT_SUBDIRECTORIES["feat"], f"{slugify(parentFeat['name'])}.html"),
             "w",
@@ -157,17 +161,22 @@ if __name__ == "__main__":
     for _, dir in OUTPUT_SUBDIRECTORIES.items():
         if not os.path.exists(os.path.join(OUTPUT_DIR, dir)):
             os.mkdir(os.path.join(OUTPUT_DIR, dir))
+
+    # copy CSS
+    shutil.copyfile("utils\\htmlgen\\css\\base.css", os.path.join(OUTPUT_DIR, "css", "base.css"))
+
+    # initialize jijna2 template environment
     env = Environment(loader=PackageLoader("htmlgen"), autoescape=select_autoescape())
     # env.add_extension("jinja2.ext.debug")
 
     feats_template = env.get_template("feats.html")
     parentFeats = renderFeatsData(FEATS_DIR_ROOT, feats_template)
 
-    spells_template = env.get_template("spell.html")
-    renderSpellData(SPELL_DIR_ROOT, SPELL_SUBDIR_LIST, spells_template)
+    # spells_template = env.get_template("spell.html")
+    # renderSpellData(SPELL_DIR_ROOT, SPELL_SUBDIR_LIST, spells_template)
 
-    class_template = env.get_template("class.html")
-    renderClassData(CLASS_DIR_ROOT, class_template)
+    # class_template = env.get_template("class.html")
+    # renderClassData(CLASS_DIR_ROOT, class_template)
 
     index_template = env.get_template("index.html")
     renderIndex(index_template, feats=parentFeats)

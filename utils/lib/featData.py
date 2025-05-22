@@ -1,5 +1,6 @@
 import json
 from lib.formatters import formatDescription
+from lib.itemLookup import getItemByUuid, isUuid
 
 
 def readFeatFromFile(path: str):
@@ -23,4 +24,8 @@ def readFeatFromFile(path: str):
             featData["featType"] = jsonObj["flags"]["materia-dnd"]["feats"]["type"]
             featData["featParent"] = jsonObj["flags"]["materia-dnd"]["feats"].get("parent")
             featData["featCost"] = jsonObj["flags"]["materia-dnd"]["feats"].get("cost")
+            prereqs = jsonObj["flags"]["materia-dnd"]["feats"].get("prerequisites")
+            if prereqs:
+                # kinda gross and slow, but good enough for now
+                featData["prerequisites"] = [getItemByUuid(val)["name"] if isUuid(val) else val for val in prereqs]
             return featData
