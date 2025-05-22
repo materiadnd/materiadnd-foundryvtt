@@ -1,0 +1,272 @@
+{% extends "base.html" %}
+{% block head %}
+<style>
+    body {
+        font-family: Roboto, Helvetica, sans-serif;
+    }
+    h1 {
+        font-size: 36px;
+        font-weight: 780;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-top: 1px solid #7a7971;
+        border-bottom: 1px solid #7a7971;
+    }
+
+    table caption {
+        font-weight: bold;
+        font-variant: small-caps;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #f1ebe8;
+    }
+
+    table tr:nth-child(odd) {
+        background-color: #f8f4f1;
+    }
+
+    table thead tr:nth-child(even) {
+        background: unset;
+    }
+    table thead tr:nth-child(odd) {
+        background: unset;
+    }
+
+    table thead {
+        background: linear-gradient(to right, #401f25, #741b2b);
+        color: #fff;
+        text-align: center;
+        font-weight: bold;
+        font-variant: small-caps;
+    }
+
+    table thead th {
+        padding: 5px;
+    }
+
+    .class-core-traits th {
+        text-align: start;
+    }
+
+    section.secret {
+        display: none;
+    }
+
+    .class-feature h3 {
+        font-weight: bold;
+        border-block-end: 1px solid #782e22;
+    }
+
+    .features-table td:is(.level, .prof, .scale, .spell-slots){
+        text-align: center;
+    }
+
+    .subclass-nav {
+        display: flex;
+    }
+
+    ul.subclass-list {
+        list-style: none;
+    }
+
+    ul.subclass-list li {
+        display: inline-block;
+        padding: 0.05rem;
+        min-width: 10rem;
+        text-align: center;
+    }
+
+</style>
+{% endblock %}
+{% block title %}
+{{ class.name }} - Materia 5.M 2024
+{% endblock %}
+{% block body %}
+<h1>{{ class.name }}</h1>
+<div class="subclass-nav">
+    <h3>Subclasses:</h3>
+    <ul class="subclass-list">
+        {% for subclass in subclasses %}
+        <li><a href="#{{ subclass.slug }}">{{ subclass.name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="class-description">
+    {{ class.description|safe }}
+</div>
+<div class="class-table">
+    <table class="features-table">
+        <caption>{{ class.name }}</caption>
+        <thead>
+            {% if class.full_caster or class.half_caster %}
+            <tr>
+                <th rowspan="2">Level</th>
+                <th rowspan="2">Proficiency Bonus</th>
+                <th rowspan="2">Features</th>
+                {% for scale_value in class.scale_values %}
+                <th rowspan="2">{{ scale_value.name }}</th>
+                {% endfor %}
+                {% if class.half_caster %}
+                <th colspan="5">--Spell Slots per Spell Level--</th>
+                {% else %}
+                <th colspan="9">--Spell Slots per Spell Level--</th>
+                {% endif %}
+            </tr>
+            <tr>
+                <th>1st</th>
+                <th>2nd</th>
+                <th>3rd</th>
+                <th>4th</th>
+                <th>5th</th>
+                {% if class.full_caster %}
+                <th>6th</th>
+                <th>7th</th>
+                <th>8th</th>
+                <th>9th</th>
+                {% endif %}
+            </tr>
+            {% elif class.pact_caster %}
+            <tr>
+                <th>Level</th>
+                <th>Proficiency Bonus</th>
+                <th>Features</th>
+                {% for scale_value in class.scale_values %}
+                <th>{{ scale_value.name }}</th>
+                {% endfor %}
+                <th>Spell Slots</th>
+                <th>Slot Level</th>
+            </tr>
+            {% else %}
+            <tr>
+                <th>Level</th>
+                <th>Proficiency Bonus</th>
+                <th>Features</th>
+                {% for scale_value in class.scale_values %}
+                <th>{{ scale_value.name }}</th>
+                {% endfor %}
+            </tr>
+            {% endif %}
+        </thead>
+        <tbody>
+            {% for level in range(1, 21) %}
+            <tr>
+                <td class="level">{{ level }}</td>
+                <td class="prof"> {{ class.prof[level] }}</td>
+                <td>
+                    {% if level in class.asi_levels %}
+                    Ability Score Improvement{{ ", " if class.features_by_level[level] else "" }}
+                    {% endif %}
+                    {% for feature in class.features_by_level[level] %}
+                    <a href="#{{ feature.slug }}">{{ feature.name }}</a>{{ ", " if not loop.last else "" }}
+                    {% endfor %}
+                </td>
+                {% for scale_value in class.scale_values %}
+                <td class="scale">{{ scale_value[level] }}</td>
+                {% endfor %}
+                {% if class.half_caster %}
+                {% for slots in class.half_caster_slots[level] %}
+                <td class="spell-slots">{{ slots }}</td>
+                {% endfor %}
+                {% elif class.full_caster %}
+                {% for slots in class.full_caster_slots[level] %}
+                <td class="spell-slots">{{ slots }}</td>
+                {% endfor %}
+                {% elif class.pact_caster %}
+                <td class="spell-slots">{{ class.pact_caster_slots[level] }}</td>
+                <td class="spell-slots">{{ class.pact_caster_level[level] }}</td>
+                {% endif %} 
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<h2>Class Features</h2>
+{% for feature in class.features %}
+<div class="class-feature">
+    <h3 id="{{ feature.slug }}">Level {{ feature.level }}: {{ feature.name }}</h3>
+    <p>
+        {{ feature.description|safe }}
+    </p>
+</div>
+{% endfor %}
+<h2>Subclasses</h2>
+{% for subclass in subclasses %}
+<h2 class="subclass-title" id="{{ subclass.slug }}">{{ subclass.name }}</h2>
+<div class="subclass-description">
+    {{ subclass.description|safe }}
+</div>
+<table class="features-table">
+    <thead>
+        {% if subclass.third_caster %}
+        <tr>
+            <th rowspan="2">Level</th>
+            <th rowspan="2">Features</th>
+            {% for scale_value in subclass.scale_values %}
+            <th rowspan="2">{{ scale_value.name }}</th>
+            {% endfor %}
+            <th colspan="4">--Spell Slots per Spell Level--</th>
+        </tr>
+        <tr>
+            <th>1st</th>
+            <th>2nd</th>
+            <th>3rd</th>
+            <th>4th</th>
+        </tr>
+        {% else %}
+        <tr>
+            <th>Level</th>
+            <th>Features</th>
+            {% for scale_value in subclass.scale_values %}
+            <th>{{ scale_value.name }}</th>
+            {% endfor %}
+        </tr>
+        {% endif %}
+    </thead>
+    <tbody>
+        {% if subclass.third_caster %}
+        {% for level in range(1,21) %}
+        <tr>
+            <td class="level">{{ level }}</td>
+            <td class="features">
+                {% for feature in subclass.features_by_level[level] %}
+                <a href="#{{ feature.slug }}">{{ feature.name }}</a>{{ ", " if not loop.last else "" }}
+                {% endfor %}
+            </td>
+            {% for scale_value in subclass.scale_values %}
+            <td class="scale">{{ scale_value[level] }}</td>
+            {% endfor %}
+            {% for slots in subclass.third_caster_slots[level] %}
+            <td class="spell-slots">{{ " "if not slots else slots }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        {% else %}
+        {% for level in subclass.feature_levels %}
+        <tr>
+            <td class="level">{{ level }}</td>
+            <td class="features">
+                {% for feature in subclass.features_by_level[level] %}
+                <a href="#{{ feature.slug }}">{{ feature.name }}</a>{{ ", " if not loop.last else "" }}
+                {% endfor %}
+            </td>
+            {% for scale_value in subclass.scale_values %}
+            <td class="scale">{{ scale_value[level] }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </tbody>
+</table>
+{% for feature in subclass.features %}
+<div class="class-feature">
+    <h3 id="{{ feature.slug }}">Level {{ feature.level }}: {{ feature.name }}</h3>
+    <p>
+        {{ feature.description|safe }}
+    </p>
+</div>
+{% endfor %}
+{% endfor %}
+{% endblock %}
