@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}- Materia 5.M 2024{% endblock %}
+{% block body %}
+{% if parentFeat %}
+<h1>{{ parentFeat.name }}</h1>
+<p>
+    {{ parentFeat.description|safe }}
+</p>
+<h2>Feat Bullet Options</h2>
+{% endif %}
+{% for feat in feats %}
+<h3>{{ feat.name }}</h3>
+<p>
+    {{ feat.description|safe }}
+</p>
+{% endfor %}
+{% endblock %}

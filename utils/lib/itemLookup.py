@@ -4,7 +4,10 @@ from collections import deque
 from typing import Any, Dict
 
 FILES_TO_IGNORE = ["_folder.json"]
-COLLECTION_DIR_MAP = {"materia-dnd.class-and-subclass-features": "packs\\_source\\class-and-subclass-features"}
+COLLECTION_DIR_MAP = {
+    "materia-dnd.class-and-subclass-features": "packs\\_source\\class-and-subclass-features",
+    "materia-dnd.feats": "packs\\_source\\feats",
+}
 
 
 def splitUuidIntoParts(uuid: str) -> Dict[str, str]:
