@@ -16,7 +16,7 @@
       "max": "1"
     },
     "description": {
-      "value": "<p><strong>Prerequisite:</strong> <em>Air Genasi, Earth Genasi, Water Genasi</em></p><p>You are the embodiment of multiple elements blending together. You gain Resistance to Fire damage. You also know the @UUID[Compendium.materia-dnd.spells.Item.matSplProduceFla]{Produce Flame} cantrip, and starting at 3rd level, you can cast the @UUID[Compendium.materia-dnd.spells.Item.matSplBurningHan]{Burning Hands} spell with this bullet once per Long Rest. Once you cast Burning Hands using this bullet, you can cast it again using any spell slots you have of the appropriate level.</p><p>Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this species).</p><p>These spells do not require spell components when you cast them with this trait.</p>",
+      "value": "<p class=\"prerequisite\"><strong>Prerequisite:</strong> <em>Air Genasi, Earth Genasi, Water Genasi</em></p><p>You are the embodiment of multiple elements blending together. You gain Resistance to Fire damage. You also know the @UUID[Compendium.materia-dnd.spells.Item.matSplProduceFla]{Produce Flame} cantrip, and starting at 3rd level, you can cast the @UUID[Compendium.materia-dnd.spells.Item.matSplBurningHan]{Burning Hands} spell with this bullet once per Long Rest. Once you cast Burning Hands using this bullet, you can cast it again using any spell slots you have of the appropriate level.</p><p>Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this species).</p><p>These spells do not require spell components when you cast them with this trait.</p>",
       "chat": ""
     },
     "identifier": "genasi-elemental-expression-air",
@@ -40,7 +40,17 @@
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "materia-dnd": {
+      "feats": {
+        "type": "species",
+        "cost": 1,
+        "prerequisites": [
+          "Air Genasi, Earth Genasi, or Water Genasi"
+        ]
+      }
+    }
+  },
   "_stats": {
     "duplicateSource": null,
     "coreVersion": "12.343",

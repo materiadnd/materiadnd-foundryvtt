@@ -12,7 +12,7 @@
       "max": ""
     },
     "description": {
-      "value": "<p><strong>Prerequisite:</strong> <em>Aarakocra, Aarakocra Magic</em></p><p>You learn the spells @UUID[Compendium.materia-dnd.spells.Item.matSplCloudOfDag]{Cloud of Daggers} (which appears as sharp feathers) and @UUID[Compendium.materia-dnd.spells.Item.matSplFeatherFal]{Feather Fall}, each of which you can cast once without expending a spell slot. You regain the ability to cast those two spells in this way when you finish a Long Rest. You can also cast this spell using spell slots you have of the appropriate level. The spell's spellcasting ability is your choice of Intelligence, Wisdom, or Charisma.</p>",
+      "value": "<p class=\"prerequisite\"><strong>Prerequisite:</strong> <em>Aarakocra, Aarakocra Magic</em></p><p>You learn the spells @UUID[Compendium.materia-dnd.spells.Item.matSplCloudOfDag]{Cloud of Daggers} (which appears as sharp feathers) and @UUID[Compendium.materia-dnd.spells.Item.matSplFeatherFal]{Feather Fall}, each of which you can cast once without expending a spell slot. You regain the ability to cast those two spells in this way when you finish a Long Rest. You can also cast this spell using spell slots you have of the appropriate level. The spell's spellcasting ability is your choice of Intelligence, Wisdom, or Charisma.</p>",
       "chat": ""
     },
     "identifier": "new-item",
@@ -40,7 +40,18 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "materia-dnd": {
+      "feats": {
+        "type": "species",
+        "cost": 1,
+        "prerequisites": [
+          "Aarakocra",
+          "Compendium.materia-dnd.feats.Item.knaKNICYEa5njQV0"
+        ]
+      }
+    }
+  },
   "_stats": {
     "duplicateSource": null,
     "coreVersion": "12.343",
