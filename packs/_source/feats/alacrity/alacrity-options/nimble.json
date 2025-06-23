@@ -6,7 +6,7 @@
   "img": "icons/skills/movement/arrow-upward-blue.webp",
   "system": {
     "description": {
-      "value": "<p>Standing up from &amp;Reference[Prone apply=false] uses only 5 feet of your movement. Climbing does not cost you extra movement, and you can make a running long or high jump after moving only 5 feet on foot, rather than 10 feet.</p>",
+      "value": "<p>Standing up from &amp;Reference[Prone apply=false] uses only 5 feet of your movement. You gain a Climb Speed equal to your Speed. You can make a running long or high jump after moving only 5 feet on foot, rather than 10 feet.</p>",
       "chat": ""
     },
     "source": {
@@ -80,17 +80,25 @@
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "materia-dnd": {
+      "feats": {
+        "type": "child",
+        "parent": "Compendium.materia-dnd.feats.Item.matFeaAlacrity00",
+        "cost": 1
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.3.6",
-    "coreVersion": "12.331",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.343",
     "createdTime": 1707171545848,
-    "modifiedTime": 1742238712315,
+    "modifiedTime": 1750718258242,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "sort": 125000,
+  "sort": 800000,
   "ownership": {
     "default": 0
   },

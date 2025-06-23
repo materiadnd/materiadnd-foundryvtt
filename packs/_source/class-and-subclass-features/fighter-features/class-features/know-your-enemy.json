@@ -6,7 +6,7 @@
   "img": "icons/tools/scribal/lens-grey-brown.webp",
   "system": {
     "description": {
-      "value": "<p>Starting at 7th level, if you spend at least 1 minute observing or interacting with another creature outside combat, you can learn certain information about its capabilities compared to your own. The DM tells you information based on the two of the following characteristics of your choice:</p><ul><li>Strength score (equal, superior or inferior to you and if proficient in the saving throw)</li><li>Dexterity score (equal, superior or inferior to you and if proficient in the saving throw)</li><li>Constitution score (equal, superior or inferior to you and if proficient in the saving throw)</li><li>Armor Class</li><li>Current hit points</li><li>Total class levels (if any and if any levels are in fighter)</li></ul>",
+      "value": "<p>As a Bonus Action, you can discern certain strengths and weaknesses of a creature you can see within 30 feet of yourself; you can discern two of the following characteristics of your choice:</p><p><strong>Damage Interactions.</strong> Whether that creature has any Immunities, Resistances, or Vulnerabilities and what they are.</p><p><strong>Physical Abilities.</strong> Choose one of Strength, Dexterity, or Constitution. You learn the creature's score in that ability as well as if they are proficient in the Saving Throw.  (You may choose this one twice to select different abilities.)</p><p><strong>Armor Class. </strong>You learn the creature's Armor Class and source of that Armor Class (at your DM's discretion).</p><p><strong>Health.</strong> You learn the creature's current Hit Points.</p><p><strong>Class Levels.</strong>  You learn the creature's total class levels as well as how many, if any, are levels in Fighter.</p><p>Once you use this feature, you can't do so again until you finish a Long Rest. You can also restore a use of the feature by expending one Superiority Die (no action required).</p><section class=\"secret\" id=\"secret-tvwQ25gCBCntEYVH\"><p><strong>Foundry Note</strong></p><p>This feature includes an activity for discerning the strengths and weaknesses and a recharge activity for restoring a use of this feature.</p></section>",
       "chat": ""
     },
     "source": {
@@ -39,9 +39,14 @@
     },
     "uses": {
       "value": null,
-      "max": "",
+      "max": "1",
       "per": null,
-      "recovery": "",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll"
+        }
+      ],
       "prompt": true
     },
     "consume": {
@@ -73,20 +78,167 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Fighter 7",
+    "requirements": "",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "V1TRHRrRiQwh3JcJ": {
+        "type": "utility",
+        "_id": "V1TRHRrRiQwh3JcJ",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Discern Strengths and Weaknesses",
+        "img": "",
+        "appliedEffects": []
+      },
+      "n2C5F9sQMftS1Fz9": {
+        "type": "utility",
+        "name": "Recharge with Superiority Die",
+        "_id": "n2C5F9sQMftS1Fz9",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.GT5M3hT8Bj34TRH0"
+            },
+            {
+              "type": "itemUses",
+              "value": "-1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.1.1",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.343",
     "createdTime": 1707197071766,
-    "modifiedTime": 1712096688561,
+    "modifiedTime": 1747763926872,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

@@ -6,7 +6,7 @@
   "img": "icons/equipment/feet/shoes-simple-leaf-green.webp",
   "system": {
     "description": {
-      "value": "<p>Your movement does not provoke Opportunity Attacks from creatures you can see.</p>",
+      "value": "<p>Your movement does not provoke Opportunity Attacks from creatures you are aware of.</p>",
       "chat": ""
     },
     "source": {
@@ -80,13 +80,24 @@
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "materia-dnd": {
+      "feats": {
+        "type": "child",
+        "parent": "Compendium.materia-dnd.feats.Item.matFeaCombatRefl",
+        "cost": 1,
+        "prerequisites": [
+          "Compendium.materia-dnd.feats.Item.8cNu8v8UEcsVTO6t"
+        ]
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.3.6",
-    "coreVersion": "12.331",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.343",
     "createdTime": 1707171234046,
-    "modifiedTime": 1742241262594,
+    "modifiedTime": 1750715897277,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
