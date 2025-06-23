@@ -1,0 +1,37 @@
+{% extends "base.html" %}    
+{% block relPath %}../{% endblock %}
+{% block title %}
+Species - Materia 5.M 2024
+{% endblock %}
+{% block body %}
+{% for species in species_list %}
+<h3>{{ species.name }}</h3>
+<div>
+    {{ species.description|safe }}
+</div>
+<table class="species-feature-table">
+    <caption>{{ species.name }}</caption>
+    <thead>
+        <tr>
+            <th>Level</th>
+            <th>Features</th>
+        </tr>
+        {% for level in species.feature_levels %}
+        <tr>
+            <td class="level">{{ level }}</td>
+            <td class="features">
+                {% for feature in species.features_by_level[level] %}
+                <a href="#{{ feature.slug}}">{{ feature.name }}</a>{{ ", " if not loop.last else "" }}
+                {% endfor %}
+            </td>
+        </tr>
+        {% endfor %}
+    </thead>
+</table>
+{% for feature in species.features %}
+<div class="species-feature">
+
+</div>
+{% endfor %}
+{% endfor %}
+{% endblock body %}

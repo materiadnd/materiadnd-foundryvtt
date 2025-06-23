@@ -1,35 +1,64 @@
 {% extends "base.html" %}
+{% block head %}
+<style>
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 30px;
+    }
+</style>
+{% endblock %}
 {% block title %}Materia 5.M 2024 Docs{% endblock %}
 {% block body %}
-<h1>Classes</h1>
-<ul>
-    <li><a href="classes/artificer.html">Artificer</a></li>
-    <li><a href="classes/barbarian.html">Barbarian</a></li>
-    <li><a href="classes/bard.html">Bard</a></li>
-    <li><a href="classes/blood-hunter.html">Blood Hunter</a></li>
-    <li><a href="classes/cleric.html">Cleric</a></li>
-    <li><a href="classes/druid.html">Druid</a></li>
-    <li><a href="classes/fighter.html">Fighter</a></li>
-    <li><a href="classes/monk.html">Monk</a></li>
-    <li><a href="classes/paladin.html">Paladin</a></li>
-    <li><a href="classes/ranger.html">Ranger</a></li>
-    <li><a href="classes/rogue.html">Rogue</a></li>
-    <li><a href="classes/sorcerer.html">Sorcerer</a></li>
-    <li><a href="classes/warlock.html">Warlock</a></li>
-    <li><a href="classes/warlord.html">Warlord</a></li>
-    <li><a href="classes/wizard.html">Wizard</a></li>
-</ul>
-<h1>Spells</h1>
-<ul>
-    <li><a href="spells/cantrips.html">Cantrips</a></li>
-    <li><a href="spells/1st-level-spells.html">Level 1 Spells</a></li>
-    <li><a href="spells/2nd-level-spells.html">Level 2 Spells</a></li>
-    <li><a href="spells/3rd-level-spells.html">Level 3 Spells</a></li>
-    <li><a href="spells/4th-level-spells.html">Level 4 Spells</a></li>
-    <li><a href="spells/5th-level-spells.html">Level 5 Spells</a></li>
-    <li><a href="spells/6th-level-spells.html">Level 6 Spells</a></li>
-    <li><a href="spells/7th-level-spells.html">Level 7 Spells</a></li>
-    <li><a href="spells/8th-level-spells.html">Level 8 Spells</a></li>
-    <li><a href="spells/9th-level-spells.html">Level 9 Spells</a></li>
-</ul>
+<div class="flex-container">
+    <div class="classes flex-item">
+        <h1>Classes</h1>
+        <ul>
+            <li><a href="classes/artificer.html">Artificer</a></li>
+            <li><a href="classes/barbarian.html">Barbarian</a></li>
+            <li><a href="classes/bard.html">Bard</a></li>
+            <li><a href="classes/blood-hunter.html">Blood Hunter</a></li>
+            <li><a href="classes/cleric.html">Cleric</a></li>
+            <li><a href="classes/druid.html">Druid</a></li>
+            <li><a href="classes/fighter.html">Fighter</a></li>
+            <li><a href="classes/monk.html">Monk</a></li>
+            <li><a href="classes/paladin.html">Paladin</a></li>
+            <li><a href="classes/ranger.html">Ranger</a></li>
+            <li><a href="classes/rogue.html">Rogue</a></li>
+            <li><a href="classes/sorcerer.html">Sorcerer</a></li>
+            <li><a href="classes/warlock.html">Warlock</a></li>
+            <li><a href="classes/warlord.html">Warlord</a></li>
+            <li><a href="classes/wizard.html">Wizard</a></li>
+        </ul>
+    </div>
+    <div class="spells flex-item">
+        <h1>Spells</h1>
+        <ul>
+            <li><a href="spells/cantrips.html">Cantrips</a></li>
+            <li><a href="spells/1st-level-spells.html">Level 1 Spells</a></li>
+            <li><a href="spells/2nd-level-spells.html">Level 2 Spells</a></li>
+            <li><a href="spells/3rd-level-spells.html">Level 3 Spells</a></li>
+            <li><a href="spells/4th-level-spells.html">Level 4 Spells</a></li>
+            <li><a href="spells/5th-level-spells.html">Level 5 Spells</a></li>
+            <li><a href="spells/6th-level-spells.html">Level 6 Spells</a></li>
+            <li><a href="spells/7th-level-spells.html">Level 7 Spells</a></li>
+            <li><a href="spells/8th-level-spells.html">Level 8 Spells</a></li>
+            <li><a href="spells/9th-level-spells.html">Level 9 Spells</a></li>
+        </ul>
+    </div>
+    <div class="feats flex-item">
+        <h1>Feats</h1>
+        <ul>
+        {% for parentFeat in feats %}
+            <li><a href="{{ parentFeat.url }}">{{ parentFeat.name }}</a></li>
+        {% endfor %}
+        </ul>
+        <h2>Special Feat Options</h2>
+        <ul>
+            <li><a href="feats/half-feats.html">Half Feat Options</a></li>
+            <li><a href="feats/species-feats.html">Species Feat Options</a></li>
+            <li><a href="feats/epic-feats.html">Epic Boon Feats</a></li>
+        </ul>
+    </div>
+</div>
 {% endblock %}
