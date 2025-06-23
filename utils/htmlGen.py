@@ -1,14 +1,5 @@
 import os
-<<<<<<< HEAD
 import shutil
-from typing import Any, Dict, List
-from lib.classData import readClassFromFile
-from lib.featData import readFeatFromFile
-from lib.subclassData import readSubclassData
-from lib.spellData import readSpellFromFile
-from lib.itemLookup import splitUuidIntoParts
-=======
-import json
 from typing import Any, Dict, List
 from lib.spellData import readSpellFromFile
 from lib.classData import readClassFromFile
@@ -16,7 +7,7 @@ from lib.subclassData import readSubclassData
 from lib.spellData import readSpellFromFile
 from lib.itemLookup import splitUuidIntoParts
 from lib.speciesData import readSpeciesFromFile
->>>>>>> dd/html-generation
+from lib.featData import readFeatFromFile
 from lib.formatters import slugify
 from jinja2 import Environment, PackageLoader, select_autoescape, Template
 
@@ -24,18 +15,11 @@ from jinja2 import Environment, PackageLoader, select_autoescape, Template
 FILES_TO_IGNORE = ["_folder.json"]
 TEMPLATE_DIR = "utils\\htmlgen\\templates"
 OUTPUT_DIR = "output"
-<<<<<<< HEAD
-OUTPUT_SUBDIRECTORIES = {"class": "classes", "spell": "spells", "feat": "feats", "css": "css"}
-SPELL_DIR_ROOT = "packs\\_source\\spells"
-CLASS_DIR_ROOT = "packs\\_source\\classes"
-FEATS_DIR_ROOT = "packs\\_source\\feats"
-=======
 OUTPUT_SUBDIRECTORIES = {"class": "classes", "spell": "spells", "feat": "feats", "css": "css", "species": "species"}
 SPELL_DIR_ROOT = "packs\\_source\\spells"
 CLASS_DIR_ROOT = "packs\\_source\\classes"
 FEATS_DIR_ROOT = "packs\\_source\\feats"
 SPECIES_DIR_ROOT = "packs\\_source\\species"
->>>>>>> dd/html-generation
 SUBCLASS_DIR_ROOT = "packs\\_source\\subclasses"
 SPELL_SUBDIR_LIST = [
     "cantrips",
@@ -71,13 +55,8 @@ def getSubclassData(identifier: str) -> List[Dict[str, Any]]:
     return subclassData
 
 
-<<<<<<< HEAD
 def renderIndex(template: Template, **kwargs):
     indexOutput = template.render(**kwargs)
-=======
-def renderIndex(template: Template):
-    indexOutput = template.render()
->>>>>>> dd/html-generation
     with open(os.path.join(OUTPUT_DIR, "index.html"), "w") as htmlOutputFile:
         htmlOutputFile.write(indexOutput)
 
@@ -100,20 +79,12 @@ def renderClassData(classDirRoot: str, template: Template):
 
         classOutput = template.render({"class": classData, "subclasses": subclassData})
         with open(
-<<<<<<< HEAD
             os.path.join(OUTPUT_DIR, OUTPUT_SUBDIRECTORIES["class"], f"{slugify(classData['name'])}.html"),
-=======
-            os.path.join(
-                OUTPUT_DIR, OUTPUT_SUBDIRECTORIES["class"], f"{classData['name'].replace(' ', '-').lower()}.html"
-            ),
->>>>>>> dd/html-generation
             "w",
         ) as htmlOutputFile:
             htmlOutputFile.write(classOutput)
 
 
-<<<<<<< HEAD
-=======
 def renderSpeciesData(speciesDirRoot: str, template: Template):
     for root, dirs, files in os.walk(speciesDirRoot):
         for file in [f for f in files if os.path.splitext(f)[1] == ".json" and f not in FILES_TO_IGNORE]:
@@ -124,7 +95,6 @@ def renderSpeciesData(speciesDirRoot: str, template: Template):
     return None
 
 
->>>>>>> dd/html-generation
 def renderFeatsData(featsDirRoot: str, template: Template):
     parentFeatList = []
     featsMap: dict[str, Any] = {}
@@ -204,30 +174,17 @@ if __name__ == "__main__":
     for _, dir in OUTPUT_SUBDIRECTORIES.items():
         if not os.path.exists(os.path.join(OUTPUT_DIR, dir)):
             os.mkdir(os.path.join(OUTPUT_DIR, dir))
-<<<<<<< HEAD
 
     # copy CSS
     shutil.copyfile("utils\\htmlgen\\css\\base.css", os.path.join(OUTPUT_DIR, "css", "base.css"))
 
     # initialize jijna2 template environment
-=======
->>>>>>> dd/html-generation
     env = Environment(loader=PackageLoader("htmlgen"), autoescape=select_autoescape())
     # env.add_extension("jinja2.ext.debug")
 
     feats_template = env.get_template("feats.html")
     parentFeats = renderFeatsData(FEATS_DIR_ROOT, feats_template)
 
-<<<<<<< HEAD
-    # spells_template = env.get_template("spell.html")
-    # renderSpellData(SPELL_DIR_ROOT, SPELL_SUBDIR_LIST, spells_template)
-
-    # class_template = env.get_template("class.html")
-    # renderClassData(CLASS_DIR_ROOT, class_template)
-
-    index_template = env.get_template("index.html")
-    renderIndex(index_template, feats=parentFeats)
-=======
     spells_template = env.get_template("spell.html")
     renderSpellData(SPELL_DIR_ROOT, SPELL_SUBDIR_LIST, spells_template)
 
@@ -238,11 +195,4 @@ if __name__ == "__main__":
     renderSpeciesData(SPECIES_DIR_ROOT, species_template)
 
     index_template = env.get_template("index.html")
-    renderIndex(index_template)
-
-    spells_template = env.get_template("spell.html")
-    renderSpellData(SPELL_DIR_ROOT, SPELL_SUBDIR_LIST, spells_template)
-
-    class_template = env.get_template("class.html")
-    renderClassData(CLASS_DIR_ROOT, class_template)
->>>>>>> dd/html-generation
+    renderIndex(index_template, feats=parentFeats)
