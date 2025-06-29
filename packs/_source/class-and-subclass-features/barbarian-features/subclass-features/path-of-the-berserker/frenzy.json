@@ -6,7 +6,7 @@
   "img": "icons/magic/fire/elemental-fire-flying.webp",
   "system": {
     "description": {
-      "value": "<p>If you use Reckless Attack while your Rage is active, you deal extra damage to the first target you hit on your turn with a Strength-based attack. To determine the extra damage, roll a number of d6s equal to your Rage Damage bonus, and add them together. The damage has the same type as the weapon or Unarmed Strike used for the attack.</p><section id=\"secret-9c4s7bpiFsJagack\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The <strong>Damage</strong> activity scales automatically as you level up and allows you to select the type of damage to use in the damage roll's dialog box. It will then remember your choice going forward.</p></section>",
+      "value": "<p>You can go into a Frenzy when you rage. If you do so, for the duration of your rage you can make a single Strength-based attack as a Bonus Action on each of your turns after this one.</p><section id=\"secret-MU3ClhCnBAY0FcXu\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The Frenzy Attack activity on this feature does not provide any actual utility outside of reminding the player of the Bonus Action attack.</p></section>",
       "chat": ""
     },
     "source": {
@@ -82,12 +82,12 @@
       "level": 3
     },
     "activities": {
-      "k9XyZVsJrBN4YW0M": {
-        "type": "damage",
-        "_id": "k9XyZVsJrBN4YW0M",
+      "vPX8f5In45HjfNLs": {
+        "type": "attack",
+        "_id": "vPX8f5In45HjfNLs",
         "sort": 0,
         "activation": {
-          "type": "",
+          "type": "bonus",
           "value": null,
           "override": false,
           "condition": ""
@@ -121,9 +121,7 @@
           },
           "affects": {
             "choice": false,
-            "type": "creature",
-            "count": "1",
-            "special": ""
+            "type": ""
           },
           "override": false,
           "prompt": true
@@ -133,44 +131,75 @@
           "recovery": [],
           "max": ""
         },
+        "attack": {
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "melee",
+            "classification": "weapon"
+          },
+          "ability": "",
+          "bonus": ""
+        },
         "damage": {
           "critical": {
-            "allow": false
+            "bonus": ""
           },
-          "parts": [
-            {
-              "custom": {
-                "enabled": true,
-                "formula": "(@scale.barbarian.rage-damage)d6"
-              },
-              "number": null,
-              "denomination": 0,
-              "bonus": "",
-              "types": [
-                "acid",
-                "bludgeoning",
-                "cold",
-                "fire",
-                "force",
-                "lightning",
-                "necrotic",
-                "piercing",
-                "poison",
-                "psychic",
-                "radiant",
-                "slashing",
-                "thunder"
-              ]
-            }
-          ]
+          "includeBase": true,
+          "parts": []
         },
-        "name": "Frenzy Damage",
+        "name": "Frenzy Attack",
         "img": "",
         "appliedEffects": []
       }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Frenzied Rage",
+      "img": "icons/magic/fire/elemental-fire-flying.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.fps0IMLjKj1ukF6H",
+      "_id": "uCTE6lTpiUuYBFJO",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": 600,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.343",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1751165267134,
+        "modifiedTime": 1751165275880,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!fps0IMLjKj1ukF6H.uCTE6lTpiUuYBFJO"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
@@ -186,9 +215,9 @@
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "4.3.9",
-    "coreVersion": "12.331",
+    "coreVersion": "12.343",
     "createdTime": 1710303930713,
-    "modifiedTime": 1746732788871,
+    "modifiedTime": 1751165358060,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
