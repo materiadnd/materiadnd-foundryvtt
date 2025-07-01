@@ -1,12 +1,12 @@
 {
   "folder": "TsKtT2qK3acrp0ZG",
-  "name": "Reactive Resistance",
+  "name": "Protective Manifestation",
   "type": "feat",
-  "_id": "ot8NivmcZdXiPpfQ",
-  "img": "icons/magic/defensive/shield-barrier-flaming-pentagon-teal-purple.webp",
+  "_id": "JJY3YeT4ymw3nzVU",
+  "img": "icons/creatures/abilities/wing-batlike-white-blue.webp",
   "system": {
     "description": {
-      "value": "<p>When you take Acid, Cold, Fire, Lightning, or Poison damage, you can take a Reaction to give yourself Resistance to that instance of damage. You can do this a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>",
+      "value": "<p>You can manifest protective energy that can shield you or others. When you or another creature you can see within 5 feet of you is hit by an attack roll, you can take a Reaction to manifest spectral energy for a moment. You grant a bonus to the target's AC equal to your Proficiency Bonus against that attack roll, potentially causing it to miss. You can do this a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -17,7 +17,7 @@
     "activation": {
       "type": "reaction",
       "cost": 1,
-      "condition": ""
+      "condition": "when you or another creature you can see within 5 feet of you is hit by an attack roll"
     },
     "duration": {
       "value": "",
@@ -29,13 +29,13 @@
       "value": null,
       "width": null,
       "units": "",
-      "type": "self",
+      "type": "",
       "prompt": true
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "self"
+      "units": ""
     },
     "uses": {
       "value": 1,
@@ -50,8 +50,8 @@
       "amount": null,
       "scale": false
     },
-    "ability": null,
-    "actionType": "",
+    "ability": "",
+    "actionType": "util",
     "attackBonus": "",
     "chatFlavor": "",
     "critical": {
@@ -62,7 +62,7 @@
       "parts": [],
       "versatile": ""
     },
-    "formula": "",
+    "formula": "@prof",
     "save": {
       "ability": "",
       "dc": null,
@@ -73,10 +73,29 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Scaleborn",
+    "requirements": "Elohian",
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "Protective Wings",
+        "img": "",
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -91,16 +110,22 @@
         "parent": "Compendium.materia-dnd.feats.Item.matFeaScaleborn0",
         "cost": 1
       }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "4.3.9",
     "coreVersion": "12.343",
-    "createdTime": 1708564394469,
-    "modifiedTime": 1747884810337,
+    "createdTime": 1708564265421,
+    "modifiedTime": 1751234243454,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "_key": "!items!ot8NivmcZdXiPpfQ"
+  "_key": "!items!JJY3YeT4ymw3nzVU"
 }
