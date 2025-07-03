@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block relPath %}../{% endblock %}
+{% block head %}
+    <link rel="stylesheet" href="../css/item.css" />
+{% endblock %}
+{% block title %}
+{{ item.name }} - Materia 5.M 2024
+{% endblock %}
+{% block body %}
+<h3>{{ item.name }}</h3>
+{% if item.price %}<div class="item-price">{{ item.price.value }} {{ item.price.denomination }}</div>{% endif %}
+{% if item.weight %}<div class="item-weight">{{ item.weight.value }} {{ item.weight.units }}</div>{% endif %}
+{% if item.rarity %}<div class="item-rarity">{{ item.rarity }}</div>{% endif %}
+{% if item.properties %}<div class="item-properties">{{ item.properties }}</div>{% endif %}
+{% if item.uses %}<div class="item-uses">{{ item.uses }}</div>{% endif %}
+{% if item.attunement %}<div class="item-attunement">{{ item.attunement }}</div>{% endif %}
+{% if item.type == "loot" %}
+    <div class="loot-type">{{ item.systemType.value }} {{ item.systemType.subtype }}</div>
+{% elif item.type == "weapon" %}
+    <div class="weapon-type">Weapon Type: {{ item.systemType.value }} ({{ item.systemType.subtype }})</div>
+    <div class="weapon-mastery">Weapon Mastery: {{ item.mastery }}</div>
+    {% if item.range %}<div class="weapon-range">Range: {{ item.range.value }}/{{ item.range.long }} {{ item.range.units }}</div>{% endif %}
+    <div class="weapon-damage">Damage: {{ item.damage.number }}d{{ item.damage.denomination }} {{ item.damage.type }}</div>
+    {% if item.versatile %}<div class="weapon-versatile">Versatile: {{ item.versatile.number }}d{{ item.versatile.denomination }} {{ item.versatile.type }}</div>{% endif %}
+{% elif item.type == "armor" %}
+    <div class="armor-class">AC: {{ item.armor.value }} {% if item.armor.dex %}+ Dex modifier (max {{ item.armor.dex }}){% endif %}</div>
+    <div class="armor-type">Armor Type: {{ item.type.value }} {{ item.type.baseItem }}</div>
+    {% if item.strength %}<div class="armor-str">STR required: {{ item.strength }}</div>{% endif %}
+{% endif %}
+<div>
+    {{ item.description|safe }}
+</div>
+{% endblock body %}

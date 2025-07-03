@@ -1,23 +1,31 @@
 import os
 import shutil
 from typing import Any, Dict, List
-from lib.spellData import readSpellFromFile
+from jinja2 import Environment, PackageLoader, select_autoescape, Template
 from lib.classData import readClassFromFile
-from lib.subclassData import readSubclassData
-from lib.spellData import readSpellFromFile
-from lib.itemLookup import splitUuidIntoParts
-from lib.speciesData import readSpeciesFromFile
 from lib.featData import readFeatFromFile
 from lib.formatters import slugify
-from jinja2 import Environment, PackageLoader, select_autoescape, Template
+from lib.itemData import readItemFromFile
+from lib.itemLookup import splitUuidIntoParts
+from lib.speciesData import readSpeciesFromFile
+from lib.spellData import readSpellFromFile
+from lib.subclassData import readSubclassData
 
 
 FILES_TO_IGNORE = ["_folder.json"]
 TEMPLATE_DIR = "utils\\htmlgen\\templates"
 OUTPUT_DIR = "output"
-OUTPUT_SUBDIRECTORIES = {"class": "classes", "spell": "spells", "feat": "feats", "css": "css", "species": "species"}
+OUTPUT_SUBDIRECTORIES = {
+    "class": "classes",
+    "spell": "spells",
+    "feat": "feats",
+    "css": "css",
+    "species": "species",
+    "item": "item",
+}
 SPELL_DIR_ROOT = "packs\\_source\\spells"
 CLASS_DIR_ROOT = "packs\\_source\\classes"
+ITEM_DIR_ROOTS = ["packs\\_source\\items", "packs\\_source\\magic-items"]
 FEATS_DIR_ROOT = "packs\\_source\\feats"
 SPECIES_DIR_ROOT = "packs\\_source\\species"
 SUBCLASS_DIR_ROOT = "packs\\_source\\subclasses"
@@ -93,6 +101,21 @@ def renderSpeciesData(speciesDirRoot: str, template: Template):
             if speciesData is not None:
                 pass
     return None
+
+
+def renderItemData(itemDirRoots: List[str], template: Template):
+    for itemDir in itemDirRoots:
+        for root, dirs, files in os.walk(itemDir):
+            for file in [f for f in files if os.path.splitext(f)[1] == ".json" and f not in FILES_TO_IGNORE]:
+                fullPath = os.path.join(root, file)
+                itemData = readItemFromFile(fullPath)
+                if itemData:
+                    itemOutput = template.render(item=itemData)
+                    with open(
+                        os.path.join(OUTPUT_DIR, OUTPUT_SUBDIRECTORIES["item"], f"{slugify(itemData['_id'])}.html"),
+                        "w",
+                    ) as htmlOutputFile:
+                        htmlOutputFile.write(itemOutput)
 
 
 def renderFeatsData(featsDirRoot: str, template: Template):
@@ -181,6 +204,9 @@ if __name__ == "__main__":
     # initialize jijna2 template environment
     env = Environment(loader=PackageLoader("htmlgen"), autoescape=select_autoescape())
     # env.add_extension("jinja2.ext.debug")
+
+    item_template = env.get_template("item.html")
+    renderItemData(ITEM_DIR_ROOTS, item_template)
 
     feats_template = env.get_template("feats.html")
     parentFeats = renderFeatsData(FEATS_DIR_ROOT, feats_template)
