@@ -205,6 +205,9 @@ if __name__ == "__main__":
     env = Environment(loader=PackageLoader("htmlgen"), autoescape=select_autoescape())
     # env.add_extension("jinja2.ext.debug")
 
+    class_template = env.get_template("class.html")
+    renderClassData(CLASS_DIR_ROOT, class_template)
+
     item_template = env.get_template("item.html")
     renderItemData(ITEM_DIR_ROOTS, item_template)
 
@@ -213,9 +216,6 @@ if __name__ == "__main__":
 
     spells_template = env.get_template("spell.html")
     renderSpellData(SPELL_DIR_ROOT, SPELL_SUBDIR_LIST, spells_template)
-
-    class_template = env.get_template("class.html")
-    renderClassData(CLASS_DIR_ROOT, class_template)
 
     species_template = env.get_template("species.html")
     renderSpeciesData(SPECIES_DIR_ROOT, species_template)

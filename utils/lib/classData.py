@@ -70,7 +70,9 @@ def readClassFromFile(path: str):
         else:
             classData = {}
             classData["name"] = jsonObj["name"]
-            classData["description"] = jsonObj["system"]["description"]["value"]
+            classData["description"] = formatDescription(
+                jsonObj["system"]["description"]["value"], clean_html_tags=False
+            )
             classData["identifier"] = jsonObj["system"]["identifier"]
             classData["half_caster"] = jsonObj["system"]["spellcasting"]["progression"] == "half"
             classData["full_caster"] = jsonObj["system"]["spellcasting"]["progression"] == "full"
