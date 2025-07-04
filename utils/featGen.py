@@ -79,7 +79,7 @@ for entry in os.scandir(FEATS_SOURCE_DIR):
                         feat_entries.append(
                             {
                                 "name": jsonObj["name"],
-                                "description": jsonObj["system"]["description"]["value"],
+                                "description": cleanDesc,
                                 "id": f"Compendium.materia-dnd.feats.Item.{jsonObj['_id']}",
                             }
                         )
