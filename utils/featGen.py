@@ -38,10 +38,14 @@ PARENT_FEAT_ID_TO_JOURNAL_PAGE_ID = {
 
 
 def create_feat_list_description(feat_entries):
-    desc = '<div class="auto-generated-feat-entries"><p><em>Options:</em></p><ul>'
-    for entry in feat_entries:
-        desc += f"<li><p><strong>@UUID[{entry.id}]{{entry.name}}<span>{entry.description}</span></p></li>\n"
-    desc += "</ul></div>"
+    desc = '<div class="auto-generated-feat-entries"><p><em>Options:</em></p><ul>\n'
+    for entry in sorted(feat_entries, key=lambda x: x["name"]):
+        desc += "<li>\n"
+        desc += f"<strong>@UUID[{entry['id']}]{{{entry['name']}}}</strong>\n"
+        desc += f"{entry['description']}\n"
+        desc += "</li>\n"
+    desc += "</ul></div>\n"
+    return desc
 
 
 # for each folder in the configured feats source directory
@@ -51,7 +55,7 @@ def create_feat_list_description(feat_entries):
 #    the descriptions
 # 3. update the journal page with the descriptions
 for entry in os.scandir(FEATS_SOURCE_DIR):
-    if entry.is_dir():
+    if entry.is_dir() and entry.name not in FEAT_DIRS_TO_IGNORE:
         feat_entries = []
         options_feats_dir = os.path.join(entry.path, f"{entry.name}-options")
         for options_entry in os.scandir(options_feats_dir):
@@ -69,6 +73,9 @@ for entry in os.scandir(FEATS_SOURCE_DIR):
                             "value" in jsonObj["system"]["description"],
                         ]
                     ):
+                        cleanDesc = re.sub(
+                            '<section class="secret".*?</section>', "", jsonObj["system"]["description"]["value"]
+                        )
                         feat_entries.append(
                             {
                                 "name": jsonObj["name"],
@@ -82,7 +89,7 @@ for entry in os.scandir(FEATS_SOURCE_DIR):
         with open(parent_feat_file, "r") as jsonFile:
             jsonObj = json.load(jsonFile)
             origDesc = jsonObj["system"]["description"]["value"]
-            newDesc = re.sub('<div class=\\"auto-generated-feat-entries\\">.*?</div>', feat_list_description, origDesc)
+            newDesc = origDesc[: origDesc.find('<div class="auto-generated-feat-entries"')] + feat_list_description
             jsonObj["system"]["description"]["value"] = newDesc
         if jsonObj is not None:
             with open(parent_feat_file, "w") as updatedFile:
