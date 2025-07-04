@@ -75,7 +75,7 @@ for entry in os.scandir(FEATS_SOURCE_DIR):
                         ]
                     ):
                         cleanDesc = re.sub(
-                            '<section class="secret".*?</section>', "", jsonObj["system"]["description"]["value"]
+                            '<section class="secret".*</section>', "", jsonObj["system"]["description"]["value"]
                         )
                         feat_entries.append(
                             {
