@@ -10,6 +10,7 @@ import json
 FEATS_SOURCE_DIR = "packs\\_source\\feats"
 FILES_TO_IGNORE = ["_folder.json"]
 FEAT_DIRS_TO_IGNORE = ["epic-boon-feats", "half-feats", "int-bonus", "species-feats"]
+FEAT_JOURNAL_PAGE = "packs\\_source\\rules\\feats.json"
 PARENT_FEAT_ID_TO_JOURNAL_PAGE_ID = {
     "matFeaAlacrity00": "matJrnFeaAlacrit",
     "matFeaArmorSpeci": "matJrnFeaArmorSp",
@@ -84,10 +85,13 @@ for entry in os.scandir(FEATS_SOURCE_DIR):
                             }
                         )
         feat_list_description = create_feat_list_description(feat_entries)
+        # update parent feat
         parent_feat_file = os.path.join(entry.path, f"{entry.name}.json")
         jsonObj = None
+        parentFeatId = None
         with open(parent_feat_file, "r") as jsonFile:
             jsonObj = json.load(jsonFile)
+            parentFeatId = jsonObj["_id"]
             origDesc = jsonObj["system"]["description"]["value"]
             newDesc = origDesc[: origDesc.find('<div class="auto-generated-feat-entries"')] + feat_list_description
             jsonObj["system"]["description"]["value"] = newDesc
@@ -95,3 +99,21 @@ for entry in os.scandir(FEATS_SOURCE_DIR):
             with open(parent_feat_file, "w") as updatedFile:
                 json.dump(jsonObj, updatedFile, indent=2)
                 print(f"Updated file: {parent_feat_file}")
+        # update journal page
+        if parentFeatId is not None:
+            journalJsonObj = None
+            pageId = PARENT_FEAT_ID_TO_JOURNAL_PAGE_ID[parentFeatId]
+            with open(FEAT_JOURNAL_PAGE, "r") as journalJsonFile:
+                journalJsonObj = json.load(journalJsonFile)
+                for page in journalJsonObj["pages"]:
+                    if page["_id"] == pageId:
+                        origContent = page["text"]["content"]
+                        newContent = (
+                            origContent[: origContent.find('<div class="auto-generated-feat-entries"')]
+                            + feat_list_description
+                        )
+                        page["text"]["content"] = newContent
+            if journalJsonObj is not None:
+                with open(FEAT_JOURNAL_PAGE, "w") as updateJournalJsonFile:
+                    json.dump(journalJsonObj, updateJournalJsonFile, indent=2)
+                    print(f"Updated journal for {pageId}")
