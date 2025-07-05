@@ -15,6 +15,7 @@ PARENT_FEAT_ID_TO_JOURNAL_PAGE_ID = {
     "matFeaAlacrity00": "matJrnFeaAlacrit",
     "matFeaArmorSpeci": "matJrnFeaArmorSp",
     "matFeaBattleMagi": "matJrnFeaBattleM",
+    "matFeaBravura000": "matJrnFeaBravura",
     "matFeaCombatRefl": "matJrnFeaCombatR",
     "matFeaDualWeapon": "matJrnFeaDualWea",
     "matFeaElohian000": "matJrnFeaElohian",
