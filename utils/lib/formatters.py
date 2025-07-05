@@ -1,5 +1,5 @@
 import re
-from typing import List
+from typing import Any, Dict, List
 
 FORMAT_TAGS_RE = r"<.*?>"
 PARA_TAGS_RE = r"<p\s?.*?>(.*?)</p>"  # replace with contents and a newline
@@ -114,6 +114,56 @@ TOOL_NAMES = {
     "vehicle:water": "Water Vehicles",
 }
 
+PROPERTY_NAMES = {
+    "ada": "Adamantine",
+    "amm": "Ammunition",
+    "bandolier": "Bandolier",
+    "concealed": "Concealed",
+    "concentration": "Concentration",
+    "deft": "Deft",
+    "fin": "Finesse",
+    "fir": "Firearm",
+    "foc": "Focus",
+    "hvy": "Heavy",
+    "lgt": "Light",
+    "lod": "Loading",
+    "material": "Material",
+    "mgc": "Magical",
+    "rch": "Reach",
+    "rel": "Reload",
+    "ret": "Returning",
+    "ritual": "Ritual",
+    "siege": "Siege",
+    "sil": "Silvered",
+    "somatic": "Somatic",
+    "spc": "Special",
+    "stealthDisadvantage": "Stealth Disadvantage",
+    "thr": "Thrown",
+    "trait": "Passive Trait",
+    "two": "Two-Handed",
+    "ver": "Versatile",
+    "vocal": "Verbal",
+    "weightlessContents": "Weightless Contents",
+}
+
+RARITY_NAMES = {
+    "common": "common",
+    "uncommon": "uncommon",
+    "rare": "rare",
+    "veryRare": "very rare",
+    "legendary": "legendary",
+    "artifact": "artifact",
+}
+
+ATTUNEMENT_NAMES = {
+    0: "Attunement Not Required",
+    1: "Attunement Required",
+    2: "Attuned",
+    "": "Attunement Not Required",
+    "optional": "Attunement Not Required",
+    "required": "Attunement Required",
+}
+
 
 def formatCastingTime(activation):
     if activation["type"] in ["action", "reaction"]:
@@ -207,7 +257,12 @@ def formatEnrichers(desc):
                         desc = desc.replace(match.group(0), f"{properties[0]} {healType}")
                     else:
                         desc = desc.replace(match.group(0), f"{properties[0]} healing")
-                elif enricher_type == "roll" or enricher_type == "r" or enricher_type == "item":
+                elif (
+                    enricher_type == "roll"
+                    or enricher_type == "r"
+                    or enricher_type == "item"
+                    or enricher_type == "award"
+                ):
                     desc = desc.replace(match.group(0), properties[0])
                 elif enricher_type == "save" or enricher_type == "concentration":
                     kvps = [prop.split("=") for prop in properties if "=" in prop]
@@ -251,6 +306,17 @@ def formatSchool(school):
     return SPELL_SCHOOLS[school]
 
 
+def formatUses(uses: Dict[str, Any]) -> str:
+    if "max" and "per" in uses and uses["max"] and uses["per"]:
+        return f"{uses['max']} per {uses['per']}"
+    else:
+        return ""
+
+
+def formatAttunement(attunement: int) -> str:
+    return ATTUNEMENT_NAMES[attunement].title()
+
+
 def formatTarget(target):
     parts = []
     parts.append(str("value" in target and target["value"] or ""))
@@ -283,6 +349,13 @@ def getComponents(properties):
     if "material" in properties:
         components.append("M")
     return components
+
+
+def formatRarity(rarity: str) -> str:
+    if rarity:
+        return RARITY_NAMES[rarity].title()
+    else:
+        return ""
 
 
 def formatPrimaryAbility(abilityList: List[str]) -> str:
@@ -330,6 +403,13 @@ def formatArmorProfs(armorList: List[str]) -> str:
     for armor in armorList:
         armorNames.append(ARMOR_NAMES[armor])
     return commaAndify(armorNames)
+
+
+def formatProperties(propList: List[str]) -> str:
+    props = []
+    for prop in propList:
+        props.append(PROPERTY_NAMES[prop])
+    return ", ".join(props)
 
 
 def commaAndify(items: List[str], andWord: str = "and") -> str:

@@ -6,7 +6,7 @@
   "img": "icons/skills/targeting/crosshair-pointed-orange.webp",
   "system": {
     "description": {
-      "value": "<p>When a creature you can see hits or misses you with a ranged attack, you can use take a Reaction to make a ranged attack or thrown weapon attack with a weapon you are holding within the weapon's range against that creature immediately after its attack.</p>",
+      "value": "<p>When a creature you can see hits or misses you with a ranged attack, you can take a Reaction to make a ranged attack or thrown weapon attack against that creature immediately after its attack with a weapon you are holding, provided that creature is within the weapon's range.</p>",
       "chat": ""
     },
     "source": {
@@ -77,6 +77,67 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "RcvWHDGvzbSiRQ7t": {
+        "type": "utility",
+        "_id": "RcvWHDGvzbSiRQ7t",
+        "sort": 0,
+        "activation": {
+          "type": "reaction",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Enfilade",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -91,14 +152,20 @@
         "parent": "Compendium.materia-dnd.feats.Item.matFeaRangedComb",
         "cost": 1
       }
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.3.6",
-    "coreVersion": "12.331",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.343",
     "createdTime": 1710194921837,
-    "modifiedTime": 1742246189871,
+    "modifiedTime": 1751229505681,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
