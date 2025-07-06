@@ -6,7 +6,7 @@
   "img": "icons/magic/control/fear-fright-shadow-monster-purple.webp",
   "system": {
     "description": {
-      "value": "<p>When you cast a spell, you can spend 1 sorcery point to cast it without any somatic or verbal components.</p>",
+      "value": "<p>When you cast a spell, you can spend 1 Sorcery Point to cast it without any Verbal, Somatic, or Material components, except Material components that are consumed by the spell or that have a cost specified in the spell.</p>",
       "chat": ""
     },
     "source": {
@@ -77,20 +77,48 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.wv3ZvDFeg34rJ4co"
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
       "item-use-source": "sorcery-points"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.343",
     "createdTime": 1708287033246,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1751767522998,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

@@ -147,7 +147,7 @@ function renderSpellRitual(spellData) {
 
 function renderSpellRange(spellData) {
     if (spellData.range?.value) {
-        return `${spellData.range?.value} ${CONFIG.DND5E.movementUnits[spellData.range?.units]}`;
+        return `${spellData.range?.value} ${CONFIG.DND5E.movementUnits[spellData.range?.units].label}`;
     } else {
         return `${CONFIG.DND5E.rangeTypes[spellData.range?.units]}`;
     }
