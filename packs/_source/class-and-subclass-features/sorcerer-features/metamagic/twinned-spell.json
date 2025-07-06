@@ -6,7 +6,7 @@
   "img": "icons/skills/melee/blade-tips-double-blue.webp",
   "system": {
     "description": {
-      "value": "<p>When you cast a spell that targets only one creature and doesn't have a range of self, you can spend a number of sorcery points equal to the spell's level to target a second creature in range with the same spell (1 sorcery point if the spell is a cantrip).</p><p>To be eligible, a spell must be incapable of targeting more than one creature at the spell's current level. For example, magic missile and scorching ray are not eligible, but ray of frost and chromatic orb are.</p>",
+      "value": "<p>When you cast a spell, such as @UUID[Compendium.materia-dnd.spells.Item.matSplCharmPerso]{Charm Person}, that can be cast with a higher-level spell slot to target an additional creature, you can spend 1 Sorcery Point to increase the spell's effective level by 1.</p>",
       "chat": ""
     },
     "source": {
@@ -77,20 +77,48 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "name": "",
+        "img": "",
+        "duration": {
+          "units": "inst"
+        },
+        "consumption": {
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.wv3ZvDFeg34rJ4co"
+            }
+          ]
+        },
+        "range": {
+          "units": "self"
+        },
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
       "item-use-source": "sorcery-points"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "3.0.2",
-    "coreVersion": "12.325",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.343",
     "createdTime": 1708288025873,
-    "modifiedTime": 1708360077624,
+    "modifiedTime": 1751767609748,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
