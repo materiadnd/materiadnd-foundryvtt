@@ -2,6 +2,7 @@ import os
 import re
 import copy
 import json
+import time
 import string
 import random
 ####
@@ -29,6 +30,7 @@ BACKGROUND_TEMPLATE = {
         },
         "identifier": "[[identifier]]",
         "source": {"revision": 1, "rules": "2024", "book": "Materia"},
+        "startingEquipment": [],
         "advancement": [
             {
                 "_id": "%%generateId%%",
@@ -51,7 +53,7 @@ BACKGROUND_TEMPLATE = {
                     "allowReplacements": False,
                     "choices": [{"count": 2, "pool": ["languages:standard:*"]}],
                     "grants": ["languages:standard:common"],
-                    "mode": "defauklt",
+                    "mode": "default",
                 },
                 "value": {"chosen": []},
                 "level": 0,
@@ -73,7 +75,7 @@ BACKGROUND_TEMPLATE = {
                         {
                             "count": 2,
                             "pool": [
-                                "skill:*",
+                                "skills:*",
                             ],
                         },
                     ],
@@ -83,7 +85,7 @@ BACKGROUND_TEMPLATE = {
                 "value": {"chosen": []},
                 "level": 0,
                 "title": "Background Proficiencies",
-                "hint": "Your backgroudn grants you proficiency in two skills of your choice. It also grants you proficiency in two tools of your choice.",
+                "hint": "Your background grants you proficiency in two skills of your choice. It also grants you proficiency in two tools of your choice.",
             },
             {
                 "_id": "%%generateId%%",
@@ -139,11 +141,26 @@ BACKGROUND_TEMPLATE = {
                 },
                 "value": {"added": {}, "replaced": {}},
                 "title": "Background Feat Options",
-                "hint": "Choose three options to specialize your backgroudn feat. You may replace one specialization every time you reach a new level.",
+                "hint": "Choose three options to specialize your background feat. You may replace one specialization every time you reach a new level.",
             },
         ],
         "wealth": "50",
     },
+    "effects": [],
+    "folder": None,
+    "sort": "%%generated%%",
+    "ownership": {"default": 0},
+    "flags": {},
+    "_stats": {
+        "duplicateSource": None,
+        "coreVersion": "12.343",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1745147305373,
+        "modifiedTime": 1745147305373,
+        "lastModifiedBy": "dnd5mbuilder0000",
+    },
+    "_key": "!items![[id]]",
 }
 
 
@@ -175,7 +192,7 @@ def get_feat_data(feats_dir):
                     with open(options_entry.path, "r") as optionsJsonFile:
                         optionsJsonObj = json.load(optionsJsonFile)
                         if all(["_id" in optionsJsonObj, "type" in optionsJsonObj, optionsJsonObj["type"] == "feat"]):
-                            feat_entries.append(f"Compendium.materia-dnd.feats.Items.{optionsJsonObj['_id']}")
+                            feat_entries.append(f"Compendium.materia-dnd.feats.Item.{optionsJsonObj['_id']}")
             parent_feat_path = os.path.join(entry.path, f"{entry.name}.json")
             with open(parent_feat_path, "r") as parentJsonFile:
                 parentJsonObj = json.load(parentJsonFile)
@@ -200,25 +217,32 @@ def generate_uuid():
 
 
 def create_background_source(feat_data):
-    for key, item in feat_data.items():
+    for i, (key, item) in enumerate(feat_data.items()):
         data = copy.deepcopy(BACKGROUND_TEMPLATE)
         data["name"] = item["name"]
         data["_id"] = item["id"]
         data["img"] = item["img"]
-        data["system"]["descrpition"]["value"] = (
+        data["system"]["description"]["value"] = (
             data["system"]["description"]["value"]
             .replace("[[prerequisiteText]]", item["prerequisiteText"])
             .replace("[[parentFeatUuid]]", item["parentFeatUuid"])
             .replace("[[flavorText]]", item["flavorText"])
         )
         data["system"]["identifier"] = item["identifier"]
+        data["_key"] = data["_key"].replace("[[id]]", item["id"])
         for advItem in data["system"]["advancement"]:
             advItem["_id"] = generate_uuid()
         data["system"]["advancement"][3]["configuration"]["items"][0]["uuid"] = item["parentFeatUuid"]
-        data["system"]["advancement"][4]["configuration"]["pool"] = item["options"]
+        data["system"]["advancement"][3]["hint"] = data["system"]["advancement"][3]["hint"].replace(
+            "[[name]]", item["name"]
+        )
+        data["sort"] = (i + 1) * 100000
+        data["_stats"]["createdTime"] = int(time.time())
+        data["_stats"]["modifiedTime"] = int(time.time())
+        data["system"]["advancement"][4]["configuration"]["pool"] = [{"uuid": uuid} for uuid in item["options"]]
         file_path = os.path.join(BACKGROUND_DIR_ROOT, f"{key}.json")
-        with open(file_path, "w"):
-            json.dumps(data)
+        with open(file_path, "w") as sourceFile:
+            json.dump(data, sourceFile, indent=2)
 
 
 if __name__ == "__main__":

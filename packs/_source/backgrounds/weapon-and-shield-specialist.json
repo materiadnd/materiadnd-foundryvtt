@@ -1,13 +1,14 @@
 {
   "name": "Weapon and Shield Specialist",
   "type": "background",
+  "_id": "matBgrWeaponAndS",
   "img": "icons/magic/defensive/shield-barrier-glowing-blue.webp",
   "system": {
     "description": {
-      "value": "<p><strong>Ability Scores:</strong> Any</p><p><strong>Feat:</strong> @UUID[Compendium.materia-dnd.feats.Item.matFeaWeaponAndS]{Weapon and Shield Specialist}</p><p><strong>Skill Proficiencies:</strong> Choose any two</p><p><strong>Tool Proficiency:</strong> Choose any two</p><p><strong>Equipment:</strong> 50 GP</p><p><span style=\"font-family:'Roboto Condensed', sans-serif\">You are a master of fighting with a weapon and shield. Your specialized training has provided you with certain advantages when employing weapon combat while you have a shield equipped.</span></p>",
+      "value": "<div class=\"prerequisite\"><p><strong>Prerequisite</strong>: Proficiency in shields</p></div><p><strong>Ability Scores:</strong> Any</p><p><strong>Feat: </strong>@UUID[Compendium.materia-dnd.feats.Item.matFeaWeaponAndS]{[[name]]}</p><p><strong>Skill Proficiencies: </strong>Choose any two</p><p><strong>Tool Proficiencies: </strong>Choose any two</p><p><strong>Equipment: </strong>50 GP</p><div class=\"flavorText\"><p>You are a master of fighting with a weapon and shield. Your specialized training has provided you with certain advantages when employing weapon combat while you have a shield equipped.</p></div>",
       "chat": ""
     },
-    "identifier": "weapon-and-shield-specialist",
+    "identifier": "weapon and shield specialist",
     "source": {
       "revision": 1,
       "rules": "2024",
@@ -16,7 +17,7 @@
     "startingEquipment": [],
     "advancement": [
       {
-        "_id": "ZAPuB9zF5J9o4xJI",
+        "_id": "BwgcO2X0p78byG0W",
         "type": "AbilityScoreImprovement",
         "configuration": {
           "cap": 2,
@@ -36,10 +37,10 @@
         },
         "level": 0,
         "title": "Background Ability Score Improvement",
-        "hint": "Your background allows you to increase your ability scores; increase one of them by 2 and a different one by 1, or increase all three by 1. None of these increases can raise a score above 20."
+        "hint": "Your background allows you to increase your ability scores: increase one of them by 2 and a different one by 1, or increases all three by 1. None of these increases can raise a score above 20."
       },
       {
-        "_id": "dLKbPQRiijNFU5UI",
+        "_id": "mCbsjZLbvk9c2ovT",
         "type": "Trait",
         "configuration": {
           "allowReplacements": false,
@@ -64,7 +65,7 @@
         "hint": "Your character knows at least three languages: Common plus two languages you roll or choose from the Standard Languages table."
       },
       {
-        "_id": "Y1yYrX5DSplOMFT5",
+        "_id": "rxiMf4zvxa1jIBrj",
         "type": "Trait",
         "configuration": {
           "allowReplacements": false,
@@ -90,10 +91,10 @@
         },
         "level": 0,
         "title": "Background Proficiencies",
-        "hint": "Your background grants you proficiency two skills of your choice. It also grants you proficiency in two tools of your choice."
+        "hint": "Your background grants you proficiency in two skills of your choice. It also grants you proficiency in two tools of your choice."
       },
       {
-        "_id": "87LxrNuvh3Fl4EUC",
+        "_id": "kO4Ijlkfh6Y2KoGX",
         "type": "ItemGrant",
         "configuration": {
           "items": [
@@ -111,7 +112,7 @@
         "hint": "Your background grants you the Weapon and Shield Specialist feat."
       },
       {
-        "_id": "GY6UyjAvNHcrdR5c",
+        "_id": "L6NOcEOdFkEvAOSX",
         "type": "ItemChoice",
         "configuration": {
           "allowDrops": true,
@@ -214,25 +215,31 @@
               "uuid": "Compendium.materia-dnd.feats.Item.zgAWSgsgwlFz94Xb"
             },
             {
-              "uuid": "Compendium.materia-dnd.feats.Item.ICUxdjboyCM1bEwm"
+              "uuid": "Compendium.materia-dnd.feats.Item.wflvjmCXBglHwbW7"
             },
             {
-              "uuid": "Compendium.materia-dnd.feats.Item.wflvjmCXBglHwbW7"
+              "uuid": "Compendium.materia-dnd.feats.Item.ICUxdjboyCM1bEwm"
             },
             {
               "uuid": "Compendium.materia-dnd.feats.Item.guFBj25xHqNXbJEC"
             },
             {
+              "uuid": "Compendium.materia-dnd.feats.Item.qFhCmjAyBnsvzAEk"
+            },
+            {
               "uuid": "Compendium.materia-dnd.feats.Item.2smxadE5GoempsxR"
             },
             {
-              "uuid": "Compendium.materia-dnd.feats.Item.qFhCmjAyBnsvzAEk"
+              "uuid": "Compendium.materia-dnd.feats.Item.ejewhSjoyFQW3nfm"
             },
             {
               "uuid": "Compendium.materia-dnd.feats.Item.TilMBMOAIxTCuI4V"
             },
             {
-              "uuid": "Compendium.materia-dnd.feats.Item.ejewhSjoyFQW3nfm"
+              "uuid": "Compendium.materia-dnd.feats.Item.B4Vle7dNLDTTYlqp"
+            },
+            {
+              "uuid": "Compendium.materia-dnd.feats.Item.mhLpQbrzCcs9ad88"
             },
             {
               "uuid": "Compendium.materia-dnd.feats.Item.z695QaPIp0BBwwXy"
@@ -241,7 +248,8 @@
           "spell": null,
           "type": "feat",
           "restriction": {
-            "type": ""
+            "type": "",
+            "subtype": ""
           }
         },
         "value": {
@@ -249,27 +257,26 @@
           "replaced": {}
         },
         "title": "Background Feat Options",
-        "hint": "Choose three options to specialize your background feat.  You may replace one specialization every time you reach a new level."
+        "hint": "Choose three options to specialize your background feat. You may replace one specialization every time you reach a new level."
       }
     ],
     "wealth": "50"
   },
   "effects": [],
   "folder": null,
-  "flags": {},
-  "_stats": {
-    "duplicateSource": null,
-    "coreVersion": "12.331",
-    "systemId": "dnd5e",
-    "systemVersion": "4.3.9",
-    "createdTime": 1745149160397,
-    "modifiedTime": 1746680379083,
-    "lastModifiedBy": "dnd5mbuilder0000"
-  },
-  "_id": "hBk2dFDYpXNsqFQq",
-  "sort": 1750000,
+  "sort": 2400000,
   "ownership": {
     "default": 0
   },
-  "_key": "!items!hBk2dFDYpXNsqFQq"
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.343",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.9",
+    "createdTime": 1751937602,
+    "modifiedTime": 1751937602,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_key": "!items!matBgrWeaponAndS"
 }
