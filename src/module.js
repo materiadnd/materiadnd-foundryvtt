@@ -2,7 +2,7 @@ import { AddMateriaArmor } from "./armor.js"
 import { AddMateriaConditions, AddMateriaStatusEffects } from "./conditions.js";
 import { AddMateriaWeapons } from "./weapons.js";
 import { Constants } from "./constants.js";
-import { ExhaustionDamageHandler } from "./exhaustion.js";
+import { ExhaustionDamageHandler, ExhaustionIncDecHandler } from "./exhaustion.js";
 import { ItemRestoreApp } from "./apps/item-restore.js";
 import { ItemUseCreateIemHandler, ItemUseUpdateUserHandler, ItemUseUserConnectedHandler } from "./item-use.js";
 import { Replace5eSourcePacks } from "./source-packs.js";
@@ -134,5 +134,11 @@ Hooks.on("renderItemSheet5e", async (app, html, item) => {
 Hooks.on("renderApplication", async (flow, html, app) => {
     if (app?.title == "Level 1 Feat") {
         html.find('div.feat-section :first-child').css("display", "none")
+    }
+});
+
+Hooks.on("updateActor", async (actor, exhLevel, diff, id) => {
+    if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_EXHAUSTION_HANDLING)) {
+        await ExhaustionIncDecHandler(actor, exhLevel, diff, id);
     }
 });
