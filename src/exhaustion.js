@@ -5,27 +5,22 @@ export async function ExhaustionDamageHandler(actor, heal, diff, id) {
         console.log("materia-dnd | Exhaustion: " + actor.name + " has dropped to 0 HP, upping exhaustion by 1");
         let newExhLevel = actor.system.attributes.exhaustion + 1;
         actor.update({ "system.attributes.exhaustion": newExhLevel });
-        // special case:  new exhaustion level = 4, we make them vulnerable to all dmg
-        if (newExhLevel == 4) {
-            makeVulnerableToAllDamageTypes(actor);
-        }
-    }
-}
 
-export function ExhastionActiveEffectHandler(activeEffect, flags, diff, id) {
-    let actor = activeEffect.parent;
-    if (flags?.flags?.dnd5e?.exhaustionLevel == 3) {
-        // special case, dropping from 4 to 3 removes the vulnerability we imposed
-        actor.system.traits.dv.value.clear();
-    }
-    if (flags?.flags?.dnd5e?.exhaustionLevel >= 4) {
-        actor.system.traits.dv.value.clear();
-        makeVulnerableToAllDamageTypes(actor);
-    }
-}
-
-function makeVulnerableToAllDamageTypes(actor) {
-    for (const [dmgType, _] of Object.entries(CONFIG.DND5E.damageTypes)) {
-        actor.system.traits.dv.value.add(dmgType)
+        let effectData = {
+             label: "Exhaustion " + newExhLevel,
+             icon: "systems/dnd5e/icons/svg/statuses/exhaustion.svg",
+             changes: [
+                { key: "system.bonuses.abilities.save",   value: "-2", mode: 2 }, // -1 to saves
+                { key: "system.bonuses.abilities.check",  value: "-2", mode: 2 }, // -1 to all ability checks
+                { key: "system.bonuses.spell.dc	",        value: "-2", mode: 2 }, // -1 to all spell DCs
+                { key: "system.bonuses.msak.attack",      value: "-2", mode: 2 }, // -1 to all attack rolls
+                { key: "system.bonuses.rsak.attack",      value: "-2", mode: 2 },
+                { key: "system.bonuses.mwak.attack",      value: "-2", mode: 2 },
+                { key: "system.bonuses.rwak.attack",      value: "-2", mode: 2 },
+                { key: "system.attributes.movement.walk", value: "-5", mode: 2 }  // -5 to speed
+            ],
+            system: {}
+        };
+        await actor.createEmbeddedDocuments("ActiveEffect", [effectData]);
     }
 }
