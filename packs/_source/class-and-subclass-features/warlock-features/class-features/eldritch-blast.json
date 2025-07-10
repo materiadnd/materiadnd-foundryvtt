@@ -6,7 +6,7 @@
   "img": "icons/magic/sonic/projectile-shock-wave-blue.webp",
   "system": {
     "description": {
-      "value": "<p>As an Action, you can fire a beam of crackling energy that streaks toward a creature within 120 feet. Make a ranged spell attack against the target. On a hit, the target takes 1d10 Force damage. You must provide a verbal and somatic component as if casting a spell.</p><p>At 9th level, the damage increases to 1d12 Force damage.</p><p>You create more than one beam as you gain more levels in this class: two beams at 5th level, three beams at 11th level, and four beams at 17th level. You can direct the beams at the same target or at different ones. Make a separate attack roll for each beam.</p><p>Moreover, you can replace one of your Eldritch Blast beams with an Eldritch Invocation if it indicates that you can do so. You may not replace more than one Eldritch Blast beam per use of Eldritch Blast.</p>",
+      "value": "<p>As a Magic action, you can fire a beam of crackling energy that streaks toward a creature within 120 feet. Make a ranged spell attack against the target. On a hit, the target takes 1d10 Force damage. You must provide a Verbal and Somatic component as if casting a spell.</p><p>At level 9, the damage increases to 1d12 Force damage.</p><p>You create more than one beam as you gain more levels in this class: two beams at level 5, three beams at level 11, and four beams at level 17. You can direct the beams at the same target or at different ones. Make a separate attack roll for each beam.</p><p><strong>Current Eldritch Blast Beam Count:</strong> @scale.warlock.eldritch-blast.number</p><p>Moreover, you can replace one of your Eldritch Blast beams with an Eldritch Invocation if it indicates that you can do so. You may not replace more than one Eldritch Blast beam per use of Eldritch Blast.</p>",
       "chat": ""
     },
     "source": {
@@ -82,16 +82,113 @@
     "recharge": {
       "value": null,
       "charged": false
+    },
+    "activities": {
+      "nfOdyNBXwF28wDwK": {
+        "type": "attack",
+        "_id": "nfOdyNBXwF28wDwK",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "120"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "attack": {
+          "critical": {
+            "threshold": null
+          },
+          "flat": false,
+          "type": {
+            "value": "ranged",
+            "classification": "spell"
+          },
+          "ability": "",
+          "bonus": ""
+        },
+        "damage": {
+          "critical": {
+            "bonus": ""
+          },
+          "includeBase": true,
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "@scale.warlock.eldritch-blast.die"
+              },
+              "number": null,
+              "denomination": 0,
+              "bonus": "",
+              "types": [
+                "force"
+              ]
+            }
+          ]
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "4.3.9",
     "coreVersion": "12.343",
     "createdTime": 1706854750678,
-    "modifiedTime": 1747768064596,
+    "modifiedTime": 1752035116946,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

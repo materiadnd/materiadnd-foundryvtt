@@ -224,6 +224,7 @@ def create_background_source(feat_data):
         data["img"] = item["img"]
         data["system"]["description"]["value"] = (
             data["system"]["description"]["value"]
+            .replace("[[name]]", item["name"])
             .replace("[[prerequisiteText]]", item["prerequisiteText"])
             .replace("[[parentFeatUuid]]", item["parentFeatUuid"])
             .replace("[[flavorText]]", item["flavorText"])
