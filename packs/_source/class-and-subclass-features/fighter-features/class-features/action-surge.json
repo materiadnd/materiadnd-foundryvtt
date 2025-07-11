@@ -6,7 +6,7 @@
   "img": "icons/magic/time/arrows-circling-pink.webp",
   "system": {
     "description": {
-      "value": "<p>You can push yourself beyond your normal limits for a moment. On your turn, you can take one additional Action.</p><p>Once you use this feature, you must finish a Short or Long Rest before you can use it again. Starting at 17th level, you can use it twice before a rest, but only once on the same turn.</p>",
+      "value": "<p>You can push yourself beyond your normal limits for a moment. On your turn, you can take one additional Action, except the Magic action.</p><p>Once you use this feature, you must finish a Short or Long Rest before you can use it again. Starting at level 17, you can use it twice before a rest, but only once on the same turn.</p>",
       "chat": ""
     },
     "source": {
@@ -80,16 +80,89 @@
     },
     "prerequisites": {
       "level": 2
+    },
+    "activities": {
+      "UEg4ieL1YAbtAytF": {
+        "type": "utility",
+        "_id": "UEg4ieL1YAbtAytF",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.3.8",
-    "coreVersion": "12.331",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.343",
     "createdTime": 1707149652446,
-    "modifiedTime": 1744151854667,
+    "modifiedTime": 1752034518761,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

@@ -6,7 +6,7 @@
   "img": "icons/magic/unholy/strike-beam-blood-small-red-teal.webp",
   "system": {
     "description": {
-      "value": "<p>You can apply a Metamagic option you do not know to any of your Sorcerer subclass spells but at twice the sorcery point cost.</p>",
+      "value": "<p>You can apply a Metamagic option you do not know to any of your Sorcerer subclass spells but it costs one additional Sorcery Point.</p>",
       "chat": ""
     },
     "source": {
@@ -80,16 +80,90 @@
     },
     "prerequisites": {
       "level": 9
+    },
+    "activities": {
+      "0XReukkCshZbNdrg": {
+        "type": "utility",
+        "_id": "0XReukkCshZbNdrg",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.wv3ZvDFeg34rJ4co"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Expend Extra Sorcery Point",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.3.6",
-    "coreVersion": "12.331",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.343",
     "createdTime": 1708290506022,
-    "modifiedTime": 1741640184651,
+    "modifiedTime": 1752210225855,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

@@ -2,12 +2,12 @@ import { AddMateriaArmor } from "./armor.js"
 import { AddMateriaConditions, AddMateriaStatusEffects } from "./conditions.js";
 import { AddMateriaWeapons } from "./weapons.js";
 import { Constants } from "./constants.js";
-import { ExhastionActiveEffectHandler, ExhaustionDamageHandler } from "./exhaustion.js";
+import { ExhaustionDamageHandler, ExhaustionIncDecHandler } from "./exhaustion.js";
 import { ItemRestoreApp } from "./apps/item-restore.js";
 import { ItemUseCreateIemHandler, ItemUseUpdateUserHandler, ItemUseUserConnectedHandler } from "./item-use.js";
 import { Replace5eSourcePacks } from "./source-packs.js";
 import { Settings } from "./settings.js";
-import { SpellcastingRenderActorSheetHandler, AddThirdPactCaster, SpellcastingAddThirdPactProgression } from "./spellcasting-utils.js";
+import { AddThirdPactCaster, SpellcastingAddThirdPactProgression } from "./spellcasting-utils.js";
 import { UpdateTeleBonusFlag } from "./tele.js";
 import { WildShapeTransformActorHandler } from "./wild-shape.js";
 import { SpellSearchIndex, SpellSearchApp, SpellSearchRenderActorSheetHandler } from "./apps/spell-search.js";
@@ -71,12 +71,6 @@ Hooks.on("dnd5e.damageActor", async (actor, heal, diff, id) => {
     }
 });
 
-Hooks.on("updateActiveEffect", (activeEffect, flags, diff, id) => {
-    if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_EXHAUSTION_HANDLING)) {
-        ExhastionActiveEffectHandler(activeEffect, flags, diff, id);
-    }
-})
-
 Hooks.on("userConnected", (user, b) => {
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.AUTO_ITEM_USE_TRACKER_ENABLED)) {
         ItemUseUserConnectedHandler(user, b);
@@ -96,9 +90,6 @@ Hooks.on("createItem", (item, flags, itemId) => {
 });
 
 Hooks.on("renderActorSheet5eCharacter2", (app, html, actor) => {
-    if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_SPELL_PREP_COUNTER)) {
-        SpellcastingRenderActorSheetHandler(html, actor);
-    }
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ENABLE_SPELL_SEARCH)) {
         SpellSearchRenderActorSheetHandler(html, actor);
     }
@@ -143,5 +134,11 @@ Hooks.on("renderItemSheet5e", async (app, html, item) => {
 Hooks.on("renderApplication", async (flow, html, app) => {
     if (app?.title == "Level 1 Feat") {
         html.find('div.feat-section :first-child').css("display", "none")
+    }
+});
+
+Hooks.on("updateActor", async (actor, exhLevel, diff, id) => {
+    if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ADD_EXHAUSTION_HANDLING)) {
+        await ExhaustionIncDecHandler(actor, exhLevel, diff, id);
     }
 });

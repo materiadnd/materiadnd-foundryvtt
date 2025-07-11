@@ -5,73 +5,6 @@ export const THIRD_PACT_LABEL = "Third Pact";
 
 const PACT_CASTER_TYPES = ['pact', THIRD_PACT_ABBR];
 
-/**
- * Returns the number of spell preparations for a given spellcasting class 
- * @param {Actor5e} actor               - actor with the specified class 
- * @param {Item5e} spellcastingClass    - spellcasting class 
- */
-function getSpellPreparationCountsForClass(actor, spellcastingClass) {
-    let spellcastingAbilityMod = actor.system.abilities[spellcastingClass.system.spellcasting.ability].mod;
-    let levelCount = spellcastingClass.system.levels;
-    return Math.max(1,
-                    Math.floor(spellcastingAbilityMod +
-                               (levelCount / getProgressionDivisor(spellcastingClass))
-                              )
-    );
-}
-
-function getSpellPreparationCountsForSubclass(actor, spellcastingSubclass) {
-    let spellcastingAbilityMod = actor.system.abilities[spellcastingSubclass.system.spellcasting.ability].mod;
-    let levelCount = actor.items.find( x => x.system?.identifier === spellcastingSubclass.system?.classIdentifier ).system.levels;
-    return Math.max(1,
-                    Math.floor(spellcastingAbilityMod +
-                               (levelCount / getProgressionDivisor(spellcastingSubclass))
-                              )
-    );
-}
-
-function getProgressionDivisor(spellcastingClass) {
-    switch (spellcastingClass.system.spellcasting.progression) {
-        case "full":
-        case "pact":
-            return 1;
-        case "half":
-        case "artificer":
-            return 2;
-        case "third":
-        case "thirdpact":
-            return 3;
-        default:
-            // this will break things but it SHOULD
-            return 0;
-    }
-}
-
-function getPreparedSpellCounts(actor) {
-    let spells = actor.items.filter( x => x.type == 'spell'  && x.system?.level > 0);
-    return spells.reduce(
-        (acc, spell) => {
-            if (spell.system.preparation.prepared) { return acc + 1; } else { return acc; }
-        }, 0);
-}
-
-function getSpellPreparationCounts(actor) {
-    // get classes with any spellcasting progression other than "None"
-    let casterClasses = actor.items
-        .filter( x => x.type == 'class' )
-        .filter( x => x.system?.levels > 0 && x.system?.spellcasting?.progression != "none")
-        .map( x => ({ name: x.name,
-                      preps: getSpellPreparationCountsForClass(actor, x) }));
-    // get any subclasses with spellcasting progression other than "None"
-    let casterSubclasses = actor.items
-        .filter( x => x.type == 'subclass' )
-        .filter( x => x.system?.spellcasting?.progression != "none")
-        .map( x => ({ name: x.name, 
-                      preps: getSpellPreparationCountsForSubclass(actor, x) }));
-    let allCasterClassesAndSubclasses = casterClasses.concat(casterSubclasses);
-    return allCasterClassesAndSubclasses;
-}
-
 function getPactLevels(actor) {
     // NB: This whole function is a bit "overdone", it presumes that full pact caster progression
     // and one-third pact caster progression can live either on classes or subclasses, when in reality
@@ -160,16 +93,6 @@ function isPactCaster(actor) {
     let pactClasses = actor.items
         .filter( x => x.type === 'class' && pactSubclassClassNames.some( sc => x.system?.identifier == sc ));
     return pactClasses.length > 0;
-}
-
-export function SpellcastingRenderActorSheetHandler(html, actor) {
-    let preparedSpells = getPreparedSpellCounts(actor);
-    let spellPreps = getSpellPreparationCounts(actor);
-    for ( let spellPrep of spellPreps) {
-        let prepElement = document.createElement("div");
-        prepElement.innerHTML = `<span class="label">Preps</span>\n<span class="value">${preparedSpells} / ${spellPrep.preps}</span>`;
-        html.find(`div.spellcasting > div.header > h3:contains("${spellPrep.name}")`).parent().parent().find("div.info")[0].insertAdjacentElement("beforeend", prepElement);
-    }
 }
 
 // Add custom "third pact" spell progression
