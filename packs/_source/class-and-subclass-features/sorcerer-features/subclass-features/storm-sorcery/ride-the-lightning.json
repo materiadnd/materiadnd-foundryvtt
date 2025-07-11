@@ -1,12 +1,12 @@
 {
   "folder": "hTcsZBebDnqvAnNg",
-  "name": "Heart of the Storm",
+  "name": "Ride the Lightning",
   "type": "feat",
-  "_id": "NBBYIa9u64VvWpF8",
-  "img": "icons/magic/lightning/projectile-tendrils-teal.webp",
+  "_id": "YIiO8iA7NLJmsdjV",
+  "img": "icons/magic/lightning/bolt-strike-forked-sparks-blue.webp",
   "system": {
     "description": {
-      "value": "<p>You gain Resistance to Lightning and Thunder damage. In addition, whenever you start casting a level 1+ spell that deals Lightning or Thunder damage, stormy magic erupts from you. This eruption causes creatures of your choice that you can see within 30 feet of you to take Lightning or Thunder damage (choose each time this ability activates) equal to half your Sorcerer level.</p>",
+      "value": "<p>On your turn when you complete casting a level 1+ spell that deals Lightning or Thunder damage, you can spend 1 Sorcery Point to teleport to an unoccupied space in the area of effect of that spell or within 5 feet of a target of that spell.</p>",
       "chat": ""
     },
     "source": {
@@ -15,8 +15,8 @@
       "book": "Materia"
     },
     "activation": {
-      "type": "",
-      "cost": null,
+      "type": "reaction",
+      "cost": 1,
       "condition": ""
     },
     "duration": {
@@ -50,8 +50,8 @@
       "amount": null,
       "scale": false
     },
-    "ability": null,
-    "actionType": "",
+    "ability": "",
+    "actionType": "save",
     "attack": {
       "bonus": "",
       "flat": false
@@ -62,12 +62,17 @@
       "damage": ""
     },
     "damage": {
-      "parts": [],
+      "parts": [
+        [
+          "@classes.sorcerer.levels",
+          "lightning"
+        ]
+      ],
       "versatile": ""
     },
     "formula": "",
     "save": {
-      "ability": "",
+      "ability": "str",
       "dc": null,
       "scaling": "spell"
     },
@@ -77,18 +82,18 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Storm Sorcery 6",
+    "requirements": "Storm Sorcery 14",
     "recharge": {
       "value": null,
       "charged": false
     },
     "prerequisites": {
-      "level": 6
+      "level": 14
     },
     "activities": {
-      "nlfbKFCcrz3WKMo4": {
-        "type": "damage",
-        "_id": "nlfbKFCcrz3WKMo4",
+      "ceIYrVrz1atPEzx9": {
+        "type": "utility",
+        "_id": "ceIYrVrz1atPEzx9",
         "sort": 0,
         "activation": {
           "type": "",
@@ -101,7 +106,13 @@
             "allowed": false
           },
           "spellSlot": true,
-          "targets": []
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.wv3ZvDFeg34rJ4co"
+            }
+          ]
         },
         "description": {
           "chatFlavor": ""
@@ -121,15 +132,11 @@
           "template": {
             "contiguous": false,
             "units": "ft",
-            "type": "radius",
-            "size": "10",
-            "count": ""
+            "type": ""
           },
           "affects": {
-            "choice": true,
-            "type": "creature",
-            "count": "",
-            "special": ""
+            "choice": false,
+            "type": "self"
           },
           "override": false,
           "prompt": true
@@ -139,27 +146,13 @@
           "recovery": [],
           "max": ""
         },
-        "damage": {
-          "critical": {
-            "allow": false
-          },
-          "parts": [
-            {
-              "custom": {
-                "enabled": true,
-                "formula": "@classes.sorcerer.levels / 2"
-              },
-              "number": null,
-              "denomination": 0,
-              "bonus": "",
-              "types": [
-                "lightning",
-                "thunder"
-              ]
-            }
-          ]
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
         },
-        "name": "Eruption",
+        "name": "Teleport",
         "img": "",
         "appliedEffects": []
       }
@@ -182,10 +175,10 @@
     "systemId": "dnd5e",
     "systemVersion": "4.3.9",
     "coreVersion": "12.343",
-    "createdTime": 1711312942646,
-    "modifiedTime": 1752261477456,
+    "createdTime": 1711313102962,
+    "modifiedTime": 1752261848715,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "_key": "!items!NBBYIa9u64VvWpF8"
+  "_key": "!items!YIiO8iA7NLJmsdjV"
 }

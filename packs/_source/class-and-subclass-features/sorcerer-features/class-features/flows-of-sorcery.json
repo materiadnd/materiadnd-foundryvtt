@@ -1,15 +1,14 @@
 {
   "folder": "x4zJPNXFoTfXUbEJ",
-  "name": "Sorcery Incarnate",
+  "name": "Flows of Sorcery",
   "type": "feat",
-  "_id": "zRfLyzF5CuRKMd66",
-  "img": "icons/magic/life/cross-area-circle-green-white.webp",
+  "_id": "VQO1Rkc2145G3UcC",
+  "img": "icons/magic/symbols/star-rising-purple.webp",
   "system": {
     "activities": {
-      "CfofBgSVC4SsBCVF": {
+      "mkCiuDuo4FKZFHXQ": {
         "type": "utility",
-        "name": "Restore Innate Sorcery",
-        "_id": "CfofBgSVC4SsBCVF",
+        "_id": "mkCiuDuo4FKZFHXQ",
         "sort": 0,
         "activation": {
           "type": "",
@@ -25,13 +24,13 @@
           "targets": [
             {
               "type": "itemUses",
-              "value": "2",
-              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.wv3ZvDFeg34rJ4co"
+              "value": "1",
+              "target": ""
             },
             {
               "type": "itemUses",
-              "value": "-1",
-              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.Njc6vY7DGeGEpHP8"
+              "value": "-@abilities.cha.mod",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.wv3ZvDFeg34rJ4co"
             }
           ]
         },
@@ -57,7 +56,7 @@
           },
           "affects": {
             "choice": false,
-            "type": ""
+            "type": "self"
           },
           "override": false,
           "prompt": true
@@ -73,42 +72,47 @@
           "name": "",
           "formula": ""
         },
+        "name": "Regain Sorcery Points",
         "img": "",
         "appliedEffects": []
       }
     },
     "uses": {
       "spent": 0,
-      "recovery": [],
-      "max": ""
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll"
+        }
+      ],
+      "max": "1"
     },
     "description": {
-      "value": "<p>If you have no uses of Innate Sorcery left, you can spend 2 Sorcery Points to regain one use of it (no action required).</p><p>In addition, while your Innate Sorcery feature is active, you can use up to two of your Metamagic options on each spell you cast.</p><section class=\"secret\" id=\"secret-K4DLdnSBYyxk6oAl\"><p><strong>Foundry Note</strong></p><p>Use this feature to consume 2 Sorcery Points and restore a use of Innate Sorcery.</p></section>",
+      "value": "<p>When you roll for Initiative and have no Sorcery Points remaining, you regain a number of Sorcery Points equal to your Charisma modifier (minimum of 1).</p><p>Once you use this feature you cannot usei it again until you complete a Long Rest.</p>",
       "chat": ""
     },
-    "identifier": "sorcery-incarnate",
+    "identifier": "new-item",
     "source": {
-      "rules": "2024",
       "revision": 1,
-      "book": "Materia"
+      "rules": "2024"
     },
     "advancement": [],
     "cover": null,
     "crewed": false,
     "enchant": {},
     "prerequisites": {
-      "level": 7,
+      "level": 15,
       "repeatable": false
     },
     "properties": [],
-    "requirements": "",
+    "requirements": "Sorcerer 15",
     "type": {
       "value": "class",
       "subtype": ""
     }
   },
   "effects": [],
-  "sort": 298438,
+  "sort": 0,
   "ownership": {
     "default": 0
   },
@@ -125,9 +129,9 @@
     "coreVersion": "12.343",
     "systemId": "dnd5e",
     "systemVersion": "4.3.9",
-    "createdTime": 1741640216477,
-    "modifiedTime": 1752210007348,
+    "createdTime": 1752210789685,
+    "modifiedTime": 1752210979908,
     "lastModifiedBy": "dnd5mbuilder0000"
   },
-  "_key": "!items!zRfLyzF5CuRKMd66"
+  "_key": "!items!VQO1Rkc2145G3UcC"
 }
