@@ -6,7 +6,7 @@
   "img": "icons/magic/air/wind-weather-snow-gusts.webp",
   "system": {
     "description": {
-      "value": "<p>You gain Immunity to Lightning and Thunder damage.</p><p>You also gain a Fly Speed of 60 feet. As a Magic action, you can reduce your Fly Speed to 30 feet for 1 hour and choose a number of creatures within 30 feet of you equal to 3 plus your Charisma modifier. The chosen creatures gain a Fly Speed of 30 feet for 1 hour. Once you reduce your Fly Speed in this way, you can't do so again until you finish a Short or Long Rest.</p>",
+      "value": "<p>You gain Immunity to Lightning and Thunder damage.</p><p>You also gain a Fly Speed of 60 feet. As a Magic action, you can reduce your Fly Speed to 30 feet for 1 hour and choose a number of creatures within 30 feet of you equal to 3 plus your Charisma modifier. The chosen creatures gain a Fly Speed of 30 feet for 1 hour. Once you reduce your Fly Speed in this way, you can't do so again until you finish a Short or Long Rest, unless you spend 5 Sorcery Points (no action required) to restore your use of it.</p>",
       "chat": ""
     },
     "source": {
@@ -84,6 +84,160 @@
     },
     "prerequisites": {
       "level": 18
+    },
+    "activities": {
+      "C8cdfDMrd4ZvoWq2": {
+        "type": "utility",
+        "_id": "C8cdfDMrd4ZvoWq2",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "xPZ9yT6aJuo1ymgl"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "radius",
+            "size": "30",
+            "count": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "2 * @abilities.cha.mod",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Impart Flight",
+        "img": "",
+        "appliedEffects": [
+          "xPZ9yT6aJuo1ymgl"
+        ]
+      },
+      "8ii8MvS8wESWOeJ3": {
+        "type": "utility",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "5",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.wv3ZvDFeg34rJ4co"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "xPZ9yT6aJuo1ymgl"
+          }
+        ],
+        "range": {
+          "override": false,
+          "value": "30",
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "count": "",
+            "type": "radius",
+            "size": "30"
+          },
+          "affects": {
+            "choice": false,
+            "count": "2 * @abilities.cha.mod",
+            "type": "creature",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "formula": "",
+          "name": ""
+        },
+        "name": "Impart Flight (Sorcery Points)",
+        "_id": "8ii8MvS8wESWOeJ3",
+        "img": "",
+        "appliedEffects": [
+          "xPZ9yT6aJuo1ymgl"
+        ]
+      }
     }
   },
   "effects": [
@@ -99,7 +253,7 @@
         "startRound": null,
         "startTurn": null
       },
-      "disabled": true,
+      "disabled": false,
       "_id": "PIUFfbsCf4SMfpyY",
       "changes": [
         {
@@ -128,16 +282,21 @@
           "hostile": false,
           "onlyOnce": false,
           "wallsBlock": "system"
+        },
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
         }
       },
       "tint": "#ffffff",
       "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
+        "coreVersion": "12.343",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
         "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "modifiedTime": 1752261988376,
+        "lastModifiedBy": "dnd5mbuilder0000",
         "compendiumSource": null,
         "duplicateSource": null
       },
@@ -212,13 +371,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "4.3.9",
-    "coreVersion": "12.331",
+    "coreVersion": "12.343",
     "createdTime": 1711313182153,
-    "modifiedTime": 1746459204458,
+    "modifiedTime": 1752262585392,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

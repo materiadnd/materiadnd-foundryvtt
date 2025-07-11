@@ -1,12 +1,12 @@
 {
-  "folder": "2VcPPB3ljtPzwNaT",
-  "name": "Eldritch Conduit",
+  "folder": "hTcsZBebDnqvAnNg",
+  "name": "Ride the Lightning",
   "type": "feat",
-  "_id": "BBjBamtIxW6gfGVC",
-  "img": "icons/magic/death/skeleton-skull-soul-blue.webp",
+  "_id": "YIiO8iA7NLJmsdjV",
+  "img": "icons/magic/lightning/bolt-strike-forked-sparks-blue.webp",
   "system": {
     "description": {
-      "value": "<p>When you reduce a creature to 0 hit points with your <em>Eldritch Blast</em>, Warlock spell or your pact weapon you may attempt to usher their soul to your patron (at your DM's discretion). You can roll a d6. On a 4 or higher, you regain an expended Pact Magic spell slot.</p><p>You can attempt this, success or failure, a number of times equal to your Charisma modifier (minimum of 1) per Long Rest.</p><section class=\"secret\" id=\"secret-l2sjFBLyiA9Uv98i\"><p><strong>Foundry Note</strong></p><p>The <strong>User Soul to Patron</strong> activity consumes the use and rolls the d6 for you.</p><p>The <strong>Regain Pact Magic Spell Slot</strong> activity restores one Pact Magic spell slot.</p></section>",
+      "value": "<p>On your turn when you complete casting a level 1+ spell that deals Lightning or Thunder damage, you can spend 1 Sorcery Point to teleport to an unoccupied space in the area of effect of that spell or within 5 feet of a target of that spell.</p>",
       "chat": ""
     },
     "source": {
@@ -15,32 +15,32 @@
       "book": "Materia"
     },
     "activation": {
-      "type": "none",
-      "cost": null,
-      "condition": "when you reduce a creature to 0 hit points with your eldritch blast, warlock spell or your pact weapon"
+      "type": "reaction",
+      "cost": 1,
+      "condition": ""
     },
     "duration": {
       "value": "",
-      "units": "inst"
+      "units": ""
     },
     "cover": null,
     "crewed": false,
     "target": {
-      "value": 1,
+      "value": null,
       "width": null,
       "units": "",
-      "type": "creature",
+      "type": "",
       "prompt": true
     },
     "range": {
       "value": null,
       "long": null,
-      "units": "any"
+      "units": ""
     },
     "uses": {
-      "value": 1,
-      "max": "@abilities.cha.mod",
-      "per": "lr",
+      "value": null,
+      "max": "",
+      "per": null,
       "recovery": "",
       "prompt": true
     },
@@ -51,51 +51,49 @@
       "scale": false
     },
     "ability": "",
-    "actionType": "util",
-    "attackBonus": "",
+    "actionType": "save",
+    "attack": {
+      "bonus": "",
+      "flat": false
+    },
     "chatFlavor": "",
     "critical": {
       "threshold": null,
       "damage": ""
     },
     "damage": {
-      "parts": [],
+      "parts": [
+        [
+          "@classes.sorcerer.levels",
+          "lightning"
+        ]
+      ],
       "versatile": ""
     },
-    "formula": "d6",
+    "formula": "",
     "save": {
-      "ability": "",
+      "ability": "str",
       "dc": null,
       "scaling": "spell"
     },
+    "summons": null,
     "type": {
       "value": "class",
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Warlock 7",
+    "requirements": "Storm Sorcery 14",
     "recharge": {
       "value": null,
       "charged": false
     },
+    "prerequisites": {
+      "level": 14
+    },
     "activities": {
-      "dnd5eactivity000": {
-        "name": "Usher Soul to Patron",
-        "img": "",
-        "consumption": {
-          "targets": [
-            {
-              "type": "itemUses",
-              "value": "1",
-              "target": ""
-            }
-          ]
-        },
-        "appliedEffects": []
-      },
-      "wPalvP0UNOPGU1t7": {
+      "ceIYrVrz1atPEzx9": {
         "type": "utility",
-        "_id": "wPalvP0UNOPGU1t7",
+        "_id": "ceIYrVrz1atPEzx9",
         "sort": 0,
         "activation": {
           "type": "",
@@ -110,9 +108,9 @@
           "spellSlot": true,
           "targets": [
             {
-              "type": "attribute",
-              "value": "-1",
-              "target": "spells.pact.value"
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.wv3ZvDFeg34rJ4co"
             }
           ]
         },
@@ -138,7 +136,7 @@
           },
           "affects": {
             "choice": false,
-            "type": ""
+            "type": "self"
           },
           "override": false,
           "prompt": true
@@ -154,17 +152,14 @@
           "name": "",
           "formula": ""
         },
-        "name": "Regain Pact Magic Spell Slot",
+        "name": "Teleport",
         "img": "",
         "appliedEffects": []
       }
-    },
-    "prerequisites": {
-      "level": 7
     }
   },
   "effects": [],
-  "sort": 600000,
+  "sort": 0,
   "ownership": {
     "default": 0
   },
@@ -180,10 +175,10 @@
     "systemId": "dnd5e",
     "systemVersion": "4.3.9",
     "coreVersion": "12.343",
-    "createdTime": 1709273928349,
-    "modifiedTime": 1752035243995,
+    "createdTime": 1711313102962,
+    "modifiedTime": 1752261848715,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "_key": "!items!BBjBamtIxW6gfGVC"
+  "_key": "!items!YIiO8iA7NLJmsdjV"
 }

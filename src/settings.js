@@ -7,7 +7,6 @@ export class Settings {
         ADD_MATERIA_STATUS_EFFECTS: 'add-materia-status-effects',
         ADD_THIRD_PACT_CASTER: 'add-third-pact-caster',
         ADD_WEAPONS_AND_WEAPON_PROPS: 'add-weapons-and-weapon-props',
-        ADD_SPELL_PREP_COUNTER: 'add-spell-prep-counter',
         ADD_EXHAUSTION_HANDLING: 'add-exhaustion-handling',
         AUTO_ITEM_USE_TRACKER_ENABLED: 'auto-item-use-tracker-enabled',
         WILD_SHAPE_TRANSFORM_HANDLER_ENABLED: 'wild-shape-transform-handler-enabled',
@@ -65,16 +64,6 @@ export class Settings {
         game.settings.register(Constants.MODULE_ID, this.SETTINGS.ADD_WEAPONS_AND_WEAPON_PROPS, {
             name: `${Constants.MODULE_ID}.settings.${this.SETTINGS.ADD_WEAPONS_AND_WEAPON_PROPS}.Name`,
             hint: `${Constants.MODULE_ID}.settings.${this.SETTINGS.ADD_WEAPONS_AND_WEAPON_PROPS}.Hint`,
-            config: true,
-            scope: 'world',
-            default: true,
-            type: Boolean,
-            onChange: () => {},
-            requiresReload: true,
-        });
-        game.settings.register(Constants.MODULE_ID, this.SETTINGS.ADD_SPELL_PREP_COUNTER, {
-            name: `${Constants.MODULE_ID}.settings.${this.SETTINGS.ADD_SPELL_PREP_COUNTER}.Name`,
-            hint: `${Constants.MODULE_ID}.settings.${this.SETTINGS.ADD_SPELL_PREP_COUNTER}.Hint`,
             config: true,
             scope: 'world',
             default: true,
