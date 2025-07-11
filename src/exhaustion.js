@@ -9,35 +9,44 @@ export async function ExhaustionDamageHandler(actor, heal, diff, id) {
 }
 
 export async function ExhaustionIncDecHandler(actor, exhLevel, diff, id) {
-    // updateActor indicates exhaustion level has gone either up or down by some amount
-    // if up, we apply the appropriate additional effects (-2 to all stuff, -5 to speed per level of exh)
-    const effectData = {
-            label: "Exhaustion Level",
-            icon: "systems/dnd5e/icons/svg/statuses/exhaustion.svg",
-            changes: [
-            { key: "system.bonuses.abilities.save",   value: "-2", mode: 2 }, // -1 to saves
-            { key: "system.bonuses.abilities.check",  value: "-2", mode: 2 }, // -1 to all ability checks
-            { key: "system.bonuses.spell.dc	",        value: "-2", mode: 2 }, // -1 to all spell DCs
-            { key: "system.bonuses.msak.attack",      value: "-2", mode: 2 }, // -1 to all attack rolls
-            { key: "system.bonuses.rsak.attack",      value: "-2", mode: 2 },
-            { key: "system.bonuses.mwak.attack",      value: "-2", mode: 2 },
-            { key: "system.bonuses.rwak.attack",      value: "-2", mode: 2 },
-            { key: "system.attributes.movement.walk", value: "-5", mode: 2 }  // -5 to speed
-        ]
-    };
+    // updateActor indicates exhaustion level has changed
+    // simply remove the existing effect and add a new one with the appropriate changes
+    let existingId = actor.effects.find(x => x.flags?.["materia-dnd"]?.["exhaustion-level"])?._id;
     let newExhLevel = exhLevel?.system?.attributes?.exhaustion;
-    let existingEffects = actor.effects.filter(x => x.name == "Exhaustion Level");
-    if (existingEffects.length < newExhLevel) { // we have too few exh levels, add some
-        let effectsToCreate = newExhLevel - existingEffects.length;
-        // console.log("materia-dnd | Exhaustion: Creating " + effectsToCreate + " new exhaustion effects");
-        let effectsToAdd = [];
-        for (let i = 0; i < effectsToCreate; i++) {
-            effectsToAdd.push(effectData);
-        }
-        await actor.createEmbeddedDocuments("ActiveEffect", effectsToAdd);
-    } else if (existingEffects.length > newExhLevel) { // we have too many exh levels, remove some
-        let effectsToRemove = existingEffects.length - newExhLevel;
-        let idsToRemove = existingEffects.filter(x => x.name == "Exhaustion Level").map(x => x._id).slice(0, effectsToRemove);
-        await actor.deleteEmbeddedDocuments("ActiveEffect", idsToRemove);
+    const minusTwoChanges = [ "system.bonuses.abilities.save", "system.bonuses.abilities.check", "system.bonuses.spell.dc",
+        "system.bonuses.msak.attack", "system.bonuses.rsak.attack", "system.bonuses.mwak.attack", "system.bonuses.rwak.attack" ];
+    const speedChangeKey = "system.attributes.movement.walk";
+    let changes = minusTwoChanges.map(x => ( { key: x, value: (-2 * newExhLevel).toString(), mode: 2 }));
+    changes.push({ key: speedChangeKey, value: (-5 * newExhLevel).toString(), mode: 2 });
+    let description = "Due to exhaustion, your D20 Tests and imposed DCs are reduced by " + (2 * newExhLevel) + " and your Speed is reduced by " + (5 * newExhLevel) + " feet.";
+
+    if (newExhLevel == 0 && existingId != null ) {
+        await actor.deleteEmbeddedDocuments("ActiveEffect", [existingId]);
+    } else if (existingId != null) {
+        let updates = [
+            {
+                _id: existingId,
+                label: "Exhaustion Level " + newExhLevel,
+                description: description,
+                flags: {
+                    "materia-dnd": { "exhaustion-level": newExhLevel }
+                },
+                changes: changes,
+            }
+        ]
+        await actor.updateEmbeddedDocuments("ActiveEffect", updates);
+    } else {
+        let effectData = {
+                label: "Exhaustion Level",
+                icon: "systems/dnd5e/icons/svg/statuses/exhaustion.svg",
+                description: description,
+                flags: {
+                    "materia-dnd": { }
+                }
+        };
+        effectData["label"] = "Exhaustion Level " + newExhLevel;
+        effectData["changes"] = changes;
+        effectData.flags["materia-dnd"]["exhaustion-level"] = newExhLevel;
+        await actor.createEmbeddedDocuments("ActiveEffect", [effectData]);
     }
 }
