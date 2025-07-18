@@ -4,51 +4,47 @@ import copy
 import json
 import itertools
 
-DIR_ROOT = 'packs\\_source\\spells\\cantrips'
-FILES_TO_IGNORE = [ '_folder.json' ]
+DIR_ROOT = "packs\\_source\\spells\\cantrips"
+FILES_TO_IGNORE = ["_folder.json"]
 
-FLAGS_TO_ADD = [
-    {
-        "materia-dnd": {
-            "sourceId": "Compendium.materia-dnd.%%0%%.Item.{{_id}}"
-        }
-    }
-]
-TYPES_TO_UPDATE = [ 'equipment', 'weapon', 'spell' ]
+FLAGS_TO_ADD = [{"materia-dnd": {"sourceId": "Compendium.materia-dnd.%%0%%.Item.{{_id}}"}}]
+TYPES_TO_UPDATE = ["equipment", "weapon", "spell"]
+
 
 def updateJsonFiles(rootDir, func):
     for root, dirs, files in os.walk(rootDir):
-        for file in [f for f in files if os.path.splitext(f)[1] == '.json' and f not in FILES_TO_IGNORE]:
+        for file in [f for f in files if os.path.splitext(f)[1] == ".json" and f not in FILES_TO_IGNORE]:
             fullPath = os.path.join(root, file)
             func(fullPath)
 
-def addFlags(filePath, flagsToAdd = FLAGS_TO_ADD):
+
+def addFlags(filePath, flagsToAdd=FLAGS_TO_ADD):
     updated = False
     jsonObj = None
-    with open(filePath, 'r') as jsonFile:
+    with open(filePath, "r") as jsonFile:
         jsonObj = json.load(jsonFile)
-        if 'type' not in jsonObj or jsonObj['type'] not in TYPES_TO_UPDATE:
+        if "type" not in jsonObj or jsonObj["type"] not in TYPES_TO_UPDATE:
             return
         for flag in flagsToAdd:
             updatedFlag = updateFlagFields(flag, jsonObj, filePath)
-            if 'flags' not in jsonObj:
-                jsonObj['flags'] = updatedFlag
+            if "flags" not in jsonObj:
+                jsonObj["flags"] = updatedFlag
                 updated = True
             else:
                 flagNamespace = [k for k in updatedFlag.keys()][0]
-                if flagNamespace not in jsonObj['flags']:
-                    jsonObj['flags'][flagNamespace] = updatedFlag[flagNamespace]
+                if flagNamespace not in jsonObj["flags"]:
+                    jsonObj["flags"][flagNamespace] = updatedFlag[flagNamespace]
                     updated = True
                 else:
                     for valueKey in updatedFlag[flagNamespace]:
-                        jsonObj['flags'][flagNamespace][valueKey] = updatedFlag[flagNamespace][valueKey]
+                        jsonObj["flags"][flagNamespace][valueKey] = updatedFlag[flagNamespace][valueKey]
                         updated = True
 
     if updated and jsonObj is not None:
-        with open(filePath, 'w') as updatedFile:
-            json.dump(jsonObj, updatedFile, indent=2)
-            print(f'Updated file: {filePath}')
-    
+        with open(filePath, "w") as updatedFile:
+            json.dump(jsonObj, updatedFile, indent=2, ensure_ascii=True)
+            print(f"Updated file: {filePath}")
+
 
 def updateFlagFields(flag, fullObj, filePath):
     """Updates a templatized flag to have the appropriate values for the provided full object.
@@ -72,13 +68,15 @@ def updateFlagFields(flag, fullObj, filePath):
             pathParts = relativePath.split(os.sep)
             newFlag[namespace][k] = re.sub(block, pathParts[pathPartNumber], newFlag[namespace][k])
     return newFlag
-    
+
+
 def getValueFromObj(path, obj):
-    if '.' not in path:
+    if "." not in path:
         return obj[path]
     else:
-        parts = path.split(',', 1)
+        parts = path.split(",", 1)
         return getValueFromObj(parts[1], obj[parts[0]])
+
 
 def removeRootDirectory(rootDir, fullPath):
     filePathParts = fullPath.split(os.sep)
@@ -91,5 +89,6 @@ def removeRootDirectory(rootDir, fullPath):
             normalizedPathParts.append(filePathPart)
     return os.sep.join(normalizedPathParts)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     updateJsonFiles(DIR_ROOT, addFlags)
