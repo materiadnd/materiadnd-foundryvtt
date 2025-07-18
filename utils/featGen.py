@@ -116,5 +116,5 @@ for entry in os.scandir(FEATS_SOURCE_DIR):
                         page["text"]["content"] = newContent
             if journalJsonObj is not None:
                 with open(FEAT_JOURNAL_PAGE, "w") as updateJournalJsonFile:
-                    json.dump(journalJsonObj, updateJournalJsonFile, indent=2)
+                    json.dump(journalJsonObj, updateJournalJsonFile, indent=2, ensure_ascii=True)
                     print(f"Updated journal for {pageId}")
