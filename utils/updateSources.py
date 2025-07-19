@@ -48,7 +48,7 @@ def addOrUpdateSource(filePath):
         updated = True
     if updated and jsonObj is not None:
         with open(filePath, "w") as updatedFile:
-            json.dump(jsonObj, updatedFile, indent=2)
+            json.dump(jsonObj, updatedFile, indent=2, ensure_ascii=True)
             print(f"Updated file: {filePath}")
 
 

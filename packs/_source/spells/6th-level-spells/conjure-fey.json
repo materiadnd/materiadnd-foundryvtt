@@ -1,0 +1,230 @@
+{
+  "name": "Conjure Fey",
+  "_id": "matSplConjureFey",
+  "system": {
+    "description": {
+      "value": "<p>You conjure a Medium spirit from the Feywild in an unoccupied space you can see within range. The spirit lasts for the duration, and it looks like a Fey creature of your choice. When the spirit appears, you can make one melee spell attack against a creature within 5 feet of it. On a hit, the target takes Psychic damage equal to 3d12 plus your spellcasting ability modifier, and the target has the &amp;Reference[Frightened] condition until the start of your next turn, with both you and the spirit as the source of the fear.</p><p>As a Bonus Action on your later turns, you can teleport the spirit to an unoccupied space you can see within 30 feet of the space it left and make the attack against a creature within 5 feet of it.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 2d12 for each spell slot level above 6.</p>",
+      "chat": ""
+    },
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "action",
+      "condition": "",
+      "value": null
+    },
+    "duration": {
+      "value": "10",
+      "units": "minute"
+    },
+    "target": {
+      "affects": {
+        "choice": false,
+        "count": "1",
+        "type": "space",
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
+    },
+    "range": {
+      "units": "ft",
+      "special": "",
+      "value": "60"
+    },
+    "uses": {
+      "max": "",
+      "spent": 0,
+      "recovery": []
+    },
+    "level": 6,
+    "school": "con",
+    "properties": [
+      "vocal",
+      "somatic",
+      "concentration"
+    ],
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "w2sWkRQ3xMVRf7g3": {
+        "type": "summon",
+        "_id": "w2sWkRQ3xMVRf7g3",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "bonuses": {
+          "ac": "",
+          "hd": "",
+          "hp": "",
+          "attackDamage": "@mod + (2 * @item.level - 6)d12",
+          "saveDamage": "",
+          "healing": ""
+        },
+        "creatureSizes": [],
+        "creatureTypes": [],
+        "match": {
+          "attacks": true,
+          "proficiency": true,
+          "saves": false
+        },
+        "profiles": [
+          {
+            "_id": "UebUyiRwzCrEU5C5",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": [],
+            "uuid": "Compendium.materia-dnd.actors.Actor.matNpcConjureFey"
+          }
+        ],
+        "summon": {
+          "prompt": true,
+          "mode": "",
+          "identifier": ""
+        },
+        "name": "",
+        "effects": []
+      },
+      "sKmRcy0IDp9aOuAt": {
+        "type": "utility",
+        "_id": "sKmRcy0IDp9aOuAt",
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": true,
+          "condition": ""
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": true
+        },
+        "effects": [],
+        "range": {
+          "override": true,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "count": "1",
+            "type": "space",
+            "special": "within range of spirit"
+          },
+          "override": true,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Teleport and Attack"
+      }
+    },
+    "identifier": "conjure-fey"
+  },
+  "type": "spell",
+  "img": "icons/creatures/magical/spirit-poison-smoke-green.webp",
+  "effects": [],
+  "folder": "UjV13fGRtZfpmOAS",
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.343",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.9",
+    "createdTime": 1752555475175,
+    "modifiedTime": 1752557113895,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!matSplConjureFey"
+}

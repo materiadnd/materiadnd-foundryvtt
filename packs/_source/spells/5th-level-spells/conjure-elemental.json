@@ -1,0 +1,198 @@
+{
+  "name": "Conjure Elemental",
+  "_id": "matSplConjElemen",
+  "system": {
+    "description": {
+      "value": "<p>You conjure a Large, intangible spirit from the Elemental Planes that appears in an unoccupied space within range. Choose the spirit's element, which determines its damage type: @UUID[Compendium.materia-dnd.actors.Actor.matNpcConjAirEle]{air (Lightning)}, @UUID[Compendium.materia-dnd.actors.Actor.matNpcConjEarEle]{earth (Thunder)}, @UUID[Compendium.materia-dnd.actors.Actor.matNpcConjFirEle]{fire (Fire)}, or @UUID[Compendium.materia-dnd.actors.Actor.matNpcConjWatEle]{water (Cold)}. The spirit lasts for the duration.</p><p>Whenever a creature you can see enters the spirit's space or starts its turn within 5 feet of the spirit, you can force that creature to make a Dexterity saving throw if the spirit has no creature Restrained. On failed save, the target takes 8d8 damage of the spirit's type, and the target has the &amp;Reference[Restrained apply=false] condition until the spell ends. At the start of each of its turns, the Restrained target repeats the save. On a failed save, the target takes 4d8 damage of the spirit's type. On a successful save, the target isn't Restrained by the spirit.</p><p><strong>Using a Higher-Level Spell Slot.</strong> The damage increases by 2d8 for each spell slot level above 5.</p>",
+      "chat": ""
+    },
+    "source": {
+      "rules": "2024",
+      "revision": 1,
+      "book": "Materia"
+    },
+    "activation": {
+      "type": "action",
+      "condition": "",
+      "value": null
+    },
+    "duration": {
+      "value": "10",
+      "units": "minute"
+    },
+    "target": {
+      "affects": {
+        "type": "space",
+        "count": "1",
+        "choice": false,
+        "special": ""
+      },
+      "template": {
+        "units": "",
+        "contiguous": false,
+        "type": ""
+      }
+    },
+    "range": {
+      "value": "60",
+      "units": "ft",
+      "special": ""
+    },
+    "uses": {
+      "max": "",
+      "recovery": [],
+      "spent": 0
+    },
+    "level": 5,
+    "school": "con",
+    "properties": [
+      "vocal",
+      "somatic",
+      "concentration"
+    ],
+    "materials": {
+      "value": "",
+      "consumed": false,
+      "cost": 0,
+      "supply": 0
+    },
+    "preparation": {
+      "mode": "prepared",
+      "prepared": false
+    },
+    "activities": {
+      "dnd5eactivity000": {
+        "_id": "dnd5eactivity000",
+        "type": "summon",
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "targets": [],
+          "scaling": {
+            "allowed": false,
+            "max": ""
+          },
+          "spellSlot": true
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "override": false,
+          "concentration": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "prompt": true,
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false
+        },
+        "bonuses": {
+          "ac": "",
+          "hd": "",
+          "hp": "",
+          "attackDamage": "",
+          "saveDamage": "(2 * @item.level - 10)d8",
+          "healing": ""
+        },
+        "creatureSizes": [],
+        "creatureTypes": [],
+        "match": {
+          "saves": true,
+          "attacks": false,
+          "proficiency": false
+        },
+        "profiles": [
+          {
+            "_id": "rN3pbpD01dw80rrh",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": [],
+            "uuid": "Compendium.materia-dnd.actors.Actor.matNpcConjAirEle"
+          },
+          {
+            "_id": "RYCrBP2v7xgVbI1F",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": [],
+            "uuid": "Compendium.materia-dnd.actors.Actor.matNpcConjEarEle"
+          },
+          {
+            "_id": "s1GLho8SX0Y6FWZ7",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": [],
+            "uuid": "Compendium.materia-dnd.actors.Actor.matNpcConjFirEle"
+          },
+          {
+            "_id": "nlI5lVfEHr99VzKw",
+            "level": {
+              "min": null,
+              "max": null
+            },
+            "types": [],
+            "uuid": "Compendium.materia-dnd.actors.Actor.matNpcConjWatEle"
+          }
+        ],
+        "summon": {
+          "identifier": "",
+          "mode": "",
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "sort": 0,
+        "name": "Conjure",
+        "effects": []
+      }
+    },
+    "identifier": "conjure-elemental"
+  },
+  "type": "spell",
+  "img": "icons/creatures/magical/spirit-mischief-fire-ice-blue.webp",
+  "effects": [],
+  "folder": "slWnSXtwvwnA9EXJ",
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
+  "_stats": {
+    "duplicateSource": null,
+    "coreVersion": "12.343",
+    "systemId": "dnd5e",
+    "systemVersion": "4.3.9",
+    "createdTime": 1752555463782,
+    "modifiedTime": 1752556958473,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "sort": 200000,
+  "ownership": {
+    "default": 0
+  },
+  "_key": "!items!matSplConjElemen"
+}

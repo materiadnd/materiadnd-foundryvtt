@@ -22,7 +22,7 @@ export async function ExhaustionIncDecHandler(actor, exhLevel, diff, id) {
 
     if (newExhLevel == 0 && existingId != null ) {
         await actor.deleteEmbeddedDocuments("ActiveEffect", [existingId]);
-    } else if (existingId != null) {
+    } else if (existingId != null && newExhLevel != null) {
         let updates = [
             {
                 _id: existingId,
@@ -35,7 +35,7 @@ export async function ExhaustionIncDecHandler(actor, exhLevel, diff, id) {
             }
         ]
         await actor.updateEmbeddedDocuments("ActiveEffect", updates);
-    } else {
+    } else if (newExhLevel != null) {
         let effectData = {
                 label: "Exhaustion Level",
                 icon: "systems/dnd5e/icons/svg/statuses/exhaustion.svg",
