@@ -6,7 +6,7 @@
   "img": "icons/weapons/axes/axe-double-white-red.webp",
   "system": {
     "description": {
-      "value": "<p>You are eager to be on the frontlines. You gain the following benefits:</p><ul><li>When you roll initiative you can gain Temporary Hit Points equal to your Warlord level + your Charisma modifier (minimum of 1).</li><li>As a Bonus Action, your can provoke a challenge towards a creature within 30 feet of you that can see or hear you. The target must make a Wisdom saving throw. On a failed save, any other creatures that take damage from the target of your challenge have Resistance to the damage it deals until the start of your next turn. The DC equals 8 + your proficiency bonus + your Wisdom modifier.</li></ul><p>You can use this Bonus Action a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a long rest or a Respite.</p><p>Starting at 6th level in Warlord, you can target a number of creatures equal to your Charisma modifier (minimum of 1) within range with this Bonus Action.</p>",
+      "value": "<p>You are eager to be on the frontlines. You gain the following benefits:</p><p><strong>Initiative Roll.</strong> When you roll initiative you can gain Temporary Hit Points equal to your Warlord level plus your Charisma modifier (minimum of 1). </p><p><strong>Taunt.</strong> As a Bonus Action, your can provoke a challenge towards a creature within 30 feet of you that can see or hear you. The target must make a Wisdom saving throw. On a failed save, any other creatures that take damage from the target of your challenge have Resistance to the damage it deals until the start of your next turn. The DC is 8 plus your Proficiency Bonus and your Wisdom modifier.</p><p>You can use this Bonus Action a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a long rest or a Respite.</p><p>Starting at Warlord level 6, you can target a number of creatures equal to your Charisma modifier (minimum of 1) within range with this Bonus Action.</p>",
       "chat": ""
     },
     "source": {
@@ -80,20 +80,153 @@
     },
     "prerequisites": {
       "level": 3
+    },
+    "activities": {
+      "xydW4QBmkaH3VFFa": {
+        "type": "save",
+        "_id": "xydW4QBmkaH3VFFa",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "Y4KST49WdoEXqRKi"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [],
+          "onSave": "none"
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "cha",
+            "formula": ""
+          }
+        },
+        "name": "Taunt",
+        "img": "",
+        "appliedEffects": [
+          "Y4KST49WdoEXqRKi"
+        ]
+      }
     }
   },
-  "effects": [],
-  "flags": {},
+  "effects": [
+    {
+      "name": "Taunted",
+      "img": "icons/weapons/axes/axe-double-white-red.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.2xWHGxiGRjaZjcxI",
+      "transfer": false,
+      "_id": "Y4KST49WdoEXqRKi",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.343",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1753454819645,
+        "modifiedTime": 1753454829909,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!2xWHGxiGRjaZjcxI.Y4KST49WdoEXqRKi"
+    }
+  ],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.3.6",
-    "coreVersion": "12.331",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.343",
     "createdTime": 1707229266521,
-    "modifiedTime": 1742847993286,
+    "modifiedTime": 1753454845203,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "sort": 0,
+  "sort": 100000,
   "ownership": {
     "default": 0
   },

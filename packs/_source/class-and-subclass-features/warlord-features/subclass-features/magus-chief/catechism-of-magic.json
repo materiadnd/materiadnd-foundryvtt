@@ -6,7 +6,7 @@
   "img": "icons/magic/unholy/orb-hands-pink.webp",
   "system": {
     "description": {
-      "value": "<p>Your influence and skill hinders your enemies. When a creature you can see or hear within 30 feet of you succeeds on a saving throw, you can use your Bravura to reduce it. Roll the Merit die. The creature must subtract the number rolled from the saving throw.</p>",
+      "value": "<p>Your influence and skill hinders your enemies, you gain the following benefits.</p><p><strong>Charisma Bonus to Spells.</strong> You add your Charisma modifier (minimum of 1) to the damage and healing of your warlord spells.</p><p><strong>Reduce DC.</strong> When a creature you can see or hear within 30 feet of you succeeds on a saving throw, you can take a Reaction to reduce it. Roll a Merit die. The creature must subtract the number rolled from the saving throw. This does not expend the Merit die.</p><p>You can use this feature a number of times equal to your Proficiency Bonus per Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -39,9 +39,14 @@
     },
     "uses": {
       "value": null,
-      "max": "",
+      "max": "@prof",
       "per": null,
-      "recovery": "",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll"
+        }
+      ],
       "prompt": true
     },
     "consume": {
@@ -73,31 +78,107 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "",
+    "requirements": "Magus Chief 11",
     "recharge": {
       "value": null,
       "charged": false
     },
     "prerequisites": {
       "level": 10
+    },
+    "activities": {
+      "T2NiT7fEJCrXgMLG": {
+        "type": "utility",
+        "_id": "T2NiT7fEJCrXgMLG",
+        "sort": 0,
+        "activation": {
+          "type": "reaction",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "DC Reduction",
+          "formula": "@scale.warlord.merit-dice.die"
+        },
+        "name": "Reduce Saving Throw",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
   "flags": {
     "materia-dnd": {
       "item-use-source": "bravura"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.3.6",
-    "coreVersion": "12.331",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.343",
     "createdTime": 1707203670038,
-    "modifiedTime": 1742845039259,
+    "modifiedTime": 1753453869821,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "sort": 0,
+  "sort": 200000,
   "ownership": {
     "default": 0
   },

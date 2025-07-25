@@ -6,7 +6,7 @@
   "img": "icons/sundries/misc/pet-collar-spiked-brown.webp",
   "system": {
     "description": {
-      "value": "<p>When you roll initiative you can release a warcry that fuels your allies and wreaks your foes with dread. A number of creatures of your choice up to your Charisma modifier (minimum of 0) within 30 feet of you gain Temporary Hit Points equal to double your Proficiency Bonus. Additionally, you gain the following benefits for 1 minute or until you are reduced to 0 HP or become unconscious:</p><ul><li>Your Forced Respect range increases to 30 feet.</li><li>Whenever a creature successfully saves against your Forced Respect or Into the Vanguard during this time, they must reroll the save at disadvantage.</li></ul><p>Once you use this feature, you must finish a Long Rest or a Respite before you can use it again.</p>",
+      "value": "<p>When you roll initiative you can release a warcry that fuels your allies and wreaks your foes with dread. A number of creatures of your choice up to your Charisma modifier (minimum of 0) within 30 feet of you gain Temporary Hit Points equal to double your Proficiency Bonus. Additionally, you gain the following benefits for 1 minute or until you are reduced to 0 HP or become &amp;Reference[unconscious apply=false]:</p><ul><li>Your Forced Respect range increases to 30 feet.</li><li>Whenever a creature successfully saves against your Forced Respect or Into the Vanguard during this time, they must reroll the save at Disadvantage.</li></ul><p>Once you use this feature, you must finish a Long Rest or a Respite before you can use it again.</p>",
       "chat": ""
     },
     "source": {
@@ -73,27 +73,100 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "",
+    "requirements": "Warbrave 15",
     "recharge": {
       "value": null,
       "charged": false
     },
     "prerequisites": {
-      "level": 14
+      "level": 15
+    },
+    "activities": {
+      "zhFhay4J1UYtSCwr": {
+        "type": "utility",
+        "_id": "zhFhay4J1UYtSCwr",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.3.6",
-    "coreVersion": "12.331",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.343",
     "createdTime": 1707229762237,
-    "modifiedTime": 1742847903173,
+    "modifiedTime": 1753455089998,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
-  "sort": 0,
+  "sort": 400000,
   "ownership": {
     "default": 0
   },

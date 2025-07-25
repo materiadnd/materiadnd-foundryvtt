@@ -2,11 +2,11 @@
   "folder": "4y9XcKVg92zsm0Lq",
   "name": "Consummate Command",
   "type": "feat",
-  "_id": "jDEDJ3JoTDo792xF",
-  "img": "icons/creatures/abilities/lion-roar-yellow.webp",
+  "_id": "FWmdXxszkJ2i1BgU",
+  "img": "icons/creatures/eyes/lizard-single-slit-blue.webp",
   "system": {
     "description": {
-      "value": "<p>Your flair is shared amongst those who follow your command. When initiative is rolled a number of creatures of your choice equal to your Charisma modifier (minimum of 1) within 60 feet of you can use their reaction to take a Bonus Action.</p><p>Some examples might be a Barbarian's Rage, a Monk spending Focus Points for Patient Defense, a Sorcerer converting Sorcery Points, a Bard giving a Bardic Inspiration, or a Wizard casting the Expeditious Retreat spell.</p><p>You cannot use this feature again until you finish a Long Rest or a Respite.</p>",
+      "value": "<p>When you roll initiative you can regain a number of Merit dice equal to your Charisma modifier (minimum of 1), but you cannot exceed your maximum number based on your Warlord level.</p><p>You cannot use this feature again until you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -17,7 +17,7 @@
     "activation": {
       "type": "special",
       "cost": null,
-      "condition": ""
+      "condition": "you roll initiative"
     },
     "duration": {
       "value": "",
@@ -29,13 +29,13 @@
       "value": null,
       "width": null,
       "units": "",
-      "type": "creature",
+      "type": "self",
       "prompt": true
     },
     "range": {
-      "value": 60,
+      "value": null,
       "long": null,
-      "units": "ft"
+      "units": "self"
     },
     "uses": {
       "value": 1,
@@ -79,11 +79,11 @@
       "charged": false
     },
     "prerequisites": {
-      "level": 10
+      "level": 11
     },
     "activities": {
       "dnd5eactivity000": {
-        "name": "Consummate Command",
+        "name": "Regain Merit Dice",
         "img": "",
         "consumption": {
           "targets": [
@@ -91,9 +91,83 @@
               "type": "itemUses",
               "value": "1",
               "target": ""
+            },
+            {
+              "type": "itemUses",
+              "value": "-@abilities.cha.mod",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.twXKFJkxqdT8PO2m"
             }
           ]
         },
+        "appliedEffects": []
+      },
+      "D328HRGQFcX618NK": {
+        "type": "utility",
+        "_id": "D328HRGQFcX618NK",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "-@abilities.wis.mod",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.twXKFJkxqdT8PO2m"
+            },
+            {
+              "type": "itemUses",
+              "value": "1"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Regain Merit Dice",
+        "img": "",
         "appliedEffects": []
       }
     }
@@ -109,10 +183,10 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.3.6",
-    "coreVersion": "12.331",
-    "createdTime": 1706888614071,
-    "modifiedTime": 1741716174360,
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.343",
+    "createdTime": 1706888743559,
+    "modifiedTime": 1753407471753,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
@@ -120,5 +194,5 @@
   "ownership": {
     "default": 0
   },
-  "_key": "!items!jDEDJ3JoTDo792xF"
+  "_key": "!items!FWmdXxszkJ2i1BgU"
 }

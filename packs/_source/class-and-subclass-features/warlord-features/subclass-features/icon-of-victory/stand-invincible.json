@@ -73,23 +73,260 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "",
+    "requirements": "Icon of Victory 15",
     "recharge": {
       "value": null,
       "charged": false
     },
     "prerequisites": {
-      "level": 14
+      "level": 15
+    },
+    "activities": {
+      "ThoyPtvE63ZHM7qF": {
+        "type": "utility",
+        "_id": "ThoyPtvE63ZHM7qF",
+        "sort": 0,
+        "activation": {
+          "type": "reaction",
+          "value": null,
+          "override": false,
+          "condition": "when you or a creature you can see within 30 feet of you is reduced to 0 hit points and is not killed outright"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.twXKFJkxqdT8PO2m"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "kIP2PPRYWcPhBD5V"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "ally",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Keep Ally in the Fight",
+        "img": "",
+        "appliedEffects": []
+      },
+      "4SGUurIuHUq9lU2o": {
+        "type": "utility",
+        "_id": "4SGUurIuHUq9lU2o",
+        "sort": 0,
+        "activation": {
+          "type": "reaction",
+          "value": null,
+          "override": false,
+          "condition": "when you or a creature you can see within 30 feet of you takes damage that would outright kill them"
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "kIP2PPRYWcPhBD5V"
+          },
+          {
+            "_id": "IGr5vyWs06YNdpXv"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "ally",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Spare Ally from Death",
+        "img": "",
+        "appliedEffects": [
+          "kIP2PPRYWcPhBD5V"
+        ]
+      }
     }
   },
-  "effects": [],
-  "flags": {},
+  "effects": [
+    {
+      "name": "Stand Invincible",
+      "img": "icons/skills/social/wave-halt-stop.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.49pJr6eSEkELA27n",
+      "transfer": false,
+      "_id": "kIP2PPRYWcPhBD5V",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>This creature has benefited from a Warlord's Stand Invincible and may not do so again until they have completed a Long Rest.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.343",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1753453070320,
+        "modifiedTime": 1753453136662,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!49pJr6eSEkELA27n.kIP2PPRYWcPhBD5V"
+    },
+    {
+      "name": "Fighting for Life",
+      "img": "icons/skills/wounds/blood-cells-vessel-red-orange.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.49pJr6eSEkELA27n",
+      "transfer": false,
+      "_id": "IGr5vyWs06YNdpXv",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>This creature has Disadvantage on death saving throws until stabilized or dead.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.343",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1753453248994,
+        "modifiedTime": 1753453293851,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!49pJr6eSEkELA27n.IGr5vyWs06YNdpXv"
+    }
+  ],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.3.6",
-    "coreVersion": "12.331",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.343",
     "createdTime": 1707203252071,
-    "modifiedTime": 1742844982431,
+    "modifiedTime": 1753453419102,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
