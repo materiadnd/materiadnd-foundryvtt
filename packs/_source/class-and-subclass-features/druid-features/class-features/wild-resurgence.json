@@ -1,12 +1,12 @@
 {
   "folder": "qBK6HqRfMGi5T6W4",
-  "name": "Wild Resurgence",
+  "name": "Wild Resurgence*",
   "type": "feat",
   "_id": "6Srg94YRM8XYv8X8",
   "img": "icons/magic/nature/elemental-plant-humanoid.webp",
   "system": {
     "description": {
-      "value": "<p>Once on each of your turns, if you have no uses of Wild Shape left, you can give yourself one use by expending a spell slot (no action required).</p><p>In addition, you can expend one use of Wild Shape (no action required) to give yourself a level 1 spell slot, but you can't do so again until you finish a Long Rest.</p>",
+      "value": "<p>Once on each of your turns, if you have no uses of Wild Shape left, you can give yourself one use by expending a spell slot (no action required).</p><p>In addition, you can expend one use of Wild Shape (no action required) to give yourself a level 1 spell slot, but you can't do so again until you finish a Long Rest. If your Primal Order is Magician, you can gain spell use this feature a number of times equal to your Proficiency Bonus per Long Rest.</p><section id=\"secret-cXvBDzwCS1wK0LTn\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>If you are a Magician, you will have to edit the Limited Uses of this feature to \"@prof\" instead of 1.</p></section>",
       "chat": ""
     },
     "source": {
@@ -39,9 +39,14 @@
     },
     "uses": {
       "value": null,
-      "max": "",
+      "max": "1",
       "per": null,
-      "recovery": "",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll"
+        }
+      ],
       "prompt": true
     },
     "consume": {
@@ -73,7 +78,7 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "",
+    "requirements": "Druid 5",
     "recharge": {
       "value": null,
       "charged": false
@@ -105,7 +110,8 @@
             },
             {
               "type": "spellSlots",
-              "value": "1"
+              "value": "1",
+              "target": "1"
             }
           ]
         },
@@ -177,6 +183,11 @@
               "type": "spellSlots",
               "value": "-1",
               "target": "1"
+            },
+            {
+              "type": "itemUses",
+              "value": "1",
+              "target": ""
             }
           ]
         },
@@ -209,12 +220,8 @@
         },
         "uses": {
           "spent": 0,
-          "recovery": [
-            {
-              "period": "lr"
-            }
-          ],
-          "max": "1"
+          "recovery": [],
+          "max": ""
         },
         "roll": {
           "prompt": false,
@@ -246,7 +253,7 @@
     "systemVersion": "4.3.9",
     "coreVersion": "12.343",
     "createdTime": 1708905239790,
-    "modifiedTime": 1747846576175,
+    "modifiedTime": 1752811711245,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

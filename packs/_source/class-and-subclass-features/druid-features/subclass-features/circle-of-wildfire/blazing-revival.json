@@ -6,7 +6,7 @@
   "img": "icons/magic/fire/flame-burning-hand-purple.webp",
   "system": {
     "description": {
-      "value": "<p>The bond with your Wildfire Spirit can save you from death. If the spirit is within 120 feet of you when you are reduced to 0 Hit Points and thereby fall &amp;Reference[Unconscious apply=false], you can cause the spirit to drop to 0 hit points. You then regain half your Hit Points and immediately rise to your feet.</p><p>Once you use this feature, you cannot use it again until you finish a Long Rest.</p><section class=\"secret\" id=\"secret-xlY8s6zAFMZD1MEI\"><p><strong>Foundry Note</strong></p><p>The <strong>Brink of Death Heal</strong> activity will heal you to half your max HP, but the dropping of the wildfire spirit to 0 HP is not automated.</p></section>",
+      "value": "<p>The bond with your Wildfire Spirit can save you from death. If the spirit is within 120 feet of you when you are reduced to 0 Hit Points and thereby fall &amp;Reference[Unconscious apply=false], you can cause the spirit to take damage equal to its current Hit Points (no action required). You then immediately regain Hit Points equal to twice the damage your Wildfire Spirit takes, you end the &amp;Reference[Prone apply=false] condition, standing without provoking Opportunity Attacks, and both your and your Wildfire Spirit unleash fiery energy as when you summon it.</p><p>Once you use this feature, you cannot use it again until you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -77,7 +77,7 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "",
+    "requirements": "Circle of Wildfire 14",
     "recharge": {
       "value": null,
       "charged": false
@@ -85,86 +85,10 @@
     "prerequisites": {
       "level": 14
     },
-    "activities": {
-      "ctWV4ah8BBR21JLh": {
-        "type": "heal",
-        "_id": "ctWV4ah8BBR21JLh",
-        "sort": 0,
-        "activation": {
-          "type": "",
-          "value": null,
-          "override": false,
-          "condition": ""
-        },
-        "consumption": {
-          "scaling": {
-            "allowed": false
-          },
-          "spellSlot": true,
-          "targets": [
-            {
-              "type": "itemUses",
-              "value": "1",
-              "target": ""
-            }
-          ]
-        },
-        "description": {
-          "chatFlavor": ""
-        },
-        "duration": {
-          "units": "inst",
-          "concentration": false,
-          "override": false
-        },
-        "effects": [],
-        "range": {
-          "override": false,
-          "units": "self",
-          "special": ""
-        },
-        "target": {
-          "template": {
-            "contiguous": false,
-            "units": "ft",
-            "type": ""
-          },
-          "affects": {
-            "choice": false,
-            "type": "self",
-            "special": ""
-          },
-          "override": false,
-          "prompt": true
-        },
-        "uses": {
-          "spent": 0,
-          "recovery": [],
-          "max": ""
-        },
-        "healing": {
-          "number": null,
-          "denomination": "",
-          "types": [
-            "healing"
-          ],
-          "custom": {
-            "enabled": true,
-            "formula": "@system.attributes.hp.max / 2"
-          },
-          "scaling": {
-            "number": 1
-          },
-          "bonus": ""
-        },
-        "name": "Brink of Death Heal",
-        "img": "",
-        "appliedEffects": []
-      }
-    }
+    "activities": {}
   },
   "effects": [],
-  "sort": 0,
+  "sort": 100000,
   "ownership": {
     "default": 0
   },
@@ -181,7 +105,7 @@
     "systemVersion": "4.3.9",
     "coreVersion": "12.343",
     "createdTime": 1711337802878,
-    "modifiedTime": 1747853098172,
+    "modifiedTime": 1753405353005,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

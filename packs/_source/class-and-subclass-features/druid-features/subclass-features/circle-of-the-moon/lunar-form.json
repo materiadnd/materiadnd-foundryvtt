@@ -6,7 +6,7 @@
   "img": "icons/creatures/magical/spirit-undead-horned-blue.webp",
   "system": {
     "description": {
-      "value": "<p>The power of the moon suffuses you, granting you the following benefits.</p><p><strong>Improved Forceful Strikes.</strong> Once per turn, you can deal an extra 2d10 Force damage to a target you hit with a Wild Shape form's attack.</p><p><strong>Shared Moonlight.</strong> Whenever you use Moonlight Step, you can also teleport one willing creature. That creature must be within 10 feet of you, and you teleport it to an unoccupied space you can see within 10 feet of your destination space.</p><section id=\"secret-GpKkr35hxyByhaM6\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes an activity for dealing the Force damage.</p></section>",
+      "value": "<p>The power of the moon suffuses you, granting you the following benefits.</p><p><strong>Full Moon.</strong> When you use your Wild Shape, you can now choose to be Huge in size if you are in a big enough space. While in a Huge Wild Shape form, your Bestial Strikes and the damage from your Elemental Wild Shape each deal an additional damage die.</p><p><strong>Huge Temporary Hit Points.</strong> The Temporary Hit Points you get from Wild Shape when you choose to be Huge size is equal to five times your Druid level.</p><p><strong>Improved Lunar Radiance.</strong> Once per turn, you can deal an extra 2d10 Radiant damage to a target you hit with a Wild Shape form's attack.  This increases to 2d12 Radiant if your size is Huge.</p><p><strong>Shared Moonlight.</strong> Whenever you use Moonlight Step, you can also teleport one willing creature. That creature must be within 10 feet of you, and you teleport it to an unoccupied space you can see within 10 feet of your destination space.</p><section class=\"secret\" id=\"secret-GpKkr35hxyByhaM6\"><p><strong>Foundry Note</strong></p><p>This feature includes an activity for dealing the Force damage.</p></section>",
       "chat": ""
     },
     "source": {
@@ -77,7 +77,7 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "",
+    "requirements": "Circle of the Moon 14",
     "recharge": {
       "value": null,
       "charged": false
@@ -151,7 +151,7 @@
               "denomination": "10",
               "bonus": "",
               "types": [
-                "force"
+                "radiant"
               ]
             }
           ]
@@ -159,11 +159,85 @@
         "name": "Lunar Form Damage",
         "img": "",
         "appliedEffects": []
+      },
+      "z0E1Jg7KB1ZaEdax": {
+        "type": "damage",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "critical": {
+            "allow": false
+          },
+          "parts": [
+            {
+              "custom": {
+                "enabled": false,
+                "formula": ""
+              },
+              "number": 2,
+              "denomination": "12",
+              "bonus": "",
+              "types": [
+                "radiant"
+              ]
+            }
+          ]
+        },
+        "name": "Huge Lunar Form Damage",
+        "_id": "z0E1Jg7KB1ZaEdax",
+        "img": "",
+        "appliedEffects": []
       }
     }
   },
   "effects": [],
-  "sort": 0,
+  "sort": 100000,
   "ownership": {
     "default": 0
   },
@@ -178,9 +252,9 @@
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "4.3.9",
-    "coreVersion": "12.331",
+    "coreVersion": "12.343",
     "createdTime": 1712332096499,
-    "modifiedTime": 1746733866536,
+    "modifiedTime": 1753378076708,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

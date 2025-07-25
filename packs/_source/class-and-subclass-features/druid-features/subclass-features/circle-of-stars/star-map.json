@@ -6,7 +6,7 @@
   "img": "icons/skills/trades/academics-astronomy-navigation-blue.webp",
   "system": {
     "description": {
-      "value": "<p>You have created a star chart as part of your heavenly studies. It is a Tiny object and can serve as a Spellcasting Focus for your druid spells. You determine its form by rolling on the Star Map table or by choosing one.</p><p>If you lose the map, you can perform a 1-hour ceremony to magically create a replacement. This ceremony can be performed during a Short or Long Rest, and it destroys the previous map.</p><p>While holding this map, you have these benefits:</p><p><strong>Guidance.</strong> You know the Guidance cantrip. It counts as a Druid cantrip for you but does not count against your number of Druid cantrips.</p><p><strong>Guiding Bolt.</strong> You learn the Guiding Bolt spell and always have it prepared. It counts as s Druid spell for you but does not count against the number of Druid spells you can have prepared.</p><p>You can cast Guiding Bolt at level 1 without expending a spell slot.  When cast in this way it deals bonus damage equal to half your Druid level. You can do so a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p><p></p>",
+      "value": "<p>You have created a star chart as part of your heavenly studies. It is a Tiny object and can serve as a Spellcasting Focus for your Druid spells. You determine its form by rolling on the Star Map table or by choosing one.</p><p>While holding this map, you can cast @UUID[Compendium.materia-dnd.spells.Item.matSplGuidingBol]{Guiding Bolt} at level 1 without expending a spell slot. When cast in this way it deals bonus damage equal to half your Druid level. You can do so a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a Long Rest.</p><p>If you lose the map, you can perform a 1-hour ceremony to magically create a replacement. This ceremony can be performed during a Short or Long Rest, and it destroys the previous map.</p><table><caption>Star Map</caption><thead><tr><th>[[/r d6]]</th><th>Map Form</th></tr></thead><tbody><tr><td>1</td><td>A scroll bearing depictions of constellations</td></tr><tr><td>2</td><td>A stone tablet with fine holes drilled through it</td></tr><tr><td>3</td><td>An owlbear hide tooled with stellar symbols</td></tr><tr><td>4</td><td>A collection of maps bound in an ebony cover</td></tr><tr><td>5</td><td>A crystal engraved with starry patterns</td></tr><tr><td>6</td><td>A glass disk etched with constellations</td></tr></tbody></table><section id=\"secret-hqM8IEse4sPXJ5uy\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The Guiding Bolt activity grants you the appropriate number of free castings of the spell at 1st level.</p></section>",
       "chat": ""
     },
     "source": {
@@ -77,12 +77,83 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "Circle of Stars 2",
+    "requirements": "Circle of Stars 3",
     "recharge": {
       "value": null,
       "charged": false
     },
-    "activities": {}
+    "activities": {
+      "7uHA5NRvLzMFDkOY": {
+        "type": "cast",
+        "_id": "7uHA5NRvLzMFDkOY",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "range": {
+          "override": false
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft"
+          },
+          "affects": {
+            "choice": false
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll"
+            }
+          ],
+          "max": "@abilities.wis.mod"
+        },
+        "spell": {
+          "challenge": {
+            "attack": null,
+            "save": null,
+            "override": false
+          },
+          "level": "1",
+          "properties": [
+            "vocal",
+            "somatic",
+            "material"
+          ],
+          "spellbook": false,
+          "uuid": "Compendium.materia-dnd.spells.Item.matSplGuidingBol",
+          "ability": ""
+        },
+        "name": "",
+        "img": ""
+      }
+    },
+    "prerequisites": {
+      "level": 3
+    }
   },
   "effects": [],
   "sort": 200000,
@@ -102,7 +173,7 @@
     "systemVersion": "4.3.9",
     "coreVersion": "12.343",
     "createdTime": 1712332460449,
-    "modifiedTime": 1747849815658,
+    "modifiedTime": 1753404380601,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
