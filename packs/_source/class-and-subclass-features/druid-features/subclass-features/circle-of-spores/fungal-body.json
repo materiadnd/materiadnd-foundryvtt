@@ -6,7 +6,7 @@
   "img": "icons/magic/unholy/strike-body-life-soul-green.webp",
   "system": {
     "description": {
-      "value": "<p>The fungal spores in your body alter you: you cannot be Blinded, Deafened, Frightened, Poisoned, or Possessed and any Critical Hit against you counts as a normal hit instead, unless you have the &amp;Reference[incapacitated apply=false] condition.</p>",
+      "value": "<p>The fungal spores in your body alter you: you cannot be &amp;Reference[Blinded apply=false], &amp;Reference[Deafened apply=false], &amp;Reference[Frightened apply=false], &amp;Reference[Poisoned apply=false], &amp;Reference[Possessed apply=false], or &amp;Reference[Weakened apply=false], and any Critical Hit against you counts as a normal hit instead, unless you have the &amp;Reference[incapacitated apply=false] condition.</p>",
       "chat": ""
     },
     "source": {
@@ -77,7 +77,7 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "",
+    "requirements": "Circle of Spores 14",
     "recharge": {
       "value": null,
       "charged": false
@@ -131,6 +131,12 @@
           "mode": 2,
           "value": "possessed",
           "priority": null
+        },
+        {
+          "key": "system.traits.ci.value",
+          "mode": 2,
+          "value": "weakened",
+          "priority": null
         }
       ],
       "description": "",
@@ -152,16 +158,21 @@
           "hostile": false,
           "onlyOnce": false,
           "wallsBlock": "system"
+        },
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
         }
       },
       "tint": "#ffffff",
       "_stats": {
-        "coreVersion": "12.325",
-        "systemId": null,
-        "systemVersion": null,
+        "coreVersion": "12.343",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
         "createdTime": null,
-        "modifiedTime": null,
-        "lastModifiedBy": null,
+        "modifiedTime": 1752814245426,
+        "lastModifiedBy": "dnd5mbuilder0000",
         "compendiumSource": null,
         "duplicateSource": null
       },
@@ -182,7 +193,7 @@
     "systemVersion": "4.3.9",
     "coreVersion": "12.343",
     "createdTime": 1711335688885,
-    "modifiedTime": 1747848050699,
+    "modifiedTime": 1752814231463,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

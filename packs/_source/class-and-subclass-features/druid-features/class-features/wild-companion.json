@@ -6,7 +6,7 @@
   "img": "icons/creatures/birds/corvid-call-sound-blue.webp",
   "system": {
     "description": {
-      "value": "<p>You gain the ability to summon a spirit that assumes an animal form: as a Magic action, you can expend a spell slot or a use of your Wild Shape feature to cast @UUID[Compendium.materia-dnd.spells.Item.matSplFindFamili]{Find Familiar}, without Material components.</p><p>When you cast the spell in this way, the familiar is a Fey instead of a Beast, and the familiar disappears when you finish a Long Rest.</p>",
+      "value": "<p>You gain the ability to summon a spirit that assumes an animal form: as a Magic action, you can expend a spell slot or a use of your Wild Shape feature to cast @UUID[Compendium.materia-dnd.spells.Item.matSplFindFamili]{Find Familiar}, without Material components.</p><p>When you cast the spell in this way, the familiar is Fey, it has a bonus to its AC, all D20 Tests, and any damage it deals equal to your current maximum number of Wild Shapes as shown in the Wild Shape column of the Druid features table, and the familiar disappears when you finish a Long Rest.</p><section id=\"secret-CmlrJuw8tXQLgQg2\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature includes an activity Buff Familiar which provides an Active Effect that can be applied to the familiar once it is summoned that will apply the appropriate bonuses.</p></section>",
       "chat": ""
     },
     "source": {
@@ -75,7 +75,7 @@
     "properties": [
       "mgc"
     ],
-    "requirements": "",
+    "requirements": "Druid 2",
     "recharge": {
       "value": null,
       "charged": false
@@ -113,9 +113,184 @@
     },
     "prerequisites": {
       "level": 2
+    },
+    "activities": {
+      "uK48wH4bI9DFoQcV": {
+        "type": "utility",
+        "_id": "uK48wH4bI9DFoQcV",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "Nl2t0odWtP9fucib"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Buff Familiar",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Wild Companion",
+      "img": "icons/creatures/birds/corvid-call-sound-blue.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.wM1NpTP2sIu8EfFf",
+      "transfer": false,
+      "_id": "Nl2t0odWtP9fucib",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.ac.bonus",
+          "mode": 2,
+          "value": "@scale.druid.wild-shape-uses",
+          "priority": null
+        },
+        {
+          "key": "system.bonuses.abilities.check",
+          "mode": 2,
+          "value": "@scale.druid.wild-shape-uses",
+          "priority": null
+        },
+        {
+          "key": "system.bonuses.abilities.save",
+          "mode": 2,
+          "value": "@scale.druid.wild-shape-uses",
+          "priority": null
+        },
+        {
+          "key": "system.bonuses.mwak.attack",
+          "mode": 2,
+          "value": "@scale.druid.wild-shape-uses",
+          "priority": null
+        },
+        {
+          "key": "system.bonuses.msak.attack",
+          "mode": 2,
+          "value": "@scale.druid.wild-shape-uses",
+          "priority": null
+        },
+        {
+          "key": "system.bonuses.rwak.attack",
+          "mode": 2,
+          "value": "@scale.druid.wild-shape-uses",
+          "priority": null
+        },
+        {
+          "key": "system.bonuses.rsak.attack",
+          "mode": 2,
+          "value": "@scale.druid.wild-shape-uses",
+          "priority": null
+        },
+        {
+          "key": "system.bonuses.mwak.damage",
+          "mode": 2,
+          "value": "@scale.druid.wild-shape-uses",
+          "priority": null
+        },
+        {
+          "key": "system.bonuses.msak.damage",
+          "mode": 2,
+          "value": "@scale.druid.wild-shape-uses",
+          "priority": null
+        },
+        {
+          "key": "system.bonuses.rwak.damage",
+          "mode": 2,
+          "value": "@scale.druid.wild-shape-uses",
+          "priority": null
+        },
+        {
+          "key": "system.bonuses.rsak.damage",
+          "mode": 2,
+          "value": "@scale.druid.wild-shape-uses",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.343",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1752808945975,
+        "modifiedTime": 1752809081200,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!wM1NpTP2sIu8EfFf.Nl2t0odWtP9fucib"
+    }
+  ],
   "sort": 600000,
   "ownership": {
     "default": 0
@@ -123,14 +298,20 @@
   "flags": {
     "materia-dnd": {
       "item-use-source": "wild-shape"
+    },
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
     }
   },
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "4.3.9",
-    "coreVersion": "12.331",
+    "coreVersion": "12.343",
     "createdTime": 1708892497961,
-    "modifiedTime": 1745420241011,
+    "modifiedTime": 1752809136088,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

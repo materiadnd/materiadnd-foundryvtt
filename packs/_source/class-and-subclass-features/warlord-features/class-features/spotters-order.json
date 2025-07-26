@@ -6,7 +6,7 @@
   "img": "icons/skills/targeting/target-strike-gray.webp",
   "system": {
     "description": {
-      "value": "<p>As an Action you can target one ally you can see within 30 feet of you. If the target can see and hear you, the target can make one weapon attack or Unarmed Strike as a Reaction.</p>",
+      "value": "<p>As an Action you can target one ally you can see within 30 feet of you. If the target can see or hear you, the target can take a Reaction to make one weapon attack or Unarmed Strike.</p>",
       "chat": ""
     },
     "source": {
@@ -89,6 +89,68 @@
           "units": "inst"
         },
         "appliedEffects": []
+      },
+      "ZhiFMbXcATmGTiVi": {
+        "type": "utility",
+        "_id": "ZhiFMbXcATmGTiVi",
+        "sort": 0,
+        "activation": {
+          "type": "action",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "ally",
+            "count": "1",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Command Ally",
+        "img": "",
+        "appliedEffects": []
       }
     }
   },
@@ -103,10 +165,10 @@
   },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.3.6",
-    "coreVersion": "12.331",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.343",
     "createdTime": 1706851916235,
-    "modifiedTime": 1741715990461,
+    "modifiedTime": 1753406832472,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

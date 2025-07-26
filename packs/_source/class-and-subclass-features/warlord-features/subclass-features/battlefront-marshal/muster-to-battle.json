@@ -6,7 +6,7 @@
   "img": "icons/creatures/mammals/wolf-howl-moon-gray.webp",
   "system": {
     "description": {
-      "value": "<p>You bring shock and awe. When you roll initiative, choose a number of creatures within 30 feet of you, up to a number equal to your Charisma modifier (minimum of 1). These creatures may double their Proficiency Bonus against creatures that have not acted in the encounter yet.</p>",
+      "value": "<p>Your presence bring shock and awe. When you roll initiative, choose a number of creatures within 30 feet of you that can see or hear you, up to a number equal to your Charisma modifier (minimum of 1). These creatures may double their Proficiency Bonus for one turn (no action required) within the next minute.</p><p>This bonus cannot be used by a creature while you have the Incapacitated condition.</p>",
       "chat": ""
     },
     "source": {
@@ -73,23 +73,148 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "",
+    "requirements": "Battlefront Marshal 3",
     "recharge": {
       "value": null,
       "charged": false
     },
     "prerequisites": {
       "level": 3
+    },
+    "activities": {
+      "o0OgYVLgK7GLTEWy": {
+        "type": "utility",
+        "_id": "o0OgYVLgK7GLTEWy",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "Qpun0RbVGkHrhccc"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "creature",
+            "count": "@abilities.cha.mod",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Muster",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
-  "effects": [],
-  "flags": {},
+  "effects": [
+    {
+      "name": "Muster to Battle",
+      "img": "icons/creatures/mammals/wolf-howl-moon-gray.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.iI3kncSM46R1mlvS",
+      "transfer": false,
+      "_id": "Qpun0RbVGkHrhccc",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "@prof",
+          "mode": 1,
+          "value": "2",
+          "priority": null
+        }
+      ],
+      "disabled": true,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.343",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1753452219810,
+        "modifiedTime": 1753452239766,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!iI3kncSM46R1mlvS.Qpun0RbVGkHrhccc"
+    }
+  ],
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.3.6",
-    "coreVersion": "12.331",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.343",
     "createdTime": 1706852803839,
-    "modifiedTime": 1742844561211,
+    "modifiedTime": 1753452416735,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
