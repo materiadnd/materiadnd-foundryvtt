@@ -5,14 +5,84 @@
   "_id": "9aCZrTEeRZC3yZnK",
   "img": "icons/magic/water/pseudopod-swirl-blue.webp",
   "system": {
-    "activities": {},
+    "activities": {
+      "xUC1jGqgtDTI4eKB": {
+        "type": "heal",
+        "_id": "xUC1jGqgtDTI4eKB",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "self",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "healing": {
+          "number": null,
+          "denomination": "",
+          "types": [
+            "temphp"
+          ],
+          "custom": {
+            "enabled": true,
+            "formula": "@classes.druid.levels"
+          },
+          "scaling": {
+            "number": 1
+          },
+          "bonus": ""
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
+      }
+    },
     "uses": {
       "spent": 0,
       "recovery": [],
       "max": ""
     },
     "description": {
-      "value": "<p>The size of the Emanation created by your Wrath of the Sea increases to 10 feet.</p><p>In addition, you gain a Swim Speed equal to your Speed.</p><section id=\"secret-KNCK0Bp9frJhjlGs\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>The size of the emanation increases automatically but this feature does not automatically add the Swim Speed.</p></section>",
+      "value": "<p>The size of the Emanation created by your Wrath of the Sea increases to 10 feet.</p><p>In addition, when you activate your Wrath of the Sea, you gain a number of Temporary Hit Points equal to your Druid level.</p><section class=\"secret\" id=\"secret-KNCK0Bp9frJhjlGs\"><p><strong>Foundry Note</strong></p><p>The size of the emanation increases automatically.</p><p>The <strong>Heal</strong> activity provides the appropriate number of Temporary Hit Points and can be used when you activate your Wrath of the Sea.</p></section>",
       "chat": ""
     },
     "identifier": "aquatic-affinity",
@@ -30,25 +100,32 @@
       "repeatable": false
     },
     "properties": [],
-    "requirements": "",
+    "requirements": "Circle of the Sea 6",
     "type": {
       "value": "class",
       "subtype": ""
     }
   },
   "effects": [],
-  "sort": 0,
+  "sort": 75000,
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "duplicateSource": null,
-    "coreVersion": "12.331",
+    "coreVersion": "12.343",
     "systemId": "dnd5e",
-    "systemVersion": "4.3.6",
+    "systemVersion": "4.3.9",
     "createdTime": 1742838888242,
-    "modifiedTime": 1742838957269,
+    "modifiedTime": 1753401886019,
     "lastModifiedBy": "dnd5mbuilder0000"
   },
   "_key": "!items!9aCZrTEeRZC3yZnK"

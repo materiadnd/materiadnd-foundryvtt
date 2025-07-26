@@ -6,7 +6,7 @@
   "img": "icons/magic/air/fog-gas-smoke-green.webp",
   "system": {
     "description": {
-      "value": "<p>You gain the ability to seed an area with choking spores. As a Bonus Action while your [[/item Symbiotic Entity]] feature is active, you can hurl spores up to 30 feet away, where they swirl in up to a 5x your Wisdom modifier (minimum of 1) foot cube for 1 minute. You decide the size of the cube on each use. The spores disappear early if you use this feature again, if you dismiss them as a Bonus Action, or if your Symbiotic Entity feature is no longer active.</p><p>Whenever a creature other than you or your Fungal Thrall moves into the area or starts its turn there, that creature takes your Halo of Spores damage, unless the creature succeeds on a Constitution saving throw against your spell save DC. If a creature takes damage from these spores they can barely speak and are unable to complete the Verbal component of spells or use abilities that require others to hear them. A creature can take this damage no more than once per turn.</p><p>While the cube of spores persists, you cannot take your Halo of Spores Reaction.</p>",
+      "value": "<p>You gain the ability to seed an area with choking spores. As a Bonus Action while your [[/item Symbiotic Entity]] feature is active, you can hurl spores up to 30 feet away, where they swirl in a cube up to 5 times your Wisdom modifier (minimum of 1) feet per side. You decide the size of the cube on each use. The spores disappear early if you use this feature again, if you dismiss them as a Bonus Action, or if your Symbiotic Entity feature is no longer active.</p><p>Whenever a creature other than you or your Fungal Thrall moves into the area or starts its turn there, that creature takes your Halo of Spores damage, unless the creature succeeds on a Constitution saving throw against your spell save DC. If a creature takes damage from these spores they can barely speak and are unable to complete the Verbal component of spells or use abilities that require others to hear them. A creature can take this damage no more than once per turn.</p><p>While the cube of spores persists, you cannot take your Halo of Spores Reaction.</p>",
       "chat": ""
     },
     "source": {
@@ -82,7 +82,7 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "",
+    "requirements": "Circle of Spores 10",
     "recharge": {
       "value": null,
       "charged": false
@@ -122,10 +122,198 @@
             "size": ""
           }
         }
+      },
+      "LhlOtzM2GHOyGqbY": {
+        "type": "utility",
+        "_id": "LhlOtzM2GHOyGqbY",
+        "sort": 0,
+        "activation": {
+          "type": "bonus",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "ft",
+          "special": "",
+          "value": "30"
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "cube",
+            "size": "5 * @abilities.wis.mod",
+            "count": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Hurl Spores",
+        "img": "",
+        "appliedEffects": []
+      },
+      "ExSpCZP0V1cUWF7a": {
+        "type": "save",
+        "_id": "ExSpCZP0V1cUWF7a",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "yMbvBbkncM1K2D5X"
+          }
+        ],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "damage": {
+          "parts": [
+            {
+              "custom": {
+                "enabled": true,
+                "formula": "@scale.spores.halo-of-spores"
+              },
+              "number": null,
+              "denomination": 0,
+              "bonus": "",
+              "types": [
+                "necrotic"
+              ]
+            }
+          ],
+          "onSave": "half"
+        },
+        "save": {
+          "ability": [
+            "con"
+          ],
+          "dc": {
+            "calculation": "",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": "",
+        "appliedEffects": []
       }
     }
   },
-  "effects": [],
+  "effects": [
+    {
+      "name": "Choking Spores",
+      "img": "icons/magic/air/fog-gas-smoke-green.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.mYLQLOzIOa6At2Ee",
+      "transfer": false,
+      "_id": "yMbvBbkncM1K2D5X",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "seconds": null,
+        "combat": null,
+        "rounds": 1,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>If a creature takes damage from these spores they can barely speak and are unable to complete the verbal component of spells or use abilities that require others to hear them</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "coreVersion": "12.343",
+        "systemId": "dnd5e",
+        "systemVersion": "4.3.9",
+        "createdTime": 1752814054552,
+        "modifiedTime": 1752814092179,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!mYLQLOzIOa6At2Ee.yMbvBbkncM1K2D5X"
+    }
+  ],
   "sort": 0,
   "ownership": {
     "default": 0
@@ -143,7 +331,7 @@
     "systemVersion": "4.3.9",
     "coreVersion": "12.343",
     "createdTime": 1711335546409,
-    "modifiedTime": 1747848022969,
+    "modifiedTime": 1752814054648,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },

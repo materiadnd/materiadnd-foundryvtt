@@ -6,7 +6,7 @@
   "img": "icons/magic/nature/leaf-juggle-humanoid-green.webp",
   "system": {
     "description": {
-      "value": "<p>You have unlimited uses of Wild Shape.</p><p>Additionally, you can ignore the Verbal and Somatic components of your Druid spells, as well as any Material components that lack a cost and are not consumed by a spell. You gain this benefit in both your normal shape and your beast shape from Wild Shape.</p>",
+      "value": "<p>The vitality of nature constantly blooms within you, granting you the following benefits:</p><p><strong>Evergreen Wild Shape.</strong> Whenever you roll initiative and have no uses of Wild Shape left, you regain one use of it.</p><p><strong>Nature Magician</strong>. You can expend uses of Wild Shape to give yourself spell slots (no action required). Choose a number of your unexpended Wild Shape uses and convert them into a single spell lot with each expended use contributing 2 levels to the slot. For example, if you convert two uses of Wild Shape, you gain a level 4 spell slot. Once you use this feature you cannot do so again until you finish a Long Rest.</p><p><strong>Longevity.</strong> The primal magic that you wield causes you to age more slowly. For every ten years that pass, your body ages only one year.</p>",
       "chat": ""
     },
     "source": {
@@ -73,13 +73,98 @@
       "subtype": ""
     },
     "properties": [],
-    "requirements": "",
+    "requirements": "Druid 20",
     "recharge": {
       "value": null,
       "charged": false
     },
     "prerequisites": {
       "level": 20
+    },
+    "activities": {
+      "flbxsf86eBApJRwk": {
+        "type": "utility",
+        "_id": "flbxsf86eBApJRwk",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": true,
+            "max": "@scale.druid.wild-shape-uses"
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "@scaling",
+              "target": "Compendium.materia-dnd.class-and-subclass-features.Item.51CTtXjg284mHaIj",
+              "scaling": {
+                "mode": ""
+              }
+            },
+            {
+              "type": "spellSlots",
+              "value": "-1",
+              "target": "2",
+              "scaling": {
+                "mode": "level",
+                "formula": "2"
+              }
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [
+            {
+              "period": "lr",
+              "type": "recoverAll"
+            }
+          ],
+          "max": "1"
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Create Spell Slot",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -87,13 +172,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
-    "systemVersion": "4.3.8",
-    "coreVersion": "12.331",
+    "systemVersion": "4.3.9",
+    "coreVersion": "12.343",
     "createdTime": 1708907788465,
-    "modifiedTime": 1744151665104,
+    "modifiedTime": 1752811952111,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
