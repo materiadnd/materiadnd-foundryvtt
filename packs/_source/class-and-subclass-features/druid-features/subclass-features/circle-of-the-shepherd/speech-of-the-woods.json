@@ -6,7 +6,7 @@
   "img": "icons/skills/trades/music-singing-voice-blue.webp",
   "system": {
     "description": {
-      "value": "<p>You gain the ability to converse with Beasts and plants.  You always have the @UUID[Compendium.materia-dnd.spells.Item.matSplSpeakWithA]{Speak with Animals} and @UUID[Compendium.materia-dnd.spells.Item.matSplSpeakWithP]{Speak with Plants} spells prepared. You can cast either without a spell slot a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>",
+      "value": "<p>You gain the ability to converse with plants. You always have the @UUID[Compendium.materia-dnd.spells.Item.matSplSpeakWithP]{Speak with Plants} spell prepared. You can this spell or @UUID[Compendium.materia-dnd.spells.Item.matSplSpeakWithA]{Speak With Animals} without a spell slot a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest.</p>",
       "chat": ""
     },
     "source": {
@@ -39,9 +39,14 @@
     },
     "uses": {
       "value": null,
-      "max": "",
+      "max": "@prof",
       "per": null,
-      "recovery": "",
+      "recovery": [
+        {
+          "period": "lr",
+          "type": "recoverAll"
+        }
+      ],
       "prompt": true
     },
     "consume": {
@@ -80,6 +85,72 @@
     },
     "prerequisites": {
       "level": 3
+    },
+    "activities": {
+      "NDjKOLxJTxZoTkVy": {
+        "type": "utility",
+        "_id": "NDjKOLxJTxZoTkVy",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "value": null,
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": [
+            {
+              "type": "itemUses",
+              "value": "1"
+            }
+          ]
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [],
+        "range": {
+          "override": false,
+          "units": "self",
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "roll": {
+          "prompt": false,
+          "visible": false,
+          "name": "",
+          "formula": ""
+        },
+        "name": "Speech of the Woods",
+        "img": "",
+        "appliedEffects": []
+      }
     }
   },
   "effects": [],
@@ -87,13 +158,20 @@
   "ownership": {
     "default": 0
   },
-  "flags": {},
+  "flags": {
+    "dnd5e": {
+      "riders": {
+        "activity": [],
+        "effect": []
+      }
+    }
+  },
   "_stats": {
     "systemId": "dnd5e",
     "systemVersion": "4.3.9",
     "coreVersion": "12.343",
     "createdTime": 1709056848401,
-    "modifiedTime": 1753402614968,
+    "modifiedTime": 1753516177971,
     "lastModifiedBy": "dnd5mbuilder0000",
     "duplicateSource": null
   },
