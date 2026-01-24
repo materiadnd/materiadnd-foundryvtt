@@ -1,9 +1,9 @@
 export function AddMateriaConditions() {
     console.log("materia-dnd | Conditions: Adding custom conditions.")
     // Conditions
-    CONFIG.DND5E.conditionTypes.dazed = { 'icon': 'modules/materia-dnd/icons/statuses/noun-dazed.svg', 'label': 'Dazed', reference: 'Compendium.materia-dnd.rules.JournalEntry.matJrnConditions.JournalEntryPage.matJrnCondDazed0'};
-    CONFIG.DND5E.conditionTypes.possessed = { 'icon': 'modules/materia-dnd/icons/statuses/noun-ghost.svg', 'label': 'Possessed', reference: 'Compendium.materia-dnd.rules.JournalEntry.matJrnConditions.JournalEntryPage.matJrnCondPosses', statuses: ['incapacitated'] };
-    CONFIG.DND5E.conditionTypes.weakened = { 'icon': 'modules/materia-dnd/icons/statuses/noun-weakness.svg', 'label': 'Weakened', reference: 'Compendium.materia-dnd.rules.JournalEntry.matJrnConditions.JournalEntryPage.matJrnCondWeaken' };
+    CONFIG.DND5E.conditionTypes.dazed = { icon: 'modules/materia-dnd/icons/statuses/noun-dazed.svg', name: 'Dazed', reference: 'Compendium.materia-dnd.rules.JournalEntry.matJrnConditions.JournalEntryPage.matJrnCondDazed0'};
+    CONFIG.DND5E.conditionTypes.possessed = { icon: 'modules/materia-dnd/icons/statuses/noun-ghost.svg', name: 'Possessed', reference: 'Compendium.materia-dnd.rules.JournalEntry.matJrnConditions.JournalEntryPage.matJrnCondPosses', statuses: ['incapacitated'] };
+    CONFIG.DND5E.conditionTypes.weakened = { icon: 'modules/materia-dnd/icons/statuses/noun-weakness.svg', name: 'Weakened', reference: 'Compendium.materia-dnd.rules.JournalEntry.matJrnConditions.JournalEntryPage.matJrnCondWeaken' };
     console.log("materia-dnd | Conditions: Added three custom conditions.")
     // Overwriting exhaustion
     CONFIG.DND5E.conditionTypes.exhaustion.reference = "Compendium.materia-dnd.rules.JournalEntry.matJrnConditions.JournalEntryPage.matJrnCondExhaus";
