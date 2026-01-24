@@ -26,7 +26,7 @@ export async function ExhaustionIncDecHandler(actor, exhLevel, diff, id) {
         let updates = [
             {
                 _id: existingId,
-                label: "Exhaustion Level " + newExhLevel,
+                name: "Exhaustion Level " + newExhLevel,
                 description: description,
                 flags: {
                     "materia-dnd": { "exhaustion-level": newExhLevel }
@@ -37,14 +37,14 @@ export async function ExhaustionIncDecHandler(actor, exhLevel, diff, id) {
         await actor.updateEmbeddedDocuments("ActiveEffect", updates);
     } else if (newExhLevel != null) {
         let effectData = {
-                label: "Exhaustion Level",
+                name: "Exhaustion Level",
                 icon: "systems/dnd5e/icons/svg/statuses/exhaustion.svg",
                 description: description,
                 flags: {
                     "materia-dnd": { }
                 }
         };
-        effectData["label"] = "Exhaustion Level " + newExhLevel;
+        effectData["name"] = "Exhaustion Level " + newExhLevel;
         effectData["changes"] = changes;
         effectData.flags["materia-dnd"]["exhaustion-level"] = newExhLevel;
         await actor.createEmbeddedDocuments("ActiveEffect", [effectData]);
