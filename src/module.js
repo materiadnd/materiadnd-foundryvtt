@@ -89,7 +89,7 @@ Hooks.on("createItem", (item, flags, itemId) => {
     }
 });
 
-Hooks.on("renderActorSheet5eCharacter2", (app, html, actor) => {
+Hooks.on("renderActorSheetV2", (app, html, actor, options) => {
     if (game.settings.get(Constants.MODULE_ID, Settings.SETTINGS.ENABLE_SPELL_SEARCH)) {
         SpellSearchRenderActorSheetHandler(html, actor);
     }

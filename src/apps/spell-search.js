@@ -1,5 +1,6 @@
 import { Constants } from "../constants.js";
 import { Settings } from "../settings.js";
+import { generateElements, addEventListener } from "../utilities.js";
 
 const TOGGLE_STATES = ["ignore", "yes", "no"];
 const SPELL_COMPONENT_TYPES = ["material", "somatic", "vocal"];
@@ -788,16 +789,16 @@ export class SpellSearchApp extends Application {
 }
 
 export function SpellSearchRenderActorSheetHandler(html, actor) {
-    for (const header of html.find("div.spellcasting > div.header > h3")) {
-        let searchElt = $(`<span>&nbsp;&nbsp;<i class="fa-solid fa-magnifying-glass"></i> Spells</span>`);
+    for (const header of html.querySelectorAll("div.spellcasting > div.header > h3")) {
+        let searchElt = generateElements("<span>&nbsp;&nbsp;<i class=\"fa-solid fa-magnifying-glass\"></i> Spells</span>")[0];
         let className = header.innerHTML.replace(' Spellcasting', '').toLowerCase();
         let maxLevel = getMaxLevelForClass(actor, className);
         className = className.replace(/\s*\(\w+\)\s*/i, '');    // for Warlock (INT) variant, and if we ever
                                                                 // do any other variant class
         let searchApp = new SpellSearchApp(className, maxLevel);
-        searchElt.on("click", (evt) => {
+        searchElt.addEventListener("click", (evt) => {
             searchApp.render(true);
         });
-        header.insertAdjacentElement("afterend", searchElt[0]);
+        header.insertAdjacentElement("afterend", searchElt);
     }
 }
