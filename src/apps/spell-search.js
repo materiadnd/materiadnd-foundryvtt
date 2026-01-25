@@ -1,6 +1,6 @@
 import { Constants } from "../constants.js";
 import { Settings } from "../settings.js";
-import { generateElements, addEventListener } from "../utilities.js";
+import { generateElements } from "../utilities.js";
 
 const TOGGLE_STATES = ["ignore", "yes", "no"];
 const SPELL_COMPONENT_TYPES = ["material", "somatic", "vocal"];

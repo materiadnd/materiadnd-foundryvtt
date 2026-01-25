@@ -1,4 +1,5 @@
 import { ButtonFlags, Constants } from "../constants.js";
+import { generateElements } from "../utilities.js";
 
 export function StatRollerRenderActorSheetHandler(app, html, actor) {
     // only display for PC sheets
@@ -22,14 +23,17 @@ export function StatRollerRenderActorSheetHandler(app, html, actor) {
         !actor.items.some( x => x?.type == 'class' && x?.system.levels > 0)) {
         let actorId = app.actor.id;
         const buttonText = game.i18n.localize(`${Constants.MODULE_ID}.ui.stat-roller.charsheet-titlebar-button`);
-        let openButton = $(`<a class="open-stat-roller"><i class="fa-solid fa-dice"></i> ${buttonText}</a>`);
-        openButton.on("click", async (event) => {
+        let openButton = generateElements(`<a class=\"open-stat-roller\"><i class=\"fa-solid fa-dice\"></i> ${buttonText}</a>`)[0];
+        openButton.addEventListener("click", async (event) => {
             var statRollerApp = new StatRollerApp(actorId);
             statRollerApp.render(true);
         });
-        html.closest('.app').find('.open-stat-roller').remove();
-        let titleElement = html.closest('.app').find('.window-title');
-        openButton.insertAfter(titleElement);
+        let existingButton = html.querySelector('.open-stat-roller');
+        if (existingButton != null) {
+            existingButton.remove();
+        }
+        let titleElement = html.querySelector('.window-title');
+        titleElement.after(openButton);
     }
 }
 
