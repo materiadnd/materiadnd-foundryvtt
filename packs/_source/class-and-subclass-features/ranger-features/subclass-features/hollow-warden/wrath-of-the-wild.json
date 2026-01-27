@@ -1,0 +1,233 @@
+{
+  "folder": "mZ0HU1BhYjRMhkyn",
+  "name": "Wrath of the Wild",
+  "type": "feat",
+  "_id": "pTgQ3ozgFa9IuB0h",
+  "img": "icons/magic/nature/root-vines-face-glow-green.webp",
+  "system": {
+    "activities": {
+      "BHLB6UKgi4DF2GqQ": {
+        "type": "save",
+        "_id": "BHLB6UKgi4DF2GqQ",
+        "sort": 0,
+        "activation": {
+          "type": "",
+          "override": false,
+          "condition": ""
+        },
+        "consumption": {
+          "scaling": {
+            "allowed": false
+          },
+          "spellSlot": true,
+          "targets": []
+        },
+        "description": {
+          "chatFlavor": ""
+        },
+        "duration": {
+          "units": "inst",
+          "concentration": false,
+          "override": false
+        },
+        "effects": [
+          {
+            "_id": "UDQaY3A4GvGHaCwt"
+          }
+        ],
+        "flags": {},
+        "range": {
+          "units": "self",
+          "override": false,
+          "special": ""
+        },
+        "target": {
+          "template": {
+            "contiguous": false,
+            "units": "ft",
+            "type": "radius",
+            "size": "10",
+            "count": ""
+          },
+          "affects": {
+            "choice": false,
+            "type": "enemy",
+            "count": "",
+            "special": ""
+          },
+          "override": false,
+          "prompt": true
+        },
+        "uses": {
+          "spent": 0,
+          "recovery": [],
+          "max": ""
+        },
+        "visibility": {
+          "level": {
+            "min": null,
+            "max": null
+          },
+          "requireAttunement": false,
+          "requireIdentification": false,
+          "requireMagic": false,
+          "identifier": ""
+        },
+        "damage": {
+          "onSave": "half",
+          "parts": []
+        },
+        "save": {
+          "ability": [
+            "wis"
+          ],
+          "dc": {
+            "calculation": "spellcasting",
+            "formula": ""
+          }
+        },
+        "name": "",
+        "img": ""
+      }
+    },
+    "uses": {
+      "spent": 0,
+      "recovery": [],
+      "max": ""
+    },
+    "advancement": [],
+    "description": {
+      "value": "<p>You draw on the strange and ancient horrors of the land for power. When you cast Hunter's Mark, you transform, gaining the following benefits for the duration of the spell.</p><p><strong>Ancient Armor.</strong> You gain a bonus to your AC equal to your Wisdom modifier (minimum of +1). Your body is wreathed in rotten bark or beastly bristles.</p><p><strong>Unnerving Aura.</strong> When an enemy starts its turn within a 10-foot Emanation originating from you, it makes a Wisdom saving throw against your spell save DC. On a failed save, it can take either an action or a Bonus Action on this turn, not both. Your shadow lengthens and twists around you, or you sprout unnatural growths like bloody antlers or putrid fangs.</p><section id=\"secret-tfOB16Ix77UHRgIG\" class=\"secret\"><p><strong>Foundry Note</strong></p><p>This feature has an Active Effect for the Ancient Armor provided while you have Hunter's Mark active and you can toggle it on while the spell is ongoing.</p></section>",
+      "chat": ""
+    },
+    "identifier": "feature",
+    "source": {
+      "revision": 1,
+      "rules": "2024"
+    },
+    "crewed": false,
+    "enchant": {},
+    "prerequisites": {
+      "items": [],
+      "repeatable": false,
+      "level": 3
+    },
+    "properties": [],
+    "requirements": "",
+    "type": {
+      "value": "class",
+      "subtype": ""
+    }
+  },
+  "effects": [
+    {
+      "name": "Ancient Armor",
+      "img": "icons/magic/nature/root-vines-face-glow-green.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.pTgQ3ozgFa9IuB0h",
+      "_id": "9NW9RyJtLvPoNGHR",
+      "type": "base",
+      "system": {},
+      "changes": [
+        {
+          "key": "system.attributes.ac.bonus",
+          "mode": 2,
+          "value": "@abilities.wis.mod",
+          "priority": null
+        }
+      ],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "combat": null,
+        "seconds": null,
+        "rounds": null,
+        "turns": null,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>You gain a bonus to your AC equal to your Wisdom modifier (minimum of +1). Your body is wreathed in rotten bark or beastly bristles.</p>",
+      "tint": "#ffffff",
+      "transfer": true,
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "dnd5e",
+        "systemVersion": "5.2.5",
+        "createdTime": 1769492936451,
+        "modifiedTime": 1769492990013,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!pTgQ3ozgFa9IuB0h.9NW9RyJtLvPoNGHR"
+    },
+    {
+      "name": "Unnerved",
+      "img": "icons/magic/nature/root-vines-face-glow-green.webp",
+      "origin": "Compendium.materia-dnd.class-and-subclass-features.Item.pTgQ3ozgFa9IuB0h",
+      "transfer": false,
+      "_id": "UDQaY3A4GvGHaCwt",
+      "type": "base",
+      "system": {},
+      "changes": [],
+      "disabled": false,
+      "duration": {
+        "startTime": null,
+        "combat": null,
+        "seconds": null,
+        "rounds": null,
+        "turns": 1,
+        "startRound": null,
+        "startTurn": null
+      },
+      "description": "<p>On a failed save, it can take either an action or a Bonus Action on this turn, not both.</p>",
+      "tint": "#ffffff",
+      "statuses": [],
+      "sort": 0,
+      "flags": {
+        "dnd5e": {
+          "riders": {
+            "statuses": []
+          }
+        }
+      },
+      "_stats": {
+        "compendiumSource": null,
+        "duplicateSource": null,
+        "exportSource": null,
+        "coreVersion": "13.351",
+        "systemId": "dnd5e",
+        "systemVersion": "5.2.5",
+        "createdTime": 1769493120675,
+        "modifiedTime": 1769493150870,
+        "lastModifiedBy": "dnd5mbuilder0000"
+      },
+      "_key": "!items.effects!pTgQ3ozgFa9IuB0h.UDQaY3A4GvGHaCwt"
+    }
+  ],
+  "sort": 0,
+  "ownership": {
+    "default": 0
+  },
+  "flags": {},
+  "_stats": {
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.351",
+    "systemId": "dnd5e",
+    "systemVersion": "5.2.5",
+    "createdTime": 1769492790787,
+    "modifiedTime": 1769493120731,
+    "lastModifiedBy": "dnd5mbuilder0000"
+  },
+  "_key": "!items!pTgQ3ozgFa9IuB0h"
+}
