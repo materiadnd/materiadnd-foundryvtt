@@ -17,10 +17,7 @@ import { MateriaTableOfContentsCompendium } from "./apps/table-of-contents.js";
 
 Hooks.once("init", () => {
     CONFIG.DND5E.sourceBooks["Materia"] = "Materia D&D 5.M";
-})
-
-Hooks.once("init", () => {
-    CONFIG.DND5E.sourceBooks["Materia"] = "Materia D&D 5.M";
+    CONFIG.DND5E.sourceBooks["Materia (UA)"] = "Materia D&D 5.M (UA)";
 })
 
 Hooks.once('init', () => {
